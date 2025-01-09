@@ -54,6 +54,24 @@ InstanceOf: Composition
 	* label = "succeeding-recommendation"
 	* resourceReference = Reference(RecommendationSucceedingOther-Composition-example)
 
+* section[recommendationSpecification] // slice defined in EBM IG Profile
+  // TODO: how to add other languages?
+	* section[recommendationStatement] // slice defined in EBM IG Profile
+		// recommendation text (human readable from guideline) goes here
+		* text = "Bei Patienten mit Krankheit A soll Medikament B statt Medikament C gegeben werden. Patienten mit Krankheit A, die auch noch Krankheit D haben,
+		 darf keinesfalls Medikament B gegeben, sondern müssen Medikament C erhalten."
+	* section[population] // Problem: population has cardinality 0..1, but the recommendationStatement has multiple populations
+		// TODO: how to specify multiple (sub-)populations?
+		// TODO: how to represent codes instead of text?
+		// may also contain just "tags"/keywords (e.g. a collection of SNOMED CT codes)
+		* text = "Patienten mit Krankheit A mit oder ohne Krankheit D" // Patienten mit Krankheit A unter Berücksichtigung von Krankheit D
+		// but multiple entries (0..*) are possible
+	* section[action]
+		* text = "Medikament B geben oder Medikament C geben"
+	* section[oppositeAction]
+		* text = "Medikament C geben oder Medikament B geben"
+	* section[computableRecommendationSpecification] // instead of sections population / action
+		* entry = Reference(RecommendationPlanDefinition)
 
 
 
