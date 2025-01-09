@@ -39,12 +39,64 @@ Description: "Clinical Practice Guideline"
     * entry only Reference(Recommendation)
 
 
+Profile: Guideline
+Parent: ebm-guideline
+* section[otherDocuments]
+  * code from value-set-awmf-document-types (extensible)
+
+CodeSystem: code-system-awmf-document-types
+* #long-version
+* #short-version
+* #patient-version
+
+ValueSet: value-set-awmf-document-types
+* include all codes from code-system-awmf-document-types
+
 Instance: Guideline-example
 InstanceOf: Guideline
 * status = #preliminary
 * date = "2024-12-05"
 * author.display = "Dissolve-E Team"
 * title = "Beispiel-Leitlinie"
+
+// Version 1: Keine Information über den Typ der Dokumente in dieser Instanz
+* section[documents]
+  * entry[+] = Reference(DocumentReferenceThisGuideline)
+  * entry[+] = Reference(DocumentReferenceLongVersionOfThisGuideline)
+  * entry[+] = Reference(DocumentReferenceShortVersionOfThisGuideline)
+  * entry[+] = Reference(DocumentReferencePatientVersionOfThisGuideline)
+
+// Version 2: Information über den Typ der Dokumente in dieser Instanz via code
+//  (s. auch code-system-awmf-document-types, value-set-awmf-document-types)
+* section[documents]
+  * section[+]
+    * code = cs-awmf#long-version
+    * title = "Langversion"
+    * entry = Reference(DocumentReferenceLongVersionOfThisGuideline)
+  * section[+]
+    * code = cs-awmf#short-version
+    * entry = Reference(DocumentReferenceShortVersionOfThisGuideline)
+  * section[+]
+    * code = cs-awmf#patient-version
+    * entry = Reference(DocumentReferencePatientVersionOfThisGuideline)
+
+// Version 3: Information über den Typ der Dokumente in dieser Instanz via section
+// Hier kann auch das Profil von DocumentReference festgelegt werden (in V2 nicht)
+* section[documents] 
+  * section[longVersion]
+    * title = "Langversion"
+    * entry[+] = Reference(DocumentReferenceLongVersionOfThisGuideline)
+  * section[shortVersion]
+    * entry = Reference(DocumentReferenceShortVersionOfThisGuideline)
+  * section[patientVersion]
+    * entry = Reference(DocumentReferencePatientVersionOfThisGuideline)
+  * section[patientVersion]
+    * text.div = "<div>Das ist die Patientenversion dieser Leitlinie</div>"
+  * section[otherDocuments]
+    * entry[+] = Reference(DocumentReferenceOtherDocumentOfThisGuideline)
+
+
+
 * section[introduction]
   * text 
     * status = #generated
@@ -52,7 +104,10 @@ InstanceOf: Guideline
 * section[+] // custom section
   * text 
     * status = #generated
-    * div = "<div>Das ist Kapitel 2 zum Thema spezifische Empfehlungen</div>"
+    * div = "
+      <div lang='en'>Das ist Kapitel 2 zum Thema spezifische Empfehlungen</div>
+      <div lang='de'>Das ist Kapitel 2 zum Thema spezifische Empfehlungen</div>
+      "
   * section[introduction]
     * text
       * status = #generated
