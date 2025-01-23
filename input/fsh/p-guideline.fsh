@@ -1,8 +1,38 @@
 Profile: Guideline
-Parent: ebm-guideline
+Parent: $ebm-guideline
 Id: Guideline
 Title: "Guideline"
 Description: "Clinical Practice Guideline"
+* section contains attachments 0..1 MS
+* section[attachments]
+  * code
+    * coding = $cs-awmf#attachments "Attachments"
+    * coding 1..1
+  * section ^slicing.discriminator.type = #value
+  * section ^slicing.discriminator.path = "code"
+  * section ^slicing.rules = #open
+  * section contains 
+    longVersion 0..1 
+    and shortVersion 0..1
+    and patientVersion 0..*
+    and evidenceReport 0..*
+  * section 1..*
+    * code from vs-guideline-attachment-types (preferred)
+    * entry only Reference(GuidelineAttachment)
+    * entry 1..1 MS
+  * section[longVersion]
+    * code.coding 1..1
+    * code.coding = cs-guideline-attachment-types#long-version "Long Version"
+  * section[shortVersion]
+    * code.coding 1..1
+    * code.coding = cs-guideline-attachment-types#short-version "Short Version"
+  * section[patientVersion]
+    * code.coding 1..1
+    * code.coding = cs-guideline-attachment-types#patient-version "Patient Version"
+  * section[evidenceReport]
+    * code.coding 1..1
+    * code.coding = cs-guideline-attachment-types#evidence-report "Evidence Report"
+  * section obeys inv-guideline-attachment-type-match
 * section
   * orderedBy = cs-awmf#ordered-by-authors "Ordered by authors"
   * section ^slicing.discriminator.type = #value
@@ -17,6 +47,7 @@ Description: "Clinical Practice Guideline"
     and acknowledgements 0..1 MS 
     and appendices 0..1 MS
     and recommendations 0..1 MS
+    
   * section[introduction].code.coding 1..1
   * section[introduction].code.coding = https://fevir.net/resources/CodeSystem/179423#introduction "Introduction"
   * section[discussion].code.coding 1..1
@@ -37,20 +68,13 @@ Description: "Clinical Practice Guideline"
   * section[recommendations].code.coding = https://fevir.net/resources/CodeSystem/179423#recommendations "Recommendations"
   * section[recommendations]
     * entry only Reference(Recommendation)
+// TODO: create profiles for S3, S2k, S2e etc guidelines, inheriting from guideline profile
 
+Invariant: inv-guideline-attachment-type-match
+Description: "Attachment type in DocumentReference must match the type of the section"
+Expression: "reference.resolve()[type=$this.code].exists()"
+Severity: #error
 
-Profile: Guideline
-Parent: ebm-guideline
-* section[otherDocuments]
-  * code from value-set-awmf-document-types (extensible)
-
-CodeSystem: code-system-awmf-document-types
-* #long-version
-* #short-version
-* #patient-version
-
-ValueSet: value-set-awmf-document-types
-* include all codes from code-system-awmf-document-types
 
 Instance: Guideline-example
 InstanceOf: Guideline
@@ -58,44 +82,17 @@ InstanceOf: Guideline
 * date = "2024-12-05"
 * author.display = "Dissolve-E Team"
 * title = "Beispiel-Leitlinie"
-
-// Version 1: Keine Information über den Typ der Dokumente in dieser Instanz
-* section[documents]
-  * entry[+] = Reference(DocumentReferenceThisGuideline)
-  * entry[+] = Reference(DocumentReferenceLongVersionOfThisGuideline)
-  * entry[+] = Reference(DocumentReferenceShortVersionOfThisGuideline)
-  * entry[+] = Reference(DocumentReferencePatientVersionOfThisGuideline)
-
-// Version 2: Information über den Typ der Dokumente in dieser Instanz via code
-//  (s. auch code-system-awmf-document-types, value-set-awmf-document-types)
-* section[documents]
+* section[attachments]
   * section[+]
-    * code = cs-awmf#long-version
+    * code = cs-guideline-attachment-types#long-version
     * title = "Langversion"
     * entry = Reference(DocumentReferenceLongVersionOfThisGuideline)
   * section[+]
-    * code = cs-awmf#short-version
+    * code = cs-guideline-attachment-types#short-version
     * entry = Reference(DocumentReferenceShortVersionOfThisGuideline)
   * section[+]
-    * code = cs-awmf#patient-version
+    * code = cs-guideline-attachment-types#patient-version
     * entry = Reference(DocumentReferencePatientVersionOfThisGuideline)
-
-// Version 3: Information über den Typ der Dokumente in dieser Instanz via section
-// Hier kann auch das Profil von DocumentReference festgelegt werden (in V2 nicht)
-* section[documents] 
-  * section[longVersion]
-    * title = "Langversion"
-    * entry[+] = Reference(DocumentReferenceLongVersionOfThisGuideline)
-  * section[shortVersion]
-    * entry = Reference(DocumentReferenceShortVersionOfThisGuideline)
-  * section[patientVersion]
-    * entry = Reference(DocumentReferencePatientVersionOfThisGuideline)
-  * section[patientVersion]
-    * text.div = "<div>Das ist die Patientenversion dieser Leitlinie</div>"
-  * section[otherDocuments]
-    * entry[+] = Reference(DocumentReferenceOtherDocumentOfThisGuideline)
-
-
 
 * section[introduction]
   * text 
