@@ -1,27 +1,26 @@
 Profile: Recommendation
-Parent: ebm-recommendation
+Parent: $ebm-recommendation
 Id: Recommendation
 Title: "Recommendation"
 Description: "Clinical Practice Guideline Recommendation"
 * identifier ^slicing.discriminator.type = #value
-  * identifier ^slicing.discriminator.path = "type"
-  * identifier ^slicing.rules = #open
-* identifier contains 
-  awmf-register-number 0..1
+* identifier ^slicing.discriminator.path = "system"
+* identifier ^slicing.rules = #open
+* identifier contains awmf-register-number 0..1
 * identifier[awmf-register-number]
   * system 1..1
   * system = "https://www.awmf.org/fhir/"
   * value 1..1
-* identifier obeys inv-require-official-identifier // P2.2.1
-
-
-* version 1..1 // P2.2.1
-* version obeys inv-version-major-minor // P2.2.1
+* identifier obeys inv-require-official-identifier // #P2.2.1
+* version 1..1 // #P2.2.1
+* version obeys inv-version-major-minor // #P2.2.1
 * extension[versionAlgorithm].valueCoding = $cs-awmf#major-minor "Major-Minor Versioning" // TODO: is there an existing code for this?
 
+// ---------------------------
+// ab hier nur beispielhaft
 * section
   * orderedBy = cs-awmf#ordered-by-authors "Ordered by authors"
-* section ^slicing.discriminator.type = #value
+  * section ^slicing.discriminator.type = #value
   * section ^slicing.discriminator.path = "code.coding"
   * section ^slicing.rules = #open
   * section contains 
@@ -80,7 +79,7 @@ InstanceOf: PlanDefinition
 
 Instance: Recommendation-Composition-example
 InstanceOf: Composition
-// P2.1.8
+// #P2.1.8
 // Preceeding Recommendations (in clinical workflow)
 * relatesTo[specificationOfPreceedingRecommendation][+]
   * code = #specification-of
