@@ -16,6 +16,26 @@ Description: "Clinical Practice Guideline Recommendation"
 * version obeys inv-version-major-minor // #P2.2.1
 * extension[versionAlgorithm].valueCoding = $cs-awmf#major-minor "Major-Minor Versioning" // TODO: is there an existing code for this?
 
+// #P2.1.8
+* relatesTo ^slicing.discriminator.type = #value 
+* relatesTo ^slicing.discriminator.path = "label" // TODO: @SK is this what we want?
+* relatesTo ^slicing.rules = #open
+* relatesTo contains 
+  specificationOfPreceedingRecommendation 0..*
+  and specificationOfSucceedingRecommendation 0..*
+* relatesTo[specificationOfPreceedingRecommendation]
+  * type 1..1
+  * type = #specification-of
+  * label 1..1
+  * label = "preceeding-recommendation"
+  * resourceReference 1..1
+* relatesTo[specificationOfSucceedingRecommendation]
+  * type 1..1
+  * type = #specification-of
+  * label 1..1
+  * label = "succeeding-recommendation"
+  * resourceReference 1..1
+
 // ---------------------------
 // ab hier nur beispielhaft
 * section
@@ -44,6 +64,7 @@ Severity: #warning
 
 Instance: Recommendation-PlanDefinition-example
 InstanceOf: PlanDefinition
+* status = #draft
 * action[0]
   * title = "Recommendation 1"
   * description = "Mach Diagnose"
@@ -59,43 +80,31 @@ InstanceOf: PlanDefinition
     * targetId = "diagnose"
     * relationship = #before
 
-* identifier[+]
-  * system = "https//my.org"
-  * value = "my guideline, version/2.1"
-
-* identifier[+]
-  * system = "https//my.org/guideline"
-  * value = "my guideline"
-* identifier[+]
-  * system = "https//my.org/guidelineVersion"
-  * value = "2.1"
-
-* identifier[+]
-  * system = "https//my.org/guideline"
-  * value = "my guideline"
-  * extension[version].valueString = "2.1"
-
-
 
 Instance: Recommendation-Composition-example
-InstanceOf: Composition
+InstanceOf: Recommendation
 // #P2.1.8
 // Preceeding Recommendations (in clinical workflow)
+* version = "1.0"
+* status = #draft
+* date = "2024-12-05"
+* author = Reference(Practitioner-example)
+* title = "Recommendation 1"
 * relatesTo[specificationOfPreceedingRecommendation][+]
-  * code = #specification-of
+  * type = #specification-of
   * label = "preceeding-recommendation"
   * resourceReference = Reference(RecommendationPreceeding-Composition-example)
 * relatesTo[specificationOfPreceedingRecommendation][+]
-  * code = #specification-of
+  * type = #specification-of
   * label = "preceeding-recommendation"
   * resourceReference = Reference(RecommendationPreceedingOther-Composition-example)
 // Succeeding Recommendations (in clinical workflow)
-* relatesTo[specificationOfsucceedingRecommendation][+]
-  * code = #specification-of
+* relatesTo[specificationOfSucceedingRecommendation][+]
+  * type = #specification-of
   * label = "succeeding-recommendation"
   * resourceReference = Reference(RecommendationSucceeding-Composition-example)
 * relatesTo[specificationOfSucceedingRecommendation][+]
-  * code = #specification-of
+  * type = #specification-of
   * label = "succeeding-recommendation"
   * resourceReference = Reference(RecommendationSucceedingOther-Composition-example)
 

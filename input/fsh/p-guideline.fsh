@@ -102,8 +102,10 @@ InstanceOf: Guideline
   * text 
     * status = #generated
     * div = "
-      <div lang='en'>Das ist Kapitel 2 zum Thema spezifische Empfehlungen</div>
-      <div lang='de'>Das ist Kapitel 2 zum Thema spezifische Empfehlungen</div>
+      <div>
+        <div lang='en'>Das ist Kapitel 2 zum Thema spezifische Empfehlungen</div>
+        <div lang='de'>Das ist Kapitel 2 zum Thema spezifische Empfehlungen</div>
+      </div>
       "
   * section[introduction]
     * text
