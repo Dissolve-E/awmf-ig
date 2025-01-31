@@ -21,7 +21,7 @@ publisher:
   # email: test@example.org
 
 dependencies:
-  hl7.fhir.uv.ebm: 2.0.0-ballot
+  hl7.fhir.uv.ebm: 1.0.0-ballot2
 
 # The dependencies property corresponds to IG.dependsOn. The key is the
 # package id and the value is the version (or dev/current). For advanced
