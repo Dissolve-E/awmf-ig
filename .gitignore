@@ -6,3 +6,7 @@ Thumbs.db
 /temp
 /template
 pdf/
+*.jar
+*.bat
+*.sh
+
