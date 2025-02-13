@@ -1,4 +1,4 @@
-ValueSet: RecommendationAttachmentTypes
+ValueSet: RecommendationAttachmentTypesVS
 Id: vs-recommendation-attachment-types
 Title: "Guideline Document Types"
 Description: "Types of documents that can be part of a guideline"
