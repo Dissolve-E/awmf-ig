@@ -35,7 +35,7 @@ Description: "Clinical Practice Guideline Recommendation"
   * label 1..1
   * label = "succeeding-recommendation"
   * resourceReference 1..1
-
+/*
 // ---------------------------
 // ab hier nur beispielhaft
 * section
@@ -48,7 +48,7 @@ Description: "Clinical Practice Guideline Recommendation"
     and longVersion 0..1 MS
   * section[introduction].code.coding 1..1
   * section[introduction].code.coding = https://fevir.net/resources/CodeSystem/179423#introduction "Introduction"  
-
+*/
 Invariant: inv-require-official-identifier // TODO: Test this invariant
 Description: "Every Recommendation must have exactly one official identifier (with use = #official)"
 Expression: "$this.where(use='official').count() = 1"
@@ -80,13 +80,13 @@ InstanceOf: PlanDefinition
     * targetId = "diagnose"
     * relationship = #before
 
-
+/*
 Instance: Recommendation-Composition-example
 InstanceOf: Recommendation
 // #P2.1.8
 // Preceeding Recommendations (in clinical workflow)
 * version = "1.0"
-* status = #draft
+* status = #final
 * date = "2024-12-05"
 * author = Reference(Practitioner-example)
 * title = "Recommendation 1"
@@ -107,6 +107,7 @@ InstanceOf: Recommendation
   * type = #specification-of
   * label = "succeeding-recommendation"
   * resourceReference = Reference(RecommendationSucceedingOther-Composition-example)
+*/
 
 /* EBM IG structure -> we won't use this because of the unsolvable todos below, instead we directly use a PlanDefinition instance
 * section[recommendationSpecification] // slice defined in EBM IG Profile
@@ -129,10 +130,9 @@ InstanceOf: Recommendation
     * entry = Reference(RecommendationPlanDefinition)
 */
 
-* section[recommendationSpecification] // slice defined in EBM IG Profile
-  // TODO: how to add other languages?
-  * entry = Reference(RecommendationPlanDefinition)
-
+// * section[recommendationSpecification] // slice defined in EBM IG Profile
+//   // TODO: how to add other languages?
+//   * entry = Reference(RecommendationPlanDefinition)
 
 
 
