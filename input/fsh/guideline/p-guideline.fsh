@@ -19,27 +19,38 @@ Description: "Clinical Practice Guideline"
 * title 1..1 // TODO: add description (in the IG - ^definition or so)
 * status 1..1 // TODO: add description (in the IG - ^definition or so)
 
+
+// this slicing yields a validator error when inheriting from any profile that contains an extension, but if the
+// extension is defined directly here, it works (i.e. incorporating this slicing into the parent profile) - validator bug?
 * extension contains ext-artifact-extended-contact named contact 0..* MS
-* extension ^slicing.discriminator[1].path = "valueExtendedContactDetail.purpose"
+
 * extension ^slicing.discriminator[1].type = #value
+* extension ^slicing.discriminator[=].path = "value.ofType(ExtendedContactDetail).purpose"
+
 * extension[contact] contains 
   registrant 0..1 MS 
-  and coordinator 1..* MS 
-  and mainContact 1..1 MS
+  and coordinator 0..* MS 
+  and mainContact 0..1 MS
+
+* extension[contact].valueExtendedContactDetail
+  * purpose 1..1
 * extension[contact][registrant].valueExtendedContactDetail
   * purpose = cs-contact-point#registrant
+  * purpose 1..1
   * name 1..1
   * telecom 1..*
     * value 1..1
   * address 0..1
 * extension[contact][coordinator].valueExtendedContactDetail
   * purpose = cs-contact-point#coordinator
+  * purpose 1..1
   * name 1..1
   * telecom 1..*
     * value 1..1
   * address 0..1
 * extension[contact][mainContact].valueExtendedContactDetail
   * purpose = cs-contact-point#contact
+  * purpose 1..1
   * name 1..1
   * telecom 1..*
     * value 1..1
@@ -57,9 +68,10 @@ Description: "Clinical Practice Guideline"
 * version 1..1 // #P2.2.1
 * version obeys inv-version-major-minor // #P2.2.1
 
+// TODO: This slicing is currently not working
 * note.extension contains $ext-annotationType named type 1..1
 * note ^slicing.discriminator.type = #value
-* note ^slicing.discriminator.path = "extension[type].valueCodeableConcept"
+* note ^slicing.discriminator.path = "extension.where(url='http://hl7.org/fhir/StructureDefinition/annotationType').value"
 * note ^slicing.rules = #open
 * note contains remark 0..1
 * note[remark]
