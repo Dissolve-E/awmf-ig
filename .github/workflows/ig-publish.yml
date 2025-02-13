@@ -1,0 +1,68 @@
+name: ImplementationGuide Publisher
+
+on:
+  # Triggers the workflow on push or pull request events but only for the main or master branch
+  push:
+    branches:
+      - main
+      - master
+      - staging
+  pull_request:
+    branches:
+      - main
+      - master
+      - staging
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  run-publisher:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo snap install yq
+
+      # read id, version and canonical from sushi-config.yaml
+      - name: Read YAML file
+        id: yaml-data
+        run: |
+          VERSION=$(yq eval '.version' sushi-config.yaml)
+          ID=$(yq eval '.id' sushi-config.yaml)
+          CANONICAL=$(yq eval '.canonical' sushi-config.yaml)
+          FHIRVERSION=$(yq eval '.fhirVersion' sushi-config.yaml)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "id=$ID" >> $GITHUB_OUTPUT
+          echo "canonical=$CANONICAL" >> $GITHUB_OUTPUT
+          echo "fhir_version=$FHIRVERSION" >> $GITHUB_OUTPUT
+
+      # display outputs from read-yaml action
+      - name: Display read-yaml output
+        run: |
+          echo "id: ${{ steps.yaml-data.outputs.id }}"
+          echo "target url: ${{ steps.yaml-data.outputs.canonical }}"
+          echo "version: ${{ steps.yaml-data.outputs.version }}"
+          echo "fhir_version: ${{ steps.yaml-data.outputs.fhir_version }}"
+
+      - name: Install EBM IG continuous build
+        run: ./download-ebm-ig.sh
+
+      - name: Run the IG publisher
+        uses: docker://hl7fhir/ig-publisher-base:latest
+        with:
+          args: ./run-ig-publisher.sh ${{ steps.yaml-data.outputs.canonical }} ${{ steps.yaml-data.outputs.version }}
+
+      # deploy implementation guide to github pages
+      - name: Deploy
+        if: (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
+          force_orphan: true
