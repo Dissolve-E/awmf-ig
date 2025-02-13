@@ -56,7 +56,7 @@ Severity: #error
 
 Invariant: inv-version-major-minor // TODO: Test this invariant
 Description: "Version must be a major-minor version (e.g. 5.1)"
-Expression: "$this.matches('\\d+\\.\\d+')"
+Expression: "$this.matches('[0-9]+\\\\.[0-9]+')"
 Severity: #warning
 
 
