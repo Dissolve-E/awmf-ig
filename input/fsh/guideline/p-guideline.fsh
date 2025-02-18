@@ -20,9 +20,16 @@ Description: "Clinical Practice Guideline"
 * status 1..1 // TODO: add description (in the IG - ^definition or so)
 
 
-// this slicing yields a validator error when inheriting from any profile that contains an extension, but if the
+// BUG: this slicing yields a validator error when inheriting from any profile that contains an extension, but if the
 // extension is defined directly here, it works (i.e. incorporating this slicing into the parent profile) - validator bug?
-* extension contains ext-artifact-extended-contact named contact 0..* MS
+// see https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Reslicing.20extensions.20causes.20validator.20errors
+* extension contains 
+  ext-artifact-extended-contact named contact 0..* MS
+  and ext-publication-date named publicationDate 0..1 MS
+  and ext-first-publication-date named firstPublicationDate 0..1 MS
+  and ext-submission-date named submissionDate 0..1 MS
+  and ext-consultation-period named consultationPeriod 0..1 MS
+  and ext-planned-completion-date named plannedCompletionDate 0..1 MS
 
 * extension ^slicing.discriminator[1].type = #value
 * extension ^slicing.discriminator[=].path = "value.ofType(ExtendedContactDetail).purpose"
@@ -56,6 +63,59 @@ Description: "Clinical Practice Guideline"
     * value 1..1
   * address 0..1
 
+
+// TODO: Should we use ProvenanceResource for activities such as review, approval, publication etc, instead of extensions for dates?
+* extension[lastReviewDate] // MAGIC-AWMF: lastEdit, AWMF: "Aktueller Stand"
+  * ^definition = "The date on which the guideline was last reviewed." // TODO: check definition
+  * ^short = "Last Review Date"
+  * valueDate
+
+* extension[approvalDate] // MAGIC-AWMF: ..., AWMF: "Freigegeben am"
+  * ^definition = "The date on which the guideline was approved." // TODO: check definition
+  * ^short = "Approval Date"
+  * valueDate
+
+* extension[effectivePeriod] // MAGIC-AWMF: validUntilDate, AWMF: "Gültig bis"
+  * ^definition = "The period during which the guideline is intended to be in use." // TODO: check definition
+  * ^short = "Effective Period"
+  * valuePeriod
+    * end 0..1 MS
+
+* extension[publicationDate] // MAGIC-AWMF: releaseDate, AWMF: "Eingestellt am"
+  * ^definition = "The date on which the current version of the guideline was published." // TODO: check definition
+  * ^short = "Publication Date"
+  * valueDate
+
+* extension[firstPublicationDate] // MAGIC-AWMF: publishedDate, AWMF: "Veröffentlicht seit"
+  * ^definition = "The date on which the guideline was first published in its initial version." // TODO: check definition
+  * ^short = "First Publication Date"
+  * valueDate
+
+* extension[submissionDate] // MAGIC-AWMF: submittedDate, AWMF: "Eingereicht am"
+  * ^definition = "The date on which this version of the guideline was submitted for publication." // TODO: check definition
+  * ^short = "Submission Date"
+  * valueDate
+
+* extension[plannedCompletionDate] // MAGIC-AWMF: plannedCompletionDate, AWMF: "Geplante Fertigstellung"
+  * ^definition = "The date on which the guideline is planned to be completed." // TODO: check definition
+  * ^short = "Planned Completion Date"
+  * valueDate
+
+* extension[consultationPeriod] // MAGIC-AWMF: consultation[*]Date, AWMF: ""
+  * ^definition = "The period during which the guideline is open for consultation." // TODO: check definition
+  * ^short = "Consultation Period"
+  * valuePeriod
+
+* date
+  * ^definition = "Modification date of the Composition contents. Does not represent the publication, last review or approval date." // TODO: check definition
+  * ^short = "Modification Date"
+
+
+
+
+
+
+
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
@@ -68,7 +128,7 @@ Description: "Clinical Practice Guideline"
 * version 1..1 // #P2.2.1
 * version obeys inv-version-major-minor // #P2.2.1
 
-// TODO: This slicing is currently not working
+// BUG: This slicing is currently not working
 * note.extension contains $ext-annotationType named type 1..1
 * note ^slicing.discriminator.type = #value
 * note ^slicing.discriminator.path = "extension.where(url='http://hl7.org/fhir/StructureDefinition/annotationType').value"
