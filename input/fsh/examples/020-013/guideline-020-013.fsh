@@ -11,7 +11,37 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
 
 // required by profile (ebm or so) -> TODO: define use in profile
 * date = "2025-02-13"
-* author.reference = "Organization/AWMF"
+
+// AWMF member organizations
+* author[+] = Reference(DGP)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#leading
+* author[+] = Reference(DGAI)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
+* author[+] = Reference(DGI)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
+* author[+] = Reference(DGHM)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
+* author[+] = Reference(PEG)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
+* author[+] = Reference(DRG)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
+* author[+] = Reference(GFV)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
+* author[+] = Reference(DGCH)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
+* author[+] = Reference(DGIM)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
+* author[+] = Reference(DGIIN)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
+* author[+] = Reference(DSG)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
+
+// other organizations
+* author[+] = Reference(CPAnet)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
+* author[+] = Reference(RKI)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
+
 
 * title = "Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie"
 * version = "3.0"
@@ -54,6 +84,11 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
 * note[remark]
   * extension[annotationType].valueCodeableConcept = cs-remark-type#note "Note"
   * text = "Das dieser Veröffentlichung zugrundliegende Projekt wurde mit Mitteln des Innovationsausschusses beim Gemeinsamen Bundesausschuss unter dem Förderkennzeichen gefördert: 01VSF22007"
+
+* extension[lastReviewDate].valueDate = "2024-03-01"
+* extension[publicationDate].valueDate = "2024-03-22"
+* extension[firstPublicationDate].valueDate = "2012-11-16"
+* extension[effectivePeriod].valuePeriod.end = "2029-02-28"
 
 * section[summary]
   * section[intention]

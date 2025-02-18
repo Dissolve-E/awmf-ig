@@ -111,7 +111,17 @@ Description: "Clinical Practice Guideline"
   * ^short = "Modification Date"
 
 
+// Beteiligte
+// - Leading (Federführende) Fachgesellschaft (Mitglied der AWMF)
+// - Participating (Mitwirkende) Fachgesellschaft (Mitglied der AWMF)
+// - Andere Organisationen (zB Nicht-AWMF-Fachgesellschaften, Patientenorganisationen)
+//   - ebenfalls Federführend oder Participating
 
+// - Organisation
+//   - AWMF-Mitglied [ja/nein]
+//   - Art der Beteiligung [Federführend, Mitwirkend]
+
+* author.extension contains ext-guideline-author-role named role 1..1
 
 
 
