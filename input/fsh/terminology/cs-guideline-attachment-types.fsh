@@ -2,11 +2,17 @@ CodeSystem: GuidelineAttachmentTypes // #P2.1.6
 Id: cs-guideline-attachment-types
 Title: "Guideline Attachment Types"
 Description: "Types of attachments that can be part of a guideline."
-* #long-version "Long Version"
-* #short-version "Short Version"
-* #declaration-of-interests "Declaration of Interests"
-* #evidence-report "Evidence Report"
+// TODO: add german translations
+* #long-version "Long Version" // required for all, "Langversion"
+* #short-version "Short Version" // optional, "Kurzversion"
+* #guideline-report "Guideline Report" // required for all guideline classes from 2026-03
+* #evidence-report "Evidence Report" // required for S3, S2e
+* #implementation-guidance "Implementation Guidance" // Implementierungshilfe
+* #decision-support "Decision Support" // Entscheidungshilfe
 * #patient-version "Patient Version"
+* #choosing-wisely "Choosing Wisely" // Gemeinsam Klug Entscheiden
+* #quality-indicators "Quality Indicators" // Qualitätsindikatoren
+* #declaration-of-interests "Declaration of Interests" // optional, Interessenskonflikt-Erklärung
 * #short-patient-version "Short Version for Patients"
 * #update-info "Short Information About an Update"
 * #slide-deck	"Slide Deck"
@@ -15,8 +21,3 @@ Description: "Types of attachments that can be part of a guideline."
 * #video "Video"
 * #podcast "Podcast"
 * #other "Other"
-
-// related artifacts / further reading?
-* #update-registration "Registration of an Update of the Guideline"
-* #scientific-publication "Scientific Publication"
-* #medical-society-version "Version of the Medical Society"

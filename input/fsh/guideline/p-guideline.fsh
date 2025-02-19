@@ -4,20 +4,29 @@ Id: Guideline
 Title: "Guideline"
 Description: "Clinical Practice Guideline"
 
+// TODO: Create a profile for each guideline class (S3, S2k, S2e etc) that inherits from this profile
+// TODO: Decide whether to make another AWMF profile that contains all AWMF-specific logic
+
 * meta.tag ^slicing.discriminator.type = #value
 * meta.tag ^slicing.discriminator.path = "system"
 * meta.tag ^slicing.rules = #open
-* meta.tag contains guideline-releaseType 0..1 // TODO: include awmf in name or not?
-* meta.tag[guideline-releaseType]
+* meta.tag contains 
+  guideline-releaseType 0..1 // TODO: include awmf in name or not?
+
+* meta.tag[guideline-releaseType] // only used when status = registered // TODO: add invariant
   * system 1..1
   * system = $cs-guideline-releaseType
   * code 1..1
 
+
  // TODO: add guideline code for type
- // TODO: add ConceptMap for status (e.g., preliminary = "consultation" etc)
+ 
 
 * title 1..1 // TODO: add description (in the IG - ^definition or so)
-* status 1..1 // TODO: add description (in the IG - ^definition or so)
+
+// TODO: add ConceptMap for status (e.g., preliminary = "consultation" etc)
+// TODO: add description (in the IG - ^definition or so)
+* status 1..1 // used for: anmeldung, konsultationsfassung, amemdment, final 
 
 
 // BUG: this slicing yields a validator error when inheriting from any profile that contains an extension, but if the
@@ -62,7 +71,6 @@ Description: "Clinical Practice Guideline"
   * telecom 1..*
     * value 1..1
   * address 0..1
-
 
 // TODO: Should we use ProvenanceResource for activities such as review, approval, publication etc, instead of extensions for dates?
 * extension[lastReviewDate] // MAGIC-AWMF: lastEdit, AWMF: "Aktueller Stand"
@@ -110,21 +118,8 @@ Description: "Clinical Practice Guideline"
   * ^definition = "Modification date of the Composition contents. Does not represent the publication, last review or approval date." // TODO: check definition
   * ^short = "Modification Date"
 
-
-// Beteiligte
-// - Leading (Federführende) Fachgesellschaft (Mitglied der AWMF)
-// - Participating (Mitwirkende) Fachgesellschaft (Mitglied der AWMF)
-// - Andere Organisationen (zB Nicht-AWMF-Fachgesellschaften, Patientenorganisationen)
-//   - ebenfalls Federführend oder Participating
-
-// - Organisation
-//   - AWMF-Mitglied [ja/nein]
-//   - Art der Beteiligung [Federführend, Mitwirkend]
-
-* author.extension contains ext-guideline-author-role named role 1..1
-
-
-
+// TODO: add invariant to allow "registrant" only 1..1 and disallow role = contributing & leading
+* author.extension contains ext-guideline-author-role named role 1..*
 
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
@@ -132,9 +127,10 @@ Description: "Clinical Practice Guideline"
 * identifier contains awmf-register-number 0..1
 * identifier[awmf-register-number]
   * system 1..1
-  * system = "http://fhir.awmf.org" // TODO: agree on system
+  * system = "http://fhir.awmf.org/register" // TODO: agree on system
   * value 1..1
 * identifier obeys inv-require-official-identifier // #P2.2.1
+
 * version 1..1 // #P2.2.1
 * version obeys inv-version-major-minor // #P2.2.1
 
@@ -143,12 +139,22 @@ Description: "Clinical Practice Guideline"
 * note ^slicing.discriminator.type = #value
 * note ^slicing.discriminator.path = "extension.where(url='http://hl7.org/fhir/StructureDefinition/annotationType').value"
 * note ^slicing.rules = #open
-* note contains remark 0..1
+* note contains remark 0..1 
 * note[remark]
   * extension[type].valueCodeableConcept 1..1
   * extension[type].valueCodeableConcept from vs-remark-type (required)
   * text 1..1
 
+
+* category 0..*
+  * ^slicing.discriminator.type = #pattern
+  * ^slicing.discriminator.path = "coding"
+  * ^slicing.rules = #open
+* category contains awmfGuidelineClass 0..1
+* category[awmfGuidelineClass]
+  * coding from vs-awmf-guideline-class (required)
+    * system 1.. MS
+    * code 1.. MS
 
 * section[summary]
   * section ^slicing.discriminator.type = #value
@@ -227,8 +233,25 @@ Description: "Clinical Practice Guideline"
   * section contains 
     longVersion 0..1 
     and shortVersion 0..1
+    and guidelineReport 0..1
+    and evidenceReport 0..1
+    and implementationGuidance 0..*
+    and decisionSupport 0..*
     and patientVersion 0..*
-    and evidenceReport 0..*
+    // and choosingWisely 0..*
+    // and qualityIndicators 0..*
+    // and declarationOfInterests 0..*
+    // and shortPatientVersion 0..*
+    // and updateInfo 0..*
+    // and slideDeck 0..*
+    // and visualAbstract 0..*
+    // and app 0..*
+    // and video 0..*
+    // and podcast 0..*
+    // and other 0..*
+    // and updateRegistration 0..*
+    // and scientificPublication 0..*
+    // and medicalSocietyVersion 0..*
   * section 1..*
     * code from vs-guideline-attachment-types (preferred)
     * entry only Reference(GuidelineAttachment)
@@ -239,12 +262,62 @@ Description: "Clinical Practice Guideline"
   * section[shortVersion]
     * code.coding 1..1
     * code.coding = cs-guideline-attachment-types#short-version "Short Version"
-  * section[patientVersion]
-    * code.coding 1..1
-    * code.coding = cs-guideline-attachment-types#patient-version "Patient Version"
   * section[evidenceReport]
     * code.coding 1..1
     * code.coding = cs-guideline-attachment-types#evidence-report "Evidence Report"
+  * section[implementationGuidance]
+    * code.coding 1..1
+    * code.coding = cs-guideline-attachment-types#implementation-guidance "Implementation Guidance"
+  * section[decisionSupport]
+    * code.coding 1..1
+    * code.coding = cs-guideline-attachment-types#decision-support "Decision Support"
+  * section[patientVersion]
+    * code.coding 1..1
+    * code.coding = cs-guideline-attachment-types#patient-version "Patient Version"
+  // * section[choosingWisely]
+  //   * code.coding 1..1
+  //   * code.coding = cs-guideline-attachment-types#choosing-wisely "Choosing Wisely"
+  // * section[qualityIndicators]
+  //   * code.coding 1..1
+  //   * code.coding = cs-guideline-attachment-types#quality-indicators "Quality Indicators"
+  // * section[declarationOfInterests]
+  //   * code.coding 1..1
+  //   * code.coding = cs-guideline-attachment-types#declaration-of-interests "Declaration of Interests"
+  // * section[shortPatientVersion]
+  //   * code.coding 1..1
+  //   * code.coding = cs-guideline-attachment-types#short-patient-version "Short Version for Patients"
+  // * section[updateInfo]
+  //   * code.coding 1..1
+  //   * code.coding = cs-guideline-attachment-types#update-info "Short Information About an Update"
+  // * section[slideDeck]
+  //   * code.coding 1..1
+  //   * code.coding = cs-guideline-attachment-types#slide-deck "Slide Deck"
+  // * section[visualAbstract]
+  //   * code.coding 1..1
+  //   * code.coding = cs-guideline-attachment-types#visual-abstract "Visual Abstract"
+  // * section[app]
+  //   * code.coding 1..1
+  //   * code.coding = cs-guideline-attachment-types#app "Mobile App"
+  // * section[video]
+  //   * code.coding 1..1
+  //   * code.coding = cs-guideline-attachment-types#video "Video"
+  // * section[podcast]
+  //   * code.coding 1..1
+  //   * code.coding = cs-guideline-attachment-types#podcast "Podcast"
+  // * section[other]
+  //   * code.coding 1..1
+  //   * code.coding = cs-guideline-attachment-types#other "Other"
+  // * section[updateRegistration]
+  //   * code.coding 1..1
+  //   * code.coding = cs-guideline-attachment-types#update-registration "Registration of an Update of the Guideline"
+  // * section[scientificPublication]
+  //   * code.coding 1..1
+  //   * code.coding = cs-guideline-attachment-types#scientific-publication "Scientific Publication"
+  // * section[medicalSocietyVersion]
+  //   * code.coding 1..1
+  //   * code.coding = cs-guideline-attachment-types#medical-society-version "Version of the Medical Society"
+
+  
   * section obeys inv-guideline-attachment-type-match
 // gl 250213: currently unused, and somehow breaks ig publisher, therefore commented out
 // * section
