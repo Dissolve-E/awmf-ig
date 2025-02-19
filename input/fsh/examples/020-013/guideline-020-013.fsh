@@ -1,4 +1,4 @@
-Instance: NosokomialePneuomnie
+Instance: NosokomialePneumonie
 InstanceOf: AWMFGuideline
 Usage: #example
 Title: "S3-Leitlinie Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie"
@@ -42,10 +42,42 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
 * author[+] = Reference(RKI)
 * author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
 
+* relatesTo[+]
+  * type = #similar-to
+  * classifier[+] = cs-related-artifact-types#related-guideline
+  * label = "Behandlung von erwachsenen Patienten mit ambulant erworbener Pneumonie"
+  // * reference = Reference(Guideline_020_020) // other guideline not yet defined in FHIR
+  * document.url = "https://www.awmf.org/leitlinien/detail/ll/020-020.html"
+* relatesTo[+]
+  * type = #similar-to
+  * classifier[+] = cs-related-artifact-types#related-guideline
+  * label = "Diagnostik und Therapie von erwachsenen Patienten mit Husten"
+  // * reference = Reference(Guideline_020_003) // other guideline not yet defined in FHIR
+  * document.url = "https://www.awmf.org/leitlinien/detail/ll/020-003.html"
+* relatesTo[+]
+  * type = #similar-to
+  * classifier[+] = cs-related-artifact-types#related-guideline
+  * label = "Prolongiertes Weaning"
+  // * reference = Reference(Guideline_020_015) // other guideline not yet defined in FHIR
+  * document.url = "https://www.awmf.org/leitlinien/detail/ll/020-015.html"
+* relatesTo[+]
+  * type = #similar-to
+  * classifier[+] = cs-related-artifact-types#related-guideline
+  * label = "Management der ambulant erworbenen Pneumonie bei Kindern und Jugendlichen (pCAP)"
+  // * reference = Reference(Guideline_048_013) // other guideline not yet defined in FHIR
+  * document.url = "https://www.awmf.org/leitlinien/detail/ll/048-013.html"
+
+* relatesTo[+]
+  * type = #documents
+  * classifier[+] = cs-related-artifact-types#awmf-detail-page
+  * document.url = "https://register.awmf.org/de/leitlinien/detail/020-013"
 
 * title = "Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie"
 * version = "3.0"
 * status = #final
+
+* category[awmfGuidelineClass] = cs-awmf-guideline-class#S3 "Evidence- and consensus-based guideline"
+
 * extension[contact][mainContact].valueExtendedContactDetail
   * name.text = "PD Dr. med. Jessica Rademacher"
   * telecom[+]
@@ -139,3 +171,19 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
     * text
       * status = #additional
       * div =  "<div xmlns=\"http://www.w3.org/1999/xhtml\">Pneumonie, nosokomial, hospital-acquired pneumonia, HAP, Ventilator-assoziierten Pneumonie, VAP, im Krankenhaus erworbene Lungenentzündung, Epidemiology, diagnosis and treatment of adult patients with nosocomial pneumonia</div>"
+
+* section[attachments]
+  * section[longVersion]
+    * entry = Reference(Guideline-020-013-LongVersion)
+  * section[shortVersion]
+    * entry = Reference(Guideline-020-013-ShortVersion)
+  * section[guidelineReport]
+    * entry = Reference(Guideline-020-013-GuidelineReport)
+  * section[patientVersion]
+    * entry = Reference(Guideline-020-013-PatientVersion)
+  * section[+]
+    * code = cs-guideline-attachment-types#slide-deck
+    * entry = Reference(Guideline-020-013-SlideDeck)
+  * section[+]
+    * code = cs-guideline-attachment-types#implementation-guidance 
+    * entry = Reference(Guideline-020-013-ImplementationGuidance)
