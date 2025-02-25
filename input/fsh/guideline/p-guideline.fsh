@@ -149,8 +149,8 @@ Description: "Clinical Practice Guideline"
 * relatesTo contains 
   relatedGuideline 0..* 
   and disseminationWebsite 0..* 
-  and predecessorGuideline 0..* // #P2.3.1.8
-  and successorGuideline 0..* // #P2.3.1.8
+  and replacesGuideline 0..* // #P2.3.1.8
+  and replacedWithGuideline 0..* // #P2.3.1.8
 * relatesTo[relatedGuideline]
   * type 1..1
   * type = #similar-to
@@ -160,15 +160,15 @@ Description: "Clinical Practice Guideline"
   * type 1..1
   * type = #documents
   * classifier 1..1
-  * classifier = cs-related-artifact-types#dissemination-website  // TODO:  allow children of this code (e.g. awmf-detail-page )
-* relatesTo[predecessorGuideline] 
+  * classifier = cs-related-artifact-types#dissemination-website  // TODO: allow children of this code (e.g. awmf-detail-page )
+* relatesTo[replacesGuideline] 
   * type 1..1
   * type = #replaces
   * resourceReference 1..1
   * resourceReference only Reference(Guideline)
-* relatesTo[successorGuideline]
+* relatesTo[replacedWithGuideline]
   * type 1..1
-  * type = #replaced-by
+  * type = #replaced-with
   * resourceReference 1..1
   * resourceReference only Reference(Guideline)
 
@@ -205,7 +205,7 @@ Description: "Clinical Practice Guideline"
   * party 1..1
   * party = Reference(AWMF)
 
-// TODO: this must be implemented for all actual subsections, not on the top level
+// TODO: THIS MUST BE IMPLEMENTED FOR ALL ACTUAL SUBSECTIONS, NOT ON THE TOP LEVEL
 * section contains language 0..* // P2.3.2.21 // TODO: must be 1..* when this is implemented as an actual subsection 
 * section[language]
   * code.coding 1..1

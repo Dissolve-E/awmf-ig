@@ -19,23 +19,23 @@ Description: "Clinical Practice Guideline Recommendation"
 
 // #P2.1.8
 * relatesTo ^slicing.discriminator.type = #value 
-* relatesTo ^slicing.discriminator.path = "label" // TODO: @SK is this what we want?
+* relatesTo ^slicing.discriminator.path = "type"
 * relatesTo ^slicing.rules = #open
 * relatesTo contains 
   specificationOfPreceedingRecommendation 0..*
   and specificationOfSucceedingRecommendation 0..*
+* relatesTo
+  * classifier 1..1
 * relatesTo[specificationOfPreceedingRecommendation]
   * type 1..1
-  * type = #specification-of
-  * label 1..1
-  * label = "preceeding-recommendation"
+  * type = #predecessor
   * resourceReference 1..1
+  * resourceReference only Reference(Recommendation)
 * relatesTo[specificationOfSucceedingRecommendation]
   * type 1..1
-  * type = #specification-of
-  * label 1..1
-  * label = "succeeding-recommendation"
+  * type = #successor
   * resourceReference 1..1
+  * resourceReference only Reference(Recommendation)
 /*
 // ---------------------------
 // ab hier nur beispielhaft
