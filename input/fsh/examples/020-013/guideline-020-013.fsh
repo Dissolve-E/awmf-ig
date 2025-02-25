@@ -14,7 +14,8 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
 
 // AWMF member organizations
 * author[+] = Reference(DGP)
-* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#leading
+* author[=].extension[ext-guideline-author-role][+].valueCodeableConcept = cs-guideline-author-role#leading
+* author[=].extension[ext-guideline-author-role][+].valueCodeableConcept = cs-guideline-author-role#registrant
 * author[+] = Reference(DGAI)
 * author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
 * author[+] = Reference(DGI)
@@ -185,5 +186,5 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
     * code = cs-guideline-attachment-types#slide-deck
     * entry = Reference(Guideline-020-013-SlideDeck)
   * section[+]
-    * code = cs-guideline-attachment-types#implementation-guidance 
+    * code = cs-guideline-attachment-types#implementation-guidance
     * entry = Reference(Guideline-020-013-ImplementationGuidance)
