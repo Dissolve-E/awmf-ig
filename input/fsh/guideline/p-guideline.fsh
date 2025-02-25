@@ -39,6 +39,7 @@ Description: "Clinical Practice Guideline"
   and ext-submission-date named submissionDate 0..1 MS
   and ext-consultation-period named consultationPeriod 0..1 MS
   and ext-planned-completion-date named plannedCompletionDate 0..1 MS
+  and ext-registration-date named registrationDate 0..1 MS
 
 * extension ^slicing.discriminator[1].type = #value
 * extension ^slicing.discriminator[=].path = "value.ofType(ExtendedContactDetail).purpose"
@@ -113,6 +114,11 @@ Description: "Clinical Practice Guideline"
   * ^definition = "The period during which the guideline is open for consultation." // TODO: check definition
   * ^short = "Consultation Period"
   * valuePeriod
+
+* extension[registrationDate] // MAGIC-AWMF: startDate, AWMF: "Datum der Anmeldung"
+  * ^definition = "The date on which the guideline was registered." // TODO: check definition
+  * ^short = "Registration Date"
+  * valueDate
 
 * date
   * ^definition = "Modification date of the Composition contents. Does not represent the publication, last review or approval date." // TODO: check definition
