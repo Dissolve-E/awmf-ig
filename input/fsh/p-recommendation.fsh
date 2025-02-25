@@ -1,5 +1,5 @@
 Profile: Recommendation
-Parent: $ebm-recommendation
+Parent: $ebm-recommendation // #P2.1.2
 Id: Recommendation
 Title: "Recommendation"
 Description: "Clinical Practice Guideline Recommendation"
@@ -49,18 +49,6 @@ Description: "Clinical Practice Guideline Recommendation"
   * section[introduction].code.coding 1..1
   * section[introduction].code.coding = https://fevir.net/resources/CodeSystem/179423#introduction "Introduction"  
 */
-Invariant: inv-require-official-identifier // TODO: Test this invariant
-Description: "Every Recommendation must have exactly one official identifier (with use = #official)"
-Expression: "$this.where(use='official').count() = 1"
-Severity: #error
-
-Invariant: inv-version-major-minor // TODO: Test this invariant
-Description: "Version must be a major-minor version (e.g. 5.1)"
-Expression: "$this.matches('[0-9]+\\\\.[0-9]+')"
-Severity: #warning
-
-
-
 
 Instance: Recommendation-PlanDefinition-example
 InstanceOf: PlanDefinition

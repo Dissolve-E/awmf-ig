@@ -1,4 +1,4 @@
-Extension: GuidelineAuthorRole
+Extension: GuidelineAuthorRoleExt  // #P2.3.1.4
 Id: ext-guideline-author-role
 Title: "Guideline Author Role"
 Description: "The role of the author of the guideline."

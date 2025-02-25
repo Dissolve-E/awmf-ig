@@ -1,4 +1,4 @@
-CodeSystem: AWMF
+CodeSystem: AWMFCS
 Id: cs-awmf
 Title: "awmf"
 Description: "Code system for the Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften (AWMF)"
