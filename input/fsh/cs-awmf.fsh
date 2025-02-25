@@ -6,3 +6,4 @@ Description: "Code system for the Arbeitsgemeinschaft der Wissenschaftlichen Med
 * #major-minor "Major-Minor Versioning"
 * #attachments "Attachments"
 * #awmf-member-organization "AWMF Member Organization" "An organization that is a member of the AWMF"
+* #language "Language" "The language of the content"

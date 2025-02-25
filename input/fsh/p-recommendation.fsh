@@ -12,6 +12,7 @@ Description: "Clinical Practice Guideline Recommendation"
   * system = "https://www.awmf.org/fhir/"
   * value 1..1
 * identifier obeys inv-require-official-identifier // #P2.2.1
+
 * version 1..1 // #P2.2.1
 * version obeys inv-version-major-minor // #P2.2.1
 * extension[versionAlgorithm].valueCoding = $cs-awmf#major-minor "Major-Minor Versioning" // TODO: is there an existing code for this?

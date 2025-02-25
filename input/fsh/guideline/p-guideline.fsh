@@ -141,6 +141,7 @@ Description: "Clinical Practice Guideline"
 
 * version 1..1 // #P2.2.1
 * version obeys inv-version-major-minor // #P2.2.1, #P2.2.8
+* extension[versionAlgorithm].valueCoding = $cs-awmf#major-minor "Major-Minor Versioning" // TODO: is there an existing code for this?
 
 * relatesTo ^slicing.discriminator.type = #value
 * relatesTo ^slicing.discriminator.path = "type"
@@ -203,6 +204,14 @@ Description: "Clinical Practice Guideline"
   * mode = #official
   * party 1..1
   * party = Reference(AWMF)
+
+// TODO: this must be implemented for all actual subsections, not on the top level
+* section contains language 0..* // P2.3.2.21 // TODO: must be 1..* when this is implemented as an actual subsection 
+* section[language]
+  * code.coding 1..1
+  * code = cs-awmf#language // TODO: use existing code
+  * extension contains ext-section-language named language 1..1
+  * section 0..0
 
 * section[summary]
   * section ^slicing.discriminator.type = #value
@@ -290,7 +299,7 @@ Description: "Clinical Practice Guideline"
   * section 1..*
     * code from vs-guideline-attachment-types (preferred) // #P2.1.7 (preferred binding)
     * entry only Reference(GuidelineAttachment)
-    * entry 1..1 MS
+    * entry 1..* MS
   * section[longVersion]
     * code.coding 1..1
     * code.coding = cs-guideline-attachment-types#long-version "Long Version"
@@ -362,31 +371,20 @@ InstanceOf: Guideline
 * date = "2024-12-05"
 * author.display = "Dissolve-E Team"
 * title = "Beispiel-Leitlinie"
-* section[attachments]
-  * section[+]
-    * code = cs-guideline-attachment-types#long-version
-    * title = "Langversion"
-    * entry = Reference(DocumentReferenceLongVersionOfThisGuideline)
-  * section[+]
-    * code = cs-guideline-attachment-types#short-version
-    * entry = Reference(DocumentReferenceShortVersionOfThisGuideline)
-  * section[+]
-    * code = cs-guideline-attachment-types#patient-version
-    * entry = Reference(DocumentReferencePatientVersionOfThisGuideline)
 
 * section[introduction]
   * text 
     * status = #generated
     * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Das ist die Einleitung dieser Leitlinie</div>"
-* section[+] // custom section
-  * text 
-    * status = #generated
-    * div = "
-      <div xmlns=\"http://www.w3.org/1999/xhtml\">
-        <div lang='en'>Das ist Kapitel 2 zum Thema spezifische Empfehlungen</div>
-        <div lang='de'>Das ist Kapitel 2 zum Thema spezifische Empfehlungen</div>
-      </div>
-      "
+  * section[+] // custom section
+    * text 
+      * status = #generated
+      * div = "
+        <div xmlns=\"http://www.w3.org/1999/xhtml\">
+          <div lang='en'>Das ist Kapitel 2 zum Thema spezifische Empfehlungen</div>
+          <div lang='de'>Das ist Kapitel 2 zum Thema spezifische Empfehlungen</div>
+        </div>
+        "
   * section[introduction]
     * text
       * status = #generated
