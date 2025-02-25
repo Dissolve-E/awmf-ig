@@ -43,6 +43,10 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
 * author[+] = Reference(RKI)
 * author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
 
+// person authors
+* author[+] = Reference(JessicaRademacherDGPFor020-013)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#content-author
+
 * relatesTo[+]
   * type = #similar-to
   * classifier[+] = cs-related-artifact-types#related-guideline
@@ -122,6 +126,8 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
 * extension[publicationDate].valueDate = "2024-03-22"
 * extension[firstPublicationDate].valueDate = "2012-11-16"
 * extension[effectivePeriod].valuePeriod.end = "2029-02-28"
+
+* attester[AWMF]
 
 * section[summary]
   * section[intention]
