@@ -74,7 +74,7 @@ Description: "Clinical Practice Guideline"
   * address 0..1
 
 // TODO: Should we use ProvenanceResource for activities such as review, approval, publication etc, instead of extensions for dates?
-* extension[lastReviewDate] // MAGIC-AWMF: lastEdit, AWMF: "Aktueller Stand"
+* extension[lastReviewDate] // MAGIC-AWMF: lastEdit, AWMF: "Aktueller Stand" // #P2.3.1.9
   * ^definition = "The date on which the guideline was last reviewed." // TODO: check definition
   * ^short = "Last Review Date"
   * valueDate
@@ -84,43 +84,43 @@ Description: "Clinical Practice Guideline"
   * ^short = "Approval Date"
   * valueDate
 
-* extension[effectivePeriod] // MAGIC-AWMF: validUntilDate, AWMF: "Gültig bis"
+* extension[effectivePeriod] // MAGIC-AWMF: validUntilDate, AWMF: "Gültig bis"  // #P2.3.1.9
   * ^definition = "The period during which the guideline is intended to be in use." // TODO: check definition
   * ^short = "Effective Period"
   * valuePeriod
     * end 0..1 MS
 
-* extension[publicationDate] // MAGIC-AWMF: releaseDate, AWMF: "Eingestellt am"
+* extension[publicationDate] // MAGIC-AWMF: releaseDate, AWMF: "Eingestellt am"  // #P2.3.1.9
   * ^definition = "The date on which the current version of the guideline was published." // TODO: check definition
   * ^short = "Publication Date"
   * valueDate
 
-* extension[firstPublicationDate] // MAGIC-AWMF: publishedDate, AWMF: "Veröffentlicht seit"
+* extension[firstPublicationDate] // MAGIC-AWMF: publishedDate, AWMF: "Veröffentlicht seit"  // #P2.3.1.9
   * ^definition = "The date on which the guideline was first published in its initial version." // TODO: check definition
   * ^short = "First Publication Date"
   * valueDate
 
-* extension[submissionDate] // MAGIC-AWMF: submittedDate, AWMF: "Eingereicht am"
+* extension[submissionDate] // MAGIC-AWMF: submittedDate, AWMF: "Eingereicht am" // #P2.3.1.10
   * ^definition = "The date on which this version of the guideline was submitted for publication." // TODO: check definition
   * ^short = "Submission Date"
   * valueDate
 
-* extension[plannedCompletionDate] // MAGIC-AWMF: plannedCompletionDate, AWMF: "Geplante Fertigstellung"
+* extension[plannedCompletionDate] // MAGIC-AWMF: plannedCompletionDate, AWMF: "Geplante Fertigstellung" // #P2.3.1.10
   * ^definition = "The date on which the guideline is planned to be completed." // TODO: check definition
   * ^short = "Planned Completion Date"
   * valueDate
 
-* extension[consultationPeriod] // MAGIC-AWMF: consultation[*]Date, AWMF: ""
+* extension[consultationPeriod] // MAGIC-AWMF: consultation[*]Date, AWMF: "" // #P2.3.1.10
   * ^definition = "The period during which the guideline is open for consultation." // TODO: check definition
   * ^short = "Consultation Period"
   * valuePeriod
 
-* extension[registrationDate] // MAGIC-AWMF: startDate, AWMF: "Datum der Anmeldung"
+* extension[registrationDate] // MAGIC-AWMF: startDate, AWMF: "Datum der Anmeldung" // #P2.3.1.10
   * ^definition = "The date on which the guideline was registered." // TODO: check definition
   * ^short = "Registration Date"
   * valueDate
 
-* date
+* date // #P2.3.1.9
   * ^definition = "Modification date of the Composition contents. Does not represent the publication, last review or approval date." // TODO: check definition
   * ^short = "Modification Date"
 
@@ -142,13 +142,42 @@ Description: "Clinical Practice Guideline"
 * version 1..1 // #P2.2.1
 * version obeys inv-version-major-minor // #P2.2.1, #P2.2.8
 
+* relatesTo ^slicing.discriminator.type = #value
+* relatesTo ^slicing.discriminator.path = "type"
+* relatesTo ^slicing.rules = #open
+* relatesTo contains 
+  relatedGuideline 0..* 
+  and disseminationWebsite 0..* 
+  and predecessorGuideline 0..* // #P2.3.1.8
+  and successorGuideline 0..* // #P2.3.1.8
+* relatesTo[relatedGuideline]
+  * type 1..1
+  * type = #similar-to
+  * classifier 1..1
+  * classifier = cs-related-artifact-types#related-guideline
+* relatesTo[disseminationWebsite]
+  * type 1..1
+  * type = #documents
+  * classifier 1..1
+  * classifier = cs-related-artifact-types#dissemination-website  // TODO:  allow children of this code (e.g. awmf-detail-page )
+* relatesTo[predecessorGuideline] 
+  * type 1..1
+  * type = #replaces
+  * resourceReference 1..1
+  * resourceReference only Reference(Guideline)
+* relatesTo[successorGuideline]
+  * type 1..1
+  * type = #replaced-by
+  * resourceReference 1..1
+  * resourceReference only Reference(Guideline)
+
 // BUG: This slicing is currently not working
 * note.extension contains $ext-annotationType named type 1..1
 * note ^slicing.discriminator.type = #value
 * note ^slicing.discriminator.path = "extension.where(url='http://hl7.org/fhir/StructureDefinition/annotationType').value"
 * note ^slicing.rules = #open
 * note contains remark 0..1 
-* note[remark] // #P2.3.1.1
+* note[remark] // #P2.3.1.1, #P2.3.1.6
   * extension[type].valueCodeableConcept 1..1
   * extension[type].valueCodeableConcept from vs-remark-type (required)
   * text 1..1
