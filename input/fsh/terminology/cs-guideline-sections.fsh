@@ -21,3 +21,5 @@ Description: "Sections of a guideline, describing various aspects such as its in
 * #encounter-type "Encounter Type" "The section describes the encounter type of the guideline."
 * #care-stage "Care Stage" "The section describes the care stage of the guideline."
 * #care-level "Care Level" "The section describes the care level of the guideline."
+
+* #keywords "Keywords" "The section describes the keywords of the guideline."

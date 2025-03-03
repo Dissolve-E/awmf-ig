@@ -225,10 +225,12 @@ Description: "Clinical Practice Guideline"
     and targetAudience 0..1
     and keywords 0..*
   * section[intention]
+    * code 1..1
     * code.coding 1..1
     * code.coding = cs-guideline-sections#intention "Intention"
     * text 1..1
   * section[careSetting]
+    * code 1..1
     * code.coding 1..1
     * code.coding = cs-guideline-sections#care-setting "Care Setting"
     * section ^slicing.discriminator.type = #value
@@ -237,6 +239,7 @@ Description: "Clinical Practice Guideline"
     * section contains careSetting 0..1 and careStage 0..1 and careLevel 0..1
     // versorgungssektor, versorgungsabschnitt, versorgungsebene
     * section[careSetting]
+      * code 1..1
       * code.coding 1..1
       * code.coding = cs-guideline-sections#encounter-type "Encounter Type"
       // ambulant, stationär, teilstationär
@@ -245,6 +248,7 @@ Description: "Clinical Practice Guideline"
         * valueCodeableConcept 1..1
         * valueCodeableConcept from vs-encounter-type (extensible)
     * section[careStage]
+      * code 1..1
       * code.coding 1..1
       * code.coding = cs-guideline-sections#care-stage "Care Stage"
       // Präventation, Früherkennung, Diagnose, Therapie, Rehabilitation
@@ -253,6 +257,7 @@ Description: "Clinical Practice Guideline"
         * valueCodeableConcept 1..1
         * valueCodeableConcept from vs-care-stage (extensible)
     * section[careLevel]
+      * code 1..1
       * code.coding 1..1
       * code.coding = cs-guideline-sections#care-level "Care Level"
       // primärärztliche Vesorgung, spezialärztliche Versorgung
@@ -261,12 +266,14 @@ Description: "Clinical Practice Guideline"
         * valueCodeableConcept 1..1
         * valueCodeableConcept from vs-care-level (extensible)
   * section[topicSelectionReason]
+    * code 1..1
     * code.coding 1..1
     * code.coding = cs-guideline-sections#topic-selection-reason "Topic Selection Reason"
     * text 1..1
   * section[targetPatientGroup]
+    * code 1..1
     * code.coding 1..1
-    * code.coding = cs-guideline-sections#target-audience "Target Audience"
+    * code.coding = cs-guideline-sections#target-patient-group "Target Patient Group"
     // Erwachsene, Kinder/Jugendliche
     * extension contains ext-section-coding named value 0..*
     * extension[value]
@@ -274,14 +281,20 @@ Description: "Clinical Practice Guideline"
       * valueCodeableConcept from vs-target-patient-group (extensible)
     * text 0..1
   * section[targetAudience]
+    * code 1..1
+    * code.coding 1..1
+    * code.coding = cs-guideline-sections#target-audience "Target Audience"
     * text 1..1
   * section[keywords]
+    * code 1..1
     * text 1..1
+    * code.coding 1..1
+    * code.coding = cs-guideline-sections#keywords "Keywords"
 
 
 * section contains attachments 0..1 MS
 * section[attachments] // #P2.1.6
-  * code
+  * code 1..1
     * coding = $cs-awmf#attachments "Attachments"
     * coding 1..1
   * section ^slicing.discriminator.type = #value
@@ -301,63 +314,74 @@ Description: "Clinical Practice Guideline"
     * entry only Reference(GuidelineAttachment)
     * entry 1..* MS
   * section[longVersion]
+    * code 1..1
     * code.coding 1..1
     * code.coding = cs-guideline-attachment-types#long-version "Long Version"
   * section[shortVersion]
+    * code 1..1
     * code.coding 1..1
     * code.coding = cs-guideline-attachment-types#short-version "Short Version"
+  * section[guidelineReport]
+    * code 1..1
+    * code.coding 1..1
+    * code.coding = cs-guideline-attachment-types#guideline-report "Guideline Report"
   * section[evidenceReport]
+    * code 1..1
     * code.coding 1..1
     * code.coding = cs-guideline-attachment-types#evidence-report "Evidence Report"
   * section[implementationGuidance]
+    * code 1..1
     * code.coding 1..1
     * code.coding = cs-guideline-attachment-types#implementation-guidance "Implementation Guidance"
   * section[decisionSupport]
+    * code 1..1
     * code.coding 1..1
     * code.coding = cs-guideline-attachment-types#decision-support "Decision Support"
   * section[patientVersion]
+    * code 1..1
     * code.coding 1..1
     * code.coding = cs-guideline-attachment-types#patient-version "Patient Version"
     
   * section obeys inv-guideline-attachment-type-match
-// gl 250213: currently unused, and somehow breaks ig publisher, therefore commented out
-// * section
-//   * orderedBy = cs-awmf#ordered-by-authors "Ordered by authors"
-//   * section ^slicing.discriminator.type = #value
-//   * section ^slicing.discriminator.path = "code.coding"
-//   * section ^slicing.rules = #open
-//   * section contains 
-//     introduction 0..1 MS 
-//     and discussion 0..1 MS 
-//     and methods 0..1 MS 
-//     and references 0..1 MS 
-//     and competingInterests 0..1 MS 
-//     and acknowledgements 0..1 MS 
-//     and appendices 0..1 MS
-//     and recommendations 0..1 MS
-//   * section.code 1..1
-//   * section[introduction].code.coding 1..1
-//   * section[introduction].code.coding = https://fevir.net/resources/CodeSystem/179423#introduction "Introduction"
-//   * section[discussion].code.coding 1..1
-//   * section[discussion].code.coding = https://fevir.net/resources/CodeSystem/179423#discussion "Discussion"
-//   * section[methods].code.coding 1..1
-//   * section[methods].code.coding = https://fevir.net/resources/CodeSystem/179423#methods "Methods"
-//   * section[references].code.coding 1..1
-//   * section[references].code.coding = https://fevir.net/resources/CodeSystem/179423#references "References"
-//   * section[references]
-//     * entry only Reference(Citation)
+// gl 250213: currently unused, and somehow breaks ig publisher, therefore commented out // TODO: make this work
+* section
+  * orderedBy = cs-awmf#ordered-by-authors "Ordered by authors"
+  * section ^slicing.discriminator.type = #value
+  * section ^slicing.discriminator.path = "code.coding"
+  * section ^slicing.rules = #open
+  * section contains 
+    introduction 0..1 MS 
+    and discussion 0..1 MS 
+    and methods 0..1 MS 
+    and references 0..1 MS 
+    and competingInterests 0..1 MS 
+    and acknowledgements 0..1 MS 
+    and appendices 0..1 MS
+    and recommendations 0..1 MS
+  * section.code 1..1
+  * section[introduction].code.coding 1..1
+  * section[introduction].code.coding = https://fevir.net/resources/CodeSystem/179423#introduction "Introduction"
+  * section[discussion].code.coding 1..1
+  * section[discussion].code.coding = https://fevir.net/resources/CodeSystem/179423#discussion "Discussion"
+  * section[methods].code.coding 1..1
+  * section[methods].code.coding = https://fevir.net/resources/CodeSystem/179423#methods "Methods"
+  * section[references].code.coding 1..1
+  * section[references].code.coding = https://fevir.net/resources/CodeSystem/179423#references "References"
+  * section[references]
+    * entry only Reference(Citation)
     
-//   * section[competingInterests].code.coding 1..1
-//   * section[competingInterests].code.coding = https://fevir.net/resources/CodeSystem/179423#competing-interests "Competing Interests"
-//   * section[acknowledgements].code.coding 1..1
-//   * section[acknowledgements].code.coding = https://fevir.net/resources/CodeSystem/179423#acknowledgements "Acknowledgements"
-//   * section[appendices].code.coding 1..1
-//   * section[appendices].code.coding = https://fevir.net/resources/CodeSystem/179423#appendices "Appendices"
-//   * section[recommendations].code.coding 1..1
-//   * section[recommendations].code.coding = https://fevir.net/resources/CodeSystem/179423#recommendations "Recommendations"
-//   * section[recommendations]
-//     * entry only Reference(Recommendation)
-// // TODO: create profiles for S3, S2k, S2e etc guidelines, inheriting from guideline profile
+  * section[competingInterests].code.coding 1..1
+  * section[competingInterests].code.coding = https://fevir.net/resources/CodeSystem/179423#competing-interests "Competing Interests"
+  * section[acknowledgements].code.coding 1..1
+  * section[acknowledgements].code.coding = https://fevir.net/resources/CodeSystem/179423#acknowledgements "Acknowledgements"
+  * section[appendices].code.coding 1..1
+  * section[appendices].code.coding = https://fevir.net/resources/CodeSystem/179423#appendices "Appendices"
+  * section[recommendations].code.coding 1..1
+  * section[recommendations].code.coding = https://fevir.net/resources/CodeSystem/179423#recommendations "Recommendations"
+  * section[recommendations]
+    * entry only Reference(Recommendation)
+
+// TODO: create profiles for S3, S2k, S2e etc guidelines, inheriting from guideline profile
 
 Invariant: inv-guideline-attachment-type-match
 Description: "Attachment type in DocumentReference must match the type of the section"
@@ -399,4 +423,6 @@ InstanceOf: Guideline
 * section[recommendations]
   * entry[+].display = "Allgemeine Empfehlung 3"
   * entry[+].display = "Allgemeine Empfehlung 4"
+
+
 */
