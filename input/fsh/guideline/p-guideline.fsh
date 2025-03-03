@@ -28,10 +28,6 @@ Description: "Clinical Practice Guideline"
 // TODO: add description (in the IG - ^definition or so)
 * status 1..1 // used for: anmeldung, konsultationsfassung, amemdment, final // #P2.2.9
 
-
-// BUG: this slicing yields a validator error when inheriting from any profile that contains an extension, but if the
-// extension is defined directly here, it works (i.e. incorporating this slicing into the parent profile) - validator bug?
-// see https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Reslicing.20extensions.20causes.20validator.20errors
 * extension contains 
   ext-artifact-extended-contact named contact 0..* MS
   and ext-publication-date named publicationDate 0..1 MS
@@ -201,7 +197,7 @@ Description: "Clinical Practice Guideline"
 * attester contains AWMF 0..1
 * attester[AWMF] // #P2.3.1.2
   * mode 1..1
-  * mode = #official
+  * mode = $cs-composition-attestation-mode#official
   * party 1..1
   * party = Reference(AWMF)
 
@@ -291,7 +287,6 @@ Description: "Clinical Practice Guideline"
     * code.coding 1..1
     * code.coding = cs-guideline-sections#keywords "Keywords"
 
-
 * section contains attachments 0..1 MS
 * section[attachments] // #P2.1.6
   * code 1..1
@@ -341,7 +336,8 @@ Description: "Clinical Practice Guideline"
     * code 1..1
     * code.coding 1..1
     * code.coding = cs-guideline-attachment-types#patient-version "Patient Version"
-    
+    /*
+
   * section obeys inv-guideline-attachment-type-match
 // gl 250213: currently unused, and somehow breaks ig publisher, therefore commented out // TODO: make this work
 * section
@@ -381,12 +377,9 @@ Description: "Clinical Practice Guideline"
   * section[recommendations]
     * entry only Reference(Recommendation)
 
-// TODO: create profiles for S3, S2k, S2e etc guidelines, inheriting from guideline profile
 
-Invariant: inv-guideline-attachment-type-match
-Description: "Attachment type in DocumentReference must match the type of the section"
-Expression: "reference.resolve()[type=$this.code].exists()"
-Severity: #error
+*/
+
 
 /*
 Instance: Guideline-example

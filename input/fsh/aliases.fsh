@@ -10,3 +10,5 @@ Alias: $ebm-recommendation = http://hl7.org/fhir/uv/ebm/StructureDefinition/reco
 Alias: $cs-guideline-releaseType = http://fhir.awmf.org/cs/releaseType
 
 Alias: $ext-annotationType = http://hl7.org/fhir/StructureDefinition/annotationType
+
+Alias: $cs-composition-attestation-mode = http://hl7.org/fhir/composition-attestation-mode
