@@ -6,6 +6,7 @@ Description: "Deutsche Gesellschaft für Internistische Intensivmedizin und Notf
 * identifier[awmf-association-number]
   * value = "113"
 * name = "Deutsche Gesellschaft für Internistische Intensivmedizin und Notfallmedizin e.V. (DGIIN)"
+* insert narrative([[Deutsche Gesellschaft für Internistische Intensivmedizin und Notfallmedizin e.V. (DGIIN)]])
 * contact.telecom
   * system = #url
   * value = "https://www.awmf.org/fachgesellschaften/deutsche-gesellschaft-fuer-internistische-intensivmedizin-und-notfallmedizin-e-v-dgiin"

@@ -11,3 +11,4 @@ Description: "Kurzfassung Leitlinie 020-013"
     * title = "Kurzfassung"
     * language = #de
     * contentType = #application/pdf
+* insert narrative([[Kurzfassung Leitlinie 020-013]])

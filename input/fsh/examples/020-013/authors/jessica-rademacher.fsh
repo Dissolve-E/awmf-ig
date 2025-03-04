@@ -10,7 +10,7 @@ Description: "Jessica Rademacher"
 * address
   * text = "Klinik für Pneumologie und Infektiologie, Medizinische Hochschule Hannover"
   * use = #work
-
+* insert narrative([[Jessica Rademacher]])
 
 Instance: JessicaRademacherDGPFor020-013
 InstanceOf: GuidelineAuthorRole
@@ -23,3 +23,4 @@ Description: "Jessica Rademacher for DGP in the context of 020-013"
   * start = "2022-08-01"
   * end = "2023-12-31"
 * code.text = "Koordination und wissenschaftliche Leitung"
+* insert narrative([[Jessica Rademacher for DGP in the context of 020-013]])

@@ -11,3 +11,4 @@ Description: "Leitlinienreport Leitlinie 020-013"
     * title = "Leitlinienreport"
     * language = #de
     * contentType = #application/pdf
+* insert narrative([[Leitlinienreport Leitlinie 020-013]])

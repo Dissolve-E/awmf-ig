@@ -11,3 +11,4 @@ Description: "Foliensatz Leitlinie 020-013"
     * title = "Foliensatz"
     * language = #de
     * contentType = #application/pdf
+* insert narrative([[Foliensatz Leitlinie 020-013]])

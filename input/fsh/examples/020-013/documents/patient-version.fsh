@@ -11,3 +11,4 @@ Description: "Patienteninformation Leitlinie 020-013"
     * title = "Patienteninformation"
     * language = #de
     * contentType = #application/pdf
+* insert narrative([[Patienteninformation Leitlinie 020-013]])

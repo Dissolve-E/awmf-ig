@@ -11,3 +11,4 @@ Description: "Implementierungshilfe Leitlinie 020-013"
     * title = "Anlage: Anleitung zur inhalativen Antibiotika-Therapie"
     * language = #de
     * contentType = #application/pdf
+* insert narrative([[Implementierungshilfe Leitlinie 020-013]])

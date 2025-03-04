@@ -6,6 +6,9 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
 * identifier[awmf-register-number][+]
   * value = "020-013"
   * use = #official
+
+* insert narrative([[S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie]])
+
 * meta
 //	* tag[guideline-releaseType] = $cs-guideline-releaseType#update // just an example, this guideline has no release type
 
