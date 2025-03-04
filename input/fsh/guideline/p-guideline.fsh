@@ -156,7 +156,7 @@ Description: "Clinical Practice Guideline"
   * type 1..1
   * type = #documents
   * classifier 1..1
-  * classifier = cs-related-artifact-types#dissemination-website  // TODO: allow children of this code (e.g. awmf-detail-page )
+  * classifier from vs-dissemination-website (required)
 * relatesTo[replacesGuideline] 
   * type 1..1
   * type = #replaces
@@ -171,7 +171,7 @@ Description: "Clinical Practice Guideline"
 // BUG: This slicing is currently not working
 * note.extension contains $ext-annotationType named type 1..1
 * note ^slicing.discriminator.type = #value
-* note ^slicing.discriminator.path = "extension.where(url='http://hl7.org/fhir/StructureDefinition/annotationType').value"
+* note ^slicing.discriminator.path = "extension('http://hl7.org/fhir/StructureDefinition/annotationType').value"
 * note ^slicing.rules = #open
 * note contains remark 0..1 
 * note[remark] // #P2.3.1.1, #P2.3.1.6
@@ -181,7 +181,7 @@ Description: "Clinical Practice Guideline"
 
 
 * category 0..*
-  * ^slicing.discriminator.type = #pattern
+  * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "coding"
   * ^slicing.rules = #open
 * category contains awmfGuidelineClass 0..1
@@ -191,21 +191,22 @@ Description: "Clinical Practice Guideline"
     * code 1.. MS
 
 * attester 0..*
-  * ^slicing.discriminator.type = #pattern
-  * ^slicing.discriminator.path = "party"
+  * ^slicing.discriminator.type = #value // TODO: Is this correct?
+  * ^slicing.discriminator.path = "party.reference"
   * ^slicing.rules = #open
 * attester contains AWMF 0..1
 * attester[AWMF] // #P2.3.1.2
   * mode 1..1
   * mode = $cs-composition-attestation-mode#official
   * party 1..1
-  * party = Reference(AWMF)
+  * party.reference = Canonical(AWMF)
 
 // TODO: THIS MUST BE IMPLEMENTED FOR ALL ACTUAL SUBSECTIONS, NOT ON THE TOP LEVEL
 * section contains language 0..* // P2.3.2.21 // TODO: must be 1..* when this is implemented as an actual subsection 
 * section[language]
+  * code 1..1
   * code.coding 1..1
-  * code = cs-awmf#language // TODO: use existing code
+  * code.coding = cs-awmf#language // TODO: use existing code
   * extension contains ext-section-language named language 1..1
   * section 0..0
 
@@ -308,42 +309,44 @@ Description: "Clinical Practice Guideline"
     * code from vs-guideline-attachment-types (preferred) // #P2.1.7 (preferred binding)
     * entry only Reference(GuidelineAttachment)
     * entry 1..* MS
+    //* obeys inv-guideline-attachment-type-match // TODO: does currently not seem to work (doesn't resolve the references - maybe in the IG publisher?)
   * section[longVersion]
     * code 1..1
     * code.coding 1..1
-    * code.coding = cs-guideline-attachment-types#long-version "Long Version"
+    * code = cs-guideline-attachment-types#long-version "Long Version"
   * section[shortVersion]
     * code 1..1
     * code.coding 1..1
-    * code.coding = cs-guideline-attachment-types#short-version "Short Version"
+    * code = cs-guideline-attachment-types#short-version "Short Version"
   * section[guidelineReport]
     * code 1..1
     * code.coding 1..1
-    * code.coding = cs-guideline-attachment-types#guideline-report "Guideline Report"
+    * code = cs-guideline-attachment-types#guideline-report "Guideline Report"
   * section[evidenceReport]
     * code 1..1
     * code.coding 1..1
-    * code.coding = cs-guideline-attachment-types#evidence-report "Evidence Report"
+    * code = cs-guideline-attachment-types#evidence-report "Evidence Report"
   * section[implementationGuidance]
     * code 1..1
     * code.coding 1..1
-    * code.coding = cs-guideline-attachment-types#implementation-guidance "Implementation Guidance"
+    * code = cs-guideline-attachment-types#implementation-guidance "Implementation Guidance"
   * section[decisionSupport]
     * code 1..1
     * code.coding 1..1
-    * code.coding = cs-guideline-attachment-types#decision-support "Decision Support"
+    * code = cs-guideline-attachment-types#decision-support "Decision Support"
   * section[patientVersion]
     * code 1..1
     * code.coding 1..1
-    * code.coding = cs-guideline-attachment-types#patient-version "Patient Version"
-    /*
+    * code = cs-guideline-attachment-types#patient-version "Patient Version"
+  
 
-  * section obeys inv-guideline-attachment-type-match
-// gl 250213: currently unused, and somehow breaks ig publisher, therefore commented out // TODO: make this work
-* section
+* section contains text 0..*
+* section[text]
+  * code 1..1
+  * code.coding = https://fevir.net/resources/CodeSystem/179423#text "Text"
   * orderedBy = cs-awmf#ordered-by-authors "Ordered by authors"
   * section ^slicing.discriminator.type = #value
-  * section ^slicing.discriminator.path = "code.coding"
+  * section ^slicing.discriminator.path = "code"
   * section ^slicing.rules = #open
   * section contains 
     introduction 0..1 MS 
@@ -355,30 +358,29 @@ Description: "Clinical Practice Guideline"
     and appendices 0..1 MS
     and recommendations 0..1 MS
   * section.code 1..1
-  * section[introduction].code.coding 1..1
-  * section[introduction].code.coding = https://fevir.net/resources/CodeSystem/179423#introduction "Introduction"
-  * section[discussion].code.coding 1..1
-  * section[discussion].code.coding = https://fevir.net/resources/CodeSystem/179423#discussion "Discussion"
-  * section[methods].code.coding 1..1
-  * section[methods].code.coding = https://fevir.net/resources/CodeSystem/179423#methods "Methods"
-  * section[references].code.coding 1..1
-  * section[references].code.coding = https://fevir.net/resources/CodeSystem/179423#references "References"
+  * section[introduction].code 1..1
+  * section[introduction].code = https://fevir.net/resources/CodeSystem/179423#introduction "Introduction"
+  * section[discussion].code 1..1
+  * section[discussion].code = https://fevir.net/resources/CodeSystem/179423#discussion "Discussion"
+  * section[methods].code 1..1
+  * section[methods].code = https://fevir.net/resources/CodeSystem/179423#methods "Methods"
+  * section[references].code 1..1
+  * section[references].code = https://fevir.net/resources/CodeSystem/179423#references "References"
   * section[references]
     * entry only Reference(Citation)
     
-  * section[competingInterests].code.coding 1..1
-  * section[competingInterests].code.coding = https://fevir.net/resources/CodeSystem/179423#competing-interests "Competing Interests"
-  * section[acknowledgements].code.coding 1..1
-  * section[acknowledgements].code.coding = https://fevir.net/resources/CodeSystem/179423#acknowledgements "Acknowledgements"
-  * section[appendices].code.coding 1..1
-  * section[appendices].code.coding = https://fevir.net/resources/CodeSystem/179423#appendices "Appendices"
-  * section[recommendations].code.coding 1..1
-  * section[recommendations].code.coding = https://fevir.net/resources/CodeSystem/179423#recommendations "Recommendations"
+  * section[competingInterests].code 1..1
+  * section[competingInterests].code = https://fevir.net/resources/CodeSystem/179423#competing-interests "Competing Interests"
+  * section[acknowledgements].code 1..1
+  * section[acknowledgements].code = https://fevir.net/resources/CodeSystem/179423#acknowledgements "Acknowledgements"
+  * section[appendices].code 1..1
+  * section[appendices].code = https://fevir.net/resources/CodeSystem/179423#appendices "Appendices"
+  * section[recommendations].code 1..1
+  * section[recommendations].code = https://fevir.net/resources/CodeSystem/179423#recommendations "Recommendations"
   * section[recommendations]
     * entry only Reference(Recommendation)
 
 
-*/
 
 
 /*
