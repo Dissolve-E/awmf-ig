@@ -1,6 +1,6 @@
 Profile: Recommendation // #P2.2.5 -- each recommendation is a separate resource
 Parent: $ebm-recommendation // #P2.1.2
-Id: Recommendation
+Id: recommendation
 Title: "Recommendation"
 Description: "Clinical Practice Guideline Recommendation"
 * identifier obeys inv-require-official-identifier // #P2.2.2
@@ -34,7 +34,7 @@ Description: "Clinical Practice Guideline Recommendation"
 // add some more codes for the sections (not only the ones defined by the EBM IG)
 * section.code from vs-guideline-sections (extensible)
 
-* section[recommendationSpecification]
+* section[recommendationSpecification] // note: this is a slice defined in the EBM IG Profile and has a cardinality of 1..1 !!
   * section[recommendationStatement]
     * insert rs-language-section
 
@@ -48,6 +48,7 @@ Description: "Clinical Practice Guideline Recommendation"
   * code 1..1
   * code.coding 1..1
   * code.coding = cs-guideline-sections#default-section
+  * insert rs-language-section-nested
 * section[text]
   * code 1..1
   * code = $cs-ebm-ig-section-code#text "Text"
@@ -91,6 +92,34 @@ Description: "Clinical Practice Guideline Recommendation"
 * section[justification].code = $cs-ebm-ig-section-code#justification "Justification"
 * section[considerations].code 1..1
 * section[considerations].code = $cs-ebm-ig-section-code#considerations "Considerations"
+
+
+Instance: RecommendationExample
+InstanceOf: recommendation
+Usage: #example
+Title: "Recommendation Example"
+Description: "An example of a recommendation."
+* insert narrative([[Recommendation Example]])
+* version = "2.0"
+* status = #final
+* author[+] = Reference(GuidelineAuthorRoleExample)
+* date = "2025-03-06"
+* title = "Example Recommendation"
+* section[@default][+]
+  * section[language]
+    * extension[language].valueCode = #de
+    * insert narrative([[Example Recommendation]])
+* section[recommendationSpecification]
+  * section[recommendationStatement]
+    * section[language]
+      * extension[language].valueCode = #de
+      * insert narrative([[Bei Patienten mit Krankheit A soll Medikament B statt Medikament C gegeben werden. Patienten mit Krankheit A, die auch noch Krankheit D haben, darf keinesfalls Medikament B gegeben, sondern müssen Medikament C erhalten.]])
+
+
+
+
+
+
 
 
 Instance: Recommendation-PlanDefinition-example

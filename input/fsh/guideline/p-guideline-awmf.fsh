@@ -1,6 +1,6 @@
 Profile: AWMFGuideline
 Parent: Guideline
-Id: AWMFGuideline
+Id: awmf-guideline
 Title: "Guideline"
 Description: "Clinical Practice Guideline"
 
@@ -12,3 +12,16 @@ Description: "Clinical Practice Guideline"
   * section[targetAudience] 1..1
   * section[keywords] 1..*
   
+
+Instance: AWMFGuidelineExample
+InstanceOf: awmf-guideline
+Usage: #example
+Title: "AWMF Guideline Example"
+Description: "An example of an AWMF guideline."
+* insert narrative([[AWMF Guideline Example]])
+* version = "2.0"
+* status = #final
+* author[+] = Reference(GuidelineAuthorRoleExample)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#content-author
+* date = "2025-03-06"
+* title = "Example Recommendation"

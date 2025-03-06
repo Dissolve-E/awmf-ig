@@ -4,6 +4,8 @@ Usage: #example
 Title: "HAP Diagnose"
 Description: "Wie wird eine HAP klinisch diagnostiziert und welche Differenzialdiagnosen sind zu beachten?"
 
+* insert narrative([[HAP Diagnose]])
+
 * version = "3.0"
 * status = #final
 * author[+] = Reference(JessicaRademacherDGPFor020-013)

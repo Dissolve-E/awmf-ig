@@ -1,6 +1,6 @@
 Profile: Guideline
 Parent: $ebm-guideline // #P2.1.2
-Id: Guideline
+Id: guideline
 Title: "Guideline"
 Description: "Clinical Practice Guideline"
 
@@ -385,3 +385,18 @@ Description: "Clinical Practice Guideline"
 * section[acknowledgements].code = $cs-ebm-ig-section-code#acknowledgements "Acknowledgements"
 * section[appendices].code 1..1
 * section[appendices].code = $cs-ebm-ig-section-code#appendices "Appendices"
+
+
+
+Instance: GuidelineExample
+InstanceOf: guideline
+Usage: #example
+Title: "Guideline Example"
+Description: "An example of a guideline."
+* insert narrative([[Guideline Example]])
+* version = "2.0"
+* status = #final
+* author[+] = Reference(GuidelineAuthorRoleExample)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#content-author
+* date = "2025-03-06"
+* title = "Example Guideline"
