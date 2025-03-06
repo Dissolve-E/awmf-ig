@@ -1,28 +1,33 @@
 RuleSet: rs-language-section
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
-* section ^slicing.rules = #open
-* section contains language 0..* // #P2.3.2.21 // TODO: must be 1..* when this is implemented as an actual subsection 
+* section ^slicing.rules = #closed
+* section contains language 0..* and @default 0..* // #P2.3.2.21 // TODO: must be 1..* when this is implemented as an actual subsection 
 * section[language]
   * code 1..1
-  * code.coding 1..1
-  * code.coding = cs-awmf#language // TODO: use existing code
+  * code = cs-guideline-sections#language // TODO: use existing code
   * extension contains ext-section-language named language 1..1
   * section 0..0
-
+* section[@default]
+  // fixme: actually, the default slice must not fix the discriminator, but as of 25-03-06 the validator is not able to handle default slices. therefore, we fix the discriminator here.
+  * code 1..1
+  * code = cs-guideline-sections#default-section
 
 RuleSet: rs-language-section-nested
 * insert rs-language-section
-* section
+* section[@default]
   * insert rs-language-section
-  * section
+  * section[@default]
     * insert rs-language-section
-    * section
+    * section[@default]
       * insert rs-language-section
-      * section
+      * section[@default]
         * insert rs-language-section
-        * section
+        * section[@default]
           * insert rs-language-section
+          * section[@default]
+            * insert rs-language-section
+
 
 // TODO: make invariant that checks that all leaves are language and that all non-leaves do not contain text
 // TODO: each section that is not defined by a code (e.g. introduction) needs a language section at least for the title

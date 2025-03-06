@@ -26,13 +26,71 @@ Description: "Clinical Practice Guideline Recommendation"
 
 * relatesTo[partOf] 1..* // each recommendation must be part of at least one guideline
 
+// doesn't work :(
+// // unset valueset binding from second level
+// * section.section.code ^binding.valueSet = "http://hl7.org/fhir/ValueSet/doc-section-codesX"
+// * section.section.code ^binding.strength = #example
+
+// add some more codes for the sections (not only the ones defined by the EBM IG)
+* section.code from vs-guideline-sections (extensible)
+
 * section[recommendationSpecification]
   * section[recommendationStatement]
     * insert rs-language-section
 
-* section contains text 0..*
+// close the slicing for section and add @default section
+* section ^slicing.rules = #closed
+* section contains 
+  text 0..* MS
+  and @default 0..* 
+* section[@default]
+// fixme: actually, the default slice must not fix the discriminator, but as of 25-03-06 the validator is not able to handle default slices. therefore, we fix the discriminator here.
+  * code 1..1
+  * code.coding 1..1
+  * code.coding = cs-guideline-sections#default-section
 * section[text]
-  * insert rs-language-section-nested
+  * code 1..1
+  * code = $cs-ebm-ig-section-code#text "Text"
+  * code.coding 1..1
+  * code.coding = $cs-ebm-ig-section-code#text "Text"
+  * insert rs-language-section
+
+// lines below are just used to force sushi to add the correct code when refering to the slices
+* section[summary].code 1..1
+* section[summary].code = $cs-ebm-ig-section-code#summary "Summary"
+* section[introduction].code 1..1
+* section[introduction].code = $cs-ebm-ig-section-code#introduction "Introduction"
+* section[discussion].code 1..1
+* section[discussion].code = $cs-ebm-ig-section-code#discussion "Discussion"
+* section[methods].code 1..1
+* section[methods].code = $cs-ebm-ig-section-code#methods "Methods"
+* section[references].code 1..1
+* section[references].code = $cs-ebm-ig-section-code#references "References"
+* section[competingInterests].code 1..1
+* section[competingInterests].code = $cs-ebm-ig-section-code#competing-interests "Competing Interests"
+* section[acknowledgements].code 1..1
+* section[acknowledgements].code = $cs-ebm-ig-section-code#acknowledgements "Acknowledgements"
+* section[appendices].code 1..1
+* section[appendices].code = $cs-ebm-ig-section-code#appendices "Appendices"
+* section[recommendationSpecification].code 1..1
+* section[recommendationSpecification].code = $cs-ebm-ig-section-code#recommendation-specification "Recommendation Specification"
+* section[recommendationSpecification]
+  * section[recommendationStatement].code 1..1
+  * section[recommendationStatement].code = $cs-ebm-ig-section-code#recommendation-statement "Recommendation Statement"
+  * section[ratings].code 1..1
+  * section[ratings].code = $cs-ebm-ig-section-code#ratings "Ratings"
+  * section[population].code 1..1
+  * section[population].code = $cs-ebm-ig-section-code#population "Population"
+  * section[action].code 1..1
+  * section[action].code = $cs-ebm-ig-section-code#action "Action"
+  * section[oppositeAction].code 1..1
+  * section[oppositeAction].code = $cs-ebm-ig-section-code#opposite-action "Opposite Action"
+* section[evidence].code 1..1
+* section[evidence].code = $cs-ebm-ig-section-code#evidence "Evidence"
+* section[justification].code 1..1
+* section[justification].code = $cs-ebm-ig-section-code#justification "Justification"
+* section[considerations].code 1..1
+* section[considerations].code = $cs-ebm-ig-section-code#considerations "Considerations"
 
 
 Instance: Recommendation-PlanDefinition-example

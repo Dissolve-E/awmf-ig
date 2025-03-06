@@ -217,7 +217,7 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
     * entry = Reference(Guideline-020-013-ImplementationGuidance)
 
 * section[introduction]
-  * section[+] // Übersicht der Empfehlungen und Statements
+  * section[@default][+] // Übersicht der Empfehlungen und Statements
     * section[language][+]
       * extension[language].valueCode = #de
       * title = "Übersicht der Empfehlungen und Statements"
@@ -231,7 +231,7 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
       * title = "نظرة عامة على التوصيات والبيانات"
       * insert narrative-rtl([[نظرة عامة على التوصيات والبيانات]])  // #P2.3.2.26 (text direction)
 
-  * section[+] // Geltungsbereich und Zweck
+  * section[@default][+] // Geltungsbereich und Zweck
     * section[language][+]
       * extension[language].valueCode = #de
       * title = "Geltungsbereich und Zweck"
@@ -241,7 +241,7 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
       * title = "Scope and Purpose"
       * insert narrative([[Scope and Purpose]])
 
-    * section[+] // Zielsetzung und Fragestellung
+    * section[@default][+] // Zielsetzung und Fragestellung
       * section[language][+]
         * extension[language].valueCode = #de
         * title = "Zielsetzung und Fragestellung"
@@ -251,7 +251,7 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
         * title = "Objective and Research Question"
         * insert narrative([[Objective and Research Question]])
 
-    * section[+] // Versorgungsbereich
+    * section[@default][+] // Versorgungsbereich
       * section[language][+]
         * extension[language].valueCode = #de
         * title = "Versorgungsbereich"
@@ -261,7 +261,7 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
         * title = "Healthcare Sector"
         * insert narrative([[Healthcare Sector]])
 
-    * section[+] // Patientenzielgruppe
+    * section[@default][+] // Patientenzielgruppe
       * section[language][+]
         * extension[language].valueCode = #de
         * title = "Patientenzielgruppe"
@@ -271,7 +271,7 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
         * title = "Target Patient Group"
         * insert narrative([[Target Patient Group]])
 
-    * section[+] // Adressaten
+    * section[@default][+] // Adressaten
       * section[language][+]
         * extension[language].valueCode = #de
         * title = "Adressaten"
@@ -281,7 +281,7 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
         * title = "Audience"
         * insert narrative([[Audience]])
 
-    * section[+] // Gültigkeitsdauer und Aktualisierungsverfahren
+    * section[@default][+] // Gültigkeitsdauer und Aktualisierungsverfahren
       * section[language][+]
         * extension[language].valueCode = #de
         * title = "Gültigkeitsdauer und Aktualisierungsverfahren"
@@ -291,7 +291,7 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
         * title = "Validity Period and Update Procedure"
         * insert narrative([[Validity Period and Update Procedure]])
 
-  * section[+] // Methodische Grundlagen
+  * section[@default][+] // Methodische Grundlagen
     * section[language][+]
       * extension[language].valueCode = #de
       * title = "Methodische Grundlagen"
@@ -301,7 +301,7 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
       * title = "Methodological Foundations"
       * insert narrative([[Methodological Foundations]])
 
-    * section[+] // Kritische Bewertung der Evidenz
+    * section[@default][+] // Kritische Bewertung der Evidenz
       * section[language][+]
         * extension[language].valueCode = #de
         * title = "Kritische Bewertung der Evidenz"
@@ -311,7 +311,7 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
         * title = "Critical Appraisal of Evidence"
         * insert narrative([[Critical Appraisal of Evidence]])
 
-    * section[+] // Strukturierte Konsensfindung
+    * section[@default][+] // Strukturierte Konsensfindung
       * section[language][+]
         * extension[language].valueCode = #de
         * title = "Strukturierte Konsensfindung"
@@ -321,7 +321,7 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
         * title = "Structured Consensus Process"
         * insert narrative([[Structured Consensus Process]])
 
-    * section[+] // Empfehlungsgraduierung und Feststellung der Konsensstärke
+    * section[@default][+] // Empfehlungsgraduierung und Feststellung der Konsensstärke
       * section[language][+]
         * extension[language].valueCode = #de
         * title = "Empfehlungsgraduierung und Feststellung der Konsensstärke"
@@ -331,7 +331,7 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
         * title = "Recommendation Grading and Consensus Strength"
         * insert narrative([[Recommendation Grading and Consensus Strength]])
 
-    * section[+] // Statements
+    * section[@default][+] // Statements
       * section[language][+]
         * extension[language].valueCode = #de
         * title = "Statements"
@@ -341,7 +341,7 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
         * title = "Statements"
         * insert narrative([[Statements]])
 
-    * section[+] // Expertenkonsens
+    * section[@default][+] // Expertenkonsens
       * section[language][+]
         * extension[language].valueCode = #de
         * title = "Expertenkonsens"
@@ -351,7 +351,7 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
         * title = "Expert Consensus"
         * insert narrative([[Expert Consensus]])
 
-  * section[+] // Umgang mit Interessenkonflikten
+  * section[@default][+] // Umgang mit Interessenkonflikten
     * section[language][+]
       * extension[language].valueCode = #de
       * title = "Umgang mit Interessenkonflikten"
@@ -361,7 +361,7 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
       * title = "Handling Conflicts of Interest"
       * insert narrative([[Handling Conflicts of Interest]])
 
-  * section[+] // Externe Begutachtung und Verabschiedung
+  * section[@default][+] // Externe Begutachtung und Verabschiedung
     * section[language][+]
       * extension[language].valueCode = #de
       * title = "Externe Begutachtung und Verabschiedung"
@@ -371,7 +371,7 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
       * title = "External Review and Approval"
       * insert narrative([[External Review and Approval]])
 
-  * section[+] // Redaktionelle Hinweise
+  * section[@default][+] // Redaktionelle Hinweise
     * section[language][+]
       * extension[language].valueCode = #de
       * title = "Redaktionelle Hinweise"
@@ -381,7 +381,7 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
       * title = "Editorial Notes"
       * insert narrative([[Editorial Notes]])
 
-  * section[+] // Einführung und Epidemiologie
+  * section[@default][+] // Einführung und Epidemiologie
     * section[language][+]
       * extension[language].valueCode = #de
       * title = "Einführung und Epidemiologie"
@@ -391,58 +391,60 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
       * title = "Introduction and Epidemiology"
       * insert narrative([[Introduction and Epidemiology]])
 
-* section[+] // 6. Diagnostik
+* section[@default][+] // 6. Diagnostik
   * section[language][+]
     * extension[language].valueCode = #de
     * title = "Diagnostik"
     * insert narrative([[Diagnostik]])
 
-  * section[+] // 6.1 Klinische Diagnose der nosokomialen Pneumonie
+  * section[@default][+] // 6.1 Klinische Diagnose der nosokomialen Pneumonie
     * section[language][+]
       * extension[language].valueCode = #de
       * title = "Klinische Diagnose der nosokomialen Pneumonie"
       * emptyReason = $cs-list-empty-reason#unavailable
+      * insert narrative([[]])
 
+    // TODO: connect recommendations here
     //* section[recommendations]
     //  * 
 
-  * section[+] // 6.2 Biomarker
+  * section[@default][+] // 6.2 Biomarker
     * section[language][+]
       * extension[language].valueCode = #de
       * title = "Biomarker"
       * insert narrative([[Biomarker]])
 
-  * section[+] // 6.3 Mikrobiologische Diagnostik
+  * section[@default][+] // 6.3 Mikrobiologische Diagnostik
     * section[language][+]
       * extension[language].valueCode = #de
       * title = "Mikrobiologische Diagnostik"
       * insert narrative([[Mikrobiologische Diagnostik]])
 
-    * section[+] // 6.3.1 Bakteriologische Diagnostik
+    * section[@default][+] // 6.3.1 Bakteriologische Diagnostik
       * section[language][+]
         * extension[language].valueCode = #de
         * title = "Bakteriologische Diagnostik"
         * insert narrative([[Bakteriologische Diagnostik]])
 
-    * section[+] // 6.3.2 Mykologische Diagnostik
+    * section[@default][+] // 6.3.2 Mykologische Diagnostik
       * section[language][+]
         * extension[language].valueCode = #de
         * title = "Mykologische Diagnostik"
         * insert narrative([[Mykologische Diagnostik]])
 
-    * section[+] // 6.3.3 Virologische Diagnostik
+    * section[@default][+] // 6.3.3 Virologische Diagnostik
       * section[language][+]
         * extension[language].valueCode = #de
         * title = "Virologische Diagnostik"
         * insert narrative([[Virologische Diagnostik]])
 
-    * section[+] // 6.3.4 Materialgewinnung
+    * section[@default][+] // 6.3.4 Materialgewinnung
       * section[language][+]
         * extension[language].valueCode = #de
         * title = "Materialgewinnung"
         * insert narrative([[Materialgewinnung]])
 
-  * section[+] // 6.4 Bildgebung
+  * section[@default][+] // 6.4 Bildgebung
     * section[language][+]
       * extension[language].valueCode = #de
       * title = "Bildgebung"

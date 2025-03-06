@@ -26,8 +26,9 @@ Kombination mit 2 von 3 weiteren Kriterien:
 - purulentes Sekret.]])
 
 * section[text]
+  * code = $cs-ebm-ig-section-code#text "Text"
   * section[language]
-    * extension[language].valueCode = #de#
+    * extension[language].valueCode = #de
     * insert narrative([[Die klinische Diagnose einer HAP ist schwierig. Es gibt keine allgemein akzeptierten Kriterien auf der Basis
 randomisierter Studien, sondern lediglich prospektive Kohortenanalysen. Die Inzidenz der VAP variiert stark in
 Abhängigkeit von den eingesetzten Diagnosekriterien (62). Therapierelevant ist die klinisch zu stellende

@@ -23,3 +23,8 @@ Description: "Sections of a guideline, describing various aspects such as its in
 * #care-level "Care Level" "The section describes the care level of the guideline."
 
 * #keywords "Keywords" "The section describes the keywords of the guideline."
+
+* #language "Language" "The language of the content"
+* #default-section "Default section" "The default slice for a section" // this is just a work-around because the FHIR validator is not able to handle @default slices currently (25-03-06)
+
+* #attachments "Attachments"

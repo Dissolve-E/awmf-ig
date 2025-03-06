@@ -202,6 +202,20 @@ Description: "Clinical Practice Guideline"
   * party 1..1
   * party.reference = Canonical(AWMF)
 
+// add some more codes for the sections (not only the ones defined by the EBM IG)
+* section.code from vs-guideline-sections (extensible)
+
+// close the slicing for section and add @default section
+* section ^slicing.rules = #closed
+* section contains 
+  attachments 0..1 MS
+  and @default 0..* 
+* section[@default]
+// fixme: actually, the default slice must not fix the discriminator, but as of 25-03-06 the validator is not able to handle default slices. therefore, we fix the discriminator here.
+  * code 1..1
+  * code.coding 1..1
+  * code.coding = cs-guideline-sections#default-section
+
 * section[summary]
   * section ^slicing.discriminator.type = #value
   * section ^slicing.discriminator.path = "code"
@@ -215,14 +229,12 @@ Description: "Clinical Practice Guideline"
     and keywords 0..*
   * section[intention]
     * code 1..1
-    * code.coding 1..1
-    * code.coding = cs-guideline-sections#intention "Intention"
+    * code = cs-guideline-sections#intention "Intention"
     * text 0..0 // text is contained in the language subsection
     * insert rs-language-section
   * section[careSetting]
     * code 1..1
-    * code.coding 1..1
-    * code.coding = cs-guideline-sections#care-setting "Care Setting"
+    * code = cs-guideline-sections#care-setting "Care Setting"
     * section ^slicing.discriminator.type = #value
     * section ^slicing.discriminator.path = "code"
     * section ^slicing.rules = #closed
@@ -230,8 +242,7 @@ Description: "Clinical Practice Guideline"
     // versorgungssektor, versorgungsabschnitt, versorgungsebene
     * section[careSetting]
       * code 1..1
-      * code.coding 1..1
-      * code.coding = cs-guideline-sections#encounter-type "Encounter Type"
+      * code = cs-guideline-sections#encounter-type "Encounter Type"
       // ambulant, stationär, teilstationär
       * extension contains ext-section-coding named value 0..*
       * extension[value]
@@ -240,8 +251,7 @@ Description: "Clinical Practice Guideline"
       * insert rs-language-section
     * section[careStage]
       * code 1..1
-      * code.coding 1..1
-      * code.coding = cs-guideline-sections#care-stage "Care Stage"
+      * code = cs-guideline-sections#care-stage "Care Stage"
       // Präventation, Früherkennung, Diagnose, Therapie, Rehabilitation
       * extension contains ext-section-coding named value 0..*
       * extension[value]
@@ -250,8 +260,7 @@ Description: "Clinical Practice Guideline"
       * insert rs-language-section
     * section[careLevel]
       * code 1..1
-      * code.coding 1..1
-      * code.coding = cs-guideline-sections#care-level "Care Level"
+      * code = cs-guideline-sections#care-level "Care Level"
       // primärärztliche Vesorgung, spezialärztliche Versorgung
       * extension contains ext-section-coding named value 0..*
       * extension[value]
@@ -260,14 +269,12 @@ Description: "Clinical Practice Guideline"
       * insert rs-language-section
   * section[topicSelectionReason]
     * code 1..1
-    * code.coding 1..1
-    * code.coding = cs-guideline-sections#topic-selection-reason "Topic Selection Reason"
+    * code = cs-guideline-sections#topic-selection-reason "Topic Selection Reason"
     * text 0..0 // text is contained in the language subsection
     * insert rs-language-section
   * section[targetPatientGroup]
     * code 1..1
-    * code.coding 1..1
-    * code.coding = cs-guideline-sections#target-patient-group "Target Patient Group"
+    * code = cs-guideline-sections#target-patient-group "Target Patient Group"
     // Erwachsene, Kinder/Jugendliche
     * extension contains ext-section-coding named value 0..*
     * extension[value]
@@ -277,21 +284,20 @@ Description: "Clinical Practice Guideline"
     * insert rs-language-section
   * section[targetAudience]
     * code 1..1
-    * code.coding 1..1
-    * code.coding = cs-guideline-sections#target-audience "Target Audience"
+    * code = cs-guideline-sections#target-audience "Target Audience"
     * text 0..0  // text is contained in the language subsection
     * insert rs-language-section
   * section[keywords]
     * code 1..1
     * text 0..0 // text is contained in the language subsection
-    * code.coding 1..1
-    * code.coding = cs-guideline-sections#keywords "Keywords"
+    * code = cs-guideline-sections#keywords "Keywords"
     * insert rs-language-section
 
-* section contains attachments 0..1 MS
+
 * section[attachments] // #P2.1.6
+  * code = cs-guideline-sections#attachments "Attachments"
   * code 1..1
-    * coding = $cs-awmf#attachments "Attachments"
+    * coding = cs-guideline-sections#attachments "Attachments"
     * coding 1..1
   * section ^slicing.discriminator.type = #value
   * section ^slicing.discriminator.path = "code"
@@ -338,9 +344,9 @@ Description: "Clinical Practice Guideline"
     * code 1..1
     * code.coding 1..1
     * code = cs-guideline-attachment-types#patient-version "Patient Version"
-  
+
 // Language for each section and nested sections until level 6 (#P2.3.2.21, #P2.1.9)
-* section
+* section[@default]
   * insert rs-language-section-nested
 * section[summary]
   * insert rs-language-section-nested
@@ -362,44 +368,20 @@ Description: "Clinical Practice Guideline"
   * insert rs-language-section-nested
 
 
-
-
-
-/*
-Instance: Guideline-example
-InstanceOf: Guideline
-* status = #preliminary
-* date = "2024-12-05"
-* author.display = "Dissolve-E Team"
-* title = "Beispiel-Leitlinie"
-
-* section[introduction]
-  * text 
-    * status = #generated
-    * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Das ist die Einleitung dieser Leitlinie</div>"
-  * section[+] // custom section
-    * text 
-      * status = #generated
-      * div = "
-        <div xmlns=\"http://www.w3.org/1999/xhtml\">
-          <div lang='en'>Das ist Kapitel 2 zum Thema spezifische Empfehlungen</div>
-          <div lang='de'>Das ist Kapitel 2 zum Thema spezifische Empfehlungen</div>
-        </div>
-        "
-  * section[introduction]
-    * text
-      * status = #generated
-      * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Einleitung zu Kapitel 2</div>"
-  * section[discussion]
-    * text 
-      * status = #generated
-      * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Diskussion zu Kapitel 2</div>"
-  * section[recommendations]
-    * entry[+].display = "Spezifische Empfehlung 1"
-    * entry[+].display = "Spezifische Empfehlung 2"
-* section[recommendations]
-  * entry[+].display = "Allgemeine Empfehlung 3"
-  * entry[+].display = "Allgemeine Empfehlung 4"
-
-
-*/
+// lines below are just used to force sushi to add the correct code when refering to the slices
+* section[summary].code 1..1
+* section[summary].code = $cs-ebm-ig-section-code#summary "Summary"
+* section[introduction].code 1..1
+* section[introduction].code = $cs-ebm-ig-section-code#introduction "Introduction"
+* section[discussion].code 1..1
+* section[discussion].code = $cs-ebm-ig-section-code#discussion "Discussion"
+* section[methods].code 1..1
+* section[methods].code = $cs-ebm-ig-section-code#methods "Methods"
+* section[references].code 1..1
+* section[references].code = $cs-ebm-ig-section-code#references "References"
+* section[competingInterests].code 1..1
+* section[competingInterests].code = $cs-ebm-ig-section-code#competing-interests "Competing Interests"
+* section[acknowledgements].code 1..1
+* section[acknowledgements].code = $cs-ebm-ig-section-code#acknowledgements "Acknowledgements"
+* section[appendices].code 1..1
+* section[appendices].code = $cs-ebm-ig-section-code#appendices "Appendices"
