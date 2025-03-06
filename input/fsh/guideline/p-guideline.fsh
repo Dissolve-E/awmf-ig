@@ -18,6 +18,7 @@ Description: "Clinical Practice Guideline"
   * system = $cs-guideline-releaseType
   * code 1..1
 
+* language 0..1 MS
 
  // TODO: add guideline code for type
  
@@ -201,15 +202,6 @@ Description: "Clinical Practice Guideline"
   * party 1..1
   * party.reference = Canonical(AWMF)
 
-// TODO: THIS MUST BE IMPLEMENTED FOR ALL ACTUAL SUBSECTIONS, NOT ON THE TOP LEVEL
-* section contains language 0..* // P2.3.2.21 // TODO: must be 1..* when this is implemented as an actual subsection 
-* section[language]
-  * code 1..1
-  * code.coding 1..1
-  * code.coding = cs-awmf#language // TODO: use existing code
-  * extension contains ext-section-language named language 1..1
-  * section 0..0
-
 * section[summary]
   * section ^slicing.discriminator.type = #value
   * section ^slicing.discriminator.path = "code"
@@ -225,14 +217,15 @@ Description: "Clinical Practice Guideline"
     * code 1..1
     * code.coding 1..1
     * code.coding = cs-guideline-sections#intention "Intention"
-    * text 1..1
+    * text 0..0 // text is contained in the language subsection
+    * insert rs-language-section
   * section[careSetting]
     * code 1..1
     * code.coding 1..1
     * code.coding = cs-guideline-sections#care-setting "Care Setting"
     * section ^slicing.discriminator.type = #value
     * section ^slicing.discriminator.path = "code"
-    * section ^slicing.rules = #open
+    * section ^slicing.rules = #closed
     * section contains careSetting 0..1 and careStage 0..1 and careLevel 0..1
     // versorgungssektor, versorgungsabschnitt, versorgungsebene
     * section[careSetting]
@@ -244,6 +237,7 @@ Description: "Clinical Practice Guideline"
       * extension[value]
         * valueCodeableConcept 1..1
         * valueCodeableConcept from vs-encounter-type (extensible)
+      * insert rs-language-section
     * section[careStage]
       * code 1..1
       * code.coding 1..1
@@ -253,6 +247,7 @@ Description: "Clinical Practice Guideline"
       * extension[value]
         * valueCodeableConcept 1..1
         * valueCodeableConcept from vs-care-stage (extensible)
+      * insert rs-language-section
     * section[careLevel]
       * code 1..1
       * code.coding 1..1
@@ -262,11 +257,13 @@ Description: "Clinical Practice Guideline"
       * extension[value]
         * valueCodeableConcept 1..1
         * valueCodeableConcept from vs-care-level (extensible)
+      * insert rs-language-section
   * section[topicSelectionReason]
     * code 1..1
     * code.coding 1..1
     * code.coding = cs-guideline-sections#topic-selection-reason "Topic Selection Reason"
-    * text 1..1
+    * text 0..0 // text is contained in the language subsection
+    * insert rs-language-section
   * section[targetPatientGroup]
     * code 1..1
     * code.coding 1..1
@@ -276,17 +273,20 @@ Description: "Clinical Practice Guideline"
     * extension[value]
       * valueCodeableConcept 1..1
       * valueCodeableConcept from vs-target-patient-group (extensible)
-    * text 0..1
+    * text 0..0 // text is contained in the language subsection
+    * insert rs-language-section
   * section[targetAudience]
     * code 1..1
     * code.coding 1..1
     * code.coding = cs-guideline-sections#target-audience "Target Audience"
-    * text 1..1
+    * text 0..0  // text is contained in the language subsection
+    * insert rs-language-section
   * section[keywords]
     * code 1..1
-    * text 1..1
+    * text 0..0 // text is contained in the language subsection
     * code.coding 1..1
     * code.coding = cs-guideline-sections#keywords "Keywords"
+    * insert rs-language-section
 
 * section contains attachments 0..1 MS
 * section[attachments] // #P2.1.6
@@ -339,46 +339,28 @@ Description: "Clinical Practice Guideline"
     * code.coding 1..1
     * code = cs-guideline-attachment-types#patient-version "Patient Version"
   
+// Language for each section and nested sections until level 6 (#P2.3.2.21)
+* section
+  * insert rs-language-section-nested
+* section[summary]
+  * insert rs-language-section-nested
+* section[introduction]
+  * insert rs-language-section-nested
+* section[methods]
+  * insert rs-language-section-nested
+* section[discussion]
+  * insert rs-language-section-nested
+* section[references]
+  * insert rs-language-section-nested
+* section[competingInterests]
+  * insert rs-language-section-nested
+* section[acknowledgements]
+  * insert rs-language-section-nested
+* section[appendices]
+  * insert rs-language-section-nested
+* section[recommendations] // really?
+  * insert rs-language-section-nested
 
-* section contains text 0..*
-* section[text]
-  * code 1..1
-  * code.coding = https://fevir.net/resources/CodeSystem/179423#text "Text"
-  * orderedBy = cs-awmf#ordered-by-authors "Ordered by authors"
-  * section ^slicing.discriminator.type = #value
-  * section ^slicing.discriminator.path = "code"
-  * section ^slicing.rules = #open
-  * section contains 
-    introduction 0..1 MS 
-    and discussion 0..1 MS 
-    and methods 0..1 MS 
-    and references 0..1 MS 
-    and competingInterests 0..1 MS 
-    and acknowledgements 0..1 MS 
-    and appendices 0..1 MS
-    and recommendations 0..1 MS
-  * section.code 1..1
-  * section[introduction].code 1..1
-  * section[introduction].code = https://fevir.net/resources/CodeSystem/179423#introduction "Introduction"
-  * section[discussion].code 1..1
-  * section[discussion].code = https://fevir.net/resources/CodeSystem/179423#discussion "Discussion"
-  * section[methods].code 1..1
-  * section[methods].code = https://fevir.net/resources/CodeSystem/179423#methods "Methods"
-  * section[references].code 1..1
-  * section[references].code = https://fevir.net/resources/CodeSystem/179423#references "References"
-  * section[references]
-    * entry only Reference(Citation)
-    
-  * section[competingInterests].code 1..1
-  * section[competingInterests].code = https://fevir.net/resources/CodeSystem/179423#competing-interests "Competing Interests"
-  * section[acknowledgements].code 1..1
-  * section[acknowledgements].code = https://fevir.net/resources/CodeSystem/179423#acknowledgements "Acknowledgements"
-  * section[appendices].code 1..1
-  * section[appendices].code = https://fevir.net/resources/CodeSystem/179423#appendices "Appendices"
-  * section[recommendations].code 1..1
-  * section[recommendations].code = https://fevir.net/resources/CodeSystem/179423#recommendations "Recommendations"
-  * section[recommendations]
-    * entry only Reference(Recommendation)
 
 
 

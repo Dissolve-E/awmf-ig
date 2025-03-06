@@ -134,53 +134,71 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
 
 * section[summary]
   * section[intention]
-    * text
-      * status = #additional
-      * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Darstellung und Standardisierung der Diagnostik und Therapie der nosokomialen Pneumonie auf der Basis des aktuellen wissen-schaftlichen Kenntnisstandes für die Sicherstellung einer Evidenz-basierten und optimalen Versorgung von Patienten.</div>"
+    * section[language]
+      * extension[language].valueCode = #de
+      * text
+        * status = #additional
+        * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Darstellung und Standardisierung der Diagnostik und Therapie der nosokomialen Pneumonie auf der Basis des aktuellen wissen-schaftlichen Kenntnisstandes für die Sicherstellung einer Evidenz-basierten und optimalen Versorgung von Patienten.</div>"
   * section[targetPatientGroup]
-    * text
-      * status = #additional
-      * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Erwachsene</div>"
+    * section[language]
+      * extension[language].valueCode = #de
+      * text
+        * status = #additional
+        * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Erwachsene</div>"
   * section[careSetting]
     * section[careSetting]
       * extension[value].valueCodeableConcept = cs-care-setting#inpatient
-      * text
-        * status = #additional
-        * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">stationär</div>" // "cmp-1: 'A section must contain at least one of text, entries, or sub-sections'"
+      * section[language]
+        * extension[language].valueCode = #de
+        * text
+          * status = #additional
+          * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">stationär</div>" // "cmp-1: 'A section must contain at least one of text, entries, or sub-sections'"
     
     * section[careStage]
       * extension[value][+].valueCodeableConcept = cs-care-setting#diagnosis
       * extension[value][+].valueCodeableConcept = cs-care-setting#therapy
-      * text
-        * status = #additional
-        * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Diagnostik, Therapie</div>" // "cmp-1: 'A section must contain at least one of text, entries, or sub-sections'"
+      * section[language]
+        * extension[language].valueCode = #de
+        * text
+          * status = #additional
+          * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Diagnostik, Therapie</div>" // "cmp-1: 'A section must contain at least one of text, entries, or sub-sections'"
     
     * section[careLevel]
       * extension[value][+].valueCodeableConcept = cs-care-setting#specialized-care
-      * text
-        * status = #additional
-        * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">spezialärztliche Versorgung </div>" // "cmp-1: 'A section must contain at least one of text, entries, or sub-sections'"
+      * section[language]
+        * extension[language].valueCode = #de
+        * text
+          * status = #additional
+          * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">spezialärztliche Versorgung </div>" // "cmp-1: 'A section must contain at least one of text, entries, or sub-sections'"
 
   * section[topicSelectionReason]
-    * text
-      * status = #additional
-      * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Die nosokomiale Pneumonie ist in Deutschland eine häufige hospitalerworbene Infektion, die mit einer hohen Morbidität und Mortalität einhergeht. Diagnostik und Therapie stellen hohe Ansprüche an die behandelnden Ärzte, die häufig interdisziplinär gelöst werden müssen. Das therapeutische Vorgehen hat erheblichen Einfluss auf die Entwicklung von Antibiotikaresistenzen bei den ursächlichen Erregern. Revision der bestehenden Leitlinie wurde erforderlich, da die Empfehlungen zur Standardisierung und Qualitätssicherung der Diagnostik und Therapie bei erwachsenen Patienten mit nosokomialen Pneumonien auf den aktuellsten Forschungsergebnissen angepasst werden müssen.</div>"
+    * section[language]
+      * extension[language].valueCode = #de
+      * text
+        * status = #additional
+        * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Die nosokomiale Pneumonie ist in Deutschland eine häufige hospitalerworbene Infektion, die mit einer hohen Morbidität und Mortalität einhergeht. Diagnostik und Therapie stellen hohe Ansprüche an die behandelnden Ärzte, die häufig interdisziplinär gelöst werden müssen. Das therapeutische Vorgehen hat erheblichen Einfluss auf die Entwicklung von Antibiotikaresistenzen bei den ursächlichen Erregern. Revision der bestehenden Leitlinie wurde erforderlich, da die Empfehlungen zur Standardisierung und Qualitätssicherung der Diagnostik und Therapie bei erwachsenen Patienten mit nosokomialen Pneumonien auf den aktuellsten Forschungsergebnissen angepasst werden müssen.</div>"
   
   * section[targetPatientGroup]
     * extension[value][+].valueCodeableConcept = cs-target-patient-group#adults "Adults"
-    * text
-      * status = #additional
-      * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Erwachsene</div>" // "cmp-1: 'A section must contain at least one of text, entries, or sub-sections'"
+    * section[language]
+      * extension[language].valueCode = #de
+      * text
+        * status = #additional
+        * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Erwachsene</div>" // "cmp-1: 'A section must contain at least one of text, entries, or sub-sections'"
   
   * section[targetAudience]
-    * text
-      * status = #additional
-      * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Die Leitlinie wendet sich an alle im Krankenhaus tätigen Ärzte, die mit der Diagnostik und Therapie nosokomialer Pneumonien konfrontiert sind. Hierzu gehören Fachärzte für Anästhesiologie, Chirurgie, Innere Medizin, Intensivmedizin, Klinische Infektiologie, Klinische Mikrobiologie, Hygiene, Pneumologie, Virologie, und Radiologie, aber auch Ärzten anderer Fachgebiete, die Patienten mit nosokomialen Infektionen betreuen. Zugleich soll sie als Orientierung für Personen, Organisationen, Kostenträger sowie medizinisch-wissenschaftliche Fachgesellschaften und Berufsverbände dienen, die direkt oder indirekt mit diesem Thema in Verbindung stehen.</div>"
+    * section[language]
+      * extension[language].valueCode = #de
+      * text
+        * status = #additional
+        * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Die Leitlinie wendet sich an alle im Krankenhaus tätigen Ärzte, die mit der Diagnostik und Therapie nosokomialer Pneumonien konfrontiert sind. Hierzu gehören Fachärzte für Anästhesiologie, Chirurgie, Innere Medizin, Intensivmedizin, Klinische Infektiologie, Klinische Mikrobiologie, Hygiene, Pneumologie, Virologie, und Radiologie, aber auch Ärzten anderer Fachgebiete, die Patienten mit nosokomialen Infektionen betreuen. Zugleich soll sie als Orientierung für Personen, Organisationen, Kostenträger sowie medizinisch-wissenschaftliche Fachgesellschaften und Berufsverbände dienen, die direkt oder indirekt mit diesem Thema in Verbindung stehen.</div>"
 
   * section[keywords]
-    * text
-      * status = #additional
-      * div =  "<div xmlns=\"http://www.w3.org/1999/xhtml\">Pneumonie, nosokomial, hospital-acquired pneumonia, HAP, Ventilator-assoziierten Pneumonie, VAP, im Krankenhaus erworbene Lungenentzündung, Epidemiology, diagnosis and treatment of adult patients with nosocomial pneumonia</div>"
+    * section[language]
+      * extension[language].valueCode = #de
+      * text
+        * status = #additional
+        * div =  "<div xmlns=\"http://www.w3.org/1999/xhtml\">Pneumonie, nosokomial, hospital-acquired pneumonia, HAP, Ventilator-assoziierten Pneumonie, VAP, im Krankenhaus erworbene Lungenentzündung, Epidemiology, diagnosis and treatment of adult patients with nosocomial pneumonia</div>"
 
 * section[attachments]
   * section[longVersion]
@@ -197,3 +215,178 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
   * section[+]
     * code = cs-guideline-attachment-types#implementation-guidance
     * entry = Reference(Guideline-020-013-ImplementationGuidance)
+
+* section[introduction]
+  * section[+] // Übersicht der Empfehlungen und Statements
+    * section[language][+]
+      * extension[language].valueCode = #de
+      * title = "Übersicht der Empfehlungen und Statements"
+      * insert narrative([[Übersicht der Empfehlungen und Statements]])
+    * section[language][+]
+      * extension[language].valueCode = #en
+      * title = "Overview of Recommendations and Statements"
+      * insert narrative([[Overview of Recommendations and Statements]])
+    * section[language][+]
+      * extension[language].valueCode = #ar
+      * title = "نظرة عامة على التوصيات والبيانات"
+      * insert narrative-rtl([[نظرة عامة على التوصيات والبيانات]])  // #P2.3.2.26 (text direction)
+
+  * section[+] // Geltungsbereich und Zweck
+    * section[language][+]
+      * extension[language].valueCode = #de
+      * title = "Geltungsbereich und Zweck"
+      * insert narrative([[Geltungsbereich und Zweck]])
+    * section[language][+]
+      * extension[language].valueCode = #en
+      * title = "Scope and Purpose"
+      * insert narrative([[Scope and Purpose]])
+
+    * section[+] // Zielsetzung und Fragestellung
+      * section[language][+]
+        * extension[language].valueCode = #de
+        * title = "Zielsetzung und Fragestellung"
+        * insert narrative([[Zielsetzung und Fragestellung]])
+      * section[language][+]
+        * extension[language].valueCode = #en
+        * title = "Objective and Research Question"
+        * insert narrative([[Objective and Research Question]])
+
+    * section[+] // Versorgungsbereich
+      * section[language][+]
+        * extension[language].valueCode = #de
+        * title = "Versorgungsbereich"
+        * insert narrative([[Versorgungsbereich]])
+      * section[language][+]
+        * extension[language].valueCode = #en
+        * title = "Healthcare Sector"
+        * insert narrative([[Healthcare Sector]])
+
+    * section[+] // Patientenzielgruppe
+      * section[language][+]
+        * extension[language].valueCode = #de
+        * title = "Patientenzielgruppe"
+        * insert narrative([[Patientenzielgruppe]])
+      * section[language][+]
+        * extension[language].valueCode = #en
+        * title = "Target Patient Group"
+        * insert narrative([[Target Patient Group]])
+
+    * section[+] // Adressaten
+      * section[language][+]
+        * extension[language].valueCode = #de
+        * title = "Adressaten"
+        * insert narrative([[Adressaten]])
+      * section[language][+]
+        * extension[language].valueCode = #en
+        * title = "Audience"
+        * insert narrative([[Audience]])
+
+    * section[+] // Gültigkeitsdauer und Aktualisierungsverfahren
+      * section[language][+]
+        * extension[language].valueCode = #de
+        * title = "Gültigkeitsdauer und Aktualisierungsverfahren"
+        * insert narrative([[Gültigkeitsdauer und Aktualisierungsverfahren]])
+      * section[language][+]
+        * extension[language].valueCode = #en
+        * title = "Validity Period and Update Procedure"
+        * insert narrative([[Validity Period and Update Procedure]])
+
+  * section[+] // Methodische Grundlagen
+    * section[language][+]
+      * extension[language].valueCode = #de
+      * title = "Methodische Grundlagen"
+      * insert narrative([[Methodische Grundlagen]])
+    * section[language][+]
+      * extension[language].valueCode = #en
+      * title = "Methodological Foundations"
+      * insert narrative([[Methodological Foundations]])
+
+    * section[+] // Kritische Bewertung der Evidenz
+      * section[language][+]
+        * extension[language].valueCode = #de
+        * title = "Kritische Bewertung der Evidenz"
+        * insert narrative([[Kritische Bewertung der Evidenz]])
+      * section[language][+]
+        * extension[language].valueCode = #en
+        * title = "Critical Appraisal of Evidence"
+        * insert narrative([[Critical Appraisal of Evidence]])
+
+    * section[+] // Strukturierte Konsensfindung
+      * section[language][+]
+        * extension[language].valueCode = #de
+        * title = "Strukturierte Konsensfindung"
+        * insert narrative([[Strukturierte Konsensfindung]])
+      * section[language][+]
+        * extension[language].valueCode = #en
+        * title = "Structured Consensus Process"
+        * insert narrative([[Structured Consensus Process]])
+
+    * section[+] // Empfehlungsgraduierung und Feststellung der Konsensstärke
+      * section[language][+]
+        * extension[language].valueCode = #de
+        * title = "Empfehlungsgraduierung und Feststellung der Konsensstärke"
+        * insert narrative([[Empfehlungsgraduierung und Feststellung der Konsensstärke]])
+      * section[language][+]
+        * extension[language].valueCode = #en
+        * title = "Recommendation Grading and Consensus Strength"
+        * insert narrative([[Recommendation Grading and Consensus Strength]])
+
+    * section[+] // Statements
+      * section[language][+]
+        * extension[language].valueCode = #de
+        * title = "Statements"
+        * insert narrative([[Statements]])
+      * section[language][+]
+        * extension[language].valueCode = #en
+        * title = "Statements"
+        * insert narrative([[Statements]])
+
+    * section[+] // Expertenkonsens
+      * section[language][+]
+        * extension[language].valueCode = #de
+        * title = "Expertenkonsens"
+        * insert narrative([[Expertenkonsens]])
+      * section[language][+]
+        * extension[language].valueCode = #en
+        * title = "Expert Consensus"
+        * insert narrative([[Expert Consensus]])
+
+  * section[+] // Umgang mit Interessenkonflikten
+    * section[language][+]
+      * extension[language].valueCode = #de
+      * title = "Umgang mit Interessenkonflikten"
+      * insert narrative([[Umgang mit Interessenkonflikten]])
+    * section[language][+]
+      * extension[language].valueCode = #en
+      * title = "Handling Conflicts of Interest"
+      * insert narrative([[Handling Conflicts of Interest]])
+
+  * section[+] // Externe Begutachtung und Verabschiedung
+    * section[language][+]
+      * extension[language].valueCode = #de
+      * title = "Externe Begutachtung und Verabschiedung"
+      * insert narrative([[Externe Begutachtung und Verabschiedung]])
+    * section[language][+]
+      * extension[language].valueCode = #en
+      * title = "External Review and Approval"
+      * insert narrative([[External Review and Approval]])
+
+  * section[+] // Redaktionelle Hinweise
+    * section[language][+]
+      * extension[language].valueCode = #de
+      * title = "Redaktionelle Hinweise"
+      * insert narrative([[Redaktionelle Hinweise]])
+    * section[language][+]
+      * extension[language].valueCode = #en
+      * title = "Editorial Notes"
+      * insert narrative([[Editorial Notes]])
+
+  * section[+] // Einführung und Epidemiologie
+    * section[language][+]
+      * extension[language].valueCode = #de
+      * title = "Einführung und Epidemiologie"
+      * insert narrative([[Einführung und Epidemiologie]])
+    * section[language][+]
+      * extension[language].valueCode = #en
+      * title = "Introduction and Epidemiology"
+      * insert narrative([[Introduction and Epidemiology]])

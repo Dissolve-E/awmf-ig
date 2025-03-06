@@ -1,4 +1,4 @@
-Extension: SectionLanguageExt // P2.3.2.21
+Extension: SectionLanguageExt // #P2.3.2.21
 Id: ext-section-language
 Title: "Section Language"
 Description: "The Language of the Section."
