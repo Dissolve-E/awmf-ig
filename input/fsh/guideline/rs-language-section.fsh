@@ -25,3 +25,5 @@ RuleSet: rs-language-section-nested
           * insert rs-language-section
 
 // TODO: make invariant that checks that all leaves are language and that all non-leaves do not contain text
+// TODO: each section that is not defined by a code (e.g. introduction) needs a language section at least for the title
+// TODO: what shall we do with lang sections that only specify the title (and have thus no entry/text/section, cf cmp-1 https://build.fhir.org/composition.html#invs )

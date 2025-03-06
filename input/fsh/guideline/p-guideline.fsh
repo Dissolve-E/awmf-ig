@@ -136,7 +136,7 @@ Description: "Clinical Practice Guideline"
   * value 1..1
 * identifier obeys inv-require-official-identifier // #P2.2.1, #P2.2.3
 
-* version 1..1 // #P2.2.1
+* version 1..1 // #P2.2.1, #P2.2.7
 * version obeys inv-version-major-minor // #P2.2.1, #P2.2.8
 * extension[versionAlgorithm].valueCoding = $cs-awmf#major-minor "Major-Minor Versioning" // TODO: is there an existing code for this?
 
@@ -339,7 +339,7 @@ Description: "Clinical Practice Guideline"
     * code.coding 1..1
     * code = cs-guideline-attachment-types#patient-version "Patient Version"
   
-// Language for each section and nested sections until level 6 (#P2.3.2.21)
+// Language for each section and nested sections until level 6 (#P2.3.2.21, #P2.1.9)
 * section
   * insert rs-language-section-nested
 * section[summary]
@@ -358,7 +358,7 @@ Description: "Clinical Practice Guideline"
   * insert rs-language-section-nested
 * section[appendices]
   * insert rs-language-section-nested
-* section[recommendations] // really?
+* section[recommendations] // TODO: do we really want to use nested language sections here?
   * insert rs-language-section-nested
 
 

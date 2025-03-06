@@ -390,3 +390,60 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
       * extension[language].valueCode = #en
       * title = "Introduction and Epidemiology"
       * insert narrative([[Introduction and Epidemiology]])
+
+* section[+] // 6. Diagnostik
+  * section[language][+]
+    * extension[language].valueCode = #de
+    * title = "Diagnostik"
+    * insert narrative([[Diagnostik]])
+
+  * section[+] // 6.1 Klinische Diagnose der nosokomialen Pneumonie
+    * section[language][+]
+      * extension[language].valueCode = #de
+      * title = "Klinische Diagnose der nosokomialen Pneumonie"
+      * emptyReason = $cs-list-empty-reason#unavailable
+
+    //* section[recommendations]
+    //  * 
+
+  * section[+] // 6.2 Biomarker
+    * section[language][+]
+      * extension[language].valueCode = #de
+      * title = "Biomarker"
+      * insert narrative([[Biomarker]])
+
+  * section[+] // 6.3 Mikrobiologische Diagnostik
+    * section[language][+]
+      * extension[language].valueCode = #de
+      * title = "Mikrobiologische Diagnostik"
+      * insert narrative([[Mikrobiologische Diagnostik]])
+
+    * section[+] // 6.3.1 Bakteriologische Diagnostik
+      * section[language][+]
+        * extension[language].valueCode = #de
+        * title = "Bakteriologische Diagnostik"
+        * insert narrative([[Bakteriologische Diagnostik]])
+
+    * section[+] // 6.3.2 Mykologische Diagnostik
+      * section[language][+]
+        * extension[language].valueCode = #de
+        * title = "Mykologische Diagnostik"
+        * insert narrative([[Mykologische Diagnostik]])
+
+    * section[+] // 6.3.3 Virologische Diagnostik
+      * section[language][+]
+        * extension[language].valueCode = #de
+        * title = "Virologische Diagnostik"
+        * insert narrative([[Virologische Diagnostik]])
+
+    * section[+] // 6.3.4 Materialgewinnung
+      * section[language][+]
+        * extension[language].valueCode = #de
+        * title = "Materialgewinnung"
+        * insert narrative([[Materialgewinnung]])
+
+  * section[+] // 6.4 Bildgebung
+    * section[language][+]
+      * extension[language].valueCode = #de
+      * title = "Bildgebung"
+      * insert narrative([[Bildgebung]])

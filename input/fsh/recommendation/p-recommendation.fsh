@@ -1,31 +1,18 @@
-Profile: Recommendation
+Profile: Recommendation // #P2.2.5 -- each recommendation is a separate resource
 Parent: $ebm-recommendation // #P2.1.2
 Id: Recommendation
 Title: "Recommendation"
 Description: "Clinical Practice Guideline Recommendation"
-* identifier ^slicing.discriminator.type = #value
-* identifier ^slicing.discriminator.path = "system"
-* identifier ^slicing.rules = #open
-* identifier contains awmf-register-number 0..1
-* identifier[awmf-register-number]
-  * system 1..1
-  * system = "https://www.awmf.org/fhir/"
-  * value 1..1
-* identifier obeys inv-require-official-identifier // #P2.2.1
+* identifier obeys inv-require-official-identifier // #P2.2.2
 
-* version 1..1 // #P2.2.1
+* version 1..1 // #P2.2.6, #P2.2.7
 * version obeys inv-version-major-minor // #P2.2.1
 * extension[versionAlgorithm].valueCoding = $cs-awmf#major-minor "Major-Minor Versioning" // TODO: is there an existing code for this?
 
 // #P2.1.8
-* relatesTo ^slicing.discriminator.type = #value 
-* relatesTo ^slicing.discriminator.path = "type"
-* relatesTo ^slicing.rules = #open
 * relatesTo contains 
   specificationOfPreceedingRecommendation 0..*
   and specificationOfSucceedingRecommendation 0..*
-* relatesTo
-  * classifier 1..1
 * relatesTo[specificationOfPreceedingRecommendation]
   * type 1..1
   * type = #predecessor
@@ -36,20 +23,17 @@ Description: "Clinical Practice Guideline Recommendation"
   * type = #successor
   * resourceReference 1..1
   * resourceReference only Reference(Recommendation)
-/*
-// ---------------------------
-// ab hier nur beispielhaft
-* section
-  * orderedBy = cs-awmf#ordered-by-authors "Ordered by authors"
-  * section ^slicing.discriminator.type = #value
-  * section ^slicing.discriminator.path = "code.coding"
-  * section ^slicing.rules = #open
-  * section contains 
-    introduction 0..1 MS 
-    and longVersion 0..1 MS
-  * section[introduction].code.coding 1..1
-  * section[introduction].code.coding = https://fevir.net/resources/CodeSystem/179423#introduction "Introduction"  
-*/
+
+* relatesTo[partOf] 1..* // each recommendation must be part of at least one guideline
+
+* section[recommendationSpecification]
+  * section[recommendationStatement]
+    * insert rs-language-section
+
+* section contains text 0..*
+* section[text]
+  * insert rs-language-section-nested
+
 
 Instance: Recommendation-PlanDefinition-example
 InstanceOf: PlanDefinition
