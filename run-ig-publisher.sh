@@ -30,8 +30,10 @@ function set_release_label() {
   sed -i "s/^releaseLabel: .*/releaseLabel: $release_label/g" "$sushi_config_file"
 }
 
-# download publisher
+# download EBM IG (ci build)
+./download-ebm-ig.sh
 
+# download publisher
 publisher=$input_cache_path/$publisher_jar
 
 if ! test -f "$publisher"; then

@@ -31,7 +31,7 @@ jobs:
           sudo update-locale LANG=en_US.UTF-8
 
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: setup python
         uses: actions/setup-python@v4
