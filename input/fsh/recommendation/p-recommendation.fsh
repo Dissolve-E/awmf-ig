@@ -26,6 +26,18 @@ Description: "Clinical Practice Guideline Recommendation"
 
 * relatesTo[partOf] 1..* // each recommendation must be part of at least one guideline
 
+* category 0..*
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "coding"
+  * ^slicing.rules = #open
+* category contains recommendationType 0..1
+* category[recommendationType]
+  * coding from vs-recommendation-type (required) 
+    * system 1.. MS
+    * code 1.. MS
+// TODO: implement terminology; vs-recommendation-type = #expert-consensus, #evidence-based
+
+
 // doesn't work :(
 // // unset valueset binding from second level
 // * section.section.code ^binding.valueSet = "http://hl7.org/fhir/ValueSet/doc-section-codesX"

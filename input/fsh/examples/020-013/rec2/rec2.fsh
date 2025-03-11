@@ -15,17 +15,10 @@ Description: "Wie wird eine HAP klinisch diagnostiziert und welche Differenziald
 * relatesTo[partOf]
   * extension[targetCanonical].valueCanonical = Canonical(NosokomialePneumonie|3.0)
 
-
 * section[recommendationSpecification]
   * section[recommendationStatement]
-    * section[language]
-      * extension[language].valueCode = #de
-      * insert narrative([[Therapierelevant ist bereits die Verdachtsdiagnose einer HAP, diese soll gestellt werden bei
-neuem, persistierendem oder progredientem Infiltrat in der Thorax-Röntgenaufnahme in
-Kombination mit 2 von 3 weiteren Kriterien:
-- Leukozyten &gt; 10 000 oder &lt; 4000 /μl,
-- Fieber &gt; 38,3 °C,
-- purulentes Sekret.]])
+    * entry[+] = Reference(RecommendationHAPDiagnosis-A)
+    * entry[+] = Reference(RecommendationHAPDiagnosis-B)
 
 * section[text]
   * code = $cs-ebm-ig-section-code#text "Text"
