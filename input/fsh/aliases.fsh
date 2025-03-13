@@ -14,4 +14,12 @@ Alias: $ext-annotationType = http://hl7.org/fhir/StructureDefinition/annotationT
 Alias: $cs-composition-attestation-mode = http://hl7.org/fhir/composition-attestation-mode
 Alias: $cs-list-empty-reason = http://terminology.hl7.org/CodeSystem/list-empty-reason
 
-Alias: $cs-ebm-ig-section-code = https://fevir.net/resources/CodeSystem/179423
+Alias: $cs-ebm-ig = https://fevir.net/resources/CodeSystem/179423
+
+Alias: $cs-certainty-type = http://hl7.org/fhir/certainty-type
+Alias: $cs-direction-of-recommendation = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-recommendation-direction-cs
+Alias: $vs-direction-of-recommendation = http://hl7.org/fhir/uv/cpg/ValueSet/cpg-recommendation-direction-vs
+
+Alias: $cs-quality-of-evidence = http://terminology.hl7.org/CodeSystem/evidence-quality
+Alias: $vs-quality-of-evidence = http://terminology.hl7.org/ValueSet/evidence-quality
+

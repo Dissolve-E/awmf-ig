@@ -370,21 +370,21 @@ Description: "Clinical Practice Guideline"
 
 // lines below are just used to force sushi to add the correct code when refering to the slices
 * section[summary].code 1..1
-* section[summary].code = $cs-ebm-ig-section-code#summary "Summary"
+* section[summary].code = $cs-ebm-ig#summary "Summary"
 * section[introduction].code 1..1
-* section[introduction].code = $cs-ebm-ig-section-code#introduction "Introduction"
+* section[introduction].code = $cs-ebm-ig#introduction "Introduction"
 * section[discussion].code 1..1
-* section[discussion].code = $cs-ebm-ig-section-code#discussion "Discussion"
+* section[discussion].code = $cs-ebm-ig#discussion "Discussion"
 * section[methods].code 1..1
-* section[methods].code = $cs-ebm-ig-section-code#methods "Methods"
+* section[methods].code = $cs-ebm-ig#methods "Methods"
 * section[references].code 1..1
-* section[references].code = $cs-ebm-ig-section-code#references "References"
+* section[references].code = $cs-ebm-ig#references "References"
 * section[competingInterests].code 1..1
-* section[competingInterests].code = $cs-ebm-ig-section-code#competing-interests "Competing Interests"
+* section[competingInterests].code = $cs-ebm-ig#competing-interests "Competing Interests"
 * section[acknowledgements].code 1..1
-* section[acknowledgements].code = $cs-ebm-ig-section-code#acknowledgements "Acknowledgements"
+* section[acknowledgements].code = $cs-ebm-ig#acknowledgements "Acknowledgements"
 * section[appendices].code 1..1
-* section[appendices].code = $cs-ebm-ig-section-code#appendices "Appendices"
+* section[appendices].code = $cs-ebm-ig#appendices "Appendices"
 
 
 

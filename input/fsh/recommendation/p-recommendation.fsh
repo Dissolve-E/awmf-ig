@@ -63,47 +63,47 @@ Description: "Clinical Practice Guideline Recommendation"
   * insert rs-language-section-nested
 * section[text]
   * code 1..1
-  * code = $cs-ebm-ig-section-code#text "Text"
+  * code = $cs-ebm-ig#text "Text"
   * code.coding 1..1
-  * code.coding = $cs-ebm-ig-section-code#text "Text"
+  * code.coding = $cs-ebm-ig#text "Text"
   * insert rs-language-section
 
 // lines below are just used to force sushi to add the correct code when refering to the slices
 * section[summary].code 1..1
-* section[summary].code = $cs-ebm-ig-section-code#summary "Summary"
+* section[summary].code = $cs-ebm-ig#summary "Summary"
 * section[introduction].code 1..1
-* section[introduction].code = $cs-ebm-ig-section-code#introduction "Introduction"
+* section[introduction].code = $cs-ebm-ig#introduction "Introduction"
 * section[discussion].code 1..1
-* section[discussion].code = $cs-ebm-ig-section-code#discussion "Discussion"
+* section[discussion].code = $cs-ebm-ig#discussion "Discussion"
 * section[methods].code 1..1
-* section[methods].code = $cs-ebm-ig-section-code#methods "Methods"
+* section[methods].code = $cs-ebm-ig#methods "Methods"
 * section[references].code 1..1
-* section[references].code = $cs-ebm-ig-section-code#references "References"
+* section[references].code = $cs-ebm-ig#references "References"
 * section[competingInterests].code 1..1
-* section[competingInterests].code = $cs-ebm-ig-section-code#competing-interests "Competing Interests"
+* section[competingInterests].code = $cs-ebm-ig#competing-interests "Competing Interests"
 * section[acknowledgements].code 1..1
-* section[acknowledgements].code = $cs-ebm-ig-section-code#acknowledgements "Acknowledgements"
+* section[acknowledgements].code = $cs-ebm-ig#acknowledgements "Acknowledgements"
 * section[appendices].code 1..1
-* section[appendices].code = $cs-ebm-ig-section-code#appendices "Appendices"
+* section[appendices].code = $cs-ebm-ig#appendices "Appendices"
 * section[recommendationSpecification].code 1..1
-* section[recommendationSpecification].code = $cs-ebm-ig-section-code#recommendation-specification "Recommendation Specification"
+* section[recommendationSpecification].code = $cs-ebm-ig#recommendation-specification "Recommendation Specification"
 * section[recommendationSpecification]
   * section[recommendationStatement].code 1..1
-  * section[recommendationStatement].code = $cs-ebm-ig-section-code#recommendation-statement "Recommendation Statement"
+  * section[recommendationStatement].code = $cs-ebm-ig#recommendation-statement "Recommendation Statement"
   * section[ratings].code 1..1
-  * section[ratings].code = $cs-ebm-ig-section-code#ratings "Ratings"
+  * section[ratings].code = $cs-ebm-ig#ratings "Ratings"
   * section[population].code 1..1
-  * section[population].code = $cs-ebm-ig-section-code#population "Population"
+  * section[population].code = $cs-ebm-ig#population "Population"
   * section[action].code 1..1
-  * section[action].code = $cs-ebm-ig-section-code#action "Action"
+  * section[action].code = $cs-ebm-ig#action "Action"
   * section[oppositeAction].code 1..1
-  * section[oppositeAction].code = $cs-ebm-ig-section-code#opposite-action "Opposite Action"
+  * section[oppositeAction].code = $cs-ebm-ig#opposite-action "Opposite Action"
 * section[evidence].code 1..1
-* section[evidence].code = $cs-ebm-ig-section-code#evidence "Evidence"
+* section[evidence].code = $cs-ebm-ig#evidence "Evidence"
 * section[justification].code 1..1
-* section[justification].code = $cs-ebm-ig-section-code#justification "Justification"
+* section[justification].code = $cs-ebm-ig#justification "Justification"
 * section[considerations].code 1..1
-* section[considerations].code = $cs-ebm-ig-section-code#considerations "Considerations"
+* section[considerations].code = $cs-ebm-ig#considerations "Considerations"
 
 
 Instance: RecommendationExample

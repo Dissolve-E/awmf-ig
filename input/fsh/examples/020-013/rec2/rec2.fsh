@@ -21,7 +21,7 @@ Description: "Wie wird eine HAP klinisch diagnostiziert und welche Differenziald
     * entry[+] = Reference(RecommendationHAPDiagnosis-B)
 
 * section[text]
-  * code = $cs-ebm-ig-section-code#text "Text"
+  * code = $cs-ebm-ig#text "Text"
   * section[language]
     * extension[language].valueCode = #de
     * insert narrative([[Die klinische Diagnose einer HAP ist schwierig. Es gibt keine allgemein akzeptierten Kriterien auf der Basis
@@ -48,26 +48,3 @@ Diagnose der HAP eine Arbeitsdiagnose, die für die zeitnahe Einleitung einer ka
 Therapie relevant ist und der regelmäßigen Überprüfung bedarf. In diesem Zusammenhang sind die
 aufgeführten Differenzialdiagnosen zu bedenken
 ]])
-
-
-/*
-#Expertenkonsens
-
-Therapierelevant ist bereits die Verdachtsdiagnose einer HAP, diese soll gestellt werden bei
-neuem, persistierendem oder progredientem Infiltrat in der Thorax-Röntgenaufnahme in
-Kombination mit 2 von 3 weiteren Kriterien:
-- Leukozyten > 10 000 oder < 4000 /μl,
-- Fieber > 38,3 °C,
-- purulentes Sekret.
-
-#Starke-Empfehlung
-
-Differenzialdiagnostisch sollten u.a. Atelektasen (Sekretverlegung),
-Herzinsuffizienz/Überwässerung, Lungenarterienembolien, alveoläre Hämorrhagie, interstitielle
-Lungenerkrankungen wie eine organisierende Pneumonie (OP) und das ARDS abgegrenzt
-werden.
-
-#Schwache-Empfehlung
-
-#Starker-Konsens
-*/

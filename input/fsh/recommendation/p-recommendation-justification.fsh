@@ -2,64 +2,72 @@ Profile: RecommendationJustication
 Parent: ArtifactAssessment
 Id: recommendation-justication
 Title: "Recommendation Justication"
-Description: ""
+Description: "A structured assessment of the evidence and consensus that underpins a recommendation."
 * artifactReference only Reference(Recommendation)
 
 * content ^slicing.discriminator.type = #value
 * content ^slicing.discriminator.path = "type"
 * content ^slicing.rules = #open
 * content contains 
-  recommendationSpecification 0..1
+  recommendationRating 0..1
   and evidence 0..*
 
 
-* content[recommendationSpecification]
+* content[recommendationRating]
+  * type 1..1
+  * type = cs-awmf#recommendation-rating "Recommendation Rating" // TODO: or should we use EBM IG code (#recommendation-specification)
+  * component ^slicing.discriminator.type = #value
+  * component ^slicing.discriminator.path = "type"
+  * component ^slicing.rules = #open
+  * component contains 
+    strengthOfRecommendation 0..1
+    and directionOfRecommendation 0..1
+    and levelOfConsensus 0..1
+
   * component[strengthOfRecommendation]
-  * component[strengthOfConsensus]
+    * type 1..1
+    * type = $cs-ebm-ig#strength-of-recommendation
+    * classifier 1..1
+    * classifier from vs-strength-of-recommendation (required)
+    // TODO: classifier from http://terminology.hl7.org/CodeSystem/recommendation-strength ?
+    // TODO: AWMF Empfehlungssystematik: https://www.awmf.org/leitlinien/awmf-regelwerk/ll-entwicklung.html ?
 
-// Variante 1: extra profil für "overall evidence"
-* content[evidence][+]
-  * type = cs-awmf#evidence
-  * relatedArtifact = Reference(RecommendationHAPDiagnosis-Mortality)
-* content[evidence][+]
-  * type = cs-awmf#evidence
-  * relatedArtifact = Reference(RecommendationHAPDiagnosis-AntibioticDays)
-* content[evidence][+]
-  * type = cs-awmf#evidence
-  * relatedArtifact = Reference(RecommendationHAPDiagnosis-TimeToDeescalation)
+// TODO: or use strong-for, strong-against ?
+  * component[directionOfRecommendation]
+    * type 1..1
+    * type = $cs-ebm-ig#direction-of-recommendation
+    * classifier 1..1
+    * classifier from $vs-direction-of-recommendation (required)
+      
+  * component[levelOfConsensus]
+    * type 1..1
+    * type = cs-awmf#level-of-consensus
+    * classifier 1..1
+    * classifier from vs-level-of-consensus (required)
 
-// Variante 2: overall-evidenz-bewertung direkt hier
-* content[evidence][+] // Mortalität
-// TODO: wie outcome?
-  * component[levelOfEvidence].classifier = #very-niedrig
-  * component[riskOfBias].classifier = #sehr-strong
-  * relatedArtifact[outcome].resourceReference = Reference(Mortality)
-* content[evidence][+] // Antibiotikatage
-  * component[levelOfEvidence].classifier = #very-niedrig
-  * component[riskOfBias].classifier = #sehr-strong
-  * relatedArtifact[outcome].resourceReference = Reference(AntibioticDays)
-* content[evidence][+] // Zeit bis Deeskalation
-  * component[levelOfEvidence].classifier = #very-niedrig
-  * component[riskOfBias].classifier = #sehr-strong
-  * relatedArtifact[outcome].resourceReference = Reference(TimeToDeescalation)
+* content[evidence] // one per outcome
+  * type 1..1
+  * type = $cs-ebm-ig#evidence "Evidence"
+  * relatedArtifact 1..1
+  * relatedArtifact only Reference(CertaintyOfEvidenceRating)
+  
+  * component
+    * type 1..1
+    * type = $cs-ebm-ig#evidence "Evidence"
+    * relatedArtifact 1..1
+    * relatedArtifact only Reference(CertaintyOfEvidenceRating)
 
-/*
-  * component[primaryEvidence]
-    * type = cs-awmf#evidence-single-study
-    * relatedArtifact = Reference(EvidenceAssessment)
-    * content[+]
-      * type = cs-awmf#outcome
-*/
 
-Profile: EvidenceAssessment
+Profile: CertaintyOfEvidenceRating
 Parent: ArtifactAssessment
-Id: evidence-assessment
+Id: certainty-of-evidence-rating
 Title: "Evidence Assessment"
-Description: ""
+Description: "A structured assessment of the certainty of evidence for a specific outcome."
 
-// TODO: wie outcome?
-* artifactReference only Reference(OutcomeDefinition)
+// TODO: should single study evidences point to the overall evidence assessment? (e.g. via some kind of partOf = Reference(OverallAssessment))
+//       or should they be independent and only be "passively" referenced by the overall assessment (like it is now implemented)?
 
+* artifactReference only Reference(Evidence) // TODO: should we make a profile for Evidence that requires an Outcome Definition?
 
 * content ^slicing.discriminator.type = #value
 * content ^slicing.discriminator.path = "type"
@@ -67,47 +75,43 @@ Description: ""
 * content contains 
   levelOfEvidence 0..1
   and riskOfBias 0..1
+  and inconsistency 0..1
+  and indirectness 0..1
+  and imprecision 0..1
+  and publicationBias 0..1
+  and doseResponseGradient 0..1
+  and plausibleConfounding 0..1
+  and largeEffect 0..1
+  // TODO: which other components should be included here?
+
+// TODO: the code system and value set is called "quality of evidence"  - is this ok?
+// TODO: There is another code system with the same codes: http://hl7.org/fhir/codesystem-certainty-rating.html
 * content[levelOfEvidence]
+  * type 1..1
+  * type = $cs-certainty-type#Overall "Overall certainty"
+  * classifier 1..1
+  * classifier from $vs-quality-of-evidence (required)
 * content[riskOfBias]
-
-
-// ALTERNATIVE
-* content[+]
-  * relatedArtifact.resourceReference = Reference(Mortality)
-  * component[levelOfEvidence].classifier = #very-niedrig
-  * component[riskOfBias].classifier = #sehr-strong
-* content[+]
-  * relatedArtifact.resourceReference = Reference(AntibioticDays)
-  * component[levelOfEvidence].classifier = #very-niedrig
-  * component[riskOfBias].classifier = #sehr-strong
-* content[+]
-  * relatedArtifact.resourceReference = Reference(TimeToDeescalation)
-  * component[levelOfEvidence].classifier = #very-niedrig
-  * component[riskOfBias].classifier = #sehr-strong
-
-// ALTERNATIVE 2
-* content
-  * component[+]
-    * relatedArtifact.resourceReference = Reference(Mortality)
-    * component[levelOfEvidence].classifier = #very-niedrig
-    * component[riskOfBias].classifier = #sehr-strong
-  * component[+]
-    * relatedArtifact.resourceReference = Reference(AntibioticDays)
-    * component[levelOfEvidence].classifier = #very-niedrig
-    * component[riskOfBias].classifier = #sehr-strong
-  * component[+]
-    * relatedArtifact.resourceReference = Reference(TimeToDeescalation)
-    * component[levelOfEvidence].classifier = #very-niedrig
-    * component[riskOfBias].classifier = #sehr-strong
-
-
-
-
-Instance: RecommendationHAPDiagnosis-Mortality
-InstanceOf: EvidenceAssessment
-Usage: #example
-Title: "RecommendationHAPDiagnosis-Mortality"
-Description: ""
-* artifactReference.display = "Gesamt-Evidenz Mortalität"
-* content[levelOfEvidence] = #very-niedrig
-
+  * type 1..1
+  * type = $cs-certainty-type#RiskOfBias "Risk of bias"
+* content[inconsistency]
+  * type 1..1
+  * type = $cs-certainty-type#Inconsistency "Inconsistency"
+* content[indirectness]
+  * type 1..1
+  * type = $cs-certainty-type#Indirectness "Indirectness"
+* content[imprecision]
+  * type 1..1
+  * type = $cs-certainty-type#Imprecision "Imprecision"
+* content[publicationBias]
+  * type 1..1
+  * type = $cs-certainty-type#PublicationBias "Publication bias"
+* content[doseResponseGradient]
+  * type 1..1
+  * type = $cs-certainty-type#DoseResponseGradient "Dose response gradient"
+* content[plausibleConfounding]
+  * type 1..1
+  * type = $cs-certainty-type#PlausibleConfounding "Plausible confounding"
+* content[largeEffect]
+  * type 1..1
+  * type = $cs-certainty-type#LargeEffect "Large effect"
