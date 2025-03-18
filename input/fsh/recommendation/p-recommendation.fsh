@@ -69,41 +69,92 @@ Description: "Clinical Practice Guideline Recommendation"
   * insert rs-language-section
 
 // lines below are just used to force sushi to add the correct code when refering to the slices
-* section[summary].code 1..1
-* section[summary].code = $cs-ebm-ig#summary "Summary"
-* section[introduction].code 1..1
-* section[introduction].code = $cs-ebm-ig#introduction "Introduction"
-* section[discussion].code 1..1
-* section[discussion].code = $cs-ebm-ig#discussion "Discussion"
-* section[methods].code 1..1
-* section[methods].code = $cs-ebm-ig#methods "Methods"
-* section[references].code 1..1
-* section[references].code = $cs-ebm-ig#references "References"
-* section[competingInterests].code 1..1
-* section[competingInterests].code = $cs-ebm-ig#competing-interests "Competing Interests"
-* section[acknowledgements].code 1..1
-* section[acknowledgements].code = $cs-ebm-ig#acknowledgements "Acknowledgements"
-* section[appendices].code 1..1
-* section[appendices].code = $cs-ebm-ig#appendices "Appendices"
-* section[recommendationSpecification].code 1..1
-* section[recommendationSpecification].code = $cs-ebm-ig#recommendation-specification "Recommendation Specification"
+* section[summary]
+  * code 1..1
+  * code = $cs-ebm-ig#summary "Summary"
+* section[introduction]
+  * code 1..1
+  * code = $cs-ebm-ig#introduction "Introduction"
+* section[discussion]
+  * code 1..1
+  * code = $cs-ebm-ig#discussion "Discussion"
+* section[methods]
+  * code 1..1
+  * code = $cs-ebm-ig#methods "Methods"
+* section[references]
+  * code 1..1
+  * code = $cs-ebm-ig#references "References"
+* section[competingInterests]
+  * code 1..1
+  * code = $cs-ebm-ig#competing-interests "Competing Interests"
+* section[acknowledgements]
+  * code 1..1
+  * code = $cs-ebm-ig#acknowledgements "Acknowledgements"
+* section[appendices]
+  * code 1..1
+  * code = $cs-ebm-ig#appendices "Appendices"
+
 * section[recommendationSpecification]
-  * section[recommendationStatement].code 1..1
-  * section[recommendationStatement].code = $cs-ebm-ig#recommendation-statement "Recommendation Statement"
-  * section[ratings].code 1..1
-  * section[ratings].code = $cs-ebm-ig#ratings "Ratings"
-  * section[population].code 1..1
-  * section[population].code = $cs-ebm-ig#population "Population"
-  * section[action].code 1..1
-  * section[action].code = $cs-ebm-ig#action "Action"
-  * section[oppositeAction].code 1..1
-  * section[oppositeAction].code = $cs-ebm-ig#opposite-action "Opposite Action"
-* section[evidence].code 1..1
-* section[evidence].code = $cs-ebm-ig#evidence "Evidence"
-* section[justification].code 1..1
-* section[justification].code = $cs-ebm-ig#justification "Justification"
-* section[considerations].code 1..1
-* section[considerations].code = $cs-ebm-ig#considerations "Considerations"
+  * code 1..1
+  * code = $cs-ebm-ig#recommendation-specification "Recommendation Specification"
+  * section contains 
+    intervention 0..1 
+    and comparator 0..1
+    and outcome 0..1
+    and action 0..0
+    and oppositeAction 0..0
+
+  * section[recommendationStatement]
+    * code 1..1
+    * code = $cs-ebm-ig#recommendation-statement "Recommendation Statement"
+    * insert rs-language-section
+
+  * section[population]
+    * code 1..1
+    * code = $cs-ebm-ig#population "Population"
+    * insert rs-language-section
+    * section[language] // TODO: remove language subsections and add language extension to author (here and everywhere)?
+      * extension contains ext-section-keywords named keyword 0..* // #P2.3.2.8
+      * entry only Reference(EvidenceVariable or Group)  // #P2.3.2.9 // actually, EvidenceVariable is only for R5 while group is for R6    
+
+  * section[intervention]
+    * code 1..1
+    * code = $cs-ebm-ig#intervention "Intervention"
+    * insert rs-language-section
+    * section[language]
+      * extension contains ext-section-keywords named keyword 0..*
+      * entry only Reference(PlanDefinition) // #P2.3.2.9
+
+  * section[comparator]
+    * code 1..1
+    * code = $cs-ebm-ig#comparator "Comparator"
+    * insert rs-language-section
+    * section[language]
+      * extension contains ext-section-keywords named keyword 0..*
+      * entry only Reference(PlanDefinition) // #P2.3.2.9
+
+  * section[outcome]
+    * code 1..1
+    * code = $cs-ebm-ig#outcome "Outcome"
+    * insert rs-language-section
+    * section[language]
+      * extension contains ext-section-keywords named keyword 0..*
+      * entry only Reference(EvidenceVariable or Group) // actually, EvidenceVariable is only for R5 while group is for R6
+
+  * section[ratings]
+    * code 1..1
+    * code = $cs-ebm-ig#ratings "Ratings"
+    * entry only Reference(RecommendationJustication)
+
+* section[evidence]
+  * code 1..1
+  * code = $cs-ebm-ig#evidence "Evidence"
+* section[justification]
+  * code 1..1
+  * code = $cs-ebm-ig#justification "Justification"
+* section[considerations]
+  * code 1..1
+  * code = $cs-ebm-ig#considerations "Considerations"
 
 
 Instance: RecommendationExample

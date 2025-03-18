@@ -292,6 +292,7 @@ Description: "Clinical Practice Guideline"
     * text 0..0 // text is contained in the language subsection
     * code = cs-guideline-sections#keywords "Keywords"
     * insert rs-language-section
+    * extension contains ext-section-keywords named keyword 0..*
 
 
 * section[attachments] // #P2.1.6
