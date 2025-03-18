@@ -1,5 +1,5 @@
 Profile: RecommendationJustication
-Parent: ArtifactAssessment
+Parent: ArtifactAssessment // TODO: inherit from EBM IG profile
 Id: recommendation-justication
 Title: "Recommendation Justication"
 Description: "A structured assessment of the evidence and consensus that underpins a recommendation."
@@ -11,6 +11,7 @@ Description: "A structured assessment of the evidence and consensus that underpi
 * content contains 
   recommendationRating 0..1
   and evidence 0..*
+  and searchStrategy 0..1  // #P2.3.3.1
 
 
 * content[recommendationRating]
@@ -45,18 +46,26 @@ Description: "A structured assessment of the evidence and consensus that underpi
     * classifier 1..1
     * classifier from vs-level-of-consensus (required)
 
-* content[evidence] // one per outcome
+// TODO: we need to add the different rating systems (GRADE, LoE Oxford); then Risk of Bias and other components
+//       currently we only CertaintyOfEvidenceRating profile for this, is this sufficient?
+* content[evidence] // one per outcome, #P2.3.3.2, #P2.3.3.3
   * type 1..1
   * type = $cs-ebm-ig#evidence "Evidence"
   * relatedArtifact 1..1
   * relatedArtifact only Reference(CertaintyOfEvidenceRating)
   
-  * component
+  * component // #P2.3.3.2, #P2.3.3.3
     * type 1..1
     * type = $cs-ebm-ig#evidence "Evidence"
     * relatedArtifact 1..1
     * relatedArtifact only Reference(CertaintyOfEvidenceRating)
 
+// TODO: should this be here or in recommendation or / and in guideline?
+* content[searchStrategy] // #P2.3.3.1
+  * type 1..1
+  * type = $cs-ebm-ig#search-strategy "Search Strategy"
+  * relatedArtifact 1..1
+  * relatedArtifact only Reference(SearchStrategy)
 
 Profile: CertaintyOfEvidenceRating
 Parent: ArtifactAssessment
@@ -67,7 +76,11 @@ Description: "A structured assessment of the certainty of evidence for a specifi
 // TODO: should single study evidences point to the overall evidence assessment? (e.g. via some kind of partOf = Reference(OverallAssessment))
 //       or should they be independent and only be "passively" referenced by the overall assessment (like it is now implemented)?
 
+// #P2.3.3.2, #P2.3.3.3
 * artifactReference only Reference(Evidence) // TODO: should we make a profile for Evidence that requires an Outcome Definition?
+
+// TODO: how to mark evidence as missing? #P2.3.3.7 (e.g. if no studies are available for a specific outcome)
+//       we need to define the way in FHIR and explicitly mention this in the implementation guide
 
 * content ^slicing.discriminator.type = #value
 * content ^slicing.discriminator.path = "type"
