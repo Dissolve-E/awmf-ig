@@ -23,3 +23,11 @@ Alias: $vs-direction-of-recommendation = http://hl7.org/fhir/uv/cpg/ValueSet/cpg
 Alias: $cs-quality-of-evidence = http://terminology.hl7.org/CodeSystem/evidence-quality
 Alias: $vs-quality-of-evidence = http://terminology.hl7.org/ValueSet/evidence-quality
 
+Alias: $ext-translation = http://hl7.org/fhir/StructureDefinition/translation
+
+Alias: $sct = http://snomed.info/sct
+Alias: $loinc = http://loinc.org
+Alias: $icd10-gm = http://fhir.de/CodeSystem/bfarm/icd-10-gm
+Alias: $ops = http://fhir.de/CodeSystem/bfarm/ops
+Alias: $atc = http://www.whocc.no/atc
+Alias: $atcde = http://fhir.de/CodeSystem/bfarm/atc
