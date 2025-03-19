@@ -1,36 +1,38 @@
 Instance: RecommendationHAPDiagnosis-A-Justification
-InstanceOf: RecommendationJustication
+InstanceOf: RecommendationJustification
 Usage: #example
 Title: "RecommendationHAPDiagnosis-A-Justification"
 Description: "Justification for Recommendation HAP Diagnose A"
+* insert narrative([[Justification for Recommendation HAP Diagnose A]])
 * artifactReference = Reference(RecommendationHAPDiagnosis-A)
 * content[recommendationRating]
   * type = cs-awmf#recommendation-rating "Recommendation Rating"
   
   * component[strengthOfRecommendation]
-    * classifier = cs-strength-of-recommendation#strong "Strong"
+    * classifier = cs-strength-of-recommendation#strong "Strong Recommendation"
   
   * component[directionOfRecommendation]
     * classifier = $cs-direction-of-recommendation#for "For"
   
   * component[levelOfConsensus]
-    * classifier = $cs-level-of-consensus#strong "Strong"
+    * classifier = cs-level-of-consensus#strong "Strong consensus"
 
 
 Instance: RecommendationHAPDiagnosis-B-Justification
-InstanceOf: RecommendationJustication
+InstanceOf: RecommendationJustification
 Usage: #example
 Title: "RecommendationHAPDiagnosis-B-Justification"
 Description: "Justification for Recommendation HAP Diagnose B"
+* insert narrative([[Justification for Recommendation HAP Diagnose B]])
 * artifactReference = Reference(RecommendationHAPDiagnosis-B)
 * content[recommendationRating]
   * type = cs-awmf#recommendation-rating "Recommendation Rating"
   
   * component[strengthOfRecommendation]
-    * classifier = cs-strength-of-recommendation#weak "Weak"
+    * classifier = cs-strength-of-recommendation#weak "Weak Recommendation"
   
   * component[directionOfRecommendation]
     * classifier = $cs-direction-of-recommendation#for "For"
   
   * component[levelOfConsensus]
-    * classifier = $cs-level-of-consensus#strong "Strong"
+    * classifier = cs-level-of-consensus#strong "Strong consensus"

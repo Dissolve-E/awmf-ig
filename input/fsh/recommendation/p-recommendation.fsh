@@ -95,56 +95,68 @@ Description: "Clinical Practice Guideline Recommendation"
   * code = $cs-ebm-ig#appendices "Appendices"
 
 * section[recommendationSpecification]
+  * section ^slicing.discriminator.type = #value
+  * section ^slicing.discriminator.path = "code"
+  * section ^slicing.rules = #open
   * code 1..1
   * code = $cs-ebm-ig#recommendation-specification "Recommendation Specification"
   * section contains 
-    intervention 0..1 
+    intervention 0..1
     and comparator 0..1
     and outcome 0..1
-    and action 0..0
-    and oppositeAction 0..0
+
+  // disable action and oppositeAction, as we are using intervention and comparator slices
+  * section[action] 0..0
+  * section[oppositeAction] 0..0
 
   * section[recommendationStatement]
     * code 1..1
     * code = $cs-ebm-ig#recommendation-statement "Recommendation Statement"
-    * insert rs-language-section
+    * code.coding = $cs-ebm-ig#recommendation-statement "Recommendation Statement"
 
   * section[population]
     * code 1..1
     * code = $cs-ebm-ig#population "Population"
+    * code.coding = $cs-ebm-ig#population "Population"
     * insert rs-language-section
     * section[language] // TODO: remove language subsections and add language extension to author (here and everywhere)?
-      * extension contains ext-section-keywords named keyword 0..* // #P2.3.2.8
+      * extension contains ext-section-keyword named keyword 0..* // #P2.3.2.8
       * entry only Reference(EvidenceVariable or Group)  // #P2.3.2.9 // actually, EvidenceVariable is only for R5 while group is for R6    
 
   * section[intervention]
     * code 1..1
     * code = $cs-ebm-ig#intervention "Intervention"
+    // * code.coding 1..1
+    // * code.coding = $cs-ebm-ig#intervention "Intervention"
     * insert rs-language-section
     * section[language]
-      * extension contains ext-section-keywords named keyword 0..*
+      * extension contains ext-section-keyword named keyword 0..*
       * entry only Reference(PlanDefinition) // #P2.3.2.9
 
   * section[comparator]
     * code 1..1
     * code = $cs-ebm-ig#comparator "Comparator"
+    // * code.coding 1..1
+    // * code.coding = $cs-ebm-ig#comparator "Comparator"
     * insert rs-language-section
     * section[language]
-      * extension contains ext-section-keywords named keyword 0..*
+      * extension contains ext-section-keyword named keyword 0..*
       * entry only Reference(PlanDefinition) // #P2.3.2.9
 
   * section[outcome]
     * code 1..1
     * code = $cs-ebm-ig#outcome "Outcome"
+    // * code.coding 1..1
+    // * code.coding = $cs-ebm-ig#outcome "Outcome"
     * insert rs-language-section
     * section[language]
-      * extension contains ext-section-keywords named keyword 0..*
+      * extension contains ext-section-keyword named keyword 0..*
       * entry only Reference(EvidenceVariable or Group) // actually, EvidenceVariable is only for R5 while group is for R6
 
   * section[ratings]
     * code 1..1
     * code = $cs-ebm-ig#ratings "Ratings"
-    * entry only Reference(RecommendationJustication)
+    * entry only Reference(RecommendationJustification)
 
 * section[evidence]
   * code 1..1

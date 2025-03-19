@@ -31,3 +31,6 @@ Alias: $icd10-gm = http://fhir.de/CodeSystem/bfarm/icd-10-gm
 Alias: $ops = http://fhir.de/CodeSystem/bfarm/ops
 Alias: $atc = http://www.whocc.no/atc
 Alias: $atcde = http://fhir.de/CodeSystem/bfarm/atc
+
+Alias: $cs-related-artifact-type = http://hl7.org/fhir/related-artifact-type
+Alias: $cs-variable-role = http://terminology.hl7.org/CodeSystem/variable-role|6.0.0-ballot2

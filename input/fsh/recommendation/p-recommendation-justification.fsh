@@ -1,4 +1,4 @@
-Profile: RecommendationJustication
+Profile: RecommendationJustification
 Parent: ArtifactAssessment // TODO: inherit from EBM IG profile
 Id: recommendation-justication
 Title: "Recommendation Justication"
@@ -52,20 +52,25 @@ Description: "A structured assessment of the evidence and consensus that underpi
   * type 1..1
   * type = $cs-ebm-ig#evidence "Evidence"
   * relatedArtifact 1..1
-  * relatedArtifact only Reference(CertaintyOfEvidenceRating)
+    * type 1..1
+    * type = $cs-related-artifact-type#justification "Justification"
+    * resourceReference 1..1
+    * resourceReference only Reference(CertaintyOfEvidenceRating)
   
   * component // #P2.3.3.2, #P2.3.3.3
     * type 1..1
     * type = $cs-ebm-ig#evidence "Evidence"
     * relatedArtifact 1..1
-    * relatedArtifact only Reference(CertaintyOfEvidenceRating)
+      * resourceReference 1..1
+      * resourceReference only Reference(CertaintyOfEvidenceRating)
 
 // TODO: should this be here or in recommendation or / and in guideline?
 * content[searchStrategy] // #P2.3.3.1
   * type 1..1
   * type = $cs-ebm-ig#search-strategy "Search Strategy"
   * relatedArtifact 1..1
-  * relatedArtifact only Reference(SearchStrategy)
+    * resourceReference 1..1
+    * resourceReference only Reference(SearchStrategy)
 
 Profile: CertaintyOfEvidenceRating
 Parent: ArtifactAssessment

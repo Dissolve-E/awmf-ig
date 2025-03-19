@@ -5,7 +5,6 @@ Title: "HAP Diagnose - Empfehlung B"
 Description: "Wie wird eine HAP klinisch diagnostiziert und welche Differenzialdiagnosen sind zu beachten?"
 
 * insert narrative([[HAP Diagnose - Empfehlung B]])
-
 * version = "3.0"
 * status = #final
 * author[+] = Reference(JessicaRademacherDGPFor020-013)

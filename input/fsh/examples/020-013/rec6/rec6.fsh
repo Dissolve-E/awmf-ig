@@ -31,7 +31,7 @@ auf eine nosokomiale Pneumonie kann nicht empfohlen werden.]])
 Resistenzgene erlauben, die in sie gesetzten Erwartungen erfüllen können, bleibt abzuwarten.  Derzeit sind zwei gut untersuchte Multiplex-PCR-Systeme zum Nachweis von bakteriellen Pneumonieerregern 
 (inklusive  Legionellen,  Mykoplasmen,  Chlamydien,  Pneumocystis  jirovecii)  und  einigen  Resistenzgenen  
 kommerziell erhältlich (BioFire FilmArray Pneumonia (bioMerieux), Unyvero Pneumonia Pannel (Curetis)). Das Unyvero-Pannel umfasst 20 Bakterien und Pneumocystis jirovecii sowie 16 Resistenzgene, der FilmArray 18 
-Bakterien und 8 Resistenzgene sowie 9 Viren.  Einige retrospektive Studien mit nur wenigen (< 100) HAP-Patienten sind publiziert. In einer aktuellen Studie 
+Bakterien und 8 Resistenzgene sowie 9 Viren.  Einige retrospektive Studien mit nur wenigen (&lt; 100) HAP-Patienten sind publiziert. In einer aktuellen Studie 
 (112)  wurden  beide  Systeme  anhand  von  6523  tiefen  respiratorischen  Materialien  von  15  Krankenhäusern 
 verglichen. Es konnten signifikant mehr Erregernachweise erbracht werden als durch die Kultur (Unyvero 60,4 
 %, FilmArray 74,2 % vs. Kultur 44,2 %). Für typische HAP/VAP-Pathogene betrug die Sensitivität und Spezifität 
@@ -60,65 +60,71 @@ derzeit nicht sagen.
 
 
 Instance: RecommendationMultiplexPCRDiagnostic-Justification
-InstanceOf: RecommendationJustication
+InstanceOf: RecommendationJustification
 Usage: #example
 Title: "RecommendationMultiplexPCRDiagnostic-Justification"
 Description: "Justification for Recommendation Multiplex-PCR-Diagnostik"
+* insert narrative([[Justification for Recommendation Multiplex-PCR-Diagnostik]])
 * artifactReference = Reference(RecommendationMultiplexPCRDiagnostic)
 * content[recommendationRating]
   * component[strengthOfRecommendation]
-    * classifier = cs-strength-of-recommendation#open "Open"
+    * classifier = cs-strength-of-recommendation#open "Open Recommendation"
     // TODO: missing "Empfehlungsgrad 0"
   
   * component[directionOfRecommendation]
     * classifier = $cs-direction-of-recommendation#against "Against"
   
   * component[levelOfConsensus]
-    * classifier = $cs-level-of-consensus#strong "Strong"
+    * classifier = cs-level-of-consensus#strong "Strong consensus"
 
 * content[evidence][+]
-  * relatedArtifact = Reference(CertaintyOfEvidenceRating-MultiplexPCRDiagnostic-Mortality)
+  * relatedArtifact.resourceReference = Reference(CoE-MultiplexPCRDiagnostic-Mortality)
 
 * content[evidence][+]
-  * relatedArtifact = Reference(CertaintyOfEvidenceRating-MultiplexPCRDiagnostic-AntibioticDays)
+  * relatedArtifact.resourceReference = Reference(CoE-MultiplexPCRDiagnostic-AntibioticDays)
 
 * content[evidence][+]
-  * relatedArtifact = Reference(CertaintyOfEvidenceRating-MultiplexPCRDiagnostic-TimeToDeescalation)
+  * relatedArtifact.resourceReference = Reference(CoE-MultiplexPCRDiagnostic-TimeToDeescalation)
 
-Instance: CertaintyOfEvidenceRating-MultiplexPCRDiagnostic-Mortality
+Instance: CoE-MultiplexPCRDiagnostic-Mortality
 InstanceOf: CertaintyOfEvidenceRating
 Usage: #example
 Title: "Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Mortality"
 Description: "Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on mortality"
+* insert narrative([[Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on mortality]])
 * artifactReference = Reference(Evidence-MultiplexPCRDiagnostic-Mortality)
 * content[levelOfEvidence]
-  * classifier = $cs-quality-of-evidence#very-low "Very Low"
+  * classifier = $cs-quality-of-evidence#very-low "Very low quality"
 
-Instance: CertaintyOfEvidenceRating-MultiplexPCRDiagnostic-AntibioticDays
+Instance: CoE-MultiplexPCRDiagnostic-AntibioticDays
 InstanceOf: CertaintyOfEvidenceRating
 Usage: #example
 Title: "Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Antibiotic Days"
 Description: "Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on antibiotic days"
+* insert narrative([[Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on antibiotic days]])
 * artifactReference = Reference(Evidence-MultiplexPCRDiagnostic-AntibioticDays)
 * content[levelOfEvidence]
-  * classifier = $cs-quality-of-evidence#very-low "Very Low"
+  * classifier = $cs-quality-of-evidence#very-low "Very low quality"
 
-Instance: CertaintyOfEvidenceRating-MultiplexPCRDiagnostic-TimeToDeescalation
+Instance: CoE-MultiplexPCRDiagnostic-TimeToDeescalation
 InstanceOf: CertaintyOfEvidenceRating
 Usage: #example
 Title: "Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Time to Deescalation"
 Description: "Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on time to deescalation"
+* insert narrative([[Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on time to deescalation]])
 * artifactReference = Reference(Evidence-MultiplexPCRDiagnostic-TimeToDeescalation)
 * content[levelOfEvidence]
-  * classifier = $cs-quality-of-evidence#very-low "Very Low"
+  * classifier = $cs-quality-of-evidence#very-low "Very low quality"
 
 Instance: Evidence-MultiplexPCRDiagnostic-Mortality
 InstanceOf: Evidence
 Usage: #example
 Title: "Evidence-Multiplex PCR Diagnostic-Mortality"
 Description: "Evidence for the impact of Multiplex-PCR-Diagnostik on mortality"
+* insert narrative([[Evidence for the impact of Multiplex-PCR-Diagnostik on mortality]])
+* status = #active
 * variableDefinition[+]
-  * variableRole = #outcome
+  * variableRole = $cs-variable-role#outcome
   * intended = Reference(OutcomeMortality)
 
 Instance: Evidence-MultiplexPCRDiagnostic-AntibioticDays
@@ -126,8 +132,10 @@ InstanceOf: Evidence
 Usage: #example
 Title: "Evidence-Multiplex PCR Diagnostic-Antibiotic Days"
 Description: "Evidence for the impact of Multiplex-PCR-Diagnostik on antibiotic days"
+* insert narrative([[Evidence for the impact of Multiplex-PCR-Diagnostik on antibiotic days]])
+* status = #active
 * variableDefinition[+]
-  * variableRole = #outcome
+  * variableRole = $cs-variable-role#outcome
   * intended = Reference(OutcomeAntibioticDays)
 
 Instance: Evidence-MultiplexPCRDiagnostic-TimeToDeescalation
@@ -135,8 +143,10 @@ InstanceOf: Evidence
 Usage: #example
 Title: "Evidence-Multiplex PCR Diagnostic-Time to Deescalation"
 Description: "Evidence for the impact of Multiplex-PCR-Diagnostik on time to deescalation"
+* insert narrative([[Evidence for the impact of Multiplex-PCR-Diagnostik on time to deescalation]])
+* status = #active
 * variableDefinition[+]
-  * variableRole = #outcome
+  * variableRole = $cs-variable-role#outcome
   * intended = Reference(OutcomeTimeToDeescalation)
 
 Instance: OutcomeMortality
@@ -144,19 +154,24 @@ InstanceOf: EvidenceVariable
 Usage: #example
 Title: "Outcome Mortality"
 Description: "Outcome Mortality"
-* characteristic.definitionCodeableConcept.display = "Mortality"
+* insert narrative([[Outcome Mortality]])
+* status = #active
+* characteristic.definitionCodeableConcept.text = "Mortality"
 
 Instance: OutcomeAntibioticDays
 InstanceOf: EvidenceVariable
 Usage: #example
 Title: "Outcome Antibiotic Days"
 Description: "Outcome Antibiotic Days"
-* characteristic.definitionCodeableConcept.display = "Antibiotic Days"
-
+* insert narrative([[Outcome Antibiotic Days]])
+* status = #active
+* characteristic.definitionCodeableConcept.text = "Antibiotic Days"
 
 Instance: OutcomeTimeToDeescalation
 InstanceOf: EvidenceVariable
 Usage: #example
 Title: "Outcome Time to Deescalation"
 Description: "Outcome Time to Deescalation"
-* characteristic.definitionCodeableConcept.display = "Time to Deescalation"
+* insert narrative([[Outcome Time to Deescalation]])
+* status = #active
+* characteristic.definitionCodeableConcept.text = "Time to Deescalation"
