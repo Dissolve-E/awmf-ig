@@ -75,7 +75,7 @@ Description: "Justification for Recommendation Multiplex-PCR-Diagnostik"
     * classifier = $cs-direction-of-recommendation#against "Against"
   
   * component[levelOfConsensus]
-    * classifier = cs-level-of-consensus#strong "Strong consensus"
+    * classifier = cs-level-of-consensus#strong-consensus "Strong consensus"
 
 * content[evidence][+]
   * relatedArtifact.resourceReference = Reference(CoE-MultiplexPCRDiagnostic-Mortality)

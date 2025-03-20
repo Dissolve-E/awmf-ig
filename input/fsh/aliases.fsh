@@ -34,3 +34,5 @@ Alias: $atcde = http://fhir.de/CodeSystem/bfarm/atc
 
 Alias: $cs-related-artifact-type = http://hl7.org/fhir/related-artifact-type
 Alias: $cs-variable-role = http://terminology.hl7.org/CodeSystem/variable-role|6.0.0-ballot2
+
+Alias: $cs-designation-usage = http://terminology.hl7.org/CodeSystem/designation-usage

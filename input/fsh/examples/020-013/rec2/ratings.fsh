@@ -15,7 +15,7 @@ Description: "Justification for Recommendation HAP Diagnose A"
     * classifier = $cs-direction-of-recommendation#for "For"
   
   * component[levelOfConsensus]
-    * classifier = cs-level-of-consensus#strong "Strong consensus"
+    * classifier = cs-level-of-consensus#strong-consensus "Strong consensus"
 
 
 Instance: RecommendationHAPDiagnosis-B-Justification
@@ -35,4 +35,4 @@ Description: "Justification for Recommendation HAP Diagnose B"
     * classifier = $cs-direction-of-recommendation#for "For"
   
   * component[levelOfConsensus]
-    * classifier = cs-level-of-consensus#strong "Strong consensus"
+    * classifier = cs-level-of-consensus#strong-consensus "Strong consensus"
