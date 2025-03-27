@@ -54,6 +54,7 @@ Description: "Clinical Practice Guideline Recommendation"
 * section ^slicing.rules = #closed
 * section contains 
   text 0..* MS
+  and consensusProtocol 0..*
   and @default 0..* 
 * section[@default]
 // fixme: actually, the default slice must not fix the discriminator, but as of 25-03-06 the validator is not able to handle default slices. therefore, we fix the discriminator here.
@@ -67,6 +68,11 @@ Description: "Clinical Practice Guideline Recommendation"
   * code.coding 1..1
   * code.coding = $cs-ebm-ig#text "Text"
   * insert rs-language-section
+* section[consensusProtocol]
+  * code 1..1
+  * code = cs-guideline-sections#consensus-protocol "Consensus Protocol"
+  * insert rs-language-section-nested
+
 
 // lines below are just used to force sushi to add the correct code when refering to the slices
 * section[summary]

@@ -209,6 +209,7 @@ Description: "Clinical Practice Guideline"
 * section ^slicing.rules = #closed
 * section contains 
   attachments 0..1 MS
+  and consensusProtocol 0..*
   and @default 0..* 
 * section[@default]
 // fixme: actually, the default slice must not fix the discriminator, but as of 25-03-06 the validator is not able to handle default slices. therefore, we fix the discriminator here.
@@ -345,6 +346,11 @@ Description: "Clinical Practice Guideline"
     * code 1..1
     * code.coding 1..1
     * code = cs-guideline-attachment-types#patient-version "Patient Version"
+
+* section[consensusProtocol]
+  * code 1..1
+  * code = cs-guideline-sections#consensus-protocol "Consensus Protocol"
+  * insert rs-language-section-nested
 
 // Language for each section and nested sections until level 6 (#P2.3.2.21, #P2.1.9)
 * section[@default]

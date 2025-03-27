@@ -28,3 +28,5 @@ Description: "Sections of a guideline, describing various aspects such as its in
 * #default-section "Default section" "The default slice for a section" // this is just a work-around because the FHIR validator is not able to handle @default slices currently (25-03-06)
 
 * #attachments "Attachments"
+
+* #consensus-protocol "Consensus Protocol" "The section describes the consensus protocol of the guideline."
