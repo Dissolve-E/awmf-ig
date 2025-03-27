@@ -44,6 +44,7 @@ Description: "Clinical Practice Guideline Recommendation"
     * system 1.. MS
     * code 1.. MS
 
+* section.extension contains ext-section-intended-audience named intendedAudience 0..*
 
 // add some more codes for the sections (not only the ones defined by the EBM IG)
 * section.code from vs-guideline-sections (extensible)
@@ -200,6 +201,7 @@ Description: "An example of a recommendation."
   * section[language]
     * extension[language].valueCode = #de
     * insert narrative([[Example Recommendation]])
+  * extension[intendedAudience].valueCodeableConcept = cs-intended-audience#physician
 * section[recommendationSpecification]
   * section[recommendationStatement]
     * section[language]
@@ -231,6 +233,8 @@ InstanceOf: PlanDefinition
     * targetId = "diagnose"
     * relationship = #before
 
+
+// TODO: remove comment after review
 /*
 Instance: Recommendation-Composition-example
 InstanceOf: Recommendation
