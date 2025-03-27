@@ -15,6 +15,7 @@ Description: "Clinical Practice Guideline Recommendation"
 * relatesTo contains 
   specificationOfPreceedingRecommendation 0..*
   and specificationOfSucceedingRecommendation 0..*
+  and replacesRecommendation 0..* // #P2.3.2.30, #P2.3.2.31
 * relatesTo[specificationOfPreceedingRecommendation]
   * type 1..1
   * type = #predecessor
@@ -25,6 +26,12 @@ Description: "Clinical Practice Guideline Recommendation"
   * type = #successor
   * resourceReference 1..1
   * resourceReference only Reference(Recommendation)
+* relatesTo[replacesRecommendation]
+  * type 1..1
+  * type = #replaces
+  * resourceReference 1..1
+  * resourceReference only Reference(Recommendation)
+
 
 * relatesTo[partOf] 1..* // each recommendation must be part of at least one guideline
 
