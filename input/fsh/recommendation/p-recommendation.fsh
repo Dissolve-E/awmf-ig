@@ -44,7 +44,9 @@ Description: "Clinical Practice Guideline Recommendation"
     * system 1.. MS
     * code 1.. MS
 
-* section.extension contains ext-section-intended-audience named intendedAudience 0..*
+* section.extension contains 
+  ext-section-intended-audience named intendedAudience 0..*
+  and ext-recommendation-version-status named versionStatus 0..1 // #P2.3.2.29
 
 // add some more codes for the sections (not only the ones defined by the EBM IG)
 * section.code from vs-guideline-sections (extensible)
