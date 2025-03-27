@@ -12,6 +12,8 @@ Description: "Wie wird eine HAP klinisch diagnostiziert und welche Differenziald
 * date = "2024-12-05"
 * title = "HAP Diagnose"
 
+* category[synthesisType] = cs-recommendation-synthesis-type#expert-consensus
+
 * relatesTo[partOf]
   * extension[targetCanonical].valueCanonical = Canonical(NosokomialePneumonie|3.0)
 

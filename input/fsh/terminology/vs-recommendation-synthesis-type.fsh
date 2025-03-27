@@ -1,5 +1,5 @@
-ValueSet: RecommendationTypeVS
-Id: vs-recommendation-type
-Title: "Recommendation Type"
-Description: "Type of recommendation"
-* include codes from system cs-recommendation-type
+ValueSet: RecommendationSynthesisTypeVS
+Id: vs-recommendation-synthesis-type
+Title: "Recommendation Synthesis Type"
+Description: "Synthesis Type of Recommendation"
+* include codes from system cs-recommendation-synthesis-type

@@ -9,6 +9,8 @@ Description: "Clinical Practice Guideline Recommendation"
 * version obeys inv-version-major-minor // #P2.2.1
 * extension[versionAlgorithm].valueCoding = $cs-awmf#major-minor "Major-Minor Versioning" // TODO: is there an existing code for this?
 
+* meta.tag from vs-recommendation-tags (preferred)
+
 // #P2.1.8
 * relatesTo contains 
   specificationOfPreceedingRecommendation 0..*
@@ -30,18 +32,18 @@ Description: "Clinical Practice Guideline Recommendation"
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "coding"
   * ^slicing.rules = #open
-* category contains recommendationType 0..1
-* category[recommendationType]
-  * coding from vs-recommendation-type (required) 
+* category contains 
+  synthesisType 1..1
+  and clinicalApplicationType 0..*
+* category[synthesisType]
+  * coding from vs-recommendation-synthesis-type (required) 
     * system 1.. MS
     * code 1.. MS
-// TODO: implement terminology; vs-recommendation-type = #expert-consensus, #evidence-based
+* category[clinicalApplicationType] // #P2.3.2.15
+  * coding from vs-clinical-application-type (required)
+    * system 1.. MS
+    * code 1.. MS
 
-
-// doesn't work :(
-// // unset valueset binding from second level
-// * section.section.code ^binding.valueSet = "http://hl7.org/fhir/ValueSet/doc-section-codesX"
-// * section.section.code ^binding.strength = #example
 
 // add some more codes for the sections (not only the ones defined by the EBM IG)
 * section.code from vs-guideline-sections (extensible)
@@ -55,6 +57,8 @@ Description: "Clinical Practice Guideline Recommendation"
 * section contains 
   text 0..* MS
   and consensusProtocol 0..*
+  and patientVersion 0..*
+  and otherContent 0..*
   and @default 0..* 
 * section[@default]
 // fixme: actually, the default slice must not fix the discriminator, but as of 25-03-06 the validator is not able to handle default slices. therefore, we fix the discriminator here.
@@ -72,7 +76,10 @@ Description: "Clinical Practice Guideline Recommendation"
   * code 1..1
   * code = cs-guideline-sections#consensus-protocol "Consensus Protocol"
   * insert rs-language-section-nested
-
+* section[otherContent]
+  * code 1..1
+  * code from vs-content-types (extensible)
+  * insert rs-language-section-nested
 
 // lines below are just used to force sushi to add the correct code when refering to the slices
 * section[summary]
@@ -99,6 +106,16 @@ Description: "Clinical Practice Guideline Recommendation"
 * section[appendices]
   * code 1..1
   * code = $cs-ebm-ig#appendices "Appendices"
+* section[evidence]
+  * code 1..1
+  * code = $cs-ebm-ig#evidence "Evidence"
+* section[justification]
+  * code 1..1
+  * code = $cs-ebm-ig#justification "Justification"
+* section[considerations]
+  * code 1..1
+  * code = $cs-ebm-ig#considerations "Considerations"
+
 
 * section[recommendationSpecification]
   * section ^slicing.discriminator.type = #value
@@ -120,7 +137,7 @@ Description: "Clinical Practice Guideline Recommendation"
     * code = $cs-ebm-ig#recommendation-statement "Recommendation Statement"
     * code.coding = $cs-ebm-ig#recommendation-statement "Recommendation Statement"
 
-  * section[population]
+  * section[population] // #P2.3.2.1
     * code 1..1
     * code = $cs-ebm-ig#population "Population"
     * code.coding = $cs-ebm-ig#population "Population"
@@ -129,7 +146,7 @@ Description: "Clinical Practice Guideline Recommendation"
       * extension contains ext-section-keyword named keyword 0..* // #P2.3.2.8
       * entry only Reference(EvidenceVariable or Group)  // #P2.3.2.9 // actually, EvidenceVariable is only for R5 while group is for R6    
 
-  * section[intervention]
+  * section[intervention] // #P2.3.2.1
     * code 1..1
     * code = $cs-ebm-ig#intervention "Intervention"
     // * code.coding 1..1
@@ -137,9 +154,9 @@ Description: "Clinical Practice Guideline Recommendation"
     * insert rs-language-section
     * section[language]
       * extension contains ext-section-keyword named keyword 0..*
-      * entry only Reference(PlanDefinition) // #P2.3.2.9
+      * entry only Reference(PlanDefinition) // #P2.3.2.6, #P2.3.2.9
 
-  * section[comparator]
+  * section[comparator] // #P2.3.2.1
     * code 1..1
     * code = $cs-ebm-ig#comparator "Comparator"
     // * code.coding 1..1
@@ -149,7 +166,7 @@ Description: "Clinical Practice Guideline Recommendation"
       * extension contains ext-section-keyword named keyword 0..*
       * entry only Reference(PlanDefinition) // #P2.3.2.9
 
-  * section[outcome]
+  * section[outcome] // #P2.3.2.1
     * code 1..1
     * code = $cs-ebm-ig#outcome "Outcome"
     // * code.coding 1..1
@@ -164,15 +181,7 @@ Description: "Clinical Practice Guideline Recommendation"
     * code = $cs-ebm-ig#ratings "Ratings"
     * entry only Reference(RecommendationJustification)
 
-* section[evidence]
-  * code 1..1
-  * code = $cs-ebm-ig#evidence "Evidence"
-* section[justification]
-  * code 1..1
-  * code = $cs-ebm-ig#justification "Justification"
-* section[considerations]
-  * code 1..1
-  * code = $cs-ebm-ig#considerations "Considerations"
+
 
 
 Instance: RecommendationExample
@@ -186,6 +195,7 @@ Description: "An example of a recommendation."
 * author[+] = Reference(GuidelineAuthorRoleExample)
 * date = "2025-03-06"
 * title = "Example Recommendation"
+* category[synthesisType] = cs-recommendation-synthesis-type#expert-consensus
 * section[@default][+]
   * section[language]
     * extension[language].valueCode = #de
