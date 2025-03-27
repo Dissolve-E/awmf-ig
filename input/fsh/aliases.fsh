@@ -39,3 +39,5 @@ Alias: $cs-designation-usage = http://terminology.hl7.org/CodeSystem/designation
 
 Alias: $cs-etd-certainty-rating = cs-evidence-to-decision-certainty-rating
 Alias: $cs-etd-certainty-type = cs-evidence-to-decision-certainty-type
+Alias: $cs-certainty-rating = http://hl7.org/fhir/certainty-rating
+Alias: $vs-certainty-rating = http://hl7.org/fhir/ValueSet/certainty-rating

@@ -25,6 +25,8 @@ Description: "A structured assessment of the evidence and consensus that underpi
     and directionOfRecommendation 0..1
     and levelOfConsensus 0..1
 
+  * insert rs-grade-rating-slices
+
   * component[strengthOfRecommendation]
     * type 1..1
     * type = $cs-ebm-ig#strength-of-recommendation
@@ -133,3 +135,71 @@ Description: "A structured assessment of the certainty of evidence for a specifi
 * content[largeEffect]
   * type 1..1
   * type = $cs-certainty-type#LargeEffect "Large effect"
+
+
+RuleSet: rs-grade-rating-slices
+* component contains
+  benefitAndHarms 0..1 MS
+  and certaintyOfEvidence 0..1 MS
+  and preferenceAndValues 0..1 MS
+  and resources 0..1 MS
+  and equity 0..1 MS
+  and acceptability 0..1 MS
+  and feasibility 0..1 MS
+
+* component[certaintyOfEvidence]
+  * informationType 1..1
+  * informationType = #rating
+  * type 1..
+  * type = $cs-certainty-type#Overall "Overall certainty"
+  * classifier 1..1
+  * classifier from vs-rating-certainty-of-evidence (required)
+
+* component[benefitAndHarms]
+  * informationType 1..1
+  * informationType = #rating
+  * type 1..
+  * type = $cs-etd-certainty-type#benefit-and-harms "Benefit and harms"
+  * classifier 1..1
+  * classifier from vs-rating-benefit-and-harms (required)
+
+* component[preferenceAndValues]
+  * informationType 1..1
+  * informationType = #rating
+  * type 1..
+  * type = $cs-etd-certainty-type#preference-and-values "Preference and values"
+  * classifier 1..1
+  * classifier from vs-rating-preference-and-values (required)
+
+* component[resources]
+  * informationType 1..1
+  * informationType = #rating
+  * type 1..
+  * type = $cs-etd-certainty-type#resources "Resources"
+  * classifier 1..1
+  * classifier from vs-rating-resources (required)
+
+* component[equity]
+  * informationType 1..1
+  * informationType = #rating
+  * type 1..
+  * type = $cs-etd-certainty-type#equity "Equity"
+  * classifier 1..1
+  * classifier from vs-rating-equity (required)
+
+* component[acceptability]
+  * informationType 1..1
+  * informationType = #rating
+  * type 1..
+  * type = $cs-etd-certainty-type#acceptability "Acceptability"
+  * classifier 1..1
+  * classifier from vs-rating-acceptability (required)
+
+* component[feasibility]
+  * informationType 1..1
+  * informationType = #rating
+  * type 1..
+  * type = $cs-etd-certainty-type#feasibility "Feasibility"
+  * classifier 1..1
+  * classifier from vs-rating-feasibility (required)
+
