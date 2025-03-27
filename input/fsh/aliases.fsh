@@ -36,3 +36,6 @@ Alias: $cs-related-artifact-type = http://hl7.org/fhir/related-artifact-type
 Alias: $cs-variable-role = http://terminology.hl7.org/CodeSystem/variable-role|6.0.0-ballot2
 
 Alias: $cs-designation-usage = http://terminology.hl7.org/CodeSystem/designation-usage
+
+Alias: $cs-etd-certainty-rating = cs-evidence-to-decision-certainty-rating
+Alias: $cs-etd-certainty-type = cs-evidence-to-decision-certainty-type
