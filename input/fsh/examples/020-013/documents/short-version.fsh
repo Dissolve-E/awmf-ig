@@ -4,7 +4,7 @@ Usage: #example
 Title: "Kurzfassung"
 Description: "Kurzfassung Leitlinie 020-013"
 * status = #current
-* type = cs-guideline-attachment-types#short-version
+* type = cs-guideline-sections#short-version
 * content
   * attachment
     * url = "020-013k_S3_Epidemiologie-Diagnostik-Therapie-erwachsener-Patienten-nosokomiale-Pneumonie__2024-03.pdf"

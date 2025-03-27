@@ -210,10 +210,10 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
   * section[patientVersion]
     * entry = Reference(Guideline-020-013-PatientVersion)
   * section[+]
-    * code = cs-guideline-attachment-types#slide-deck
+    * code = cs-guideline-sections#slide-deck
     * entry = Reference(Guideline-020-013-SlideDeck)
   * section[+]
-    * code = cs-guideline-attachment-types#implementation-guidance
+    * code = cs-guideline-sections#implementation-guidance
     * entry = Reference(Guideline-020-013-ImplementationGuidance)
 
 * section[introduction]

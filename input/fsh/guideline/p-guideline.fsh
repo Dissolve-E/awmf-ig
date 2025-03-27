@@ -314,38 +314,38 @@ Description: "Clinical Practice Guideline"
     and patientVersion 0..*
     // further sections are not defined explicitly, to highlight that they are optional
   * section 1..*
-    * code from vs-guideline-attachment-types (preferred) // #P2.1.7 (preferred binding)
+    * code from vs-content-types (preferred) // #P2.1.7 (preferred binding)
     * entry only Reference(GuidelineAttachment)
     * entry 1..* MS
     //* obeys inv-guideline-attachment-type-match // TODO: does currently not seem to work (doesn't resolve the references - maybe in the IG publisher?)
   * section[longVersion]
     * code 1..1
     * code.coding 1..1
-    * code = cs-guideline-attachment-types#long-version "Long Version"
+    * code = cs-guideline-sections#long-version "Long Version"
   * section[shortVersion]
     * code 1..1
     * code.coding 1..1
-    * code = cs-guideline-attachment-types#short-version "Short Version"
+    * code = cs-guideline-sections#short-version "Short Version"
   * section[guidelineReport]
     * code 1..1
     * code.coding 1..1
-    * code = cs-guideline-attachment-types#guideline-report "Guideline Report"
+    * code = cs-guideline-sections#guideline-report "Guideline Report"
   * section[evidenceReport]
     * code 1..1
     * code.coding 1..1
-    * code = cs-guideline-attachment-types#evidence-report "Evidence Report"
+    * code = cs-guideline-sections#evidence-report "Evidence Report"
   * section[implementationGuidance]
     * code 1..1
     * code.coding 1..1
-    * code = cs-guideline-attachment-types#implementation-guidance "Implementation Guidance"
+    * code = cs-guideline-sections#implementation-guidance "Implementation Guidance"
   * section[decisionSupport]
     * code 1..1
     * code.coding 1..1
-    * code = cs-guideline-attachment-types#decision-support "Decision Support"
+    * code = cs-guideline-sections#decision-support "Decision Support"
   * section[patientVersion]
     * code 1..1
     * code.coding 1..1
-    * code = cs-guideline-attachment-types#patient-version "Patient Version"
+    * code = cs-guideline-sections#patient-version "Patient Version"
 
 * section[consensusProtocol]
   * code 1..1

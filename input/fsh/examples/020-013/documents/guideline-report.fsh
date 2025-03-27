@@ -4,7 +4,7 @@ Usage: #example
 Title: "Leitlinienreport"
 Description: "Leitlinienreport Leitlinie 020-013"
 * status = #current
-* type = cs-guideline-attachment-types#guideline-report
+* type = cs-guideline-sections#guideline-report
 * content
   * attachment
     * url = "020-013m_S3_Epidemiologie-Diagnostik-Therapie-erwachsener-Patienten-nosokomiale-Pneumonie__2024-03.pdf"
