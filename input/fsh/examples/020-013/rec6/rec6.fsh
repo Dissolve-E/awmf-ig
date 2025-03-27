@@ -62,16 +62,16 @@ derzeit nicht sagen.
 
 
 Instance: RecommendationMultiplexPCRDiagnostic-Justification
-InstanceOf: RecommendationJustification
+InstanceOf: RecommendationJustificationAWMF
 Usage: #example
 Title: "RecommendationMultiplexPCRDiagnostic-Justification"
 Description: "Justification for Recommendation Multiplex-PCR-Diagnostik"
 * insert narrative([[Justification for Recommendation Multiplex-PCR-Diagnostik]])
 * artifactReference = Reference(RecommendationMultiplexPCRDiagnostic)
 * content[recommendationRating]
+
   * component[strengthOfRecommendation]
-    * classifier = cs-strength-of-recommendation#open "Open Recommendation"
-    // TODO: missing "Empfehlungsgrad 0"
+    * classifier = cs-recommendation-strength-awmf#0 "Open Recommendation"
   
   * component[directionOfRecommendation]
     * classifier = $cs-direction-of-recommendation#against "Against"
@@ -89,7 +89,7 @@ Description: "Justification for Recommendation Multiplex-PCR-Diagnostik"
   * relatedArtifact.resourceReference = Reference(CoE-MultiplexPCRDiagnostic-TimeToDeescalation)
 
 Instance: CoE-MultiplexPCRDiagnostic-Mortality
-InstanceOf: CertaintyOfEvidenceRating
+InstanceOf: CertaintyOfEvidenceRatingGRADE
 Usage: #example
 Title: "Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Mortality"
 Description: "Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on mortality"
@@ -99,7 +99,7 @@ Description: "Certainty of evidence rating for the impact of Multiplex-PCR-Diagn
   * classifier = $cs-quality-of-evidence#very-low "Very low quality"
 
 Instance: CoE-MultiplexPCRDiagnostic-AntibioticDays
-InstanceOf: CertaintyOfEvidenceRating
+InstanceOf: CertaintyOfEvidenceRatingGRADE
 Usage: #example
 Title: "Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Antibiotic Days"
 Description: "Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on antibiotic days"
@@ -109,7 +109,7 @@ Description: "Certainty of evidence rating for the impact of Multiplex-PCR-Diagn
   * classifier = $cs-quality-of-evidence#very-low "Very low quality"
 
 Instance: CoE-MultiplexPCRDiagnostic-TimeToDeescalation
-InstanceOf: CertaintyOfEvidenceRating
+InstanceOf: CertaintyOfEvidenceRatingGRADE
 Usage: #example
 Title: "Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Time to Deescalation"
 Description: "Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on time to deescalation"

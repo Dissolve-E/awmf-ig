@@ -1,5 +1,7 @@
 Alias: $ebm-guideline = http://hl7.org/fhir/uv/ebm/StructureDefinition/guideline
 Alias: $ebm-recommendation = http://hl7.org/fhir/uv/ebm/StructureDefinition/recommendation
+Alias: $ebm-recommendation-justification = http://hl7.org/fhir/uv/ebm/StructureDefinition/recommendation-justification
+Alias: $ebm-certainty-of-evidence = http://hl7.org/fhir/uv/ebm/StructureDefinition/certainty-of-evidence
 Alias: $cs-awmf = cs-awmf // todo: fix alias
 
 Alias: $cs-version-algorithm = http://hl7.org/fhir/version-algorithm
@@ -41,3 +43,6 @@ Alias: $cs-etd-certainty-rating = cs-evidence-to-decision-certainty-rating
 Alias: $cs-etd-certainty-type = cs-evidence-to-decision-certainty-type
 Alias: $cs-certainty-rating = http://hl7.org/fhir/certainty-rating
 Alias: $vs-certainty-rating = http://hl7.org/fhir/ValueSet/certainty-rating
+
+Alias: $cs-strength-of-recommendation = http://terminology.hl7.org/CodeSystem/recommendation-strength
+Alias: $vs-strength-of-recommendation = http://terminology.hl7.org/ValueSet/recommendation-strength

@@ -6,10 +6,9 @@ Description: "Justification for Recommendation HAP Diagnose A"
 * insert narrative([[Justification for Recommendation HAP Diagnose A]])
 * artifactReference = Reference(RecommendationHAPDiagnosis-A)
 * content[recommendationRating]
-  * type = cs-awmf#recommendation-rating "Recommendation Rating"
   
   * component[strengthOfRecommendation]
-    * classifier = cs-strength-of-recommendation#strong "Strong Recommendation"
+    * classifier = $cs-strength-of-recommendation#strong "Strong"
   
   * component[directionOfRecommendation]
     * classifier = $cs-direction-of-recommendation#for "For"
@@ -26,10 +25,9 @@ Description: "Justification for Recommendation HAP Diagnose B"
 * insert narrative([[Justification for Recommendation HAP Diagnose B]])
 * artifactReference = Reference(RecommendationHAPDiagnosis-B)
 * content[recommendationRating]
-  * type = cs-awmf#recommendation-rating "Recommendation Rating"
   
   * component[strengthOfRecommendation]
-    * classifier = cs-strength-of-recommendation#weak "Weak Recommendation"
+    * classifier = $cs-strength-of-recommendation#weak "Weak"
   
   * component[directionOfRecommendation]
     * classifier = $cs-direction-of-recommendation#for "For"
