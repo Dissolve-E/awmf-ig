@@ -24,6 +24,13 @@ package_url="https://build.fhir.org/ig/HL7/ebm/$filename"
 mkdir -p "$HOME/.fhir/packages"
 
 path="$HOME/.fhir/packages/hl7.fhir.uv.ebm#$package_version"
+
+# Remove path and all contents if it exists
+if [ -d "$path" ]; then
+    echo "Removing existing path: $path"
+    rm -rf "$path"
+fi
+
 echo "Downloading to: $path"
 mkdir -p "$path"
 cd "$path" || exit
