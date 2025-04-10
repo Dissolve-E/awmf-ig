@@ -128,9 +128,6 @@ Description: "Clinical Practice Guideline Recommendation"
 
 
 * section[recommendationSpecification]
-  * section ^slicing.discriminator.type = #value
-  * section ^slicing.discriminator.path = "code"
-  * section ^slicing.rules = #open
   * code 1..1
   * code = $cs-ebm-ig#recommendation-specification "Recommendation Specification"
   * section contains 
