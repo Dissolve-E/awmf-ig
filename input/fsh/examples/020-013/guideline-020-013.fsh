@@ -76,7 +76,7 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
   * targetUri = "https://www.awmf.org/leitlinien/detail/ll/048-013.html"
 
 * relatesTo[+]
-  * type = #documents
+  * type = #documentation
   * extension[classifier][+].valueCodeableConcept = cs-related-artifact-types#awmf-detail-page
   * targetUri = "https://register.awmf.org/de/leitlinien/detail/020-013"
 

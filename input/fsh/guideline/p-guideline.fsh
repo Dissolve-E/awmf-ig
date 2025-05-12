@@ -158,7 +158,7 @@ Description: "Clinical Practice Guideline"
   * extension[classifier].valueCodeableConcept = cs-related-artifact-types#related-guideline
 * relatesTo[disseminationWebsite]
   * type 1..1
-  * type = #documents
+  * type = #documentation
   * extension[classifier] 1..1
   * extension[classifier].valueCodeableConcept from vs-dissemination-website (required)
 * relatesTo[replacesGuideline]
