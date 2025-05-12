@@ -52,33 +52,33 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
 
 * relatesTo[+]
   * type = #similar-to
-  * classifier[+] = cs-related-artifact-types#related-guideline
-  * label = "Behandlung von erwachsenen Patienten mit ambulant erworbener Pneumonie"
-  // * reference = Reference(Guideline_020_020) // other guideline not yet defined in FHIR
-  * document.url = "https://www.awmf.org/leitlinien/detail/ll/020-020.html"
+  * extension[classifier][+].valueCodeableConcept = cs-related-artifact-types#related-guideline
+  * extension[label].valueString = "Behandlung von erwachsenen Patienten mit ambulant erworbener Pneumonie"
+  // * targetReference = Reference(Guideline_020_020) // other guideline not yet defined in FHIR
+  * targetUri = "https://www.awmf.org/leitlinien/detail/ll/020-020.html"
 * relatesTo[+]
   * type = #similar-to
-  * classifier[+] = cs-related-artifact-types#related-guideline
-  * label = "Diagnostik und Therapie von erwachsenen Patienten mit Husten"
-  // * reference = Reference(Guideline_020_003) // other guideline not yet defined in FHIR
-  * document.url = "https://www.awmf.org/leitlinien/detail/ll/020-003.html"
+  * extension[classifier][+].valueCodeableConcept = cs-related-artifact-types#related-guideline
+  * extension[label].valueString = "Diagnostik und Therapie von erwachsenen Patienten mit Husten"
+  // * targetReference = Reference(Guideline_020_003) // other guideline not yet defined in FHIR
+  * targetUri = "https://www.awmf.org/leitlinien/detail/ll/020-003.html"
 * relatesTo[+]
   * type = #similar-to
-  * classifier[+] = cs-related-artifact-types#related-guideline
-  * label = "Prolongiertes Weaning"
-  // * reference = Reference(Guideline_020_015) // other guideline not yet defined in FHIR
-  * document.url = "https://www.awmf.org/leitlinien/detail/ll/020-015.html"
+  * extension[classifier][+].valueCodeableConcept = cs-related-artifact-types#related-guideline
+  * extension[label].valueString = "Prolongiertes Weaning"
+  // * targetReference = Reference(Guideline_020_015) // other guideline not yet defined in FHIR
+  * targetUri = "https://www.awmf.org/leitlinien/detail/ll/020-015.html"
 * relatesTo[+]
   * type = #similar-to
-  * classifier[+] = cs-related-artifact-types#related-guideline
-  * label = "Management der ambulant erworbenen Pneumonie bei Kindern und Jugendlichen (pCAP)"
-  // * reference = Reference(Guideline_048_013) // other guideline not yet defined in FHIR
-  * document.url = "https://www.awmf.org/leitlinien/detail/ll/048-013.html"
+  * extension[classifier][+].valueCodeableConcept = cs-related-artifact-types#related-guideline
+  * extension[label].valueString = "Management der ambulant erworbenen Pneumonie bei Kindern und Jugendlichen (pCAP)"
+  // * targetReference = Reference(Guideline_048_013) // other guideline not yet defined in FHIR
+  * targetUri = "https://www.awmf.org/leitlinien/detail/ll/048-013.html"
 
 * relatesTo[+]
   * type = #documents
-  * classifier[+] = cs-related-artifact-types#awmf-detail-page
-  * document.url = "https://register.awmf.org/de/leitlinien/detail/020-013"
+  * extension[classifier][+].valueCodeableConcept = cs-related-artifact-types#awmf-detail-page
+  * targetUri = "https://register.awmf.org/de/leitlinien/detail/020-013"
 
 * title = "Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie"
 * version = "3.0"

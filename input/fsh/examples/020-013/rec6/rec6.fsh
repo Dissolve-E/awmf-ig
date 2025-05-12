@@ -14,7 +14,7 @@ mit Verdacht auf nosokomiale Pneumonie empfohlen?"
 * title = "Multiplex-PCR-Diagnostik"
 
 * relatesTo[partOf]
-  * extension[targetCanonical].valueCanonical = Canonical(NosokomialePneumonie|3.0)
+  * targetCanonical = Canonical(NosokomialePneumonie|3.0)
 
 * category[synthesisType] = cs-recommendation-synthesis-type#evidence-based "Evidence-based"
 

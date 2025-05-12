@@ -16,9 +16,9 @@ Description: "Wie wird eine HAP klinisch diagnostiziert und welche Differenziald
 // TODO: should we qualify the partOf for distinguishing guideline and recommendation?
 // TODO: is cyclic reference allowed?
 * relatesTo[partOf][+]
-  * extension[targetCanonical].valueCanonical = Canonical(NosokomialePneumonie|3.0)
+  * targetCanonical = Canonical(NosokomialePneumonie|3.0)
 * relatesTo[partOf][+]
-  * extension[targetCanonical].valueCanonical = Canonical(RecommendationHAPDiagnosis|3.0)
+  * targetCanonical = Canonical(RecommendationHAPDiagnosis|3.0)
 
 * section[recommendationSpecification]
   * section[recommendationStatement]

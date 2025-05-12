@@ -140,6 +140,9 @@ Description: "Clinical Practice Guideline"
 * version obeys inv-version-major-minor // #P2.2.1, #P2.2.8
 * extension[versionAlgorithm].valueCoding = $cs-awmf#major-minor "Major-Minor Versioning" // TODO: is there an existing code for this?
 
+* relatesTo.extension contains 
+  ext-relates-to-classifier named classifier 0..*
+  and ext-relates-to-label named label 0..1
 * relatesTo ^slicing.discriminator.type = #value
 * relatesTo ^slicing.discriminator.path = "type"
 * relatesTo ^slicing.rules = #open
@@ -151,23 +154,23 @@ Description: "Clinical Practice Guideline"
 * relatesTo[relatedGuideline]
   * type 1..1
   * type = #similar-to
-  * classifier 1..1
-  * classifier = cs-related-artifact-types#related-guideline
+  * extension[classifier] 1..1
+  * extension[classifier].valueCodeableConcept = cs-related-artifact-types#related-guideline
 * relatesTo[disseminationWebsite]
   * type 1..1
   * type = #documents
-  * classifier 1..1
-  * classifier from vs-dissemination-website (required)
-* relatesTo[replacesGuideline] 
+  * extension[classifier] 1..1
+  * extension[classifier].valueCodeableConcept from vs-dissemination-website (required)
+* relatesTo[replacesGuideline]
   * type 1..1
   * type = #replaces
-  * resourceReference 1..1
-  * resourceReference only Reference(Guideline)
+  * targetReference 1..1
+  * targetReference only Reference(Guideline)
 * relatesTo[replacedWithGuideline]
   * type 1..1
   * type = #replaced-with
-  * resourceReference 1..1
-  * resourceReference only Reference(Guideline)
+  * targetReference 1..1
+  * targetReference only Reference(Guideline)
 
 // BUG: This slicing is currently not working
 * note.extension contains $ext-annotationType named type 1..1

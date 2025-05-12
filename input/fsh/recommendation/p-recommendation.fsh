@@ -19,18 +19,18 @@ Description: "Clinical Practice Guideline Recommendation"
 * relatesTo[specificationOfPreceedingRecommendation]
   * type 1..1
   * type = #predecessor
-  * resourceReference 1..1
-  * resourceReference only Reference(Recommendation)
+  * targetReference 1..1
+  * targetReference only Reference(Recommendation)
 * relatesTo[specificationOfSucceedingRecommendation]
   * type 1..1
   * type = #successor
-  * resourceReference 1..1
-  * resourceReference only Reference(Recommendation)
+  * targetReference 1..1
+  * targetReference only Reference(Recommendation)
 * relatesTo[replacesRecommendation]
   * type 1..1
   * type = #replaces
-  * resourceReference 1..1
-  * resourceReference only Reference(Recommendation)
+  * targetReference 1..1
+  * targetReference only Reference(Recommendation)
 
 
 * relatesTo[partOf] 1..* // each recommendation must be part of at least one guideline
@@ -128,6 +128,9 @@ Description: "Clinical Practice Guideline Recommendation"
 
 
 * section[recommendationSpecification]
+  * section ^slicing.discriminator.type = #value
+  * section ^slicing.discriminator.path = "code.coding"
+  * section ^slicing.rules = #open
   * code 1..1
   * code = $cs-ebm-ig#recommendation-specification "Recommendation Specification"
   * section contains 
@@ -203,6 +206,8 @@ Description: "An example of a recommendation."
 * date = "2025-03-06"
 * title = "Example Recommendation"
 * category[synthesisType] = cs-recommendation-synthesis-type#expert-consensus
+* relatesTo[partOf][+]
+  * targetCanonical = Canonical(GuidelineExample)
 * section[@default][+]
   * section[language]
     * extension[language].valueCode = #de
@@ -254,20 +259,20 @@ InstanceOf: Recommendation
 * relatesTo[specificationOfPreceedingRecommendation][+]
   * type = #specification-of
   * label = "preceeding-recommendation"
-  * resourceReference = Reference(RecommendationPreceeding-Composition-example)
+  * targetReference = Reference(RecommendationPreceeding-Composition-example)
 * relatesTo[specificationOfPreceedingRecommendation][+]
   * type = #specification-of
   * label = "preceeding-recommendation"
-  * resourceReference = Reference(RecommendationPreceedingOther-Composition-example)
+  * targetReference = Reference(RecommendationPreceedingOther-Composition-example)
 // Succeeding Recommendations (in clinical workflow)
 * relatesTo[specificationOfSucceedingRecommendation][+]
   * type = #specification-of
   * label = "succeeding-recommendation"
-  * resourceReference = Reference(RecommendationSucceeding-Composition-example)
+  * targetReference = Reference(RecommendationSucceeding-Composition-example)
 * relatesTo[specificationOfSucceedingRecommendation][+]
   * type = #specification-of
   * label = "succeeding-recommendation"
-  * resourceReference = Reference(RecommendationSucceedingOther-Composition-example)
+  * targetReference = Reference(RecommendationSucceedingOther-Composition-example)
 */
 
 /* EBM IG structure -> we won't use this because of the unsolvable todos below, instead we directly use a PlanDefinition instance
