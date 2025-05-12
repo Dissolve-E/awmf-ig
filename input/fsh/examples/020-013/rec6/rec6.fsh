@@ -80,13 +80,13 @@ Description: "Justification for Recommendation Multiplex-PCR-Diagnostik"
     * classifier = cs-level-of-consensus#strong-consensus "Strong consensus"
 
 * content[evidence][+]
-  * relatedArtifact.resourceReference = Reference(CoE-MultiplexPCRDiagnostic-Mortality)
+  * relatesTo.targetReference = Reference(CoE-MultiplexPCRDiagnostic-Mortality)
 
 * content[evidence][+]
-  * relatedArtifact.resourceReference = Reference(CoE-MultiplexPCRDiagnostic-AntibioticDays)
+  * relatesTo.targetReference = Reference(CoE-MultiplexPCRDiagnostic-AntibioticDays)
 
 * content[evidence][+]
-  * relatedArtifact.resourceReference = Reference(CoE-MultiplexPCRDiagnostic-TimeToDeescalation)
+  * relatesTo.targetReference = Reference(CoE-MultiplexPCRDiagnostic-TimeToDeescalation)
 
 Instance: CoE-MultiplexPCRDiagnostic-Mortality
 InstanceOf: CertaintyOfEvidenceRatingGRADE
@@ -158,7 +158,7 @@ Title: "Outcome Mortality"
 Description: "Outcome Mortality"
 * insert narrative([[Outcome Mortality]])
 * status = #active
-* characteristic.definitionCodeableConcept.text = "Mortality"
+* definition.concept.text = "Mortality"
 
 Instance: OutcomeAntibioticDays
 InstanceOf: EvidenceVariable
@@ -167,7 +167,7 @@ Title: "Outcome Antibiotic Days"
 Description: "Outcome Antibiotic Days"
 * insert narrative([[Outcome Antibiotic Days]])
 * status = #active
-* characteristic.definitionCodeableConcept.text = "Antibiotic Days"
+* definition.concept.text = "Antibiotic Days"
 
 Instance: OutcomeTimeToDeescalation
 InstanceOf: EvidenceVariable
@@ -176,4 +176,4 @@ Title: "Outcome Time to Deescalation"
 Description: "Outcome Time to Deescalation"
 * insert narrative([[Outcome Time to Deescalation]])
 * status = #active
-* characteristic.definitionCodeableConcept.text = "Time to Deescalation"
+* definition.concept.text = "Time to Deescalation"
