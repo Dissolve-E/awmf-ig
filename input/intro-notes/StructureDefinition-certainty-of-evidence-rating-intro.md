@@ -4,6 +4,11 @@
 
 ### Guidance
 
+## Requirements for evidence ratings from Dissolve-E: 
+
+* Capture information from difference rating and grading systems for guidelines, systematic reviews, and primary literature for the used evidence references, e.g.,  Cochrane RoB-Tool, AMSTAR 2, ROBIS, AGREE 2, Oxford2011
+
+
 
 
 {% capture resource_inheritance %}

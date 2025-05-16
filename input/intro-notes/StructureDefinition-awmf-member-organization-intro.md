@@ -4,6 +4,8 @@
 
 ### Guidance
 
+Medical associations which are members of the AWMF receive a unique member number (typically 3 digits/characters long) and may contain a set of further data pertaining to the association's history, relevant contact information and online representation.
+
 
 
 {% capture resource_inheritance %}
