@@ -13,10 +13,11 @@ Description: "Wie wird eine HAP klinisch diagnostiziert und welche Differenziald
 
 * category[synthesisType] = cs-recommendation-synthesis-type#expert-consensus
 
-// TODO: should we qualify the partOf for distinguishing guideline and recommendation?
-// TODO: is cyclic reference allowed?
+// Guideline
 * relatesTo[partOf][+]
   * targetCanonical = Canonical(NosokomialePneumonie|3.0)
+
+  // Recommendation
 * relatesTo[partOf][+]
   * targetCanonical = Canonical(RecommendationHAPDiagnosis|3.0)
 

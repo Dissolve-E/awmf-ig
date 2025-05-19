@@ -7,4 +7,4 @@ Description: "A structured assessment of the quality of guidelines using the AGR
   * type 1..1
   * type = $cs-certainty-type#Overall "Overall certainty"
   * classifier 0..1
-  //* classifier from AGREEIIAssessmentVS (required) //TODO: Add valueset
+  //* classifier from AGREEIIAssessmentVS (required) //TODO: Add valueset [@sophie]

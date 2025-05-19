@@ -12,4 +12,4 @@ Description: "Code system for identifying evidence rating and appraisal framewor
 * #NewcastleOttawa "Newcastle-Ottawa Scale" "For assessing quality of nonrandomized studies (case-control and cohort)"
 * #CASP "CASP" "Critical Appraisal Skills Programme tools"
 * #SIGN "SIGN" "Scottish Intercollegiate Guidelines Network grading system"
-* #AWMF "AWMF" "Association of the Scientific Medical Societies in Germany" // TODO: does the "3 scale scheme" refer to the AWMF system?
+* #AWMF "AWMF" "Association of the Scientific Medical Societies in Germany" // TODO: does the "3 scale scheme" refer to the AWMF system? i think this refers to a sentence from the requirement analysis [all]

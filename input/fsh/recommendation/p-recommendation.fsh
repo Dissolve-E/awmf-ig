@@ -7,7 +7,7 @@ Description: "Clinical Practice Guideline Recommendation"
 
 * version 1..1 // #P2.2.6, #P2.2.7
 * version obeys inv-version-major-minor // #P2.2.1
-* extension[versionAlgorithm].valueCoding = $cs-awmf#major-minor "Major-Minor Versioning" // TODO: is there an existing code for this?
+* extension[versionAlgorithm].valueCoding = $cs-awmf#major-minor "Major-Minor Versioning"
 
 * meta.tag from vs-recommendation-tags (preferred)
 
@@ -152,7 +152,7 @@ Description: "Clinical Practice Guideline Recommendation"
     * code = $cs-ebm-ig#population "Population"
     * code.coding = $cs-ebm-ig#population "Population"
     * insert rs-language-section
-    * section[language] // TODO: remove language subsections and add language extension to author (here and everywhere)?
+    * section[language] // TODO: remove language subsections and add language extension to author (here and everywhere)? [@gregor]
       * extension contains ext-section-keyword named keyword 0..* // #P2.3.2.8
       * entry only Reference(EvidenceVariable or Group)  // #P2.3.2.9 // actually, EvidenceVariable is only for R5 while group is for R6    
 
@@ -245,7 +245,7 @@ InstanceOf: PlanDefinition
     * relationship = #before
 
 
-// TODO: remove comment after review
+// TODO: remove comment after review [@gregor]
 /*
 Instance: Recommendation-Composition-example
 InstanceOf: Recommendation

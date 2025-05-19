@@ -4,14 +4,14 @@ Id: guideline
 Title: "Guideline"
 Description: "Clinical Practice Guideline"
 
-// TODO: Create a profile for each guideline class (S3, S2k, S2e etc) that inherits from this profile
-// TODO: Decide whether to make another AWMF profile that contains all AWMF-specific logic
+// TODO: Create a profile for each guideline class (S3, S2k, S2e etc) that inherits from this profile [@gregor]
+// TODO: Decide whether to make another AWMF profile that contains all AWMF-specific logic [all, after workshop]
 
 * meta.tag ^slicing.discriminator.type = #value
 * meta.tag ^slicing.discriminator.path = "system"
 * meta.tag ^slicing.rules = #open
 * meta.tag contains 
-  guideline-releaseType 0..1 // TODO: include awmf in name or not?
+  guideline-releaseType 0..1
 
 * meta.tag[guideline-releaseType] // only used when status = registered // TODO: add invariant
   * system 1..1
@@ -20,14 +20,12 @@ Description: "Clinical Practice Guideline"
 
 * language 0..1 MS
 
- // TODO: add guideline code for type
- 
+* title 1..1 // TODO: add description (in the IG - ^definition or so) [@sophie]
 
-* title 1..1 // TODO: add description (in the IG - ^definition or so)
-
-// TODO: add ConceptMap for status (e.g., preliminary = "consultation" etc)
-// TODO: add description (in the IG - ^definition or so)
-* status 1..1 // used for: anmeldung, konsultationsfassung, amemdment, final // #P2.2.9
+// TODO: add ConceptMap for status (e.g., preliminary = "consultation" etc) [@sophie] - we need the list of codes from AWMF first
+// TODO: add description (in the IG - ^definition or so) [@sophie]
+// TODO: add description of this status in HTML page of the profile [@Gregor]
+* status 1..1 // used for: anmeldung, konsultationsfassung, amendment, final // #P2.2.9
 
 * extension contains 
   ext-artifact-extended-contact named contact 0..* MS
@@ -70,75 +68,75 @@ Description: "Clinical Practice Guideline"
     * value 1..1
   * address 0..1
 
-// TODO: Should we use ProvenanceResource for activities such as review, approval, publication etc, instead of extensions for dates?
+// TODO: Should we use ProvenanceResource for activities such as review, approval, publication etc, instead of extensions for dates?[(Discussion Point for Workshop]
 * extension[lastReviewDate] // MAGIC-AWMF: lastEdit, AWMF: "Aktueller Stand" // #P2.3.1.9
-  * ^definition = "The date on which the guideline was last reviewed." // TODO: check definition
+  * ^definition = "The date on which the guideline was last reviewed." // TODO: check if this definition matches the intended meaning from AWMF website [@jstarlinger]
   * ^short = "Last Review Date"
   * valueDate
 
 * extension[approvalDate] // MAGIC-AWMF: ..., AWMF: "Freigegeben am"
-  * ^definition = "The date on which the guideline was approved." // TODO: check definition
+  * ^definition = "The date on which the guideline was approved." // TODO: check if this definition matches the intended meaning from AWMF website [@jstarlinger]
   * ^short = "Approval Date"
   * valueDate
 
 * extension[effectivePeriod] // MAGIC-AWMF: validUntilDate, AWMF: "Gültig bis"  // #P2.3.1.9
-  * ^definition = "The period during which the guideline is intended to be in use." // TODO: check definition
+  * ^definition = "The period during which the guideline is intended to be in use." // TODO: check if this definition matches the intended meaning from AWMF website [@jstarlinger]
   * ^short = "Effective Period"
   * valuePeriod
     * end 0..1 MS
 
 * extension[publicationDate] // MAGIC-AWMF: releaseDate, AWMF: "Eingestellt am"  // #P2.3.1.9
-  * ^definition = "The date on which the current version of the guideline was published." // TODO: check definition
+  * ^definition = "The date on which the current version of the guideline was published." // TODO: check if this definition matches the intended meaning from AWMF website [@jstarlinger]
   * ^short = "Publication Date"
   * valueDate
 
 * extension[firstPublicationDate] // MAGIC-AWMF: publishedDate, AWMF: "Veröffentlicht seit"  // #P2.3.1.9
-  * ^definition = "The date on which the guideline was first published in its initial version." // TODO: check definition
+  * ^definition = "The date on which the guideline was first published in its initial version." // TODO: check if this definition matches the intended meaning from AWMF website [@jstarlinger]
   * ^short = "First Publication Date"
   * valueDate
 
 * extension[submissionDate] // MAGIC-AWMF: submittedDate, AWMF: "Eingereicht am" // #P2.3.1.10
-  * ^definition = "The date on which this version of the guideline was submitted for publication." // TODO: check definition
+  * ^definition = "The date on which this version of the guideline was submitted for publication." // TODO: check if this definition matches the intended meaning from AWMF website [@jstarlinger]
   * ^short = "Submission Date"
   * valueDate
 
 * extension[plannedCompletionDate] // MAGIC-AWMF: plannedCompletionDate, AWMF: "Geplante Fertigstellung" // #P2.3.1.10
-  * ^definition = "The date on which the guideline is planned to be completed." // TODO: check definition
+  * ^definition = "The date on which the guideline is planned to be completed." // TODO: check if this definition matches the intended meaning from AWMF website [@jstarlinger]
   * ^short = "Planned Completion Date"
   * valueDate
 
 * extension[consultationPeriod] // MAGIC-AWMF: consultation[*]Date, AWMF: "" // #P2.3.1.10
-  * ^definition = "The period during which the guideline is open for consultation." // TODO: check definition
+  * ^definition = "The period during which the guideline is open for consultation." // TODO: check if this definition matches the intended meaning from AWMF website [@jstarlinger]
   * ^short = "Consultation Period"
   * valuePeriod
 
 * extension[registrationDate] // MAGIC-AWMF: startDate, AWMF: "Datum der Anmeldung" // #P2.3.1.10
-  * ^definition = "The date on which the guideline was registered." // TODO: check definition
+  * ^definition = "The date on which the guideline was registered." // TODO: check if this definition matches the intended meaning from AWMF website [@jstarlinger]
   * ^short = "Registration Date"
   * valueDate
 
 * date // #P2.3.1.9
-  * ^definition = "Modification date of the Composition contents. Does not represent the publication, last review or approval date." // TODO: check definition
+  * ^definition = "Modification date of the Composition contents. Does not represent the publication, last review or approval date." // TODO: check if this definition matches the intended meaning from AWMF website [@jstarlinger]
   * ^short = "Modification Date"
 
-// TODO: add invariant to allow "registrant" only 1..1 and disallow role = contributing & leading
+// TODO: add invariant to allow "registrant" only 1..1 and disallow role = contributing & leading [@gregor]
 * author only Reference(GuidelineAuthorRole or Organization) // #P2.3.1.4
 * author.extension contains ext-guideline-author-role named role 1..* // #P2.3.1.4
 
-// TODO: describe what the official identifier is and that it shouldn't be changed
+// TODO: describe what the official identifier is and that it shouldn't be changed -> html seite des Profiles im implementation guides [@Gregor]
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open // #P2.2.1
 * identifier contains awmf-register-number 0..1
 * identifier[awmf-register-number]
   * system 1..1
-  * system = "http://fhir.awmf.org/register" // TODO: agree on system
+  * system = "http://fhir.awmf.org/register" // TODO: agree on system [@jstarlinger, after workshop]
   * value 1..1
 * identifier obeys inv-require-official-identifier // #P2.2.1, #P2.2.3
 
 * version 1..1 // #P2.2.1, #P2.2.7
 * version obeys inv-version-major-minor // #P2.2.1, #P2.2.8
-* extension[versionAlgorithm].valueCoding = $cs-awmf#major-minor "Major-Minor Versioning" // TODO: is there an existing code for this?
+* extension[versionAlgorithm].valueCoding = $cs-awmf#major-minor "Major-Minor Versioning"
 
 * relatesTo.extension contains 
   ext-relates-to-classifier named classifier 0..*
@@ -172,7 +170,7 @@ Description: "Clinical Practice Guideline"
   * targetReference 1..1
   * targetReference only Reference(Guideline)
 
-// BUG: This slicing is currently not working
+// BUG: This slicing is currently not working [@gregor]
 * note.extension contains $ext-annotationType named type 1..1
 * note ^slicing.discriminator.type = #value
 * note ^slicing.discriminator.path = "extension('http://hl7.org/fhir/StructureDefinition/annotationType').value"
@@ -183,7 +181,7 @@ Description: "Clinical Practice Guideline"
   * extension[type].valueCodeableConcept from vs-remark-type (required)
   * text 1..1
 
-
+// TODO: discuss whether to move this into AWMF Guideline profile? [all, after workshop]
 * category 0..*
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "coding"
@@ -195,7 +193,7 @@ Description: "Clinical Practice Guideline"
     * code 1.. MS
 
 * attester 0..*
-  * ^slicing.discriminator.type = #value // TODO: Is this correct?
+  * ^slicing.discriminator.type = #value // TODO: Is this correct? [@gregor]
   * ^slicing.discriminator.path = "party.reference"
   * ^slicing.rules = #open
 * attester contains AWMF 0..1
@@ -320,7 +318,7 @@ Description: "Clinical Practice Guideline"
     * code from vs-content-types (preferred) // #P2.1.7 (preferred binding)
     * entry only Reference(GuidelineAttachment)
     * entry 1..* MS
-    //* obeys inv-guideline-attachment-type-match // TODO: does currently not seem to work (doesn't resolve the references - maybe in the IG publisher?)
+    //* obeys inv-guideline-attachment-type-match // TODO: does currently not seem to work (doesn't resolve the references - maybe in the IG publisher?) [@gregor]
   * section[longVersion]
     * code 1..1
     * code.coding 1..1
@@ -374,8 +372,10 @@ Description: "Clinical Practice Guideline"
   * insert rs-language-section-nested
 * section[appendices]
   * insert rs-language-section-nested
-* section[recommendations] // TODO: do we really want to use nested language sections here?
-  * insert rs-language-section-nested
+* section[recommendations] 
+  // TODO: disallow text here because all recommendation-related text should be in the Composition instance of the recommendation profile. [@gregor]
+  // TODO: explain this in the IG [@Gregor]
+
 
 
 // lines below are just used to force sushi to add the correct code when refering to the slices
