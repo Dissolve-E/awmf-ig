@@ -13,10 +13,8 @@ Description: "Clinical Practice Guideline"
 * meta.tag contains 
   guideline-releaseType 0..1
 
-* meta.tag[guideline-releaseType] // only used when status = registered // TODO: add invariant
-  * system 1..1
-  * system = $cs-guideline-releaseType
-  * code 1..1
+// only used when status = registered // TODO: add invariant
+* meta.tag[guideline-releaseType] from vs-guideline-release-type (required)
 
 * language 0..1 MS
 
@@ -133,6 +131,7 @@ Description: "Clinical Practice Guideline"
   * system = "http://fhir.awmf.org/register" // TODO: agree on system [@jstarlinger, after workshop]
   * value 1..1
 * identifier obeys inv-require-official-identifier // #P2.2.1, #P2.2.3
+* identifier 1..*
 
 * version 1..1 // #P2.2.1, #P2.2.7
 * version obeys inv-version-major-minor // #P2.2.1, #P2.2.8
@@ -410,3 +409,8 @@ Description: "An example of a guideline."
 * author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#content-author
 * date = "2025-03-06"
 * title = "Example Guideline"
+* identifier[+]
+  * system = "https://example.org/identifiers"
+  * value = "AWMF-Guideline-Example"
+  * use = #official
+
