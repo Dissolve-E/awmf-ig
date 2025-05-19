@@ -9,3 +9,12 @@ Description: "If status = #preliminary, extension[consultationPeriod] SHALL be p
 Expression: "(status != 'preliminary') or
             (extension.where(url = 'http://fhir.awmf.org/awmf.ig/Extension/ext-consultation-period').value.exists())"
 Severity: #error
+
+Invariant: author-roles-registrant-singleton
+Description: "Exactly one author SHALL have role “registrant”; roles “contributing” and “leading” SHALL NOT be used."
+Expression: "author.extension.where(url = 'http://fhir.awmf.org/awmf.ig/Extension/ext-guideline-author-role')
+           .value.coding.where(code = 'registrant').count() = 1
+           and
+           author.extension.where(url = 'http://fhir.awmf.org/awmf.ig/Extension/ext-guideline-author-role')
+           .value.coding.where(code = 'contributing' or code = 'leading').empty()"
+Severity: #error

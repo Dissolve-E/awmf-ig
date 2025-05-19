@@ -14,7 +14,7 @@ Description: "Clinical Practice Guideline"
 
 // only used when status = registered 
 * meta.tag[guideline-releaseType] from vs-guideline-release-type (required)
-* obeys inv-require-release-type-if-registered // TODO: add invariant [@glichtner]
+* obeys inv-require-release-type-if-registered // TODO: test invariant [@glichtner]
 
 * language 0..1 MS
 
@@ -122,11 +122,11 @@ Description: "Clinical Practice Guideline"
   * ^definition = "Modification date of the Composition contents. Does not represent the publication, last review or approval date."
   * ^short = "Modification Date"
 
-// TODO: add invariant to allow "registrant" only 1..1 and disallow role = contributing & leading [@glichtner]
 * author only Reference(GuidelineAuthorRole or Organization) // #P2.3.1.4
 * author.extension contains ext-guideline-author-role named role 1..* // #P2.3.1.4
+// "registrant" only 1..1 and disallow role = contributing & leading
+* obeys author-roles-registrant-singleton // TODO: test invariant [@glichtner]
 
-// TODO: describe what the official identifier is and that it shouldn't be changed -> html seite des Profiles im implementation guides [@glichtner]
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open // #P2.2.1
@@ -197,7 +197,7 @@ Description: "Clinical Practice Guideline"
     * code 1.. MS
 
 * attester 0..*
-  * ^slicing.discriminator.type = #value // TODO: Is this correct? [@gregor]
+  * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "party.reference"
   * ^slicing.rules = #open
 * attester contains AWMF 0..1
@@ -322,7 +322,7 @@ Description: "Clinical Practice Guideline"
     * code from vs-content-types (preferred) // #P2.1.7 (preferred binding)
     * entry only Reference(GuidelineAttachment)
     * entry 1..* MS
-    //* obeys inv-guideline-attachment-type-match // TODO: does currently not seem to work (doesn't resolve the references - maybe in the IG publisher?) [@gregor]
+    * obeys inv-guideline-attachment-type-match // TODO: does currently not seem to work (doesn't resolve the references - maybe in the IG publisher?) [@gregor]
   * section[longVersion]
     * code 1..1
     * code.coding 1..1
