@@ -5,3 +5,4 @@
 RuleSet: rs-codesystem-meta
 * ^caseSensitive = false
 * ^experimental = false
+* ^status = #active

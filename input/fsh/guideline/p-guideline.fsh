@@ -125,7 +125,8 @@ Description: "Clinical Practice Guideline"
 * author only Reference(GuidelineAuthorRole or Organization) // #P2.3.1.4
 * author.extension contains ext-guideline-author-role named role 1..* // #P2.3.1.4
 // "registrant" only 1..1 and disallow role = contributing & leading
-* obeys author-roles-registrant-singleton // TODO: test invariant [@glichtner]
+* obeys author-registrant-singleton
+* obeys author-leading-vs-contributing-exclusive
 
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"

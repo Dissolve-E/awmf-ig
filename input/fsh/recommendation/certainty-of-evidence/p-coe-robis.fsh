@@ -17,7 +17,7 @@ Description: "Structured assessment of risk of bias using ROBIS (Risk of Bias in
   riskOfBias 0..1
 * content[riskOfBias]
   * type 1..1
-  * type = $cs-certainty-type#RiskOfBias "Risk of bias assessment"
+  * type = $cs-certainty-type#RiskOfBias "Risk of bias"
   * classifier 0..1
   * classifier from ROBISJudgementVS (required)
 */

@@ -96,7 +96,6 @@ Description: "Clinical Practice Guideline Recommendation"
   * code 1..1
   * code.coding  1..1
   * code from vs-content-types (extensible)
-  * code.coding from vs-content-types (extensible)
   * insert rs-language-section-nested
 
 

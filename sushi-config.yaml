@@ -5,9 +5,19 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: awmf.ig
 canonical: http://fhir.awmf.org/awmf.ig
-name: .
-# title: Example Title
-# description: Example Implementation Guide for getting started with SUSHI
+name: AWMFGuidelineRegistryIG
+title: "Dissolve-E: FHIR Implementation Guide for the AWMF Guideline Registry"
+description: >
+  This implementation guide, produced by the Dissolve-E project
+  (G-BA grant 01VSF23021) in collaboration with the Association of the
+  Scientific Medical Societies in Germany (AWMF), defines FHIR profiles,
+  extensions, and guidance for a structured, FAIR, and interoperable
+  representation of German clinical practice guidelines.  
+  Built on EBMonFHIR and related international initiatives,
+  it supports authoring workflows, version control, and seamless
+  integration of guideline knowledge into clinical decision support,
+  quality management, and research infrastructures.
+
 status: draft # draft | active | retired | unknown
 version: 0.1.0
 fhirVersion: 6.0.0-ballot3 # https://www.hl7.org/fhir/valueset-FHIR-version.html
