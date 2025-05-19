@@ -19,15 +19,92 @@ The guideline data model must be able to:
 * Allow multilingual content on all levels 
 
 
-### Indentifiers, References, Versions 
+### Identifiers, References, Versions
 
-* Have a unique, persistent, cross-version identifier while at the same time allowing for multiple identifers from different editing systems to be stored in parallel; the global ID of the resource itself (next to the aforementioned idenfiers) shall be assignable by the system originally creating the guideline instance.
+#### Required Official Identifier (e.g., AWMF Register Number)
 
-* Include version information in the form major.minor 
+Each guideline must have a unique, persistent identifier that is valid across versions and systems. To support referencing from external sources (such as the AWMF registry), **exactly one identifier must be marked as official** using `use = #official`.
 
-* Allow deprecation 
+The official identifier may, for example, be based on the AWMF register number using the following system:
 
-* Represent provenance information regarding previous versions of the guideline, e.g., after changes in an identifer 
+```
+* system = "http://fhir.awmf.org/guidelines"
+```
+
+However, other systems are allowed as well, as long as the identifier is appropriate and unique. The critical point is that one and only one identifier in the list must carry `use = #official`.
+
+Additional identifiers from other systems (e.g., internal editing tools or publication platforms) can be included in parallel, using other `use` values such as `#secondary`.
+
+Here is an example of how to define this in FHIR Shorthand (FSH) when creating a guideline instance:
+
+```
+* identifier[+]
+  * system = "http://fhir.awmf.org/guidelines"
+  * value = "021-001"
+  * use = #official
+
+* identifier[+]
+  * system = "https://example.org/local-editing-system"
+  * value = "guideline-local-xyz"
+  * use = #secondary
+```
+
+This setup ensures that systems consuming the resource can clearly identify the authoritative identifier while still allowing flexibility for local or alternative identifiers. Validation will enforce that exactly one official identifier is present.
+
+
+
+#### Versioning Using Major.Minor Scheme
+
+Each guideline instance must include a `version` value that follows a **major.minor** pattern, such as `1.0`, `3.2`, or `12.1`. This ensures a consistent and machine-readable versioning system across implementations and updates.
+
+The expected versioning strategy is explicitly declared using the `versionAlgorithm` extension:
+
+```
+* extension[versionAlgorithm].valueCoding = $cs-awmf#major-minor "Major-Minor Versioning"
+```
+
+A version is required and must pass a validation rule that ensures the correct format.
+
+Here is an example of how to assign a valid version in FHIR Shorthand:
+
+```
+* version = "2.1"
+* extension[versionAlgorithm].valueCoding = $cs-awmf#major-minor
+```
+
+This format supports both human understanding and automated comparison logic for version management.
+
+#### Allowing Deprecation
+
+To indicate that a guideline is no longer valid or recommended for use, the `status` element can be set to `#deprecated`.
+
+This is useful for marking retired guidelines while keeping them in the ecosystem for reference, auditability, or archival purposes.
+
+Example:
+
+```
+* status = #deprecated
+```
+
+This flag ensures consumers of the guideline (e.g., systems, registries, readers) are aware that the content is outdated and should no longer be applied in practice.
+
+#### Tracking Previous or Replaced Versions
+
+To represent the relationship between guideline versions, such as updates, replacements, or discontinued predecessors, the `relatesTo` element is used.
+
+You can indicate that a guideline **replaces** a previous version or **is replaced by** a newer one using specific types and references:
+
+```
+* relatesTo[+]
+  * type = #replaces
+  * targetReference = Reference(Guideline/021-001-old)
+
+* relatesTo[+]
+  * type = #replaced-with
+  * targetReference = Reference(Guideline/021-001-new)
+```
+
+These relationships ensure a clear lineage across updates and enable traceability in systems that aggregate or display guidelines. Optionally, additional context can be provided using extensions such as `classifier` or `label` to
 
 
 ### Guideline Content 
