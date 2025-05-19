@@ -6,7 +6,6 @@
 [VS:CareStage]: ValueSet-vs-care-stage.html
 [VS:Clinical Application Type]: ValueSet-vs-clinical-application-type.html
 [VS:Content Types]: ValueSet-vs-content-types.html
-[VS:dissemination Website]: ValueSet-vs-dissemination-website.html
 [VS:Encounter Type]: ValueSet-vs-encounter-type.html
 [VS:Evidence Rating System Value Set]: ValueSet-vs-evidence-rating-system.html
 [VS:Guideline Author Role]: ValueSet-vs-guideline-author-role.html
@@ -16,6 +15,7 @@
 [VS:Intended Audience Value Set]: ValueSet-vs-intended-audience.html
 [VS:Level Of Consensus]: ValueSet-vs-level-of-consensus.html
 [VS:OCEBM 2011 Levels of Evidence Value Set]: ValueSet-ocebm-2011-levels-of-evidence-vs.html
+[VS:ROBIS Risk of Bias Domains Value Set]: ValueSet-vs-robis-risk-of-bias-domains.html
 [VS:Rating Acceptability]: ValueSet-vs-rating-acceptability.html
 [VS:Rating Benefit And Harms]: ValueSet-vs-rating-benefit-and-harms.html
 [VS:Rating Certainty Of Evidence]: ValueSet-vs-rating-certainty-of-evidence.html
@@ -29,12 +29,11 @@
 [VS:Recommendation Tags]: ValueSet-vs-recommendation-tags.html
 [VS:Recommendation Version Status Value Set]: ValueSet-vs-recommendation-version-status.html
 [VS:Remark Type]: ValueSet-vs-remark-type.html
-[VS:ROBIS Risk of Bias Domains Value Set]: ValueSet-vs-robis-risk-of-bias-domains.html
 [VS:Target Patient Group]: ValueSet-vs-target-patient-group.html
+[VS:dissemination Website]: ValueSet-vs-dissemination-website.html
 
 [CS:AGREE II Domains]: CodeSystem-cs-agree-ii-domains.html
 [CS:AMSTAR 2 Overall Confidence Ratings]: CodeSystem-cs-amstar2-confidence-ratings.html
-[CS:awmf]: CodeSystem-cs-awmf.html
 [CS:AWMF Guideline Class]: CodeSystem-cs-awmf-guideline-class.html
 [CS:Body System Conditions]: CodeSystem-cs-body-systems-conditions.html
 [CS:Care Setting]: CodeSystem-cs-care-setting.html
@@ -50,18 +49,19 @@
 [CS:Level of Consensus]: CodeSystem-cs-level-of-consensus.html
 [CS:Medical Subject Categories]: CodeSystem-medical-subject-categories.html
 [CS:OCEBM 2011 Levels of Evidence]: CodeSystem-cs-ocebm-2011-levels-of-evidence.html
+[CS:ROBIS Risk of Bias Domains]: CodeSystem-cs-robis-risk-of-bias-domains.html
 [CS:Recommendation Strength (AWMF)]: CodeSystem-cs-recommendation-strength-awmf.html
 [CS:Recommendation Synthesis Type]: CodeSystem-cs-recommendation-synthesis-type.html
 [CS:Recommendation Tags]: CodeSystem-cs-recommendation-tags.html
 [CS:Recommendation Version Status Code System]: CodeSystem-cs-recommendation-version-status.html
 [CS:Related Artifact Types]: CodeSystem-cs-related-artifact-types.html
 [CS:Remark Type]: CodeSystem-cs-remark-type.html
-[CS:ROBIS Risk of Bias Domains]: CodeSystem-cs-robis-risk-of-bias-domains.html
 [CS:Target Patient Group]: CodeSystem-cs-target-patient-group.html
+[CS:awmf]: CodeSystem-cs-awmf.html
 
-[SD:Artifact Contact (Extended)]: StructureDefinition-ext-artifact-extended-contact.html
-[SD:Author's Language]: StructureDefinition-ext-author-language.html
 [SD:AWMF Member Organization]: StructureDefinition-awmf-member-organization.html
+[SD:Artifact Contact (Extended)]: StructureDefinition-ext-artifact-extended-contact.html
+[SD:Authors Language]: StructureDefinition-ext-author-language.html
 [SD:Consultation Period]: StructureDefinition-ext-consultation-period.html
 [SD:Evidence Assessment]: StructureDefinition-certainty-of-evidence-rating.html
 [SD:Evidence Assessment AGREE II]: StructureDefinition-certainty-of-evidence-rating-agreeii.html
@@ -92,11 +92,3 @@
 [SD:Submission Date]: StructureDefinition-ext-submission-date.html
 
 
-[SNOMEDCT]: http://snomed.info/sct
-[LOINC]: http://loinc.org/
-[UCUM]: http://unitsofmeasure.org
-[VSdataAbsentReason]: http://hl7.org/fhir/R4/valueset-data-absent-reason.html
-[CEOSYS]: https://covid-evidenz.de/
-[NUM]: https://www.netzwerk-universitaetsmedizin.de/
-[EMBonFHIR]: https://confluence.hl7.org/display/CDS/EBMonFHIR
-[COCHRANELD]: https://data.cochrane.org/concepts/

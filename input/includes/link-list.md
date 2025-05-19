@@ -60,7 +60,7 @@
 [CS:Target Patient Group]: CodeSystem-cs-target-patient-group.html
 
 [SD:Artifact Contact (Extended)]: StructureDefinition-ext-artifact-extended-contact.html
-[SD:Author's Language]: StructureDefinition-ext-author-language.html
+[SD:Authors Language]: StructureDefinition-ext-author-language.html
 [SD:AWMF Member Organization]: StructureDefinition-awmf-member-organization.html
 [SD:Consultation Period]: StructureDefinition-ext-consultation-period.html
 [SD:Evidence Assessment]: StructureDefinition-certainty-of-evidence-rating.html
