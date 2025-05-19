@@ -2,6 +2,7 @@ CodeSystem: BodySystemConditionsCS
 Id: cs-body-systems-conditions
 Title: "Body System Conditions"
 Description: "A CodeSystem representing various body system conditions."
+* insert rs-codesystem-meta
 
 * ^status = #active
 * ^content = #complete

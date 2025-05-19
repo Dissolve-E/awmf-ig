@@ -2,6 +2,7 @@ CodeSystem: LevelOfConsensusCS
 Id: cs-level-of-consensus
 Title: "Level of Consensus"
 Description: "Level of consensus for a recommendation."
+* insert rs-codesystem-meta
 * ^status = #active
 * ^content = #complete
 

@@ -2,6 +2,7 @@ CodeSystem: CareSetting
 Id: cs-care-setting
 Title: "Care Setting"
 Description: "Defines different care settings, including levels of care, healthcare services, and treatment contexts."
+* insert rs-codesystem-meta
 // TODO: add descriptions
 // Präventation, Früherkennung, Diagnose, Therapie, Rehabilitation
 // primärärztliche Vesorgung, spezialärztliche Versorgung

@@ -2,6 +2,7 @@ CodeSystem: ContactPoint
 Id: cs-contact-point
 Title: "Contact Point"
 Description: "Types of contact points for a guideline"
+* insert rs-codesystem-meta
 * #registrant "Registrant" "The contact is the registrant of the guideline."
 * #contact "Contact" "The main contact for the guideline."
 * #coordinator "Coordinator" "The contact is the coordinator of the guideline."

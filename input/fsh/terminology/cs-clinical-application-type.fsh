@@ -2,6 +2,7 @@ CodeSystem: ClinicalApplicationTypeCS
 Id: cs-clinical-application-type
 Title: "Clinical Application Type"
 Description: "Clinical Application Type"
+* insert rs-codesystem-meta
 * #diagnostic "Diagnostic" "Diagnostic"
 * #therapeutic "Therapeutic" "Therapeutic"
 * #prognostic "Prognostic" "Prognostic"

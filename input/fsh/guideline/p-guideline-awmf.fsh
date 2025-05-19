@@ -1,9 +1,8 @@
 Profile: AWMFGuideline
 Parent: Guideline
 Id: awmf-guideline
-Title: "Guideline"
-Description: "Clinical Practice Guideline"
-
+Title: "AWMF Guideline"
+Description: "AWMF Clinical Practice Guideline"
 * section[summary]
   * section[intention] 1..1
   * section[targetPatientGroup] 1..1
