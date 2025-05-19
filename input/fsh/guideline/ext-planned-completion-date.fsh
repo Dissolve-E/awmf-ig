@@ -1,9 +1,9 @@
 Extension: PlannedCompletionDate
 Id: ext-planned-completion-date
 Title: "Planned Completion Date"
-Description: "The date when the guideline is planned to be completed."
+Description: "This extension allows for the indication of the date when the guideline is planned to be completed."
 Context: Composition
-* ^purpose = "The date when the guideline is planned to be completed."
+* ^purpose = "The PlannedCompletionDate extension allows to indicate the date when the guideline is planned to be completed."
 * . 0..1
 * . ^short = "Planned Completion Date"
 * . ^definition = "The date when the guideline is planned to be completed."

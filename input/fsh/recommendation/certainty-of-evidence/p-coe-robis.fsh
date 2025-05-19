@@ -9,5 +9,4 @@ Description: "Structured assessment of risk of bias using ROBIS (Risk of Bias in
   * type 1..1
   * type = $cs-certainty-type#RiskOfBias "Risk of bias assessment"
   * classifier 0..1
-  //* classifier from ROBISJudgementVS (required) // TODO: add valueset  [@sophie]
-
+  * classifier from ROBISJudgmentOfRiskOfBiasVS (required)

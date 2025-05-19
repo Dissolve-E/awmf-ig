@@ -1,9 +1,9 @@
 Extension: RecommendationVersionStatus // #P2.3.2.29
 Id: ext-recommendation-version-status
 Title: "Recommendation Version Status"
-Description: "Status of a recommendation in the context of an updated guideline version"
+Description: "This extension allows for the indication of the status of a recommendation in the context of an updated guideline version"
 Context: Element
-* ^purpose = "Indicates whether a recommendation has been added, updated, reviewed, or reaffirmed in the new guideline version."
+* ^purpose = "The RecommendationVersionStatus extension is used to indicate whether a recommendation has been added, updated, reviewed, or reaffirmed in the new guideline version."
 * . 0..1
 * . ^short = "Version status of recommendation"
 * . ^definition = "Indicates the status of a recommendation in the context of a newer version of the guideline."

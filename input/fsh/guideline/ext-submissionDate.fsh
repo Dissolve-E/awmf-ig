@@ -1,9 +1,9 @@
 Extension: SubmissionDate
 Id: ext-submission-date
 Title: "Submission Date"
-Description: "The date when the guideline was submitted to the system."
+Description: "This extension allows for the indication of the date when the guideline was submitted to the system."
 Context: Composition
-* ^purpose = "The date when the guideline was submitted to the system."
+* ^purpose = "The SubmissionDate extension is used to indicate the date when the guideline was submitted to the system."
 * . 0..1
 * . ^short = "Submission Date"
 * . ^definition = "The date when the guideline was submitted to the system."

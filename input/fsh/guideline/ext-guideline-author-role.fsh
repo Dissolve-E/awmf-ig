@@ -1,9 +1,9 @@
 Extension: GuidelineAuthorRoleExt  // #P2.3.1.4
 Id: ext-guideline-author-role
 Title: "Guideline Author Role"
-Description: "The role of the author of the guideline."
+Description: "This extension allows for the indication of the role of the author of the guideline."
 Context: Composition.author
-* ^purpose = "Describes the role of the author of the guideline."
+* ^purpose = "The GuidelineAuthorRoleExt extension describes the role of the author of the guideline."
 * . 0..1
 * . ^short = "Author Role"
 * . ^definition = "Describes the role of the author of the guideline."

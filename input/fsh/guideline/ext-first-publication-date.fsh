@@ -1,9 +1,9 @@
 Extension: FirstPublicationDate
 Id: ext-first-publication-date
 Title: "First Publication Date"
-Description: "The date when the guideline was first published."
+Description: "This extension allows for the indication of the date when the guideline was first published."
 Context: Composition
-* ^purpose = "The date when the guideline was first published."
+* ^purpose = "The FirstPublicationDate extensions allows to indicate the date when the guideline was first published."
 * . 0..1
 * . ^short = "First Publication Date"
 * . ^definition = "The date when the guideline was first published."

@@ -9,15 +9,23 @@ Description: "Level of consensus for a recommendation."
   * ^designation[+].language = #de
   * ^designation[=].value = "Starker Konsens"
   * ^designation[=].use = $cs-designation-usage#display "Display"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Zustimmung von > 95 % der Teilnehmenden"
 * #consensus "Consensus" "Agreement by >75-95% of participants."
   * ^designation[+].language = #de
   * ^designation[=].value = "Konsens"
   * ^designation[=].use = $cs-designation-usage#display "Display"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Zustimmung von > 75 - 95 % der Teilnehmenden"
 * #majority-agreement "Majority agreement" "Agreement by >50-75% of participants."
   * ^designation[+].language = #de
   * ^designation[=].value = "Mehrheitliche Zustimmung"
   * ^designation[=].use = $cs-designation-usage#display "Display"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Zustimmung von > 50 - 75 % der Teilnehmenden"
 * #no-majority-agreement "No majority agreement" "Agreement by ≤50% of participants."
   * ^designation[+].language = #de
   * ^designation[=].value = "Keine mehrheitliche Zustimmung"
   * ^designation[=].use = $cs-designation-usage#display "Display"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Zustimmung von ≤ 50 % der Teilnehmenden"

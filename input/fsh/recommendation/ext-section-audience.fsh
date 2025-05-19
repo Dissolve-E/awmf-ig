@@ -1,7 +1,7 @@
 Extension: SectionIntendedAudience
 Id: ext-section-intended-audience
 Title: "Section Intended Audience"
-Description: "Target audience for the section"
+Description: "This extension allows for the indication of the target audience for the section"
 Context: Element
 * ^purpose = "The SectionIntendedAudience extension is used to indicate the intended audience for the section."
 * . 0..*

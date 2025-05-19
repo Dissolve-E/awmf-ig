@@ -1,9 +1,9 @@
 Extension: RegistrationDate
 Id: ext-registration-date
 Title: "Registration Date"
-Description: "The date the guideline project was registered."
+Description: "This extensions allows for the indication of the date the guideline project was registered."
 Context: Composition
-* ^purpose = "The date the guideline project was registered."
+* ^purpose = "The RegistrationDate extensions allows to indicate the date the guideline project was registered."
 * . 0..1
 * . ^short = "Registration Date"
 * . ^definition = "The date the guideline project was registered."

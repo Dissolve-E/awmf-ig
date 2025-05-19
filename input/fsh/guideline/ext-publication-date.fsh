@@ -1,9 +1,9 @@
 Extension: PublicationDate
 Id: ext-publication-date
 Title: "Publication Date"
-Description: "The date when the guideline was published."
+Description: "This extensions allows for the indication of the date when the guideline was published."
 Context: Composition
-* ^purpose = "The date when the guideline was published."
+* ^purpose = "The PublicationDate extension allows to indicate the date when the guideline was published."
 * . 0..1
 * . ^short = "Publication Date"
 * . ^definition = "The date when the guideline was published."
