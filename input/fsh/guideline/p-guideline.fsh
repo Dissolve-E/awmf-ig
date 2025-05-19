@@ -4,7 +4,7 @@ Id: guideline
 Title: "Guideline"
 Description: "Clinical Practice Guideline"
 
-// TODO: Create a profile for each guideline class (S3, S2k, S2e etc) that inherits from this profile [@gregor]
+// TODO: Create a profile for each guideline class (S3, S2k, S2e etc) that inherits from this profile [@glichtner]
 // TODO: Decide whether to make another AWMF profile that contains all AWMF-specific logic [all, after workshop]
 
 * meta.tag ^slicing.discriminator.type = #value
@@ -20,9 +20,9 @@ Description: "Clinical Practice Guideline"
 
 * title 1..1 // TODO: add description (in the IG - ^definition or so) [@sophie]
 
-// TODO: add ConceptMap for status (e.g., preliminary = "consultation" etc) [@sophie] - we need the list of codes from AWMF first
+// TODO: add ConceptMap for status (e.g., preliminary = "consultation" etc) [@sophie] - we need the list of codes from AWMF first [@starlinger]
 // TODO: add description (in the IG - ^definition or so) [@sophie]
-// TODO: add description of this status in HTML page of the profile [@Gregor]
+// TODO: add description of this status in HTML page of the profile [@glichtner]
 * status 1..1 // used for: anmeldung, konsultationsfassung, amendment, final // #P2.2.9
 
 * extension contains 
@@ -68,67 +68,67 @@ Description: "Clinical Practice Guideline"
 
 // TODO: Should we use ProvenanceResource for activities such as review, approval, publication etc, instead of extensions for dates?[(Discussion Point for Workshop]
 * extension[lastReviewDate] // MAGIC-AWMF: lastEdit, AWMF: "Aktueller Stand" // #P2.3.1.9
-  * ^definition = "The date on which the guideline was last reviewed." // TODO: check if this definition matches the intended meaning from AWMF website [@jstarlinger]
+  * ^definition = "The date on which the guideline was last updated."
   * ^short = "Last Review Date"
-  * valueDate
+  * valueDate 1..1
 
 * extension[approvalDate] // MAGIC-AWMF: ..., AWMF: "Freigegeben am"
-  * ^definition = "The date on which the guideline was approved." // TODO: check if this definition matches the intended meaning from AWMF website [@jstarlinger]
+  * ^definition = "The date on which the guideline was approved by the publisher."
   * ^short = "Approval Date"
-  * valueDate
+  * valueDate 1..1
 
 * extension[effectivePeriod] // MAGIC-AWMF: validUntilDate, AWMF: "Gültig bis"  // #P2.3.1.9
-  * ^definition = "The period during which the guideline is intended to be in use." // TODO: check if this definition matches the intended meaning from AWMF website [@jstarlinger]
+  * ^definition = "The period during which the guideline is intended to be in use."
   * ^short = "Effective Period"
-  * valuePeriod
-    * end 0..1 MS
+  * valuePeriod 1..1
+    * end 1..1 MS
 
 * extension[publicationDate] // MAGIC-AWMF: releaseDate, AWMF: "Eingestellt am"  // #P2.3.1.9
-  * ^definition = "The date on which the current version of the guideline was published." // TODO: check if this definition matches the intended meaning from AWMF website [@jstarlinger]
+  * ^definition = "The date on which the current version of the guideline was published."
   * ^short = "Publication Date"
-  * valueDate
+  * valueDate 1..1
 
 * extension[firstPublicationDate] // MAGIC-AWMF: publishedDate, AWMF: "Veröffentlicht seit"  // #P2.3.1.9
-  * ^definition = "The date on which the guideline was first published in its initial version." // TODO: check if this definition matches the intended meaning from AWMF website [@jstarlinger]
+  * ^definition = "The date on which the guideline was first published in its initial version."
   * ^short = "First Publication Date"
-  * valueDate
+  * valueDate 1..1
 
 * extension[submissionDate] // MAGIC-AWMF: submittedDate, AWMF: "Eingereicht am" // #P2.3.1.10
-  * ^definition = "The date on which this version of the guideline was submitted for publication." // TODO: check if this definition matches the intended meaning from AWMF website [@jstarlinger]
+  * ^definition = "The date on which this version of the guideline was submitted for publication."
   * ^short = "Submission Date"
-  * valueDate
+  * valueDate 1..1
 
-* extension[plannedCompletionDate] // MAGIC-AWMF: plannedCompletionDate, AWMF: "Geplante Fertigstellung" // #P2.3.1.10
-  * ^definition = "The date on which the guideline is planned to be completed." // TODO: check if this definition matches the intended meaning from AWMF website [@jstarlinger]
+* extension[plannedCompletionDate] // MAGIC-AWMF: plannedCompletionDate, AWMF: "Geplante Fertigstellung" // #P2.3.1.10 // TODO: nur bei status=#registered (use invariant) [@glichtner]
+  * ^definition = "The date on which the guideline is planned to be completed."
   * ^short = "Planned Completion Date"
-  * valueDate
+  * valueDate 1..1
 
-* extension[consultationPeriod] // MAGIC-AWMF: consultation[*]Date, AWMF: "" // #P2.3.1.10
-  * ^definition = "The period during which the guideline is open for consultation." // TODO: check if this definition matches the intended meaning from AWMF website [@jstarlinger]
+* extension[consultationPeriod] // MAGIC-AWMF: consultation[*]Date, AWMF: "" // #P2.3.1.10 // TODO: nur bei status=#preliminary (use invariant) [@glichtner]
+  * ^definition = "The period during which the guideline is open for consultation."
   * ^short = "Consultation Period"
-  * valuePeriod
+  * valuePeriod 1..1
 
 * extension[registrationDate] // MAGIC-AWMF: startDate, AWMF: "Datum der Anmeldung" // #P2.3.1.10
-  * ^definition = "The date on which the guideline was registered." // TODO: check if this definition matches the intended meaning from AWMF website [@jstarlinger]
+  * ^definition = "The date when the guideline registration was submitted."
   * ^short = "Registration Date"
-  * valueDate
+  * valueDate 1..1
 
 * date // #P2.3.1.9
-  * ^definition = "Modification date of the Composition contents. Does not represent the publication, last review or approval date." // TODO: check if this definition matches the intended meaning from AWMF website [@jstarlinger]
+  * ^definition = "Modification date of the Composition contents. Does not represent the publication, last review or approval date."
   * ^short = "Modification Date"
 
-// TODO: add invariant to allow "registrant" only 1..1 and disallow role = contributing & leading [@gregor]
+// TODO: add invariant to allow "registrant" only 1..1 and disallow role = contributing & leading [@glichtner]
 * author only Reference(GuidelineAuthorRole or Organization) // #P2.3.1.4
 * author.extension contains ext-guideline-author-role named role 1..* // #P2.3.1.4
 
-// TODO: describe what the official identifier is and that it shouldn't be changed -> html seite des Profiles im implementation guides [@Gregor]
+// TODO: describe what the official identifier is and that it shouldn't be changed -> html seite des Profiles im implementation guides [@glichtner]
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open // #P2.2.1
 * identifier contains awmf-register-number 0..1
 * identifier[awmf-register-number]
   * system 1..1
-  * system = "http://fhir.awmf.org/register" // TODO: agree on system [@jstarlinger, after workshop]
+  * system = "http://fhir.awmf.org/guidelines"
   * value 1..1
 * identifier obeys inv-require-official-identifier // #P2.2.1, #P2.2.3
 * identifier 1..*

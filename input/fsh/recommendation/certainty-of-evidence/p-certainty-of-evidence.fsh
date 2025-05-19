@@ -10,7 +10,7 @@ Description: "A structured assessment of the certainty of evidence for a specifi
 // #P2.3.3.2, #P2.3.3.3
 * artifactReference only Reference(Evidence) // TODO: should we make a profile for Evidence that requires an Outcome Definition? [@gregor]
 
-// TODO: how to mark evidence as missing? #P2.3.3.7 (e.g. if no studies are available for a specific outcome) [all]
+// TODO: how to mark evidence as missing? #P2.3.3.7 (e.g. if no studies are available for a specific outcome) [all, after workshop]
 //       we need to define the way in FHIR and explicitly mention this in the implementation guide
 
 * content ^slicing.discriminator.type = #value
