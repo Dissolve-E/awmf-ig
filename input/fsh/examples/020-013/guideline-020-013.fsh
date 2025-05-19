@@ -17,38 +17,38 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
 
 // AWMF member organizations
 * author[+] = Reference(DGP)
-* author[=].extension[ext-guideline-author-role][+].valueCodeableConcept = cs-guideline-author-role#leading
-* author[=].extension[ext-guideline-author-role][+].valueCodeableConcept = cs-guideline-author-role#registrant
+* author[=].extension[role][+].valueCodeableConcept = cs-guideline-author-role#leading
+* author[=].extension[role][+].valueCodeableConcept = cs-guideline-author-role#registrant
 * author[+] = Reference(DGAI)
-* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
+* author[=].extension[role].valueCodeableConcept = cs-guideline-author-role#contributing
 * author[+] = Reference(DGI)
-* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
+* author[=].extension[role].valueCodeableConcept = cs-guideline-author-role#contributing
 * author[+] = Reference(DGHM)
-* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
+* author[=].extension[role].valueCodeableConcept = cs-guideline-author-role#contributing
 * author[+] = Reference(PEG)
-* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
+* author[=].extension[role].valueCodeableConcept = cs-guideline-author-role#contributing
 * author[+] = Reference(DRG)
-* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
+* author[=].extension[role].valueCodeableConcept = cs-guideline-author-role#contributing
 * author[+] = Reference(GFV)
-* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
+* author[=].extension[role].valueCodeableConcept = cs-guideline-author-role#contributing
 * author[+] = Reference(DGCH)
-* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
+* author[=].extension[role].valueCodeableConcept = cs-guideline-author-role#contributing
 * author[+] = Reference(DGIM)
-* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
+* author[=].extension[role].valueCodeableConcept = cs-guideline-author-role#contributing
 * author[+] = Reference(DGIIN)
-* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
+* author[=].extension[role].valueCodeableConcept = cs-guideline-author-role#contributing
 * author[+] = Reference(DSG)
-* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
+* author[=].extension[role].valueCodeableConcept = cs-guideline-author-role#contributing
 
 // other organizations
 * author[+] = Reference(CPAnet)
-* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
+* author[=].extension[role].valueCodeableConcept = cs-guideline-author-role#contributing
 * author[+] = Reference(RKI)
-* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
+* author[=].extension[role].valueCodeableConcept = cs-guideline-author-role#contributing
 
 // person authors
 * author[+] = Reference(JessicaRademacherDGPFor020-013)
-* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#content-author
+* author[=].extension[role].valueCodeableConcept = cs-guideline-author-role#content-author
 
 * relatesTo[+]
   * type = #similar-to

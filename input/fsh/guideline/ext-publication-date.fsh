@@ -3,6 +3,7 @@ Id: ext-publication-date
 Title: "Publication Date"
 Description: "The date when the guideline was published."
 Context: Composition
+* insert rs-extension-url(ext-publication-date)
 * ^purpose = "The date when the guideline was published."
 * . 0..1
 * . ^short = "Publication Date"

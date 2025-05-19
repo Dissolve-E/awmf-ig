@@ -4,7 +4,6 @@ Id: guideline
 Title: "Guideline"
 Description: "Clinical Practice Guideline"
 
-// TODO: Create a profile for each guideline class (S3, S2k, S2e etc) that inherits from this profile [@glichtner]
 // TODO: Decide whether to make another AWMF profile that contains all AWMF-specific logic [all, after workshop]
 
 * meta.tag ^slicing.discriminator.type = #value
@@ -13,14 +12,15 @@ Description: "Clinical Practice Guideline"
 * meta.tag contains 
   guideline-releaseType 0..1
 
-// only used when status = registered // TODO: add invariant
+// only used when status = registered 
 * meta.tag[guideline-releaseType] from vs-guideline-release-type (required)
+* obeys inv-require-release-type-if-registered // TODO: add invariant [@glichtner]
 
 * language 0..1 MS
 
 * title 1..1 // TODO: add description (in the IG - ^definition or so) [@sophie]
 
-// TODO: add ConceptMap for status (e.g., preliminary = "consultation" etc) [@sophie] - we need the list of codes from AWMF first [@starlinger]
+// TODO: add ConceptMap for status (e.g., preliminary = "consultation" etc) [@sophie]
 // TODO: add description (in the IG - ^definition or so) [@sophie]
 // TODO: add description of this status in HTML page of the profile [@glichtner]
 * status 1..1 // used for: anmeldung, konsultationsfassung, amendment, final // #P2.2.9
@@ -98,15 +98,20 @@ Description: "Clinical Practice Guideline"
   * ^short = "Submission Date"
   * valueDate 1..1
 
-* extension[plannedCompletionDate] // MAGIC-AWMF: plannedCompletionDate, AWMF: "Geplante Fertigstellung" // #P2.3.1.10 // TODO: nur bei status=#registered (use invariant) [@glichtner]
+* extension[plannedCompletionDate] // MAGIC-AWMF: plannedCompletionDate, AWMF: "Geplante Fertigstellung" // #P2.3.1.10
   * ^definition = "The date on which the guideline is planned to be completed."
   * ^short = "Planned Completion Date"
   * valueDate 1..1
+// required for status=#registered
+* obeys registered-composition-needs-planned-completion-date // TODO: test invariant [@glichtner]
 
-* extension[consultationPeriod] // MAGIC-AWMF: consultation[*]Date, AWMF: "" // #P2.3.1.10 // TODO: nur bei status=#preliminary (use invariant) [@glichtner]
+* extension[consultationPeriod] // MAGIC-AWMF: consultation[*]Date, AWMF: "" // #P2.3.1.10
   * ^definition = "The period during which the guideline is open for consultation."
   * ^short = "Consultation Period"
   * valuePeriod 1..1
+// require for status=#preliminary 
+* obeys preliminary-composition-needs-consultation-period // TODO: test invariant [@glichtner]
+
 
 * extension[registrationDate] // MAGIC-AWMF: startDate, AWMF: "Datum der Anmeldung" // #P2.3.1.10
   * ^definition = "The date when the guideline registration was submitted."

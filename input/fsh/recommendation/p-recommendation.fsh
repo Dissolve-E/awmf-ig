@@ -85,15 +85,18 @@ Description: "Clinical Practice Guideline Recommendation"
   * code 1..1
   * code.coding 1..1
   * code = cs-guideline-sections#consensus-protocol "Consensus Protocol"
+  * code.coding = cs-guideline-sections#consensus-protocol "Consensus Protocol"
   * insert rs-language-section-nested
 * section[patientVersion]
   * code 1..1
   * code.coding 1..1
   * code = cs-guideline-sections#patient-version "Patient Version"
+  * code.coding = cs-guideline-sections#patient-version "Patient Version"
 * section[otherContent]
   * code 1..1
   * code.coding  1..1
   * code from vs-content-types (extensible)
+  * code.coding from vs-content-types (extensible)
   * insert rs-language-section-nested
 
 
