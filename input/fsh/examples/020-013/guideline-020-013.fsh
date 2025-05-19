@@ -404,9 +404,8 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
       * emptyReason = $cs-list-empty-reason#unavailable
       * insert narrative([[]])
 
-    // TODO: connect recommendations here
-    //* section[recommendations]
-    //  * 
+    * section[@default]
+      * entry[+] = Reference(RecommendationHAPDiagnosis) // recommendation 2
 
   * section[@default][+] // 6.2 Biomarker
     * section[language][+]
@@ -425,6 +424,9 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
         * extension[language].valueCode = #de
         * title = "Bakteriologische Diagnostik"
         * insert narrative([[Bakteriologische Diagnostik]])
+
+      * section[@default]
+        * entry[+] = Reference(RecommendationMultiplexPCRDiagnostic) // recommendation 6
 
     * section[@default][+] // 6.3.2 Mykologische Diagnostik
       * section[language][+]
