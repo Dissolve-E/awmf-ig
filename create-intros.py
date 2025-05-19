@@ -1,26 +1,108 @@
 #!/usr/bin/env python3
 """
-Create an intro file for each profile from input/data/ig.yml
+Generate intro notes and reference lists for profiles, value sets, and code systems.
 """
+from __future__ import annotations
+
 import json
-import yaml
 import os
+import re
+import sys
 from pathlib import Path
+from typing import Dict
 
-base_path = Path(os.path.dirname(os.path.realpath(__file__)))
-output_path = base_path / 'input' / 'intro-notes'
-ig_fname = base_path / 'input' / 'data' / 'ig.yml'
-linklist_fname = base_path / 'input' / 'includes' / 'link-list-generated.md'
-profiles_fname = base_path / 'input' / 'pagecontent' / 'profiles-generated.md'
-valuesets_fname = base_path / 'input' / 'pagecontent' / 'valuesets-generated.md'
+import yaml
 
-template_md = """{% include variables.md %}
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+
+def sanitize_link_name(name: str) -> str:
+    """Remove single/double quotes from a link name."""
+    return re.sub(r"[\"']", "", name)
+
+
+def ref_to_filename(ref: str) -> str:
+    """Convert a FHIR reference (e.g. ValueSet/foo) to a generated filename."""
+    return ref.replace("/", "-") + ".html"
+
+
+def ensure_dir(path: Path) -> None:
+    path.mkdir(parents=True, exist_ok=True)
+
+
+def write_reference_includes(
+    fname: Path, heading: str, link_dict: Dict[str, str], prefix: str
+) -> None:
+    """Create a markdown include list for the given prefix (VS: or CS:)."""
+    with fname.open("w", encoding="utf-8") as f:
+        f.write(f"### {heading}\n\n")
+        for name in sorted(link_dict):
+            if not name.startswith(prefix):
+                continue
+            include_type = "valueset" if prefix == "VS:" else "codesystem"
+            f.write(
+                f"{{% include {include_type}-reference.md "
+                f"name='{name}' %}}\n"
+            )
+
+
+# ---------------------------------------------------------------------------
+# Paths
+# ---------------------------------------------------------------------------
+
+BASE = Path(os.path.realpath(__file__)).parent
+INPUT = BASE / "input"
+OUTPUT_INTRO = INPUT / "intro-notes"
+DATA = INPUT / "data"
+INCLUDES = INPUT / "includes"
+PAGECONTENT = INPUT / "pagecontent"
+
+IG_YML = DATA / "ig.yml"
+LINKLIST_MD = INCLUDES / "link-list-generated.md"
+PROFILES_MD = PAGECONTENT / "profiles-generated.md"
+VALUESETS_MD = PAGECONTENT / "valuesets-generated.md"
+CODESYSTEMS_MD = PAGECONTENT / "codesystems-generated.md"
+
+# ---------------------------------------------------------------------------
+# Convert ig.json → ig.yml if needed
+# ---------------------------------------------------------------------------
+
+if not IG_YML.exists():
+    print("No ig.yml found – trying to convert JSON ImplementationGuide …")
+    gen_res = BASE / "fsh-generated" / "resources"
+    ig_files = list(gen_res.glob("ImplementationGuide-*.json"))
+    if len(ig_files) != 1:
+        sys.exit("Error: expected exactly one ImplementationGuide JSON file.")
+    IG_YML.parent.mkdir(parents=True, exist_ok=True)
+    with ig_files[0].open() as j, IG_YML.open("w") as y:
+        yaml.safe_dump(json.load(j), y)
+    print(f"Converted {ig_files[0].name} → {IG_YML.name}")
+
+# ---------------------------------------------------------------------------
+# Prepare output dirs
+# ---------------------------------------------------------------------------
+
+ensure_dir(OUTPUT_INTRO)
+ensure_dir(INCLUDES)
+ensure_dir(PAGECONTENT)
+
+# ---------------------------------------------------------------------------
+# Load ImplementationGuide
+# ---------------------------------------------------------------------------
+
+with IG_YML.open() as f:
+    ig = yaml.safe_load(f)
+
+# ---------------------------------------------------------------------------
+# Template for intro-notes
+# ---------------------------------------------------------------------------
+
+TEMPLATE_MD = """{% include variables.md %}
 {% assign id = {{include.id}} %}
 {% assign resource = site.data.structuredefinitions.[id] %}
 
 ### Guidance
-
-
 
 {% capture resource_inheritance %}
 This profile of a FHIR {{resource.type}} is derived from the [{{resource.base | split: '/' | last}}]({{resource.base}}) FHIR resource.
@@ -31,6 +113,11 @@ This profile of a FHIR {{resource.type}} is derived from the [{{resource.base | 
 {% include link-list.md %}
 """
 
+# ---------------------------------------------------------------------------
+# Link lists
+# ---------------------------------------------------------------------------
+
+linklist: Dict[str, str] = {}
 linklist_general = {
     "SNOMEDCT": "http://snomed.info/sct",
     "LOINC": "http://loinc.org/",
@@ -42,95 +129,67 @@ linklist_general = {
     "COCHRANELD": "https://data.cochrane.org/concepts/",
 }
 
-if not ig_fname.exists():
-    print('No ig.yml file found, trying to create')
+# ---------------------------------------------------------------------------
+# Process IG resources
+# ---------------------------------------------------------------------------
 
-    fsh_generated_path = base_path /'fsh-generated' / 'resources'
-    ig_files = list(fsh_generated_path.glob('ImplementationGuide-*.json'))
+for res in ig["definition"]["resource"]:
+    ref = res["reference"]["reference"]  # e.g. StructureDefinition/Foo
+    res_type = ref.split("/")[0]         # StructureDefinition
+    link_name = sanitize_link_name("".join(filter(str.isupper, res_type)) + ":" + res["name"])
 
-    if len(ig_files) == 0:
-        print('No ImplementationGuide files found in fsh-generated/resources')
-        exit(1)
-    elif len(ig_files) > 1:
-        print('More than one ImplementationGuide file found in fsh-generated/resources')
-        exit(1)
-    else:
-        json_ig_fname = ig_files[0]
+    # Link destination
+    linklist[link_name] = ref_to_filename(ref)
 
-    if not ig_fname.parent.exists():
-        ig_fname.parent.mkdir()
+    # Intro note only for SD/Questionnaire
+    if res_type not in ("StructureDefinition", "Questionnaire"):
+        continue
+    intro_file = OUTPUT_INTRO / (ref.replace("/", "-") + "-intro.md")
+    if not intro_file.exists():
+        with intro_file.open("w", encoding="utf-8") as md:
+            md.write(TEMPLATE_MD)
 
-    print(f"Converting {json_ig_fname} to {ig_fname}")
-    content = json.loads(open(json_ig_fname).read())
-    yaml.dump(content, open(ig_fname, "w"))
+# merge in general links
+linklist.update(linklist_general)
 
+# ---------------------------------------------------------------------------
+# Write link-list markdown
+# ---------------------------------------------------------------------------
 
-if not output_path.exists():
-    output_path.mkdir(parents=True)
+with LINKLIST_MD.open("w", encoding="utf-8") as f:
+    def dump(prefix: str) -> None:
+        for k, v in sorted(linklist.items()):
+            if k.startswith(prefix):
+                f.write(f"[{k}]: {v}\n")
+        f.write("\n")
 
-with open(ig_fname, 'r') as f:
-    ig = yaml.safe_load(f)
+    for p in ("VS:", "CS:", "SD:", "QU:"):
+        dump(p)
+    # general links already included (no prefix filter)
 
-linklist = {}
+print(f"Wrote {LINKLIST_MD.relative_to(BASE)}")
 
-for resource in ig["definition"]["resource"]:
-    ref = resource["reference"]["reference"]
-    
-    type_ = ref.split('/')[0]
+# ---------------------------------------------------------------------------
+# Profiles pagecontent (unchanged)
+# ---------------------------------------------------------------------------
 
-    link_name = ''.join(filter(str.isupper, type_)) + ':' + resource["name"]
+with PROFILES_MD.open("w", encoding="utf-8") as f:
+    f.write("### Profiles\n\n")
+    for k, v in sorted(linklist.items()):
+        if k.startswith(("SD:", "QU:")):
+            res_type = "questionnaire" if v.startswith("Questionnaire-") else "profile"
+            f.write(f"{{% include {res_type}-reference.md name='{k}' %}}\n")
 
-    if ref.startswith('ValueSet/'):
-        linklist[link_name] = ref.replace('/', '-') + '.html'
+print(f"Wrote {PROFILES_MD.relative_to(BASE)}")
 
-    if ref.startswith('CodeSystem/'):
-        linklist[link_name] = ref.replace('/', '-') + '.html'
+# ---------------------------------------------------------------------------
+# Separate ValueSet & CodeSystem page-content files
+# ---------------------------------------------------------------------------
 
-    if not ref.startswith('StructureDefinition/') and not ref.startswith('Questionnaire/'):
-      continue
+write_reference_includes(VALUESETS_MD, "Value Sets", linklist, "VS:")
+print(f"Wrote {VALUESETS_MD.relative_to(BASE)}")
 
-    fname = output_path / (ref.replace('/', '-') + '-intro.md')
+write_reference_includes(CODESYSTEMS_MD, "Code Systems", linklist, "CS:")
+print(f"Wrote {CODESYSTEMS_MD.relative_to(BASE)}")
 
-    if not fname.exists():
-        print(link_name)
-        with open(fname, 'w') as f:
-            f.write(template_md)
-
-    linklist[link_name] = ref.replace('/', '-') + '.html'
-
-
-if not linklist_fname.parent.exists():
-    linklist_fname.parent.mkdir()
-
-print(linklist_fname.name)
-with open(linklist_fname, 'w') as f:
-    def write_links(ll, prefix="", newline=True):
-        for k, v in ll.items():
-            f.write(f'[{prefix}{k}]: {v}\n')
-        if newline:
-            f.write("\n")
-
-    for prefix in ['VS:', 'CS:', 'SD:', 'QU:']:
-        write_links({k: v for k, v in linklist.items() if k.startswith(prefix)}, newline=True)
-    write_links(linklist_general, newline=False)
-
-print(profiles_fname.name)
-with open(profiles_fname, 'w') as f:
-    f.write('### Profiles\n\n')
-    for name in linklist:
-        if linklist[name].split('-')[0] == 'Questionnaire':
-            resource_type = 'questionnaire'
-        else:
-            resource_type = 'profile'
-
-        f.write(f"{{% include {resource_type}-reference.md name='{name}' %}}\n")
-
-print(valuesets_fname.name)
-with open(valuesets_fname, "w") as f:
-    f.write('### Value Sets\n\n')
-    for name in linklist:
-        if not name.startswith('VS:'):
-            continue
-        f.write(f"{{% include valueset-reference.md name='{name}' %}}\n")
-
-print("Done")
+print("Done ✅")

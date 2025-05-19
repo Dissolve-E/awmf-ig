@@ -25,3 +25,6 @@ Description: "An example of an AWMF guideline."
 * author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#content-author
 * date = "2025-03-06"
 * title = "Example Recommendation"
+* identifier[awmf-register-number][+]
+  * value = "999-999"
+  * use = #official

@@ -25,10 +25,7 @@ Description: "A structured assessment of the evidence and consensus that underpi
     * type = $cs-ebm-ig#strength-of-recommendation "Strength of Recommendation"
     * classifier 1..1
     * classifier from $vs-strength-of-recommendation (required)
-    // TODO: classifier from http://terminology.hl7.org/CodeSystem/recommendation-strength ?
-    // TODO: AWMF Empfehlungssystematik: https://www.awmf.org/leitlinien/awmf-regelwerk/ll-entwicklung.html ?
 
-// TODO: or use strong-for, strong-against ?
   * component[directionOfRecommendation]
     * type 1..1
     * type = $cs-ebm-ig#direction-of-recommendation "Direction of Recommendation"

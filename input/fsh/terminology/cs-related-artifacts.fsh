@@ -2,7 +2,6 @@ CodeSystem: RelatedArtifactTypes
 Id: cs-related-artifact-types
 Title: "Related Artifact Types"
 Description: "Related artifacts that can be part of a guideline."
-// TODO: related artifacts / further reading?
 * #related-guideline "Related Guideline"
 
 * #app "Mobile App"

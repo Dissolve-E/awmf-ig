@@ -3,6 +3,7 @@ Id: ext-guideline-author-role
 Title: "Guideline Author Role"
 Description: "This extension allows for the indication of the role of the author of the guideline."
 Context: Composition.author
+* insert rs-extension-url(ext-guideline-author-role)
 * ^purpose = "The GuidelineAuthorRoleExt extension describes the role of the author of the guideline."
 * . 0..1
 * . ^short = "Author Role"

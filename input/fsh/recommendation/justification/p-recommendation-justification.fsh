@@ -13,7 +13,6 @@ Description: "A structured assessment of the evidence and consensus that underpi
   and searchStrategy 0..1  // #P2.3.3.1
   and evidence 0..*
 
-
 * content[recommendationRating]
   * type 1..1
   * type = $cs-ebm-ig#recommendation-rating "Recommendation Rating"
@@ -31,7 +30,6 @@ Description: "A structured assessment of the evidence and consensus that underpi
     * type = $cs-ebm-ig#rating-system "Rating System"
     * classifier 1..1
     * classifier from vs-evidence-rating-system (preferred)
-
 
   * component[strengthOfRecommendation]
     * type 1..1
@@ -56,16 +54,15 @@ Description: "A structured assessment of the evidence and consensus that underpi
     * type 1..1
     * type = $cs-related-artifact-type#justification "Justification"
     * targetReference 1..1
-    * targetReference only Reference(CertaintyOfEvidenceRating)
+    * targetReference only Reference(CertaintyOfEvidenceRating) // overall evidence rating for this outcome
   
-  * component // #P2.3.3.2, #P2.3.3.3
+  * component // #P2.3.3.2, #P2.3.3.3 - single study evidence (one component per study)
     * type 1..1
     * type = $cs-ebm-ig#evidence "Evidence"
     * relatesTo 1..1
       * targetReference 1..1
       * targetReference only Reference(CertaintyOfEvidenceRating)
 
-// TODO: should this be here or in recommendation or / and in guideline?
 * content[searchStrategy] // #P2.3.3.1
   * type 1..1
   * type = $cs-ebm-ig#search-strategy "Search Strategy"

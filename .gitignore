@@ -11,3 +11,4 @@ pdf/
 *.sh
 *.pdf
 notebooks/
+*-generated.md
