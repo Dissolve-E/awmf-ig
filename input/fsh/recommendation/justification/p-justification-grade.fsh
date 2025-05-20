@@ -6,7 +6,7 @@ Description: "A structured assessment of the evidence and consensus that underpi
 
 * content[recommendationRating]
   * component contains
-    benefitAndHarms 0..1 MS
+    benefitsAndHarms 0..1 MS
     and overallCertaintyOfEvidence 0..1 MS
     and preferenceAndValues 0..1 MS
     and resources 0..1 MS
@@ -38,11 +38,11 @@ Description: "A structured assessment of the evidence and consensus that underpi
     * classifier 1..1
     * classifier from vs-rating-certainty-of-evidence (required)
 
-  * component[benefitAndHarms]
+  * component[benefitsAndHarms]
     * type 1..
-    * type = $cs-etd-certainty-type#benefit-and-harms "Benefit and harms"
+    * type = $cs-etd-certainty-type#benefits-and-harms "Benefits and Harms"
     * classifier 1..1
-    * classifier from vs-rating-benefit-and-harms (required)
+    * classifier from vs-rating-benefits-and-harms (required)
 
   * component[preferenceAndValues]
     * type 1..

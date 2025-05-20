@@ -3,7 +3,8 @@ CodeSystem: EvidenceToDecisionCertaintyType
 Id: cs-evidence-to-decision-certainty-type
 Title: "Evidence To Decision Certainty type"
 Description: "GRADE Evidence to Decision (EtD) Framework Certainty Type"
-* #benefit-and-harms "Benefits and Harms" "Summary of most important benefits and harms"
+* insert rs-codesystem-meta
+* #benefits-and-harms "Benefits and Harms" "Summary of most important benefits and harms"
 * #preference-and-values "Preference and values" "Typical patient preferences and values? Common issues or expected variability?"
 * #resources "Resources" "Issues with costs or resource use? For whom? Cost-benefit analysis? Implementation or other issues?"
 * #equity "Equity" "How do the different alternatives affect equity?"

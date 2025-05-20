@@ -2,6 +2,7 @@ CodeSystem: EvidenceRatingSystemCS
 Id: cs-evidence-rating-system
 Title: "Evidence Rating System Code System"
 Description: "Code system for identifying evidence rating and appraisal frameworks used in systematic reviews, guideline development, and clinical decision support."
+* insert rs-codesystem-meta
 * #GRADE "GRADE" "Grading of Recommendations Assessment, Development and Evaluation"
 * #OCEBM2011 "Oxford 2011 (OCEBM)" "Oxford Centre for Evidence-Based Medicine 2011 Levels of Evidence"
 * #AMSTAR2 "AMSTAR 2" "A Measurement Tool to Assess Systematic Reviews – version 2"

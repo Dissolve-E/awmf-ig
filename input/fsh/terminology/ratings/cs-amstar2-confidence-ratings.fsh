@@ -2,7 +2,7 @@ CodeSystem: AMSTAR2ConfidenceRatings
 Id: cs-amstar2-confidence-ratings
 Title: "AMSTAR 2 Overall Confidence Ratings"
 Description: "A CodeSystem representing the overall confidence ratings from the AMSTAR 2 critical appraisal tool."
-* ^status = #active
+* insert rs-codesystem-meta
 * ^content = #complete
 
 * #high "High" "Zero or one non-critical weakness: The systematic review provides an accurate and comprehensive summary of the results of the available studies that address the question of interest."

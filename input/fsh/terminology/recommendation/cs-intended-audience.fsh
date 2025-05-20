@@ -2,6 +2,7 @@ CodeSystem: IntendedAudienceCS
 Id: cs-intended-audience
 Title: "Intended Audience Code System"
 Description: "Code system defining possible intended audiences for a section"
+* insert rs-codesystem-meta
 * #patient "Patient" "The content is intended for the patient"
 * #physician "Physician" "The content is intended for the physician"
 * #nurse "Nurse" "The content is intended for the nurse"
