@@ -4,13 +4,28 @@
 # (And include comments like this justifying why)
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
 
-Constraint failed: eld-20: 'The first component of the path should be UpperCamelCase. Additional components (following a '.') should be lowerCamelCase. If this syntax is not adhered to, code generation tools may be broken. Logical models may be less concerned about this implication.'
-Constraint failed: eld-31: 'additionalBindings should have a key' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition) (Best Practice Recommendation) 
+
+# The following constraints are failing due to the internal structure it seems, nothin that we can change ourselves?
+Constraint failed: eld-20: 'The first component of the path should be UpperCamelCase. Additional components (following a '.') should be lowerCamelCase. If this syntax is not adhered to, code generation tools may be broken. Logical models may be less concerned about this implication.' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition)
+Constraint failed: eld-31: 'additionalBindings should have a key' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition) (Best Practice Recommendation)
+Constraint failed: eld-5: 'if the element definition has a contentReference, it cannot have type, defaultValue, fixed, pattern, example, minValue, maxValue, maxLength, or binding' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition) 
+
+
+# does currently (25-05-20) not resolve
 URL value 'http://fhir.awmf.org/guidelines' does not resolve
-Unable to resolve resource with reference 'http://fhir.awmf.org/awmf.ig/Organization/AWMF'
+
+# these actually do resolve, not sure what the validator's problem is
 URL value 'https://www.awmf.org/leitlinien/detail/ll/020-020.html' does not resolve
 URL value 'https://www.awmf.org/leitlinien/detail/ll/020-003.html' does not resolve
 URL value 'https://www.awmf.org/leitlinien/detail/ll/020-015.html' does not resolve
 URL value 'https://www.awmf.org/leitlinien/detail/ll/048-013.html' does not resolve
 URL value 'https://register.awmf.org/de/leitlinien/detail/020-013' does not resolve
-This element does not match any known slice defined in the profile http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline|0.1.0 (this may not be a problem, but you should check that it's not intended to match a slice) Show Reasoning 
+
+# we are deliberately using open slices for custom sections - this will happen always
+This element does not match any known slice defined in the profile http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline|0.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+
+# the following url actually resolves, not sure what the validator's problem is
+URL value 'http://terminology.hl7.org/CodeSystem/designation-usage' does not resolve
+Canonical URL 'http://hl7.org/fhir/uv/cpg/ValueSet/cpg-recommendation-direction-vs' does not resolve 
+ValueSet 'http://hl7.org/fhir/uv/cpg/ValueSet/cpg-recommendation-direction-vs' not found
+A definition for CodeSystem 'http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-recommendation-direction-cs' could not be found, so the code cannot be validated

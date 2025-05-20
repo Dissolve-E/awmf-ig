@@ -21,8 +21,8 @@ Description: "An example of an AWMF guideline."
 * version = "2.0"
 * status = #final
 * author[+] = Reference(GuidelineAuthorRoleExample)
-* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#registrant
-* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#content-author
+* author[=].extension[ext-guideline-author-role][+].valueCodeableConcept = cs-guideline-author-role#registrant
+* author[=].extension[ext-guideline-author-role][+].valueCodeableConcept = cs-guideline-author-role#content-author
 * date = "2025-03-06"
 * title = "Example Recommendation"
 * identifier[awmf-register-number][+]

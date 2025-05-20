@@ -3,7 +3,7 @@ Parent: $ebm-recommendation // #P2.1.2
 Id: recommendation
 Title: "Recommendation"
 Description: "Clinical Practice Guideline Recommendation"
-* identifier obeys inv-require-official-identifier // #P2.2.2
+* obeys inv-require-official-identifier // #P2.2.2
 
 * version 1..1 // #P2.2.6, #P2.2.7
 * version obeys inv-version-major-minor // #P2.2.1
