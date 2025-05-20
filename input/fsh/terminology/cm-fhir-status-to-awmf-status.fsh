@@ -5,8 +5,8 @@ Title: "Concept map from concepts from standardized vocabularies (that are not s
 Description: "Concept map from concepts from standardized vocabularies that are not labelled as 'standard' in Athena – OHDSI Vocabularies Repository to Concept IDs from 'standard' concepts"
 * version = "0.0.1"
 * status = #draft
-* purpose = "The DISSOLVE-E project develops a digital registry for clinical practice guidelines in Germany. The project is based on current processes coordinated by the Association of the Scientific Medical Societies in Germany (in German: Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften, short: AWMF).
-            This ConceptMap maps values for the workflow status as defined by the AWMF to the required FHIR ValueSet http://hl7.org/fhir/ValueSet/composition-status that is used in a Composition Resource or Profile."
+* purpose = """The DISSOLVE-E project develops a digital registry for clinical practice guidelines in Germany. The project is based on current processes coordinated by the Association of the Scientific Medical Societies in Germany (in German: Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften, short: AWMF).
+            This ConceptMap maps values for the workflow status as defined by the AWMF to the required FHIR ValueSet http://hl7.org/fhir/ValueSet/composition-status that is used in a Composition Resource or Profile."""
 * group[+]
   * source = $cs-composition-status
   * target = $cs-awmf-guideline-status

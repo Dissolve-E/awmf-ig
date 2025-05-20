@@ -48,5 +48,7 @@ Alias: $vs-strength-of-recommendation = http://terminology.hl7.org/ValueSet/reco
 Alias: $cs-composition-status = http://hl7.org/fhir/composition-status
 Alias: $vs-composition-status = http://hl7.org/fhir/ValueSet/composition-status
 
+Alias: $cs-awmf-guideline-status = cs-awmf-guideline-status
+
 Alias: $cs-cm-relationship = http://hl7.org/fhir/concept-map-relationship
 Alias: $vs-cm-relationship = http://hl7.org/fhir/ValueSet/concept-map-relationship

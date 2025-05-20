@@ -27,7 +27,7 @@ Description: "A structured assessment of the certainty of evidence for a specifi
   * type 1..1
   * type = $cs-certainty-type#Overall "Overall certainty"
   * classifier 1..1
-  * classifier from $vs-rating-certainty-of-evidence (required)
+  * classifier from vs-rating-certainty-of-evidence (required)
 * content[riskOfBias]
   * type 1..1
   * type = $cs-certainty-type#RiskOfBias "Risk of bias"
