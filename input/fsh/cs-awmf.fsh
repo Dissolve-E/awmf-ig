@@ -7,7 +7,6 @@ Description: "CodeSystem representing different codes of interest for the Arbeit
   * ^designation[=].value = "Durch Autor*innen geordnet"
   * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
   * ^definition.extension[$ext-translation].extension[content].valueString = "Die Leitlinie wurde von den Autor*innen geordnet und MUSS in der angegebenen Reihenfolge befolgt werden."
-
 * #major-minor "Major-Minor Versioning"
   * ^designation[+].language = #de
   * ^designation[=].value = "Major-Minor Versionierungsschema"
