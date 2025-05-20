@@ -1,28 +1,40 @@
-### Code Systems
+### General Code Systems
 
-{% include codesystem-reference.md name='CS:AGREE II Domains' %}
-{% include codesystem-reference.md name='CS:AMSTAR 2 Overall Confidence Ratings' %}
 {% include codesystem-reference.md name='CS:AWMF Guideline Class' %}
+{% include codesystem-reference.md name='CS:AWMF Guideline Status' %}
 {% include codesystem-reference.md name='CS:Body System Conditions' %}
 {% include codesystem-reference.md name='CS:Care Setting' %}
 {% include codesystem-reference.md name='CS:Clinical Application Type' %}
 {% include codesystem-reference.md name='CS:Contact Point' %}
-{% include codesystem-reference.md name='CS:Evidence Rating System Code System' %}
-{% include codesystem-reference.md name='CS:Evidence To Decision Certainty Rating' %}
-{% include codesystem-reference.md name='CS:Evidence To Decision Certainty type' %}
 {% include codesystem-reference.md name='CS:Guideline Author Role' %}
 {% include codesystem-reference.md name='CS:Guideline Release Type' %}
 {% include codesystem-reference.md name='CS:Guideline Sections' %}
-{% include codesystem-reference.md name='CS:Intended Audience Code System' %}
 {% include codesystem-reference.md name='CS:Level of Consensus' %}
 {% include codesystem-reference.md name='CS:Medical Subject Categories' %}
-{% include codesystem-reference.md name='CS:OCEBM 2011 Levels of Evidence' %}
-{% include codesystem-reference.md name='CS:ROBIS Risk of Bias Domains' %}
-{% include codesystem-reference.md name='CS:Recommendation Strength (AWMF)' %}
 {% include codesystem-reference.md name='CS:Recommendation Synthesis Type' %}
 {% include codesystem-reference.md name='CS:Recommendation Tags' %}
-{% include codesystem-reference.md name='CS:Recommendation Version Status Code System' %}
 {% include codesystem-reference.md name='CS:Related Artifact Types' %}
 {% include codesystem-reference.md name='CS:Remark Type' %}
 {% include codesystem-reference.md name='CS:Target Patient Group' %}
 {% include codesystem-reference.md name='CS:awmf' %}
+
+### Code Systems related to Ratings
+
+{% include codesystem-reference.md name='CS:AGREE II Domains' %}
+{% include codesystem-reference.md name='CS:AMSTAR 2 Overall Confidence Ratings' %}
+{% include codesystem-reference.md name='CS:Evidence Rating System Code System' %}
+{% include codesystem-reference.md name='CS:OCEBM 2011 Levels of Evidence' %}
+{% include codesystem-reference.md name='CS:Recommendation Strength (AWMF)' %}
+{% include codesystem-reference.md name='CS:RoB2 Overall Judgment' %}
+{% include codesystem-reference.md name='CS:'ROBIS Judgment of Risk of Bias' %}
+{% include codesystem-reference.md name='CS:ROBIS Risk of Bias Domains' %}
+
+#### Code Systems related to Grades
+
+{% include codesystem-reference.md name='CS:Evidence To Decision Certainty Rating' %}
+{% include codesystem-reference.md name='CS:Evidence To Decision Certainty type' %}
+
+### Code Systems related to Recommendations
+
+{% include codesystem-reference.md name='CS:Intended Audience Code System' %}
+{% include codesystem-reference.md name='CS:Recommendation Version Status Code System' %}
