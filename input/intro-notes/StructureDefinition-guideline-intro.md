@@ -16,7 +16,7 @@ The guideline data model must be able to:
 
 * Structure guidelines into sections 
 
-* Allow multilingual content on all levels 
+{% include multi-language.md %}
 
 
 ### Identifiers, References, Versions
@@ -115,7 +115,7 @@ These relationships ensure a clear lineage across updates and enable traceabilit
 
 * List AMWF member associations and other organisations leading or contributing to the guideline, as well as technical partners 
 
-* Link to related guidelines  
+* Link to related guidelines
 
 
 
