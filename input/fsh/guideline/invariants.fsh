@@ -18,5 +18,11 @@ Severity: #error
 
 Invariant: author-leading-vs-contributing-exclusive
 Description: "No single author SHALL simultaneously have the roles “leading” and “contributing”."
-Expression: "Composition.author.where(extension.url = 'http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role').extension.value.coding.where(code='leading' or code='contributing').count() <= 1"
+Expression: "author.all(
+              extension.where(
+                url = 'http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role'
+              ).value.coding.code
+              .where($this = 'leading' or $this = 'contributing')
+              .count() <= 1          /* each author may have 0 or 1 of those roles */
+            )"
 Severity: #error
