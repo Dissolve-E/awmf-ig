@@ -1,7 +1,7 @@
 CodeSystem: BodySystemConditionsCS
 Id: cs-body-systems-conditions
 Title: "Body System Conditions"
-Description: "A CodeSystem representing various body system conditions."
+Description: "CodeSystem representing various body system conditions."
 
 * ^status = #active
 * ^content = #complete

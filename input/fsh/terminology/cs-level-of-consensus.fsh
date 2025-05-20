@@ -1,7 +1,7 @@
 CodeSystem: LevelOfConsensusCS
 Id: cs-level-of-consensus
 Title: "Level of Consensus"
-Description: "Level of consensus for a recommendation."
+Description: "CodeSystem defining the values representing the level of consensus for a recommendation."
 * ^status = #active
 * ^content = #complete
 

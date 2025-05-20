@@ -46,16 +46,28 @@ dependencies:
 # with supported extensions (e.g., .md/.xml) will be treated as
 # sub-pages.
 #
-# pages:
-#   index.md:
-#     title: Example Home
-#   implementation.xml:
-#   examples.xml:
-#     title: Examples Overview
-#     simpleExamples.xml:
-#     complexExamples.xml:
-#
-#
+pages:
+  index.md:
+    title: DISSOLVE-E Implementation Guide
+  profiles.md:
+    title: Profiles
+  extensions.md:
+    title: Extensions
+  codesystems.md:
+    title: Code Systems
+  valuesets.md:
+    title: Value Sets
+  examples.md:
+    title: Examples
+
+menu:
+  Home: index.html
+  Profiles: profiles.html
+  Extensions: extensions.html
+  Code Systems: codesystems.html
+  Value Sets: valuesets.html
+  Examples: examples.html
+
 # The parameters property represents IG.definition.parameter. Rather
 # than a list of code/value pairs (as in the ImplementationGuide
 # resource), the code is the YAML key. If a parameter allows repeating

@@ -1,7 +1,7 @@
 Extension: AuthorLanguage
 Id: ext-author-language
 Title: "Author's Language"
-Description: "Specifies the language(s) the author contributed to a section in a FHIR Composition."
+Description: "This extension allows for the specification of the language(s) the author contributed to a section in a FHIR Composition."
 Context: Reference
 * . ^short = "Language(s) used by the author"
 * . ^definition = "Indicates the language(s) contributed by the author for content in a Composition section."

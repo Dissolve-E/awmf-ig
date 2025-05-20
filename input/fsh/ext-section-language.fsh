@@ -1,7 +1,7 @@
 Extension: SectionLanguageExt // #P2.3.2.21
 Id: ext-section-language
 Title: "Section Language"
-Description: "The Language of the Section."
+Description: "This extension allows for the indication of the Language of the Section."
 Context: Element
 * . 0..1
 * . ^short = "Language for the Section"

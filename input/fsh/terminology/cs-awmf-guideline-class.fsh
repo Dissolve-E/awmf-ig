@@ -1,7 +1,7 @@
 CodeSystem: AWMFGuidelineClass
 Id: cs-awmf-guideline-class
 Title: "AWMF Guideline Class"
-Description: "Guideline classes according to the AWMF."
+Description: "CodeSystem representing the guideline classes according to the AWMF."
 * ^status = #active
 * ^publisher = "Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften (AWMF) e.V"
 * ^description = "As part of the project planning for the creation or updating of a guideline,
@@ -14,6 +14,22 @@ Description: "Guideline classes according to the AWMF."
     When choosing a higher S-classification in the context of updating a guideline, the adaptation to the corresponding methodology has to be considered."
 * ^content = #complete
 * #S3 "Evidence- and consensus-based guideline" "Representative panel, Systematic search, selection, evaluation of literature, Structured consensus building."
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Evidenz- und Konsensusbasierte Leitlinie"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Repräsentatives Gremium, Systematische Recherche, Auswahl, Bewertung der Literatur, Strukturierte Konsensfindung"
 * #S2e "Evidence-based Guideline" "Systematic search, selection, evaluation of literature"
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Evidenzbasierte Leitlinie"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Systematische Recherche, Auswahl, Bewertung der Literatur"
 * #S2k "Consensus-based Guideline" "Representative body, structured consensus building"
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Konsensusbasierte Leitlinie"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Repräsentatives Gremium, Strukturierte Konsensfindung"
 * #S1 "Action recommendations from expert groups" "Consensus building in an informal process"
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Handlungsempfehlungen von Expertengruppen"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Konsensfindung in einem informellen Verfahren"
