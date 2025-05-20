@@ -3,3 +3,14 @@
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem
 # (And include comments like this justifying why)
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
+
+Constraint failed: eld-20: 'The first component of the path should be UpperCamelCase. Additional components (following a '.') should be lowerCamelCase. If this syntax is not adhered to, code generation tools may be broken. Logical models may be less concerned about this implication.'
+Constraint failed: eld-31: 'additionalBindings should have a key' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition) (Best Practice Recommendation) 
+URL value 'http://fhir.awmf.org/guidelines' does not resolve
+Unable to resolve resource with reference 'http://fhir.awmf.org/awmf.ig/Organization/AWMF'
+URL value 'https://www.awmf.org/leitlinien/detail/ll/020-020.html' does not resolve
+URL value 'https://www.awmf.org/leitlinien/detail/ll/020-003.html' does not resolve
+URL value 'https://www.awmf.org/leitlinien/detail/ll/020-015.html' does not resolve
+URL value 'https://www.awmf.org/leitlinien/detail/ll/048-013.html' does not resolve
+URL value 'https://register.awmf.org/de/leitlinien/detail/020-013' does not resolve
+This element does not match any known slice defined in the profile http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline|0.1.0 (this may not be a problem, but you should check that it's not intended to match a slice) Show Reasoning 
