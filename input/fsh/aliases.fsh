@@ -44,3 +44,9 @@ Alias: $vs-certainty-rating = http://hl7.org/fhir/ValueSet/certainty-rating
 
 Alias: $cs-strength-of-recommendation = http://terminology.hl7.org/CodeSystem/recommendation-strength
 Alias: $vs-strength-of-recommendation = http://terminology.hl7.org/ValueSet/recommendation-strength
+
+Alias: $cs-composition-status = http://hl7.org/fhir/composition-status
+Alias: $vs-composition-status = http://hl7.org/fhir/ValueSet/composition-status
+
+Alias: $cs-cm-relationship = http://hl7.org/fhir/concept-map-relationship
+Alias: $vs-cm-relationship = http://hl7.org/fhir/ValueSet/concept-map-relationship

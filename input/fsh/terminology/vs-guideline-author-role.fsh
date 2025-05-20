@@ -1,5 +1,5 @@
 ValueSet: GuidelineAuthorRoleVS  // #P2.3.1.4
 Id: vs-guideline-author-role
 Title: "Guideline Author Role"
-Description: "The role of the author of the guideline."
+Description: "ValueSet listing roles that a author can have in a guideline."
 * include codes from system cs-guideline-author-role

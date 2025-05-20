@@ -18,12 +18,11 @@ Description: "Clinical Practice Guideline"
 
 * language 0..1 MS
 
-* title 1..1 // TODO: add description (in the IG - ^definition or so) [@sophie]
-
-// TODO: add ConceptMap for status (e.g., preliminary = "consultation" etc) [@sophie]
-// TODO: add description (in the IG - ^definition or so) [@sophie]
+* title 1..1
+* title ^description = "Title of the Guideline"
 // TODO: add description of this status in HTML page of the profile [@glichtner]
 * status 1..1 // used for: anmeldung, konsultationsfassung, amendment, final // #P2.2.9
+* status ^description = "Workflow status of the guideline from registration to publication or deprecation. Please note that the ValueSet 'http://hl7.org/fhir/ValueSet/composition-status' is required; We therefore created the ConceptMap 'FHIRStatusToAWMFStatus' to store the mapping to the AWMF status values."
 
 * extension contains 
   ext-artifact-extended-contact named contact 0..* MS
