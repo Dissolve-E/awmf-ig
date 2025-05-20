@@ -136,8 +136,8 @@ Description: "Clinical Practice Guideline"
   * system 1..1
   * system = "http://fhir.awmf.org/guidelines"
   * value 1..1
-* identifier obeys inv-require-official-identifier // #P2.2.1, #P2.2.3
 * identifier 1..*
+* obeys inv-require-official-identifier // #P2.2.1, #P2.2.3
 
 * version 1..1 // #P2.2.1, #P2.2.7
 * version obeys inv-version-major-minor // #P2.2.1, #P2.2.8
@@ -206,7 +206,8 @@ Description: "Clinical Practice Guideline"
   * mode 1..1
   * mode = $cs-composition-attestation-mode#official
   * party 1..1
-  * party.reference = Canonical(AWMF)
+  * party.reference 1..1
+  * party = Reference(AWMF)
 
 // add some more codes for the sections (not only the ones defined by the EBM IG)
 * section.code from vs-guideline-sections (extensible)
@@ -355,7 +356,9 @@ Description: "Clinical Practice Guideline"
 
 * section[consensusProtocol]
   * code 1..1
+  * code.coding 1..1
   * code = cs-guideline-sections#consensus-protocol "Consensus Protocol"
+  * code.coding = cs-guideline-sections#consensus-protocol "Consensus Protocol"
   * insert rs-language-section-nested
 
 // Language for each section and nested sections until level 6 (#P2.3.2.21, #P2.1.9)
