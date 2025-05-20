@@ -26,8 +26,6 @@ Description: "A structured assessment of the certainty of evidence for a specifi
   * classifier 1..1
   * classifier from vs-evidence-rating-system (extensible)
 
-// TODO: the code system and value set is called "quality of evidence"  - is this ok? [@sophie]
-// TODO: There is another code system with the same codes: http://hl7.org/fhir/codesystem-certainty-rating.html -- decide which one to use [@sophie]
 * content[levelOfEvidence]
   * type 1..1
   * type = $cs-certainty-type#Overall "Overall certainty"

@@ -23,13 +23,11 @@ Description: "A structured assessment of the certainty of evidence for a specifi
   * classifier 1..1
   * classifier = cs-evidence-rating-system#GRADE
 
-// TODO: the code system and value set is called "quality of evidence"  - is this ok?  [@sophie]
-// TODO: There is another code system with the same codes: http://hl7.org/fhir/codesystem-certainty-rating.html -- decide which one to use [@sophie]
 * content[levelOfEvidence]
   * type 1..1
   * type = $cs-certainty-type#Overall "Overall certainty"
   * classifier 1..1
-  * classifier from $vs-quality-of-evidence (required)
+  * classifier from $vs-rating-certainty-of-evidence (required)
 * content[riskOfBias]
   * type 1..1
   * type = $cs-certainty-type#RiskOfBias "Risk of bias"

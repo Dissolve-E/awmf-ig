@@ -9,5 +9,4 @@ Description: "Structured assessment of risk of bias using Cochrane RoB tool."
   * type 1..1
   * type = $cs-certainty-type#RiskOfBias "Risk of bias assessment"
   * classifier 0..1
-  //* classifier from CochraneRoBJudgementVS (required) // TODO: add valueset [@sophie]
-
+  * classifier from vs-rob-2-overall-judgment (required) //from RoB2

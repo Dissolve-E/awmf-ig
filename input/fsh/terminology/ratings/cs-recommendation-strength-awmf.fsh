@@ -1,7 +1,7 @@
 CodeSystem: RecommendationStrengthAWMF
 Id: cs-recommendation-strength-awmf
 Title: "Recommendation Strength (AWMF)"
-Description: "Grading of recommendations according to German guideline methodology as used in AWMF S3 guidelines."
+Description: "CodeSystem defining the grading of recommendations according to German guideline methodology as used in AWMF S3 guidelines."
 * ^content = #complete
 
 * #A "Strong Recommendation" "Uses wording such as 'shall' / 'shall not' (original: 'soll' / 'soll nicht')."

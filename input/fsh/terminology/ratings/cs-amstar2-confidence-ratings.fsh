@@ -1,7 +1,7 @@
 CodeSystem: AMSTAR2ConfidenceRatings
 Id: cs-amstar2-confidence-ratings
 Title: "AMSTAR 2 Overall Confidence Ratings"
-Description: "A CodeSystem representing the overall confidence ratings from the AMSTAR 2 critical appraisal tool."
+Description: "CodeSystem representing the overall confidence ratings from the AMSTAR 2 critical appraisal tool."
 * ^status = #active
 * ^content = #complete
 

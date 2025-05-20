@@ -15,6 +15,6 @@ Description: "CodeSystem defining values indicating how a recommendation relates
   * ^definition.extension[$ext-translation].extension[content].valueString = "Diese Empfehlung wurde geändert oder aktualisiert."
 * #reaffirmed "Reaffirmed" "Recommendation was reviewed and explicitly confirmed to still be valid"
   * ^designation[+].language = #de
-  * ^designation[=].value = "Diese Empfehlung wurde geprüft und ihre Gültigkeit explizit bestätigt."
+  * ^designation[=].value = "Bestätigt."
   * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
-  * ^definition.extension[$ext-translation].extension[content].valueString = ""
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Diese Empfehlung wurde geprüft und ihre Gültigkeit explizit bestätigt."

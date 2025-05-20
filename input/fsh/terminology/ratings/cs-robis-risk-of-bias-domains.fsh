@@ -1,7 +1,7 @@
 CodeSystem: ROBISRiskOfBiasDomains
 Id: cs-robis-risk-of-bias-domains
 Title: "ROBIS Risk of Bias Domains"
-Description: "A CodeSystem representing the domains assessed by the ROBIS tool for evaluating risk of bias in systematic reviews."
+Description: "CodeSystem representing the domains assessed by the ROBIS tool for evaluating risk of bias in systematic reviews."
 * ^status = #active
 * ^content = #complete
 

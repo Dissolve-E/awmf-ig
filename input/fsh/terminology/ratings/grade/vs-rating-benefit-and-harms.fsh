@@ -2,7 +2,7 @@
 ValueSet: RatingBenefitAndHarms
 Id: vs-rating-benefit-and-harms
 Title: "Rating Benefit And Harms"
-Description: "Summary of most important benefits and harms"
+Description: "ValueSet listing values to represent the summary of the most important benefits and harms"
 * $cs-etd-certainty-rating#small-net-benefit "Small net benefit"
 * $cs-etd-certainty-rating#substantial-net-benefit "Substantial net benefit"
 * $cs-etd-certainty-rating#important-harms "Important harms"

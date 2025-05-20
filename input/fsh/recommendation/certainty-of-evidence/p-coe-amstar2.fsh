@@ -7,5 +7,4 @@ Description: "A structured assessment of the certainty of evidence using AMSTAR 
   * type 1..1
   * type = $cs-certainty-type#Overall "Overall certainty"
   * classifier 0..1
-  //* classifier from AMSTAR2AssessmentVS (required) //TODO: Add valueset [@sophie]
-
+  * classifier from vs-amstar2-confidence-ratings (required)
