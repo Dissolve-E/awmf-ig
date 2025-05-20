@@ -7,7 +7,7 @@ Description: "Clinical Practice Guideline"
 // TODO: Decide whether to make another AWMF profile that contains all AWMF-specific logic [all, after workshop]
 
 * meta.tag ^slicing.discriminator.type = #value
-* meta.tag ^slicing.discriminator.path = "system"
+* meta.tag ^slicing.discriminator.path = "$this"
 * meta.tag ^slicing.rules = #open
 * meta.tag contains 
   guideline-releaseType 0..1
@@ -141,7 +141,7 @@ Description: "Clinical Practice Guideline"
 
 * version 1..1 // #P2.2.1, #P2.2.7
 * version obeys inv-version-major-minor // #P2.2.1, #P2.2.8
-* extension[versionAlgorithm].valueCoding = $cs-awmf#major-minor "Major-Minor Versioning"
+* extension[versionAlgorithm].valueCoding = cs-awmf#major-minor "Major-Minor Versioning"
 
 * relatesTo.extension contains 
   ext-relates-to-classifier named classifier 0..*
@@ -412,7 +412,7 @@ Description: "An example of a guideline."
 * version = "2.0"
 * status = #final
 * author[+] = Reference(GuidelineAuthorRoleExample)
-* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#content-author
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#registrant
 * date = "2025-03-06"
 * title = "Example Guideline"
 * identifier[+]
@@ -420,3 +420,305 @@ Description: "An example of a guideline."
   * value = "AWMF-Guideline-Example"
   * use = #official
 
+
+Instance: TestInvRequireOfficialIdentifier-NoOfficialId-SHOULD-FAIL
+InstanceOf: guideline
+Usage: #example
+Title: "Guideline Example"
+Description: "An example of a guideline."
+* insert narrative([[Guideline Example]])
+* version = "2.0"
+* status = #final
+* author[+] = Reference(GuidelineAuthorRoleExample)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#registrant
+* date = "2025-03-06"
+* title = "Example Guideline"
+* identifier[+]
+  * system = "https://example.org/identifiers"
+  * value = "AWMF-Guideline-Example"
+  * use = #secondary
+
+
+Instance: TestInvRequireOfficialIdentifier-TwoOfficialId-SHOULD-FAIL
+InstanceOf: guideline
+Usage: #example
+Title: "Guideline Example"
+Description: "An example of a guideline."
+* insert narrative([[Guideline Example]])
+* version = "2.0"
+* status = #final
+* author[+] = Reference(GuidelineAuthorRoleExample)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#registrant
+* date = "2025-03-06"
+* title = "Example Guideline"
+* identifier[+]
+  * system = "https://example.org/identifiers"
+  * value = "AWMF-Guideline-Example"
+  * use = #official
+* identifier[+]
+  * system = "https://example.org/identifiers"
+  * value = "AWMF-Guideline-Example2"
+  * use = #official
+
+
+Instance: TestInvRequireReleaseTypeIfRegistered-SHOULD-PASS
+InstanceOf: guideline
+Usage: #example
+Title: "Guideline Example"
+Description: "An example of a guideline."
+* insert narrative([[Guideline Example]])
+* version = "2.0"
+* status = #registered
+* extension[plannedCompletionDate].valueDate = "2025-03-06"
+* meta.tag[guideline-releaseType] = cs-guideline-release-type#class-upgrade "Class Upgrade"
+* author[+] = Reference(GuidelineAuthorRoleExample)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#registrant
+* date = "2025-03-06"
+* title = "Example Guideline"
+* identifier[+]
+  * system = "https://example.org/identifiers"
+  * value = "AWMF-Guideline-Example"
+  * use = #official
+
+
+Instance: TestInvRequireReleaseTypeIfRegistered-WrongCode-SHOULD-FAIL
+InstanceOf: guideline
+Usage: #example
+Title: "Guideline Example"
+Description: "An example of a guideline."
+* insert narrative([[Guideline Example]])
+* version = "2.0"
+* status = #registered
+* extension[plannedCompletionDate].valueDate = "2025-03-06"
+* meta.tag[guideline-releaseType] = cs-awmf#major-minor "Major-Minor Versioning"
+* author[+] = Reference(GuidelineAuthorRoleExample)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#registrant
+* date = "2025-03-06"
+* title = "Example Guideline"
+* identifier[+]
+  * system = "https://example.org/identifiers"
+  * value = "AWMF-Guideline-Example"
+  * use = #official
+
+
+Instance: TestInvRequireReleaseTypeIfRegistered-NoTag-SHOULD-FAIL
+InstanceOf: guideline
+Usage: #example
+Title: "Guideline Example"
+Description: "An example of a guideline."
+* insert narrative([[Guideline Example]])
+* version = "2.0"
+* status = #registered
+* extension[plannedCompletionDate].valueDate = "2025-03-06"
+* author[+] = Reference(GuidelineAuthorRoleExample)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#registrant
+* date = "2025-03-06"
+* title = "Example Guideline"
+* identifier[+]
+  * system = "https://example.org/identifiers"
+  * value = "AWMF-Guideline-Example"
+  * use = #official
+
+
+Instance: TestInvVersionMajorMinor-VersionMajorMinorPatch-SHOULD-FAIL
+InstanceOf: guideline
+Usage: #example
+Title: "Guideline Example"
+Description: "An example of a guideline."
+* insert narrative([[Guideline Example]])
+* version = "2.0.0"
+* status = #final
+* author[+] = Reference(GuidelineAuthorRoleExample)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#registrant
+* date = "2025-03-06"
+* title = "Example Guideline"
+* identifier[+]
+  * system = "https://example.org/identifiers"
+  * value = "AWMF-Guideline-Example"
+  * use = #official
+
+
+Instance: TestInvVersionMajorMinor-VersionInvalid-SHOULD-FAIL
+InstanceOf: guideline
+Usage: #example
+Title: "Guideline Example"
+Description: "An example of a guideline."
+* insert narrative([[Guideline Example]])
+* version = "v2.0"
+* status = #final
+* author[+] = Reference(GuidelineAuthorRoleExample)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#registrant
+* date = "2025-03-06"
+* title = "Example Guideline"
+* identifier[+]
+  * system = "https://example.org/identifiers"
+  * value = "AWMF-Guideline-Example"
+  * use = #official
+
+
+Instance: TestInvVersionMajorMinor-VersionInvalid2-SHOULD-FAIL
+InstanceOf: guideline
+Usage: #example
+Title: "Guideline Example"
+Description: "An example of a guideline."
+* insert narrative([[Guideline Example]])
+* version = "zweiteVersion"
+* status = #final
+* author[+] = Reference(GuidelineAuthorRoleExample)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#registrant
+* date = "2025-03-06"
+* title = "Example Guideline"
+* identifier[+]
+  * system = "https://example.org/identifiers"
+  * value = "AWMF-Guideline-Example"
+  * use = #official
+* extension[plannedCompletionDate].valueDate = "2025-03-06"
+
+
+Instance: TestInvRegCompNeedsPlannedCompletionDate-NoDate-SHOULD-FAIL
+InstanceOf: guideline
+Usage: #example
+Title: "Guideline Example"
+Description: "An example of a guideline."
+* insert narrative([[Guideline Example]])
+* version = "2.0"
+* status = #registered
+* author[+] = Reference(GuidelineAuthorRoleExample)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#registrant
+* meta.tag[guideline-releaseType] = cs-guideline-release-type#class-upgrade "Class Upgrade"
+* date = "2025-03-06"
+* title = "Example Guideline"
+* identifier[+]
+  * system = "https://example.org/identifiers"
+  * value = "AWMF-Guideline-Example"
+  * use = #official
+
+Instance: TestInvRegCompNeedsPlannedCompletionDate-SHOULD-PASS
+InstanceOf: guideline
+Usage: #example
+Title: "Guideline Example"
+Description: "An example of a guideline."
+* insert narrative([[Guideline Example]])
+* version = "2.0"
+* status = #registered
+* meta.tag[guideline-releaseType] = cs-guideline-release-type#class-upgrade "Class Upgrade"
+* extension[plannedCompletionDate].valueDate = "2025-03-06"
+* author[+] = Reference(GuidelineAuthorRoleExample)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#registrant
+* date = "2025-03-06"
+* title = "Example Guideline"
+* identifier[+]
+  * system = "https://example.org/identifiers"
+  * value = "AWMF-Guideline-Example"
+  * use = #official
+
+Instance: TestInvPreliminaryCompositionNeedsConsultationPeriod-SHOULD-PASS
+InstanceOf: guideline
+Usage: #example
+Title: "Guideline Example"
+Description: "An example of a guideline."
+* insert narrative([[Guideline Example]])
+* version = "2.0"
+* status = #preliminary
+* author[+] = Reference(GuidelineAuthorRoleExample)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#registrant
+* date = "2025-03-06"
+* title = "Example Guideline"
+* identifier[+]
+  * system = "https://example.org/identifiers"
+  * value = "AWMF-Guideline-Example"
+  * use = #official
+* extension[consultationPeriod].valuePeriod
+  * start = "2025-03-06"
+  * end = "2025-03-07"
+
+
+Instance: TestInvPrelimCompNeedsConsultationPeriod-NoDate-SHOULD-FAIL
+InstanceOf: guideline
+Usage: #example
+Title: "Guideline Example"
+Description: "An example of a guideline."
+* insert narrative([[Guideline Example]])
+* version = "2.0"
+* status = #preliminary
+* author[+] = Reference(GuidelineAuthorRoleExample)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#registrant
+* date = "2025-03-06"
+* title = "Example Guideline"
+* identifier[+]
+  * system = "https://example.org/identifiers"
+  * value = "AWMF-Guideline-Example"
+  * use = #official
+
+
+Instance: TestInvAuthorRegistrantSingleton-SHOULD-PASS
+InstanceOf: guideline
+Usage: #example
+Title: "Guideline Example"
+Description: "An example of a guideline."
+* insert narrative([[Guideline Example]])
+* version = "2.0"
+* status = #final
+* author[+] = Reference(GuidelineAuthorRoleExample)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#registrant
+* date = "2025-03-06"
+* title = "Example Guideline"
+* identifier[+]
+  * system = "https://example.org/identifiers"
+  * value = "AWMF-Guideline-Example"
+  * use = #official
+
+Instance: TestInvAuthorRegistrantSingleton-NoRegistrant-SHOULD-FAIL
+InstanceOf: guideline
+Usage: #example
+Title: "Guideline Example"
+Description: "An example of a guideline."
+* insert narrative([[Guideline Example]])
+* version = "2.0"
+* status = #final
+* author[+] = Reference(GuidelineAuthorRoleExample)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
+* date = "2025-03-06"
+* title = "Example Guideline"
+* identifier[+]
+  * system = "https://example.org/identifiers"
+  * value = "AWMF-Guideline-Example"
+  * use = #official
+
+
+Instance: TestInvAuthorRegistrantSingleton-TwoRegistrants-SHOULD-FAIL
+InstanceOf: guideline
+Usage: #example
+Title: "Guideline Example"
+Description: "An example of a guideline."
+* insert narrative([[Guideline Example]])
+* version = "2.0"
+* status = #final
+* author[+] = Reference(GuidelineAuthorRoleExample)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#registrant
+* author[+] = Reference(GuidelineAuthorRoleExample)
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#registrant
+* date = "2025-03-06"
+* title = "Example Guideline"
+* identifier[+]
+  * system = "https://example.org/identifiers"
+  * value = "AWMF-Guideline-Example"
+  * use = #official
+
+Instance: TestInvAuthorLeadVsContrExclusive-Both-SHOULD-FAIL
+InstanceOf: guideline
+Usage: #example
+Title: "Guideline Example"
+Description: "An example of a guideline."
+* insert narrative([[Guideline Example]])
+* version = "2.0"
+* status = #final
+* author[+] = Reference(GuidelineAuthorRoleExample)
+* author[=].extension[ext-guideline-author-role][+].valueCodeableConcept = cs-guideline-author-role#leading
+* author[=].extension[ext-guideline-author-role][+].valueCodeableConcept = cs-guideline-author-role#contributing
+* date = "2025-03-06"
+* title = "Example Guideline"
+* identifier[+]
+  * system = "https://example.org/identifiers"
+  * value = "AWMF-Guideline-Example"
+  * use = #official

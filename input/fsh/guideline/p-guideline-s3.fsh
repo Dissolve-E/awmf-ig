@@ -19,4 +19,4 @@ Description: "An example of an AWMF S3 guideline."
   * use = #official
   * value = "999-996"
 * author[+] = Reference(GuidelineAuthorRoleExample)
-* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#content-author "Content Author"
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#registrant
