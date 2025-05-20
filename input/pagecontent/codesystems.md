@@ -3,6 +3,7 @@
 {% include codesystem-reference.md name='CS:AGREE II Domains' %}
 {% include codesystem-reference.md name='CS:AMSTAR 2 Overall Confidence Ratings' %}
 {% include codesystem-reference.md name='CS:AWMF Guideline Class' %}
+{% include codesystem-reference.md name='CS:AWMF Guideline Status' %}
 {% include codesystem-reference.md name='CS:Body System Conditions' %}
 {% include codesystem-reference.md name='CS:Care Setting' %}
 {% include codesystem-reference.md name='CS:Clinical Application Type' %}
@@ -17,6 +18,7 @@
 {% include codesystem-reference.md name='CS:Level of Consensus' %}
 {% include codesystem-reference.md name='CS:Medical Subject Categories' %}
 {% include codesystem-reference.md name='CS:OCEBM 2011 Levels of Evidence' %}
+{% include codesystem-reference.md name='CS:ROBIS Judgment of Risk of Bias' %}
 {% include codesystem-reference.md name='CS:ROBIS Risk of Bias Domains' %}
 {% include codesystem-reference.md name='CS:Recommendation Strength (AWMF)' %}
 {% include codesystem-reference.md name='CS:Recommendation Synthesis Type' %}
@@ -24,5 +26,6 @@
 {% include codesystem-reference.md name='CS:Recommendation Version Status Code System' %}
 {% include codesystem-reference.md name='CS:Related Artifact Types' %}
 {% include codesystem-reference.md name='CS:Remark Type' %}
+{% include codesystem-reference.md name='CS:RoB2 Overall Judgment' %}
 {% include codesystem-reference.md name='CS:Target Patient Group' %}
 {% include codesystem-reference.md name='CS:awmf' %}

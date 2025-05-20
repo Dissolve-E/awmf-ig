@@ -1,3 +1,5 @@
+// bug: the IG publisher doesn't build this correctly. there seems to be (again) a problem with inheriting from the EBM IG
+//      and re-slicing or redefining the already defined slices
 Profile: Recommendation // #P2.2.5 -- each recommendation is a separate resource
 Parent: $ebm-recommendation // #P2.1.2
 Id: recommendation

@@ -3,13 +3,13 @@
 {%- comment -%}
   Normalise the supplied name:
   take whatever comes after the first “:”, then trim spaces.
-  Example → “VS:My ValueSet” ➜ “My ValueSet”.
+  Example → “CS:My CodeSystem” ➜ “My CodeSystem”.
 {%- endcomment -%}
 {% assign search_name = include.name | split: ':' | last | strip %}
 
 {%- for p in site.data.ig.definition.resource -%}
   {% assign type = p.reference.reference | split: '/' | first %}
-  {%- if p.exampleBoolean or p.exampleCanonical or type != 'ValueSet' -%}
+  {%- if p.exampleBoolean or p.exampleCanonical or type != 'CodeSystem' -%}
     {%- continue -%}
   {%- endif -%}
 
