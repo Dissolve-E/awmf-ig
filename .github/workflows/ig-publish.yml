@@ -23,6 +23,8 @@ jobs:
   run-publisher:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    env:
+      JAVA_TOOL_OPTIONS: "-Xmx6g"
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it

@@ -2,7 +2,7 @@ CodeSystem: AGREEIIDomains
 Id: cs-agree-ii-domains
 Title: "AGREE II Domains"
 Description: "CodeSystem representing the domains assessed by the AGREE II instrument for evaluating the quality of clinical practice guidelines."
-* ^status = #active
+* insert rs-codesystem-meta
 * ^content = #complete
 
 * #scope_and_purpose "Scope and Purpose" "Concerns the overall aim of the guideline, the specific health questions, and the target population."

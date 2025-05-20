@@ -2,6 +2,7 @@ CodeSystem: TargetPatientGroup
 Id: cs-target-patient-group
 Title: "Target Patient Group"
 Description: "CodeSystem defining the intended patient population for whom the guideline is applicable."
+* insert rs-codesystem-meta
 * #adults "Adults" "Guideline specifically targeted at adult patients."
   * ^designation[+].language = #de
   * ^designation[=].value = "Erwachsene"

@@ -2,6 +2,7 @@ CodeSystem: ClinicalApplicationTypeCS
 Id: cs-clinical-application-type
 Title: "Clinical Application Type"
 Description: "CodeSystem defining different clinical application types"
+* insert rs-codesystem-meta
 * #diagnostic "Diagnostic" "Diagnostic"
   * ^designation[+].language = #de
   * ^designation[=].value = "Diagnostisch"

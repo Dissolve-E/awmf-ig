@@ -2,6 +2,7 @@ CodeSystem: ContactPoint
 Id: cs-contact-point
 Title: "Contact Point"
 Description: "CodeSystem defining types of contact points for a guideline"
+* insert rs-codesystem-meta
 * #registrant "Registrant" "The contact is the registrant of the guideline."
   * ^designation[+].language = #de
   * ^designation[=].value = "Anmelder*in"

@@ -2,6 +2,7 @@ CodeSystem: RemarkType
 Id: cs-remark-type
 Title: "Remark Type"
 Description: "CodeSystem defining different types of remarks that can be associated with guidelines, including restrictions, warnings, and additional notes."
+* insert rs-codesystem-meta
 * #block "Block" "A restriction or prohibition that prevents certain actions or decisions in accordance with guidelines."
   * ^designation[+].language = #de
   * ^designation[=].value = "Block"

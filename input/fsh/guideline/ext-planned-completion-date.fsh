@@ -3,7 +3,6 @@ Id: ext-planned-completion-date
 Title: "Planned Completion Date"
 Description: "This extension allows for the indication of the date when the guideline is planned to be completed."
 Context: Composition
-* insert rs-extension-url(ext-planned-completion-date)
 * ^purpose = "The PlannedCompletionDate extension allows to indicate the date when the guideline is planned to be completed."
 * . 0..1
 * . ^short = "Planned Completion Date"

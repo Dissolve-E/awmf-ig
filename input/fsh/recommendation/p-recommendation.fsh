@@ -3,11 +3,11 @@ Parent: $ebm-recommendation // #P2.1.2
 Id: recommendation
 Title: "Recommendation"
 Description: "Clinical Practice Guideline Recommendation"
-* identifier obeys inv-require-official-identifier // #P2.2.2
+* obeys inv-require-official-identifier // #P2.2.2
 
 * version 1..1 // #P2.2.6, #P2.2.7
 * version obeys inv-version-major-minor // #P2.2.1
-* extension[versionAlgorithm].valueCoding = $cs-awmf#major-minor "Major-Minor Versioning"
+* extension[versionAlgorithm].valueCoding = cs-awmf#major-minor "Major-Minor Versioning"
 
 * meta.tag from vs-recommendation-tags (preferred)
 
@@ -96,7 +96,6 @@ Description: "Clinical Practice Guideline Recommendation"
   * code 1..1
   * code.coding  1..1
   * code from vs-content-types (extensible)
-  * code.coding from vs-content-types (extensible)
   * insert rs-language-section-nested
 
 
@@ -161,7 +160,7 @@ Description: "Clinical Practice Guideline Recommendation"
     * code = $cs-ebm-ig#population "Population"
     * code.coding = $cs-ebm-ig#population "Population"
     * insert rs-language-section
-    * section[language] // TODO: remove language subsections and add language extension to author (here and everywhere)? [@gregor]
+    * section[language]
       * extension contains ext-section-keyword named keyword 0..* // #P2.3.2.8
       * entry only Reference(EvidenceVariable or Group)  // #P2.3.2.9 // actually, EvidenceVariable is only for R5 while group is for R6    
 
@@ -198,7 +197,13 @@ Description: "Clinical Practice Guideline Recommendation"
   * section[ratings]
     * code 1..1
     * code = $cs-ebm-ig#ratings "Ratings"
-    * entry only Reference(RecommendationJustification)
+    * entry only Reference(RecommendationJustification) // bug: this results in the following ig publisher error, because this is a different profile compare to the EBM recommendation profile:
+    // Unable to generate snapshot @3 for http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation: 
+    // Profile Recommendation (http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation), 
+    // element http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation.Composition.section:recommendationSpecification.section.section.id. 
+    // Error generating snapshot: Same id 'Composition.section:recommendationSpecification.section.section.id' on multiple elements 
+    // Composition.section:recommendationSpecification.section.section.id/Composition.section:recommendationSpecification.section.section.id 
+    // in http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation
 
 
 
@@ -252,155 +257,3 @@ InstanceOf: PlanDefinition
   * relatedAction
     * targetId = "diagnose"
     * relationship = #before
-
-
-// TODO: remove comment after review [@gregor]
-/*
-Instance: Recommendation-Composition-example
-InstanceOf: Recommendation
-// #P2.1.8
-// Preceeding Recommendations (in clinical workflow)
-* version = "1.0"
-* status = #final
-* date = "2024-12-05"
-* author = Reference(Practitioner-example)
-* title = "Recommendation 1"
-* relatesTo[specificationOfPreceedingRecommendation][+]
-  * type = #specification-of
-  * label = "preceeding-recommendation"
-  * targetReference = Reference(RecommendationPreceeding-Composition-example)
-* relatesTo[specificationOfPreceedingRecommendation][+]
-  * type = #specification-of
-  * label = "preceeding-recommendation"
-  * targetReference = Reference(RecommendationPreceedingOther-Composition-example)
-// Succeeding Recommendations (in clinical workflow)
-* relatesTo[specificationOfSucceedingRecommendation][+]
-  * type = #specification-of
-  * label = "succeeding-recommendation"
-  * targetReference = Reference(RecommendationSucceeding-Composition-example)
-* relatesTo[specificationOfSucceedingRecommendation][+]
-  * type = #specification-of
-  * label = "succeeding-recommendation"
-  * targetReference = Reference(RecommendationSucceedingOther-Composition-example)
-*/
-
-/* EBM IG structure -> we won't use this because of the unsolvable todos below, instead we directly use a PlanDefinition instance
-* section[recommendationSpecification] // slice defined in EBM IG Profile
-  // TODO: how to add other languages?
-  * section[recommendationStatement] // slice defined in EBM IG Profile
-    // recommendation text (human readable from guideline) goes here
-    * text = "Bei Patienten mit Krankheit A soll Medikament B statt Medikament C gegeben werden. Patienten mit Krankheit A, die auch noch Krankheit D haben,
-     darf keinesfalls Medikament B gegeben, sondern müssen Medikament C erhalten."
-  * section[population] // Problem: population has cardinality 0..1, but the recommendationStatement has multiple populations
-    // TODO: how to specify multiple (sub-)populations?
-    // TODO: how to represent codes instead of text?
-    // may also contain just "tags"/keywords (e.g. a collection of SNOMED CT codes)
-    * text = "Patienten mit Krankheit A mit oder ohne Krankheit D" // Patienten mit Krankheit A unter Berücksichtigung von Krankheit D
-    // but multiple entries (0..*) are possible
-  * section[action]
-    * text = "Medikament B geben oder Medikament C geben"
-  * section[oppositeAction]
-    * text = "Medikament C geben oder Medikament B geben"
-  * section[computableRecommendationSpecification] // instead of sections population / action
-    * entry = Reference(RecommendationPlanDefinition)
-*/
-
-// * section[recommendationSpecification] // slice defined in EBM IG Profile
-//   // TODO: how to add other languages?
-//   * entry = Reference(RecommendationPlanDefinition)
-
-
-
-/*
-
-
-Guideline
----------
-- section[Therapie]
-  - section[Antimikrobielle Therapie]
-    - section[Antibakterielle Substanzen]
-      - section[introduction]
-      - section[recommendations]
-      - section[introduction]     // NICHT MÖGLICH wegen cardinality 0..1
-      - section[recommendations]  // NICHT MÖGLICH wegen cardinality 0..1
-  - 
-
-
-
-- section[recommendations]
-  - section[therapy]
-    - section[antimicrobialTherapy]
-      - entry 0..*
-      
-
-Recommendation
---------------
-- rationale
-- PICO 0..*
-  - population
-  - intervention
-  - comparison
-  - outcome
-- recommendation statement
-  - fachpublikum
-    - video
-    - bild
-  - patienten
-    - video
-    - bild
-- level of evidence -> pro outcome
-- strength of recommendation
-- level of consensus
-- annotation
-
-
-Guideline Profile
-- section[generic-chapter]
-- section[introduction]
-  - section[kapitel1]
-    - section[kapitel1.1]
-    - kapitel[kapitel1.2]
-- section[awmf-spezifisch]
-- section[generic-chapter] // kapitel diagnostic
-  // - KEINE RECOMMENDATIONS MÖGLICH
-- section[methods]
-- section[recommendations]           // 7
-  - section[introduction]           // 7.1
-  - section[therapy]                 // 7.2
-    - section[antimicrobialTherapy] // 7.2.1.
-      - section[introduction]       // Allgemeine Einleitung für antimikrobielle Therapie (mehrere Empfehlungen)
-        - text = ...
-      - entry[0] = Reference(Recommendation12) // können empfehungs-spezifische Einleitungen (etc.) enthalten
-      - entry[1] = Reference(Recommendation13) // können empfehungs-spezifische Einleitungen (etc.) enthalten
-      - section[irgendeine-komische-untersektion]
-        - entry[0] = Reference(Recommendation14)
-    - section[...]
-     ... 
-- section[...]
-- section[recommendations] // geht nicht wegen cardinality 0..1
-
-1. Generisches Kapitel
-2. Einleitung
-3. AWMF-spezifisches Kapitel
-4. Generisches Kapitel
-5. Methodik      
-6. ...
-7. Empfehlungen
-7.1 Einleitung
-  intro
-7.2 Therapie
-7.2.1 Antimikrobielle Therapie
-  einleitung
-  - empfehlung 1
-  - empfehlung 2
-
-
-*/
-
-/*
-# Therapie
-
-## Antimikrobielle Therapie
-Das ist meine Einleitung zur antimikrobiellen Therapie
-{{%include recommmendation[0] %}}
-*/

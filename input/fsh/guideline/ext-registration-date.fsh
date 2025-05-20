@@ -3,7 +3,6 @@ Id: ext-registration-date
 Title: "Registration Date"
 Description: "This extensions allows for the indication of the date the guideline project was registered."
 Context: Composition
-* insert rs-extension-url(ext-registration-date)
 * ^purpose = "The RegistrationDate extensions allows to indicate the date the guideline project was registered."
 * . 0..1
 * . ^short = "Registration Date"

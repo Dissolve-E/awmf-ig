@@ -2,6 +2,7 @@ CodeSystem: GuidelineReleaseType
 Id: cs-guideline-release-type
 Title: "Guideline Release Type"
 Description: "CodeSystem defining different guideline release types"
+* insert rs-codesystem-meta
 * #new-registration "New Registration" "New Registration"
   * ^designation[+].language = #de
   * ^designation[=].value = "Neuanmeldung"

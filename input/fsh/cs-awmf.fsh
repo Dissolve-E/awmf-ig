@@ -2,6 +2,7 @@ CodeSystem: AWMFCS
 Id: cs-awmf
 Title: "awmf"
 Description: "CodeSystem representing different codes of interest for the Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften (AWMF)"
+* insert rs-codesystem-meta
 * #ordered-by-authors "Ordered by authors" "The guideline is ordered by authors and SHALL be adhered to in the order specified."
   * ^designation[+].language = #de
   * ^designation[=].value = "Durch Autor*innen geordnet"

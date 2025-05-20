@@ -2,6 +2,7 @@ CodeSystem: GuidelineAuthorRoleCS // #P2.3.1.4
 Id: cs-guideline-author-role
 Title: "Guideline Author Role"
 Description: "CodeSystem defining roles for the author of the guideline."
+* insert rs-codesystem-meta
 * #leading "Leading Author" "The primary author of the guideline."
   * ^designation[+].language = #de
   * ^designation[=].value = "Federführend"

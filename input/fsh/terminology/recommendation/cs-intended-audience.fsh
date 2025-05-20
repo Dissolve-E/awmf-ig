@@ -2,6 +2,7 @@ CodeSystem: IntendedAudienceCS
 Id: cs-intended-audience
 Title: "Intended Audience Code System"
 Description: "CodeSystem defining possible intended audiences for a section"
+* insert rs-codesystem-meta
 * #patient "Patient" "The content is intended for the patient"
   * ^designation[+].language = #de
   * ^designation[=].value = "Patient*in"

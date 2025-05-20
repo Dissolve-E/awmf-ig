@@ -2,7 +2,7 @@ RuleSet: rs-language-section
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #closed
-* section contains language 0..* and @default 0..* // #P2.3.2.21 // TODO: must be 1..* when this is implemented as an actual subsection [@gregor]
+* section contains language 0..* and @default 0..* // #P2.3.2.21
 * section[language]
   * code 1..1
   * code = cs-guideline-sections#language

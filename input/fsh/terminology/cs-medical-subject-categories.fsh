@@ -2,6 +2,7 @@ CodeSystem: MedicalSubjectCategories
 Id: medical-subject-categories
 Title: "Medical Subject Categories"
 Description: "CodeSystem defining values to classify medical subjects into different categories."
+* insert rs-codesystem-meta
 * #surgical "Surgical Disciplines"
   * ^designation[+].language = #de
   * ^designation[=].value = "Operative Fächer"

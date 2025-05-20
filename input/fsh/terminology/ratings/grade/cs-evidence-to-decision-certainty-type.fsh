@@ -3,7 +3,8 @@ CodeSystem: EvidenceToDecisionCertaintyType
 Id: cs-evidence-to-decision-certainty-type
 Title: "Evidence To Decision Certainty type"
 Description: "CodeSystem defining values to represent the GRADE Evidence to Decision (EtD) Framework Certainty Type"
-* #benefit-and-harms "Benefits and Harms" "Summary of most important benefits and harms"
+* insert rs-codesystem-meta
+* #benefits-and-harms "Benefits and Harms" "Summary of most important benefits and harms"
   * ^designation[+].language = #de
   * ^designation[=].value = "Nutzen und Schaden"
   * ^definition.extension[$ext-translation].extension[lang].valueCode = #de

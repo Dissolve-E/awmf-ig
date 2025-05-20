@@ -2,6 +2,7 @@ CodeSystem: AWMFGuidelineClass
 Id: cs-awmf-guideline-class
 Title: "AWMF Guideline Class"
 Description: "CodeSystem representing the guideline classes according to the AWMF."
+* insert rs-codesystem-meta
 * ^status = #active
 * ^publisher = "Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften (AWMF) e.V"
 * ^description = "As part of the project planning for the creation or updating of a guideline,

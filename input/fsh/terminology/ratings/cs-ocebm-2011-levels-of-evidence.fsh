@@ -2,7 +2,7 @@ CodeSystem: OCEBM2011LevelsOfEvidence
 Id: cs-ocebm-2011-levels-of-evidence
 Title: "OCEBM 2011 Levels of Evidence"
 Description: "CodeSystem representing the Oxford Centre for Evidence-Based Medicine 2011 Levels of Evidence."
-* ^status = #active
+* insert rs-codesystem-meta
 * ^content = #complete
 
 * #level1 "Systematic Reviews and Randomized Trials" "Includes systematic reviews of randomized trials or n-of-1 trials."

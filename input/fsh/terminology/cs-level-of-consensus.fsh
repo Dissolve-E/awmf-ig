@@ -2,7 +2,7 @@ CodeSystem: LevelOfConsensusCS
 Id: cs-level-of-consensus
 Title: "Level of Consensus"
 Description: "CodeSystem defining the values representing the level of consensus for a recommendation."
-* ^status = #active
+* insert rs-codesystem-meta
 * ^content = #complete
 
 * #strong-consensus "Strong consensus" "Agreement by >95% of participants."

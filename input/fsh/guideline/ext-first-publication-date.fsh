@@ -3,7 +3,6 @@ Id: ext-first-publication-date
 Title: "First Publication Date"
 Description: "This extension allows for the indication of the date when the guideline was first published."
 Context: Composition
-* insert rs-extension-url(ext-first-publication-date)
 * ^purpose = "The FirstPublicationDate extensions allows to indicate the date when the guideline was first published."
 * . 0..1
 * . ^short = "First Publication Date"

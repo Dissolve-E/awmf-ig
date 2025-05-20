@@ -2,6 +2,7 @@ CodeSystem: RecommendationTagsCS
 Id: cs-recommendation-tags
 Title: "Recommendation Tags"
 Description: "CodeSystem defining codes to represent tags for recommendations"
+* insert rs-codesystem-meta
 * #quality-indicators-derivable "Derivable as Quality Indicator" "This recommendation can be operationalized into a measurable quality indicator"
   * ^designation[+].language = #de
   * ^designation[=].value = "Als Qualitätsindikator ableitbar"
