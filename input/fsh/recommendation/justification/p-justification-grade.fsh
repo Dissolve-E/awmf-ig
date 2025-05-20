@@ -1,7 +1,7 @@
 Profile: RecommendationJustificationGRADE
 Parent: RecommendationJustification
-Id: recommendation-justication-grade
-Title: "Recommendation Justication GRADE"
+Id: recommendation-justification-grade
+Title: "Recommendation Justification GRADE"
 Description: "A structured assessment of the evidence and consensus that underpins a recommendation, including GRADE rating."
 
 * content[recommendationRating]

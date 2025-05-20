@@ -197,7 +197,13 @@ Description: "Clinical Practice Guideline Recommendation"
   * section[ratings]
     * code 1..1
     * code = $cs-ebm-ig#ratings "Ratings"
-    * entry only Reference(RecommendationJustification)
+    * entry only Reference(RecommendationJustification) // bug: this results in the following ig publisher error, because this is a different profile compare to the EBM recommendation profile:
+    // Unable to generate snapshot @3 for http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation: 
+    // Profile Recommendation (http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation), 
+    // element http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation.Composition.section:recommendationSpecification.section.section.id. 
+    // Error generating snapshot: Same id 'Composition.section:recommendationSpecification.section.section.id' on multiple elements 
+    // Composition.section:recommendationSpecification.section.section.id/Composition.section:recommendationSpecification.section.section.id 
+    // in http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation
 
 
 

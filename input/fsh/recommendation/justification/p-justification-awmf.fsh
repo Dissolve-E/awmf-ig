@@ -1,7 +1,7 @@
 Profile: RecommendationJustificationAWMF
 Parent: RecommendationJustification
-Id: recommendation-justication-awmf
-Title: "Recommendation Justication AWMF"
+Id: recommendation-justification-awmf
+Title: "Recommendation Justification AWMF"
 Description: "A structured assessment of the evidence and consensus that underpins a recommendation, including AWMF rating."
 
 * content[recommendationRating]

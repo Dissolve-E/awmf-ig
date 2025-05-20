@@ -1,7 +1,7 @@
 Profile: RecommendationJustification
 Parent: ArtifactAssessment // TODO: we should inherit from EBM IG, but that profile has content[evidence] 0..1, we need 0..*
-Id: recommendation-justication
-Title: "Recommendation Justication"
+Id: recommendation-justification
+Title: "Recommendation Justification"
 Description: "A structured assessment of the evidence and consensus that underpins a recommendation."
 * artifactReference only Reference(Recommendation)
 

@@ -12,6 +12,30 @@ definition:
       name: index.html
       sourceUrl: index.html
       title: Home
+    - generation: markdown
+      name: codesystems.html
+      sourceUrl: codesystems.html
+      title: Codesystems
+    - generation: markdown
+      name: codesystems-generated.html
+      sourceUrl: codesystems-generated.html
+      title: Codesystems Generated
+    - generation: markdown
+      name: profiles.html
+      sourceUrl: profiles.html
+      title: Profiles
+    - generation: markdown
+      name: profiles-generated.html
+      sourceUrl: profiles-generated.html
+      title: Profiles Generated
+    - generation: markdown
+      name: valuesets.html
+      sourceUrl: valuesets.html
+      title: Valuesets
+    - generation: markdown
+      name: valuesets-generated.html
+      sourceUrl: valuesets-generated.html
+      title: Valuesets Generated
     sourceUrl: toc.html
     title: Table of Contents
   parameter:
@@ -73,6 +97,11 @@ definition:
     name: awmf
     reference:
       reference: CodeSystem/cs-awmf
+  - description: AWMF Clinical Practice Guideline
+    isExample: false
+    name: AWMF Guideline
+    reference:
+      reference: StructureDefinition/awmf-guideline
   - description: Guideline classes according to the AWMF.
     isExample: false
     name: AWMF Guideline Class
@@ -103,6 +132,34 @@ definition:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline
     reference:
       reference: Composition/AWMFGuidelineExample
+  - description: An example of an AWMF S1 guideline.
+    isExample: true
+    name: AWMF Guideline S1 Example
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline-s1
+    reference:
+      reference: Composition/AWMFGuidelineS1Example
+  - description: An example of an AWMF S2e guideline.
+    isExample: true
+    name: AWMF Guideline S2e Example
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline-s2e
+    reference:
+      reference: Composition/AWMFGuidelineS2eExample
+  - description: An example of an AWMF S2k guideline.
+    isExample: true
+    name: AWMF Guideline S2k Example
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline-s2k
+    reference:
+      reference: Composition/AWMFGuidelineS2kExample
+  - description: An example of an AWMF S3 guideline.
+    isExample: true
+    name: AWMF Guideline S3 Example
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline-s3
+    reference:
+      reference: Composition/AWMFGuidelineS3Example
   - description: An organization that is a member of the AWMF
     isExample: false
     name: AWMF Member Organization
@@ -115,6 +172,29 @@ definition:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
     reference:
       reference: Organization/AWMFMemberOrganizationExample
+  - description: AWMF S1 guideline representing expert recommendations developed through
+      informal consensus.
+    isExample: false
+    name: AWMF S1 Guideline
+    reference:
+      reference: StructureDefinition/awmf-guideline-s1
+  - description: AWMF S2e guideline based on systematic literature search and evaluation.
+    isExample: false
+    name: AWMF S2e Guideline
+    reference:
+      reference: StructureDefinition/awmf-guideline-s2e
+  - description: AWMF S2k guideline based on structured consensus by a representative
+      panel.
+    isExample: false
+    name: AWMF S2k Guideline
+    reference:
+      reference: StructureDefinition/awmf-guideline-s2k
+  - description: AWMF S3 guideline based on systematic evidence review and structured
+      consensus by a representative panel.
+    isExample: false
+    name: AWMF S3 Guideline
+    reference:
+      reference: StructureDefinition/awmf-guideline-s3
   - description: A ValueSet representing various body system conditions
     isExample: false
     name: Body System Conditions
@@ -369,11 +449,6 @@ definition:
     name: Guideline
     reference:
       reference: StructureDefinition/guideline
-  - description: Clinical Practice Guideline
-    isExample: false
-    name: Guideline
-    reference:
-      reference: StructureDefinition/awmf-guideline
   - description: Attachment to a Clinical Practice Guideline
     isExample: false
     name: Guideline Attachment
@@ -580,6 +655,12 @@ definition:
     name: Outcome Antibiotic Days
     reference:
       reference: EvidenceVariable/OutcomeAntibioticDays
+  - description: Represents evidence supporting a specific outcome within a body of
+      clinical or scientific evidence.
+    isExample: false
+    name: Outcome Evidence
+    reference:
+      reference: StructureDefinition/outcome-evidence
   - description: Outcome Mortality
     isExample: true
     name: Outcome Mortality
@@ -868,13 +949,23 @@ dependsOn:
   packageId: hl7.fhir.uv.ebm
   uri: http://hl7.org/fhir/uv/ebm
   version: ci-build
+description: 'This implementation guide, produced by the Dissolve-E project (G-BA
+  grant 01VSF23021) in collaboration with the Association of the Scientific Medical
+  Societies in Germany (AWMF), defines FHIR profiles, extensions, and guidance for
+  a structured, FAIR, and interoperable representation of German clinical practice
+  guidelines.   Built on EBMonFHIR and related international initiatives, it supports
+  authoring workflows, version control, and seamless integration of guideline knowledge
+  into clinical decision support, quality management, and research infrastructures.
+
+  '
 fhirVersion:
 - 6.0.0-ballot3
 id: awmf.ig
-name: ''
+name: AWMFGuidelineRegistryIG
 packageId: awmf.ig
 publisher: AWMF e.V.
 resourceType: ImplementationGuide
 status: draft
+title: 'Dissolve-E: FHIR Implementation Guide for the AWMF Guideline Registry'
 url: http://fhir.awmf.org/awmf.ig/ImplementationGuide/awmf.ig
 version: 0.1.0
