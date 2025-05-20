@@ -2,7 +2,7 @@ CodeSystem: AWMFGuidelineStatus
 Id: cs-awmf-guideline-status
 Title: "AWMF Guideline Status"
 Description: "CodeSystem representing the guideline status according to the AWMF."
-* ^status = #active
+* insert rs-codesystem-meta
 * ^publisher = "Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften (AWMF) e.V"
 * ^content = #complete
 * #registered "Registered"

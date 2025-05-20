@@ -2,7 +2,7 @@ CodeSystem: RoB2OverallJudment
 Id: cs-rob-2-overall-judgment
 Title: "RoB2 Overall Judgment"
 Description: "CodeSystem representing the overall judgment of risk of bias assessed by the RoB2 tool for evaluating risk of bias for randomized trials."
-* ^status = #active
+* insert rs-codesystem-meta
 * ^content = #complete
 
 * #low_risk_of_bias "Low risk of bias" "The study is judged to be at low risk of bias for all domains for this result."

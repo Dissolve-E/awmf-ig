@@ -3,7 +3,6 @@ Id: cs-awmf-guideline-class
 Title: "AWMF Guideline Class"
 Description: "CodeSystem representing the guideline classes according to the AWMF."
 * insert rs-codesystem-meta
-* ^status = #active
 * ^publisher = "Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften (AWMF) e.V"
 * ^description = "As part of the project planning for the creation or updating of a guideline,
     a decision should be made at an early stage about the planned level classification (\"S classification\") according to the AWMF's system of rules (1-3).

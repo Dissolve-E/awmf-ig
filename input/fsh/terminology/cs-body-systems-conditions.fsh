@@ -3,7 +3,6 @@ Id: cs-body-systems-conditions
 Title: "Body System Conditions"
 Description: "CodeSystem representing various body system conditions."
 * insert rs-codesystem-meta
-* ^status = #active
 * ^content = #complete
 
 * #respiratory "Respiratory System and Lungs"

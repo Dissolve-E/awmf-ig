@@ -2,7 +2,7 @@ CodeSystem: ROBISJudgmentOfRiskOfBias
 Id: cs-robis-judgment-of-risk-of-bias
 Title: "ROBIS Judgment of Risk of Bias"
 Description: "CodeSystem representing the judgment of risk of bias assessed by the ROBIS tool for evaluating risk of bias in systematic reviews."
-* ^status = #active
+* insert rs-codesystem-meta
 * ^content = #complete
 
 * #low_risk_of_bias "Low risk of bias" "The findings of the review are likely to be reliable. Phase 2 did not raise any concerns with the review process or concerns were appropriately considered in the review conclusions. The conclusions were supported by the evidence and included consideration of the relevance of included studies."
