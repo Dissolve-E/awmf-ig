@@ -3,6 +3,20 @@ Parent: Guideline
 Id: awmf-guideline
 Title: "AWMF Guideline"
 Description: "AWMF Clinical Practice Guideline"
+
+
+* attester 0..*
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "party.reference"
+  * ^slicing.rules = #open
+* attester contains AWMF 0..1
+* attester[AWMF] // #P2.3.1.2
+  * mode 1..1
+  * mode = $cs-composition-attestation-mode#official
+  * party 1..1
+  * party.reference 1..1
+  * party.reference = "Organization/AWMF"
+
 * section[summary]
   * section[intention] 1..1
   * section[targetPatientGroup] 1..1

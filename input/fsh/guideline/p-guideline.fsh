@@ -197,18 +197,6 @@ Description: "Clinical Practice Guideline"
     * system 1.. MS
     * code 1.. MS
 
-* attester 0..*
-  * ^slicing.discriminator.type = #value
-  * ^slicing.discriminator.path = "party.reference"
-  * ^slicing.rules = #open
-* attester contains AWMF 0..1
-* attester[AWMF] // #P2.3.1.2
-  * mode 1..1
-  * mode = $cs-composition-attestation-mode#official
-  * party 1..1
-  * party.reference 1..1
-  * party = Reference(AWMF)
-
 // add some more codes for the sections (not only the ones defined by the EBM IG)
 * section.code from vs-guideline-sections (extensible)
 
@@ -219,7 +207,9 @@ Description: "Clinical Practice Guideline"
   and consensusProtocol 0..*
   and @default 0..* 
 * section[@default]
-// fixme: actually, the default slice must not fix the discriminator, but as of 25-03-06 the validator is not able to handle default slices. therefore, we fix the discriminator here.
+// fixme: actually, the default slice must not fix the discriminator, but as of 25-03-06 the validator is not able to handle default slices.
+//        see https://github.com/hapifhir/org.hl7.fhir.core/blob/a6f993225cce3771679de0e36786bd9d7df8fd60/org.hl7.fhir.validation/src/main/java/org/hl7/fhir/validation/instance/InstanceValidator.java#L230
+//        therefore, we fix the discriminator here.
   * code 1..1
   * code.coding 1..1
   * code.coding = cs-guideline-sections#default-section
