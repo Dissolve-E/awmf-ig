@@ -11,31 +11,27 @@ definition:
     - generation: markdown
       name: index.html
       sourceUrl: index.html
-      title: Home
-    - generation: markdown
-      name: codesystems.html
-      sourceUrl: codesystems.html
-      title: Codesystems
-    - generation: markdown
-      name: codesystems-generated.html
-      sourceUrl: codesystems-generated.html
-      title: Codesystems Generated
+      title: DISSOLVE-E Implementation Guide
     - generation: markdown
       name: profiles.html
       sourceUrl: profiles.html
       title: Profiles
     - generation: markdown
-      name: profiles-generated.html
-      sourceUrl: profiles-generated.html
-      title: Profiles Generated
+      name: extensions.html
+      sourceUrl: extensions.html
+      title: Extensions
+    - generation: markdown
+      name: codesystems.html
+      sourceUrl: codesystems.html
+      title: Code Systems
     - generation: markdown
       name: valuesets.html
       sourceUrl: valuesets.html
-      title: Valuesets
+      title: Value Sets
     - generation: markdown
-      name: valuesets-generated.html
-      sourceUrl: valuesets-generated.html
-      title: Valuesets Generated
+      name: examples.html
+      sourceUrl: examples.html
+      title: Examples
     sourceUrl: toc.html
     title: Table of Contents
   parameter:
@@ -48,25 +44,25 @@ definition:
       system: http://hl7.org/fhir/tools/CodeSystem/ig-parameters
     value: ci-build
   resource:
-  - description: A CodeSystem representing the domains assessed by the AGREE II instrument
+  - description: CodeSystem representing the domains assessed by the AGREE II instrument
       for evaluating the quality of clinical practice guidelines.
     isExample: false
     name: AGREE II Domains
     reference:
       reference: CodeSystem/cs-agree-ii-domains
-  - description: A ValueSet encompassing all domains from the AGREE II instrument.
+  - description: ValueSet encompassing all domains from the AGREE II instrument.
     isExample: false
     name: AGREE II Domains Value Set
     reference:
       reference: ValueSet/vs-agree-ii-domains
-  - description: A ValueSet encompassing all overall confidence ratings from the AMSTAR
+  - description: ValueSet encompassing all overall confidence ratings from the AMSTAR
       2 critical appraisal tool.
     isExample: false
     name: AMSTAR 2 Confidence Ratings Value Set
     reference:
       reference: ValueSet/vs-amstar2-confidence-ratings
-  - description: A CodeSystem representing the overall confidence ratings from the
-      AMSTAR 2 critical appraisal tool.
+  - description: CodeSystem representing the overall confidence ratings from the AMSTAR
+      2 critical appraisal tool.
     isExample: false
     name: AMSTAR 2 Overall Confidence Ratings
     reference:
@@ -85,14 +81,14 @@ definition:
     name: Artifact Contact (Extended)
     reference:
       reference: StructureDefinition/ext-artifact-extended-contact
-  - description: Specifies the language(s) the author contributed to a section in
-      a FHIR Composition.
+  - description: This extension allows for the specification of the language(s) the
+      author contributed to a section in a FHIR Composition.
     isExample: false
     name: Author's Language
     reference:
       reference: StructureDefinition/ext-author-language
-  - description: Code system for the Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen
-      Fachgesellschaften (AWMF)
+  - description: CodeSystem representing different codes of interest for the Arbeitsgemeinschaft
+      der Wissenschaftlichen Medizinischen Fachgesellschaften (AWMF)
     isExample: false
     name: awmf
     reference:
@@ -102,7 +98,8 @@ definition:
     name: AWMF Guideline
     reference:
       reference: StructureDefinition/awmf-guideline
-  - description: Guideline classes according to the AWMF.
+  - description: ValueSet listing values representing guideline classes according
+      to the AWMF.
     isExample: false
     name: AWMF Guideline Class
     reference:
@@ -160,6 +157,17 @@ definition:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline-s3
     reference:
       reference: Composition/AWMFGuidelineS3Example
+  - description: ValueSet listing values to define the guideline status according
+      to the AWMF.
+    isExample: false
+    name: AWMF Guideline Status
+    reference:
+      reference: ValueSet/vs-awmf-guideline-status
+  - description: CodeSystem representing the guideline status according to the AWMF.
+    isExample: false
+    name: AWMF Guideline Status
+    reference:
+      reference: CodeSystem/cs-awmf-guideline-status
   - description: An organization that is a member of the AWMF
     isExample: false
     name: AWMF Member Organization
@@ -195,28 +203,28 @@ definition:
     name: AWMF S3 Guideline
     reference:
       reference: StructureDefinition/awmf-guideline-s3
-  - description: A ValueSet representing various body system conditions
+  - description: ValueSet listing various body system conditions
     isExample: false
     name: Body System Conditions
     reference:
       reference: ValueSet/vs-body-system-conditions
-  - description: A CodeSystem representing various body system conditions.
+  - description: CodeSystem representing various body system conditions.
     isExample: false
     name: Body System Conditions
     reference:
       reference: CodeSystem/cs-body-systems-conditions
-  - description: Includes levels of care.
+  - description: ValueSet listing levels of care.
     isExample: false
     name: Care Level
     reference:
       reference: ValueSet/vs-care-level
-  - description: Defines different care settings, including levels of care, healthcare
-      services, and treatment contexts.
+  - description: CodeSystem defining different care settings, including levels of
+      care, healthcare services, and treatment contexts.
     isExample: false
     name: Care Setting
     reference:
       reference: CodeSystem/cs-care-setting
-  - description: Includes stages of care from prevention to rehabilitation.
+  - description: ValueSet listing stages of care from prevention to rehabilitation.
     isExample: false
     name: CareStage
     reference:
@@ -245,27 +253,37 @@ definition:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/certainty-of-evidence-rating-grade
     reference:
       reference: ArtifactAssessment/CoE-MultiplexPCRDiagnostic-TimeToDeescalation
-  - description: Clinical Application Type
+  - description: ValueSet listing different clinical application types
     isExample: false
     name: Clinical Application Type
     reference:
       reference: ValueSet/vs-clinical-application-type
-  - description: Clinical Application Type
+  - description: CodeSystem defining different clinical application types
     isExample: false
     name: Clinical Application Type
     reference:
       reference: CodeSystem/cs-clinical-application-type
-  - description: The period during which the guideline is open for consultation.
+  - description: "Concept map from concepts from standardized vocabularies that are\
+      \ not labelled as 'standard' in Athena \u2013 OHDSI Vocabularies Repository\
+      \ to Concept IDs from 'standard' concepts"
+    isExample: true
+    name: Concept map from concepts from standardized vocabularies (that are not standard
+      OMOP concepts) to Concept IDs of OMOP standard Concepts
+    reference:
+      reference: ConceptMap/FHIRStatusToAWMFStatus
+  - description: This extension allows for the indication of the period during which
+      the guideline is open for consultation.
     isExample: false
     name: Consultation Period
     reference:
       reference: StructureDefinition/ext-consultation-period
-  - description: Types of contact points for a guideline
+  - description: CodeSystem defining types of contact points for a guideline
     isExample: false
     name: Contact Point
     reference:
       reference: CodeSystem/cs-contact-point
-  - description: Types of content that can be part of a guideline or recommendation.
+  - description: ValueSet listing types of content that can be part of a guideline
+      or recommendation.
     isExample: false
     name: Content Types
     reference:
@@ -322,7 +340,7 @@ definition:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
     reference:
       reference: Organization/DGIM
-  - description: Types of dissemination websites
+  - description: ValueSet listing types of dissemination websites
     isExample: false
     name: dissemination Website
     reference:
@@ -342,7 +360,8 @@ definition:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
     reference:
       reference: Organization/DSG
-  - description: Includes types of patient encounters based on hospitalization status.
+  - description: ValueSet listing types of patient encounters based on hospitalization
+      status.
     isExample: false
     name: Encounter Type
     reference:
@@ -388,7 +407,7 @@ definition:
     name: Evidence Assessment ROBIS
     reference:
       reference: StructureDefinition/certainty-of-evidence-rating-robis
-  - description: Code system for identifying evidence rating and appraisal frameworks
+  - description: CodeSystem for identifying evidence rating and appraisal frameworks
       used in systematic reviews, guideline development, and clinical decision support.
     isExample: false
     name: Evidence Rating System Code System
@@ -399,12 +418,14 @@ definition:
     name: Evidence Rating System Value Set
     reference:
       reference: ValueSet/vs-evidence-rating-system
-  - description: GRADE Evidence to Decision (EtD) Framework Certainty Ratings
+  - description: CodeSystem defining GRADE Evidence to Decision (EtD) Framework Certainty
+      Ratings
     isExample: false
     name: Evidence To Decision Certainty Rating
     reference:
       reference: CodeSystem/cs-evidence-to-decision-certainty-rating
-  - description: GRADE Evidence to Decision (EtD) Framework Certainty Type
+  - description: CodeSystem defining values to represent the GRADE Evidence to Decision
+      (EtD) Framework Certainty Type
     isExample: false
     name: Evidence To Decision Certainty type
     reference:
@@ -425,7 +446,8 @@ definition:
     name: Evidence-Multiplex PCR Diagnostic-Time to Deescalation
     reference:
       reference: Evidence/Evidence-MultiplexPCRDiagnostic-TimeToDeescalation
-  - description: The date when the guideline was first published.
+  - description: This extension allows for the indication of the date when the guideline
+      was first published.
     isExample: false
     name: First Publication Date
     reference:
@@ -478,17 +500,18 @@ definition:
     name: Guideline Author Role
     reference:
       reference: StructureDefinition/guideline-author-role
-  - description: The role of the author of the guideline.
+  - description: This extension allows for the indication of the role of the author
+      of the guideline.
     isExample: false
     name: Guideline Author Role
     reference:
       reference: StructureDefinition/ext-guideline-author-role
-  - description: The role of the author of the guideline.
+  - description: ValueSet listing roles that a author can have in a guideline.
     isExample: false
     name: Guideline Author Role
     reference:
       reference: ValueSet/vs-guideline-author-role
-  - description: The role of the author of the guideline.
+  - description: CodeSystem defining roles for the author of the guideline.
     isExample: false
     name: Guideline Author Role
     reference:
@@ -500,7 +523,7 @@ definition:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author-role
     reference:
       reference: PractitionerRole/GuidelineAuthorRoleExample
-  - description: Defines contact points relevant to guidelines, such as registrants,
+  - description: ValueSet listing contact points relevant to guidelines, such as registrants,
       coordinators, and main contacts.
     isExample: false
     name: Guideline Contact Point VS
@@ -513,17 +536,129 @@ definition:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
     reference:
       reference: Composition/GuidelineExample
-  - description: Guideline Release Type
+  - description: An example of a guideline.
+    isExample: true
+    name: Guideline Example
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
+    reference:
+      reference: Composition/TestInvRequireOfficialIdentifier-NoOfficialId-SHOULD-FAIL
+  - description: An example of a guideline.
+    isExample: true
+    name: Guideline Example
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
+    reference:
+      reference: Composition/TestInvRequireOfficialIdentifier-TwoOfficialId-SHOULD-FAIL
+  - description: An example of a guideline.
+    isExample: true
+    name: Guideline Example
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
+    reference:
+      reference: Composition/TestInvRequireReleaseTypeIfRegistered-SHOULD-PASS
+  - description: An example of a guideline.
+    isExample: true
+    name: Guideline Example
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
+    reference:
+      reference: Composition/TestInvRequireReleaseTypeIfRegistered-WrongCode-SHOULD-FAIL
+  - description: An example of a guideline.
+    isExample: true
+    name: Guideline Example
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
+    reference:
+      reference: Composition/TestInvRequireReleaseTypeIfRegistered-NoTag-SHOULD-FAIL
+  - description: An example of a guideline.
+    isExample: true
+    name: Guideline Example
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
+    reference:
+      reference: Composition/TestInvVersionMajorMinor-VersionMajorMinorPatch-SHOULD-FAIL
+  - description: An example of a guideline.
+    isExample: true
+    name: Guideline Example
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
+    reference:
+      reference: Composition/TestInvVersionMajorMinor-VersionInvalid-SHOULD-FAIL
+  - description: An example of a guideline.
+    isExample: true
+    name: Guideline Example
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
+    reference:
+      reference: Composition/TestInvVersionMajorMinor-VersionInvalid2-SHOULD-FAIL
+  - description: An example of a guideline.
+    isExample: true
+    name: Guideline Example
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
+    reference:
+      reference: Composition/TestInvRegCompNeedsPlannedCompletionDate-NoDate-SHOULD-FAIL
+  - description: An example of a guideline.
+    isExample: true
+    name: Guideline Example
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
+    reference:
+      reference: Composition/TestInvRegCompNeedsPlannedCompletionDate-SHOULD-PASS
+  - description: An example of a guideline.
+    isExample: true
+    name: Guideline Example
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
+    reference:
+      reference: Composition/TestInvPreliminaryCompositionNeedsConsultationPeriod-SHOULD-PASS
+  - description: An example of a guideline.
+    isExample: true
+    name: Guideline Example
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
+    reference:
+      reference: Composition/TestInvPrelimCompNeedsConsultationPeriod-NoDate-SHOULD-FAIL
+  - description: An example of a guideline.
+    isExample: true
+    name: Guideline Example
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
+    reference:
+      reference: Composition/TestInvAuthorRegistrantSingleton-SHOULD-PASS
+  - description: An example of a guideline.
+    isExample: true
+    name: Guideline Example
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
+    reference:
+      reference: Composition/TestInvAuthorRegistrantSingleton-NoRegistrant-SHOULD-FAIL
+  - description: An example of a guideline.
+    isExample: true
+    name: Guideline Example
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
+    reference:
+      reference: Composition/TestInvAuthorRegistrantSingleton-TwoRegistrants-SHOULD-FAIL
+  - description: An example of a guideline.
+    isExample: true
+    name: Guideline Example
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
+    reference:
+      reference: Composition/TestInvAuthorLeadVsContrExclusive-Both-SHOULD-FAIL
+  - description: ValueSet listing different guideline release types
     isExample: false
     name: Guideline Release Type
     reference:
       reference: ValueSet/vs-guideline-release-type
-  - description: Guideline Release Type
+  - description: CodeSystem defining different guideline release types
     isExample: false
     name: Guideline Release Type
     reference:
       reference: CodeSystem/cs-guideline-release-type
-  - description: Guideline Sections
+  - description: ValueSet listing values to use to define guideline sections
     isExample: false
     name: Guideline Sections
     reference:
@@ -565,12 +700,12 @@ definition:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-attachment
     reference:
       reference: DocumentReference/Guideline-020-013-ImplementationGuidance
-  - description: Code system defining possible intended audiences for a section
+  - description: CodeSystem defining possible intended audiences for a section
     isExample: false
     name: Intended Audience Code System
     reference:
       reference: CodeSystem/cs-intended-audience
-  - description: Value set of codes representing intended audiences for a section
+  - description: ValueSet listing codes representing intended audiences for a section
     isExample: false
     name: Intended Audience Value Set
     reference:
@@ -610,17 +745,19 @@ definition:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-attachment
     reference:
       reference: DocumentReference/Guideline-020-013-GuidelineReport
-  - description: Level of consensus for a recommendation.
+  - description: ValueSet listing values to define the level of consensus for a recommendation.
     isExample: false
     name: Level Of Consensus
     reference:
       reference: ValueSet/vs-level-of-consensus
-  - description: Level of consensus for a recommendation.
+  - description: CodeSystem defining the values representing the level of consensus
+      for a recommendation.
     isExample: false
     name: Level of Consensus
     reference:
       reference: CodeSystem/cs-level-of-consensus
-  - description: A classification of medical subjects into different categories.
+  - description: CodeSystem defining values to classify medical subjects into different
+      categories.
     isExample: false
     name: Medical Subject Categories
     reference:
@@ -638,14 +775,13 @@ definition:
     name: Netzwerk chronisch pulmonale Aspergillose (CPAnet)
     reference:
       reference: Organization/CPAnet
-  - description: A CodeSystem representing the Oxford Centre for Evidence-Based Medicine
+  - description: CodeSystem representing the Oxford Centre for Evidence-Based Medicine
       2011 Levels of Evidence.
     isExample: false
     name: OCEBM 2011 Levels of Evidence
     reference:
       reference: CodeSystem/cs-ocebm-2011-levels-of-evidence
-  - description: A ValueSet encompassing all levels from the OCEBM 2011 Levels of
-      Evidence.
+  - description: ValueSet encompassing all levels from the OCEBM 2011 Levels of Evidence.
     isExample: false
     name: OCEBM 2011 Levels of Evidence Value Set
     reference:
@@ -685,56 +821,61 @@ definition:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
     reference:
       reference: Organization/PEG
-  - description: The date when the guideline is planned to be completed.
+  - description: This extension allows for the indication of the date when the guideline
+      is planned to be completed.
     isExample: false
     name: Planned Completion Date
     reference:
       reference: StructureDefinition/ext-planned-completion-date
-  - description: The date when the guideline was published.
+  - description: This extensions allows for the indication of the date when the guideline
+      was published.
     isExample: false
     name: Publication Date
     reference:
       reference: StructureDefinition/ext-publication-date
-  - description: Are the alternatives acceptable for the target population and its
-      implementors?
+  - description: ValueSet defining if the alternatives are acceptable for the target
+      population and its implementors?
     isExample: false
     name: Rating Acceptability
     reference:
       reference: ValueSet/vs-rating-acceptability
-  - description: Summary of most important benefits and harms
+  - description: ValueSet listing values to represent the summary of the most important
+      benefits and harms
     isExample: false
-    name: Rating Benefit And Harms
+    name: Rating Benefits And Harms
     reference:
-      reference: ValueSet/vs-rating-benefit-and-harms
+      reference: ValueSet/vs-rating-benefits-and-harms
   - description: Codes from EvidenceCertaintyRating related to certainty of evidence
     isExample: false
     name: Rating Certainty Of Evidence
     reference:
       reference: ValueSet/vs-rating-certainty-of-evidence
-  - description: Codes from EvidenceCertaintyRating related to degree of concern
+  - description: ValueSet listing codes from EvidenceCertaintyRating related to degree
+      of concern
     isExample: false
     name: Rating Concern Degree
     reference:
       reference: ValueSet/vs-rating-concern-degree
-  - description: How do the different alternatives affect equity?
+  - description: ValueSet listing values to represent how the different alternatives
+      affect equity
     isExample: false
     name: Rating Equity
     reference:
       reference: ValueSet/vs-rating-equity
-  - description: How feasible will it be to implement the different alternatives?
-      Any issues?
+  - description: ValueSet listing values to reprensent how feasible will it be to
+      implement the different alternatives and if there are any issues
     isExample: false
     name: Rating Feasibility
     reference:
       reference: ValueSet/vs-rating-feasibility
-  - description: Typical patient preferences and values? Common issues or expected
-      variability?
+  - description: ValueSet listing typical patient preferences and values as well as
+      common issues or expected variability
     isExample: false
     name: Rating Preference And Values
     reference:
       reference: ValueSet/vs-rating-preference-and-values
-  - description: Issues with costs or resource use? For whom? Cost-benefit analysis?
-      Implementation or other issues?
+  - description: ValueSet listing values to indicate if there are issues related to
+      costs or resource use.
     isExample: false
     name: Rating Resources
     reference:
@@ -754,23 +895,23 @@ definition:
   - description: A structured assessment of the evidence and consensus that underpins
       a recommendation.
     isExample: false
-    name: Recommendation Justication
+    name: Recommendation Justification
     reference:
-      reference: StructureDefinition/recommendation-justication
+      reference: StructureDefinition/recommendation-justification
   - description: A structured assessment of the evidence and consensus that underpins
       a recommendation, including AWMF rating.
     isExample: false
-    name: Recommendation Justication AWMF
+    name: Recommendation Justification AWMF
     reference:
-      reference: StructureDefinition/recommendation-justication-awmf
+      reference: StructureDefinition/recommendation-justification-awmf
   - description: A structured assessment of the evidence and consensus that underpins
       a recommendation, including GRADE rating.
     isExample: false
-    name: Recommendation Justication GRADE
+    name: Recommendation Justification GRADE
     reference:
-      reference: StructureDefinition/recommendation-justication-grade
-  - description: Grading of recommendations according to German guideline methodology
-      as used in AWMF S3 guidelines.
+      reference: StructureDefinition/recommendation-justification-grade
+  - description: CodeSystem defining the grading of recommendations according to German
+      guideline methodology as used in AWMF S3 guidelines.
     isExample: false
     name: Recommendation Strength (AWMF)
     reference:
@@ -781,34 +922,34 @@ definition:
     name: Recommendation Strength (AWMF) ValueSet
     reference:
       reference: ValueSet/vs-recommendation-strength-awmf
-  - description: Synthesis Type of Recommendation
+  - description: ValueSet listing different synthesis Types of recommendations
     isExample: false
     name: Recommendation Synthesis Type
     reference:
       reference: ValueSet/vs-recommendation-synthesis-type
-  - description: Synthesis Type of Recommendation
+  - description: CodeSystem defining values representing the synthesis type of a recommendation
     isExample: false
     name: Recommendation Synthesis Type
     reference:
       reference: CodeSystem/cs-recommendation-synthesis-type
-  - description: Tags for recommendations
+  - description: ValueSet listing different tags to use for recommendations
     isExample: false
     name: Recommendation Tags
     reference:
       reference: ValueSet/vs-recommendation-tags
-  - description: Tags for recommendations
+  - description: CodeSystem defining codes to represent tags for recommendations
     isExample: false
     name: Recommendation Tags
     reference:
       reference: CodeSystem/cs-recommendation-tags
-  - description: Status of a recommendation in the context of an updated guideline
-      version
+  - description: This extension allows for the indication of the status of a recommendation
+      in the context of an updated guideline version
     isExample: false
     name: Recommendation Version Status
     reference:
       reference: StructureDefinition/ext-recommendation-version-status
-  - description: Codes to indicate how a recommendation relates to a new version of
-      the guideline
+  - description: CodeSystem defining values indicating how a recommendation relates
+      to a new version of the guideline
     isExample: false
     name: Recommendation Version Status Code System
     reference:
@@ -827,29 +968,31 @@ definition:
     isExample: true
     name: RecommendationHAPDiagnosis-A-Justification
     profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justication
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification
     reference:
       reference: ArtifactAssessment/RecommendationHAPDiagnosis-A-Justification
   - description: Justification for Recommendation HAP Diagnose B
     isExample: true
     name: RecommendationHAPDiagnosis-B-Justification
     profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justication
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification
     reference:
       reference: ArtifactAssessment/RecommendationHAPDiagnosis-B-Justification
   - description: Justification for Recommendation Multiplex-PCR-Diagnostik
     isExample: true
     name: RecommendationMultiplexPCRDiagnostic-Justification
     profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justication-awmf
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification-awmf
     reference:
       reference: ArtifactAssessment/RecommendationMultiplexPCRDiagnostic-Justification
-  - description: The date the guideline project was registered.
+  - description: This extensions allows for the indication of the date the guideline
+      project was registered.
     isExample: false
     name: Registration Date
     reference:
       reference: StructureDefinition/ext-registration-date
-  - description: Related artifacts that can be part of a guideline.
+  - description: CodeSystem defining types of related artifacts that can be part of
+      a guideline.
     isExample: false
     name: Related Artifact Types
     reference:
@@ -866,30 +1009,55 @@ definition:
     name: RelatesTo Label
     reference:
       reference: StructureDefinition/ext-relates-to-label
-  - description: Types of remarks that can be associated with guidelines, including
-      restrictions, warnings, and additional notes.
+  - description: ValueSet listing types of remarks that can be associated with guidelines,
+      including restrictions, warnings, and additional notes.
     isExample: false
     name: Remark Type
     reference:
       reference: ValueSet/vs-remark-type
-  - description: Types of remarks that can be associated with guidelines, including
-      restrictions, warnings, and additional notes.
+  - description: CodeSystem defining different types of remarks that can be associated
+      with guidelines, including restrictions, warnings, and additional notes.
     isExample: false
     name: Remark Type
     reference:
       reference: CodeSystem/cs-remark-type
+  - description: CodeSystem representing the overall judgment of risk of bias assessed
+      by the RoB2 tool for evaluating risk of bias for randomized trials.
+    isExample: false
+    name: RoB2 Overall Judgment
+    reference:
+      reference: CodeSystem/cs-rob-2-overall-judgment
+  - description: ValueSet listing values to represent the overall judgment of risk
+      of bias assessed by the RoB2 tool for evaluating risk of bias for randomized
+      trials.
+    isExample: false
+    name: RoB2 Overall Judgment ValueSet
+    reference:
+      reference: ValueSet/vs-rob-2-overall-judgment
   - description: Robert Koch-Institut
     isExample: true
     name: Robert Koch-Institut
     reference:
       reference: Organization/RKI
-  - description: A CodeSystem representing the domains assessed by the ROBIS tool
-      for evaluating risk of bias in systematic reviews.
+  - description: CodeSystem representing the judgment of risk of bias assessed by
+      the ROBIS tool for evaluating risk of bias in systematic reviews.
+    isExample: false
+    name: ROBIS Judgment of Risk of Bias
+    reference:
+      reference: CodeSystem/cs-robis-judgment-of-risk-of-bias
+  - description: ValueSet encompassing all risk of bias judgment values from the ROBIS
+      tool.
+    isExample: false
+    name: ROBIS Judgment of Risk of Bias Value Set
+    reference:
+      reference: ValueSet/vs-robis-judgment-of-risk-of-bias
+  - description: CodeSystem representing the domains assessed by the ROBIS tool for
+      evaluating risk of bias in systematic reviews.
     isExample: false
     name: ROBIS Risk of Bias Domains
     reference:
       reference: CodeSystem/cs-robis-risk-of-bias-domains
-  - description: A ValueSet encompassing all risk of bias domains from the ROBIS tool.
+  - description: ValueSet encompassing all risk of bias domains from the ROBIS tool.
     isExample: false
     name: ROBIS Risk of Bias Domains Value Set
     reference:
@@ -912,34 +1080,37 @@ definition:
     name: Section Coding
     reference:
       reference: StructureDefinition/ext-section-coding
-  - description: Target audience for the section
+  - description: This extension allows for the indication of the target audience for
+      the section
     isExample: false
     name: Section Intended Audience
     reference:
       reference: StructureDefinition/ext-section-intended-audience
-  - description: Keywords associated with the section
+  - description: This extension allows for the indication of keywords associated with
+      the section
     isExample: false
     name: Section Keyword
     reference:
       reference: StructureDefinition/ext-section-keyword
-  - description: The Language of the Section.
+  - description: This extension allows for the indication of the Language of the Section.
     isExample: false
     name: Section Language
     reference:
       reference: StructureDefinition/ext-section-language
-  - description: The date when the guideline was submitted to the system.
+  - description: This extension allows for the indication of the date when the guideline
+      was submitted to the system.
     isExample: false
     name: Submission Date
     reference:
       reference: StructureDefinition/ext-submission-date
-  - description: Includes patient population categories for guidelines, such as adults
-      and children/adolescents.
+  - description: ValueSet listing patient population categories for guidelines, such
+      as adults and children/adolescents.
     isExample: false
     name: Target Patient Group
     reference:
       reference: ValueSet/vs-target-patient-group
-  - description: Defines the intended patient population for whom the guideline is
-      applicable.
+  - description: CodeSystem defining the intended patient population for whom the
+      guideline is applicable.
     isExample: false
     name: Target Patient Group
     reference:
@@ -949,6 +1120,18 @@ dependsOn:
   packageId: hl7.fhir.uv.ebm
   uri: http://hl7.org/fhir/uv/ebm
   version: ci-build
+- id: hl7_fhir_r6_core
+  packageId: hl7.fhir.r6.core
+  uri: http://hl7.org/fhir/ImplementationGuide/fhir
+  version: 6.0.0-ballot3
+- id: hl7_fhir_uv_extensions
+  packageId: hl7.fhir.uv.extensions
+  uri: http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions
+  version: 5.2.0
+- id: hl7_terminology
+  packageId: hl7.terminology
+  uri: http://terminology.hl7.org/ImplementationGuide/hl7.terminology
+  version: 6.3.0
 description: 'This implementation guide, produced by the Dissolve-E project (G-BA
   grant 01VSF23021) in collaboration with the Association of the Scientific Medical
   Societies in Germany (AWMF), defines FHIR profiles, extensions, and guidance for

@@ -1,12 +1,12 @@
 [VS:AGREE II Domains Value Set]: ValueSet-vs-agree-ii-domains.html
 [VS:AMSTAR 2 Confidence Ratings Value Set]: ValueSet-vs-amstar2-confidence-ratings.html
 [VS:AWMF Guideline Class]: ValueSet-vs-awmf-guideline-class.html
+[VS:AWMF Guideline Status]: ValueSet-vs-awmf-guideline-status.html
 [VS:Body System Conditions]: ValueSet-vs-body-system-conditions.html
 [VS:Care Level]: ValueSet-vs-care-level.html
 [VS:CareStage]: ValueSet-vs-care-stage.html
 [VS:Clinical Application Type]: ValueSet-vs-clinical-application-type.html
 [VS:Content Types]: ValueSet-vs-content-types.html
-[VS:dissemination Website]: ValueSet-vs-dissemination-website.html
 [VS:Encounter Type]: ValueSet-vs-encounter-type.html
 [VS:Evidence Rating System Value Set]: ValueSet-vs-evidence-rating-system.html
 [VS:Guideline Author Role]: ValueSet-vs-guideline-author-role.html
@@ -16,8 +16,10 @@
 [VS:Intended Audience Value Set]: ValueSet-vs-intended-audience.html
 [VS:Level Of Consensus]: ValueSet-vs-level-of-consensus.html
 [VS:OCEBM 2011 Levels of Evidence Value Set]: ValueSet-ocebm-2011-levels-of-evidence-vs.html
+[VS:ROBIS Judgment of Risk of Bias Value Set]: ValueSet-vs-robis-judgment-of-risk-of-bias.html
+[VS:ROBIS Risk of Bias Domains Value Set]: ValueSet-vs-robis-risk-of-bias-domains.html
 [VS:Rating Acceptability]: ValueSet-vs-rating-acceptability.html
-[VS:Rating Benefit And Harms]: ValueSet-vs-rating-benefit-and-harms.html
+[VS:Rating Benefits And Harms]: ValueSet-vs-rating-benefits-and-harms.html
 [VS:Rating Certainty Of Evidence]: ValueSet-vs-rating-certainty-of-evidence.html
 [VS:Rating Concern Degree]: ValueSet-vs-rating-concern-degree.html
 [VS:Rating Equity]: ValueSet-vs-rating-equity.html
@@ -29,13 +31,14 @@
 [VS:Recommendation Tags]: ValueSet-vs-recommendation-tags.html
 [VS:Recommendation Version Status Value Set]: ValueSet-vs-recommendation-version-status.html
 [VS:Remark Type]: ValueSet-vs-remark-type.html
-[VS:ROBIS Risk of Bias Domains Value Set]: ValueSet-vs-robis-risk-of-bias-domains.html
+[VS:RoB2 Overall Judgment ValueSet]: ValueSet-vs-rob-2-overall-judgment.html
 [VS:Target Patient Group]: ValueSet-vs-target-patient-group.html
+[VS:dissemination Website]: ValueSet-vs-dissemination-website.html
 
 [CS:AGREE II Domains]: CodeSystem-cs-agree-ii-domains.html
 [CS:AMSTAR 2 Overall Confidence Ratings]: CodeSystem-cs-amstar2-confidence-ratings.html
-[CS:awmf]: CodeSystem-cs-awmf.html
 [CS:AWMF Guideline Class]: CodeSystem-cs-awmf-guideline-class.html
+[CS:AWMF Guideline Status]: CodeSystem-cs-awmf-guideline-status.html
 [CS:Body System Conditions]: CodeSystem-cs-body-systems-conditions.html
 [CS:Care Setting]: CodeSystem-cs-care-setting.html
 [CS:Clinical Application Type]: CodeSystem-cs-clinical-application-type.html
@@ -50,18 +53,26 @@
 [CS:Level of Consensus]: CodeSystem-cs-level-of-consensus.html
 [CS:Medical Subject Categories]: CodeSystem-medical-subject-categories.html
 [CS:OCEBM 2011 Levels of Evidence]: CodeSystem-cs-ocebm-2011-levels-of-evidence.html
+[CS:ROBIS Judgment of Risk of Bias]: CodeSystem-cs-robis-judgment-of-risk-of-bias.html
+[CS:ROBIS Risk of Bias Domains]: CodeSystem-cs-robis-risk-of-bias-domains.html
 [CS:Recommendation Strength (AWMF)]: CodeSystem-cs-recommendation-strength-awmf.html
 [CS:Recommendation Synthesis Type]: CodeSystem-cs-recommendation-synthesis-type.html
 [CS:Recommendation Tags]: CodeSystem-cs-recommendation-tags.html
 [CS:Recommendation Version Status Code System]: CodeSystem-cs-recommendation-version-status.html
 [CS:Related Artifact Types]: CodeSystem-cs-related-artifact-types.html
 [CS:Remark Type]: CodeSystem-cs-remark-type.html
-[CS:ROBIS Risk of Bias Domains]: CodeSystem-cs-robis-risk-of-bias-domains.html
+[CS:RoB2 Overall Judgment]: CodeSystem-cs-rob-2-overall-judgment.html
 [CS:Target Patient Group]: CodeSystem-cs-target-patient-group.html
+[CS:awmf]: CodeSystem-cs-awmf.html
 
+[SD:AWMF Guideline]: StructureDefinition-awmf-guideline.html
+[SD:AWMF Member Organization]: StructureDefinition-awmf-member-organization.html
+[SD:AWMF S1 Guideline]: StructureDefinition-awmf-guideline-s1.html
+[SD:AWMF S2e Guideline]: StructureDefinition-awmf-guideline-s2e.html
+[SD:AWMF S2k Guideline]: StructureDefinition-awmf-guideline-s2k.html
+[SD:AWMF S3 Guideline]: StructureDefinition-awmf-guideline-s3.html
 [SD:Artifact Contact (Extended)]: StructureDefinition-ext-artifact-extended-contact.html
 [SD:Authors Language]: StructureDefinition-ext-author-language.html
-[SD:AWMF Member Organization]: StructureDefinition-awmf-member-organization.html
 [SD:Consultation Period]: StructureDefinition-ext-consultation-period.html
 [SD:Evidence Assessment]: StructureDefinition-certainty-of-evidence-rating.html
 [SD:Evidence Assessment AGREE II]: StructureDefinition-certainty-of-evidence-rating-agreeii.html
@@ -71,16 +82,17 @@
 [SD:Evidence Assessment Oxford 2011]: StructureDefinition-certainty-of-evidence-rating-oxford2011.html
 [SD:Evidence Assessment ROBIS]: StructureDefinition-certainty-of-evidence-rating-robis.html
 [SD:First Publication Date]: StructureDefinition-ext-first-publication-date.html
-[SD:Guideline]: StructureDefinition-awmf-guideline.html
+[SD:Guideline]: StructureDefinition-guideline.html
 [SD:Guideline Attachment]: StructureDefinition-guideline-attachment.html
 [SD:Guideline Author]: StructureDefinition-guideline-author.html
 [SD:Guideline Author Role]: StructureDefinition-ext-guideline-author-role.html
+[SD:Outcome Evidence]: StructureDefinition-outcome-evidence.html
 [SD:Planned Completion Date]: StructureDefinition-ext-planned-completion-date.html
 [SD:Publication Date]: StructureDefinition-ext-publication-date.html
 [SD:Recommendation]: StructureDefinition-recommendation.html
-[SD:Recommendation Justication]: StructureDefinition-recommendation-justication.html
-[SD:Recommendation Justication AWMF]: StructureDefinition-recommendation-justication-awmf.html
-[SD:Recommendation Justication GRADE]: StructureDefinition-recommendation-justication-grade.html
+[SD:Recommendation Justification]: StructureDefinition-recommendation-justification.html
+[SD:Recommendation Justification AWMF]: StructureDefinition-recommendation-justification-awmf.html
+[SD:Recommendation Justification GRADE]: StructureDefinition-recommendation-justification-grade.html
 [SD:Recommendation Version Status]: StructureDefinition-ext-recommendation-version-status.html
 [SD:Registration Date]: StructureDefinition-ext-registration-date.html
 [SD:RelatesTo Classifier]: StructureDefinition-ext-relates-to-classifier.html
@@ -92,11 +104,3 @@
 [SD:Submission Date]: StructureDefinition-ext-submission-date.html
 
 
-[SNOMEDCT]: http://snomed.info/sct
-[LOINC]: http://loinc.org/
-[UCUM]: http://unitsofmeasure.org
-[VSdataAbsentReason]: http://hl7.org/fhir/R4/valueset-data-absent-reason.html
-[CEOSYS]: https://covid-evidenz.de/
-[NUM]: https://www.netzwerk-universitaetsmedizin.de/
-[EMBonFHIR]: https://confluence.hl7.org/display/CDS/EBMonFHIR
-[COCHRANELD]: https://data.cochrane.org/concepts/
