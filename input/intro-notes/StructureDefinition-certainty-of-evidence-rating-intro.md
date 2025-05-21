@@ -19,7 +19,7 @@ The profile requires explicitly stating:
 
 The general structure of an evidence assessment using this profile looks as follows:
 
----
+```
 Instance: EvidenceCertaintyExample
 InstanceOf: certainty-of-evidence-rating
 * artifactReference = Reference(OutcomeEvidence/mortality-effect)
@@ -32,7 +32,7 @@ InstanceOf: certainty-of-evidence-rating
 * content[levelOfEvidence]
   * type = $cs-certainty-type#Overall
   * classifier = cs-rating-certainty-of-evidence#moderate
----
+```
 
 This example specifies that the GRADE system was used to rate the evidence for a specific outcome, and that the overall certainty of the evidence is “moderate”.
 
@@ -40,7 +40,7 @@ This example specifies that the GRADE system was used to rate the evidence for a
 
 When using GRADE, additional domain-specific components can be added to detail why the overall certainty was rated as it was:
 
----
+```
 * content[riskOfBias]
   * type = $cs-certainty-type#RiskOfBias
 
@@ -55,7 +55,7 @@ When using GRADE, additional domain-specific components can be added to detail w
 
 * content[publicationBias]
   * type = $cs-certainty-type#PublicationBias
----
+```
 
 These allow precise attribution of strengths and weaknesses in the body of evidence.
 
@@ -63,7 +63,7 @@ These allow precise attribution of strengths and weaknesses in the body of evide
 
 If the evidence being rated is a guideline, a different profile derived from `CertaintyOfEvidenceRating` can be used, for example for AGREE II:
 
----
+```
 Instance: AGREEAssessmentExample
 InstanceOf: certainty-of-evidence-rating-agreeii
 * artifactReference = Reference(Guideline/021-001)
@@ -76,13 +76,13 @@ InstanceOf: certainty-of-evidence-rating-agreeii
 * content[levelOfEvidence]
   * type = $cs-certainty-type#Overall
   * classifier = cs-rating-certainty-of-evidence#high
----
+```
 
 ##### Linking to Recommendations
 
 To link the evidence assessment to a recommendation, the recommendation justification uses:
 
----
+```
 RecommendationJustification[ArtifactAssessment]
 * artifactReference = Reference(GuidelineRecommendation/rec-001)
 
@@ -90,7 +90,7 @@ RecommendationJustification[ArtifactAssessment]
   * relatedArtifact
     * type = #derived-from
     * resource = Reference(CertaintyOfEvidenceRating/Example)
----
+```
 
 This structured approach ensures that both automated systems and human users can transparently trace how certainty of evidence influenced the recommendations.
 
