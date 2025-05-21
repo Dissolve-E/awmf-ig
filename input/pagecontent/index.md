@@ -120,3 +120,5 @@ This project is publicly funded by the Innovation Committee of the Federal Joint
 #### Links
 * DISSOLVE-E on the Website of the Federal Joint Committee (G-BA) in [German](https://innovationsfonds.g-ba.de/projekte/versorgungsforschung/dissolve-e.597) or [English](https://www.awmf.org/die-awmf/imwi/projekte/dissolve-e-english-version)
 * [GitHub project](https://github.com/Dissolve-E/awmf-ig)
+
+{% include link-list.md %}

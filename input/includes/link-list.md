@@ -7,6 +7,7 @@
 [VS:CareStage]: ValueSet-vs-care-stage.html
 [VS:Clinical Application Type]: ValueSet-vs-clinical-application-type.html
 [VS:Content Types]: ValueSet-vs-content-types.html
+[VS:Dissemination Website]: ValueSet-vs-dissemination-website.html
 [VS:Encounter Type]: ValueSet-vs-encounter-type.html
 [VS:Evidence Rating System Value Set]: ValueSet-vs-evidence-rating-system.html
 [VS:Guideline Author Role]: ValueSet-vs-guideline-author-role.html
@@ -33,7 +34,6 @@
 [VS:Remark Type]: ValueSet-vs-remark-type.html
 [VS:RoB2 Overall Judgment ValueSet]: ValueSet-vs-rob-2-overall-judgment.html
 [VS:Target Patient Group]: ValueSet-vs-target-patient-group.html
-[VS:dissemination Website]: ValueSet-vs-dissemination-website.html
 
 [CS:AGREE II Domains]: CodeSystem-cs-agree-ii-domains.html
 [CS:AMSTAR 2 Overall Confidence Ratings]: CodeSystem-cs-amstar2-confidence-ratings.html
@@ -72,7 +72,7 @@
 [SD:AWMF S2k Guideline]: StructureDefinition-awmf-guideline-s2k.html
 [SD:AWMF S3 Guideline]: StructureDefinition-awmf-guideline-s3.html
 [SD:Artifact Contact (Extended)]: StructureDefinition-ext-artifact-extended-contact.html
-[SD:Authors Language]: StructureDefinition-ext-author-language.html
+[SD:Author Language]: StructureDefinition-ext-author-language.html
 [SD:Consultation Period]: StructureDefinition-ext-consultation-period.html
 [SD:Evidence Assessment]: StructureDefinition-certainty-of-evidence-rating.html
 [SD:Evidence Assessment AGREE II]: StructureDefinition-certainty-of-evidence-rating-agreeii.html
