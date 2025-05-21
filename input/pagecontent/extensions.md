@@ -21,5 +21,5 @@ The following extensions were defined as part of the DISSOLVE-E project:
 
 ### Other Extensions
 
-{% include profile-reference.md name='SD:Author's Language' %}
+{% include profile-reference.md name='SD:Authors Language' %}
 {% include profile-reference.md name='SD:Section Language' %}

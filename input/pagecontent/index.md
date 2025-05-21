@@ -32,6 +32,7 @@ While DISSOLVE-E is initiated by the AWMF and foremost aiming to develop a digit
 {:.grid}
 
 #### Profile to represent a recommendation
+
 | Name | FHIR Base Resource | Description |
 | ---- | ------------- | ----------- |
 | [Recommendation][SD:Recommendation] | [Composition]({{ fhir_base_url }}composition.html) | Representation of a clinical practice guideline recommendation. |
@@ -39,6 +40,7 @@ While DISSOLVE-E is initiated by the AWMF and foremost aiming to develop a digit
 
 ##### Profiles to represent the certainty of evidence upon which a clinical practice guideline recommendation is based
 We propose different a general profile as well as profiles based on different rating systems.
+
 | Name | FHIR Base Resource | Description |
 | ---- | ------------- | ----------- |
 | [Evidence Assessment][SD:Evidence Assessment] | [ArtifactAssesment]({{ fhir_base_url }}artifactassessment.html) | Representation of a structured assessment of the certainty of evidence for a specific outcome. |
@@ -51,7 +53,9 @@ We propose different a general profile as well as profiles based on different ra
 {:.grid}
 
 ##### Profiles to represent the recommendation justification
+
 We propose a general profile as well as two further profiles based on the GRADE and AWMF rating systems used to describe the strength of recommendation:
+
 | Name | FHIR Base Resource | Description |
 | ---- | ------------- | ----------- |
 | [Recommendation Justification][SD:Recommendation Justification] | [ArtifactAssessment]({{ fhir_base_url }}artifactassessment.html) | Representation of a structured assessment of the evidence and consensus that underpins a recommendation. |
@@ -60,6 +64,7 @@ We propose a general profile as well as two further profiles based on the GRADE 
 {:.grid}
 
 #### Profiles for involved Organizations and Persons
+
 | Name | FHIR Base Resource | Description |
 | ---- | ------------- | ----------- |
 | [AWMF Member Organization][SD:AWMF Member Organization] | [Organization]({{ fhir_base_url }}organization.html) | Representation of an organization that is a member of the AWMF. |
@@ -68,6 +73,7 @@ We propose a general profile as well as two further profiles based on the GRADE 
 {:.grid}
 
 #### Other Profile
+
 | Name | FHIR Base Resource | Description |
 | ---- | ------------- | ----------- |
 | [Guideline Attachment][SD:Guideline Attachment] | [DocumentReference]({{ fhir_base_url }}documentreference.html) | Representation of an attachment to a clinical practice guideline. |

@@ -27,7 +27,7 @@
 {% include codesystem-reference.md name='CS:OCEBM 2011 Levels of Evidence' %}
 {% include codesystem-reference.md name='CS:Recommendation Strength (AWMF)' %}
 {% include codesystem-reference.md name='CS:RoB2 Overall Judgment' %}
-{% include codesystem-reference.md name='CS:'ROBIS Judgment of Risk of Bias' %}
+{% include codesystem-reference.md name='CS:ROBIS Judgment of Risk of Bias' %}
 {% include codesystem-reference.md name='CS:ROBIS Risk of Bias Domains' %}
 
 #### Code Systems related to Grades

@@ -84,7 +84,7 @@ definition:
   - description: This extension allows for the specification of the language(s) the
       author contributed to a section in a FHIR Composition.
     isExample: false
-    name: Author's Language
+    name: Author Language
     reference:
       reference: StructureDefinition/ext-author-language
   - description: CodeSystem representing different codes of interest for the Arbeitsgemeinschaft
@@ -342,7 +342,7 @@ definition:
       reference: Organization/DGIM
   - description: ValueSet listing types of dissemination websites
     isExample: false
-    name: dissemination Website
+    name: Dissemination Website
     reference:
       reference: ValueSet/vs-dissemination-website
   - description: "Deutsche R\xF6ntgengesellschaft, Gesellschaft f\xFCr Medizinische\
