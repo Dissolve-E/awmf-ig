@@ -19,9 +19,9 @@
 {% include profile-reference.md name='SD:Planned Completion Date' %}
 {% include profile-reference.md name='SD:Publication Date' %}
 {% include profile-reference.md name='SD:Recommendation' %}
-{% include profile-reference.md name='SD:Recommendation Justication' %}
-{% include profile-reference.md name='SD:Recommendation Justication AWMF' %}
-{% include profile-reference.md name='SD:Recommendation Justication GRADE' %}
+{% include profile-reference.md name='SD:Recommendation Justification' %}
+{% include profile-reference.md name='SD:Recommendation Justification AWMF' %}
+{% include profile-reference.md name='SD:Recommendation Justification GRADE' %}
 {% include profile-reference.md name='SD:Recommendation Version Status' %}
 {% include profile-reference.md name='SD:Registration Date' %}
 {% include profile-reference.md name='SD:RelatesTo Classifier' %}

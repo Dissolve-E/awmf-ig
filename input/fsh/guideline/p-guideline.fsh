@@ -14,7 +14,7 @@ Description: "Clinical Practice Guideline"
 
 // only used when status = registered 
 * meta.tag[guideline-releaseType] from vs-guideline-release-type (required)
-* obeys inv-require-release-type-if-registered // TODO: test invariant [@glichtner]
+* obeys inv-require-release-type-if-registered
 
 * language 0..1 MS
 
@@ -102,14 +102,14 @@ Description: "Clinical Practice Guideline"
   * ^short = "Planned Completion Date"
   * valueDate 1..1
 // required for status=#registered
-* obeys registered-composition-needs-planned-completion-date // TODO: test invariant [@glichtner]
+* obeys registered-composition-needs-planned-completion-date
 
 * extension[consultationPeriod] // MAGIC-AWMF: consultation[*]Date, AWMF: "" // #P2.3.1.10
   * ^definition = "The period during which the guideline is open for consultation."
   * ^short = "Consultation Period"
   * valuePeriod 1..1
 // require for status=#preliminary 
-* obeys preliminary-composition-needs-consultation-period // TODO: test invariant [@glichtner]
+* obeys preliminary-composition-needs-consultation-period
 
 
 * extension[registrationDate] // MAGIC-AWMF: startDate, AWMF: "Datum der Anmeldung" // #P2.3.1.10
@@ -174,7 +174,6 @@ Description: "Clinical Practice Guideline"
   * targetReference 1..1
   * targetReference only Reference(Guideline)
 
-// BUG: This slicing is currently not working [@gregor]
 * note.extension contains $ext-annotationType named type 1..1
 * note ^slicing.discriminator.type = #value
 * note ^slicing.discriminator.path = "extension('http://hl7.org/fhir/StructureDefinition/annotationType').value"

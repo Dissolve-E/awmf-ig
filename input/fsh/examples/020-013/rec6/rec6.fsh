@@ -96,7 +96,7 @@ Description: "Certainty of evidence rating for the impact of Multiplex-PCR-Diagn
 * insert narrative([[Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on mortality]])
 * artifactReference = Reference(Evidence-MultiplexPCRDiagnostic-Mortality)
 * content[levelOfEvidence]
-  * classifier = $cs-quality-of-evidence#very-low "Very low quality"
+  * classifier = $cs-certainty-rating#very-low "Very low quality"
 
 Instance: CoE-MultiplexPCRDiagnostic-AntibioticDays
 InstanceOf: CertaintyOfEvidenceRatingGRADE
@@ -106,7 +106,7 @@ Description: "Certainty of evidence rating for the impact of Multiplex-PCR-Diagn
 * insert narrative([[Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on antibiotic days]])
 * artifactReference = Reference(Evidence-MultiplexPCRDiagnostic-AntibioticDays)
 * content[levelOfEvidence]
-  * classifier = $cs-quality-of-evidence#very-low "Very low quality"
+  * classifier = $cs-certainty-rating#very-low "Very low quality"
 
 Instance: CoE-MultiplexPCRDiagnostic-TimeToDeescalation
 InstanceOf: CertaintyOfEvidenceRatingGRADE
@@ -116,7 +116,7 @@ Description: "Certainty of evidence rating for the impact of Multiplex-PCR-Diagn
 * insert narrative([[Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on time to deescalation]])
 * artifactReference = Reference(Evidence-MultiplexPCRDiagnostic-TimeToDeescalation)
 * content[levelOfEvidence]
-  * classifier = $cs-quality-of-evidence#very-low "Very low quality"
+  * classifier = $cs-certainty-rating#very-low "Very low quality"
 
 Instance: Evidence-MultiplexPCRDiagnostic-Mortality
 InstanceOf: Evidence

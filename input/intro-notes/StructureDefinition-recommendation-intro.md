@@ -2,8 +2,6 @@
 {% assign id = {{include.id}} %}
 {% assign resource = site.data.structuredefinitions.[id] %}
 
-### Guidance
-
 ### Key Requirements taken into Account 
 
 The recommendation data model must be able to: 
@@ -14,7 +12,7 @@ The recommendation data model must be able to:
 
 * Include procedural linking between individual recommendations 
 
-* Allow multilingual content on all levels 
+{% include multi-language.md %}
 
 
 ### Indentifiers, References, Versions 

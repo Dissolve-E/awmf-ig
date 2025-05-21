@@ -3,6 +3,7 @@ Id: cs-related-artifact-types
 Title: "Related Artifact Types"
 Description: "CodeSystem defining types of related artifacts that can be part of a guideline."
 * insert rs-codesystem-meta
+* ^hierarchyMeaning = #is-a
 * #related-guideline "Related Guideline"
   * ^designation[+].language = #de
   * ^designation[=].value = "Verwandte Leitlinie"

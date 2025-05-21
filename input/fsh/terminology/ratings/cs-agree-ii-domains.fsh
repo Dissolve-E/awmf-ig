@@ -29,7 +29,7 @@ Description: "CodeSystem representing the domains assessed by the AGREE II instr
   * ^designation[+].language = #de
   * ^designation[=].value = "Anwendbarkeit"
   * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
-  * ^definition.extension[$ext-translation].extension[content].valueString = "Betrifft mögliche förderliche und hinderliche Faktoren für die Anwendung der Leitlinie, Strategien zur Förderung der Leitlinienanwendung und Auswirkungen der Anwendung der Leitlinie auf den Ressourcenverbrauch "
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Betrifft mögliche förderliche und hinderliche Faktoren für die Anwendung der Leitlinie, Strategien zur Förderung der Leitlinienanwendung und Auswirkungen der Anwendung der Leitlinie auf den Ressourcenverbrauch"
 * #editorial_independence "Editorial Independence" "Is concerned with the formulation of recommendations not being unduly biased with competing interests."
   * ^designation[+].language = #de
   * ^designation[=].value = "Redaktionelle Unabhängigkeit"

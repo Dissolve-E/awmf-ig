@@ -65,7 +65,7 @@ Description: "A structured assessment of the evidence and consensus that underpi
 
 * content[searchStrategy] // #P2.3.3.1
   * type 1..1
-  * type = $cs-ebm-ig#SearchStrategy "Search Strategy"
+  * type = $cs-ebm-ig#SearchStrategy "SearchStrategy"
   * relatesTo 1..1
     * targetReference 1..1
     * targetReference only Reference(SearchStrategy)

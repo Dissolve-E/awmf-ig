@@ -19,7 +19,7 @@ Alias: $cs-certainty-type = http://hl7.org/fhir/certainty-type
 Alias: $cs-direction-of-recommendation = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-recommendation-direction-cs
 Alias: $vs-direction-of-recommendation = http://hl7.org/fhir/uv/cpg/ValueSet/cpg-recommendation-direction-vs
 
-Alias: $cs-quality-of-evidence = http://terminology.hl7.org/CodeSystem/evidence-quality
+//Alias: $cs-quality-of-evidence = http://terminology.hl7.org/CodeSystem/evidence-quality // Use $cs-certainty-rating instead
 Alias: $vs-quality-of-evidence = http://terminology.hl7.org/ValueSet/evidence-quality
 
 Alias: $ext-translation = http://hl7.org/fhir/StructureDefinition/translation

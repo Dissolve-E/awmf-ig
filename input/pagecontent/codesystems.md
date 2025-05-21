@@ -15,6 +15,7 @@
 {% include codesystem-reference.md name='CS:Recommendation Tags' %}
 {% include codesystem-reference.md name='CS:Related Artifact Types' %}
 {% include codesystem-reference.md name='CS:Remark Type' %}
+{% include codesystem-reference.md name='CS:RoB2 Overall Judgment' %}
 {% include codesystem-reference.md name='CS:Target Patient Group' %}
 {% include codesystem-reference.md name='CS:awmf' %}
 

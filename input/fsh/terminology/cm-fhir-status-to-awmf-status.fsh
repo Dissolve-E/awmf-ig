@@ -9,7 +9,7 @@ Description: "Concept map from concepts from standardized vocabularies that are 
             This ConceptMap maps values for the workflow status as defined by the AWMF to the required FHIR ValueSet http://hl7.org/fhir/ValueSet/composition-status that is used in a Composition Resource or Profile."""
 * group[+]
   * source = $cs-composition-status
-  * target = $cs-awmf-guideline-status
+  * target = Canonical(cs-awmf-guideline-status)
   * element[+]
     * code = #registered
     * display = "Registered"

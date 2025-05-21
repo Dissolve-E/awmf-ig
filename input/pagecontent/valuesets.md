@@ -33,7 +33,7 @@
 ##### Value Sets related to Grades
 
 {% include valueset-reference.md name='VS:Rating Acceptability' %}
-{% include valueset-reference.md name='VS:Rating Benefit And Harms' %}
+{% include valueset-reference.md name='VS:Rating Benefits And Harms' %}
 {% include valueset-reference.md name='VS:Rating Certainty Of Evidence' %}
 {% include valueset-reference.md name='VS:Rating Concern Degree' %}
 {% include valueset-reference.md name='VS:Rating Equity' %}

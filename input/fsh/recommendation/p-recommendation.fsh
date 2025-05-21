@@ -1,3 +1,5 @@
+// bug: the IG publisher doesn't build this correctly. there seems to be (again) a problem with inheriting from the EBM IG
+//      and re-slicing or redefining the already defined slices
 Profile: Recommendation // #P2.2.5 -- each recommendation is a separate resource
 Parent: $ebm-recommendation // #P2.1.2
 Id: recommendation
@@ -80,6 +82,7 @@ Description: "Clinical Practice Guideline Recommendation"
   * code 1..1
   * code.coding 1..1
   * code = $cs-ebm-ig#text "Text"
+  * code.coding = $cs-ebm-ig#text "Text"
   * insert rs-language-section
 * section[consensusProtocol]
   * code 1..1
@@ -95,7 +98,8 @@ Description: "Clinical Practice Guideline Recommendation"
 * section[otherContent]
   * code 1..1
   * code.coding  1..1
-  * code from vs-content-types (extensible)
+  * code from vs-content-types (required)
+  * code.coding from vs-content-types (required)
   * insert rs-language-section-nested
 
 
@@ -197,15 +201,7 @@ Description: "Clinical Practice Guideline Recommendation"
   * section[ratings]
     * code 1..1
     * code = $cs-ebm-ig#ratings "Ratings"
-    * entry only Reference(RecommendationJustification) // bug: this results in the following ig publisher error, because this is a different profile compare to the EBM recommendation profile:
-    // Unable to generate snapshot @3 for http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation: 
-    // Profile Recommendation (http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation), 
-    // element http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation.Composition.section:recommendationSpecification.section.section.id. 
-    // Error generating snapshot: Same id 'Composition.section:recommendationSpecification.section.section.id' on multiple elements 
-    // Composition.section:recommendationSpecification.section.section.id/Composition.section:recommendationSpecification.section.section.id 
-    // in http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation
-
-
+    * entry only Reference(RecommendationJustification)
 
 
 Instance: RecommendationExample
