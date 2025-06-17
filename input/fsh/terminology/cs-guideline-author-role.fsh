@@ -3,33 +3,49 @@ Id: cs-guideline-author-role
 Title: "Guideline Author Role"
 Description: "CodeSystem defining roles for the author of the guideline."
 * insert rs-codesystem-meta
-* #leading "Leading Author" "The primary author of the guideline."
+// Federführend (Organisation oder Person)
+* #leading "Leading" "Main party responsible for the development of the guideline."
   * ^designation[+].language = #de
   * ^designation[=].value = "Federführend"
   * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
-  * ^definition.extension[$ext-translation].extension[content].valueString = "Der oder die federführende Autor*in oder Organisation."
-* #contributing "Contributing Author" "An author who contributed to the guideline."
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Federführende Organisation oder Person für die Leitlinie."
+* #contributing "Contributing" "Party involved in the development of the guideline."
   * ^designation[+].language = #de
   * ^designation[=].value = "Beteiligt"
   * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
-  * ^definition.extension[$ext-translation].extension[content].valueString = "Ein*e Autor*in, der oder die an der Leitlinie mitgewirkt hat."
-* #registrant "Registrant" "The organization that registered the guideline."
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Organisation oder Person, die an der Leitlinie mitgewirkt hat."
+* #registrant "Registrant" "Person responsible for registering the guideline in the registry."
   * ^designation[+].language = #de
   * ^designation[=].value = "Anmelder*in"
   * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
-  * ^definition.extension[$ext-translation].extension[content].valueString = "Die Organisation, die die Leitlinie angemeldet hat."
-* #technical-formatter "Technical Format Author" "The organization or person that created the technical format of the guideline." // #P2.3.1.5
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Die Person, die das Leitlinienprojekt im Register angemeldet hat."
+* #technical-editor "Technical Editor" "Responsible for preparing the technical or machine-readable format of the guideline."
   * ^designation[+].language = #de
-  * ^designation[=].value = "Technische*r Redakteur*in"
+  * ^designation[=].value = "Technische Redaktion"
   * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
-  * ^definition.extension[$ext-translation].extension[content].valueString = "Die Organisation oder Person, die das technische Format der Leitlinie erstellt hat."
-* #content-author "Content Author" "The author of the content of the guideline."
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Verantwortlich für die technische oder maschinenlesbare Formatierung der Leitlinie."
+* #content-author "Content Author" "Authored or co-authored the content of the guideline."
   * ^designation[+].language = #de
-  * ^designation[=].value = "Author"
+  * ^designation[=].value = "Inhaltliche*r Autor*in"
   * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
-  * ^definition.extension[$ext-translation].extension[content].valueString = "Der oder die Autor*in der Leitlinieninhalte."
-* #coding-author "Coding Author" "The author of the coding of the guideline."
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Autor*in der Inhalte der Leitlinie."
+* #coding-author "Coding Author" "Responsible for semantic encoding of guideline content using terminologies or ontologies."
   * ^designation[+].language = #de
-  * ^designation[=].value = "Kodier*in"
+  * ^designation[=].value = "Kodierer*in"
   * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
-  * ^definition.extension[$ext-translation].extension[content].valueString = "Person, die Leitlinieninhalte (bspw. mittels Terminologien und Ontologien) kodiert hat."
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Verantwortlich für die semantische Kodierung der Leitlinie mittels Terminologien oder Ontologien."
+* #moderator "Moderator" "Person moderating consensus-building sessions in guideline development."
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Moderator*in"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Moderiert den Konsensprozess während der Leitlinienentwicklung."
+* #method-advisor "Methodological Advisor" "Supports the development team with methodological expertise."
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Methodische*r Berater*in"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Bietet methodische Beratung zur Leitlinienentwicklung."
+* #evidence-analyst "Evidence Analyst" "Conducts or oversees evidence synthesis and appraisal."
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Evidenzaufbereitung"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Verantwortlich für die Recherche, Bewertung und Aufbereitung der Evidenz."

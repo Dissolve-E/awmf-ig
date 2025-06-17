@@ -23,7 +23,7 @@ Description: "CodeSystem representing the guideline classes according to the AWM
   * ^designation[=].value = "Evidenzbasierte Leitlinie"
   * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
   * ^definition.extension[$ext-translation].extension[content].valueString = "Systematische Recherche, Auswahl, Bewertung der Literatur"
-* #S2k "Consensus-based Guideline" "Representative body, structured consensus building"
+* #S2k "Consensus-based Guideline" "Representative panel, structured consensus building"
   * ^designation[+].language = #de
   * ^designation[=].value = "Konsensusbasierte Leitlinie"
   * ^definition.extension[$ext-translation].extension[lang].valueCode = #de

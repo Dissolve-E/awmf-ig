@@ -27,3 +27,8 @@ Description: "CodeSystem defining types of related artifacts that can be part of
   * #medical-society-page "Page of the Medical Society"
   * ^designation[+].language = #de
   * ^designation[=].value = "Seite der Medizinischen Fachgesellschaft"
+* #patient-information "Patient-Facing Information" "Supplementary material targeted at patients, derived from or related to the guideline."
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Patientenorientierte Information"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Zusätzliche Materialien, die sich an Patient*innen richten und auf der Leitlinie basieren oder mit ihr in Zusammenhang stehen."

@@ -38,3 +38,8 @@ Description: "CodeSystem defining possible intended audiences for a section"
   * ^designation[=].value = "Laie"
   * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
   * ^definition.extension[$ext-translation].extension[content].valueString = "Der Inhalt richtet sich an Laien."
+* #therapist "Therapist" "The content is intended for therapeutic healthcare professionals (e.g., physiotherapists, occupational therapists, speech therapists)."
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Therapeutisches Personal"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Der Inhalt richtet sich an therapeutisches Personal (z.B. Physio-, Ergo- oder Sprachtherapeut*innen)."
