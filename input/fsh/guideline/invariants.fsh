@@ -26,3 +26,14 @@ Expression: "author.all(
               .count() <= 1          /* each author may have 0 or 1 of those roles */
             )"
 Severity: #error
+
+Invariant: author-leading-contributing-organization
+Description: "Authors with role “leading” or “contributing” SHALL reference an Organization."
+Expression: "
+  author.where(
+    extension.where(
+      url = 'http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role'
+    ).value.coding.where(code = 'leading' or code = 'contributing').exists()
+  ).all(resolve().is(Organization))
+"
+Severity: #error
