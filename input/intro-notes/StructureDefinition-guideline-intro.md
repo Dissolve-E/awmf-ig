@@ -104,12 +104,21 @@ You can indicate that a guideline **replaces** a previous version or **is replac
   * targetReference = Reference(Guideline/021-001-new)
 ```
 
-These relationships ensure a clear lineage across updates and enable traceability in systems that aggregate or display guidelines. Optionally, additional context can be provided using extensions such as `classifier` or `label` to
+These relationships ensure a clear lineage across updates and enable traceability in systems that aggregate or display guidelines.
 
 
 ### Guideline Content 
 
 * Store assessment information from the AWMF's quality assurance process, together with provenance information for the AWMF
+
+
+
+### Notes
+
+- The attestation `time` can be used to reflect the official approval or publication date by the AWMF.
+- This information is primarily relevant to registry publishers and consumers needing metadata about guideline provenance and validation.
+
+
 
 * Cover all the guideline structured medatdata currently used by the AWMF, including various dates and publication status information 
 

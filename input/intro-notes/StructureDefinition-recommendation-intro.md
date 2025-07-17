@@ -25,7 +25,24 @@ The recommendation data model must be able to:
 
 * Allow deprecation 
 
-* Represent provenance information regarding previous versions of the guideline, e.g., after changes in an identifer 
+#### Represent provenance information regarding previous versions of the guideline, e.g., after changes in an identifer 
+
+To represent the relationship between recommendation versions, such as updates, replacements, or discontinued predecessors, the `relatesTo` element is used.
+
+You can indicate that a recommendation **replaces** a previous version or **is replaced by** a newer one using specific types and references:
+
+```
+* relatesTo[+]
+  * type = #replaces
+  * targetReference = Reference(Recommendation/021-001-old)
+
+* relatesTo[+]
+  * type = #replaced-with
+  * targetReference = Reference(Recommendation/021-001-new)
+```
+
+These relationships ensure a clear lineage across updates and enable traceability in systems that aggregate or display recommendation.
+
 
 
 ### Guideline Content 
