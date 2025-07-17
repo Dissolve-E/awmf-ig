@@ -60,9 +60,8 @@ Description: "Clinical Practice Guideline Recommendation"
 // add some more codes for the sections (not only the ones defined by the EBM IG)
 * section.code from vs-guideline-sections (extensible)
 
-* section[recommendationSpecification] // note: this is a slice defined in the EBM IG Profile and has a cardinality of 1..1 !!
-  * section[recommendationStatement]
-    * insert rs-language-section
+* section[recommendationStatement]
+  * insert rs-language-section
 
 // close the slicing for section and add @default section
 * section ^slicing.rules = #closed
@@ -71,6 +70,7 @@ Description: "Clinical Practice Guideline Recommendation"
   and consensusProtocol 0..*
   and patientVersion 0..*
   and otherContent 0..*
+  and outcome 0..1
   and @default 0..* 
 * section[@default]
 // fixme: actually, the default slice must not fix the discriminator, but as of 25-03-06 the validator is not able to handle default slices. therefore, we fix the discriminator here.
@@ -78,6 +78,7 @@ Description: "Clinical Practice Guideline Recommendation"
   * code.coding 1..1
   * code.coding = cs-guideline-sections#default-section
   * insert rs-language-section-nested
+
 * section[text]
   * code 1..1
   * code.coding 1..1
@@ -139,69 +140,54 @@ Description: "Clinical Practice Guideline Recommendation"
   * code = $cs-ebm-ig#considerations "Considerations"
 
 
-* section[recommendationSpecification]
-  * section ^slicing.discriminator.type = #value
-  * section ^slicing.discriminator.path = "code.coding"
-  * section ^slicing.rules = #open
+* section[recommendationStatement]
   * code 1..1
-  * code = $cs-ebm-ig#recommendation-specification "Recommendation Specification"
-  * section contains 
-    intervention 0..1
-    and comparator 0..1
-    and outcome 0..1
+  * code = $cs-ebm-ig#recommendation-statement "Recommendation Statement"
+  * code.coding = $cs-ebm-ig#recommendation-statement "Recommendation Statement"
 
-  // disable action and oppositeAction, as we are using intervention and comparator slices
-  * section[action] 0..0
-  * section[oppositeAction] 0..0
+* section[population] // #P2.3.2.1
+  * code 1..1
+  * code = $cs-ebm-ig#population "Population"
+  * code.coding = $cs-ebm-ig#population "Population"
+  * insert rs-language-section
+  * section[language]
+    * extension contains ext-section-keyword named keyword 0..* // #P2.3.2.8
+    * entry only Reference(EvidenceVariable or Group)  // #P2.3.2.9 // actually, EvidenceVariable is only for R5 while group is for R6    
 
-  * section[recommendationStatement]
-    * code 1..1
-    * code = $cs-ebm-ig#recommendation-statement "Recommendation Statement"
-    * code.coding = $cs-ebm-ig#recommendation-statement "Recommendation Statement"
+* section[action] // #P2.3.2.1
+  * code 1..1
+  * code = $cs-ebm-ig#action "Action"
+  * insert rs-language-section
+  * section[language]
+    * extension contains ext-section-keyword named keyword 0..*
+    * entry only Reference(PlanDefinition) // #P2.3.2.6, #P2.3.2.9
 
-  * section[population] // #P2.3.2.1
-    * code 1..1
-    * code = $cs-ebm-ig#population "Population"
-    * code.coding = $cs-ebm-ig#population "Population"
-    * insert rs-language-section
-    * section[language]
-      * extension contains ext-section-keyword named keyword 0..* // #P2.3.2.8
-      * entry only Reference(EvidenceVariable or Group)  // #P2.3.2.9 // actually, EvidenceVariable is only for R5 while group is for R6    
+// used to specify actions that are unpreferred in comparison to the intervention(=action), e.g. 
+// in a comparison of two drugs, the intervention is the preferred drug and the comparator is the unpreferred drug
+// ("in case X, drug A should be preferred over drug B")
+* section[oppositeAction] // #P2.3.2.1
+  * code 1..1
+  * code = $cs-ebm-ig#opposite-action "Opposite Action"
+  * insert rs-language-section
+  * section[language]
+    * extension contains ext-section-keyword named keyword 0..*
+    * entry only Reference(PlanDefinition) // #P2.3.2.9
 
-  * section[intervention] // #P2.3.2.1
-    * code 1..1
-    * code = $cs-ebm-ig#intervention "Intervention"
-    // * code.coding 1..1
-    // * code.coding = $cs-ebm-ig#intervention "Intervention"
-    * insert rs-language-section
-    * section[language]
-      * extension contains ext-section-keyword named keyword 0..*
-      * entry only Reference(PlanDefinition) // #P2.3.2.6, #P2.3.2.9
+// used to specify clinical outcomes that are relevant for the recommendation (e.g. mortality, morbidity, quality of life, ...)
+* section[outcome] // #P2.3.2.1
+  * code 1..1
+  * code = $cs-ebm-ig#outcome "Outcome"
+  // * code.coding 1..1
+  // * code.coding = $cs-ebm-ig#outcome "Outcome"
+  * insert rs-language-section
+  * section[language]
+    * extension contains ext-section-keyword named keyword 0..*
+    * entry only Reference(EvidenceVariable or Group) // actually, EvidenceVariable is only for R5 while group is for R6
 
-  * section[comparator] // #P2.3.2.1
-    * code 1..1
-    * code = $cs-ebm-ig#comparator "Comparator"
-    // * code.coding 1..1
-    // * code.coding = $cs-ebm-ig#comparator "Comparator"
-    * insert rs-language-section
-    * section[language]
-      * extension contains ext-section-keyword named keyword 0..*
-      * entry only Reference(PlanDefinition) // #P2.3.2.9
-
-  * section[outcome] // #P2.3.2.1
-    * code 1..1
-    * code = $cs-ebm-ig#outcome "Outcome"
-    // * code.coding 1..1
-    // * code.coding = $cs-ebm-ig#outcome "Outcome"
-    * insert rs-language-section
-    * section[language]
-      * extension contains ext-section-keyword named keyword 0..*
-      * entry only Reference(EvidenceVariable or Group) // actually, EvidenceVariable is only for R5 while group is for R6
-
-  * section[ratings]
-    * code 1..1
-    * code = $cs-ebm-ig#ratings "Ratings"
-    * entry only Reference(RecommendationJustification)
+* section[ratings]
+  * code 1..1
+  * code = $cs-ebm-ig#ratings "Ratings"
+  * entry only Reference(RecommendationJustification)
 
 
 Instance: RecommendationExample
@@ -223,11 +209,10 @@ Description: "An example of a recommendation."
     * extension[language].valueCode = #de
     * insert narrative([[Example Recommendation]])
   * extension[intendedAudience].valueCodeableConcept = cs-intended-audience#physician
-* section[recommendationSpecification]
-  * section[recommendationStatement]
-    * section[language]
-      * extension[language].valueCode = #de
-      * insert narrative([[Bei Patienten mit Krankheit A soll Medikament B statt Medikament C gegeben werden. Patienten mit Krankheit A, die auch noch Krankheit D haben, darf keinesfalls Medikament B gegeben, sondern müssen Medikament C erhalten.]])
+* section[recommendationStatement]
+  * section[language]
+    * extension[language].valueCode = #de
+    * insert narrative([[Bei Patienten mit Krankheit A soll Medikament B statt Medikament C gegeben werden. Patienten mit Krankheit A, die auch noch Krankheit D haben, darf keinesfalls Medikament B gegeben, sondern müssen Medikament C erhalten.]])
 
 
 

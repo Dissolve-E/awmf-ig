@@ -17,12 +17,9 @@ Description: "A structured assessment of the certainty of evidence for a specifi
 * content ^slicing.discriminator.path = "type"
 * content ^slicing.rules = #open
 * content contains 
-  ratingSystem 1..1
-  and levelOfEvidence 0..1
+ levelOfEvidence 0..1
 
 * content[ratingSystem]
-  * type 1..1
-  * type = $cs-ebm-ig#rating-system "Rating System"
   * classifier 1..1
   * classifier from vs-evidence-rating-system (extensible)
 

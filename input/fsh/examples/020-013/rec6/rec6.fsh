@@ -18,11 +18,10 @@ mit Verdacht auf nosokomiale Pneumonie empfohlen?"
 
 * category[synthesisType] = cs-recommendation-synthesis-type#evidence-based "Evidence-based"
 
-* section[recommendationSpecification]
-  * section[recommendationStatement]
-    * section[language]
-      * extension[language].valueCode = #de
-      * insert narrative([[Der regelhafte Einsatz von bakteriellen Multiplex-PCR-Systemen bei Patienten mit Verdacht 
+* section[recommendationStatement]
+  * section[language]
+    * extension[language].valueCode = #de
+    * insert narrative([[Der regelhafte Einsatz von bakteriellen Multiplex-PCR-Systemen bei Patienten mit Verdacht 
 auf eine nosokomiale Pneumonie kann nicht empfohlen werden.]])
 
 * section[text]

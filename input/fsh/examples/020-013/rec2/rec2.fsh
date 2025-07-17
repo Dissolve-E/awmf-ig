@@ -17,10 +17,10 @@ Description: "Wie wird eine HAP klinisch diagnostiziert und welche Differenziald
 * relatesTo[partOf]
   * targetCanonical = Canonical(NosokomialePneumonie|3.0)
 
-* section[recommendationSpecification]
-  * section[recommendationStatement]
-    * entry[+] = Reference(RecommendationHAPDiagnosis-A)
-    * entry[+] = Reference(RecommendationHAPDiagnosis-B)
+
+* section[recommendationStatement]
+  * entry[+] = Reference(RecommendationHAPDiagnosis-A)
+  * entry[+] = Reference(RecommendationHAPDiagnosis-B)
 
 * section[text]
   * code = $cs-ebm-ig#text "Text"

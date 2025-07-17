@@ -25,9 +25,7 @@ Description: "Clinical Practice Guideline"
 * status ^definition = "Workflow status of the guideline from registration to publication or deprecation. Please note that the ValueSet 'http://hl7.org/fhir/ValueSet/composition-status' is required; We therefore created the ConceptMap 'FHIRStatusToAWMFStatus' to store the mapping to the AWMF status values."
 
 * extension contains 
-  ext-artifact-extended-contact named contact 0..* MS
-  and ext-publication-date named publicationDate 0..1 MS
-  and ext-first-publication-date named firstPublicationDate 0..1 MS
+  ext-first-publication-date named firstPublicationDate 0..1 MS
   and ext-submission-date named submissionDate 0..1 MS
   and ext-consultation-period named consultationPeriod 0..1 MS
   and ext-planned-completion-date named plannedCompletionDate 0..1 MS
@@ -36,28 +34,28 @@ Description: "Clinical Practice Guideline"
 * extension ^slicing.discriminator[1].type = #value
 * extension ^slicing.discriminator[=].path = "value.ofType(ExtendedContactDetail).purpose"
 
-* extension[contact] contains 
+* extension[extendedContactDetail] contains 
   registrant 0..1 MS 
   and coordinator 0..* MS 
   and mainContact 0..1 MS
 
-* extension[contact].valueExtendedContactDetail
+* extension[extendedContactDetail].valueExtendedContactDetail
   * purpose 1..1
-* extension[contact][registrant].valueExtendedContactDetail
+* extension[extendedContactDetail][registrant].valueExtendedContactDetail
   * purpose = cs-contact-point#registrant
   * purpose 1..1
   * name 1..1
   * telecom 1..*
     * value 1..1
   * address 0..1
-* extension[contact][coordinator].valueExtendedContactDetail
+* extension[extendedContactDetail][coordinator].valueExtendedContactDetail
   * purpose = cs-contact-point#coordinator
   * purpose 1..1
   * name 1..1
   * telecom 1..*
     * value 1..1
   * address 0..1
-* extension[contact][mainContact].valueExtendedContactDetail
+* extension[extendedContactDetail][mainContact].valueExtendedContactDetail
   * purpose = cs-contact-point#contact
   * purpose 1..1
   * name 1..1
@@ -142,9 +140,7 @@ Description: "Clinical Practice Guideline"
 * version obeys inv-version-major-minor // #P2.2.1, #P2.2.8
 * extension[versionAlgorithm].valueCoding = cs-awmf#major-minor "Major-Minor Versioning"
 
-* relatesTo.extension contains 
-  ext-relates-to-classifier named classifier 0..*
-  and ext-relates-to-label named label 0..1
+* relatesTo.extension contains  ext-relates-to-label named label 0..1
 * relatesTo ^slicing.discriminator.type = #value
 * relatesTo ^slicing.discriminator.path = "type"
 * relatesTo ^slicing.rules = #open

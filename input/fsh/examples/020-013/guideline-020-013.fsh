@@ -86,7 +86,7 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
 
 * category[awmfGuidelineClass] = cs-awmf-guideline-class#S3 "Evidence- and consensus-based guideline"
 
-* extension[contact][mainContact].valueExtendedContactDetail
+* extension[extendedContactDetail][mainContact].valueExtendedContactDetail
   * name.text = "PD Dr. med. Jessica Rademacher"
   * telecom[+]
     * system = #email
@@ -103,7 +103,7 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
     * line[+] = "Medizinische Hochschule Hannover"
     * postalCode = "30625"
     * city = "Hannover"
-* extension[contact][coordinator][+].valueExtendedContactDetail
+* extension[extendedContactDetail][coordinator][+].valueExtendedContactDetail
   * name.text = "PD Dr. med. Jessica Rademacher"
   * telecom[+]
     * system = #email

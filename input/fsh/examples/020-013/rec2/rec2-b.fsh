@@ -21,11 +21,10 @@ Description: "Wie wird eine HAP klinisch diagnostiziert und welche Differenziald
 * relatesTo[partOf][+]
   * targetCanonical = Canonical(RecommendationHAPDiagnosis|3.0)
 
-* section[recommendationSpecification]
-  * section[recommendationStatement]
-    * section[language]
-      * extension[language].valueCode = #de
-      * insert narrative([[Differenzialdiagnostisch sollten u.a. Atelektasen (Sekretverlegung),
+* section[recommendationStatement]
+  * section[language]
+    * extension[language].valueCode = #de
+    * insert narrative([[Differenzialdiagnostisch sollten u.a. Atelektasen (Sekretverlegung),
 Herzinsuffizienz/Überwässerung, Lungenarterienembolien, alveoläre Hämorrhagie, interstitielle
 Lungenerkrankungen wie eine organisierende Pneumonie (OP) und das ARDS abgegrenzt
 werden.]])
