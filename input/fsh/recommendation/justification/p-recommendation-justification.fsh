@@ -68,7 +68,7 @@ Description: "A structured assessment of the evidence and consensus that underpi
   * type = $cs-ebm-ig#SearchStrategy "SearchStrategy"
   * relatesTo 1..1
     * targetReference 1..1
-    * targetReference only Reference(SearchStrategy)
+    * targetReference only Reference(SystematicReview)
 
 * workflowStatus 1..1
 * workflowStatus = #applied
