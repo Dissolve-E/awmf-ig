@@ -4,6 +4,8 @@
 # The script requires two arguments: the target URL and the version of the IG.
 # Depending on whether "-snapshot" is part of the version, the script will run an CI build or a release build.
 
+set -euo pipefail               # ← abort on any non-zero exit
+
 if [ $# -eq 0 ]; then
   echo "Error: Two arguments are required."
   echo "Usage: $0 <targetUrl> <version>"
