@@ -2,6 +2,7 @@ Alias: $ebm-guideline = http://hl7.org/fhir/uv/ebm/StructureDefinition/guideline
 Alias: $ebm-recommendation = http://hl7.org/fhir/uv/ebm/StructureDefinition/recommendation
 Alias: $ebm-recommendation-justification = http://hl7.org/fhir/uv/ebm/StructureDefinition/recommendation-justification
 Alias: $ebm-certainty-of-evidence = http://hl7.org/fhir/uv/ebm/StructureDefinition/certainty-of-evidence
+Alias: $ebm-guideline-registry-record = http://hl7.org/fhir/uv/ebm/StructureDefinition/guideline-registry-record
 
 Alias: $cs-version-algorithm = http://hl7.org/fhir/version-algorithm
 
@@ -9,6 +10,7 @@ Alias: $ebm-guideline = http://hl7.org/fhir/uv/ebm/StructureDefinition/guideline
 Alias: $ebm-recommendation = http://hl7.org/fhir/uv/ebm/StructureDefinition/recommendation
 
 Alias: $ext-annotationType = http://hl7.org/fhir/StructureDefinition/annotationType
+Alias: $ext-extended-contact-detail = http://hl7.org/fhir/StructureDefinition/artifact-extended-contact-detail
 
 Alias: $cs-composition-attestation-mode = http://hl7.org/fhir/composition-attestation-mode
 Alias: $cs-list-empty-reason = http://terminology.hl7.org/CodeSystem/list-empty-reason

@@ -24,38 +24,52 @@ Description: "Clinical Practice Guideline"
 * status 1..1 // used for: anmeldung, konsultationsfassung, amendment, final // #P2.2.9
 * status ^definition = "Workflow status of the guideline from registration to publication or deprecation. Please note that the ValueSet 'http://hl7.org/fhir/ValueSet/composition-status' is required; We therefore created the ConceptMap 'FHIRStatusToAWMFStatus' to store the mapping to the AWMF status values."
 
+
+
 * extension contains 
   ext-first-publication-date named firstPublicationDate 0..1 MS
   and ext-submission-date named submissionDate 0..1 MS
   and ext-consultation-period named consultationPeriod 0..1 MS
   and ext-planned-completion-date named plannedCompletionDate 0..1 MS
   and ext-registration-date named registrationDate 0..1 MS
+// NOTE: We avoid re-slicing the existing 'extendedContactDetail' slice from the EBM IG here,
+// as the IG Publisher currently throws a "named items are out of order in the slice" error
+// when attempting to do so. 
+//
+// As a workaround, we redefine the 'extendedContactDetail' extension under a new slice name
+// ('extContactDetail') and apply slicing there. This avoids the snapshot generation error
+// and preserves the intended semantics.
+//
+// It's unclear whether this restriction is intended behavior or a limitation in the IG Publisher.
+  and $ext-extended-contact-detail named extContactDetail 0..* MS
+
+
 
 * extension ^slicing.discriminator[1].type = #value
 * extension ^slicing.discriminator[=].path = "value.ofType(ExtendedContactDetail).purpose"
 
-* extension[extendedContactDetail] contains 
+* extension[extContactDetail] contains 
   registrant 0..1 MS 
   and coordinator 0..* MS 
   and mainContact 0..1 MS
 
-* extension[extendedContactDetail].valueExtendedContactDetail
+* extension[extContactDetail].valueExtendedContactDetail
   * purpose 1..1
-* extension[extendedContactDetail][registrant].valueExtendedContactDetail
+* extension[extContactDetail][registrant].valueExtendedContactDetail
   * purpose = cs-contact-point#registrant
   * purpose 1..1
   * name 1..1
   * telecom 1..*
     * value 1..1
   * address 0..1
-* extension[extendedContactDetail][coordinator].valueExtendedContactDetail
+* extension[extContactDetail][coordinator].valueExtendedContactDetail
   * purpose = cs-contact-point#coordinator
   * purpose 1..1
   * name 1..1
   * telecom 1..*
     * value 1..1
   * address 0..1
-* extension[extendedContactDetail][mainContact].valueExtendedContactDetail
+* extension[extContactDetail][mainContact].valueExtendedContactDetail
   * purpose = cs-contact-point#contact
   * purpose 1..1
   * name 1..1
