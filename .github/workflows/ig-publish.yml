@@ -71,3 +71,21 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./output
           force_orphan: true
+
+
+      # ───────────  Upload to AWMF host  ───────────
+      - name: Prepare SSH key
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.AWMF_IG_SSH_KEY }}" > /tmp/awmf_ig_publisher.id_ed25519
+          chmod 600 /tmp/awmf_ig_publisher.id_ed25519
+          # (safer than StrictHostKeyChecking=no)
+          ssh-keyscan -p 221 register.awmf.org >> ~/.ssh/known_hosts
+
+      - name: Rsync output to register.awmf.org
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+        run: |
+          rsync -av --delete \
+                -e "ssh -p 221 -i /tmp/awmf_ig_publisher.id_ed25519" \
+                ./output/ awmf_ig_publisher@register.awmf.org:./awmf.ig/
