@@ -1,0 +1,116 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-version-status> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cs-recommendation-version-status"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-recommendation-version-status</b></p><a name=\"cs-recommendation-version-status\"> </a><a name=\"hccs-recommendation-version-status\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-version-status</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">added<a name=\"cs-recommendation-version-status-added\"> </a></td><td>Added</td><td>Recommendation was newly added in this version of the guideline</td><td>Hinzugefügt</td></tr><tr><td style=\"white-space:nowrap\">updated<a name=\"cs-recommendation-version-status-updated\"> </a></td><td>Updated</td><td>Recommendation was modified or updated</td><td>Aktualisiert</td></tr><tr><td style=\"white-space:nowrap\">reaffirmed<a name=\"cs-recommendation-version-status-reaffirmed\"> </a></td><td>Reaffirmed</td><td>Recommendation was reviewed and explicitly confirmed to still be valid</td><td>Bestätigt.</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-version-status"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "RecommendationVersionStatusCS"] ; # 
+  fhir:title [ fhir:v "Recommendation Version Status Code System"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-08-06T18:15:04+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "AWMF e.V."] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AWMF e.V." ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.awmf.org" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "CodeSystem defining values indicating how a recommendation relates to a new version of the guideline"] ; # 
+  fhir:caseSensitive [ fhir:v false] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "3"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "added" ] ;
+     fhir:display [ fhir:v "Added" ] ;
+     fhir:definition [
+       fhir:v "Recommendation was newly added in this version of the guideline" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [ fhir:v "lang"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [ fhir:v "content"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:string ;
+             fhir:v "Diese Empfehlung ist in dieser Version der Leitlinie neu dazugekommen."
+           ]
+         ] ) ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Hinzugefügt" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "updated" ] ;
+     fhir:display [ fhir:v "Updated" ] ;
+     fhir:definition [
+       fhir:v "Recommendation was modified or updated" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [ fhir:v "lang"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [ fhir:v "content"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:string ;
+             fhir:v "Diese Empfehlung wurde geändert oder aktualisiert."
+           ]
+         ] ) ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Aktualisiert" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "reaffirmed" ] ;
+     fhir:display [ fhir:v "Reaffirmed" ] ;
+     fhir:definition [
+       fhir:v "Recommendation was reviewed and explicitly confirmed to still be valid" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [ fhir:v "lang"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [ fhir:v "content"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:string ;
+             fhir:v "Diese Empfehlung wurde geprüft und ihre Gültigkeit explizit bestätigt."
+           ]
+         ] ) ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Bestätigt." ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

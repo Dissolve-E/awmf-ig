@@ -1,0 +1,28 @@
+{
+  "resourceType" : "Organization",
+  "id" : "AWMFMemberOrganizationExample",
+  "meta" : {
+    "profile" : ["http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">AWMF Member Organization Example</div>"
+  },
+  "identifier" : [{
+    "system" : "http://fhir.awmf.org/association",
+    "value" : "-1"
+  }],
+  "type" : [{
+    "coding" : [{
+      "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+      "code" : "awmf-member-organization"
+    }]
+  }],
+  "name" : "Example AWMF Member Organization",
+  "contact" : [{
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.example.org"
+    }]
+  }]
+}

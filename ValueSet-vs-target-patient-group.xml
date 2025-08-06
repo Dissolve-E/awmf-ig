@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="vs-target-patient-group"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet vs-target-patient-group</b></p><a name="vs-target-patient-group"> </a><a name="hcvs-target-patient-group"> </a><ul><li>Include all codes defined in <a href="CodeSystem-cs-target-patient-group.html"><code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-target-patient-group</code></a></li></ul></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/ValueSet/vs-target-patient-group"/>
+  <version value="0.1.0"/>
+  <name value="TargetPatientGroupVS"/>
+  <title value="Target Patient Group"/>
+  <status value="draft"/>
+  <date value="2025-08-06T18:15:04+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="ValueSet listing patient population categories for guidelines, such as adults and children/adolescents."/>
+  <compose>
+    <include>
+      <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-target-patient-group"/>
+    </include>
+  </compose>
+</ValueSet>

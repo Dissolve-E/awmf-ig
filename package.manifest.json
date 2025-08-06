@@ -1,0 +1,6 @@
+{
+  "version" : "0.1.0",
+  "fhirVersion" : ["6.0.0-ballot3"],
+  "date" : "20250806181504",
+  "name" : "awmf.ig"
+}

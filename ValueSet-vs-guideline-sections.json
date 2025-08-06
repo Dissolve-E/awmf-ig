@@ -1,0 +1,31 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "vs-guideline-sections",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet vs-guideline-sections</b></p><a name=\"vs-guideline-sections\"> </a><a name=\"hcvs-guideline-sections\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <a href=\"CodeSystem-cs-guideline-sections.html\"><code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections</code></a></li><li>Include all codes defined in <a href=\"https://build.fhir.org/ig/HL7/ebm/CodeSystem-179423.html\"><code>https://fevir.net/resources/CodeSystem/179423</code></a></li></ul></div>"
+  },
+  "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-guideline-sections",
+  "version" : "0.1.0",
+  "name" : "GuidelineSectionsVS",
+  "title" : "Guideline Sections",
+  "status" : "draft",
+  "date" : "2025-08-06T18:15:04+00:00",
+  "publisher" : "AWMF e.V.",
+  "contact" : [{
+    "name" : "AWMF e.V.",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org"
+    }]
+  }],
+  "description" : "ValueSet listing values to use to define guideline sections",
+  "compose" : {
+    "include" : [{
+      "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"
+    },
+    {
+      "system" : "https://fevir.net/resources/CodeSystem/179423"
+    }]
+  }
+}

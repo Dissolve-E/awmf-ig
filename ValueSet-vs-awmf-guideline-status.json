@@ -1,0 +1,28 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "vs-awmf-guideline-status",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet vs-awmf-guideline-status</b></p><a name=\"vs-awmf-guideline-status\"> </a><a name=\"hcvs-awmf-guideline-status\"> </a><ul><li>Include all codes defined in <a href=\"CodeSystem-cs-awmf-guideline-status.html\"><code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-status</code></a></li></ul></div>"
+  },
+  "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-awmf-guideline-status",
+  "version" : "0.1.0",
+  "name" : "AWMFGuidelineStatusVS",
+  "title" : "AWMF Guideline Status",
+  "status" : "draft",
+  "date" : "2025-08-06T18:15:04+00:00",
+  "publisher" : "AWMF e.V.",
+  "contact" : [{
+    "name" : "AWMF e.V.",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org"
+    }]
+  }],
+  "description" : "ValueSet listing values to define the guideline status according to the AWMF.",
+  "compose" : {
+    "include" : [{
+      "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-status"
+    }]
+  }
+}

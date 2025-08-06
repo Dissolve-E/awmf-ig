@@ -1,0 +1,82 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-rating-system> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cs-evidence-rating-system"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-evidence-rating-system</b></p><a name=\"cs-evidence-rating-system\"> </a><a name=\"hccs-evidence-rating-system\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-rating-system</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">GRADE<a name=\"cs-evidence-rating-system-GRADE\"> </a></td><td>GRADE</td><td>Grading of Recommendations Assessment, Development and Evaluation</td></tr><tr><td style=\"white-space:nowrap\">OCEBM2011<a name=\"cs-evidence-rating-system-OCEBM2011\"> </a></td><td>Oxford 2011 (OCEBM)</td><td>Oxford Centre for Evidence-Based Medicine 2011 Levels of Evidence</td></tr><tr><td style=\"white-space:nowrap\">AMSTAR2<a name=\"cs-evidence-rating-system-AMSTAR2\"> </a></td><td>AMSTAR 2</td><td>A Measurement Tool to Assess Systematic Reviews – version 2</td></tr><tr><td style=\"white-space:nowrap\">AGREEII<a name=\"cs-evidence-rating-system-AGREEII\"> </a></td><td>AGREE II</td><td>Appraisal of Guidelines for Research and Evaluation II</td></tr><tr><td style=\"white-space:nowrap\">CochraneRoB<a name=\"cs-evidence-rating-system-CochraneRoB\"> </a></td><td>Cochrane RoB</td><td>Cochrane Risk of Bias Tool for randomized trials</td></tr><tr><td style=\"white-space:nowrap\">ROBIS<a name=\"cs-evidence-rating-system-ROBIS\"> </a></td><td>ROBIS</td><td>Risk of Bias in Systematic Reviews</td></tr><tr><td style=\"white-space:nowrap\">QUADAS2<a name=\"cs-evidence-rating-system-QUADAS2\"> </a></td><td>QUADAS-2</td><td>Quality Assessment of Diagnostic Accuracy Studies – version 2</td></tr><tr><td style=\"white-space:nowrap\">NewcastleOttawa<a name=\"cs-evidence-rating-system-NewcastleOttawa\"> </a></td><td>Newcastle-Ottawa Scale</td><td>For assessing quality of nonrandomized studies (case-control and cohort)</td></tr><tr><td style=\"white-space:nowrap\">CASP<a name=\"cs-evidence-rating-system-CASP\"> </a></td><td>CASP</td><td>Critical Appraisal Skills Programme tools</td></tr><tr><td style=\"white-space:nowrap\">SIGN<a name=\"cs-evidence-rating-system-SIGN\"> </a></td><td>SIGN</td><td>Scottish Intercollegiate Guidelines Network grading system</td></tr><tr><td style=\"white-space:nowrap\">AWMF<a name=\"cs-evidence-rating-system-AWMF\"> </a></td><td>AWMF</td><td>Association of the Scientific Medical Societies in Germany</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-rating-system"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "EvidenceRatingSystemCS"] ; # 
+  fhir:title [ fhir:v "Evidence Rating System Code System"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-08-06T18:15:04+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "AWMF e.V."] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AWMF e.V." ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.awmf.org" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "CodeSystem for identifying evidence rating and appraisal frameworks used in systematic reviews, guideline development, and clinical decision support."] ; # 
+  fhir:caseSensitive [ fhir:v false] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "11"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "GRADE" ] ;
+     fhir:display [ fhir:v "GRADE" ] ;
+     fhir:definition [ fhir:v "Grading of Recommendations Assessment, Development and Evaluation" ]
+  ] [
+     fhir:code [ fhir:v "OCEBM2011" ] ;
+     fhir:display [ fhir:v "Oxford 2011 (OCEBM)" ] ;
+     fhir:definition [ fhir:v "Oxford Centre for Evidence-Based Medicine 2011 Levels of Evidence" ]
+  ] [
+     fhir:code [ fhir:v "AMSTAR2" ] ;
+     fhir:display [ fhir:v "AMSTAR 2" ] ;
+     fhir:definition [ fhir:v "A Measurement Tool to Assess Systematic Reviews – version 2" ]
+  ] [
+     fhir:code [ fhir:v "AGREEII" ] ;
+     fhir:display [ fhir:v "AGREE II" ] ;
+     fhir:definition [ fhir:v "Appraisal of Guidelines for Research and Evaluation II" ]
+  ] [
+     fhir:code [ fhir:v "CochraneRoB" ] ;
+     fhir:display [ fhir:v "Cochrane RoB" ] ;
+     fhir:definition [ fhir:v "Cochrane Risk of Bias Tool for randomized trials" ]
+  ] [
+     fhir:code [ fhir:v "ROBIS" ] ;
+     fhir:display [ fhir:v "ROBIS" ] ;
+     fhir:definition [ fhir:v "Risk of Bias in Systematic Reviews" ]
+  ] [
+     fhir:code [ fhir:v "QUADAS2" ] ;
+     fhir:display [ fhir:v "QUADAS-2" ] ;
+     fhir:definition [ fhir:v "Quality Assessment of Diagnostic Accuracy Studies – version 2" ]
+  ] [
+     fhir:code [ fhir:v "NewcastleOttawa" ] ;
+     fhir:display [ fhir:v "Newcastle-Ottawa Scale" ] ;
+     fhir:definition [ fhir:v "For assessing quality of nonrandomized studies (case-control and cohort)" ]
+  ] [
+     fhir:code [ fhir:v "CASP" ] ;
+     fhir:display [ fhir:v "CASP" ] ;
+     fhir:definition [ fhir:v "Critical Appraisal Skills Programme tools" ]
+  ] [
+     fhir:code [ fhir:v "SIGN" ] ;
+     fhir:display [ fhir:v "SIGN" ] ;
+     fhir:definition [ fhir:v "Scottish Intercollegiate Guidelines Network grading system" ]
+  ] [
+     fhir:code [ fhir:v "AWMF" ] ;
+     fhir:display [ fhir:v "AWMF" ] ;
+     fhir:definition [ fhir:v "Association of the Scientific Medical Societies in Germany" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

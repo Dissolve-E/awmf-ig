@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DocumentReference xmlns="http://hl7.org/fhir">
+  <id value="guideline-attachment-example"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-attachment"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Guideline Attachment Example</div>
+  </text>
+  <status value="current"/>
+  <type>
+    <coding>
+      <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+      <code value="slide-deck"/>
+    </coding>
+  </type>
+  <content>
+    <attachment>
+      <contentType value="application/pdf"/>
+      <language value="en"/>
+      <title value="Slide Deck"/>
+    </attachment>
+  </content>
+</DocumentReference>

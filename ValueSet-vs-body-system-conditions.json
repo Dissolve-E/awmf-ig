@@ -1,0 +1,28 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "vs-body-system-conditions",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet vs-body-system-conditions</b></p><a name=\"vs-body-system-conditions\"> </a><a name=\"hcvs-body-system-conditions\"> </a><ul><li>Include all codes defined in <a href=\"CodeSystem-cs-body-systems-conditions.html\"><code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-body-systems-conditions</code></a></li></ul></div>"
+  },
+  "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-body-system-conditions",
+  "version" : "0.1.0",
+  "name" : "BodySystemConditionsVS",
+  "title" : "Body System Conditions",
+  "status" : "draft",
+  "date" : "2025-08-06T18:15:04+00:00",
+  "publisher" : "AWMF e.V.",
+  "contact" : [{
+    "name" : "AWMF e.V.",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org"
+    }]
+  }],
+  "description" : "ValueSet listing various body system conditions",
+  "compose" : {
+    "include" : [{
+      "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-body-systems-conditions"
+    }]
+  }
+}

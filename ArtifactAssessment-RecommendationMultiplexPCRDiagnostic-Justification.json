@@ -1,0 +1,131 @@
+{
+  "resourceType" : "ArtifactAssessment",
+  "id" : "RecommendationMultiplexPCRDiagnostic-Justification",
+  "meta" : {
+    "profile" : ["http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification-awmf"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Justification for Recommendation Multiplex-PCR-Diagnostik</div>"
+  },
+  "artifactReference" : {
+    "reference" : "Composition/RecommendationMultiplexPCRDiagnostic"
+  },
+  "content" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "https://fevir.net/resources/CodeSystem/179423",
+        "code" : "recommendation-rating",
+        "display" : "Recommendation Rating"
+      }]
+    },
+    "component" : [{
+      "type" : {
+        "coding" : [{
+          "system" : "https://fevir.net/resources/CodeSystem/179423",
+          "code" : "strength-of-recommendation",
+          "display" : "Strength of Recommendation"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-strength-awmf",
+          "code" : "0",
+          "display" : "Open Recommendation"
+        }]
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "https://fevir.net/resources/CodeSystem/179423",
+          "code" : "direction-of-recommendation",
+          "display" : "Direction of Recommendation"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-recommendation-direction-cs",
+          "code" : "against",
+          "display" : "Against"
+        }]
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+          "code" : "level-of-consensus"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-level-of-consensus",
+          "code" : "strong-consensus",
+          "display" : "Strong consensus"
+        }]
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "https://fevir.net/resources/CodeSystem/179423",
+          "code" : "rating-system",
+          "display" : "Rating System"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-rating-system",
+          "code" : "AWMF"
+        }]
+      }]
+    }]
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "https://fevir.net/resources/CodeSystem/179423",
+        "code" : "evidence",
+        "display" : "Evidence"
+      }]
+    },
+    "relatesTo" : [{
+      "type" : "justification",
+      "targetReference" : {
+        "reference" : "ArtifactAssessment/CoE-MultiplexPCRDiagnostic-Mortality"
+      }
+    }]
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "https://fevir.net/resources/CodeSystem/179423",
+        "code" : "evidence",
+        "display" : "Evidence"
+      }]
+    },
+    "relatesTo" : [{
+      "type" : "justification",
+      "targetReference" : {
+        "reference" : "ArtifactAssessment/CoE-MultiplexPCRDiagnostic-AntibioticDays"
+      }
+    }]
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "https://fevir.net/resources/CodeSystem/179423",
+        "code" : "evidence",
+        "display" : "Evidence"
+      }]
+    },
+    "relatesTo" : [{
+      "type" : "justification",
+      "targetReference" : {
+        "reference" : "ArtifactAssessment/CoE-MultiplexPCRDiagnostic-TimeToDeescalation"
+      }
+    }]
+  }],
+  "workflowStatus" : "applied"
+}

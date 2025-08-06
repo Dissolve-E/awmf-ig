@@ -1,0 +1,82 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "cs-evidence-rating-system",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-evidence-rating-system</b></p><a name=\"cs-evidence-rating-system\"> </a><a name=\"hccs-evidence-rating-system\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-rating-system</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">GRADE<a name=\"cs-evidence-rating-system-GRADE\"> </a></td><td>GRADE</td><td>Grading of Recommendations Assessment, Development and Evaluation</td></tr><tr><td style=\"white-space:nowrap\">OCEBM2011<a name=\"cs-evidence-rating-system-OCEBM2011\"> </a></td><td>Oxford 2011 (OCEBM)</td><td>Oxford Centre for Evidence-Based Medicine 2011 Levels of Evidence</td></tr><tr><td style=\"white-space:nowrap\">AMSTAR2<a name=\"cs-evidence-rating-system-AMSTAR2\"> </a></td><td>AMSTAR 2</td><td>A Measurement Tool to Assess Systematic Reviews – version 2</td></tr><tr><td style=\"white-space:nowrap\">AGREEII<a name=\"cs-evidence-rating-system-AGREEII\"> </a></td><td>AGREE II</td><td>Appraisal of Guidelines for Research and Evaluation II</td></tr><tr><td style=\"white-space:nowrap\">CochraneRoB<a name=\"cs-evidence-rating-system-CochraneRoB\"> </a></td><td>Cochrane RoB</td><td>Cochrane Risk of Bias Tool for randomized trials</td></tr><tr><td style=\"white-space:nowrap\">ROBIS<a name=\"cs-evidence-rating-system-ROBIS\"> </a></td><td>ROBIS</td><td>Risk of Bias in Systematic Reviews</td></tr><tr><td style=\"white-space:nowrap\">QUADAS2<a name=\"cs-evidence-rating-system-QUADAS2\"> </a></td><td>QUADAS-2</td><td>Quality Assessment of Diagnostic Accuracy Studies – version 2</td></tr><tr><td style=\"white-space:nowrap\">NewcastleOttawa<a name=\"cs-evidence-rating-system-NewcastleOttawa\"> </a></td><td>Newcastle-Ottawa Scale</td><td>For assessing quality of nonrandomized studies (case-control and cohort)</td></tr><tr><td style=\"white-space:nowrap\">CASP<a name=\"cs-evidence-rating-system-CASP\"> </a></td><td>CASP</td><td>Critical Appraisal Skills Programme tools</td></tr><tr><td style=\"white-space:nowrap\">SIGN<a name=\"cs-evidence-rating-system-SIGN\"> </a></td><td>SIGN</td><td>Scottish Intercollegiate Guidelines Network grading system</td></tr><tr><td style=\"white-space:nowrap\">AWMF<a name=\"cs-evidence-rating-system-AWMF\"> </a></td><td>AWMF</td><td>Association of the Scientific Medical Societies in Germany</td></tr></table></div>"
+  },
+  "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-rating-system",
+  "version" : "0.1.0",
+  "name" : "EvidenceRatingSystemCS",
+  "title" : "Evidence Rating System Code System",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2025-08-06T18:15:04+00:00",
+  "publisher" : "AWMF e.V.",
+  "contact" : [{
+    "name" : "AWMF e.V.",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org"
+    }]
+  }],
+  "description" : "CodeSystem for identifying evidence rating and appraisal frameworks used in systematic reviews, guideline development, and clinical decision support.",
+  "caseSensitive" : false,
+  "content" : "complete",
+  "count" : 11,
+  "concept" : [{
+    "code" : "GRADE",
+    "display" : "GRADE",
+    "definition" : "Grading of Recommendations Assessment, Development and Evaluation"
+  },
+  {
+    "code" : "OCEBM2011",
+    "display" : "Oxford 2011 (OCEBM)",
+    "definition" : "Oxford Centre for Evidence-Based Medicine 2011 Levels of Evidence"
+  },
+  {
+    "code" : "AMSTAR2",
+    "display" : "AMSTAR 2",
+    "definition" : "A Measurement Tool to Assess Systematic Reviews – version 2"
+  },
+  {
+    "code" : "AGREEII",
+    "display" : "AGREE II",
+    "definition" : "Appraisal of Guidelines for Research and Evaluation II"
+  },
+  {
+    "code" : "CochraneRoB",
+    "display" : "Cochrane RoB",
+    "definition" : "Cochrane Risk of Bias Tool for randomized trials"
+  },
+  {
+    "code" : "ROBIS",
+    "display" : "ROBIS",
+    "definition" : "Risk of Bias in Systematic Reviews"
+  },
+  {
+    "code" : "QUADAS2",
+    "display" : "QUADAS-2",
+    "definition" : "Quality Assessment of Diagnostic Accuracy Studies – version 2"
+  },
+  {
+    "code" : "NewcastleOttawa",
+    "display" : "Newcastle-Ottawa Scale",
+    "definition" : "For assessing quality of nonrandomized studies (case-control and cohort)"
+  },
+  {
+    "code" : "CASP",
+    "display" : "CASP",
+    "definition" : "Critical Appraisal Skills Programme tools"
+  },
+  {
+    "code" : "SIGN",
+    "display" : "SIGN",
+    "definition" : "Scottish Intercollegiate Guidelines Network grading system"
+  },
+  {
+    "code" : "AWMF",
+    "display" : "AWMF",
+    "definition" : "Association of the Scientific Medical Societies in Germany"
+  }]
+}

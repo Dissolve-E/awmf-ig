@@ -1,0 +1,28 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "vs-intended-audience",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet vs-intended-audience</b></p><a name=\"vs-intended-audience\"> </a><a name=\"hcvs-intended-audience\"> </a><ul><li>Include all codes defined in <a href=\"CodeSystem-cs-intended-audience.html\"><code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-intended-audience</code></a></li></ul></div>"
+  },
+  "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-intended-audience",
+  "version" : "0.1.0",
+  "name" : "IntendedAudienceVS",
+  "title" : "Intended Audience Value Set",
+  "status" : "draft",
+  "date" : "2025-08-06T18:15:04+00:00",
+  "publisher" : "AWMF e.V.",
+  "contact" : [{
+    "name" : "AWMF e.V.",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org"
+    }]
+  }],
+  "description" : "ValueSet listing codes representing intended audiences for a section",
+  "compose" : {
+    "include" : [{
+      "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-intended-audience"
+    }]
+  }
+}

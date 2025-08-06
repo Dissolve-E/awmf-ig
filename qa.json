@@ -1,0 +1,19 @@
+{
+  "url" : "http://fhir.awmf.org/awmf.ig/ImplementationGuide/awmf.ig",
+  "name" : "AWMFGuidelineRegistryIG",
+  "title" : "Dissolve-E: FHIR Implementation Guide for the AWMF Guideline Registry",
+  "description" : "This implementation guide, produced by the Dissolve-E project (G-BA grant 01VSF23021) in collaboration with the Association of the Scientific Medical Societies in Germany (AWMF), defines FHIR profiles, extensions, and guidance for a structured, FAIR, and interoperable representation of German clinical practice guidelines.   Built on EBMonFHIR and related international initiatives, it supports authoring workflows, version control, and seamless integration of guideline knowledge into clinical decision support, quality management, and research infrastructures.",
+  "status" : "draft",
+  "package-id" : "awmf.ig",
+  "ig-ver" : "0.1.0",
+  "date" : "Wed, 06 Aug, 2025 18:18:32 +0000",
+  "dateISO8601" : "2025-08-06T18:18:32+00:00",
+  "errs" : 70,
+  "warnings" : 888,
+  "hints" : 2464,
+  "suppressed-hints" : 8,
+  "suppressed-warnings" : 30,
+  "version" : "6.0.0-ballot3",
+  "tool" : "5.0.0 (3)",
+  "maxMemory" : 6232358192
+}

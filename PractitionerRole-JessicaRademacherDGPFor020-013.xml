@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PractitionerRole xmlns="http://hl7.org/fhir">
+  <id value="JessicaRademacherDGPFor020-013"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author-role"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Jessica Rademacher for DGP in the context of 020-013</div>
+  </text>
+  <period>
+    <start value="2022-08-01"/>
+    <end value="2023-12-31"/>
+  </period>
+  <practitioner>
+    <reference value="Practitioner/JessicaRademacher"/>
+  </practitioner>
+  <organization>
+    <reference value="Organization/DGP"/>
+  </organization>
+  <code>
+    <text value="Koordination und wissenschaftliche Leitung"/>
+  </code>
+</PractitionerRole>
