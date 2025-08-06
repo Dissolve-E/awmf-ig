@@ -1,5 +1,6 @@
 # FHIR Implementation Guide for Storing Clinical Practice Guidelines in the AWMF Registry
 
+
 ## Project Overview
 
 This repository provides the FHIR Implementation Guide developed as part of the **Dissolve-E** project: 
@@ -35,6 +36,10 @@ The project is a collaboration between:
 - **Howto Health GmbH**
 - **Universitätsmedizin Greifswald**
 
+## Usage 
+
+You may want to use [fsh-sushi](https://www.npmjs.com/package/fsh-sushi) to compile the FHIR Shorthand (fsh) specifications found in this repository to FHIR JSON files. 
+Before doing so, please run _download-ebm-ig.sh_ at the repository's root first, in order to retrieve relevant reference specifications from the current build of the [EBM IG](https://hl7.org/fhir/uv/ebm/2025May/).
 
 
 ## Contributing
@@ -45,7 +50,7 @@ We welcome contributions to enhance the Implementation Guide. Please follow the 
 
 ## License
 
-TODO
+The contents of this repository is licensed under the Creative Commonse Attribution 4.0 International License (CA BY 4.0) 
 
 ## Acknowledgments
 
