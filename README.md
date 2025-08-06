@@ -50,7 +50,7 @@ We welcome contributions to enhance the Implementation Guide. Please follow the 
 
 ## License
 
-The contents of this repository is licensed under the Creative Commonse Attribution-ShareAlike 4.0 International License (CA BY-SA 4.0) 
+The contents of this repository is licensed under the Creative Commonse Attribution 4.0 International License (CA BY 4.0) 
 
 ## Acknowledgments
 
