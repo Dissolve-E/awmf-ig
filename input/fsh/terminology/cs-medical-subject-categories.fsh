@@ -1,5 +1,5 @@
-CodeSystem: MedicalSubjectCategories
-Id: medical-subject-categories
+CodeSystem: MedicalSubjectCategoriesCS
+Id: cs-medical-subject-categories
 Title: "Medical Subject Categories"
 Description: "CodeSystem defining values to classify medical subjects into different categories."
 * insert rs-codesystem-meta

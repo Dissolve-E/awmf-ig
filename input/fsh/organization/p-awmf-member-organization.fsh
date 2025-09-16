@@ -1,5 +1,5 @@
 Profile: AWMFMemberOrganization
-Parent: Organization
+Parent: MedicalSociety
 Id: awmf-member-organization
 Title: "AWMF Member Organization"
 Description: "An organization that is a member of the AWMF"
@@ -15,7 +15,13 @@ Description: "An organization that is a member of the AWMF"
   * value 1..1
 
 * type 1..*
-* type = cs-awmf#awmf-member-organization
+* type ^slicing.discriminator.type = #value
+* type ^slicing.discriminator.path = "$this"
+* type ^slicing.rules = #open
+* type contains 
+  awmf-member-organization 1..1
+* type[awmf-member-organization] = cs-awmf#awmf-member-organization
+
 
 Instance: AWMFMemberOrganizationExample
 InstanceOf: awmf-member-organization
@@ -29,3 +35,6 @@ Description: "An example of an AWMF member organization."
 * contact.telecom
   * system = #url
   * value = "https://www.example.org"
+* extension[medicalSubjectCategory][+].valueCodeableConcept = cs-medical-subject-categories#psychosocial "Psychosocial Disciplines"
+* extension[medicalSubjectCategory][+].valueCodeableConcept = cs-medical-subject-categories#surgical "Surgical Disciplines"
+* extension[medicalSubject][+].valueCodeableConcept.text = "Anesthesiology and Intensive Care Medicine"
