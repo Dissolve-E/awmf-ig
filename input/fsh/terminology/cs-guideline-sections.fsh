@@ -3,7 +3,6 @@ Id: cs-guideline-sections
 Title: "Guideline Sections"
 Description: "Sections of a guideline, describing various aspects such as its intention, target patient group, care setting, and other relevant contextual information."
 * insert rs-codesystem-meta
-// TODO: add german translations
 * #intention "Intention" "The section describes the intention of the guideline."
   * ^designation[+].language = #de
   * ^designation[=].value = "Zielorientierung"

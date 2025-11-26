@@ -57,3 +57,5 @@ Alias: $cs-awmf-guideline-status = cs-awmf-guideline-status
 
 Alias: $cs-cm-relationship = http://hl7.org/fhir/concept-map-relationship
 Alias: $vs-cm-relationship = http://hl7.org/fhir/ValueSet/concept-map-relationship
+
+Alias: $cs-pico = PICOCS

@@ -12,16 +12,16 @@ kognitive Störung beobachtet wird und die einer solchen Untersuchung zustimmen?
 
 * characteristic[population]
   * code = $cs-pico#population
-  * valueReference only Reference(PICOPopulationRec17)
+  * valueReference = Reference(PICOPopulationRec17)
 * characteristic[intervention]
   * code = $cs-pico#intervention
-  * valueReference only Reference(PICOInterventionRec17)
+  * valueReference = Reference(PICOInterventionRec17)
 * characteristic[comparator]
   * code = $cs-pico#comparator
-  * valueReference only Reference(PICOComparatorRec17)
+  * valueReference = Reference(PICOComparatorRec17)
 * characteristic[outcome][+]
   * code = $cs-pico#outcome
-  * valueReference only Reference(PICOOutcomeSensitivityRec17)
+  * valueReference = Reference(PICOOutcomeSensitivityRec17)
 * characteristic[outcome][+]
   * code = $cs-pico#outcome
-  * valueReference only Reference(PICOOutcomeSpecificityRec17)
+  * valueReference = Reference(PICOOutcomeSpecificityRec17)

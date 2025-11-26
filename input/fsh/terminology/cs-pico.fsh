@@ -4,8 +4,6 @@ Title: "PICO Related Terms"
 Description: "CodeSystem defining different terms related to PICO question and objects"
 * insert rs-codesystem-meta
 
-// Weitere Begriffe wie Timing / Setting einfügen? 
-
 * #pico-question "PICO question" "PICO question"
   * ^designation[+].language = #de
   * ^designation[=].value = "PICO Fragestellung"
@@ -21,7 +19,7 @@ Description: "CodeSystem defining different terms related to PICO question and o
   * ^designation[=].value = "Intervention"
   * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
   * ^definition.extension[$ext-translation].extension[content].valueString = "Intervention"
-* #comparison "Comparison" "Comparison" // $ncit#C142458 "Comparator"
+* #comparator "Comparator" "Comparator" // $ncit#C142458 "Comparator"
   * ^designation[+].language = #de
   * ^designation[=].value = "Vergleichsintervention"
   * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
@@ -31,3 +29,13 @@ Description: "CodeSystem defining different terms related to PICO question and o
   * ^designation[=].value = "Outcome"
   * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
   * ^definition.extension[$ext-translation].extension[content].valueString = "Outcome"
+* #setting "Setting" "Setting"
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Setting"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Setting"
+* #timing "Timing" "Timing"
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Zeitpunkt"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Zeitpunkt"

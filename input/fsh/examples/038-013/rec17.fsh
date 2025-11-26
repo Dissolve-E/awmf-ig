@@ -3,7 +3,12 @@ InstanceOf: Recommendation
 Usage: #example
 Title: "Screening auf kognitive Beeinträchtigung"
 Description: "Sind Tests in nicht-spezialisierten Settings sinnvoll, um eine Demenz zu erkennen bei Personen, die kognitive Störungen berichten oder bei denen eine
-kognitive Störung beobachtet wird und die einer solchen Untersuchung zustimmen?" // Hier PICO Frage ?
+kognitive Störung beobachtet wird und die einer solchen Untersuchung zustimmen?" // TODO: Hier PICO Frage ?
+
+// TODO: How to link PICO Question?
+// TODO: How to link SearchStrategy to PICO Question?
+// TODO: How to link Evidence to PICO Question?
+// TODO: How to link Justification/Evidence grading to PICO Question?
 
 * insert narrative([[HAP Diagnose]])
 

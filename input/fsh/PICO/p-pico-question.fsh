@@ -4,11 +4,15 @@ Id: pico-question
 Title: "PICO Question"
 Description: "A structured definition of the PICO question in the context of guidelines and recommendations."
 
-//Unsicher ob man die relatesTo Extension einschränken sollte : extension[relatesTo].extension[targetReference].valueReference
+// TODO: Unsicher ob man die relatesTo Extension einschränken sollte : extension[relatesTo].extension[targetReference].valueReference
 
 * code = $cs-pico#pico-question
 
 * combinationMethod = $cs-group-characteristic-combination#all-of
+
+* characteristic ^slicing.discriminator.type = #value
+* characteristic ^slicing.discriminator.path = "code"
+* characteristic ^slicing.rules = #open
 
 * characteristic contains 
   population 0..1 and

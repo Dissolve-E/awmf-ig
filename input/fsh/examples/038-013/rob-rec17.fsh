@@ -8,7 +8,7 @@ Description: "Certainty of Evidence Rating Ris of Bias for Cognitive Tests When 
 * content[levelOfEvidence]
   * classifier = $cs-certainty-rating#low_risk_of_bias "Low risk of bias"
 
-  Instance: RoB-CognitiveTestsWhenSuspectingDementia-Specificity
+Instance: RoB-CognitiveTestsWhenSuspectingDementia-Specificity
 InstanceOf: CertaintyOfEvidenceRatingCochraneRoB
 Usage: #example
 Title: "Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspecting Dementia - Specificity"
