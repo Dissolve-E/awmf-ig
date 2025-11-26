@@ -1,0 +1,27 @@
+Instance: PICOQuestionRec17
+InstanceOf: PICOQuestion
+Usage: #example
+Title: "PICO Question of Recommendation 17 from Guideline 038-013"
+Description: "Schlüsselfrage: Sind Tests in nicht-spezialisierten Settings sinnvoll, um eine Demenz zu erkennen bei Personen, die kognitive Störungen berichten oder bei denen eine
+kognitive Störung beobachtet wird und die einer solchen Untersuchung zustimmen?"
+
+* extension[relatesTo].extension[targetReference].valueReference = Reference(RecommendationCognitiveTestsWhenSuspectingDementia)
+
+* description = "Schlüsselfrage: Sind Tests in nicht-spezialisierten Settings sinnvoll, um eine Demenz zu erkennen bei Personen, die kognitive Störungen berichten oder bei denen eine
+kognitive Störung beobachtet wird und die einer solchen Untersuchung zustimmen?"
+
+* characteristic[population]
+  * code = $cs-pico#population
+  * valueReference only Reference(PICOPopulationRec17)
+* characteristic[intervention]
+  * code = $cs-pico#intervention
+  * valueReference only Reference(PICOInterventionRec17)
+* characteristic[comparator]
+  * code = $cs-pico#comparator
+  * valueReference only Reference(PICOComparatorRec17)
+* characteristic[outcome][+]
+  * code = $cs-pico#outcome
+  * valueReference only Reference(PICOOutcomeSensitivityRec17)
+* characteristic[outcome][+]
+  * code = $cs-pico#outcome
+  * valueReference only Reference(PICOOutcomeSpecificityRec17)

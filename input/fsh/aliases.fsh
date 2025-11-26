@@ -9,6 +9,8 @@ Alias: $cs-version-algorithm = http://hl7.org/fhir/version-algorithm
 Alias: $ebm-guideline = http://hl7.org/fhir/uv/ebm/StructureDefinition/guideline
 Alias: $ebm-recommendation = http://hl7.org/fhir/uv/ebm/StructureDefinition/recommendation
 
+Alias: $ebm-conceptual-cohort-definition = http://hl7.org/fhir/uv/ebm/StructureDefinition/conceptual-cohort-definition
+
 Alias: $ext-annotationType = http://hl7.org/fhir/StructureDefinition/annotationType
 Alias: $ext-extended-contact-detail = http://hl7.org/fhir/StructureDefinition/artifact-extended-contact-detail
 
@@ -23,6 +25,8 @@ Alias: $vs-direction-of-recommendation = http://hl7.org/fhir/uv/cpg/ValueSet/cpg
 
 //Alias: $cs-quality-of-evidence = http://terminology.hl7.org/CodeSystem/evidence-quality // Use $cs-certainty-rating instead
 Alias: $vs-quality-of-evidence = http://terminology.hl7.org/ValueSet/evidence-quality
+
+Alias : $cs-group-characteristic-combination = http://hl7.org/fhir/group-characteristic-combination
 
 Alias: $ext-translation = http://hl7.org/fhir/StructureDefinition/translation
 
