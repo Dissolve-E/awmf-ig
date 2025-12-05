@@ -18,3 +18,7 @@ Description: "S3-Leitlinie Demenzen Living Guideline - Langfassung"
 * title = "Demenzen"
 * version = "5.2"
 * status = #final
+
+* author[+] = Reference(DGPPN)
+* author[=].extension[role][+].valueCodeableConcept = cs-guideline-author-role#leading
+* author[=].extension[role][+].valueCodeableConcept = cs-guideline-author-role#registrant

@@ -11,3 +11,4 @@ Description: "Intervention: Verschiedene kognitive Kurztests"
 * characteristic
   * code = $sct#71388002 "Procedure (procedure)"
   * valueCodeableConcept = $sct#1100881000168104 "Assessment of cognitive function (procedure)"
+  * exclude = false

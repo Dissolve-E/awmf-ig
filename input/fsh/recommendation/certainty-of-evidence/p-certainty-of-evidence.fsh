@@ -8,7 +8,7 @@ Description: "A structured assessment of the certainty of evidence for a specifi
 //       or should they be independent and only be "passively" referenced by the overall assessment (like it is now implemented)? [all, after workshop]
 
 // #P2.3.3.2, #P2.3.3.3
-* artifactReference only Reference(OutcomeEvidence)
+* artifactReference only Reference(OutcomeEvidence or ConceptualCohortDefinitionOutcome)
 
 // TODO: how to mark evidence as missing? #P2.3.3.7 (e.g. if no studies are available for a specific outcome) [all, after workshop]
 //       we need to define the way in FHIR and explicitly mention this in the implementation guide

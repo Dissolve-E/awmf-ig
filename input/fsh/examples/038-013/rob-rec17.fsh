@@ -7,6 +7,7 @@ Description: "Certainty of Evidence Rating Ris of Bias for Cognitive Tests When 
 //* artifactReference = Reference(Evidence-MultiplexPCRDiagnostic-Mortality)
 * content[levelOfEvidence]
   * classifier = $cs-certainty-rating#low_risk_of_bias "Low risk of bias"
+* artifactReference = Reference(PICOOutcomeSensitivityRec17)
 
 Instance: RoB-CognitiveTestsWhenSuspectingDementia-Specificity
 InstanceOf: CertaintyOfEvidenceRatingCochraneRoB
@@ -17,3 +18,4 @@ Description: "Certainty of Evidence Rating Ris of Bias for Cognitive Tests When 
 //* artifactReference = Reference(Evidence-MultiplexPCRDiagnostic-Mortality)
 * content[levelOfEvidence]
   * classifier = $cs-certainty-rating#low_risk_of_bias "Low risk of bias"
+* artifactReference = Reference(PICOOutcomeSpecificityRec17)
