@@ -59,3 +59,5 @@ Alias: $cs-cm-relationship = http://hl7.org/fhir/concept-map-relationship
 Alias: $vs-cm-relationship = http://hl7.org/fhir/ValueSet/concept-map-relationship
 
 Alias: $cs-pico = PICOCS
+
+Alias: $cs-recommendation-version-status = cs-recommendation-version-status

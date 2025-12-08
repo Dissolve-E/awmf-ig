@@ -7,7 +7,9 @@ Title: "Recommendation"
 Description: "Clinical Practice Guideline Recommendation"
 * obeys inv-require-official-identifier // #P2.2.2
 
-* version 1..1 // #P2.2.6, #P2.2.7
+* extension contains ext-recommendation-version-status named versionStatus 0..1 // #P2.3.2.29 // TO DO @Gregor: Add requirement if there is any
+
+* version 1..1 // #P2.2.6, #P2.2.7 //TO DO @Gregor: Write invariant to match the versioning schema "YYYY.MM" + check if the already existing inv-version-major-minor is still relevant.
 * version obeys inv-version-major-minor // #P2.2.1
 * extension[versionAlgorithm].valueCoding = cs-awmf#major-minor "Major-Minor Versioning"
 
@@ -55,7 +57,6 @@ Description: "Clinical Practice Guideline Recommendation"
 
 * section.extension contains 
   ext-section-intended-audience named intendedAudience 0..*
-  and ext-recommendation-version-status named versionStatus 0..1 // #P2.3.2.29
 
 // add some more codes for the sections (not only the ones defined by the EBM IG)
 * section.code from vs-guideline-sections (extensible)

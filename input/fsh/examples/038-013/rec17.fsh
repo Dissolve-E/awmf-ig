@@ -14,15 +14,17 @@ kognitive Störung beobachtet wird und die einer solchen Untersuchung zustimmen?
 
 //* version = "3.0"
 * status = #final // "geprüft"
-//* author[+] = Reference(JessicaRademacherDGPFor020-013)
+* author[+] = Reference(DGPPN)
 * date = "2025"
 * title = "Screening auf kognitive Beeinträchtigung"
 
 * relatesTo[partOf]
   * targetCanonical = Canonical(Demenzen|5.2)
 
-* category[synthesisType][+] = cs-recommendation-synthesis-type#evidence-based "Evidence-based"
-* category[synthesisType][+] = cs-recommendation-synthesis-type#expert-consensus "Expert Consensus"
+* category[synthesisType] = cs-recommendation-synthesis-type#evidence-based "Evidence-based"
+
+* version = "2025"
+* extension[versionStatus].extension[version-status].valueCodeableConcept = $cs-recommendation-version-status#reaffirmed
 
 * section[recommendationStatement]
   * section[language]
