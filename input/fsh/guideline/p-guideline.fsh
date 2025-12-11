@@ -41,35 +41,35 @@ Description: "Clinical Practice Guideline"
 // and preserves the intended semantics.
 //
 // It's unclear whether this restriction is intended behavior or a limitation in the IG Publisher.
-  and $ext-extended-contact-detail named extContactDetail 0..* MS
+  //and $ext-extended-contact-detail named extContactDetail 0..* MS
 
 
 
 * extension ^slicing.discriminator[1].type = #value
 * extension ^slicing.discriminator[=].path = "value.ofType(ExtendedContactDetail).purpose"
 
-* extension[extContactDetail] contains 
+* extension[extendedContactDetail] contains 
   registrant 0..1 MS 
   and coordinator 0..* MS 
   and mainContact 0..1 MS
 
-* extension[extContactDetail].valueExtendedContactDetail
+* extension[extendedContactDetail].valueExtendedContactDetail
   * purpose 1..1
-* extension[extContactDetail][registrant].valueExtendedContactDetail
+* extension[extendedContactDetail][registrant].valueExtendedContactDetail
   * purpose = cs-contact-point#registrant
   * purpose 1..1
   * name 1..1
   * telecom 1..*
     * value 1..1
   * address 0..1
-* extension[extContactDetail][coordinator].valueExtendedContactDetail
+* extension[extendedContactDetail][coordinator].valueExtendedContactDetail
   * purpose = cs-contact-point#coordinator
   * purpose 1..1
   * name 1..1
   * telecom 1..*
     * value 1..1
   * address 0..1
-* extension[extContactDetail][mainContact].valueExtendedContactDetail
+* extension[extendedContactDetail][mainContact].valueExtendedContactDetail
   * purpose = cs-contact-point#contact
   * purpose 1..1
   * name 1..1
@@ -208,13 +208,13 @@ Description: "Clinical Practice Guideline"
 // add some more codes for the sections (not only the ones defined by the EBM IG)
 * section.code from vs-guideline-sections (extensible)
 
-// close the slicing for section and add @default section
+// close the slicing for section and add text section
 * section ^slicing.rules = #closed
 * section contains 
   attachments 0..1 MS
   and consensusProtocol 0..*
-  and @default 0..* 
-* section[@default]
+  and text 0..* 
+* section[text]
 // fixme: actually, the default slice must not fix the discriminator, but as of 25-03-06 the validator is not able to handle default slices.
 //        see https://github.com/hapifhir/org.hl7.fhir.core/blob/a6f993225cce3771679de0e36786bd9d7df8fd60/org.hl7.fhir.validation/src/main/java/org/hl7/fhir/validation/instance/InstanceValidator.java#L230
 //        therefore, we fix the discriminator here.
@@ -360,7 +360,7 @@ Description: "Clinical Practice Guideline"
   * insert rs-language-section-nested
 
 // Language for each section and nested sections until level 6 (#P2.3.2.21, #P2.1.9)
-* section[@default]
+* section[text]
   * insert rs-language-section-nested
 * section[summary]
   * insert rs-language-section-nested

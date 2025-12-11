@@ -13,6 +13,9 @@ Description: "Clinical Practice Guideline Recommendation"
 * version obeys inv-version-major-minor // #P2.2.1
 * extension[versionAlgorithm].valueCoding = cs-awmf#major-minor "Major-Minor Versioning"
 
+* extension contains 
+    ext-recommendation-version-status named versionStatus 0..1 // #P2.3.2.29
+
 * meta.tag from vs-recommendation-tags (preferred)
 
 // #P2.1.8
@@ -44,8 +47,8 @@ Description: "Clinical Practice Guideline Recommendation"
   * ^slicing.discriminator.path = "coding"
   * ^slicing.rules = #open
 * category contains 
-  synthesisType 1..1
-  and clinicalApplicationType 0..*
+    synthesisType 1..1
+    and clinicalApplicationType 0..*
 * category[synthesisType]
   * coding from vs-recommendation-synthesis-type (required) 
     * system 1.. MS
@@ -64,7 +67,7 @@ Description: "Clinical Practice Guideline Recommendation"
 * section[recommendationStatement]
   * insert rs-language-section
 
-// close the slicing for section and add @default section
+// close the slicing for section and add text section
 * section ^slicing.rules = #closed
 * section contains 
   text 0..* MS
@@ -72,13 +75,13 @@ Description: "Clinical Practice Guideline Recommendation"
   and patientVersion 0..*
   and otherContent 0..*
   and outcome 0..1
-  and @default 0..* 
-* section[@default]
+  //and text 0..* 
+/** section[text] // TODO: we'll use [text] as default slice for now, until SUSHI and the FHIR validator supports default slices properly
 // fixme: actually, the default slice must not fix the discriminator, but as of 25-03-06 the validator is not able to handle default slices. therefore, we fix the discriminator here.
   * code 1..1
   * code.coding 1..1
   * code.coding = cs-guideline-sections#default-section
-  * insert rs-language-section-nested
+  * insert rs-language-section-nested*/
 
 * section[text]
   * code 1..1
@@ -100,7 +103,7 @@ Description: "Clinical Practice Guideline Recommendation"
 * section[otherContent]
   * code 1..1
   * code.coding  1..1
-  * code from vs-content-types (required)
+  * code from vs-content-types (required) // todo: restrict to reasonable elements (e.g. long version is not applicable for recommendation, only for guideline)
   * code.coding from vs-content-types (required)
   * insert rs-language-section-nested
 
@@ -205,7 +208,7 @@ Description: "An example of a recommendation."
 * category[synthesisType] = cs-recommendation-synthesis-type#expert-consensus
 * relatesTo[partOf][+]
   * targetCanonical = Canonical(GuidelineExample)
-* section[@default][+]
+* section[text][+]
   * section[language]
     * extension[language].valueCode = #de
     * insert narrative([[Example Recommendation]])
