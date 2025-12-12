@@ -26,3 +26,8 @@ Description: "CodeSystem representing different codes of interest for the Arbeit
   * ^designation[=].value = "Konsensusstärke"
   * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
   * ^definition.extension[$ext-translation].extension[content].valueString = "Die Stärke des Konsens einer Empfehlung"
+* #guideline-registry-record "Guideline Registry Record" "A registry record for a clinical practice guideline in the AWMF guideline registry"
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Leitlinien-Registrierungseintrag"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Ein Registrierungseintrag für eine klinische Praxisleitlinie im AWMF-Leitlinienregister"

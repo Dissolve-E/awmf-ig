@@ -8,7 +8,7 @@ Alias: $cs-version-algorithm = http://hl7.org/fhir/version-algorithm
 
 Alias: $ebm-guideline = http://hl7.org/fhir/uv/ebm/StructureDefinition/guideline
 Alias: $ebm-recommendation = http://hl7.org/fhir/uv/ebm/StructureDefinition/recommendation
-
+Alias: $ebm-evidence-report = http://hl7.org/fhir/uv/ebm/StructureDefinition/evidence-report
 Alias: $ebm-conceptual-cohort-definition = http://hl7.org/fhir/uv/ebm/StructureDefinition/conceptual-cohort-definition
 
 Alias: $ext-annotationType = http://hl7.org/fhir/StructureDefinition/annotationType
@@ -26,7 +26,7 @@ Alias: $vs-direction-of-recommendation = http://hl7.org/fhir/uv/cpg/ValueSet/cpg
 //Alias: $cs-quality-of-evidence = http://terminology.hl7.org/CodeSystem/evidence-quality // Use $cs-certainty-rating instead
 Alias: $vs-quality-of-evidence = http://terminology.hl7.org/ValueSet/evidence-quality
 
-Alias : $cs-group-characteristic-combination = http://hl7.org/fhir/group-characteristic-combination
+Alias: $cs-group-characteristic-combination = http://hl7.org/fhir/group-characteristic-combination
 
 Alias: $ext-translation = http://hl7.org/fhir/StructureDefinition/translation
 
@@ -61,3 +61,4 @@ Alias: $vs-cm-relationship = http://hl7.org/fhir/ValueSet/concept-map-relationsh
 Alias: $cs-pico = PICOCS
 
 Alias: $cs-recommendation-version-status = cs-recommendation-version-status
+Alias: $cs-cited-artifact-status-type = http://terminology.hl7.org/CodeSystem/cited-artifact-status-type

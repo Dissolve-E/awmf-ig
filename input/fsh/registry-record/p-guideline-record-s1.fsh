@@ -1,12 +1,12 @@
-Profile: AWMFGuidelineS1
-Parent: AWMFGuideline
-Id: awmf-guideline-s1
-Title: "AWMF S1 Guideline"
+Profile: AWMFGuidelineRecordS1
+Parent: AWMFGuidelineRegistryRecord
+Id: awmf-guideline-record-s1
+Title: "AWMF S1 Guideline Registry Record"
 Description: "AWMF S1 guideline representing expert recommendations developed through informal consensus."
 * category[awmfGuidelineClass] = cs-awmf-guideline-class#S1 "Action recommendations from expert groups"
 
 Instance: AWMFGuidelineS1Example
-InstanceOf: awmf-guideline-s1
+InstanceOf: awmf-guideline-record-s1
 Usage: #example
 Title: "AWMF Guideline S1 Example"
 Description: "An example of an AWMF S1 guideline."
