@@ -4,14 +4,17 @@ Id: guideline-attachment
 Title: "Guideline Attachment"
 Description: "Attachment to a Clinical Practice Guideline"
 * type 1..1
-* type from vs-content-types (preferred)
+* type = $cs-ebm-ig#attachments "Attachments"
+* category 1..*
+* category from vs-content-types (preferred)
 
 Instance: guideline-attachment-example
 InstanceOf: guideline-attachment
 Usage: #example
 Title: "Guideline Attachment Example"
 Description: "An example of a guideline attachment."
-* type = cs-guideline-sections#slide-deck
+* category[+] = cs-guideline-sections#slide-deck
+* category[+] = cs-guideline-sections#visual-abstract "Visual Abstract"
 * status = #current
 * content
   * attachment
