@@ -7,14 +7,24 @@ Title: "Recommendation"
 Description: "Clinical Practice Guideline Recommendation"
 * obeys inv-require-official-identifier // #P2.2.2
 
-* version 1..1 // #P2.2.6, #P2.2.7 //TO DO @Gregor: Write invariant to match the versioning schema "YYYY.MM" + check if the already existing inv-version-major-minor is still relevant.
-* version obeys inv-version-major-minor // #P2.2.1
+* version 1..1 // #P2.2.6, #P2.2.7 //TODO @Gregor: Write invariant to match the versioning schema "YYYY.MM" + check if the already existing inv-version-major-minor is still relevant.
+* version obeys inv-version-major-minor // #P2.2.1 // TODO: should be something like year.month
 * extension[versionAlgorithm].valueCoding = cs-awmf#major-minor "Major-Minor Versioning"
 
-* extension contains 
-    ext-recommendation-version-status named versionStatus 0..1 // #P2.3.2.29
+* extension contains
+    ext-recommendation-review-status named reviewStatus 0..1 // #P2.3.2.29
 
 * meta.tag from vs-recommendation-tags (preferred)
+
+* extension[approvalDate]
+  * ^definition = "The date on which the recommendation was approved in its current version."
+  * ^short = "Approval Date"
+  * valueDate 1..1
+
+* extension[lastReviewDate]
+  * ^definition = "The date of the last literature review for the recommendation."
+  * ^short = "Last Literature Review Date"
+  * valueDate 1..1
 
 // #P2.1.8
 * relatesTo contains 

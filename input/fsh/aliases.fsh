@@ -60,5 +60,5 @@ Alias: $vs-cm-relationship = http://hl7.org/fhir/ValueSet/concept-map-relationsh
 
 Alias: $cs-pico = PICOCS
 
-Alias: $cs-recommendation-version-status = cs-recommendation-version-status
+Alias: $cs-recommendation-review-status = cs-recommendation-review-status
 Alias: $cs-cited-artifact-status-type = http://terminology.hl7.org/CodeSystem/cited-artifact-status-type

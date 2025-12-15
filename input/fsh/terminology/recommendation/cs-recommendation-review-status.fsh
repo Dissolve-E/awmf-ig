@@ -1,7 +1,7 @@
-CodeSystem: RecommendationVersionStatusCS // #P2.3.2.29
-Id: cs-recommendation-version-status
-Title: "Recommendation Version Status Code System"
-Description: "CodeSystem defining values indicating how a recommendation relates to a new version of the guideline"
+CodeSystem: RecommendationReviewStatusCS // #P2.3.2.29
+Id: cs-recommendation-review-status
+Title: "Recommendation Review Status Code System"
+Description: "CodeSystem defining values indicating how a recommendation relates to a new revision of a recommendation"
 * insert rs-codesystem-meta
 * ^content = #complete
 * #added "Added" "Recommendation was newly added in this version of the guideline"
