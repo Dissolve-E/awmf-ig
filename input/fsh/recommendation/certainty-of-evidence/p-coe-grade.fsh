@@ -1,6 +1,6 @@
-Profile: CertaintyOfEvidenceRatingGRADE
-Parent: CertaintyOfEvidenceRating
-Id: certainty-of-evidence-rating-grade
+Profile: EvidenceAssessmentGRADE
+Parent: OverallEvidenceAssessment
+Id: evidence-assessment-grade
 Title: "Evidence Assessment GRADE"
 Description: "A structured assessment of the certainty of evidence for a specific outcome, including GRADE rating."
 

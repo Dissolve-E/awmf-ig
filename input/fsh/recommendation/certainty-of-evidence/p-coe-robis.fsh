@@ -1,6 +1,6 @@
-Profile: CertaintyOfEvidenceRatingROBIS
-Parent: CertaintyOfEvidenceRating
-Id: certainty-of-evidence-rating-robis
+Profile: EvidenceAssessmentROBIS
+Parent: EvidenceInternalValidityAssessment
+Id: evidence-assessment-robis
 Title: "Evidence Assessment ROBIS"
 Description: "Structured assessment of risk of bias using ROBIS (Risk of Bias in Systematic Reviews)."
 * content[ratingSystem]

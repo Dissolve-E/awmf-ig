@@ -1,4 +1,4 @@
-Profile: CertaintyOfEvidenceRating
+Profile: EvidenceAssessment
 Parent: $ebm-certainty-of-evidence
 Id: certainty-of-evidence-rating
 Title: "Certainty of Evidence Rating"

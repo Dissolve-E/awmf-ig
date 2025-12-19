@@ -1,6 +1,6 @@
-Profile: CertaintyOfEvidenceRatingCochraneRoB
-Parent: CertaintyOfEvidenceRating
-Id: certainty-of-evidence-rating-cochrane-rob
+Profile: EvidenceAssessmentCochraneRoB
+Parent: EvidenceInternalValidityAssessment
+Id: evidence-assessment-cochrane-rob
 Title: "Evidence Assessment Cochrane Risk of Bias"
 Description: "Structured assessment of risk of bias using Cochrane RoB tool."
 * content[ratingSystem]

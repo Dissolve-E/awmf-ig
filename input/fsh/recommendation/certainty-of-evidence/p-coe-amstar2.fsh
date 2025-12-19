@@ -1,6 +1,6 @@
-Profile: CertaintyOfEvidenceRatingAMSTAR2
-Parent: CertaintyOfEvidenceRating
-Id: certainty-of-evidence-rating-amstar2
+Profile: EvidenceAssessmentAMSTAR2
+Parent: EvidenceInternalValidityAssessment
+Id: evidence-assessment-amstar2
 Title: "Evidence Assessment AMSTAR 2"
 Description: "A structured assessment of the certainty of evidence using AMSTAR 2."
 

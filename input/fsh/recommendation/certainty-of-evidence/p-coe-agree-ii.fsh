@@ -1,6 +1,6 @@
-Profile: CertaintyOfEvidenceRatingAGREEII
-Parent: CertaintyOfEvidenceRating
-Id: certainty-of-evidence-rating-agreeii
+Profile: EvidenceAssessmentAGREEII
+Parent: EvidenceInternalValidityAssessment
+Id: evidence-assessment-agreeii
 Title: "Evidence Assessment AGREE II"
 Description: "A structured assessment of the quality of guidelines using the AGREE II instrument."
 * content[ratingSystem]
