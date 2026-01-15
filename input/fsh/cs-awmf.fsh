@@ -11,6 +11,11 @@ Description: "CodeSystem representing different codes of interest for the Arbeit
 * #major-minor "Major-Minor Versioning"
   * ^designation[+].language = #de
   * ^designation[=].value = "Major-Minor Versionierungsschema"
+* #year-month-versioning "Year-Month Versioning"
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Jahr-Monat Versionierungsschema"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Versionierungsschema im Format Jahr-Monat (z.B. 2024/06)"
 * #medical-society "Medical Society" "A medical society."
   * ^designation[+].language = #de
   * ^designation[=].value = "Medizinische Fachgesellschaft"

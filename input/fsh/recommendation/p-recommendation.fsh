@@ -7,9 +7,8 @@ Title: "Recommendation"
 Description: "Clinical Practice Guideline Recommendation"
 * obeys inv-require-official-identifier // #P2.2.2
 
-* version 1..1 // #P2.2.6, #P2.2.7 //TODO @Gregor: Write invariant to match the versioning schema "YYYY.MM" + check if the already existing inv-version-major-minor is still relevant.
-* version obeys inv-version-major-minor // #P2.2.1 // TODO: should be something like year.month
-* extension[versionAlgorithm].valueCoding = cs-awmf#major-minor "Major-Minor Versioning"
+* version 1..1 // #P2.2.6, #P2.2.7
+* extension[versionAlgorithm].valueCoding = cs-awmf#year-month-versioning
 
 * extension contains
     ext-recommendation-review-status named reviewStatus 0..1 // #P2.3.2.29
