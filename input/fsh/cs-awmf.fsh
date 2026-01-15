@@ -31,3 +31,8 @@ Description: "CodeSystem representing different codes of interest for the Arbeit
   * ^designation[=].value = "Leitlinien-Registrierungseintrag"
   * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
   * ^definition.extension[$ext-translation].extension[content].valueString = "Ein Registrierungseintrag für eine klinische Praxisleitlinie im AWMF-Leitlinienregister"
+* #patient-organization "Patient Organization" "An organization that represents patients"
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Patientenorganisation"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Eine Organisation, die Patienten vertritt."

@@ -18,9 +18,8 @@ Description: "An organization that is a member of the AWMF"
 * type ^slicing.discriminator.type = #value
 * type ^slicing.discriminator.path = "$this"
 * type ^slicing.rules = #open
-* type contains 
-  awmf-member-organization 1..1
-* type[awmf-member-organization] = cs-awmf#awmf-member-organization
+* type contains organization-type 1..1
+* type[organization-type] = cs-awmf#awmf-member-organization
 
 
 Instance: AWMFMemberOrganizationExample
