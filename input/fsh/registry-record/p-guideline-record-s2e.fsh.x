@@ -5,7 +5,7 @@ Title: "AWMF S2e Guideline Registry Record"
 Description: "AWMF S2e guideline based on systematic literature search and evaluation."
 * category[awmfGuidelineClass] = cs-awmf-guideline-class#S2e "Evidence-based Guideline"
 
-Instance: AWMFGuidelineS2eExample
+Instance: AWMFGuidelineRecordS2eExample
 InstanceOf: awmf-guideline-record-s2e
 Usage: #example
 Title: "AWMF Guideline S2e Example"

@@ -39,8 +39,11 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
 * status 1..1 // used for: anmeldung, konsultationsfassung, amendment, final // #P2.2.9
 * status ^definition = "Workflow status of the guideline from registration to publication or deprecation. Please note that the ValueSet 'http://hl7.org/fhir/ValueSet/composition-status' is required; We therefore created the ConceptMap 'FHIRStatusToAWMFStatus' to store the mapping to the AWMF status values."
 
-
 * type = cs-awmf#guideline-registry-record "Guideline Registry Record"
+
+* subject only Reference(Guideline)
+* subject ^short = "Guideline referenced by this Registry Record"
+* subject ^definition = "The clinical practice guideline that is described by this registry record."
 
 * extension contains 
   ext-first-publication-date named firstPublicationDate 0..1 MS
@@ -83,6 +86,43 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
 */
 
 
+// TODO: Should we use ProvenanceResource for activities such as review, approval, publication etc, instead of extensions for dates?[(Discussion Point for Workshop]
+* extension[approvalDate] // MAGIC-AWMF: ..., AWMF: "Freigegeben am"
+  * ^definition = "The date on which the guideline was approved by the publisher."
+  * ^short = "Approval Date"
+  * valueDate 1..1
+
+* extension[lastReviewDate] // MAGIC-AWMF: lastEdit, AWMF: "Aktueller Stand" // #P2.3.1.9
+  * ^definition = "The date on which the guideline was last updated."
+  * ^short = "Last Review Date"
+  * valueDate 1..1
+
+* extension[effectivePeriod] // MAGIC-AWMF: validUntilDate, AWMF: "Gültig bis"  // #P2.3.1.9
+  * ^definition = "The period during which the guideline is intended to be in use."
+  * ^short = "Effective Period"
+  * valuePeriod 1..1
+    * end 1..1 MS
+
+* extension[additionalLanguage]
+  * ^definition = "Additional language(s) in which the guideline is available."
+  * ^short = "Additional Language"
+
+* extension[extendedContactDetail]
+  * ^definition = "Extended contact details for various roles related to the guideline."
+  * ^short = "Extended Contact Detail"
+
+* extension[publicationDate] // MAGIC-AWMF: releaseDate, AWMF: "Eingestellt am"  // #P2.3.1.9
+  * ^definition = "The date on which the current version of the guideline was published."
+  * ^short = "Publication Date"
+  * valueDate 1..1
+
+
+
+
+
+
+
+
 * extension[extendedContactDetail] contains 
   registrant 0..1 MS 
   and coordinator 0..* MS 
@@ -112,27 +152,7 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
     * value 1..1
   * address 0..1
 
-// TODO: Should we use ProvenanceResource for activities such as review, approval, publication etc, instead of extensions for dates?[(Discussion Point for Workshop]
-* extension[lastReviewDate] // MAGIC-AWMF: lastEdit, AWMF: "Aktueller Stand" // #P2.3.1.9
-  * ^definition = "The date on which the guideline was last updated."
-  * ^short = "Last Review Date"
-  * valueDate 1..1
 
-* extension[approvalDate] // MAGIC-AWMF: ..., AWMF: "Freigegeben am"
-  * ^definition = "The date on which the guideline was approved by the publisher."
-  * ^short = "Approval Date"
-  * valueDate 1..1
-
-* extension[effectivePeriod] // MAGIC-AWMF: validUntilDate, AWMF: "Gültig bis"  // #P2.3.1.9
-  * ^definition = "The period during which the guideline is intended to be in use."
-  * ^short = "Effective Period"
-  * valuePeriod 1..1
-    * end 1..1 MS
-
-* extension[publicationDate] // MAGIC-AWMF: releaseDate, AWMF: "Eingestellt am"  // #P2.3.1.9
-  * ^definition = "The date on which the current version of the guideline was published."
-  * ^short = "Publication Date"
-  * valueDate 1..1
 
 * extension[firstPublicationDate] // MAGIC-AWMF: publishedDate, AWMF: "Veröffentlicht seit"  // #P2.3.1.9
   * ^definition = "The date on which the guideline was first published in its initial version."
@@ -144,13 +164,6 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
   * ^short = "Submission Date"
   * valueDate 1..1
 
-* extension[plannedCompletionDate] // MAGIC-AWMF: plannedCompletionDate, AWMF: "Geplante Fertigstellung" // #P2.3.1.10
-  * ^definition = "The date on which the guideline is planned to be completed."
-  * ^short = "Planned Completion Date"
-  * valueDate 1..1
-// required for status=#registered
-* obeys registered-composition-needs-planned-completion-date
-
 * extension[consultationPeriod] // MAGIC-AWMF: consultation[*]Date, AWMF: "" // #P2.3.1.10
   * ^definition = "The period during which the guideline is open for consultation."
   * ^short = "Consultation Period"
@@ -158,6 +171,12 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
 // require for status=#preliminary 
 * obeys preliminary-composition-needs-consultation-period
 
+* extension[plannedCompletionDate] // MAGIC-AWMF: plannedCompletionDate, AWMF: "Geplante Fertigstellung" // #P2.3.1.10
+  * ^definition = "The date on which the guideline is planned to be completed."
+  * ^short = "Planned Completion Date"
+  * valueDate 1..1
+// required for status=#registered
+* obeys registered-composition-needs-planned-completion-date
 
 * extension[registrationDate] // MAGIC-AWMF: startDate, AWMF: "Datum der Anmeldung" // #P2.3.1.10
   * ^definition = "The date when the guideline registration was submitted."
@@ -188,23 +207,21 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
 * version 1..1 // #P2.2.1, #P2.2.7
 * version obeys inv-version-major-minor // #P2.2.1, #P2.2.8
 * extension[versionAlgorithm].valueCoding = cs-awmf#major-minor "Major-Minor Versioning"
-
 * relatesTo.extension contains  ext-relates-to-label named label 0..1 
-  // todo: use attachment with label instead or targetReference.display
-* relatesTo ^slicing.discriminator.type = #value
-* relatesTo ^slicing.discriminator.path = "type"
-* relatesTo ^slicing.rules = #open
+
+  // TODO: use attachment with label instead or targetReference.display
 * relatesTo contains 
-  relatedGuideline 0..*
-  and disseminationWebsite 0..* 
+  disseminationWebsite 0..* 
   and replacesGuideline 0..* // #P2.3.1.8
   and replacedWithGuideline 0..* // #P2.3.1.8
-* relatesTo[relatedGuideline]
-  * type 1..1
-  * type = #similar-to
+* relatesTo[similarTo] ^slicing.discriminator.type = #value
+* relatesTo[similarTo] ^slicing.discriminator.path = "extension('classifier').valueCodeableConcept"
+* relatesTo[similarTo] ^slicing.rules = #open
+* relatesTo[similarTo] contains relatedGuideline 0..*
+* relatesTo[similarTo][relatedGuideline]
   * extension[classifier] 1..1
-  * extension[classifier].valueCodeableConcept = cs-related-artifact-types#related-guideline 
-      // TODO: use code that exists "Guideline" -> no need to have this code system here
+  * extension[classifier].valueCodeableConcept = $cs-ebm-ig#Guideline "Guideline"
+
 * relatesTo[disseminationWebsite]
   * type 1..1
   * type = #documentation
@@ -354,7 +371,6 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
     * code from vs-content-types (preferred) // #P2.1.7 (preferred binding)
     * entry only Reference(GuidelineAttachment)
     * entry 1..* MS
-    * obeys inv-guideline-attachment-type-match // TODO: does currently not seem to work (doesn't resolve the references - maybe in the IG publisher?) [@gregor]
   * section[longVersion]
     * code 1..1
     * code.coding 1..1
@@ -391,7 +407,7 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
     * coding 1..1
   * insert rs-language-section-nested
 
-
+/*
 Instance: GuidelineRegistryRecordExample
 InstanceOf: guideline-registry-record
 Usage: #example
@@ -762,3 +778,4 @@ Description: "Passes because the leading author points to an Organization."
 * author[+] = Reference(DGAI)            // <– Organization
 * author[=].extension[ext-guideline-author-role].valueCodeableConcept
     = cs-guideline-author-role#leading
+*/

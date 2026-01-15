@@ -29,6 +29,7 @@ Alias: $vs-quality-of-evidence = http://terminology.hl7.org/ValueSet/evidence-qu
 Alias: $cs-group-characteristic-combination = http://hl7.org/fhir/group-characteristic-combination
 
 Alias: $ext-translation = http://hl7.org/fhir/StructureDefinition/translation
+Alias: $ext-organization-brand = http://hl7.org/fhir/StructureDefinition/organization-brand
 
 Alias: $sct = http://snomed.info/sct
 Alias: $loinc = http://loinc.org

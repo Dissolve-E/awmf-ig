@@ -15,11 +15,9 @@ Description: "An organization that is a member of the AWMF"
   * value 1..1
 
 * type 1..*
-* type ^slicing.discriminator.type = #value
-* type ^slicing.discriminator.path = "$this"
-* type ^slicing.rules = #open
-* type contains organization-type 1..1
-* type[organization-type] = cs-awmf#awmf-member-organization
+* type = cs-awmf#awmf-member-organization
+
+* extension contains $ext-organization-brand named brand 0..1 
 
 
 Instance: AWMFMemberOrganizationExample
@@ -37,3 +35,5 @@ Description: "An example of an AWMF member organization."
 * extension[medicalSubjectCategory][+].valueCodeableConcept = cs-medical-subject-categories#psychosocial "Psychosocial Disciplines"
 * extension[medicalSubjectCategory][+].valueCodeableConcept = cs-medical-subject-categories#surgical "Surgical Disciplines"
 * extension[medicalSubject][+].valueCodeableConcept.text = "Anesthesiology and Intensive Care Medicine"
+// TODO: error The element or path you referenced does not exist: extension[$ext-organization-brand].extension[brandLogo].valueUri
+* extension[brand].extension[brandLogo].valueUri = "http://example.org/logo.png" // TODO: does not work yet
