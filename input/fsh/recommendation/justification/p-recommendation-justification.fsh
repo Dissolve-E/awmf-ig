@@ -74,7 +74,6 @@ Description: "A structured assessment of the evidence and consensus that underpi
 * workflowStatus = #applied
 
 
-// 1. Wie unterscheiden wir zwischen "gesamt-evidenz-rating" (e.g. Oxford, GRADE) und "einzelstudien-evidenz-rating" (z.B. ROBIS, Cochrane Risk of Bias Tool)?
-// 2. Alignment mit Brians Profilen prüfen / durchführen
-// 3. Wie verlinken wir Einzelevidenz?
-// 4. Wie definieren wir PICO Fragen?
+// TODO: 1. Wie unterscheiden wir zwischen "gesamt-evidenz-rating" (e.g. Oxford, GRADE) und "einzelstudien-evidenz-rating" (z.B. ROBIS, Cochrane Risk of Bias Tool)?
+// TODO: 2. Alignment mit Brians Profilen prüfen / durchführen
+// TODO: 3. Wie verlinken wir Einzelevidenz?
