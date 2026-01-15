@@ -30,6 +30,7 @@ Alias: $cs-group-characteristic-combination = http://hl7.org/fhir/group-characte
 
 Alias: $ext-translation = http://hl7.org/fhir/StructureDefinition/translation
 Alias: $ext-organization-brand = http://hl7.org/fhir/StructureDefinition/organization-brand
+Alias: $ext-organization-period = http://hl7.org/fhir/StructureDefinition/organization-period
 
 Alias: $sct = http://snomed.info/sct
 Alias: $loinc = http://loinc.org

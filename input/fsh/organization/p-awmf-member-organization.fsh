@@ -14,10 +14,14 @@ Description: "An organization that is a member of the AWMF"
   * use = #official
   * value 1..1
 
-* type 1..*
-* type = cs-awmf#awmf-member-organization
-
-* extension contains $ext-organization-brand named brand 0..1 
+* qualification 1..*
+* qualification ^slicing.discriminator.type = #value
+* qualification ^slicing.discriminator.path = "code"
+* qualification ^slicing.rules = #closed
+* qualification contains awmf-member-organization 1..1 // The name of the slice is arbirtray, we just need one defined slice here
+* qualification[awmf-member-organization]
+  * code 1..1
+  * code = cs-awmf#awmf-member-organization
 
 
 Instance: AWMFMemberOrganizationExample
@@ -28,6 +32,7 @@ Description: "An example of an AWMF member organization."
 * identifier[awmf-association-number]
   * value = "-1"
 * name = "Example AWMF Member Organization"
+* alias[+] = "Chirurgie.Example"
 * insert narrative([[AWMF Member Organization Example]])
 * contact.telecom
   * system = #url

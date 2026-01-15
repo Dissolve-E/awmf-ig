@@ -11,6 +11,11 @@ Description: "CodeSystem representing different codes of interest for the Arbeit
 * #major-minor "Major-Minor Versioning"
   * ^designation[+].language = #de
   * ^designation[=].value = "Major-Minor Versionierungsschema"
+* #medical-society "Medical Society" "A medical society."
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Medizinische Fachgesellschaft"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Eine medizinische Fachgesellschaft."
 * #awmf-member-organization "AWMF Member Organization" "An organization that is a member of the AWMF"
   * ^designation[+].language = #de
   * ^designation[=].value = "Mitgliedsorganisation der AWMF"
