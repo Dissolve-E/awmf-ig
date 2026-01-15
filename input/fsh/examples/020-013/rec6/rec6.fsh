@@ -88,7 +88,7 @@ Description: "Justification for Recommendation Multiplex-PCR-Diagnostik"
   * relatesTo.targetReference = Reference(CoE-MultiplexPCRDiagnostic-TimeToDeescalation)
 
 Instance: CoE-MultiplexPCRDiagnostic-Mortality
-InstanceOf: CertaintyOfEvidenceRatingGRADE
+InstanceOf: EvidenceAssessmentGRADE
 Usage: #example
 Title: "Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Mortality"
 Description: "Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on mortality"
@@ -98,7 +98,7 @@ Description: "Certainty of evidence rating for the impact of Multiplex-PCR-Diagn
   * classifier = $cs-certainty-rating#very-low "Very low quality"
 
 Instance: CoE-MultiplexPCRDiagnostic-AntibioticDays
-InstanceOf: CertaintyOfEvidenceRatingGRADE
+InstanceOf: EvidenceAssessmentGRADE
 Usage: #example
 Title: "Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Antibiotic Days"
 Description: "Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on antibiotic days"
@@ -108,7 +108,7 @@ Description: "Certainty of evidence rating for the impact of Multiplex-PCR-Diagn
   * classifier = $cs-certainty-rating#very-low "Very low quality"
 
 Instance: CoE-MultiplexPCRDiagnostic-TimeToDeescalation
-InstanceOf: CertaintyOfEvidenceRatingGRADE
+InstanceOf: EvidenceAssessmentGRADE
 Usage: #example
 Title: "Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Time to Deescalation"
 Description: "Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on time to deescalation"

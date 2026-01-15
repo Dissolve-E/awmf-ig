@@ -26,7 +26,7 @@ kognitive Störung beobachtet wird und die einer solchen Untersuchung zustimmen?
 * category[synthesisType] = cs-recommendation-synthesis-type#evidence-based "Evidence-based"
 
 * version = "2025"
-* extension[versionStatus].extension[version-status].valueCodeableConcept = $cs-recommendation-review-status#reaffirmed
+* extension[reviewStatus].extension[review-status].valueCodeableConcept = $cs-recommendation-review-status#reaffirmed
 
 
 
