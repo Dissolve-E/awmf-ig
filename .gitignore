@@ -13,3 +13,4 @@ pdf/
 notebooks/
 *-generated.md
 .vscode/
+/examples/

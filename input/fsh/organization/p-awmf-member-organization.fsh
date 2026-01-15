@@ -15,12 +15,9 @@ Description: "An organization that is a member of the AWMF"
   * value 1..1
 
 * type 1..*
-* type ^slicing.discriminator.type = #value
-* type ^slicing.discriminator.path = "$this"
-* type ^slicing.rules = #open
-* type contains 
-  awmf-member-organization 1..1
-* type[awmf-member-organization] = cs-awmf#awmf-member-organization
+* type = cs-awmf#awmf-member-organization
+
+* extension contains $ext-organization-brand named brand 0..1 
 
 
 Instance: AWMFMemberOrganizationExample
@@ -38,3 +35,4 @@ Description: "An example of an AWMF member organization."
 * extension[medicalSubjectCategory][+].valueCodeableConcept = cs-medical-subject-categories#psychosocial "Psychosocial Disciplines"
 * extension[medicalSubjectCategory][+].valueCodeableConcept = cs-medical-subject-categories#surgical "Surgical Disciplines"
 * extension[medicalSubject][+].valueCodeableConcept.text = "Anesthesiology and Intensive Care Medicine"
+* extension[brand].extension[brandLogo].valueUrl = "https://www.example.org/logo.png"
