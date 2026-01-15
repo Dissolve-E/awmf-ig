@@ -54,14 +54,14 @@ Description: "A structured assessment of the evidence and consensus that underpi
     * type 1..1
     * type = $cs-related-artifact-type#justification "Justification"
     * targetReference 1..1
-    * targetReference only Reference(CertaintyOfEvidenceRating) // overall evidence rating for this outcome
+    * targetReference only Reference(EvidenceAssessment) // overall evidence rating for this outcome
   
   * component // #P2.3.3.2, #P2.3.3.3 - single study evidence (one component per study)
     * type 1..1
     * type = $cs-ebm-ig#evidence "Evidence"
     * relatesTo 1..1
       * targetReference 1..1
-      * targetReference only Reference(CertaintyOfEvidenceRating)
+      * targetReference only Reference(EvidenceAssessment)
 
 * content[searchStrategy] // #P2.3.3.1
   * type 1..1

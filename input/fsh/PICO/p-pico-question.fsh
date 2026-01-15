@@ -4,7 +4,7 @@ Id: pico-question
 Title: "PICO Question"
 Description: "A structured definition of the PICO question in the context of guidelines and recommendations."
 
-// TODO: Unsicher ob man die relatesTo Extension einschränken sollte : extension[relatesTo].extension[targetReference].valueReference
+// TODO: Unsicher ob man die relatesTo Extension einschränken sollte : extension[relatesTo].extension[targetReference].valueReference (zB nur auf Recommendation)
 
 * code = $cs-pico#pico-question
 
@@ -22,7 +22,7 @@ Description: "A structured definition of the PICO question in the context of gui
 * characteristic[population]
   * code = $cs-pico#population
   * value[x] only CodeableConcept or Reference or Expression
-  * valueReference only Reference(ConceptualCohortDefinitionPopulation)
+  * valueReference only Reference(ConceptualCohortDefinitionPopulation) // TODO: use CodeableReference 
 * characteristic[intervention]
   * code = $cs-pico#intervention
   * value[x] only CodeableConcept or Reference or Expression
