@@ -18,13 +18,17 @@ kognitive Störung beobachtet wird und die einer solchen Untersuchung zustimmen?
 * date = "2025"
 * title = "Screening auf kognitive Beeinträchtigung"
 
+* relatesTo[picoQuestion]
+  * targetCanonical = Canonical(PICOQuestionRec17)
 * relatesTo[partOf]
   * targetCanonical = Canonical(Demenzen|5.2)
 
 * category[synthesisType] = cs-recommendation-synthesis-type#evidence-based "Evidence-based"
 
 * version = "2025"
-* extension[versionStatus].extension[version-status].valueCodeableConcept = $cs-recommendation-version-status#reaffirmed
+* extension[versionStatus].extension[version-status].valueCodeableConcept = $cs-recommendation-review-status#reaffirmed
+
+
 
 * section[recommendationStatement]
   * section[language]

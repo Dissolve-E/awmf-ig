@@ -31,6 +31,7 @@ Description: "Clinical Practice Guideline Recommendation"
   specificationOfPreceedingRecommendation 0..*
   and specificationOfSucceedingRecommendation 0..*
   and replacesRecommendation 0..* // #P2.3.2.30, #P2.3.2.31
+  and picoQuestion 0..*
 * relatesTo[specificationOfPreceedingRecommendation]
   * type 1..1
   * type = #predecessor
@@ -46,7 +47,11 @@ Description: "Clinical Practice Guideline Recommendation"
   * type = #replaces
   * targetReference 1..1
   * targetReference only Reference(Recommendation)
-
+* relatesTo[picoQuestion]
+  * type 1..1 // TODO: can we remove this? check if sushi adds type automatically in instances if we remove it
+  * type = #derived-from
+  * targetReference 1..1
+  * targetReference only Reference(PICOQuestion)
 
 * relatesTo[partOf] 1..* // each recommendation must be part of at least one guideline
 
