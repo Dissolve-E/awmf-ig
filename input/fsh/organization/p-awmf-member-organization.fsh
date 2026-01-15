@@ -35,5 +35,4 @@ Description: "An example of an AWMF member organization."
 * extension[medicalSubjectCategory][+].valueCodeableConcept = cs-medical-subject-categories#psychosocial "Psychosocial Disciplines"
 * extension[medicalSubjectCategory][+].valueCodeableConcept = cs-medical-subject-categories#surgical "Surgical Disciplines"
 * extension[medicalSubject][+].valueCodeableConcept.text = "Anesthesiology and Intensive Care Medicine"
-// TODO: error The element or path you referenced does not exist: extension[$ext-organization-brand].extension[brandLogo].valueUri
-* extension[brand].extension[brandLogo].valueUri = "http://example.org/logo.png" // TODO: does not work yet
+* extension[brand].extension[logo].valueUri = "http://example.org/logo.png"
