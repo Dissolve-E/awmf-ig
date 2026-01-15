@@ -27,7 +27,7 @@ InstanceOf: certainty-of-evidence-rating
 
 * content[ratingSystem]
   * type = $cs-ebm-ig#rating-system
-  * classifier = cs-evidence-rating-system#GRADE
+  * classifier = $cs-evidence-rating-system#GRADE
 
 * content[levelOfEvidence]
   * type = $cs-certainty-type#Overall
@@ -71,7 +71,7 @@ InstanceOf: certainty-of-evidence-rating-agreeii
 
 * content[ratingSystem]
   * type = $cs-ebm-ig#rating-system
-  * classifier = cs-evidence-rating-system#AGREEII
+  * classifier = $cs-evidence-rating-system#AGREEII
 
 * content[levelOfEvidence]
   * type = $cs-certainty-type#Overall

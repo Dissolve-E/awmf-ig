@@ -64,7 +64,7 @@ InstanceOf: certainty-of-evidence-rating
 * workflowStatus = #applied
 
 * content[ratingSystem]
-  * classifier = cs-evidence-rating-system#GRADE
+  * classifier = $cs-evidence-rating-system#GRADE
 
 * content[levelOfEvidence]
   * type = $cs-certainty-type#Overall

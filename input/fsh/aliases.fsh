@@ -64,3 +64,6 @@ Alias: $cs-pico = PICOCS
 
 Alias: $cs-recommendation-review-status = cs-recommendation-review-status
 Alias: $cs-cited-artifact-status-type = http://terminology.hl7.org/CodeSystem/cited-artifact-status-type
+
+Alias: $cs-evidence-rating-system = http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem
+Alias: $vs-evidence-rating-system = http://hl7.org/fhir/uv/ebm/ValueSet/evidence-rating-system-classifier

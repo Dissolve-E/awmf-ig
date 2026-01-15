@@ -21,7 +21,7 @@ Description: "A structured assessment of the certainty of evidence for a specifi
 
 * content[ratingSystem]
   * classifier 1..1
-  * classifier from vs-evidence-rating-system (extensible)
+  * classifier from $vs-evidence-rating-system (extensible)
 
 * content[levelOfEvidence]
   * type 1..1

@@ -93,11 +93,6 @@ definition:
     name: awmf
     reference:
       reference: CodeSystem/cs-awmf
-  - description: AWMF Clinical Practice Guideline
-    isExample: false
-    name: AWMF Guideline
-    reference:
-      reference: StructureDefinition/awmf-guideline
   - description: ValueSet listing values representing guideline classes according
       to the AWMF.
     isExample: false
@@ -122,41 +117,34 @@ definition:
     name: AWMF Guideline Class
     reference:
       reference: CodeSystem/cs-awmf-guideline-class
-  - description: An example of an AWMF guideline.
+  - description: An example of an AWMF S3 guideline.
     isExample: true
-    name: AWMF Guideline Example
+    name: AWMF Guideline Record S3 Example
     profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline-record-s3
     reference:
-      reference: Composition/AWMFGuidelineExample
+      reference: Composition/AWMFGuidelineRecordS3Example
   - description: An example of an AWMF S1 guideline.
     isExample: true
     name: AWMF Guideline S1 Example
     profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline-s1
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline-record-s1
     reference:
       reference: Composition/AWMFGuidelineS1Example
   - description: An example of an AWMF S2e guideline.
     isExample: true
     name: AWMF Guideline S2e Example
     profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline-s2e
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline-record-s2e
     reference:
       reference: Composition/AWMFGuidelineS2eExample
   - description: An example of an AWMF S2k guideline.
     isExample: true
     name: AWMF Guideline S2k Example
     profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline-s2k
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline-record-s2k
     reference:
-      reference: Composition/AWMFGuidelineS2kExample
-  - description: An example of an AWMF S3 guideline.
-    isExample: true
-    name: AWMF Guideline S3 Example
-    profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline-s3
-    reference:
-      reference: Composition/AWMFGuidelineS3Example
+      reference: Composition/AWMFGuidelineRecordS2kExample
   - description: ValueSet listing values to define the guideline status according
       to the AWMF.
     isExample: false
@@ -183,26 +171,26 @@ definition:
   - description: AWMF S1 guideline representing expert recommendations developed through
       informal consensus.
     isExample: false
-    name: AWMF S1 Guideline
+    name: AWMF S1 Guideline Registry Record
     reference:
-      reference: StructureDefinition/awmf-guideline-s1
+      reference: StructureDefinition/awmf-guideline-record-s1
   - description: AWMF S2e guideline based on systematic literature search and evaluation.
     isExample: false
-    name: AWMF S2e Guideline
+    name: AWMF S2e Guideline Registry Record
     reference:
-      reference: StructureDefinition/awmf-guideline-s2e
+      reference: StructureDefinition/awmf-guideline-record-s2e
   - description: AWMF S2k guideline based on structured consensus by a representative
       panel.
     isExample: false
-    name: AWMF S2k Guideline
+    name: AWMF S2k Guideline Registry Record
     reference:
-      reference: StructureDefinition/awmf-guideline-s2k
+      reference: StructureDefinition/awmf-guideline-record-s2k
   - description: AWMF S3 guideline based on systematic evidence review and structured
       consensus by a representative panel.
     isExample: false
-    name: AWMF S3 Guideline
+    name: AWMF S3 Guideline Registry Record
     reference:
-      reference: StructureDefinition/awmf-guideline-s3
+      reference: StructureDefinition/awmf-guideline-record-s3
   - description: ValueSet listing various body system conditions
     isExample: false
     name: Body System Conditions
@@ -229,12 +217,18 @@ definition:
     name: CareStage
     reference:
       reference: ValueSet/vs-care-stage
+  - description: A structured assessment of the certainty of evidence for a specific
+      outcome.
+    isExample: false
+    name: Certainty of Evidence Rating
+    reference:
+      reference: StructureDefinition/certainty-of-evidence-rating
   - description: Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik
       on antibiotic days
     isExample: true
     name: Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Antibiotic Days
     profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/certainty-of-evidence-rating-grade
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-assessment-grade
     reference:
       reference: ArtifactAssessment/CoE-MultiplexPCRDiagnostic-AntibioticDays
   - description: Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik
@@ -242,7 +236,7 @@ definition:
     isExample: true
     name: Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Mortality
     profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/certainty-of-evidence-rating-grade
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-assessment-grade
     reference:
       reference: ArtifactAssessment/CoE-MultiplexPCRDiagnostic-Mortality
   - description: Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik
@@ -250,9 +244,27 @@ definition:
     isExample: true
     name: Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Time to Deescalation
     profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/certainty-of-evidence-rating-grade
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-assessment-grade
     reference:
       reference: ArtifactAssessment/CoE-MultiplexPCRDiagnostic-TimeToDeescalation
+  - description: Certainty of Evidence Rating Ris of Bias for Cognitive Tests When
+      Suspecting Dementia on Sensitivity
+    isExample: true
+    name: Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspecting
+      Dementia - Sensitivity
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-assessment-cochrane-rob
+    reference:
+      reference: ArtifactAssessment/RoB-CognitiveTestsWhenSuspectingDementia-Sensitivity
+  - description: Certainty of Evidence Rating Ris of Bias for Cognitive Tests When
+      Suspecting Dementia on Specificity
+    isExample: true
+    name: Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspecting
+      Dementia - Specificity
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-assessment-cochrane-rob
+    reference:
+      reference: ArtifactAssessment/RoB-CognitiveTestsWhenSuspectingDementia-Specificity
   - description: ValueSet listing different clinical application types
     isExample: false
     name: Clinical Application Type
@@ -271,6 +283,27 @@ definition:
       OMOP concepts) to Concept IDs of OMOP standard Concepts
     reference:
       reference: ConceptMap/FHIRStatusToAWMFStatus
+  - description: A structured definition of the comparator as defined for a PICO question.
+    isExample: false
+    name: Conceptual Cohort Definition Comparator
+    reference:
+      reference: StructureDefinition/conceptual-cohort-definition-comparator
+  - description: A structured definition of the intervention as defined for a PICO
+      question.
+    isExample: false
+    name: Conceptual Cohort Definition Intervention
+    reference:
+      reference: StructureDefinition/conceptual-cohort-definition-intervention
+  - description: A structured definition of the outcome as defined for a PICO question.
+    isExample: false
+    name: Conceptual Cohort Definition Outcome
+    reference:
+      reference: StructureDefinition/conceptual-cohort-definition-outcome
+  - description: A structured definition of the population as defined for a PICO question.
+    isExample: false
+    name: Conceptual Cohort Definition Population
+    reference:
+      reference: StructureDefinition/conceptual-cohort-definition-population
   - description: This extension allows for the indication of the period during which
       the guideline is open for consultation.
     isExample: false
@@ -296,14 +329,6 @@ definition:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
     reference:
       reference: Organization/DGAI
-  - description: "Deutsche Gesellschaft f\xFCr Pneumologie und Beatmungsmedizin e.V.\
-      \ (DGP)"
-    isExample: true
-    name: DGAI
-    profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
-    reference:
-      reference: Organization/DGP
   - description: "Deutsche Gesellschaft f\xFCr Chirurgie e.V. (DGCH)"
     isExample: true
     name: DGCH
@@ -340,6 +365,22 @@ definition:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
     reference:
       reference: Organization/DGIM
+  - description: "Deutsche Gesellschaft f\xFCr Pneumologie und Beatmungsmedizin e.V.\
+      \ (DGP)"
+    isExample: true
+    name: DGP
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
+    reference:
+      reference: Organization/DGP
+  - description: "Deutsche Gesellschaft f\xFCr Psychiatrie und Psychotherapie, Psychosomatik\
+      \ und Nervenheilkunde e. V. (DGPPN)"
+    isExample: true
+    name: DGPPN
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
+    reference:
+      reference: Organization/DGPPN
   - description: ValueSet listing types of dissemination websites
     isExample: false
     name: Dissemination Website
@@ -366,58 +407,46 @@ definition:
     name: Encounter Type
     reference:
       reference: ValueSet/vs-encounter-type
-  - description: A structured assessment of the certainty of evidence for a specific
-      outcome.
-    isExample: false
-    name: Evidence Assessment
-    reference:
-      reference: StructureDefinition/certainty-of-evidence-rating
   - description: A structured assessment of the quality of guidelines using the AGREE
       II instrument.
     isExample: false
     name: Evidence Assessment AGREE II
     reference:
-      reference: StructureDefinition/certainty-of-evidence-rating-agreeii
+      reference: StructureDefinition/evidence-assessment-agreeii
   - description: A structured assessment of the certainty of evidence using AMSTAR
       2.
     isExample: false
     name: Evidence Assessment AMSTAR 2
     reference:
-      reference: StructureDefinition/certainty-of-evidence-rating-amstar2
+      reference: StructureDefinition/evidence-assessment-amstar2
   - description: Structured assessment of risk of bias using Cochrane RoB tool.
     isExample: false
     name: Evidence Assessment Cochrane Risk of Bias
     reference:
-      reference: StructureDefinition/certainty-of-evidence-rating-cochrane-rob
+      reference: StructureDefinition/evidence-assessment-cochrane-rob
   - description: A structured assessment of the certainty of evidence for a specific
       outcome, including GRADE rating.
     isExample: false
     name: Evidence Assessment GRADE
     reference:
-      reference: StructureDefinition/certainty-of-evidence-rating-grade
+      reference: StructureDefinition/evidence-assessment-grade
   - description: A structured assessment of the certainty of evidence for a specific
       outcome, including Oxford 2011 rating.
     isExample: false
     name: Evidence Assessment Oxford 2011
     reference:
-      reference: StructureDefinition/certainty-of-evidence-rating-oxford2011
+      reference: StructureDefinition/evidence-assessment-oxford2011
   - description: Structured assessment of risk of bias using ROBIS (Risk of Bias in
       Systematic Reviews).
     isExample: false
     name: Evidence Assessment ROBIS
     reference:
-      reference: StructureDefinition/certainty-of-evidence-rating-robis
-  - description: CodeSystem for identifying evidence rating and appraisal frameworks
-      used in systematic reviews, guideline development, and clinical decision support.
+      reference: StructureDefinition/evidence-assessment-robis
+  - description: A structured assessment of the internal validity of evidence.
     isExample: false
-    name: Evidence Rating System Code System
+    name: Evidence Internal Validity Assessment
     reference:
-      reference: CodeSystem/cs-evidence-rating-system
-  - description: Value set of commonly used evidence rating and appraisal systems
-    isExample: false
-    name: Evidence Rating System Value Set
-    reference:
-      reference: ValueSet/vs-evidence-rating-system
+      reference: StructureDefinition/evidence-internal-validity-assessment
   - description: CodeSystem defining GRADE Evidence to Decision (EtD) Framework Certainty
       Ratings
     isExample: false
@@ -470,7 +499,7 @@ definition:
     isExample: false
     name: Guideline
     reference:
-      reference: StructureDefinition/guideline
+      reference: StructureDefinition/awmf-guideline
   - description: Attachment to a Clinical Practice Guideline
     isExample: false
     name: Guideline Attachment
@@ -533,121 +562,22 @@ definition:
     isExample: true
     name: Guideline Example
     profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline
     reference:
       reference: Composition/GuidelineExample
-  - description: An example of a guideline.
-    isExample: true
-    name: Guideline Example
-    profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
+  - description: Guideline Registry Record containing metadata and registry-specific
+      information for a clinical practice guideline.
+    isExample: false
+    name: Guideline Registry Record
     reference:
-      reference: Composition/TestInvRequireOfficialIdentifier-NoOfficialId-SHOULD-FAIL
-  - description: An example of a guideline.
+      reference: StructureDefinition/guideline-registry-record
+  - description: An example of a guideline registry record.
     isExample: true
-    name: Guideline Example
+    name: Guideline Registry Record Example
     profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record
     reference:
-      reference: Composition/TestInvRequireOfficialIdentifier-TwoOfficialId-SHOULD-FAIL
-  - description: An example of a guideline.
-    isExample: true
-    name: Guideline Example
-    profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
-    reference:
-      reference: Composition/TestInvRequireReleaseTypeIfRegistered-SHOULD-PASS
-  - description: An example of a guideline.
-    isExample: true
-    name: Guideline Example
-    profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
-    reference:
-      reference: Composition/TestInvRequireReleaseTypeIfRegistered-WrongCode-SHOULD-FAIL
-  - description: An example of a guideline.
-    isExample: true
-    name: Guideline Example
-    profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
-    reference:
-      reference: Composition/TestInvRequireReleaseTypeIfRegistered-NoTag-SHOULD-FAIL
-  - description: An example of a guideline.
-    isExample: true
-    name: Guideline Example
-    profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
-    reference:
-      reference: Composition/TestInvVersionMajorMinor-VersionMajorMinorPatch-SHOULD-FAIL
-  - description: An example of a guideline.
-    isExample: true
-    name: Guideline Example
-    profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
-    reference:
-      reference: Composition/TestInvVersionMajorMinor-VersionInvalid-SHOULD-FAIL
-  - description: An example of a guideline.
-    isExample: true
-    name: Guideline Example
-    profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
-    reference:
-      reference: Composition/TestInvVersionMajorMinor-VersionInvalid2-SHOULD-FAIL
-  - description: An example of a guideline.
-    isExample: true
-    name: Guideline Example
-    profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
-    reference:
-      reference: Composition/TestInvRegCompNeedsPlannedCompletionDate-NoDate-SHOULD-FAIL
-  - description: An example of a guideline.
-    isExample: true
-    name: Guideline Example
-    profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
-    reference:
-      reference: Composition/TestInvRegCompNeedsPlannedCompletionDate-SHOULD-PASS
-  - description: An example of a guideline.
-    isExample: true
-    name: Guideline Example
-    profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
-    reference:
-      reference: Composition/TestInvPreliminaryCompositionNeedsConsultationPeriod-SHOULD-PASS
-  - description: An example of a guideline.
-    isExample: true
-    name: Guideline Example
-    profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
-    reference:
-      reference: Composition/TestInvPrelimCompNeedsConsultationPeriod-NoDate-SHOULD-FAIL
-  - description: An example of a guideline.
-    isExample: true
-    name: Guideline Example
-    profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
-    reference:
-      reference: Composition/TestInvAuthorRegistrantSingleton-SHOULD-PASS
-  - description: An example of a guideline.
-    isExample: true
-    name: Guideline Example
-    profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
-    reference:
-      reference: Composition/TestInvAuthorRegistrantSingleton-NoRegistrant-SHOULD-FAIL
-  - description: An example of a guideline.
-    isExample: true
-    name: Guideline Example
-    profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
-    reference:
-      reference: Composition/TestInvAuthorRegistrantSingleton-TwoRegistrants-SHOULD-FAIL
-  - description: An example of a guideline.
-    isExample: true
-    name: Guideline Example
-    profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline
-    reference:
-      reference: Composition/TestInvAuthorLeadVsContrExclusive-Both-SHOULD-FAIL
+      reference: Composition/GuidelineRegistryRecordExample
   - description: ValueSet listing different guideline release types
     isExample: false
     name: Guideline Release Type
@@ -669,6 +599,29 @@ definition:
     name: Guideline Sections
     reference:
       reference: CodeSystem/cs-guideline-sections
+  - description: Fails because the contributing author points to a Practitioner instead
+      of an Organization.
+    isExample: true
+    name: Guideline with contributing author referencing Practitioner (fails invariant)
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record
+    reference:
+      reference: Composition/RR-TestInvContribAuthorRefPerson-SHOULD-FAIL
+  - description: Passes because the leading author points to an Organization.
+    isExample: true
+    name: Guideline with leading author referencing Organization (passes invariant)
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record
+    reference:
+      reference: Composition/RR-TestInvLeadingAuthorRefOrganization-SHOULD-PASS
+  - description: Fails because the leading author points to a Practitioner instead
+      of an Organization.
+    isExample: true
+    name: Guideline with leading author referencing Practitioner (fails invariant)
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record
+    reference:
+      reference: Composition/RR-TestInvLeadingAuthorRefPerson-SHOULD-FAIL
   - description: Wie wird eine HAP klinisch diagnostiziert und welche Differenzialdiagnosen
       sind zu beachten?
     isExample: true
@@ -756,12 +709,40 @@ definition:
     name: Level of Consensus
     reference:
       reference: CodeSystem/cs-level-of-consensus
+  - description: A profile for medical societies.
+    isExample: false
+    name: Medical Society
+    reference:
+      reference: StructureDefinition/medical-society
+  - description: An example of a medical society.
+    isExample: true
+    name: Medical Society Example
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/medical-society
+    reference:
+      reference: Organization/MedicalSocietyExample
+  - description: An extension to specify medical subjects related to an organization.
+    isExample: false
+    name: Medical Subject
+    reference:
+      reference: StructureDefinition/ext-medical-subject
+  - description: ValueSet listing values to classify medical subjects into different
+      categories.
+    isExample: false
+    name: Medical Subject Categories
+    reference:
+      reference: ValueSet/vs-medical-subject-categories
   - description: CodeSystem defining values to classify medical subjects into different
       categories.
     isExample: false
     name: Medical Subject Categories
     reference:
-      reference: CodeSystem/medical-subject-categories
+      reference: CodeSystem/cs-medical-subject-categories
+  - description: An extension to specify medical subject category related to an organization.
+    isExample: false
+    name: Medical Subject Category
+    reference:
+      reference: StructureDefinition/ext-medical-subject-category
   - description: "Wird der Einsatz von Multiplex-PCR im Rahmen der mikrobiologischen\
       \ Diagnostik bei Patienten \nmit Verdacht auf nosokomiale Pneumonie empfohlen?"
     isExample: true
@@ -807,6 +788,16 @@ definition:
     name: Outcome Time to Deescalation
     reference:
       reference: EvidenceVariable/OutcomeTimeToDeescalation
+  - description: A structured assessment of the overall evidence for a specific outcome.
+    isExample: false
+    name: Overall Evidence Assessment
+    reference:
+      reference: StructureDefinition/overall-evidence-assessment
+  - description: An organization that represents patients
+    isExample: false
+    name: Patient Organization
+    reference:
+      reference: StructureDefinition/patient-organization
   - description: Patienteninformation Leitlinie 020-013
     isExample: true
     name: Patienteninformation
@@ -821,6 +812,70 @@ definition:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
     reference:
       reference: Organization/PEG
+  - description: 'Vergleichsintervention: Kein Test, Mini-Mental-Status-Test (Standard)'
+    isExample: true
+    name: PICO Comparator of Recommendation 17 from Guideline 038-013
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-comparator
+    reference:
+      reference: Group/PICOComparatorRec17
+  - description: 'Intervention: Verschiedene kognitive Kurztests'
+    isExample: true
+    name: PICO Intervention of Recommendation 17 from Guideline 038-013
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-intervention
+    reference:
+      reference: Group/PICOInterventionRec17
+  - description: "Sensitivit\xE4t f\xFCr die Indikation einer Demenz"
+    isExample: true
+    name: PICO Outcome Sensitivity of Recommendation 17 from Guideline 038-013
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-outcome
+    reference:
+      reference: Group/PICOOutcomeSensitivityRec17
+  - description: "Spezifizit\xE4t f\xFCr die Indikation einer Demenz"
+    isExample: true
+    name: PICO Outcome Specificity of Recommendation 17 from Guideline 038-013
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-outcome
+    reference:
+      reference: Group/PICOOutcomeSpecificityRec17
+  - description: "Population: Menschen in nicht-spezialisierten Settings (z. B. Hausarztpraxis,\
+      \ Krankenhaus), die \xFCber die kognitive St\xF6rungen berichten oder bei denen\
+      \ eine kognitive St\xF6rung beobachtet wird"
+    isExample: true
+    name: PICO Population of Recommendation 17 from Guideline 038-013
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-population
+    reference:
+      reference: Group/PICOPopulationRec17
+  - description: A structured definition of the PICO question in the context of guidelines
+      and recommendations.
+    isExample: false
+    name: PICO Question
+    reference:
+      reference: StructureDefinition/pico-question
+  - description: "Schl\xFCsselfrage: Sind Tests in nicht-spezialisierten Settings\
+      \ sinnvoll, um eine Demenz zu erkennen bei Personen, die kognitive St\xF6rungen\
+      \ berichten oder bei denen eine\nkognitive St\xF6rung beobachtet wird und die\
+      \ einer solchen Untersuchung zustimmen?"
+    isExample: true
+    name: PICO Question of Recommendation 17 from Guideline 038-013
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/pico-question
+    reference:
+      reference: Group/PICOQuestionRec17
+  - description: ValueSet listing different terms related to PICO question and objects
+    isExample: false
+    name: PICO related terms
+    reference:
+      reference: ValueSet/vs-pico
+  - description: CodeSystem defining different terms related to PICO question and
+      objects
+    isExample: false
+    name: PICO Related Terms
+    reference:
+      reference: CodeSystem/cs-pico
   - description: This extension allows for the indication of the date when the guideline
       is planned to be completed.
     isExample: false
@@ -910,6 +965,25 @@ definition:
     name: Recommendation Justification GRADE
     reference:
       reference: StructureDefinition/recommendation-justification-grade
+  - description: This extension allows for the indication of the status of a recommendation
+      in the context of an updated guideline version along with an optional explanatory
+      text
+    isExample: false
+    name: Recommendation Review Status
+    reference:
+      reference: StructureDefinition/ext-recommendation-review-status
+  - description: CodeSystem defining values indicating how a recommendation relates
+      to a new revision of a recommendation
+    isExample: false
+    name: Recommendation Review Status Code System
+    reference:
+      reference: CodeSystem/cs-recommendation-review-status
+  - description: ValueSet representing the review-related status of a recommendation
+      in a new guideline version
+    isExample: false
+    name: Recommendation Review Status Value Set
+    reference:
+      reference: ValueSet/vs-recommendation-review-status
   - description: CodeSystem defining the grading of recommendations according to German
       guideline methodology as used in AWMF S3 guidelines.
     isExample: false
@@ -942,28 +1016,18 @@ definition:
     name: Recommendation Tags
     reference:
       reference: CodeSystem/cs-recommendation-tags
-  - description: This extension allows for the indication of the status of a recommendation
-      in the context of an updated guideline version
-    isExample: false
-    name: Recommendation Version Status
-    reference:
-      reference: StructureDefinition/ext-recommendation-version-status
-  - description: CodeSystem defining values indicating how a recommendation relates
-      to a new version of the guideline
-    isExample: false
-    name: Recommendation Version Status Code System
-    reference:
-      reference: CodeSystem/cs-recommendation-version-status
-  - description: ValueSet representing the version-related status of a recommendation
-      in a new guideline version
-    isExample: false
-    name: Recommendation Version Status Value Set
-    reference:
-      reference: ValueSet/vs-recommendation-version-status
   - isExample: true
     name: Recommendation-PlanDefinition-example
     reference:
       reference: PlanDefinition/Recommendation-PlanDefinition-example
+  - description: Justification for Recommendation Cognitive Tests When Suspecting
+      Dementia
+    isExample: true
+    name: RecommendationCognitiveTestsWhenSuspectingDementia-Justification
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification-awmf
+    reference:
+      reference: ArtifactAssessment/RecommendationCognitiveTestsWhenSuspectingDementia-Justification
   - description: Justification for Recommendation HAP Diagnose A
     isExample: true
     name: RecommendationHAPDiagnosis-A-Justification
@@ -1062,6 +1126,29 @@ definition:
     name: ROBIS Risk of Bias Domains Value Set
     reference:
       reference: ValueSet/vs-robis-risk-of-bias-domains
+  - description: S3-Leitlinie Demenzen Living Guideline - Langfassung
+    isExample: true
+    name: S3-Leitlinie Demenzen Living Guideline - Langfassung
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline
+    reference:
+      reference: Composition/Demenzen
+  - description: S3-Leitlinie Demenzen Living Guideline - Record
+    isExample: true
+    name: S3-Leitlinie Demenzen Living Guideline - Record
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record
+    reference:
+      reference: Composition/DemenzenRecord
+  - description: S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsener
+      Patienten mit nosokomialer Pneumonie
+    isExample: true
+    name: S3-Leitlinie Epidemiologie, Diagnostik und Therapie erwachsener Patienten
+      mit nosokomialer Pneumonie
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record
+    reference:
+      reference: Composition/NosokomialePneumonieRecord
   - description: S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsener
       Patienten mit nosokomialer Pneumonie
     isExample: true
@@ -1071,6 +1158,16 @@ definition:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline
     reference:
       reference: Composition/NosokomialePneumonie
+  - description: "Sind Tests in nicht-spezialisierten Settings sinnvoll, um eine Demenz\
+      \ zu erkennen bei Personen, die kognitive St\xF6rungen berichten oder bei denen\
+      \ eine\nkognitive St\xF6rung beobachtet wird und die einer solchen Untersuchung\
+      \ zustimmen?"
+    isExample: true
+    name: "Screening auf kognitive Beeintr\xE4chtigung"
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation
+    reference:
+      reference: Composition/RecommendationCognitiveTestsWhenSuspectingDementia
   - description: This extension allows for the assignment of a specific code to a
       section within a Composition resource. The code provides a standardized way
       to categorize or identify the content of the section, enabling better organization,
@@ -1115,6 +1212,168 @@ definition:
     name: Target Patient Group
     reference:
       reference: CodeSystem/cs-target-patient-group
+  - description: Tests that author-leading-vs-contributing-exclusive fails when author
+      has both roles.
+    isExample: true
+    name: 'Test: Author Both Leading and Contributing (Should Fail)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record
+    reference:
+      reference: Composition/RR-TestTestInvAuthorLeadVsContrExclusive-Both-SHOULD-FAIL
+  - description: Tests that inv-require-official-identifier fails when no official
+      identifier is present.
+    isExample: true
+    name: 'Test: No Official Identifier (Should Fail)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline
+    reference:
+      reference: Composition/G-TestTestInvRequireOfficialIdentifier-NoOfficialId-SHOULD-FAIL
+  - description: Tests that inv-require-official-identifier fails when no official
+      identifier is present.
+    isExample: true
+    name: 'Test: No Official Identifier (Should Fail)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record
+    reference:
+      reference: Composition/RR-TestTestInvRequireOfficialId-NoOfficialId-SHOULD-FAIL
+  - description: Tests that author-registrant-singleton fails when no registrant is
+      present.
+    isExample: true
+    name: 'Test: No Registrant Author (Should Fail)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record
+    reference:
+      reference: Composition/RR-TestTestInvAuthorRegistSingleton-NoRegistrant-SHOULD-FAIL
+  - description: Tests that preliminary-composition-needs-consultation-period passes
+      when period is present.
+    isExample: true
+    name: 'Test: Preliminary With Consultation Period (Should Pass)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record
+    reference:
+      reference: Composition/RR-TestTestInvPreliminaryCompNeedsConsultPeriod-SHOULD-PASS
+  - description: Tests that preliminary-composition-needs-consultation-period fails
+      when period is missing.
+    isExample: true
+    name: 'Test: Preliminary Without Consultation Period (Should Fail)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record
+    reference:
+      reference: Composition/RR-TestTestInvPrelimCompNeedsConsultPeriod-NoDate-SHOULD-FAIL
+  - description: Tests that registered-composition-needs-planned-completion-date passes
+      when date is present.
+    isExample: true
+    name: 'Test: Registered With Planned Completion Date (Should Pass)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record
+    reference:
+      reference: Composition/RR-TestTestInvRegCompNeedsPlannedComplDate-SHOULD-PASS
+  - description: Tests that registered-composition-needs-planned-completion-date fails
+      when date is missing.
+    isExample: true
+    name: 'Test: Registered Without Planned Completion Date (Should Fail)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record
+    reference:
+      reference: Composition/RR-TestTestInvRegCompNeedsPlannedComplDate-NoDate-SHOULD-FAIL
+  - description: Tests that inv-require-release-type-if-registered passes when release
+      type is present.
+    isExample: true
+    name: 'Test: Release Type If Registered (Should Pass)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record
+    reference:
+      reference: Composition/RR-TestTestInvRequireReleaseTypeIfRegistered-SHOULD-PASS
+  - description: Tests that inv-require-release-type-if-registered fails when release
+      type tag is missing.
+    isExample: true
+    name: 'Test: Release Type No Tag (Should Fail)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record
+    reference:
+      reference: Composition/RR-TestTestInvRequireReleaseTypeIfRegistered-NoTag-SHOULD-FAIL
+  - description: Tests that inv-require-release-type-if-registered fails when release
+      type code is invalid.
+    isExample: true
+    name: 'Test: Release Type Wrong Code (Should Fail)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record
+    reference:
+      reference: Composition/RR-TestTestInvRequireReleaseTypeIfReg-WrongCode-SHOULD-FAIL
+  - description: Tests that author-registrant-singleton passes when exactly one registrant
+      is present.
+    isExample: true
+    name: 'Test: Single Registrant Author (Should Pass)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record
+    reference:
+      reference: Composition/RR-TestTestInvAuthorRegistrantSingleton-SHOULD-PASS
+  - description: Tests that inv-require-official-identifier fails when two official
+      identifiers are present.
+    isExample: true
+    name: 'Test: Two Official Identifiers (Should Fail)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline
+    reference:
+      reference: Composition/G-TestTestInvRequireOfficialIdentifier-TwoOfficialId-SHOULD-FAIL
+  - description: Tests that inv-require-official-identifier fails when two official
+      identifiers are present.
+    isExample: true
+    name: 'Test: Two Official Identifiers (Should Fail)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record
+    reference:
+      reference: Composition/RR-TestTestInvRequireOfficialId-TwoOfficialId-SHOULD-FAIL
+  - description: Tests that author-registrant-singleton fails when two registrants
+      are present.
+    isExample: true
+    name: 'Test: Two Registrant Authors (Should Fail)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record
+    reference:
+      reference: Composition/RR-TestTestInvAuthorRegistSingleton-TwoRegistrants-SHOULD-FAIL
+  - description: Tests that inv-version-major-minor fails when version is text.
+    isExample: true
+    name: 'Test: Version as Text (Should Fail)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline
+    reference:
+      reference: Composition/G-TestTestInvVersionMajorMinor-VersionInvalid2-SHOULD-FAIL
+  - description: Tests that inv-version-major-minor fails when version is text.
+    isExample: true
+    name: 'Test: Version as Text (Should Fail)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record
+    reference:
+      reference: Composition/RR-TestTestInvVersionMajorMinor-VersionInvalid2-SHOULD-FAIL
+  - description: Tests that inv-version-major-minor fails when version has three parts.
+    isExample: true
+    name: 'Test: Version Major.Minor.Patch (Should Fail)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline
+    reference:
+      reference: Composition/G-TestTestInvVersionMajorMinor-VersionPatch-SHOULD-FAIL
+  - description: Tests that inv-version-major-minor fails when version has three parts.
+    isExample: true
+    name: 'Test: Version Major.Minor.Patch (Should Fail)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record
+    reference:
+      reference: Composition/RR-TestTestInvVersionMajorMinor-VersionPatch-SHOULD-FAIL
+  - description: Tests that inv-version-major-minor fails when version has 'v' prefix.
+    isExample: true
+    name: 'Test: Version with Prefix (Should Fail)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline
+    reference:
+      reference: Composition/G-TestTestInvVersionMajorMinor-VersionInvalid-SHOULD-FAIL
+  - description: Tests that inv-version-major-minor fails when version has 'v' prefix.
+    isExample: true
+    name: 'Test: Version with Prefix (Should Fail)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record
+    reference:
+      reference: Composition/RR-TestTestInvVersionMajorMinor-VersionInvalid-SHOULD-FAIL
 dependsOn:
 - id: hl7_fhir_uv_ebm
   packageId: hl7.fhir.uv.ebm
@@ -1127,11 +1386,11 @@ dependsOn:
 - id: hl7_fhir_uv_extensions
   packageId: hl7.fhir.uv.extensions
   uri: http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions
-  version: 5.2.0
+  version: 5.3.0-ballot-tc1
 - id: hl7_terminology
   packageId: hl7.terminology
   uri: http://terminology.hl7.org/ImplementationGuide/hl7.terminology
-  version: 6.3.0
+  version: 7.0.1
 description: 'This implementation guide, produced by the Dissolve-E project (G-BA
   grant 01VSF23021) in collaboration with the Association of the Scientific Medical
   Societies in Germany (AWMF), defines FHIR profiles, extensions, and guidance for

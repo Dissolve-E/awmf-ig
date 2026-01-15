@@ -43,7 +43,6 @@
 [CS:Care Setting]: CodeSystem-cs-care-setting.html
 [CS:Clinical Application Type]: CodeSystem-cs-clinical-application-type.html
 [CS:Contact Point]: CodeSystem-cs-contact-point.html
-[CS:Evidence Rating System Code System]: CodeSystem-cs-evidence-rating-system.html
 [CS:Evidence To Decision Certainty Rating]: CodeSystem-cs-evidence-to-decision-certainty-rating.html
 [CS:Evidence To Decision Certainty type]: CodeSystem-cs-evidence-to-decision-certainty-type.html
 [CS:Guideline Author Role]: CodeSystem-cs-guideline-author-role.html

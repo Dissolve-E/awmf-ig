@@ -8,7 +8,7 @@ Description: "A structured assessment of the certainty of evidence using AMSTAR 
   * type 1..1
   * type = $cs-ebm-ig#rating-system "Rating System"
   * classifier 1..1
-  * classifier = cs-evidence-rating-system#AMSTAR2 "AMSTAR 2"
+  * classifier = $cs-evidence-rating-system#AMSTAR2 "AMSTAR 2"
 
 // NOTE: Currently, we only implement whether the AMSTAR2 rating system has been applied (via content[ratingSystem]).
 // We do not yet represent the individual ratings on the AMSTAR2 domains or the overall score (if applicable).

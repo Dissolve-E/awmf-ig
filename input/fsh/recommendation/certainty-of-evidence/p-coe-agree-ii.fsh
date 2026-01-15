@@ -7,7 +7,7 @@ Description: "A structured assessment of the quality of guidelines using the AGR
   * type 1..1
   * type = $cs-ebm-ig#rating-system "Rating System"
   * classifier 1..1
-  * classifier = cs-evidence-rating-system#AGREEII "AGREE II"
+  * classifier = $cs-evidence-rating-system#AGREEII "AGREE II"
 
 // NOTE: Currently, we only implement whether the AGREE II rating system has been applied (via content[ratingSystem]).
 // We do not yet represent the individual ratings on the AGREE II domains or the overall score (if applicable).

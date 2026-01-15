@@ -29,7 +29,7 @@ Description: "A structured assessment of the evidence and consensus that underpi
     * type 1..1
     * type = $cs-ebm-ig#rating-system "Rating System"
     * classifier 1..1
-    * classifier from vs-evidence-rating-system (preferred)
+    * classifier from $vs-evidence-rating-system (preferred)
 
   * component[strengthOfRecommendation]
     * type 1..1

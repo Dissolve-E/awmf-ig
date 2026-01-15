@@ -7,7 +7,7 @@ Description: "A structured assessment of the certainty of evidence for a specifi
   * type 1..1
   * type = $cs-ebm-ig#rating-system "Rating System"
   * classifier 1..1
-  * classifier = cs-evidence-rating-system#OCEBM2011 "Oxford 2011 (OCEBM)"
+  * classifier = $cs-evidence-rating-system#OCEBM2011 "Oxford 2011 (OCEBM)"
 
 // NOTE: Currently, we only implement whether the Oxford 2011rating system has been applied (via content[ratingSystem]).
 // We do not yet represent the individual ratings on the Oxford 2011 domains or the overall score (if applicable).
