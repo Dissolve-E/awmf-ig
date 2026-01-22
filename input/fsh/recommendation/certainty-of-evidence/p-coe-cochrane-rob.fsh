@@ -1,13 +1,13 @@
-Profile: CertaintyOfEvidenceRatingCochraneRoB
-Parent: CertaintyOfEvidenceRating
-Id: certainty-of-evidence-rating-cochrane-rob
+Profile: EvidenceAssessmentCochraneRoB
+Parent: EvidenceInternalValidityAssessment
+Id: evidence-assessment-cochrane-rob
 Title: "Evidence Assessment Cochrane Risk of Bias"
 Description: "Structured assessment of risk of bias using Cochrane RoB tool."
 * content[ratingSystem]
   * type 1..1
   * type = $cs-ebm-ig#rating-system "Rating System"
   * classifier 1..1
-  * classifier = cs-evidence-rating-system#CochraneRoB "Cochrane RoB"
+  * classifier = $cs-evidence-rating-system#CochraneRoB "Cochrane RoB"
 
 // NOTE: Currently, we only implement whether the Cochrane RoB rating system has been applied (via content[ratingSystem]).
 // We do not yet represent the individual ratings on the Cochrane RoB domains or the overall score (if applicable).

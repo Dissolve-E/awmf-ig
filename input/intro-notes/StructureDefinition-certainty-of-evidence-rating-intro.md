@@ -8,7 +8,7 @@
 
 To transparently represent the certainty of evidence for specific outcomes, guideline developers must capture evidence assessments using structured data. This includes ratings from established systems such as **GRADE**, **AGREE II**, **ROBIS**, **AMSTAR 2**, or **Oxford 2011**.
 
-These assessments are expressed using the `CertaintyOfEvidenceRating` profile, based on the FHIR `ArtifactAssessment` resource. Each instance represents the evaluation of one piece of evidence (e.g., an `OutcomeEvidence` resource) using a specific rating system.
+These assessments are expressed using the `EvidenceAssessment` profile, based on the FHIR `ArtifactAssessment` resource. Each instance represents the evaluation of one piece of evidence (e.g., an `OutcomeEvidence` resource) using a specific rating system.
 
 The profile requires explicitly stating:
 - Which rating system was used (e.g., GRADE, AGREE II),
@@ -27,7 +27,7 @@ InstanceOf: certainty-of-evidence-rating
 
 * content[ratingSystem]
   * type = $cs-ebm-ig#rating-system
-  * classifier = cs-evidence-rating-system#GRADE
+  * classifier = $cs-evidence-rating-system#GRADE
 
 * content[levelOfEvidence]
   * type = $cs-certainty-type#Overall
@@ -61,7 +61,7 @@ These allow precise attribution of strengths and weaknesses in the body of evide
 
 ##### Example: AGREE II Assessment of a Guideline
 
-If the evidence being rated is a guideline, a different profile derived from `CertaintyOfEvidenceRating` can be used, for example for AGREE II:
+If the evidence being rated is a guideline, a different profile derived from `EvidenceAssessment` can be used, for example for AGREE II:
 
 ```
 Instance: AGREEAssessmentExample
@@ -71,7 +71,7 @@ InstanceOf: certainty-of-evidence-rating-agreeii
 
 * content[ratingSystem]
   * type = $cs-ebm-ig#rating-system
-  * classifier = cs-evidence-rating-system#AGREEII
+  * classifier = $cs-evidence-rating-system#AGREEII
 
 * content[levelOfEvidence]
   * type = $cs-certainty-type#Overall
@@ -89,7 +89,7 @@ RecommendationJustification[ArtifactAssessment]
 * content[evidence][+]
   * relatedArtifact
     * type = #derived-from
-    * resource = Reference(CertaintyOfEvidenceRating/Example)
+    * resource = Reference(EvidenceAssessment/Example)
 ```
 
 This structured approach ensures that both automated systems and human users can transparently trace how certainty of evidence influenced the recommendations.

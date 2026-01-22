@@ -1,12 +1,12 @@
-Profile: AWMFGuidelineS2e
-Parent: AWMFGuideline
-Id: awmf-guideline-s2e
-Title: "AWMF S2e Guideline"
+Profile: AWMFGuidelineRecordS2e
+Parent: AWMFGuidelineRegistryRecord
+Id: awmf-guideline-record-s2e
+Title: "AWMF S2e Guideline Registry Record"
 Description: "AWMF S2e guideline based on systematic literature search and evaluation."
 * category[awmfGuidelineClass] = cs-awmf-guideline-class#S2e "Evidence-based Guideline"
 
 Instance: AWMFGuidelineS2eExample
-InstanceOf: awmf-guideline-s2e
+InstanceOf: awmf-guideline-record-s2e
 Usage: #example
 Title: "AWMF Guideline S2e Example"
 Description: "An example of an AWMF S2e guideline."

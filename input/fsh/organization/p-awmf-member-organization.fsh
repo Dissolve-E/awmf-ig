@@ -14,13 +14,14 @@ Description: "An organization that is a member of the AWMF"
   * use = #official
   * value 1..1
 
-* type 1..*
-* type ^slicing.discriminator.type = #value
-* type ^slicing.discriminator.path = "$this"
-* type ^slicing.rules = #open
-* type contains 
-  awmf-member-organization 1..1
-* type[awmf-member-organization] = cs-awmf#awmf-member-organization
+* qualification 1..*
+* qualification ^slicing.discriminator.type = #value
+* qualification ^slicing.discriminator.path = "code"
+* qualification ^slicing.rules = #closed
+* qualification contains awmf-member-organization 1..1 // The name of the slice is arbirtray, we just need one defined slice here
+* qualification[awmf-member-organization]
+  * code 1..1
+  * code = cs-awmf#awmf-member-organization
 
 
 Instance: AWMFMemberOrganizationExample
@@ -31,6 +32,7 @@ Description: "An example of an AWMF member organization."
 * identifier[awmf-association-number]
   * value = "-1"
 * name = "Example AWMF Member Organization"
+* alias[+] = "Chirurgie.Example"
 * insert narrative([[AWMF Member Organization Example]])
 * contact.telecom
   * system = #url
@@ -38,3 +40,4 @@ Description: "An example of an AWMF member organization."
 * extension[medicalSubjectCategory][+].valueCodeableConcept = cs-medical-subject-categories#psychosocial "Psychosocial Disciplines"
 * extension[medicalSubjectCategory][+].valueCodeableConcept = cs-medical-subject-categories#surgical "Surgical Disciplines"
 * extension[medicalSubject][+].valueCodeableConcept.text = "Anesthesiology and Intensive Care Medicine"
+* extension[brand].extension[brandLogo].valueUrl = "https://www.example.org/logo.png"

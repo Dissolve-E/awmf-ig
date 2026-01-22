@@ -1,13 +1,13 @@
-Profile: CertaintyOfEvidenceRatingROBIS
-Parent: CertaintyOfEvidenceRating
-Id: certainty-of-evidence-rating-robis
+Profile: EvidenceAssessmentROBIS
+Parent: EvidenceInternalValidityAssessment
+Id: evidence-assessment-robis
 Title: "Evidence Assessment ROBIS"
 Description: "Structured assessment of risk of bias using ROBIS (Risk of Bias in Systematic Reviews)."
 * content[ratingSystem]
   * type 1..1
   * type = $cs-ebm-ig#rating-system "Rating System"
   * classifier 1..1
-  * classifier = cs-evidence-rating-system#ROBIS "ROBIS"
+  * classifier = $cs-evidence-rating-system#ROBIS "ROBIS"
 
 // NOTE: Currently, we only implement whether the ROBIS rating system has been applied (via content[ratingSystem]).
 // We do not yet represent the individual ratings on the ROBIS domains or the overall score (if applicable).

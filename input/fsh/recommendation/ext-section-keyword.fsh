@@ -12,7 +12,7 @@ Context: Element
 * value[x] only CodeableConcept
 * valueCodeableConcept 1..1
   * coding 1.. MS
-  * coding ^slicing.discriminator.type = #pattern
+  * coding ^slicing.discriminator.type = #value
   * coding ^slicing.discriminator.path = "$this"
   * coding ^slicing.rules = #open
   * coding contains // #P2.3.2.11

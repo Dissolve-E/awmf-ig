@@ -1,4 +1,4 @@
-Profile: CertaintyOfEvidenceRating
+Profile: EvidenceAssessment
 Parent: $ebm-certainty-of-evidence
 Id: certainty-of-evidence-rating
 Title: "Certainty of Evidence Rating"
@@ -8,7 +8,7 @@ Description: "A structured assessment of the certainty of evidence for a specifi
 //       or should they be independent and only be "passively" referenced by the overall assessment (like it is now implemented)? [all, after workshop]
 
 // #P2.3.3.2, #P2.3.3.3
-* artifactReference only Reference(OutcomeEvidence)
+* artifactReference only Reference(OutcomeEvidence or ConceptualCohortDefinitionOutcome)
 
 // TODO: how to mark evidence as missing? #P2.3.3.7 (e.g. if no studies are available for a specific outcome) [all, after workshop]
 //       we need to define the way in FHIR and explicitly mention this in the implementation guide
@@ -21,7 +21,7 @@ Description: "A structured assessment of the certainty of evidence for a specifi
 
 * content[ratingSystem]
   * classifier 1..1
-  * classifier from vs-evidence-rating-system (extensible)
+  * classifier from $vs-evidence-rating-system (extensible)
 
 * content[levelOfEvidence]
   * type 1..1

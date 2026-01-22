@@ -19,9 +19,9 @@ To ensure transparency and traceability, each recommendation can be supported by
 This is achieved by combining two linked `ArtifactAssessment` profiles:
 
 1. `RecommendationJustification`: summarizes how a recommendation was derived, including consensus strength and outcome-specific evidence summaries.
-2. `CertaintyOfEvidenceRating`: evaluates the certainty of the evidence for a specific outcome, and optionally for individual studies.
+2. `EvidenceAssessment`: evaluates the certainty of the evidence for a specific outcome, and optionally for individual studies.
 
-Each outcome that contributed to the recommendation is documented as a separate `content[evidence]` entry in the `RecommendationJustification`. This entry then references a corresponding `CertaintyOfEvidenceRating` resource.
+Each outcome that contributed to the recommendation is documented as a separate `content[evidence]` entry in the `RecommendationJustification`. This entry then references a corresponding `EvidenceAssessment` resource.
 
 ##### Example: Linking Evidence to a Recommendation
 
@@ -42,20 +42,20 @@ InstanceOf: recommendation-justification
   * type = $cs-ebm-ig#evidence
   * relatesTo
     * type = $cs-related-artifact-type#justification
-    * targetReference = Reference(CertaintyOfEvidenceRating/mortality)
+    * targetReference = Reference(EvidenceAssessment/mortality)
 
 * content[evidence][+]
   * type = $cs-ebm-ig#evidence
   * relatesTo
     * type = $cs-related-artifact-type#justification
-    * targetReference = Reference(CertaintyOfEvidenceRating/hospitalStay)
+    * targetReference = Reference(EvidenceAssessment/hospitalStay)
 ```
 
 This structure supports separate evaluation of the certainty of evidence for each relevant outcome (e.g., mortality, hospital stay).
 
 ##### Example: Certainty of Evidence for an Outcome
 
-Each `CertaintyOfEvidenceRating` references the structured outcome evidence and provides a rating of the certainty of evidence (e.g., GRADE).
+Each `EvidenceAssessment` references the structured outcome evidence and provides a rating of the certainty of evidence (e.g., GRADE).
 
 ```
 Instance: CertaintyMortality
@@ -64,7 +64,7 @@ InstanceOf: certainty-of-evidence-rating
 * workflowStatus = #applied
 
 * content[ratingSystem]
-  * classifier = cs-evidence-rating-system#GRADE
+  * classifier = $cs-evidence-rating-system#GRADE
 
 * content[levelOfEvidence]
   * type = $cs-certainty-type#Overall
@@ -80,22 +80,22 @@ If individual studies were assessed separately, each can be linked as a `compone
 ```
 * content[evidence][+]
   * type = $cs-ebm-ig#evidence
-  * relatesTo.targetReference = Reference(CertaintyOfEvidenceRating/summary-mortality)
+  * relatesTo.targetReference = Reference(EvidenceAssessment/summary-mortality)
   * component[+]
     * type = $cs-ebm-ig#evidence
-    * relatesTo.targetReference = Reference(CertaintyOfEvidenceRating/study123)
+    * relatesTo.targetReference = Reference(EvidenceAssessment/study123)
 ```
 
 This structure enables separation of outcome-level summaries from individual study-level ratings, while still maintaining linkages between them.
 
 ##### Why this Structure?
 
-Although the linkages span multiple resources (`RecommendationJustification → CertaintyOfEvidenceRating → OutcomeEvidence → EvidenceVariable`), this model supports:
+Although the linkages span multiple resources (`RecommendationJustification → EvidenceAssessment → OutcomeEvidence → EvidenceVariable`), this model supports:
 
 - Precise referencing of both outcome-level and study-level evidence,
 - Extensibility for structured meta-analysis,
 - Compatibility with structured reporting of p-values, effect sizes, and certainty domains,
-- Clean separation of evidence evaluation (`CertaintyOfEvidenceRating`) and recommendation reasoning (`RecommendationJustification`).
+- Clean separation of evidence evaluation (`EvidenceAssessment`) and recommendation reasoning (`RecommendationJustification`).
 
 This design aligns with the Dissolve-E goal of structured, traceable, and standards-based documentation of how recommendations are derived from evidence.
 

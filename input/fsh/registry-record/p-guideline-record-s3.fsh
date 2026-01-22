@@ -1,14 +1,14 @@
-Profile: AWMFGuidelineS3
-Parent: AWMFGuideline
-Id: awmf-guideline-s3
-Title: "AWMF S3 Guideline"
+Profile: AWMFGuidelineRecordS3
+Parent: AWMFGuidelineRegistryRecord
+Id: awmf-guideline-record-s3
+Title: "AWMF S3 Guideline Registry Record"
 Description: "AWMF S3 guideline based on systematic evidence review and structured consensus by a representative panel."
 * category[awmfGuidelineClass] = cs-awmf-guideline-class#S3 "Evidence- and consensus-based guideline"
 
-Instance: AWMFGuidelineS3Example
-InstanceOf: awmf-guideline-s3
+Instance: AWMFGuidelineRecordS3Example
+InstanceOf: awmf-guideline-record-s3
 Usage: #example
-Title: "AWMF Guideline S3 Example"
+Title: "AWMF Guideline Record S3 Example"
 Description: "An example of an AWMF S3 guideline."
 * insert narrative([[AWMF Guideline S3 Example]])
 * version = "2.0"

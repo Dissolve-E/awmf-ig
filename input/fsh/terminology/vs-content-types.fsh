@@ -2,6 +2,7 @@ ValueSet: ContentTypesVS
 Id: vs-content-types
 Title: "Content Types"
 Description: "ValueSet listing types of content that can be part of a guideline or recommendation."
+* insert rs-valueset-meta
 * cs-guideline-sections#long-version "Long Version" // required for all, "Langversion"
 * cs-guideline-sections#short-version "Short Version" // optional, "Kurzversion"
 * cs-guideline-sections#guideline-report "Guideline Report" // required for all guideline classes from 2026-03

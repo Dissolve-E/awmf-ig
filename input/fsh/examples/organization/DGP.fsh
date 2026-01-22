@@ -1,7 +1,7 @@
 Instance: DGP
 InstanceOf: AWMFMemberOrganization
 Usage: #example
-Title: "DGAI"
+Title: "DGP"
 Description: "Deutsche Gesellschaft für Pneumologie und Beatmungsmedizin e.V. (DGP)"
 * identifier[awmf-association-number]
   * value = "020"

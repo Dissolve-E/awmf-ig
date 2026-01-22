@@ -8,16 +8,29 @@ Description: "Clinical Practice Guideline Recommendation"
 * obeys inv-require-official-identifier // #P2.2.2
 
 * version 1..1 // #P2.2.6, #P2.2.7
-* version obeys inv-version-major-minor // #P2.2.1
-* extension[versionAlgorithm].valueCoding = cs-awmf#major-minor "Major-Minor Versioning"
+* extension[versionAlgorithm].valueCoding = cs-awmf#year-month-versioning
+
+* extension contains
+    ext-recommendation-review-status named reviewStatus 0..1 // #P2.3.2.29
 
 * meta.tag from vs-recommendation-tags (preferred)
+
+* extension[approvalDate]
+  * ^definition = "The date on which the recommendation was approved in its current version."
+  * ^short = "Approval Date"
+  * valueDate 1..1
+
+* extension[lastReviewDate]
+  * ^definition = "The date of the last literature review for the recommendation."
+  * ^short = "Last Literature Review Date"
+  * valueDate 1..1
 
 // #P2.1.8
 * relatesTo contains 
   specificationOfPreceedingRecommendation 0..*
   and specificationOfSucceedingRecommendation 0..*
   and replacesRecommendation 0..* // #P2.3.2.30, #P2.3.2.31
+  and picoQuestion 0..*
 * relatesTo[specificationOfPreceedingRecommendation]
   * type 1..1
   * type = #predecessor
@@ -33,7 +46,11 @@ Description: "Clinical Practice Guideline Recommendation"
   * type = #replaces
   * targetReference 1..1
   * targetReference only Reference(Recommendation)
-
+* relatesTo[picoQuestion]
+  * type 1..1 // TODO: can we remove this? check if sushi adds type automatically in instances if we remove it
+  * type = #derived-from
+  * targetReference 1..1
+  * targetReference only Reference(PICOQuestion)
 
 * relatesTo[partOf] 1..* // each recommendation must be part of at least one guideline
 
@@ -42,8 +59,8 @@ Description: "Clinical Practice Guideline Recommendation"
   * ^slicing.discriminator.path = "coding"
   * ^slicing.rules = #open
 * category contains 
-  synthesisType 1..1
-  and clinicalApplicationType 0..*
+    synthesisType 1..1
+    and clinicalApplicationType 0..*
 * category[synthesisType]
   * coding from vs-recommendation-synthesis-type (required) 
     * system 1.. MS
@@ -55,15 +72,11 @@ Description: "Clinical Practice Guideline Recommendation"
 
 * section.extension contains 
   ext-section-intended-audience named intendedAudience 0..*
-  and ext-recommendation-version-status named versionStatus 0..1 // #P2.3.2.29
 
 // add some more codes for the sections (not only the ones defined by the EBM IG)
 * section.code from vs-guideline-sections (extensible)
 
-* section[recommendationStatement]
-  * insert rs-language-section
-
-// close the slicing for section and add @default section
+// close the slicing for section and add text section
 * section ^slicing.rules = #closed
 * section contains 
   text 0..* MS
@@ -71,13 +84,13 @@ Description: "Clinical Practice Guideline Recommendation"
   and patientVersion 0..*
   and otherContent 0..*
   and outcome 0..1
-  and @default 0..* 
-* section[@default]
+  //and text 0..* 
+/** section[text] // TODO: we'll use [text] as default slice for now, until SUSHI and the FHIR validator supports default slices properly
 // fixme: actually, the default slice must not fix the discriminator, but as of 25-03-06 the validator is not able to handle default slices. therefore, we fix the discriminator here.
   * code 1..1
   * code.coding 1..1
   * code.coding = cs-guideline-sections#default-section
-  * insert rs-language-section-nested
+  * insert rs-language-section-nested*/
 
 * section[text]
   * code 1..1
@@ -99,7 +112,7 @@ Description: "Clinical Practice Guideline Recommendation"
 * section[otherContent]
   * code 1..1
   * code.coding  1..1
-  * code from vs-content-types (required)
+  * code from vs-content-types (required) // todo: restrict to reasonable elements (e.g. long version is not applicable for recommendation, only for guideline)
   * code.coding from vs-content-types (required)
   * insert rs-language-section-nested
 
@@ -144,6 +157,7 @@ Description: "Clinical Practice Guideline Recommendation"
   * code 1..1
   * code = $cs-ebm-ig#recommendation-statement "Recommendation Statement"
   * code.coding = $cs-ebm-ig#recommendation-statement "Recommendation Statement"
+  * insert rs-language-section
 
 * section[population] // #P2.3.2.1
   * code 1..1
@@ -176,9 +190,9 @@ Description: "Clinical Practice Guideline Recommendation"
 // used to specify clinical outcomes that are relevant for the recommendation (e.g. mortality, morbidity, quality of life, ...)
 * section[outcome] // #P2.3.2.1
   * code 1..1
-  * code = $cs-ebm-ig#outcome "Outcome"
-  // * code.coding 1..1
-  // * code.coding = $cs-ebm-ig#outcome "Outcome"
+  * code = $cs-pico#outcome "Outcome"
+  * code.coding 1..1
+  * code.coding = $cs-pico#outcome "Outcome"
   * insert rs-language-section
   * section[language]
     * extension contains ext-section-keyword named keyword 0..*
@@ -201,10 +215,14 @@ Description: "An example of a recommendation."
 * author[+] = Reference(GuidelineAuthorRoleExample)
 * date = "2025-03-06"
 * title = "Example Recommendation"
+* identifier[+]
+  * system = "http://example.org/recommendations"
+  * value = "REC-EX-001"
+  * use = #official
 * category[synthesisType] = cs-recommendation-synthesis-type#expert-consensus
 * relatesTo[partOf][+]
   * targetCanonical = Canonical(GuidelineExample)
-* section[@default][+]
+* section[text][+]
   * section[language]
     * extension[language].valueCode = #de
     * insert narrative([[Example Recommendation]])

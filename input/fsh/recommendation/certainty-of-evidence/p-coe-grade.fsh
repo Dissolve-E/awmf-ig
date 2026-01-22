@@ -1,6 +1,6 @@
-Profile: CertaintyOfEvidenceRatingGRADE
-Parent: CertaintyOfEvidenceRating
-Id: certainty-of-evidence-rating-grade
+Profile: EvidenceAssessmentGRADE
+Parent: OverallEvidenceAssessment
+Id: evidence-assessment-grade
 Title: "Evidence Assessment GRADE"
 Description: "A structured assessment of the certainty of evidence for a specific outcome, including GRADE rating."
 
@@ -8,8 +8,7 @@ Description: "A structured assessment of the certainty of evidence for a specifi
 * content ^slicing.discriminator.path = "type"
 * content ^slicing.rules = #open
 * content contains 
-  riskOfBias 0..1
-  and inconsistency 0..1
+  inconsistency 0..1
   and indirectness 0..1
   and imprecision 0..1
   and publicationBias 0..1
@@ -21,16 +20,13 @@ Description: "A structured assessment of the certainty of evidence for a specifi
   * type 1..1
   * type = $cs-ebm-ig#rating-system "Rating System"
   * classifier 1..1
-  * classifier = cs-evidence-rating-system#GRADE
+  * classifier = $cs-evidence-rating-system#GRADE
 
 * content[levelOfEvidence]
   * type 1..1
   * type = $cs-certainty-type#Overall "Overall certainty"
   * classifier 1..1
   * classifier from vs-rating-certainty-of-evidence (required)
-* content[riskOfBias]
-  * type 1..1
-  * type = $cs-certainty-type#RiskOfBias "Risk of bias"
 * content[inconsistency]
   * type 1..1
   * type = $cs-certainty-type#Inconsistency "Inconsistency"
