@@ -25,7 +25,6 @@ URL value 'https://register.awmf.org/de/leitlinien/detail/020-013' does not reso
 This element does not match any known slice defined in the profile http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline|0.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # the following url actually resolves, not sure what the validator's problem is
-URL value 'http://terminology.hl7.org/CodeSystem/designation-usage' does not resolve
 Canonical URL 'http://hl7.org/fhir/uv/cpg/ValueSet/cpg-recommendation-direction-vs' does not resolve 
 ValueSet 'http://hl7.org/fhir/uv/cpg/ValueSet/cpg-recommendation-direction-vs' not found
 A definition for CodeSystem 'http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-recommendation-direction-cs' could not be found, so the code cannot be validated
