@@ -18,6 +18,11 @@ kognitive Störung beobachtet wird und die einer solchen Untersuchung zustimmen?
 * date = "2025"
 * title = "Screening auf kognitive Beeinträchtigung"
 
+* identifier[+]
+  * system = "https://example.org/recommendations"
+  * value = "RecommendationCognitiveTestsWhenSuspectingDementia"
+  * use = #official
+
 * relatesTo[picoQuestion]
   * targetCanonical = Canonical(PICOQuestionRec17)
 * relatesTo[partOf]
