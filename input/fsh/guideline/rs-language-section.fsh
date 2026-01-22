@@ -6,6 +6,8 @@ RuleSet: rs-language-section
 * section[language]
   * code 1..1
   * code = cs-guideline-sections#language
+  * code.coding 1..1
+  * code.coding = cs-guideline-sections#language
   * extension contains ext-section-language named language 1..1
   * section 0..0
 * section[text]
