@@ -6,7 +6,7 @@ Description: "Certainty of Evidence Rating Ris of Bias for Cognitive Tests When 
 * insert narrative([[Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspecting Dementia on Sensitivity]])
 //* artifactReference = Reference(Evidence-MultiplexPCRDiagnostic-Mortality)
 * content[levelOfEvidence]
-  * classifier = $cs-certainty-rating#low_risk_of_bias "Low risk of bias"
+  * classifier = cs-rob-2-overall-judgment#low_risk_of_bias "Low risk of bias"
 * artifactReference = Reference(PICOOutcomeSensitivityRec17)
 
 Instance: RoB-CognitiveTestsWhenSuspectingDementia-Specificity
@@ -17,5 +17,5 @@ Description: "Certainty of Evidence Rating Ris of Bias for Cognitive Tests When 
 * insert narrative([[Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspecting Dementia on Specificity]])
 //* artifactReference = Reference(Evidence-MultiplexPCRDiagnostic-Mortality)
 * content[levelOfEvidence]
-  * classifier = $cs-certainty-rating#low_risk_of_bias "Low risk of bias"
+  * classifier = cs-rob-2-overall-judgment#low_risk_of_bias "Low risk of bias"
 * artifactReference = Reference(PICOOutcomeSpecificityRec17)
