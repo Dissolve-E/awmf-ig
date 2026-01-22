@@ -2,7 +2,7 @@ Extension: RecommendationReviewStatus // #P2.3.2.29 // Todo @Gregor: Add new req
 Id: ext-recommendation-review-status
 Title: "Recommendation Review Status"
 Description: "This extension allows for the indication of the status of a recommendation in the context of an updated guideline version along with an optional explanatory text"
-Context: Element
+Context: Composition
 * ^purpose = "The RecommendationReviewStatus extension is used to indicate whether a recommendation has been added, updated, reviewed, or reaffirmed in the new guideline version, as well as to add an explanation text related to the status."
 * . 0..1
 * . ^short = "Version status of recommendation"

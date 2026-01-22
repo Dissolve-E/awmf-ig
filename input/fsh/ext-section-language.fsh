@@ -2,7 +2,7 @@ Extension: SectionLanguageExt // #P2.3.2.21
 Id: ext-section-language
 Title: "Section Language"
 Description: "This extension allows for the indication of the Language of the Section."
-Context: Element
+Context: Composition.section
 * . 0..1
 * . ^short = "Language for the Section"
 * . ^definition = "The Language of the Section."

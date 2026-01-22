@@ -7,6 +7,10 @@ Description: "Concept map from concepts from standardized vocabularies that are 
 * status = #draft
 * purpose = """The DISSOLVE-E project develops a digital registry for clinical practice guidelines in Germany. The project is based on current processes coordinated by the Association of the Scientific Medical Societies in Germany (in German: Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften, short: AWMF).
             This ConceptMap maps values for the workflow status as defined by the AWMF to the required FHIR ValueSet http://hl7.org/fhir/ValueSet/composition-status that is used in a Composition Resource or Profile."""
+* name = "FHIRStatusToAWMFStatus"
+* title = "Concept map from FHIR Composition Status to AWMF Guideline Status"
+* experimental = true
+* description = "This ConceptMap maps values for the workflow status as defined by the AWMF to the required FHIR ValueSet http://hl7.org/fhir/ValueSet/composition-status that is used in a Composition Resource or Profile."
 * group[+]
   * source = $cs-composition-status
   * target = Canonical(cs-awmf-guideline-status)

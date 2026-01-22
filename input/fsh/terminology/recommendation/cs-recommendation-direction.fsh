@@ -2,6 +2,7 @@ CodeSystem: RecommendationDirectionCS
 Id: cs-recommendation-direction
 Title: "Recommendation Direction"
 Description: "CodeSystem defining the direction of a clinical recommendation."
+* insert rs-codesystem-meta
 * #for "For"
   * ^definition = "The recommendation is in favor of the intervention."
 * #against "Against"
