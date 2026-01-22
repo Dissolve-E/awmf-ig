@@ -447,6 +447,14 @@ definition:
     name: Evidence Internal Validity Assessment
     reference:
       reference: StructureDefinition/evidence-internal-validity-assessment
+  - description: Intermediate profile that re-slices the extendedContactDetail extension
+      from EvidenceReport. This workaround profile isolates the re-slicing to avoid
+      'Named items are out of order in the slice' errors in derived profiles. See
+      profile comments for detailed explanation.
+    isExample: false
+    name: Evidence Report with Contact Slices
+    reference:
+      reference: StructureDefinition/evidence-report-with-contact-slices
   - description: CodeSystem defining GRADE Evidence to Decision (EtD) Framework Certainty
       Ratings
     isExample: false
@@ -512,6 +520,13 @@ definition:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-attachment
     reference:
       reference: DocumentReference/guideline-attachment-example
+  - description: An example of a guideline attachment for the patient version.
+    isExample: true
+    name: Guideline Attachment Patient Version Example
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-attachment
+    reference:
+      reference: DocumentReference/guideline-attachment-patient-version-example
   - description: A person that authored a guideline.
     isExample: false
     name: Guideline Author
@@ -935,11 +950,21 @@ definition:
     name: Rating Resources
     reference:
       reference: ValueSet/vs-rating-resources
+  - description: ValueSet defining the direction of a clinical recommendation.
+    isExample: false
+    name: Recommenadtion Direction
+    reference:
+      reference: ValueSet/vs-recommendation-direction
   - description: Clinical Practice Guideline Recommendation
     isExample: false
     name: Recommendation
     reference:
       reference: StructureDefinition/recommendation
+  - description: CodeSystem defining the direction of a clinical recommendation.
+    isExample: false
+    name: Recommendation Direction
+    reference:
+      reference: CodeSystem/cs-recommendation-direction
   - description: An example of a recommendation.
     isExample: true
     name: Recommendation Example

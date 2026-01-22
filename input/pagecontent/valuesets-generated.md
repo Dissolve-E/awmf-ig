@@ -30,6 +30,7 @@
 {% include valueset-reference.md name='VS:Rating Feasibility' %}
 {% include valueset-reference.md name='VS:Rating Preference And Values' %}
 {% include valueset-reference.md name='VS:Rating Resources' %}
+{% include valueset-reference.md name='VS:Recommenadtion Direction' %}
 {% include valueset-reference.md name='VS:Recommendation Review Status Value Set' %}
 {% include valueset-reference.md name='VS:Recommendation Strength (AWMF) ValueSet' %}
 {% include valueset-reference.md name='VS:Recommendation Synthesis Type' %}
