@@ -1,5 +1,72 @@
+// ============================================================================
+// WORKAROUND PROFILE: EvidenceReportWithContactSlices
+// ============================================================================
+// This intermediate profile exists as a workaround for a limitation in the 
+// FHIR IG Publisher's snapshot generation algorithm.
+//
+// PROBLEM: The FHIR snapshot generator (ProfilePathProcessor.processPathWithSlicedBase)
+// enforces strict ordering rules for slices:
+//   1. Definition order must be maintained
+//   2. Slice element names have to match
+//   3. New slices must be introduced at the end
+//
+// When re-slicing the parent's 'extendedContactDetail' slice (e.g., creating
+// extendedContactDetail/registrant, extendedContactDetail/coordinator), these
+// new sub-slices appear in the differential BETWEEN the parent's existing slices
+// (extendedContactDetail and publicationDate), violating rule #3.
+//
+// This causes the error: "Named items are out of order in the slice"
+//
+// WORKAROUND: By isolating the re-slicing in a separate intermediate profile,
+// we ensure that the main child profile (AWMFGuidelineRegistryRecord) does not
+// have its differential contain both parent slice constraints and re-sliced
+// sub-slices in a way that violates the ordering rules.
+//
+// The intermediate profile handles ONLY the extendedContactDetail re-slicing,
+// and the main profile inherits from it instead of directly from EvidenceReport.
+// ============================================================================
+
+Profile: EvidenceReportWithContactSlices
+Parent: $ebm-evidence-report
+Id: evidence-report-with-contact-slices
+Title: "Evidence Report with Contact Slices"
+Description: "Intermediate profile that re-slices the extendedContactDetail extension from EvidenceReport. This workaround profile isolates the re-slicing to avoid 'Named items are out of order in the slice' errors in derived profiles. See profile comments for detailed explanation."
+* extension[extendedContactDetail] contains 
+  registrant 0..1 MS 
+  and coordinator 0..* MS 
+  and mainContact 0..1 MS
+  
+* extension[extendedContactDetail].valueExtendedContactDetail
+  * purpose 1..1
+* extension[extendedContactDetail][registrant].valueExtendedContactDetail
+  * purpose = cs-contact-point#registrant
+  * purpose 1..1
+  * name 1..1
+  * telecom 1..*
+    * value 1..1
+  * address 0..1
+* extension[extendedContactDetail][coordinator].valueExtendedContactDetail
+  * purpose = cs-contact-point#coordinator
+  * purpose 1..1
+  * name 1..1
+  * telecom 1..*
+    * value 1..1
+  * address 0..1
+* extension[extendedContactDetail][mainContact].valueExtendedContactDetail
+  * purpose = cs-contact-point#contact
+  * purpose 1..1
+  * name 1..1
+  * telecom 1..*
+    * value 1..1
+  * address 0..1
+
+
+// ============================================================================
+// MAIN PROFILE: AWMFGuidelineRegistryRecord
+// ============================================================================
+
 Profile: AWMFGuidelineRegistryRecord
-Parent: $ebm-evidence-report // do not use Guideline or EvidenceReportPackage as parent, because these have already "content" sections that we do not need
+Parent: EvidenceReportWithContactSlices // Inherits from workaround profile instead of EvidenceReport directly
 Id: guideline-registry-record
 Title: "Guideline Registry Record"
 Description: "Guideline Registry Record containing metadata and registry-specific information for a clinical practice guideline."
@@ -42,85 +109,27 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
 
 * type = cs-awmf#guideline-registry-record "Guideline Registry Record"
 
-* extension contains 
-  ext-first-publication-date named firstPublicationDate 0..1 MS
-  and ext-submission-date named submissionDate 0..1 MS
-  and ext-consultation-period named consultationPeriod 0..1 MS
-  and ext-planned-completion-date named plannedCompletionDate 0..1 MS
-  and ext-registration-date named registrationDate 0..1 MS
-// NOTE: We avoid re-slicing the existing 'extendedContactDetail' slice from the EBM IG here,
-// as the IG Publisher currently throws a "named items are out of order in the slice" error
-// when attempting to do so. 
-//
-// As a workaround, we redefine the 'extendedContactDetail' extension under a new slice name
-// ('extContactDetail') and apply slicing there. This avoids the snapshot generation error
-// and preserves the intended semantics.
-//
-// It's unclear whether this restriction is intended behavior or a limitation in the IG Publisher.
-  //and $ext-extended-contact-detail named extContactDetail 0..* MS
+// ============================================================================
+// EXTENSION ORDERING - IMPORTANT!
+// The extension rules below MUST follow the order defined in the parent profile
+// (EBM evidence-report) to avoid "Named items are out of order in the slice" errors.
+// Parent order: versionAlgorithm → experimental → description → purpose → copyright 
+//               → copyrightLabel → approvalDate → lastReviewDate → effectivePeriod 
+//               → additionalLanguage → extendedContactDetail → publicationDate → publicationStatus
+// ============================================================================
 
-
-// TODO: Use guideline-registration extension instead? https://build.fhir.org/ig/HL7/ebm/en/StructureDefinition-guideline-registration.html
-/*
-* extension[registrationStatus] ^slicing.discriminator[+].type = #value
-* extension[registrationStatus] ^slicing.discriminator[=].path = "slice('activity').valueCodeableConcept"
-* extension[registrationStatus] ^slicing.rules = #open
-* extension[registrationStatus] contains 
-  firstPublicationDate 0..1
-  and submissionDate 0..1
-  and consultationPeriod 0..1
-  and plannedCompletionDate 0..1
-  and registrationDate 0..1
-  and lastReviewDate  0..1
-  and publishedDate 0..1
-  and effectivePeriod 0..1
-
-* extension[registrationDate][firstPublicationDate][activity].valueCodeableConcept = $cs-cirted-artifact-status-type#
-* extension[registrationDate][submissionDate][activity].valueCodeableConcept = $cs-cited-artifact-status-type#submitted	"Submitted"
-* extension[registrationDate][consultationPeriod][activity].valueCodeableConcept = $cs-cited-artifact-status-type#under-review "Under review"
-* extension[registrationDate][plannedCompletionDate][activity].valueCodeableConcept = $cs-cited-artifact-status-type#
-* extension[registrationDate][registrationDate][activity].valueCodeableConcept = $cs-cited-artifact-status-type#
-*/
-
-
-* extension[extendedContactDetail] contains 
-  registrant 0..1 MS 
-  and coordinator 0..* MS 
-  and mainContact 0..1 MS
-
-* extension[extendedContactDetail].valueExtendedContactDetail
-  * purpose 1..1
-* extension[extendedContactDetail][registrant].valueExtendedContactDetail
-  * purpose = cs-contact-point#registrant
-  * purpose 1..1
-  * name 1..1
-  * telecom 1..*
-    * value 1..1
-  * address 0..1
-* extension[extendedContactDetail][coordinator].valueExtendedContactDetail
-  * purpose = cs-contact-point#coordinator
-  * purpose 1..1
-  * name 1..1
-  * telecom 1..*
-    * value 1..1
-  * address 0..1
-* extension[extendedContactDetail][mainContact].valueExtendedContactDetail
-  * purpose = cs-contact-point#contact
-  * purpose 1..1
-  * name 1..1
-  * telecom 1..*
-    * value 1..1
-  * address 0..1
+* extension[versionAlgorithm].valueCoding = cs-awmf#major-minor "Major-Minor Versioning"
 
 // TODO: Should we use ProvenanceResource for activities such as review, approval, publication etc, instead of extensions for dates?[(Discussion Point for Workshop]
-* extension[lastReviewDate] // MAGIC-AWMF: lastEdit, AWMF: "Aktueller Stand" // #P2.3.1.9
-  * ^definition = "The date on which the guideline was last updated."
-  * ^short = "Last Review Date"
-  * valueDate 1..1
 
 * extension[approvalDate] // MAGIC-AWMF: ..., AWMF: "Freigegeben am"
   * ^definition = "The date on which the guideline was approved by the publisher."
   * ^short = "Approval Date"
+  * valueDate 1..1
+
+* extension[lastReviewDate] // MAGIC-AWMF: lastEdit, AWMF: "Aktueller Stand" // #P2.3.1.9
+  * ^definition = "The date on which the guideline was last updated."
+  * ^short = "Last Review Date"
   * valueDate 1..1
 
 * extension[effectivePeriod] // MAGIC-AWMF: validUntilDate, AWMF: "Gültig bis"  // #P2.3.1.9
@@ -134,6 +143,14 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
   * ^short = "Publication Date"
   * valueDate 1..1
 
+// NEW EXTENSIONS - Define new extension slices AFTER all parent extension constraints
+* extension contains 
+  ext-first-publication-date named firstPublicationDate 0..1 MS
+  and ext-submission-date named submissionDate 0..1 MS
+  and ext-consultation-period named consultationPeriod 0..1 MS
+  and ext-planned-completion-date named plannedCompletionDate 0..1 MS
+  and ext-registration-date named registrationDate 0..1 MS
+
 * extension[firstPublicationDate] // MAGIC-AWMF: publishedDate, AWMF: "Veröffentlicht seit"  // #P2.3.1.9
   * ^definition = "The date on which the guideline was first published in its initial version."
   * ^short = "First Publication Date"
@@ -144,13 +161,6 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
   * ^short = "Submission Date"
   * valueDate 1..1
 
-* extension[plannedCompletionDate] // MAGIC-AWMF: plannedCompletionDate, AWMF: "Geplante Fertigstellung" // #P2.3.1.10
-  * ^definition = "The date on which the guideline is planned to be completed."
-  * ^short = "Planned Completion Date"
-  * valueDate 1..1
-// required for status=#registered
-* obeys registered-composition-needs-planned-completion-date
-
 * extension[consultationPeriod] // MAGIC-AWMF: consultation[*]Date, AWMF: "" // #P2.3.1.10
   * ^definition = "The period during which the guideline is open for consultation."
   * ^short = "Consultation Period"
@@ -158,6 +168,12 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
 // require for status=#preliminary 
 * obeys preliminary-composition-needs-consultation-period
 
+* extension[plannedCompletionDate] // MAGIC-AWMF: plannedCompletionDate, AWMF: "Geplante Fertigstellung" // #P2.3.1.10
+  * ^definition = "The date on which the guideline is planned to be completed."
+  * ^short = "Planned Completion Date"
+  * valueDate 1..1
+// required for status=#registered
+* obeys registered-composition-needs-planned-completion-date
 
 * extension[registrationDate] // MAGIC-AWMF: startDate, AWMF: "Datum der Anmeldung" // #P2.3.1.10
   * ^definition = "The date when the guideline registration was submitted."
@@ -187,9 +203,10 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
 
 * version 1..1 // #P2.2.1, #P2.2.7
 * version obeys inv-version-major-minor // #P2.2.1, #P2.2.8
-* extension[versionAlgorithm].valueCoding = cs-awmf#major-minor "Major-Minor Versioning"
 
-* relatesTo.extension contains  ext-relates-to-label named label 0..1 
+* relatesTo[similarTo] 0..*
+* relatesTo.extension contains ext-relates-to-label named label 0..1
+
   // todo: use attachment with label instead or targetReference.display
 * relatesTo ^slicing.discriminator.type = #value
 * relatesTo ^slicing.discriminator.path = "type"

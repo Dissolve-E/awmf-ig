@@ -8,10 +8,10 @@ Description: "CodeSystem representing different codes of interest for the Arbeit
   * ^designation[=].value = "Durch Autor*innen geordnet"
   * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
   * ^definition.extension[$ext-translation].extension[content].valueString = "Die Leitlinie wurde von den Autor*innen geordnet und MUSS in der angegebenen Reihenfolge befolgt werden."
-* #major-minor "Major-Minor Versioning"
+* #major-minor "Major-Minor Versioning" "A versioning scheme using major and minor version numbers (e.g., 1.0, 2.1)."
   * ^designation[+].language = #de
   * ^designation[=].value = "Major-Minor Versionierungsschema"
-* #year-month-versioning "Year-Month Versioning"
+* #year-month-versioning "Year-Month Versioning" "A versioning scheme based on year and month (e.g., 2024/06)."
   * ^designation[+].language = #de
   * ^designation[=].value = "Jahr-Monat Versionierungsschema"
   * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
