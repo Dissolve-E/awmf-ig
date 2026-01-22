@@ -5,12 +5,15 @@ Thumbs.db
 /output
 /temp
 /template
+/.publication
 pdf/
 *.jar
 *.bat
-*.sh
+_*.sh
 *.pdf
 notebooks/
 *-generated.md
 .vscode/
 /examples/
+publication-request.json
+ig-registry.json

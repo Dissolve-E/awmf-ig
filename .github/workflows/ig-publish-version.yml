@@ -1,0 +1,498 @@
+name: Publish IG Version
+
+on:
+  # Manual trigger with inputs
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to publish (e.g., 1.0.0, 1.1.0-beta.1)'
+        required: true
+        type: string
+      mode:
+        description: 'Publication mode'
+        required: true
+        type: choice
+        options:
+          - milestone
+          - working
+          - technical-correction
+        default: milestone
+      status:
+        description: 'Release status'
+        required: true
+        type: choice
+        options:
+          - trial-use
+          - draft
+          - ballot
+          - release
+          - normative
+        default: trial-use
+      sequence:
+        description: 'Release sequence (e.g., "STU1", "Releases")'
+        required: false
+        type: string
+        default: 'Releases'
+      description:
+        description: 'Release description'
+        required: false
+        type: string
+      first_publication:
+        description: 'Is this the first publication?'
+        required: false
+        type: boolean
+        default: false
+
+  # Can also be triggered by semantic-release workflow
+  workflow_call:
+    inputs:
+      version:
+        required: true
+        type: string
+      mode:
+        required: false
+        type: string
+        default: milestone
+      status:
+        required: false
+        type: string
+        default: trial-use
+      sequence:
+        required: false
+        type: string
+        default: 'Releases'
+      description:
+        required: false
+        type: string
+      first_publication:
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+env:
+  JAVA_TOOL_OPTIONS: "-Xmx6g"
+  CANONICAL: "http://fhir.awmf.org/awmf.ig"
+  PACKAGE_ID: "awmf.ig"
+
+jobs:
+  publish-version:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install dependencies
+        run: |
+          sudo snap install yq
+          sudo apt-get install -y jq
+
+      - name: Validate version format
+        run: |
+          VERSION="${{ inputs.version }}"
+          if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9.]+)?$ ]]; then
+            echo "Error: Invalid version format: $VERSION"
+            echo "Expected format: X.Y.Z or X.Y.Z-prerelease"
+            exit 1
+          fi
+          echo "Version validated: $VERSION"
+
+      - name: Read current config
+        id: config
+        run: |
+          FHIR_VERSION=$(yq eval '.fhirVersion' sushi-config.yaml)
+          IG_TITLE=$(yq eval '.title' sushi-config.yaml)
+          echo "fhir_version=$FHIR_VERSION" >> $GITHUB_OUTPUT
+          echo "ig_title=$IG_TITLE" >> $GITHUB_OUTPUT
+
+      - name: Determine release label
+        id: release-label
+        run: |
+          case "${{ inputs.status }}" in
+            draft) LABEL="draft" ;;
+            ballot) LABEL="ballot" ;;
+            trial-use) LABEL="trial-use" ;;
+            release|normative) LABEL="release" ;;
+            *) LABEL="${{ inputs.status }}" ;;
+          esac
+          echo "label=$LABEL" >> $GITHUB_OUTPUT
+
+      - name: Update sushi-config.yaml
+        run: |
+          yq eval '.version = "${{ inputs.version }}"' -i sushi-config.yaml
+          yq eval '.releaseLabel = "${{ steps.release-label.outputs.label }}"' -i sushi-config.yaml
+          
+          echo "Updated sushi-config.yaml:"
+          head -30 sushi-config.yaml
+
+      - name: Determine if first publication
+        id: first-check
+        run: |
+          if [ "${{ inputs.first_publication }}" = "true" ]; then
+            echo "first=true" >> $GITHUB_OUTPUT
+          elif [ ! -f package-list.json ]; then
+            echo "first=true" >> $GITHUB_OUTPUT
+          else
+            PUBLISHED_COUNT=$(jq '[.list[] | select(.status != "ci-build")] | length' package-list.json)
+            if [ "$PUBLISHED_COUNT" -eq 0 ]; then
+              echo "first=true" >> $GITHUB_OUTPUT
+            else
+              echo "first=false" >> $GITHUB_OUTPUT
+            fi
+          fi
+
+      - name: Create publication-request.json
+        run: |
+          VERSION="${{ inputs.version }}"
+          MODE="${{ inputs.mode }}"
+          STATUS="${{ inputs.status }}"
+          SEQUENCE="${{ inputs.sequence }}"
+          DESC="${{ inputs.description }}"
+          FIRST="${{ steps.first-check.outputs.first }}"
+          
+          # Default description
+          if [ -z "$DESC" ]; then
+            if [ "$FIRST" = "true" ]; then
+              DESC="Initial release of the AWMF Guideline Registry Implementation Guide"
+            else
+              DESC="Release version ${VERSION}"
+            fi
+          fi
+          
+          if [ "$FIRST" = "true" ]; then
+            cat > publication-request.json << EOF
+          {
+            "package-id": "$PACKAGE_ID",
+            "version": "$VERSION",
+            "path": "$CANONICAL/$VERSION",
+            "mode": "$MODE",
+            "status": "$STATUS",
+            "sequence": "$SEQUENCE",
+            "desc": "$DESC",
+            "first": true,
+            "title": "${{ steps.config.outputs.ig_title }}",
+            "ci-build": "$CANONICAL",
+            "category": "Clinical Practice Guidelines",
+            "introduction": "FHIR profiles for German clinical practice guidelines - AWMF Guideline Registry"
+          }
+          EOF
+          else
+            cat > publication-request.json << EOF
+          {
+            "package-id": "$PACKAGE_ID",
+            "version": "$VERSION",
+            "path": "$CANONICAL/$VERSION",
+            "mode": "$MODE",
+            "status": "$STATUS",
+            "sequence": "$SEQUENCE",
+            "desc": "$DESC",
+            "first": false
+          }
+          EOF
+          fi
+          
+          echo "Created publication-request.json:"
+          cat publication-request.json
+
+      - name: Install EBM IG dependency
+        run: ./download-ebm-ig.sh
+
+      - name: Download IG Publisher
+        run: |
+          mkdir -p input-cache
+          curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar \
+            -o ./input-cache/publisher.jar
+
+      - name: Create publication directories
+        run: |
+          mkdir -p .publication/webroot
+          mkdir -p .publication/temp
+          mkdir -p .publication/history
+          mkdir -p .publication/templates
+
+      - name: Prepare SSH and fetch existing publications
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.AWMF_IG_SSH_KEY }}" > /tmp/awmf_ig_publisher.id_ed25519
+          chmod 600 /tmp/awmf_ig_publisher.id_ed25519
+          ssh-keyscan -p 221 register.awmf.org >> ~/.ssh/known_hosts
+          
+          # Try to fetch existing publications (may fail on first publish)
+          rsync -av --ignore-existing \
+            -e "ssh -p 221 -i /tmp/awmf_ig_publisher.id_ed25519" \
+            awmf_ig_publisher@register.awmf.org:./awmf.ig/ \
+            .publication/webroot/ || echo "No existing publications found (this may be the first publication)"
+
+      - name: Build IG with publish flag
+        uses: docker://hl7fhir/ig-publisher-base:latest
+        with:
+          args: java -Xmx6g -jar ./input-cache/publisher.jar -ig . -publish ${{ env.CANONICAL }}
+
+      - name: Prepare versioned directory structure
+        run: |
+          VERSION="${{ inputs.version }}"
+          MODE="${{ inputs.mode }}"
+          
+          # Create version-specific directory
+          mkdir -p ".publication/webroot/${VERSION}"
+          cp -r ./output/* ".publication/webroot/${VERSION}/"
+          
+          # If milestone mode, also update root (current version)
+          if [ "$MODE" = "milestone" ]; then
+            # Preserve existing version directories
+            find .publication/webroot -maxdepth 1 -type d -name '[0-9]*' -exec basename {} \; > /tmp/existing_versions.txt || true
+            
+            # Copy new output to root
+            cp -r ./output/* .publication/webroot/
+            
+            # Restore version directories that may have been overwritten
+            while read -r ver; do
+              if [ -n "$ver" ] && [ "$ver" != "$VERSION" ]; then
+                # Version dir should still exist, nothing to do
+                :
+              fi
+            done < /tmp/existing_versions.txt || true
+          fi
+          
+          echo "Directory structure:"
+          ls -la .publication/webroot/
+
+      - name: Update package-list.json
+        run: |
+          VERSION="${{ inputs.version }}"
+          STATUS="${{ inputs.status }}"
+          SEQUENCE="${{ inputs.sequence }}"
+          MODE="${{ inputs.mode }}"
+          DESC="${{ inputs.description }}"
+          FHIR_VERSION="${{ steps.config.outputs.fhir_version }}"
+          PUB_DATE=$(date +%Y-%m-%d)
+          
+          if [ -z "$DESC" ]; then
+            DESC="Release version ${VERSION}"
+          fi
+          
+          # Create new entry JSON
+          NEW_ENTRY=$(cat << EOF
+          {
+            "version": "${VERSION}",
+            "date": "${PUB_DATE}",
+            "desc": "${DESC}",
+            "path": "${CANONICAL}/${VERSION}",
+            "status": "${STATUS}",
+            "sequence": "${SEQUENCE}",
+            "fhirversion": "${FHIR_VERSION}",
+            "current": $([ "$MODE" = "milestone" ] && echo "true" || echo "false")
+          }
+          EOF
+          )
+          
+          # Check if version already exists
+          EXISTS=$(jq --arg v "$VERSION" '[.list[] | select(.version == $v)] | length' package-list.json)
+          
+          if [ "$EXISTS" -gt 0 ]; then
+            echo "Updating existing version entry..."
+            jq --argjson entry "$NEW_ENTRY" --arg v "$VERSION" \
+              '.list = [.list[] | if .version == $v then $entry else . end]' \
+              package-list.json > package-list.json.tmp && mv package-list.json.tmp package-list.json
+          else
+            echo "Adding new version entry..."
+            jq --argjson entry "$NEW_ENTRY" \
+              '.list = [.list[0]] + [$entry] + .list[1:]' \
+              package-list.json > package-list.json.tmp && mv package-list.json.tmp package-list.json
+          fi
+          
+          # Update current flags if milestone
+          if [ "$MODE" = "milestone" ]; then
+            jq --arg v "$VERSION" \
+              '.list = [.list[] | if .version == "current" then . elif .version == $v then .current = true else .current = false end]' \
+              package-list.json > package-list.json.tmp && mv package-list.json.tmp package-list.json
+          fi
+          
+          echo "Updated package-list.json:"
+          cat package-list.json
+          
+          # Copy to webroot
+          cp package-list.json .publication/webroot/
+
+      - name: Generate history page
+        run: |
+          TITLE=$(jq -r '.title' package-list.json)
+          INTRO=$(jq -r '.introduction' package-list.json)
+          
+          cat > .publication/webroot/history.html << 'HEADER'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>TITLE_PLACEHOLDER - Publication History</title>
+              <style>
+                  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+                  h1 { color: #333; border-bottom: 2px solid #0066cc; padding-bottom: 10px; }
+                  h2 { color: #555; margin-top: 30px; }
+                  .intro { background: #f8f9fa; padding: 15px 20px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid #0066cc; }
+                  table { width: 100%; border-collapse: collapse; margin-top: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+                  th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+                  th { background: #0066cc; color: white; font-weight: 600; }
+                  tr:hover { background: #f5f8fc; }
+                  .status { padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: 500; display: inline-block; }
+                  .status-ci-build { background: #fff3cd; color: #856404; }
+                  .status-draft { background: #e2e3e5; color: #383d41; }
+                  .status-trial-use { background: #d4edda; color: #155724; }
+                  .status-release { background: #cce5ff; color: #004085; }
+                  .status-ballot { background: #f8d7da; color: #721c24; }
+                  .current-row { background: #e8f4fd; }
+                  .current-badge { background: #0066cc; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.75em; margin-left: 5px; }
+                  a { color: #0066cc; text-decoration: none; }
+                  a:hover { text-decoration: underline; }
+                  footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e0e0e0; color: #666; font-size: 0.9em; }
+              </style>
+          </head>
+          <body>
+          HEADER
+          
+          # Replace placeholders
+          sed -i "s/TITLE_PLACEHOLDER/${TITLE}/" .publication/webroot/history.html
+          
+          cat >> .publication/webroot/history.html << EOF
+              <h1>${TITLE}</h1>
+              <div class="intro">
+                  <p>${INTRO}</p>
+              </div>
+              
+              <h2>Publication History</h2>
+              <table>
+                  <thead>
+                      <tr>
+                          <th>Version</th>
+                          <th>Date</th>
+                          <th>Status</th>
+                          <th>Sequence</th>
+                          <th>Description</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+          EOF
+          
+          # Add table rows from package-list.json
+          jq -r '.list[] | @base64' package-list.json | while read -r encoded; do
+            entry=$(echo "$encoded" | base64 --decode)
+            v=$(echo "$entry" | jq -r '.version')
+            d=$(echo "$entry" | jq -r '.date // "continuous"')
+            s=$(echo "$entry" | jq -r '.status')
+            seq=$(echo "$entry" | jq -r '.sequence // "-"')
+            desc=$(echo "$entry" | jq -r '.desc')
+            path=$(echo "$entry" | jq -r '.path')
+            current=$(echo "$entry" | jq -r '.current // false')
+            
+            row_class=""
+            current_badge=""
+            if [ "$current" = "true" ]; then
+              row_class="current-row"
+              current_badge='<span class="current-badge">current</span>'
+            fi
+            
+            cat >> .publication/webroot/history.html << ROW
+                      <tr class="${row_class}">
+                          <td><a href="${path}">${v}</a>${current_badge}</td>
+                          <td>${d}</td>
+                          <td><span class="status status-${s}">${s}</span></td>
+                          <td>${seq}</td>
+                          <td>${desc}</td>
+                      </tr>
+          ROW
+          done
+          
+          cat >> .publication/webroot/history.html << 'FOOTER'
+                  </tbody>
+              </table>
+              
+              <footer>
+                  <p>Published by <a href="https://www.awmf.org">AWMF e.V.</a> as part of the Dissolve-E project</p>
+                  <p><a href="index.html">← Back to current version</a></p>
+              </footer>
+          </body>
+          </html>
+          FOOTER
+          
+          echo "Generated history.html"
+
+      - name: Deploy to AWMF registry
+        run: |
+          rsync -av --delete \
+            -e "ssh -p 221 -i /tmp/awmf_ig_publisher.id_ed25519" \
+            .publication/webroot/ \
+            awmf_ig_publisher@register.awmf.org:./awmf.ig/
+          
+          echo "========================================="
+          echo "Publication complete!"
+          echo "Version ${{ inputs.version }} published to:"
+          echo "  ${{ env.CANONICAL }}/${{ inputs.version }}"
+          if [ "${{ inputs.mode }}" = "milestone" ]; then
+            echo "  ${{ env.CANONICAL }} (current)"
+          fi
+          echo "  ${{ env.CANONICAL }}/history.html"
+          echo "========================================="
+
+      - name: Commit updated package-list.json
+        run: |
+          git config user.name 'github-actions'
+          git config user.email 'github-actions@github.com'
+          
+          # Reset sushi-config to ci-build for ongoing development
+          yq eval '.releaseLabel = "ci-build"' -i sushi-config.yaml
+          
+          git add package-list.json
+          git add sushi-config.yaml
+          git diff --cached --quiet || git commit -m "Update package-list.json for version ${{ inputs.version }}"
+          git push
+
+      - name: Create GitHub Release
+        if: inputs.mode == 'milestone'
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ inputs.version }}
+          name: Release ${{ inputs.version }}
+          body: |
+            ## ${{ steps.config.outputs.ig_title }} v${{ inputs.version }}
+            
+            **Status:** ${{ inputs.status }}
+            **Sequence:** ${{ inputs.sequence }}
+            
+            ${{ inputs.description }}
+            
+            ### Links
+            - **This version:** ${{ env.CANONICAL }}/${{ inputs.version }}
+            - **Current version:** ${{ env.CANONICAL }}
+            - **History:** ${{ env.CANONICAL }}/history.html
+            - **Package:** ${{ env.CANONICAL }}/${{ inputs.version }}/package.tgz
+          files: |
+            output/package.tgz
+          draft: false
+          prerelease: ${{ contains(inputs.version, '-') }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Summary
+        run: |
+          echo "## Publication Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Property | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|----------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Version | ${{ inputs.version }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Mode | ${{ inputs.mode }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Status | ${{ inputs.status }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Sequence | ${{ inputs.sequence }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| First Publication | ${{ steps.first-check.outputs.first }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Published URLs" >> $GITHUB_STEP_SUMMARY
+          echo "- Version: ${{ env.CANONICAL }}/${{ inputs.version }}" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ inputs.mode }}" = "milestone" ]; then
+            echo "- Current: ${{ env.CANONICAL }}" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "- History: ${{ env.CANONICAL }}/history.html" >> $GITHUB_STEP_SUMMARY
