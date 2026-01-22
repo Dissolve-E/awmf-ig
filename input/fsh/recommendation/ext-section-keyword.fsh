@@ -2,7 +2,7 @@ Extension: SectionKeyword
 Id: ext-section-keyword
 Title: "Section Keyword"
 Description: "This extension allows for the indication of keywords associated with the section"
-Context: Composition.section
+Context: Element
 * ^purpose = "The SectionKeyword extension is used to capture keywords associated with the section."
 * . 0..*
 * . ^short = "Keyword"
