@@ -20,8 +20,8 @@ Alias: $cs-list-empty-reason = http://terminology.hl7.org/CodeSystem/list-empty-
 Alias: $cs-ebm-ig = https://fevir.net/resources/CodeSystem/179423
 
 Alias: $cs-certainty-type = http://hl7.org/fhir/certainty-type
-Alias: $cs-direction-of-recommendation = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-recommendation-direction-cs
-Alias: $vs-direction-of-recommendation = http://hl7.org/fhir/uv/cpg/ValueSet/cpg-recommendation-direction-vs
+Alias: $cs-direction-of-recommendation = cs-recommendation-direction
+Alias: $vs-direction-of-recommendation = vs-recommendation-direction
 
 //Alias: $cs-quality-of-evidence = http://terminology.hl7.org/CodeSystem/evidence-quality // Use $cs-certainty-rating instead
 Alias: $vs-quality-of-evidence = http://terminology.hl7.org/ValueSet/evidence-quality

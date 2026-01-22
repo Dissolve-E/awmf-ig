@@ -29,3 +29,5 @@ Canonical URL 'http://hl7.org/fhir/uv/cpg/ValueSet/cpg-recommendation-direction-
 ValueSet 'http://hl7.org/fhir/uv/cpg/ValueSet/cpg-recommendation-direction-vs' not found
 A definition for CodeSystem 'http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-recommendation-direction-cs' could not be found, so the code cannot be validated
 URL value 'http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-recommendation-direction-cs' does not resolve 
+
+Reference to experimental CodeSystem http://hl7.org/fhir/CodeSystem/fhirpath-types|6.0.0-ballot3 
