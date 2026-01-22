@@ -31,6 +31,8 @@ Parent: $ebm-evidence-report
 Id: evidence-report-with-contact-slices
 Title: "Evidence Report with Contact Slices"
 Description: "Intermediate profile that re-slices the extendedContactDetail extension from EvidenceReport. This workaround profile isolates the re-slicing to avoid 'Named items are out of order in the slice' errors in derived profiles. See profile comments for detailed explanation."
+* extension ^slicing.discriminator[1].type = #value
+* extension ^slicing.discriminator[1].path = "value.ofType(ExtendedContactDetail).purpose"
 * extension[extendedContactDetail] contains 
   registrant 0..1 MS 
   and coordinator 0..* MS 
@@ -38,21 +40,21 @@ Description: "Intermediate profile that re-slices the extendedContactDetail exte
   
 * extension[extendedContactDetail].valueExtendedContactDetail
   * purpose 1..1
-* extension[extendedContactDetail][registrant].valueExtendedContactDetail
+* extension[extendedContactDetail/registrant].valueExtendedContactDetail
   * purpose = cs-contact-point#registrant
   * purpose 1..1
   * name 1..1
   * telecom 1..*
     * value 1..1
   * address 0..1
-* extension[extendedContactDetail][coordinator].valueExtendedContactDetail
+* extension[extendedContactDetail/coordinator].valueExtendedContactDetail
   * purpose = cs-contact-point#coordinator
   * purpose 1..1
   * name 1..1
   * telecom 1..*
     * value 1..1
   * address 0..1
-* extension[extendedContactDetail][mainContact].valueExtendedContactDetail
+* extension[extendedContactDetail/mainContact].valueExtendedContactDetail
   * purpose = cs-contact-point#contact
   * purpose 1..1
   * name 1..1
@@ -208,8 +210,8 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
 * relatesTo.extension contains ext-relates-to-label named label 0..1
 
   // todo: use attachment with label instead or targetReference.display
-* relatesTo ^slicing.discriminator.type = #value
-* relatesTo ^slicing.discriminator.path = "type"
+* relatesTo ^slicing.discriminator[1].type = #value
+* relatesTo ^slicing.discriminator[1].path = "extension('http://hl7.org/fhir/StructureDefinition/relatesto-classifier').value.ofType(CodeableConcept).coding"
 * relatesTo ^slicing.rules = #open
 * relatesTo contains 
   relatedGuideline 0..*
@@ -220,6 +222,7 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
   * type 1..1
   * type = #similar-to
   * extension[classifier] 1..1
+  * extension[classifier].valueCodeableConcept 1..1
   * extension[classifier].valueCodeableConcept = cs-related-artifact-types#related-guideline 
       // TODO: use code that exists "Guideline" -> no need to have this code system here
 * relatesTo[disseminationWebsite]
@@ -227,6 +230,7 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
   * type = #documentation
   * extension[classifier] 1..1
   * extension[classifier].valueCodeableConcept from vs-dissemination-website (required)
+  * extension[classifier].valueCodeableConcept.coding 1..1
 * relatesTo[replacesGuideline]
   * type 1..1
   * type = #replaces
