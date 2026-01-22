@@ -732,6 +732,8 @@ Description: "Tests that author-leading-vs-contributing-exclusive fails when aut
   * system = "https://example.org/identifiers"
   * value = "AWMF-Guideline-Example"
   * use = #official
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept
+    = cs-guideline-author-role#registrant // we must also fulfill the registrant constraint
 
 Instance: RR-TestInvLeadingAuthorRefPerson-SHOULD-FAIL
 InstanceOf: guideline-registry-record
@@ -749,6 +751,8 @@ Description: "Fails because the leading author points to a Practitioner instead 
 * author[+] = Reference(GuidelineAuthorRoleExample)                // <– Practitioner
 * author[=].extension[ext-guideline-author-role].valueCodeableConcept
     = cs-guideline-author-role#leading
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept
+    = cs-guideline-author-role#registrant // we must also fulfill the registrant constraint
 
 Instance: RR-TestInvContribAuthorRefPerson-SHOULD-FAIL
 InstanceOf: guideline-registry-record
@@ -766,6 +770,8 @@ Description: "Fails because the contributing author points to a Practitioner ins
 * author[+] = Reference(GuidelineAuthorRoleExample)                // <– Practitioner
 * author[=].extension[ext-guideline-author-role].valueCodeableConcept
     = cs-guideline-author-role#contributing
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept
+    = cs-guideline-author-role#registrant // we must also fulfill the registrant constraint
 
 Instance: RR-TestInvLeadingAuthorRefOrganization-SHOULD-PASS
 InstanceOf: guideline-registry-record
@@ -783,3 +789,6 @@ Description: "Passes because the leading author points to an Organization."
 * author[+] = Reference(DGAI)            // <– Organization
 * author[=].extension[ext-guideline-author-role].valueCodeableConcept
     = cs-guideline-author-role#leading
+* author[+] = Reference(DGCH)            // <– Organization
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept
+    = cs-guideline-author-role#registrant // we must also fulfill the registrant constraint
