@@ -4,6 +4,45 @@
 
 ### Guidance
 
+This profile represents **Outcome Evidence** – evidence supporting a specific outcome within a body of clinical or scientific evidence.
+
+#### Overview
+
+Outcome evidence resources capture the quantitative or qualitative findings for specific clinical outcomes (e.g., mortality, quality of life, adverse events) from studies or systematic reviews.
+
+#### Key Elements
+
+##### Variable Definition (Required)
+
+The `variableDefinition` element must include at least one outcome definition:
+
+```fsh
+* variableDefinition[outcome]
+  * variableRole = #outcome
+  * observed = Reference(OutcomeDefinition)
+```
+
+#### Relationship to Other Profiles
+
+Outcome Evidence resources are:
+- Assessed by [Certainty of Evidence Rating](StructureDefinition-certainty-of-evidence-rating.html) profiles
+- Referenced from [Recommendation Justification](StructureDefinition-recommendation-justification.html) to link evidence to recommendations
+- Derived from PICO questions via the [Conceptual Cohort Definition Outcome](StructureDefinition-conceptual-cohort-definition-outcome.html)
+
+#### Example Usage
+
+```fsh
+Instance: MortalityEvidenceExample
+InstanceOf: outcome-evidence
+Usage: #example
+* variableDefinition[outcome]
+  * variableRole = #outcome
+  * observed = Reference(MortalityOutcomeDefinition)
+* statistic[+]
+  * statisticType = #relative-risk
+  * quantity.value = 0.85
+```
+
 {% capture resource_inheritance %}
 This profile of a FHIR {{resource.type}} is derived from the [{{resource.base | split: '/' | last}}]({{resource.base}}) FHIR resource.
 {% endcapture %}
