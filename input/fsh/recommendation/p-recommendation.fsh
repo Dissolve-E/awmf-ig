@@ -76,9 +76,6 @@ Description: "Clinical Practice Guideline Recommendation"
 // add some more codes for the sections (not only the ones defined by the EBM IG)
 * section.code from vs-guideline-sections (extensible)
 
-* section[recommendationStatement]
-  * insert rs-language-section
-
 // close the slicing for section and add text section
 * section ^slicing.rules = #closed
 * section contains 
@@ -160,6 +157,7 @@ Description: "Clinical Practice Guideline Recommendation"
   * code 1..1
   * code = $cs-ebm-ig#recommendation-statement "Recommendation Statement"
   * code.coding = $cs-ebm-ig#recommendation-statement "Recommendation Statement"
+  * insert rs-language-section
 
 * section[population] // #P2.3.2.1
   * code 1..1
@@ -192,9 +190,9 @@ Description: "Clinical Practice Guideline Recommendation"
 // used to specify clinical outcomes that are relevant for the recommendation (e.g. mortality, morbidity, quality of life, ...)
 * section[outcome] // #P2.3.2.1
   * code 1..1
-  * code = $cs-ebm-ig#outcome "Outcome"
-  // * code.coding 1..1
-  // * code.coding = $cs-ebm-ig#outcome "Outcome"
+  * code = $cs-pico#outcome "Outcome"
+  * code.coding 1..1
+  * code.coding = $cs-pico#outcome "Outcome"
   * insert rs-language-section
   * section[language]
     * extension contains ext-section-keyword named keyword 0..*
@@ -217,6 +215,10 @@ Description: "An example of a recommendation."
 * author[+] = Reference(GuidelineAuthorRoleExample)
 * date = "2025-03-06"
 * title = "Example Recommendation"
+* identifier[+]
+  * system = "http://example.org/recommendations"
+  * value = "REC-EX-001"
+  * use = #official
 * category[synthesisType] = cs-recommendation-synthesis-type#expert-consensus
 * relatesTo[partOf][+]
   * targetCanonical = Canonical(GuidelineExample)

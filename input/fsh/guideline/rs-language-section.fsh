@@ -5,13 +5,12 @@ RuleSet: rs-language-section
 * section contains language 0..* and text 0..* // #P2.3.2.21
 * section[language]
   * code 1..1
-  * code = cs-guideline-sections#language
+  * code = cs-guideline-sections#language "Language"
   * code.coding 1..1
-  * code.coding = cs-guideline-sections#language
+  * code.coding = cs-guideline-sections#language "Language"
   * extension contains ext-section-language named language 1..1
   * section 0..0
 * section[text]
- // fixme: actually, the default slice must not fix the discriminator, but as of 25-03-06 the validator is not able to handle default slices. therefore, we fix the discriminator here.
   * code 1..1
   * code.coding 1..1
   * code = $cs-ebm-ig#text "Text"
