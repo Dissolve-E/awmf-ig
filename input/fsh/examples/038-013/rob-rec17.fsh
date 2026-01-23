@@ -1,5 +1,5 @@
 Instance: RoB-CognitiveTestsWhenSuspectingDementia-Sensitivity
-InstanceOf: EvidenceAssessmentCochraneRoB
+InstanceOf: EvidenceInternalAssessmentCochraneRoB
 Usage: #example
 Title: "Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspecting Dementia - Sensitivity"
 Description: "Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspecting Dementia on Sensitivity"
@@ -10,7 +10,7 @@ Description: "Certainty of Evidence Rating Ris of Bias for Cognitive Tests When 
 * artifactReference = Reference(PICOOutcomeSensitivityRec17)
 
 Instance: RoB-CognitiveTestsWhenSuspectingDementia-Specificity
-InstanceOf: EvidenceAssessmentCochraneRoB
+InstanceOf: EvidenceInternalAssessmentCochraneRoB
 Usage: #example
 Title: "Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspecting Dementia - Specificity"
 Description: "Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspecting Dementia on Specificity"

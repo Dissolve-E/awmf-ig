@@ -13,3 +13,8 @@ Description: "CodeSystem defining values representing the synthesis type of a re
   * ^designation[=].value = "Konsensbasiert"
   * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
   * ^definition.extension[$ext-translation].extension[content].valueString = "Konsensbasierte Empfehlung"
+* #statement "Statement" "Statement"
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Aussage"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Aussage"

@@ -1,7 +1,7 @@
-Profile: EvidenceAssessmentOXFORD2011
-Parent: OverallEvidenceAssessment
-Id: evidence-assessment-oxford2011
-Title: "Evidence Assessment Oxford 2011"
+Profile: EvidenceOverallAssessmentOXFORD2011
+Parent: EvidenceOverallQualityAssessment
+Id: evidence-overall-assessment-oxford2011
+Title: "Evidence Overall Assessment Oxford 2011"
 Description: "A structured assessment of the certainty of evidence for a specific outcome, including Oxford 2011 rating."
 * content[ratingSystem]
   * type 1..1

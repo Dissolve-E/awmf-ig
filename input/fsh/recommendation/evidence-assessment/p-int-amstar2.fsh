@@ -1,7 +1,7 @@
-Profile: EvidenceAssessmentAMSTAR2
+Profile: EvidenceInternalAsessmentAMSTAR2
 Parent: EvidenceInternalValidityAssessment
-Id: evidence-assessment-amstar2
-Title: "Evidence Assessment AMSTAR 2"
+Id: evidence-internal-assessment-amstar2
+Title: "Evidence Internal Assessment AMSTAR 2"
 Description: "A structured assessment of the certainty of evidence using AMSTAR 2."
 
 * content[ratingSystem]

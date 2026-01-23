@@ -206,10 +206,10 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
 * version 1..1 // #P2.2.1, #P2.2.7
 * version obeys inv-version-major-minor // #P2.2.1, #P2.2.8
 
-* relatesTo[similarTo] 0..*
 * relatesTo.extension contains ext-relates-to-label named label 0..1
 
   // todo: use attachment with label instead or targetReference.display
+  // TODO: fix validator error "Profile http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record|0.1.0, Element matches more than one slice - similarTo, relatedGuideline"
 * relatesTo ^slicing.discriminator[1].type = #value
 * relatesTo ^slicing.discriminator[1].path = "extension('http://hl7.org/fhir/StructureDefinition/relatesto-classifier').value.ofType(CodeableConcept).coding"
 * relatesTo ^slicing.rules = #open

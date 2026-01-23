@@ -1,7 +1,7 @@
-Profile: EvidenceAssessmentROBIS
+Profile: EvidenceInternalAssessmentROBIS
 Parent: EvidenceInternalValidityAssessment
-Id: evidence-assessment-robis
-Title: "Evidence Assessment ROBIS"
+Id: evidence-internal-assessment-robis
+Title: "Evidence Internal Assessment ROBIS"
 Description: "Structured assessment of risk of bias using ROBIS (Risk of Bias in Systematic Reviews)."
 * content[ratingSystem]
   * type 1..1

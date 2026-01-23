@@ -1,7 +1,7 @@
-Profile: EvidenceAssessmentAGREEII
+Profile: EvidenceInternalAssessmentAGREEII
 Parent: EvidenceInternalValidityAssessment
-Id: evidence-assessment-agreeii
-Title: "Evidence Assessment AGREE II"
+Id: evidence-internal-assessment-agreeii
+Title: "Evidence Internal Assessment AGREE II"
 Description: "A structured assessment of the quality of guidelines using the AGREE II instrument."
 * content[ratingSystem]
   * type 1..1
