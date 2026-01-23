@@ -1,4 +1,4 @@
-name: ImplementationGuide Publisher
+name: ImplementationGuide Publisher (CI Build)
 
 on:
   # Triggers the workflow on push or pull request events but only for the main or master branch
@@ -73,7 +73,9 @@ jobs:
           force_orphan: true
 
 
-      # ───────────  Upload to AWMF host  ───────────
+      # ───────────  Upload CI build to AWMF host  ───────────
+      # NOTE: CI builds go to /ci-build/ subdirectory to preserve published versions
+      # Published versions are managed by ig-publish-version.yml workflow
       - name: Prepare SSH key
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
         run: |
@@ -83,9 +85,46 @@ jobs:
           # (safer than StrictHostKeyChecking=no)
           ssh-keyscan -p 221 register.awmf.org >> ~/.ssh/known_hosts
 
-      - name: Rsync output to register.awmf.org
+      - name: Check for existing published version
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+        id: check-published
+        run: |
+          # Check if package-list.json exists on server (indicates published versions exist)
+          if ssh -p 221 -i /tmp/awmf_ig_publisher.id_ed25519 \
+              awmf_ig_publisher@register.awmf.org \
+              "test -f ./${{ steps.yaml-data.outputs.id }}/package-list.json" 2>/dev/null; then
+            echo "has_published_version=true" >> $GITHUB_OUTPUT
+            echo "Found existing published versions"
+          else
+            echo "has_published_version=false" >> $GITHUB_OUTPUT
+            echo "No published versions found - CI build will also serve as root"
+          fi
+
+      - name: Rsync CI build to register.awmf.org
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
         run: |
+          PACKAGE_ID="${{ steps.yaml-data.outputs.id }}"
+          
+          # Always deploy CI build to /ci-build/ subdirectory
           rsync -av --delete \
                 -e "ssh -p 221 -i /tmp/awmf_ig_publisher.id_ed25519" \
-                ./output/ awmf_ig_publisher@register.awmf.org:./awmf.ig/
+                ./output/ awmf_ig_publisher@register.awmf.org:./${PACKAGE_ID}/ci-build/
+          
+          echo "CI Build deployed to: ${{ steps.yaml-data.outputs.canonical }}/ci-build/"
+          
+          # If no published version exists yet, also deploy to root (excluding ci-build/)
+          if [ "${{ steps.check-published.outputs.has_published_version }}" = "false" ]; then
+            echo "No published version yet - also deploying to root..."
+            rsync -av --delete --exclude 'ci-build/' \
+                  -e "ssh -p 221 -i /tmp/awmf_ig_publisher.id_ed25519" \
+                  ./output/ awmf_ig_publisher@register.awmf.org:./${PACKAGE_ID}/
+            echo "Also deployed to root: ${{ steps.yaml-data.outputs.canonical }}/"
+          fi
+          
+          echo "========================================="
+          echo "CI Build deployed to:"
+          echo "  ${{ steps.yaml-data.outputs.canonical }}/ci-build/"
+          if [ "${{ steps.check-published.outputs.has_published_version }}" = "false" ]; then
+            echo "  ${{ steps.yaml-data.outputs.canonical }}/ (no release yet)"
+          fi
+          echo "========================================="

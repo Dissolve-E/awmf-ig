@@ -950,7 +950,8 @@ deploy_to_server() {
         exit 1
     fi
     
-    rsync -av --delete \
+    # Exclude ci-build/ as it's managed separately by the CI workflow
+    rsync -av --delete --exclude 'ci-build/' \
         -e "ssh -p ${REMOTE_PORT} -i ${ssh_key}" \
         "${WEBROOT}/" \
         "${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_PATH}/"
