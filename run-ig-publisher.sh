@@ -1,14 +1,42 @@
 #!/bin/bash
 
 # This bash script is used to publish an Implementation Guide (IG) using the IG Publisher tool.
-# The script requires two arguments: the target URL and the version of the IG.
-# Depending on whether "-snapshot" is part of the version, the script will run an CI build or a release build.
+#
+# Usage:
+#   ./run-ig-publisher.sh <targetUrl> [--ci-build]
+#
+# Arguments:
+#   targetUrl     The canonical URL of the IG
+#   --ci-build    Run as CI build (no -publish flag, releaseLabel=ci-build)
+#                 Without this flag, runs as release build with -publish flag
+#
+# The key difference:
+#   - CI build: No -publish flag → shows "continuous build" banner
+#   - Release build: With -publish flag → shows "Downloaded Version X.X.X" banner
 
 set -euo pipefail               # ← abort on any non-zero exit
 
-if [ $# -eq 0 ]; then
-  echo "Error: Two arguments are required."
-  echo "Usage: $0 <targetUrl> <version>"
+# Parse arguments
+CI_BUILD=false
+targetUrl=""
+
+for arg in "$@"; do
+  case $arg in
+    --ci-build)
+      CI_BUILD=true
+      shift
+      ;;
+    *)
+      if [ -z "$targetUrl" ]; then
+        targetUrl="$arg"
+      fi
+      ;;
+  esac
+done
+
+if [ -z "$targetUrl" ]; then
+  echo "Error: Target URL is required."
+  echo "Usage: $0 <targetUrl> [--ci-build]"
   exit 1
 fi
 
@@ -16,9 +44,6 @@ publisher_jar=publisher.jar
 input_cache_path=./input-cache/
 
 export JAVA_TOOL_OPTIONS="$JAVA_TOOL_OPTIONS -Dfile.encoding=UTF-8"
-
-targetUrl=$1
-version=$2
 
 function set_release_label() {
   local release_label=$1
@@ -43,15 +68,14 @@ if ! test -f "$publisher"; then
 	curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -o ./input-cache/publisher.jar --create-dirs
 fi
 
-if [[ "$version" == *"-snapshot"* ]]; then
-  # snapshot build
-  echo "Running snapshot build..."
-  set_release_label "ci-build" #  the continuous integration build release (not stable); see #https://fshschool.org/docs/sushi/configuration/#fsh-and-ig-processing-minimum-configuration
-  java -jar $publisher -ig . $*
+if [ "$CI_BUILD" = true ]; then
+  # CI build - no -publish flag generates "continuous build" banner
+  echo "Running CI build..."
+  set_release_label "ci-build"
+  java -jar $publisher -ig .
 else
-  # release build
+  # Release build - with -publish flag generates "Downloaded Version" banner
   echo "Running release build..."
-  set_release_label "qa-preview" # frozen snapshot for non-ballot feedback; see #https://fshschool.org/docs/sushi/configuration/#fsh-and-ig-processing-minimum-configuration
-  java -jar $publisher -ig . -publish $targetUrl $*
-  find ./output -name "*.html" -exec sed -i "s/Publication Build: This will be filled in by the publication tooling/This page is part of the CPG-on-EBMonFHIR Implementation Guide ($version)./g" {} +
+  set_release_label "qa-preview"
+  java -jar $publisher -ig . -publish $targetUrl
 fi
