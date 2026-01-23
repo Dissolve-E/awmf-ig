@@ -3,7 +3,6 @@ Parent: MedicalSociety
 Id: awmf-member-organization
 Title: "AWMF Member Organization"
 Description: "An organization that is a member of the AWMF"
-
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
@@ -13,12 +12,12 @@ Description: "An organization that is a member of the AWMF"
   * system = "http://fhir.awmf.org/association"
   * use = #official
   * value 1..1
-
 * qualification 1..*
 * qualification ^slicing.discriminator.type = #value
 * qualification ^slicing.discriminator.path = "code"
 * qualification ^slicing.rules = #closed
-* qualification contains awmf-member-organization 1..1 // The name of the slice is arbirtray, we just need one defined slice here
+* qualification contains awmf-member-organization 1..*  // The name of the slice is arbirtray, we just need one defined slice here; 
+                                                        // 1..* because they could have different periods of membership in AWMF
 * qualification[awmf-member-organization]
   * code 1..1
   * code = cs-awmf#awmf-member-organization
