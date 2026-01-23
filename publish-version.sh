@@ -11,6 +11,15 @@
 #   2. -go-publish mode (EXPERIMENTAL): Uses IG Publisher's official publication
 #      workflow designed for HL7 infrastructure. May not work for custom deployments.
 #
+# Publication modes (--mode):
+#   - milestone:  Official releases that become the "current" version. Output is
+#                 copied to both /{version}/ and the root directory. Recommended
+#                 for stable releases (e.g., 1.0.0, 2.0.0).
+#   - working:    Draft/in-progress versions. Only published to /{version}/, does
+#                 not replace the current release. Use for pre-releases (e.g., 1.1.0-beta.1).
+#   - technical-correction: Minor fixes to existing releases. Like working mode,
+#                 published to /{version}/ only.
+#
 # Usage:
 #   ./publish-version.sh <version> [options]
 #
@@ -27,6 +36,9 @@
 #   --local       Use local webroot instead of rsync to server
 #   --use-go-publish  EXPERIMENTAL: Use IG Publisher's -go-publish mode
 #
+# Configuration is read from sushi-config.yaml (canonical, id, title).
+# Requires: yq (brew install yq / snap install yq)
+#
 # Examples:
 #   ./publish-version.sh 1.0.0 --mode milestone --status trial-use
 #   ./publish-version.sh 1.1.0-beta.1 --mode working --status draft --dry-run
@@ -34,26 +46,34 @@
 
 set -euo pipefail
 
-# Configuration
-CANONICAL="http://fhir.awmf.org/awmf.ig"
-PACKAGE_ID="awmf.ig"
-IG_TITLE="Dissolve-E: FHIR Implementation Guide for the AWMF Guideline Registry"
-CATEGORY="Clinical Practice Guidelines"
-CI_BUILD="http://fhir.awmf.org/awmf.ig"
-
-# Remote server config (matches existing ig-publish.yml)
-REMOTE_USER="awmf_ig_publisher"
-REMOTE_HOST="register.awmf.org"
-REMOTE_PORT="221"
-REMOTE_PATH="./awmf.ig"
-
-# Local directories
+# Local directories (defined first as they're needed for config loading)
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PUBLICATION_DIR="${SCRIPT_DIR}/.publication"
 WEBROOT="${PUBLICATION_DIR}/webroot"
 TEMP_DIR="${PUBLICATION_DIR}/temp"
 HISTORY_DIR="${PUBLICATION_DIR}/history"
 TEMPLATES_DIR="${PUBLICATION_DIR}/templates"
+
+# Read configuration from sushi-config.yaml
+SUSHI_CONFIG="${SCRIPT_DIR}/sushi-config.yaml"
+if [ ! -f "$SUSHI_CONFIG" ]; then
+    echo "ERROR: sushi-config.yaml not found at ${SUSHI_CONFIG}"
+    exit 1
+fi
+
+CANONICAL=$(yq eval '.canonical' "$SUSHI_CONFIG")
+PACKAGE_ID=$(yq eval '.id' "$SUSHI_CONFIG")
+IG_TITLE=$(yq eval '.title' "$SUSHI_CONFIG")
+
+# Other configuration
+CATEGORY="Clinical Practice Guidelines"
+CI_BUILD="${CANONICAL}"
+
+# Remote server config (matches existing ig-publish.yml)
+REMOTE_USER="awmf_ig_publisher"
+REMOTE_HOST="register.awmf.org"
+REMOTE_PORT="221"
+REMOTE_PATH="./${PACKAGE_ID}"
 
 # Default values
 VERSION=""
@@ -319,6 +339,12 @@ run_go_publish() {
     log_info "Running IG Publisher in -go-publish mode..."
     
     local publisher="${SCRIPT_DIR}/input-cache/publisher.jar"
+    local source_package_list="${SCRIPT_DIR}/package-list.json"
+    local backup_package_list="${PUBLICATION_DIR}/package-list.json.backup"
+    local venv_dir="${SCRIPT_DIR}/.venv"
+    # IMPORTANT: Backup location must be OUTSIDE the source directory tree
+    # because -go-publish copies the entire source directory to temp
+    local backup_venv_dir="/tmp/awmf-ig-venv-backup-$$"
     
     # Setup the complete publication environment required by -go-publish
     setup_go_publish_environment
@@ -328,6 +354,25 @@ run_go_publish() {
         log_info "Fetching existing publications from server..."
         fetch_existing_publications || log_warn "Could not fetch existing publications (this may be the first publication)"
     fi
+    
+    # IMPORTANT: -go-publish mode requires that package-list.json does NOT exist in the source directory
+    # The IG Publisher manages package-list.json in the webroot, not in source
+    # We temporarily move it out of the way and restore it afterward (for version control)
+    if [ -f "$source_package_list" ]; then
+        log_info "Temporarily moving package-list.json out of source directory..."
+        mv "$source_package_list" "$backup_package_list"
+    fi
+    
+    # IMPORTANT: -go-publish tries to zip the entire source directory including .venv
+    # Python virtual environments contain symlinks that cause "Case mismatch" errors
+    # on case-insensitive filesystems (macOS). Move .venv out temporarily.
+    if [ -d "$venv_dir" ]; then
+        log_info "Temporarily moving .venv out of source directory..."
+        mv "$venv_dir" "$backup_venv_dir"
+    fi
+    
+    # Set up a trap to restore package-list.json and .venv even if the script fails
+    trap 'if [ -f "$backup_package_list" ]; then mv "$backup_package_list" "$source_package_list"; fi; if [ -d "$backup_venv_dir" ]; then mv "$backup_venv_dir" "$venv_dir"; fi' EXIT
     
     # Run the IG Publisher with -go-publish
     log_info "Executing IG Publisher -go-publish..."
@@ -339,7 +384,63 @@ run_go_publish() {
         -temp "$TEMP_DIR" \
         -templates "$TEMPLATES_DIR"
     
+    local exit_code=$?
+    
+    # Restore package-list.json to source directory
+    if [ -f "$backup_package_list" ]; then
+        log_info "Restoring package-list.json to source directory..."
+        mv "$backup_package_list" "$source_package_list"
+    fi
+    
+    # Restore .venv to source directory
+    if [ -d "$backup_venv_dir" ]; then
+        log_info "Restoring .venv to source directory..."
+        mv "$backup_venv_dir" "$venv_dir"
+    fi
+    
+    # Remove the trap
+    trap - EXIT
+    
+    if [ $exit_code -ne 0 ]; then
+        log_error "IG Publisher -go-publish failed with exit code $exit_code"
+        return $exit_code
+    fi
+    
+    # Copy history assets to webroot (IG Publisher doesn't always do this)
+    copy_history_assets
+    
     log_info "IG Publisher -go-publish completed"
+}
+
+# Copy history template assets to the IG webroot
+# The history.html page requires these assets to render properly
+copy_history_assets() {
+    local ig_webroot="${WEBROOT}/${PACKAGE_ID}"
+    
+    if [ ! -d "$ig_webroot" ]; then
+        log_warn "IG webroot not found at ${ig_webroot}, skipping history assets copy"
+        return
+    fi
+    
+    log_info "Copying history template assets to IG webroot..."
+    
+    # Copy directories
+    if [ -d "${HISTORY_DIR}/assets-hist" ]; then
+        cp -r "${HISTORY_DIR}/assets-hist" "${ig_webroot}/"
+    fi
+    
+    if [ -d "${HISTORY_DIR}/dist-hist" ]; then
+        cp -r "${HISTORY_DIR}/dist-hist" "${ig_webroot}/"
+    fi
+    
+    # Copy CSS and JS files
+    for file in history.css jquery-ui.css jquery-ui.js; do
+        if [ -f "${HISTORY_DIR}/${file}" ]; then
+            cp "${HISTORY_DIR}/${file}" "${ig_webroot}/"
+        fi
+    done
+    
+    log_info "History assets copied"
 }
 
 # Setup the complete publication environment required by -go-publish mode
@@ -367,15 +468,16 @@ setup_go_publish_environment() {
     # 2. Download web templates if templates directory is empty
     if [ ! -f "${TEMPLATES_DIR}/header.template" ] || [ ! -f "${TEMPLATES_DIR}/preamble.template" ]; then
         log_info "Downloading web templates..."
-        local templates_repo="https://github.com/HL7/fhir-web-templates/archive/refs/heads/master.zip"
+        local templates_repo="https://github.com/HL7/fhir-web-templates/archive/refs/heads/main.zip"
         local temp_zip="${PUBLICATION_DIR}/web-templates.zip"
         
         curl -L "$templates_repo" -o "$temp_zip"
         unzip -o "$temp_zip" -d "$PUBLICATION_DIR"
         
-        # Copy template files
-        cp "${PUBLICATION_DIR}/fhir-web-templates-master/"*template* "$TEMPLATES_DIR/" 2>/dev/null || true
-        rm -rf "${PUBLICATION_DIR}/fhir-web-templates-master" "$temp_zip"
+        # Copy all template files (*.template and *.html) to templates directory
+        cp "${PUBLICATION_DIR}/fhir-web-templates-main/"*.template "${TEMPLATES_DIR}/" 2>/dev/null || true
+        cp "${PUBLICATION_DIR}/fhir-web-templates-main/"*.html "${TEMPLATES_DIR}/" 2>/dev/null || true
+        rm -rf "${PUBLICATION_DIR}/fhir-web-templates-main" "$temp_zip"
         
         # Customize templates for AWMF
         customize_templates
@@ -404,9 +506,9 @@ setup_go_publish_environment() {
   },
   "layout-rules": [
     {
-      "npm": "awmf.ig",
+      "npm": "${PACKAGE_ID}",
       "canonical": "${CANONICAL}",
-      "destination": "/awmf.ig"
+      "destination": "/${PACKAGE_ID}"
     },
     {
       "npm": "awmf.*",
@@ -489,92 +591,56 @@ EOF
 EOF
     fi
     
+    # 7. Create the IG destination directory with initial package-list.json
+    # For first publication, the IG Publisher expects an initial package-list.json in destination
+    local ig_dest="${WEBROOT}/${PACKAGE_ID}"
+    
+    if [ ! -d "$ig_dest" ]; then
+        log_info "Creating IG destination directory: ${ig_dest}"
+        mkdir -p "$ig_dest"
+    fi
+    
+    if [ ! -f "${ig_dest}/package-list.json" ]; then
+        log_info "Creating initial package-list.json in destination..."
+        local fhir_version=$(yq eval '.fhirVersion' "${SCRIPT_DIR}/sushi-config.yaml" 2>/dev/null || echo "4.0.1")
+        cat > "${ig_dest}/package-list.json" << EOF
+{
+  "package-id": "${PACKAGE_ID}",
+  "title": "${IG_TITLE}",
+  "canonical": "${CANONICAL}",
+  "introduction": "This implementation guide defines FHIR profiles for German clinical practice guidelines, enabling structured, FAIR, and interoperable representation.",
+  "category": "${CATEGORY}",
+  "list": [
+    {
+      "version": "current",
+      "desc": "Continuous Integration Build (latest in version control)",
+      "path": "${CI_BUILD}",
+      "status": "ci-build",
+      "current": true
+    }
+  ]
+}
+EOF
+    fi
+    
     log_info "Publication environment setup complete"
 }
 
-# Customize the web templates for AWMF branding
+# Use the standard HL7 web templates for history page
+# These templates are included in the fhir-ig-history-template and contain
+# all required elements (id="ig-title", id="ig-footer") for history.js
 customize_templates() {
-    log_info "Customizing templates for AWMF..."
+    log_info "Setting up web templates from HL7 history template..."
     
-    # Update header template with AWMF branding
-    if [ -f "${TEMPLATES_DIR}/header.template" ]; then
-        cat > "${TEMPLATES_DIR}/header.template" << 'EOF'
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <title>{{title}} - Publication History</title>
-  <link href="{{path}}fhir.css" rel="stylesheet"/>
-  <link rel="icon" type="image/png" href="{{path}}assets/ico/favicon.png"/>
-</head>
-<body>
-<div id="segment-header" class="segment">
-  <div class="container">
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-      <div style="display: flex; align-items: center;">
-        <a href="https://www.awmf.org" target="_blank">
-          <span style="font-weight: bold; font-size: 1.2em; color: #0066cc;">AWMF</span>
-        </a>
-        <span style="margin-left: 20px; font-size: 0.9em;">Guideline Registry</span>
-      </div>
-      <div>
-        <a href="{{canonical}}" style="font-size: 0.9em;">Current Build</a>
-      </div>
-    </div>
-  </div>
-</div>
-EOF
+    # Copy the HL7 templates directly - they have all required elements
+    if [ -d "${HISTORY_DIR}/hl7" ]; then
+        cp "${HISTORY_DIR}/hl7/header.template" "${TEMPLATES_DIR}/"
+        cp "${HISTORY_DIR}/hl7/preamble.template" "${TEMPLATES_DIR}/"
+        cp "${HISTORY_DIR}/hl7/postamble.template" "${TEMPLATES_DIR}/"
+        log_info "HL7 templates copied to ${TEMPLATES_DIR}"
+    else
+        log_warn "HL7 templates not found in ${HISTORY_DIR}/hl7, history page may not render correctly"
     fi
-    
-    # Update preamble template
-    if [ -f "${TEMPLATES_DIR}/preamble.template" ]; then
-        cat > "${TEMPLATES_DIR}/preamble.template" << 'EOF'
-<div id="segment-content" class="segment">
-<div class="container">
-<div class="row">
-<div class="inner-wrapper">
-<div class="col-12">
-EOF
-    fi
-    
-    # Update postamble template
-    if [ -f "${TEMPLATES_DIR}/postamble.template" ]; then
-        cat > "${TEMPLATES_DIR}/postamble.template" << 'EOF'
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="segment-footer" class="segment">
-  <div class="container">
-    <div class="inner-wrapper">
-      <p>
-        &copy; AWMF e.V. | 
-        <a href="https://www.awmf.org/impressum">Impressum</a> | 
-        <a href="https://www.awmf.org/datenschutz">Datenschutz</a>
-      </p>
-    </div>
-  </div>
-</div>
-</body>
-</html>
-EOF
-    fi
-    
-    # Create index template
-    cat > "${TEMPLATES_DIR}/index.template" << 'EOF'
-<h1>{{title}}</h1>
-<p>{{introduction}}</p>
-<h2>Publication History</h2>
-EOF
-    
-    # Create search form template (optional)
-    cat > "${TEMPLATES_DIR}/searchform.template.html" << 'EOF'
-<form action="search.html" method="get">
-  <input type="text" name="q" placeholder="Search..."/>
-  <button type="submit">Search</button>
-</form>
-EOF
 }
 
 # Alternative: Simple build + manual directory organization
