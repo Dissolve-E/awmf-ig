@@ -1,0 +1,252 @@
+name: Publish IG Version
+
+on:
+  # Manual trigger with inputs
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to publish (e.g., 1.0.0, 1.1.0-beta.1)'
+        required: true
+        type: string
+      mode:
+        description: 'Publication mode'
+        required: true
+        type: choice
+        options:
+          - milestone
+          - working
+          - technical-correction
+        default: milestone
+      status:
+        description: 'Release status'
+        required: true
+        type: choice
+        options:
+          - trial-use
+          - draft
+          - ballot
+          - release
+          - normative
+        default: trial-use
+      sequence:
+        description: 'Release sequence (e.g., "STU1", "Releases")'
+        required: false
+        type: string
+        default: 'Releases'
+      description:
+        description: 'Release description'
+        required: false
+        type: string
+      first_publication:
+        description: 'Is this the first publication?'
+        required: false
+        type: boolean
+        default: false
+      use_go_publish:
+        description: 'Use IG Publisher -go-publish mode (experimental)'
+        required: false
+        type: boolean
+        default: false
+
+  # Can also be triggered by semantic-release workflow
+  workflow_call:
+    inputs:
+      version:
+        required: true
+        type: string
+      mode:
+        required: false
+        type: string
+        default: milestone
+      status:
+        required: false
+        type: string
+        default: trial-use
+      sequence:
+        required: false
+        type: string
+        default: 'Releases'
+      description:
+        required: false
+        type: string
+      first_publication:
+        required: false
+        type: boolean
+        default: false
+      use_go_publish:
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  publish-version:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Install dependencies
+        run: |
+          sudo snap install yq
+          sudo apt-get install -y jq
+
+      - name: Read config from sushi-config.yaml
+        id: config
+        run: |
+          CANONICAL=$(yq eval '.canonical' sushi-config.yaml)
+          PACKAGE_ID=$(yq eval '.id' sushi-config.yaml)
+          IG_TITLE=$(yq eval '.title' sushi-config.yaml)
+          echo "canonical=$CANONICAL" >> $GITHUB_OUTPUT
+          echo "package_id=$PACKAGE_ID" >> $GITHUB_OUTPUT
+          echo "ig_title=$IG_TITLE" >> $GITHUB_OUTPUT
+        env:
+          JAVA_TOOL_OPTIONS: "-Xmx6g"
+
+      - name: Validate version format
+        run: |
+          VERSION="${{ inputs.version }}"
+          if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9.]+)?$ ]]; then
+            echo "Error: Invalid version format: $VERSION"
+            echo "Expected format: X.Y.Z or X.Y.Z-prerelease"
+            exit 1
+          fi
+          echo "Version validated: $VERSION"
+
+      - name: Prepare SSH for fetching existing publications
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.AWMF_IG_SSH_KEY }}" > /tmp/awmf_ig_publisher.id_ed25519
+          chmod 600 /tmp/awmf_ig_publisher.id_ed25519
+          ssh-keyscan -p 221 register.awmf.org >> ~/.ssh/known_hosts 2>/dev/null || true
+
+      - name: Build publish command arguments
+        id: build-args
+        run: |
+          ARGS="${{ inputs.version }}"
+          ARGS="$ARGS --mode ${{ inputs.mode }}"
+          ARGS="$ARGS --status ${{ inputs.status }}"
+          ARGS="$ARGS --sequence '${{ inputs.sequence }}'"
+          
+          if [ -n "${{ inputs.description }}" ]; then
+            ARGS="$ARGS --desc '${{ inputs.description }}'"
+          fi
+          
+          if [ "${{ inputs.first_publication }}" = "true" ]; then
+            ARGS="$ARGS --first"
+          fi
+          
+          if [ "${{ inputs.use_go_publish }}" = "true" ]; then
+            ARGS="$ARGS --use-go-publish"
+          fi
+          
+          echo "args=$ARGS" >> $GITHUB_OUTPUT
+
+      - name: Fetch existing publications
+        run: |
+          mkdir -p .publication/webroot
+          
+          # Try to fetch existing publications (may fail on first publish)
+          # Exclude ci-build/ as it's managed by the CI workflow separately
+          rsync -av --ignore-existing --exclude 'ci-build/' \
+            -e "ssh -p 221 -i /tmp/awmf_ig_publisher.id_ed25519" \
+            awmf_ig_publisher@register.awmf.org:./${{ steps.config.outputs.package_id }}/ \
+            .publication/webroot/ 2>/dev/null || echo "No existing publications found (this may be the first publication)"
+
+      - name: Run publish-version.sh
+        run: |
+          chmod +x ./publish-version.sh
+          
+          # Run the publish script with all arguments
+          ./publish-version.sh ${{ steps.build-args.outputs.args }}
+        env:
+          # Pass environment variables that the script might need
+          CI: true
+
+      - name: Deploy to AWMF registry
+        run: |
+          # Deploy published versions (exclude ci-build/ as it's managed by CI workflow)
+          rsync -av --delete --exclude 'ci-build/' \
+            -e "ssh -p 221 -i /tmp/awmf_ig_publisher.id_ed25519" \
+            .publication/webroot/ \
+            awmf_ig_publisher@register.awmf.org:./${{ steps.config.outputs.package_id }}/
+          
+          echo "========================================="
+          echo "Publication complete!"
+          echo "Version ${{ inputs.version }} published to:"
+          echo "  ${{ steps.config.outputs.canonical }}/${{ inputs.version }}"
+          if [ "${{ inputs.mode }}" = "milestone" ]; then
+            echo "  ${{ steps.config.outputs.canonical }} (current)"
+          fi
+          echo "  ${{ steps.config.outputs.canonical }}/history.html"
+          echo "========================================="
+
+      - name: Commit updated package-list.json
+        run: |
+          git config user.name 'github-actions'
+          git config user.email 'github-actions@github.com'
+          
+          # Reset sushi-config to ci-build for ongoing development
+          yq eval '.releaseLabel = "ci-build"' -i sushi-config.yaml
+          
+          git add package-list.json
+          git add sushi-config.yaml
+          git diff --cached --quiet || git commit -m "chore: update package-list.json for version ${{ inputs.version }}"
+          git push
+
+      - name: Create GitHub Release
+        if: inputs.mode == 'milestone'
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ inputs.version }}
+          name: Release ${{ inputs.version }}
+          body: |
+            ## ${{ steps.config.outputs.ig_title }} v${{ inputs.version }}
+            
+            **Status:** ${{ inputs.status }}
+            **Sequence:** ${{ inputs.sequence }}
+            
+            ${{ inputs.description }}
+            
+            ### Links
+            - **This version:** ${{ steps.config.outputs.canonical }}/${{ inputs.version }}
+            - **Current version:** ${{ steps.config.outputs.canonical }}
+            - **History:** ${{ steps.config.outputs.canonical }}/history.html
+            - **Package:** ${{ steps.config.outputs.canonical }}/${{ inputs.version }}/package.tgz
+          files: |
+            output/package.tgz
+          draft: false
+          prerelease: ${{ contains(inputs.version, '-') }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Summary
+        run: |
+          echo "## Publication Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Property | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|----------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Version | ${{ inputs.version }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Mode | ${{ inputs.mode }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Status | ${{ inputs.status }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Sequence | ${{ inputs.sequence }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| First Publication | ${{ inputs.first_publication }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Go-Publish Mode | ${{ inputs.use_go_publish }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Published URLs" >> $GITHUB_STEP_SUMMARY
+          echo "- Version: ${{ steps.config.outputs.canonical }}/${{ inputs.version }}" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ inputs.mode }}" = "milestone" ]; then
+            echo "- Current: ${{ steps.config.outputs.canonical }}" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "- History: ${{ steps.config.outputs.canonical }}/history.html" >> $GITHUB_STEP_SUMMARY

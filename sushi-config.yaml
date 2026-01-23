@@ -6,7 +6,7 @@
 id: awmf.ig
 canonical: http://fhir.awmf.org/awmf.ig
 name: AWMFGuidelineRegistryIG
-title: "Dissolve-E: FHIR Implementation Guide for the AWMF Guideline Registry"
+title: "Dissolve-E: AWMF Guideline Registry"
 description: >
   This implementation guide, produced by the Dissolve-E project
   (G-BA grant 01VSF23021) in collaboration with the Association of the
