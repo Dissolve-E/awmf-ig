@@ -61,7 +61,7 @@ derzeit nicht sagen.
 
 
 Instance: RecommendationMultiplexPCRDiagnostic-Justification
-InstanceOf: RecommendationJustificationAWMF
+InstanceOf: RecommendationJustificationGRADE
 Usage: #example
 Title: "RecommendationMultiplexPCRDiagnostic-Justification"
 Description: "Justification for Recommendation Multiplex-PCR-Diagnostik"
@@ -78,16 +78,25 @@ Description: "Justification for Recommendation Multiplex-PCR-Diagnostik"
   * component[levelOfConsensus]
     * classifier = cs-level-of-consensus#strong-consensus "Strong consensus"
 
-* content[evidence][+]
-  * relatesTo.targetReference = Reference(CoE-MultiplexPCRDiagnostic-Mortality)
+* content[evidenceRating][+]
+  * component[levelOfEvidence]
+    * classifier = $cs-certainty-rating#very-low "Very low quality"
+  * component[overallQualityOfEvidence][+]
+    * relatesTo.targetReference = Reference(EvA-MultiplexPCRDiagnostic-Mortality)
 
-* content[evidence][+]
-  * relatesTo.targetReference = Reference(CoE-MultiplexPCRDiagnostic-AntibioticDays)
+* content[evidenceRating][+]
+  * component[levelOfEvidence]
+    * classifier = $cs-certainty-rating#very-low "Very low quality"
+  * component[overallQualityOfEvidence][+]
+    * relatesTo.targetReference = Reference(EvA-MultiplexPCRDiagnostic-AntibioticDays)
 
-* content[evidence][+]
-  * relatesTo.targetReference = Reference(CoE-MultiplexPCRDiagnostic-TimeToDeescalation)
+* content[evidenceRating][+]
+  * component[levelOfEvidence]
+    * classifier = $cs-certainty-rating#very-low "Very low quality"
+  * component[overallQualityOfEvidence][+]
+    * relatesTo.targetReference = Reference(EvA-MultiplexPCRDiagnostic-TimeToDeescalation)
 
-Instance: CoE-MultiplexPCRDiagnostic-Mortality
+Instance: EvA-MultiplexPCRDiagnostic-Mortality
 InstanceOf: EvidenceOverallAssessmentGRADE
 Usage: #example
 Title: "Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Mortality"
@@ -97,7 +106,7 @@ Description: "Certainty of evidence rating for the impact of Multiplex-PCR-Diagn
 * content[levelOfEvidence]
   * classifier = $cs-certainty-rating#very-low "Very low quality"
 
-Instance: CoE-MultiplexPCRDiagnostic-AntibioticDays
+Instance: EvA-MultiplexPCRDiagnostic-AntibioticDays
 InstanceOf: EvidenceOverallAssessmentGRADE
 Usage: #example
 Title: "Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Antibiotic Days"
@@ -107,7 +116,7 @@ Description: "Certainty of evidence rating for the impact of Multiplex-PCR-Diagn
 * content[levelOfEvidence]
   * classifier = $cs-certainty-rating#very-low "Very low quality"
 
-Instance: CoE-MultiplexPCRDiagnostic-TimeToDeescalation
+Instance: EvA-MultiplexPCRDiagnostic-TimeToDeescalation
 InstanceOf: EvidenceOverallAssessmentGRADE
 Usage: #example
 Title: "Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Time to Deescalation"
