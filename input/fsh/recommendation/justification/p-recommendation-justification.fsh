@@ -72,7 +72,7 @@ Description: "A structured assessment of the evidence and consensus that underpi
 
   * component[outcome]
     * type 1..1
-    * type = cs-awmf#outcome "Outcome"
+    * type = $cs-pico#outcome "Outcome"
     * relatesTo 1..1
       * type 1..1
       * type = $cs-related-artifact-type#depends-on "Depends On" // TODO: change to outcome when building on >6.0.0-ballot3 (currently value set binding is "required")
