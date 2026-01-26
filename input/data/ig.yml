@@ -214,7 +214,7 @@ definition:
       reference: CodeSystem/cs-care-setting
   - description: ValueSet listing stages of care from prevention to rehabilitation.
     isExample: false
-    name: CareStage
+    name: Care Stage
     reference:
       reference: ValueSet/vs-care-stage
   - description: A structured assessment of the certainty of evidence for a specific
@@ -228,32 +228,32 @@ definition:
     isExample: true
     name: Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Antibiotic Days
     profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-assessment-grade
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-overall-assessment-grade
     reference:
-      reference: ArtifactAssessment/CoE-MultiplexPCRDiagnostic-AntibioticDays
+      reference: ArtifactAssessment/EvA-MultiplexPCRDiagnostic-AntibioticDays
   - description: Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik
       on mortality
     isExample: true
     name: Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Mortality
     profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-assessment-grade
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-overall-assessment-grade
     reference:
-      reference: ArtifactAssessment/CoE-MultiplexPCRDiagnostic-Mortality
+      reference: ArtifactAssessment/EvA-MultiplexPCRDiagnostic-Mortality
   - description: Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik
       on time to deescalation
     isExample: true
     name: Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Time to Deescalation
     profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-assessment-grade
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-overall-assessment-grade
     reference:
-      reference: ArtifactAssessment/CoE-MultiplexPCRDiagnostic-TimeToDeescalation
+      reference: ArtifactAssessment/EvA-MultiplexPCRDiagnostic-TimeToDeescalation
   - description: Certainty of Evidence Rating Ris of Bias for Cognitive Tests When
       Suspecting Dementia on Sensitivity
     isExample: true
     name: Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspecting
       Dementia - Sensitivity
     profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-assessment-cochrane-rob
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-internal-assessment-cochrane-rob
     reference:
       reference: ArtifactAssessment/RoB-CognitiveTestsWhenSuspectingDementia-Sensitivity
   - description: Certainty of Evidence Rating Ris of Bias for Cognitive Tests When
@@ -262,9 +262,19 @@ definition:
     name: Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspecting
       Dementia - Specificity
     profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-assessment-cochrane-rob
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-internal-assessment-cochrane-rob
     reference:
       reference: ArtifactAssessment/RoB-CognitiveTestsWhenSuspectingDementia-Specificity
+  - description: List of citations.
+    isExample: false
+    name: Citation List
+    reference:
+      reference: StructureDefinition/citation-list
+  - description: Citation for the Systematic Review by Tsoi et al. 2015
+    isExample: true
+    name: Citation Systematic Review
+    reference:
+      reference: Citation/CitationSystematicReviewTsoi2015
   - description: ValueSet listing different clinical application types
     isExample: false
     name: Clinical Application Type
@@ -321,6 +331,26 @@ definition:
     name: Content Types
     reference:
       reference: ValueSet/vs-content-types
+  - isExample: true
+    name: contributor0
+    reference:
+      reference: Practitioner/contributor0
+  - isExample: true
+    name: contributor1
+    reference:
+      reference: Practitioner/contributor1
+  - isExample: true
+    name: contributor2
+    reference:
+      reference: Practitioner/contributor2
+  - isExample: true
+    name: contributor3
+    reference:
+      reference: Practitioner/contributor3
+  - isExample: true
+    name: contributor4
+    reference:
+      reference: Practitioner/contributor4
   - description: "Deutsche Gesellschaft f\xFCr An\xE4sthesiologie und Intensivmedizin\
       \ e.V. (DGAI)"
     isExample: true
@@ -410,43 +440,48 @@ definition:
   - description: A structured assessment of the quality of guidelines using the AGREE
       II instrument.
     isExample: false
-    name: Evidence Assessment AGREE II
+    name: Evidence Internal Assessment AGREE II
     reference:
-      reference: StructureDefinition/evidence-assessment-agreeii
+      reference: StructureDefinition/evidence-internal-assessment-agreeii
   - description: A structured assessment of the certainty of evidence using AMSTAR
       2.
     isExample: false
-    name: Evidence Assessment AMSTAR 2
+    name: Evidence Internal Assessment AMSTAR 2
     reference:
-      reference: StructureDefinition/evidence-assessment-amstar2
+      reference: StructureDefinition/evidence-internal-assessment-amstar2
   - description: Structured assessment of risk of bias using Cochrane RoB tool.
     isExample: false
-    name: Evidence Assessment Cochrane Risk of Bias
+    name: Evidence Internal Assessment Cochrane Risk of Bias
     reference:
-      reference: StructureDefinition/evidence-assessment-cochrane-rob
-  - description: A structured assessment of the certainty of evidence for a specific
-      outcome, including GRADE rating.
-    isExample: false
-    name: Evidence Assessment GRADE
-    reference:
-      reference: StructureDefinition/evidence-assessment-grade
-  - description: A structured assessment of the certainty of evidence for a specific
-      outcome, including Oxford 2011 rating.
-    isExample: false
-    name: Evidence Assessment Oxford 2011
-    reference:
-      reference: StructureDefinition/evidence-assessment-oxford2011
+      reference: StructureDefinition/evidence-internal-assessment-cochrane-rob
   - description: Structured assessment of risk of bias using ROBIS (Risk of Bias in
       Systematic Reviews).
     isExample: false
-    name: Evidence Assessment ROBIS
+    name: Evidence Internal Assessment ROBIS
     reference:
-      reference: StructureDefinition/evidence-assessment-robis
+      reference: StructureDefinition/evidence-internal-assessment-robis
   - description: A structured assessment of the internal validity of evidence.
     isExample: false
     name: Evidence Internal Validity Assessment
     reference:
       reference: StructureDefinition/evidence-internal-validity-assessment
+  - description: A structured assessment of the certainty of evidence for a specific
+      outcome, including GRADE rating.
+    isExample: false
+    name: Evidence Overall Assessment GRADE
+    reference:
+      reference: StructureDefinition/evidence-overall-assessment-grade
+  - description: A structured assessment of the certainty of evidence for a specific
+      outcome, including Oxford 2011 rating.
+    isExample: false
+    name: Evidence Overall Assessment Oxford 2011
+    reference:
+      reference: StructureDefinition/evidence-overall-assessment-oxford2011
+  - description: A structured assessment of the overall evidence for a specific outcome.
+    isExample: false
+    name: Evidence Overall Quality Assessment
+    reference:
+      reference: StructureDefinition/evidence-overall-quality-assessment
   - description: Intermediate profile that re-slices the extendedContactDetail extension
       from EvidenceReport. This workaround profile isolates the re-slicing to avoid
       'Named items are out of order in the slice' errors in derived profiles. See
@@ -772,6 +807,18 @@ definition:
     reference:
       reference: Organization/CPAnet
   - description: CodeSystem representing the Oxford Centre for Evidence-Based Medicine
+      2009 CEBM Levels of Evidence
+    isExample: false
+    name: OCEBM 2009 Levels of Evidence
+    reference:
+      reference: CodeSystem/cs-ocebm-2009-levels-of-evidence
+  - description: ValueSet encompassing all levels from the Oxford Centre for Evidence-Based
+      Medicine 2009 Levels of Evidence.
+    isExample: false
+    name: OCEBM 2009 Levels of Evidence Value Set
+    reference:
+      reference: ValueSet/vs-ocebm-2009-levels-of-evidence
+  - description: CodeSystem representing the Oxford Centre for Evidence-Based Medicine
       2011 Levels of Evidence.
     isExample: false
     name: OCEBM 2011 Levels of Evidence
@@ -803,11 +850,6 @@ definition:
     name: Outcome Time to Deescalation
     reference:
       reference: EvidenceVariable/OutcomeTimeToDeescalation
-  - description: A structured assessment of the overall evidence for a specific outcome.
-    isExample: false
-    name: Overall Evidence Assessment
-    reference:
-      reference: StructureDefinition/overall-evidence-assessment
   - description: An organization that represents patients
     isExample: false
     name: Patient Organization
@@ -950,16 +992,16 @@ definition:
     name: Rating Resources
     reference:
       reference: ValueSet/vs-rating-resources
-  - description: ValueSet defining the direction of a clinical recommendation.
-    isExample: false
-    name: Recommenadtion Direction
-    reference:
-      reference: ValueSet/vs-recommendation-direction
   - description: Clinical Practice Guideline Recommendation
     isExample: false
     name: Recommendation
     reference:
       reference: StructureDefinition/recommendation
+  - description: ValueSet defining the direction of a clinical recommendation.
+    isExample: false
+    name: Recommendation Direction
+    reference:
+      reference: ValueSet/vs-recommendation-direction
   - description: CodeSystem defining the direction of a clinical recommendation.
     isExample: false
     name: Recommendation Direction
@@ -985,11 +1027,35 @@ definition:
     reference:
       reference: StructureDefinition/recommendation-justification-awmf
   - description: A structured assessment of the evidence and consensus that underpins
-      a recommendation, including GRADE rating.
+      a recommendation based on expert consensus.
+    isExample: false
+    name: Recommendation Justification Expert Consensus
+    reference:
+      reference: StructureDefinition/recommendation-justification-expert-consensus
+  - description: A structured assessment of the evidence and consensus that underpins
+      a recommendation using the GRADE evidence rating system.
     isExample: false
     name: Recommendation Justification GRADE
     reference:
       reference: StructureDefinition/recommendation-justification-grade
+  - description: A structured assessment of the evidence and consensus that underpins
+      a recommendation using the OXFORD 2009 evidence rating system.
+    isExample: false
+    name: Recommendation Justification OXFORD 2009
+    reference:
+      reference: StructureDefinition/recommendation-justification-oxford-2009
+  - description: A structured assessment of the evidence and consensus that underpins
+      a recommendation using the OXFORD 2011 evidence rating system.
+    isExample: false
+    name: Recommendation Justification OXFORD 2011
+    reference:
+      reference: StructureDefinition/recommendation-justification-oxford-2011
+  - description: A structured assessment of the evidence and consensus that underpins
+      a recommendation using the SIGN evidence rating system.
+    isExample: false
+    name: Recommendation Justification SIGN
+    reference:
+      reference: StructureDefinition/recommendation-justification-sign
   - description: This extension allows for the indication of the status of a recommendation
       in the context of an updated guideline version along with an optional explanatory
       text
@@ -1071,7 +1137,7 @@ definition:
     isExample: true
     name: RecommendationMultiplexPCRDiagnostic-Justification
     profile:
-    - http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification-awmf
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification
     reference:
       reference: ArtifactAssessment/RecommendationMultiplexPCRDiagnostic-Justification
   - description: This extensions allows for the indication of the date the guideline
@@ -1219,6 +1285,30 @@ definition:
     name: Section Language
     reference:
       reference: StructureDefinition/ext-section-language
+  - description: CodeSystem representing the Scottish Intercollegiate Guidelines Network
+      (SIGN) Grades of Recommendation.
+    isExample: false
+    name: SIGN Grade of Recommendation
+    reference:
+      reference: CodeSystem/cs-sign-grade-of-recommendation
+  - description: ValueSet encompassing all grades of recommendation from the SIGN
+      (Scottish Intercollegiate Guidelines Network) Grades of Recommendation.
+    isExample: false
+    name: SIGN Grade of Recommendation Value Set
+    reference:
+      reference: ValueSet/vs-sign-grade-of-recommendation
+  - description: CodeSystem representing the Scottish Intercollegiate Guidelines Network
+      (SIGN) Levels of Evidence.
+    isExample: false
+    name: SIGN Level of Evidence
+    reference:
+      reference: CodeSystem/cs-sign-level-of-evidence
+  - description: ValueSet encompassing all levels from the SIGN (Scottish Intercollegiate
+      Guidelines Network) Levels of Evidence.
+    isExample: false
+    name: SIGN Level of Evidence Value Set
+    reference:
+      reference: ValueSet/vs-sign-level-of-evidence
   - description: This extension allows for the indication of the date when the guideline
       was submitted to the system.
     isExample: false
@@ -1433,6 +1523,6 @@ packageId: awmf.ig
 publisher: AWMF e.V.
 resourceType: ImplementationGuide
 status: draft
-title: 'Dissolve-E: FHIR Implementation Guide for the AWMF Guideline Registry'
+title: 'Dissolve-E: AWMF Guideline Registry'
 url: http://fhir.awmf.org/awmf.ig/ImplementationGuide/awmf.ig
 version: 0.1.0

@@ -206,36 +206,42 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
 * version 1..1 // #P2.2.1, #P2.2.7
 * version obeys inv-version-major-minor // #P2.2.1, #P2.2.8
 
-* relatesTo[similarTo] 0..*
-* relatesTo.extension contains ext-relates-to-label named label 0..1
+* relatesTo.extension contains ext-relates-to-label named label 0..1 // TODO: do we need this?
 
-  // todo: use attachment with label instead or targetReference.display
+// RESLICING: The parent profile already has a 'similarTo' slice (type = #similar-to).
+// We reslice it here based on the extension classifier to distinguish between 
+// different types of related guidelines that both use type = #similar-to
 * relatesTo ^slicing.discriminator[1].type = #value
-* relatesTo ^slicing.discriminator[1].path = "extension('http://hl7.org/fhir/StructureDefinition/relatesto-classifier').value.ofType(CodeableConcept).coding"
+* relatesTo ^slicing.discriminator[1].path = "extension('http://hl7.org/fhir/StructureDefinition/relatesto-classifier').value.ofType(CodeableConcept)"
 * relatesTo ^slicing.rules = #open
-* relatesTo contains 
-  relatedGuideline 0..*
-  and disseminationWebsite 0..* 
-  and replacesGuideline 0..* // #P2.3.1.8
-  and replacedWithGuideline 0..* // #P2.3.1.8
-* relatesTo[relatedGuideline]
+* relatesTo[similarTo] contains relatedGuideline 0..*
+  
+* relatesTo[similarTo/relatedGuideline]
   * type 1..1
   * type = #similar-to
   * extension[classifier] 1..1
   * extension[classifier].valueCodeableConcept 1..1
   * extension[classifier].valueCodeableConcept = cs-related-artifact-types#related-guideline 
       // TODO: use code that exists "Guideline" -> no need to have this code system here
+
+* relatesTo contains 
+  disseminationWebsite 0..*
+  and replacesGuideline 0..* // #P2.3.1.8
+  and replacedWithGuideline 0..* // #P2.3.1.8
+  
 * relatesTo[disseminationWebsite]
   * type 1..1
   * type = #documentation
   * extension[classifier] 1..1
   * extension[classifier].valueCodeableConcept from vs-dissemination-website (required)
   * extension[classifier].valueCodeableConcept.coding 1..1
+  
 * relatesTo[replacesGuideline]
   * type 1..1
   * type = #replaces
   * targetReference 1..1
   * targetReference only Reference(Guideline)
+  
 * relatesTo[replacedWithGuideline]
   * type 1..1
   * type = #replaced-with
@@ -429,6 +435,8 @@ Description: "An example of a guideline registry record."
   * system = "https://example.org/identifiers"
   * value = "AWMF-Guideline-Example"
   * use = #official
+* relatesTo[similarTo/relatedGuideline][+]
+  * targetReference = Reference(GuidelineExample)
 
 
 Instance: RR-TestTestInvRequireOfficialId-NoOfficialId-SHOULD-FAIL

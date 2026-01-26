@@ -46,3 +46,19 @@ Description: "CodeSystem representing different codes of interest for the Arbeit
   * ^designation[=].value = "Patientenorganisation"
   * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
   * ^definition.extension[$ext-translation].extension[content].valueString = "Eine Organisation, die Patienten vertritt."
+* #OCEBM2009 "Oxford 2009 (OCEBM)" //TODO: ask Brian to include this code in $cs-evidence-rating-system
+* #outcome "Outcome" "An outcome used in the evidence assessment of a recommendation"
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Ergebnis"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Ein Ergebnis, das in der Evidenzbewertung einer Empfehlung verwendet wird."
+* #overall-quality-of-evidence "Overall Quality of Evidence" "The overall quality of evidence for a recommendation"
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Gesamtqualität der Evidenz"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Die Gesamtqualität der Evidenz für eine Empfehlung."
+* #evidence-rating "Evidence Rating" "The evidence rating for a recommendation"
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Evidenzbewertung"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Die Evidenzbewertung für eine Empfehlung." 

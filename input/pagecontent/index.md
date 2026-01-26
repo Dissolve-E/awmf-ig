@@ -1,3 +1,7 @@
+{% include variables.md %}
+{% assign id = {{include.id}} %}
+{% assign resource = site.data.structuredefinitions.[id] %}
+
 # Dissolve-E - Digitization of the AWMF guideline registry for an open, guideline-based, trustworthy evidence ecosystem
 
 ### Background
@@ -19,16 +23,17 @@ This IG is based on FHIR R6 (6.0.0-ballot3).
 {:.stu-note}
 
 #### Profiles to represent a clinical practice guideline
-While DISSOLVE-E is initiated by the AWMF and foremost aiming to develop a digital guidelines registry for Germany, we propose a general profile (Guideline) as well as profiles including AWMF specific requirements.
+While DISSOLVE-E is initiated by the AWMF and foremost aiming to develop a digital guidelines registry for Germany, we propose a general guideline profile as well as registry-specific profiles including AWMF specific requirements.
 
 | Name | FHIR Base Resource | Description |
 | ---- | ------------- | ----------- |
 | [Guideline][SD:Guideline] | [Composition]({{ fhir_base_url }}composition.html) | Representation of a general clinical practice guideline. |
-| [AWMF Guideline][SD:AWMF Guideline] | [Composition]({{ fhir_base_url }}composition.html) | Representation of a guideline based on AWMF requirements. |
-| [AWMF S1 Guideline][SD:AWMF S1 Guideline] | [Composition]({{ fhir_base_url }}composition.html) | Representation of an AWMF S1 guideline encompassing expert recommendations developed through informal consensus. |
-| [AWMF S2e Guideline][SD:AWMF S2e Guideline] | [Composition]({{ fhir_base_url }}composition.html) | Representation of an AWMF S2e guideline based on systematic literature search and evaluation. |
-| [AWMF S2k Guideline][SD:AWMF S2k Guideline] | [Composition]({{ fhir_base_url }}composition.html) | Representation of an AWMF S2k guideline based on structured consensus by a representative panel. |
-| [AWMF S3 Guideline][SD:AWMF S3 Guideline] | [Composition]({{ fhir_base_url }}composition.html) | Representation of an AWMF S3 guideline based on systematic evidence review and structured consensus by a representative panel. |
+| [Guideline Attachment][SD:Guideline Attachment] | [DocumentReference]({{ fhir_base_url }}documentreference.html) | Representation of an attachment to a clinical practice guideline. |
+| [Guideline Registry Record][SD:Guideline Registry Record] | [Composition]({{ fhir_base_url }}composition.html) | Representation of a guideline registry record containing metadata and registry-specific information. |
+| [AWMF S1 Guideline Registry Record][SD:AWMF S1 Guideline Registry Record] | [Composition]({{ fhir_base_url }}composition.html) | Representation of an AWMF S1 guideline registry record encompassing expert recommendations developed through informal consensus. |
+| [AWMF S2e Guideline Registry Record][SD:AWMF S2e Guideline Registry Record] | [Composition]({{ fhir_base_url }}composition.html) | Representation of an AWMF S2e guideline registry record based on systematic literature search and evaluation. |
+| [AWMF S2k Guideline Registry Record][SD:AWMF S2k Guideline Registry Record] | [Composition]({{ fhir_base_url }}composition.html) | Representation of an AWMF S2k guideline registry record based on structured consensus by a representative panel. |
+| [AWMF S3 Guideline Registry Record][SD:AWMF S3 Guideline Registry Record] | [Composition]({{ fhir_base_url }}composition.html) | Representation of an AWMF S3 guideline registry record based on systematic evidence review and structured consensus by a representative panel. |
 {:.grid}
 
 #### Profile to represent a recommendation
@@ -39,28 +44,47 @@ While DISSOLVE-E is initiated by the AWMF and foremost aiming to develop a digit
 {:.grid}
 
 ##### Profiles to represent the certainty of evidence upon which a clinical practice guideline recommendation is based
-We propose different a general profile as well as profiles based on different rating systems.
+We propose a general profile as well as profiles based on different quality and risk of bias assessment systems.
 
 | Name | FHIR Base Resource | Description |
 | ---- | ------------- | ----------- |
-| [Evidence Assessment][SD:Evidence Assessment] | [ArtifactAssesment]({{ fhir_base_url }}artifactassessment.html) | Representation of a structured assessment of the certainty of evidence for a specific outcome. |
-| [Evidence Assessment AGREE II][SD:Evidence Assessment AGREE II] | [ArtifactAssesment]({{ fhir_base_url }}artifactassessment.html) | Representation of a structured assessment of the quality of guidelines using the AGREE II instrument. |
-| [Evidence Assessment AMSTAR 2][SD:Evidence Assessment AMSTAR 2] | [ArtifactAssesment]({{ fhir_base_url }}artifactassessment.html) | Representation of a structured assessment of the quality of guidelines using AMSTAR 2. |
-| [Evidence Assessment Cochrane Risk of Bias][SD:Evidence Assessment Cochrane Risk of Bias] | [ArtifactAssesment]({{ fhir_base_url }}artifactassessment.html) | Representation of a structured assessment of risk of bias using Cochrane RoB tool. |
-| [Evidence Assessment GRADE][SD:Evidence Assessment GRADE] | [ArtifactAssesment]({{ fhir_base_url }}artifactassessment.html) | Representation of a structured assessment of the certainty of evidence for a specific outcome, including GRADE rating. |
-| [Evidence Assessment Oxford 2011][SD:Evidence Assessment Oxford 2011] | [ArtifactAssesment]({{ fhir_base_url }}artifactassessment.html) | Representation of a structured assessment of the certainty of evidence for a specific outcome, including Oxford 2011 rating. |
-| [Evidence Assessment ROBIS][SD:Evidence Assessment ROBIS] | [ArtifactAssesment]({{ fhir_base_url }}artifactassessment.html) | Representation of a structure assessment of risk of bias using ROBIS (Risk of Bias in Systematic Reviews). |
+| [Certainty of Evidence Rating][SD:Certainty of Evidence Rating] | [ArtifactAssessment]({{ fhir_base_url }}artifactassessment.html) | General representation of a certainty of evidence rating for a specific outcome. |
+| [Evidence Internal Validity Assessment][SD:Evidence Internal Validity Assessment] | [ArtifactAssessment]({{ fhir_base_url }}artifactassessment.html) | Assessment of the internal validity of evidence. |
+| [Evidence Internal Assessment AGREE II][SD:Evidence Internal Assessment AGREE II] | [ArtifactAssessment]({{ fhir_base_url }}artifactassessment.html) | Assessment of guideline quality using the AGREE II instrument. |
+| [Evidence Internal Assessment AMSTAR 2][SD:Evidence Internal Assessment AMSTAR 2] | [ArtifactAssessment]({{ fhir_base_url }}artifactassessment.html) | Assessment of systematic review quality using AMSTAR 2. |
+| [Evidence Internal Assessment Cochrane Risk of Bias][SD:Evidence Internal Assessment Cochrane Risk of Bias] | [ArtifactAssessment]({{ fhir_base_url }}artifactassessment.html) | Assessment of risk of bias using Cochrane RoB tool. |
+| [Evidence Internal Assessment ROBIS][SD:Evidence Internal Assessment ROBIS] | [ArtifactAssessment]({{ fhir_base_url }}artifactassessment.html) | Assessment of risk of bias using ROBIS (Risk of Bias in Systematic Reviews). |
+| [Evidence Overall Quality Assessment][SD:Evidence Overall Quality Assessment] | [ArtifactAssessment]({{ fhir_base_url }}artifactassessment.html) | Overall assessment of evidence quality. |
+| [Evidence Overall Assessment GRADE][SD:Evidence Overall Assessment GRADE] | [ArtifactAssessment]({{ fhir_base_url }}artifactassessment.html) | Overall assessment of evidence certainty using GRADE. |
+| [Evidence Overall Assessment Oxford 2011][SD:Evidence Overall Assessment Oxford 2011] | [ArtifactAssessment]({{ fhir_base_url }}artifactassessment.html) | Overall assessment of evidence certainty using Oxford 2011 levels of evidence. |
 {:.grid}
 
 ##### Profiles to represent the recommendation justification
 
-We propose a general profile as well as two further profiles based on the GRADE and AWMF rating systems used to describe the strength of recommendation:
+We propose a general profile as well as specific profiles based on various internationally recognized rating systems used to describe the strength of recommendation:
 
 | Name | FHIR Base Resource | Description |
 | ---- | ------------- | ----------- |
-| [Recommendation Justification][SD:Recommendation Justification] | [ArtifactAssessment]({{ fhir_base_url }}artifactassessment.html) | Representation of a structured assessment of the evidence and consensus that underpins a recommendation. |
-| [Recommendation Justification AWMF][SD:Recommendation Justification AWMF] | [ArtifactAssessment]({{ fhir_base_url }}artifactassessment.html) | Representation of a structured assessment of the evidence and consensus that underpins a recommendation, including AWMF rating. |
-| [Recommendation Justification GRADE][SD:Recommendation Justification GRADE] | [ArtifactAssessment]({{ fhir_base_url }}artifactassessment.html) | Representation of a structured assessment of the evidence and consensus that underpins a recommendation, including GRADE rating. |
+| [Recommendation Justification][SD:Recommendation Justification] | [ArtifactAssessment]({{ fhir_base_url }}artifactassessment.html) | General representation of a structured assessment of the evidence and consensus that underpins a recommendation. |
+| [Recommendation Justification AWMF][SD:Recommendation Justification AWMF] | [ArtifactAssessment]({{ fhir_base_url }}artifactassessment.html) | Recommendation justification including AWMF strength of recommendation rating. |
+| [Recommendation Justification Expert Consensus][SD:Recommendation Justification Expert Consensus] | [ArtifactAssessment]({{ fhir_base_url }}artifactassessment.html) | Recommendation justification based on expert consensus. |
+| [Recommendation Justification GRADE][SD:Recommendation Justification GRADE] | [ArtifactAssessment]({{ fhir_base_url }}artifactassessment.html) | Recommendation justification including GRADE strength of recommendation rating. |
+| [Recommendation Justification OXFORD 2009][SD:Recommendation Justification OXFORD 2009] | [ArtifactAssessment]({{ fhir_base_url }}artifactassessment.html) | Recommendation justification including Oxford 2009 grade of recommendation. |
+| [Recommendation Justification OXFORD 2011][SD:Recommendation Justification OXFORD 2011] | [ArtifactAssessment]({{ fhir_base_url }}artifactassessment.html) | Recommendation justification including Oxford 2011 grade of recommendation. |
+| [Recommendation Justification SIGN][SD:Recommendation Justification SIGN] | [ArtifactAssessment]({{ fhir_base_url }}artifactassessment.html) | Recommendation justification including SIGN grade of recommendation. |
+{:.grid}
+
+#### Profiles for PICO Questions
+
+To support structured representation of clinical questions, we provide profiles for PICO (Population, Intervention, Comparator, Outcome) questions:
+
+| Name | FHIR Base Resource | Description |
+| ---- | ------------- | ----------- |
+| [PICO Question][SD:PICO Question] | [Group]({{ fhir_base_url }}group.html) | Structured definition of a PICO question in the context of guidelines and recommendations. |
+| [Conceptual Cohort Definition Population][SD:Conceptual Cohort Definition Population] | [Group]({{ fhir_base_url }}group.html) | Definition of the population in a PICO question. |
+| [Conceptual Cohort Definition Intervention][SD:Conceptual Cohort Definition Intervention] | [Group]({{ fhir_base_url }}group.html) | Definition of the intervention in a PICO question. |
+| [Conceptual Cohort Definition Comparator][SD:Conceptual Cohort Definition Comparator] | [Group]({{ fhir_base_url }}group.html) | Definition of the comparator in a PICO question. |
+| [Conceptual Cohort Definition Outcome][SD:Conceptual Cohort Definition Outcome] | [Group]({{ fhir_base_url }}group.html) | Definition of the outcome in a PICO question. |
 {:.grid}
 
 #### Profiles for involved Organizations and Persons
@@ -68,15 +92,18 @@ We propose a general profile as well as two further profiles based on the GRADE 
 | Name | FHIR Base Resource | Description |
 | ---- | ------------- | ----------- |
 | [AWMF Member Organization][SD:AWMF Member Organization] | [Organization]({{ fhir_base_url }}organization.html) | Representation of an organization that is a member of the AWMF. |
+| [Medical Society][SD:Medical Society] | [Organization]({{ fhir_base_url }}organization.html) | Representation of a medical society involved in guideline development. |
+| [Patient Organization][SD:Patient Organization] | [Organization]({{ fhir_base_url }}organization.html) | Representation of a patient organization involved in guideline development. |
 | [Guideline Author][SD:Guideline Author] | [Practitioner]({{ fhir_base_url }}practitioner.html) | Representation of a person that authored a guideline. |
 | [Guideline Author Role][SD:Guideline Author Role] | [PractitionerRole]({{ fhir_base_url }}practitionerrole.html) | Representation of the role of the author of the guideline. |
 {:.grid}
 
-#### Other Profile
+#### Other Profiles
 
 | Name | FHIR Base Resource | Description |
 | ---- | ------------- | ----------- |
-| [Guideline Attachment][SD:Guideline Attachment] | [DocumentReference]({{ fhir_base_url }}documentreference.html) | Representation of an attachment to a clinical practice guideline. |
+| [Outcome Evidence][SD:Outcome Evidence] | [Evidence]({{ fhir_base_url }}evidence.html) | Representation of evidence for a specific outcome. |
+| [Citation List][SD:Citation List] | [Citation]({{ fhir_base_url }}citation.html) | Representation of a list of citations supporting recommendations or evidence. |
 {:.grid}
 
 ### Graphical Overview of the FHIR Resources

@@ -1,7 +1,7 @@
-Profile: EvidenceAssessmentGRADE
-Parent: OverallEvidenceAssessment
-Id: evidence-assessment-grade
-Title: "Evidence Assessment GRADE"
+Profile: EvidenceOverallAssessmentGRADE
+Parent: EvidenceOverallQualityAssessment
+Id: evidence-overall-assessment-grade
+Title: "Evidence Overall Assessment GRADE"
 Description: "A structured assessment of the certainty of evidence for a specific outcome, including GRADE rating."
 
 * content ^slicing.discriminator.type = #value

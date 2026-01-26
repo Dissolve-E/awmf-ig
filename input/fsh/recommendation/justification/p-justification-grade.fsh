@@ -2,7 +2,7 @@ Profile: RecommendationJustificationGRADE
 Parent: RecommendationJustification
 Id: recommendation-justification-grade
 Title: "Recommendation Justification GRADE"
-Description: "A structured assessment of the evidence and consensus that underpins a recommendation, including GRADE rating."
+Description: "A structured assessment of the evidence and consensus that underpins a recommendation using the GRADE evidence rating system."
 
 * content[recommendationRating]
   * component contains
@@ -18,7 +18,7 @@ Description: "A structured assessment of the evidence and consensus that underpi
     * type 1..1
     * type = $cs-ebm-ig#rating-system "Rating System"
     * classifier 1..1
-    * classifier = $cs-evidence-rating-system#GRADE
+    * classifier = $cs-evidence-rating-system#GRADE "GRADE"
 
   * component[strengthOfRecommendation]
     * type 1..1

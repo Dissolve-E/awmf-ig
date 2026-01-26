@@ -1,7 +1,7 @@
-Profile: EvidenceAssessmentCochraneRoB
+Profile: EvidenceInternalAssessmentCochraneRoB
 Parent: EvidenceInternalValidityAssessment
-Id: evidence-assessment-cochrane-rob
-Title: "Evidence Assessment Cochrane Risk of Bias"
+Id: evidence-internal-assessment-cochrane-rob
+Title: "Evidence Internal Assessment Cochrane Risk of Bias"
 Description: "Structured assessment of risk of bias using Cochrane RoB tool."
 * content[ratingSystem]
   * type 1..1

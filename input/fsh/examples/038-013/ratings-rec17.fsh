@@ -16,8 +16,15 @@ Description: "Justification for Recommendation Cognitive Tests When Suspecting D
   * component[levelOfConsensus]
     * classifier = cs-level-of-consensus#strong-consensus "Strong consensus" //"97%"
 
-* content[evidence][+]
-  * relatesTo.targetReference = Reference(RoB-CognitiveTestsWhenSuspectingDementia-Sensitivity)
 
-* content[evidence][+]
-  * relatesTo.targetReference = Reference(RoB-CognitiveTestsWhenSuspectingDementia-Specificity)
+* content[evidenceRating][+]
+  * component[levelOfEvidence]
+    * classifier = $cs-certainty-rating#very-low "Very low quality"
+  * component[overallQualityOfEvidence][+]
+    * relatesTo.targetReference = Reference(RoB-CognitiveTestsWhenSuspectingDementia-Sensitivity)
+
+* content[evidenceRating][+]
+  * component[levelOfEvidence]
+    * classifier = $cs-certainty-rating#very-low "Very low quality"
+  * component[overallQualityOfEvidence][+]
+    * relatesTo.targetReference = Reference(RoB-CognitiveTestsWhenSuspectingDementia-Specificity)

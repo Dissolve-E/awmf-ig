@@ -14,10 +14,10 @@ This profile serves as the base for internal validity assessments using various 
 
 - **Parent profile:** [Certainty of Evidence Rating](StructureDefinition-certainty-of-evidence-rating.html)
 - **Child profiles:**
-  - [Evidence Assessment ROBIS](StructureDefinition-evidence-assessment-robis.html) – For systematic reviews
-  - [Evidence Assessment Cochrane RoB](StructureDefinition-evidence-assessment-cochrane-rob.html) – For RCTs
-  - [Evidence Assessment AMSTAR 2](StructureDefinition-evidence-assessment-amstar2.html) – For systematic reviews
-  - [Evidence Assessment AGREE II](StructureDefinition-evidence-assessment-agreeii.html) – For guidelines
+  - [Evidence Internal Assessment ROBIS][SD:Evidence Internal Assessment ROBIS] – For systematic reviews
+  - [Evidence Internal Assessment Cochrane Risk of Bias][SD:Evidence Internal Assessment Cochrane Risk of Bias] – For RCTs
+  - [Evidence Internal Assessment AMSTAR 2][SD:Evidence Internal Assessment AMSTAR 2] – For systematic reviews
+  - [Evidence Internal Assessment AGREE II][SD:Evidence Internal Assessment AGREE II] – For guidelines
 
 #### Use Cases
 
