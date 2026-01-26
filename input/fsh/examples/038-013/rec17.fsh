@@ -23,7 +23,7 @@ kognitive Störung beobachtet wird und die einer solchen Untersuchung zustimmen?
   * value = "RecommendationCognitiveTestsWhenSuspectingDementia"
   * use = #official
 
-* relatesTo[picoQuestion]
+* relatesTo[derivedFrom/picoQuestion]
   * targetCanonical = Canonical(PICOQuestionRec17)
 * relatesTo[partOf]
   * targetCanonical = Canonical(Demenzen|5.2)

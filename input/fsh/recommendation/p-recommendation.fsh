@@ -25,6 +25,11 @@ Description: "Clinical Practice Guideline Recommendation"
   * ^short = "Last Literature Review Date"
   * valueDate 1..1
 
+* relatesTo ^slicing.discriminator[1].type = #value
+* relatesTo ^slicing.discriminator[1].path = "extension('http://hl7.org/fhir/StructureDefinition/relatesto-classifier').value.ofType(CodeableConcept)"
+* relatesTo ^slicing.rules = #open
+* relatesTo[derivedFrom] contains picoQuestion 0..*
+ 
 // #P2.1.8
 * relatesTo contains 
   specificationOfPreceedingRecommendation 0..*
@@ -46,11 +51,14 @@ Description: "Clinical Practice Guideline Recommendation"
   * type = #replaces
   * targetReference 1..1
   * targetReference only Reference(Recommendation)
-* relatesTo[picoQuestion]
-  * type 1..1 // TODO: can we remove this? check if sushi adds type automatically in instances if we remove it
+* relatesTo[derivedFrom/picoQuestion]
+  * type 1..1
   * type = #derived-from
   * targetReference 1..1
   * targetReference only Reference(PICOQuestion)
+  * extension[classifier] 1..1
+  * extension[classifier].valueCodeableConcept 1..1
+  * extension[classifier].valueCodeableConcept = $cs-pico#pico-question
 
 * relatesTo[partOf] 1..* // each recommendation must be part of at least one guideline
 
