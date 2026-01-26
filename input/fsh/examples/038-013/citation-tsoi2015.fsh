@@ -71,30 +71,30 @@ Description: "Citation for the Systematic Review by Tsoi et al. 2015"
 
 Instance: contributor0
 InstanceOf: Practitioner
-Usage: #inline
+Usage: #example
 * name.family = "Tsoi"
 * name.given = "Kelvin K F"
 
 Instance: contributor1
 InstanceOf: Practitioner
-Usage: #inline
+Usage: #example
 * name.family = "Chan"
 * name.given = "Joyce Y C"
 
 Instance: contributor2
 InstanceOf: Practitioner
-Usage: #inline
+Usage: #example
 * name.family = "Hirai"
 * name.given = "Hoyee W"
 
 Instance: contributor3
 InstanceOf: Practitioner
-Usage: #inline
+Usage: #example
 * name.family = "Wong"
 * name.given = "Samuel Y S"
 
 Instance: contributor4
 InstanceOf: Practitioner
-Usage: #inline
+Usage: #example
 * name.family = "Kwok"
 * name.given = "Timothy C Y"

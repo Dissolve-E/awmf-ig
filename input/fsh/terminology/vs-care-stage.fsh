@@ -1,6 +1,6 @@
 ValueSet: CareStageVS
 Id: vs-care-stage
-Title: "CareStage"
+Title: "Care Stage"
 Description: "ValueSet listing stages of care from prevention to rehabilitation."
 * insert rs-valueset-meta
 * cs-care-setting#prevention
