@@ -24,9 +24,9 @@ kognitive Störung beobachtet wird und die einer solchen Untersuchung zustimmen?
   * use = #official
 
 * relatesTo[derivedFrom/picoQuestion]
-  * targetCanonical = Canonical(PICOQuestionRec17)
+  * targetReference = Reference(PICOQuestionRec17)
 * relatesTo[partOf]
-  * targetCanonical = Canonical(Demenzen|5.2)
+  * targetReference = Reference(Demenzen|5.2)
 
 * category[synthesisType] = cs-recommendation-synthesis-type#evidence-based "Evidence-based"
 

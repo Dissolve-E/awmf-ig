@@ -206,7 +206,7 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
 * version 1..1 // #P2.2.1, #P2.2.7
 * version obeys inv-version-major-minor // #P2.2.1, #P2.2.8
 
-* relatesTo.extension contains ext-relates-to-label named label 0..1
+* relatesTo.extension contains ext-relates-to-label named label 0..1 // TODO: do we need this?
 
 // RESLICING: The parent profile already has a 'similarTo' slice (type = #similar-to).
 // We reslice it here based on the extension classifier to distinguish between 
@@ -214,10 +214,8 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
 * relatesTo ^slicing.discriminator[1].type = #value
 * relatesTo ^slicing.discriminator[1].path = "extension('http://hl7.org/fhir/StructureDefinition/relatesto-classifier').value.ofType(CodeableConcept)"
 * relatesTo ^slicing.rules = #open
-* relatesTo[similarTo] contains 
-  relatedGuideline 0..*
+* relatesTo[similarTo] contains relatedGuideline 0..*
   
-// Sub-slice of similarTo (using slash notation)
 * relatesTo[similarTo/relatedGuideline]
   * type 1..1
   * type = #similar-to
@@ -226,7 +224,6 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
   * extension[classifier].valueCodeableConcept = cs-related-artifact-types#related-guideline 
       // TODO: use code that exists "Guideline" -> no need to have this code system here
 
-// Top-level slices with different type values (not reslices of similarTo)
 * relatesTo contains 
   disseminationWebsite 0..*
   and replacesGuideline 0..* // #P2.3.1.8

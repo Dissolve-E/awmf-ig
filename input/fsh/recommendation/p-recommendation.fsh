@@ -25,17 +25,28 @@ Description: "Clinical Practice Guideline Recommendation"
   * ^short = "Last Literature Review Date"
   * valueDate 1..1
 
+// RESLICING: The parent profile already has a 'similarTo' slice (type = #similar-to).
+// We reslice it here based on the extension classifier to distinguish between 
+// different types of related guidelines that both use type = #similar-to
 * relatesTo ^slicing.discriminator[1].type = #value
 * relatesTo ^slicing.discriminator[1].path = "extension('http://hl7.org/fhir/StructureDefinition/relatesto-classifier').value.ofType(CodeableConcept)"
 * relatesTo ^slicing.rules = #open
 * relatesTo[derivedFrom] contains picoQuestion 0..*
  
+* relatesTo[derivedFrom/picoQuestion]
+  * type 1..1
+  * type = #derived-from
+  * targetReference 1..1
+  * targetReference only Reference(PICOQuestion)
+  * extension[classifier] 1..1
+  * extension[classifier].valueCodeableConcept 1..1
+  * extension[classifier].valueCodeableConcept = $cs-pico#pico-question
+
 // #P2.1.8
 * relatesTo contains 
   specificationOfPreceedingRecommendation 0..*
   and specificationOfSucceedingRecommendation 0..*
   and replacesRecommendation 0..* // #P2.3.2.30, #P2.3.2.31
-  and picoQuestion 0..*
 * relatesTo[specificationOfPreceedingRecommendation]
   * type 1..1
   * type = #predecessor
@@ -51,14 +62,7 @@ Description: "Clinical Practice Guideline Recommendation"
   * type = #replaces
   * targetReference 1..1
   * targetReference only Reference(Recommendation)
-* relatesTo[derivedFrom/picoQuestion]
-  * type 1..1
-  * type = #derived-from
-  * targetReference 1..1
-  * targetReference only Reference(PICOQuestion)
-  * extension[classifier] 1..1
-  * extension[classifier].valueCodeableConcept 1..1
-  * extension[classifier].valueCodeableConcept = $cs-pico#pico-question
+
 
 * relatesTo[partOf] 1..* // each recommendation must be part of at least one guideline
 
