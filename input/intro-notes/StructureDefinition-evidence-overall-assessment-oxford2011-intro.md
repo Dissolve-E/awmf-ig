@@ -37,7 +37,7 @@ Usage: #example
 * content[ratingSystem].classifier = $cs-evidence-rating-system#OCEBM2011 "Oxford 2011 (OCEBM)"
 ```
 
-For the base profile structure, see [Overall Evidence Assessment](StructureDefinition-overall-evidence-assessment.html).
+For the base profile structure, see [Evidence Overall Quality Assessment][SD:Evidence Overall Quality Assessment].
 
 {% capture resource_inheritance %}
 This profile of a FHIR {{resource.type}} is derived from the [{{resource.base | split: '/' | last}}]({{resource.base}}) FHIR resource.

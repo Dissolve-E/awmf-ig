@@ -214,7 +214,7 @@ definition:
       reference: CodeSystem/cs-care-setting
   - description: ValueSet listing stages of care from prevention to rehabilitation.
     isExample: false
-    name: CareStage
+    name: Care Stage
     reference:
       reference: ValueSet/vs-care-stage
   - description: A structured assessment of the certainty of evidence for a specific
@@ -992,16 +992,16 @@ definition:
     name: Rating Resources
     reference:
       reference: ValueSet/vs-rating-resources
-  - description: ValueSet defining the direction of a clinical recommendation.
-    isExample: false
-    name: Recommenadtion Direction
-    reference:
-      reference: ValueSet/vs-recommendation-direction
   - description: Clinical Practice Guideline Recommendation
     isExample: false
     name: Recommendation
     reference:
       reference: StructureDefinition/recommendation
+  - description: ValueSet defining the direction of a clinical recommendation.
+    isExample: false
+    name: Recommendation Direction
+    reference:
+      reference: ValueSet/vs-recommendation-direction
   - description: CodeSystem defining the direction of a clinical recommendation.
     isExample: false
     name: Recommendation Direction
