@@ -61,7 +61,7 @@ derzeit nicht sagen.
 
 
 Instance: RecommendationMultiplexPCRDiagnostic-Justification
-InstanceOf: RecommendationJustificationGRADE
+InstanceOf: RecommendationJustification
 Usage: #example
 Title: "RecommendationMultiplexPCRDiagnostic-Justification"
 Description: "Justification for Recommendation Multiplex-PCR-Diagnostik"

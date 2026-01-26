@@ -30,7 +30,7 @@
 {% include valueset-reference.md name='VS:ROBIS Judgment of Risk of Bias Value Set' %}
 {% include valueset-reference.md name='VS:ROBIS Risk of Bias Domains Value Set' %}
 
-##### Value Sets related to Grades
+##### Value Sets related to GRADE
 
 {% include valueset-reference.md name='VS:Rating Acceptability' %}
 {% include valueset-reference.md name='VS:Rating Benefits And Harms' %}

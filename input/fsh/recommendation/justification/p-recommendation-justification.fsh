@@ -49,7 +49,7 @@ Description: "A structured assessment of the evidence and consensus that underpi
 
 * content[evidenceRating] // one per outcome, #P2.3.3.2, #P2.3.3.3
   * type 1..1
-  * type = $cs-ebm-ig#evidence-rating "Evidence Rating"
+  * type = cs-awmf#evidence-rating "Evidence Rating"
   * component ^slicing.discriminator.type = #value
   * component ^slicing.discriminator.path = "type"
   * component ^slicing.rules = #open
@@ -72,7 +72,7 @@ Description: "A structured assessment of the evidence and consensus that underpi
 
   * component[outcome]
     * type 1..1
-    * type = $cs-ebm-ig#outcome "Outcome"
+    * type = cs-awmf#outcome "Outcome"
     * relatesTo 1..1
       * type 1..1
       * type = $cs-related-artifact-type#depends-on "Depends On" // TODO: change to outcome when building on >6.0.0-ballot3 (currently value set binding is "required")
@@ -81,7 +81,7 @@ Description: "A structured assessment of the evidence and consensus that underpi
   
   * component[overallQualityOfEvidence]
     * type 1..1
-    * type = $cs-ebm-ig#overall-quality-of-evidence "Overall Quality"
+    * type = cs-awmf#overall-quality-of-evidence "Overall Quality of Evidence"
     * relatesTo 1..1
       * type 1..1
       * type = $cs-related-artifact-type#justification "Justification"
@@ -105,7 +105,7 @@ Title: "Recommendation Justification OXFORD 2011"
 Description: "A structured assessment of the evidence and consensus that underpins a recommendation using the OXFORD 2011 evidence rating system."
 * content[evidenceRating]
   * component[ratingSystem]
-    * classifier = $cs-evidence-rating-system#OCEBM2011 "Oxford 2011 (OCEMB)"
+    * classifier = $cs-evidence-rating-system#OCEBM2011 "Oxford 2011 (OCEBM)"
   * component[levelOfEvidence]
     * classifier from OCEBM2011LevelsOfEvidenceVS (preferred)
   * component[outcome] 0..0
