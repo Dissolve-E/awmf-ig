@@ -32,6 +32,18 @@ Description: "Sections of a guideline, describing various aspects such as its in
   * ^designation[=].value = "Adressaten"
   * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
   * ^definition.extension[$ext-translation].extension[content].valueString = "Dieser Abschnitt beschreibt die Adressaten der Leitlinie."
+// Geplante Methodik der LL-Entwicklung (Abschnitt in LL-Anmeldung)
+* #planned-methodology "Planned Methodology" "The section describes the planned methodology for developing the guideline."
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Geplante Methodik"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Dieser Abschnitt beschreibt die geplante Methodik zur Entwicklung der Leitlinie."
+// Ergänzende Informationen (in LL-Anmeldung)
+* #further-information "Further Information" "The section describes the further information regarding the guideline project."
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Ergänzende Informationen"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Dieser Abschnitt beschreibt ergänzende Informationen zum Leitlinienprojekt."
 // versorgungssektor, versorgungsabschnitt, versorgungsebene
 * #encounter-type "Encounter Type" "The section describes the encounter type of the guideline."
   * ^designation[+].language = #de

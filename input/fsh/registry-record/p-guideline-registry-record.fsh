@@ -44,21 +44,21 @@ Description: "Intermediate profile that re-slices the extendedContactDetail exte
   * purpose = cs-contact-point#registrant
   * purpose 1..1
   * name 1..1
-  * telecom 1..*
+  * telecom 0..*
     * value 1..1
   * address 0..1
 * extension[extendedContactDetail/coordinator].valueExtendedContactDetail
   * purpose = cs-contact-point#coordinator
   * purpose 1..1
   * name 1..1
-  * telecom 1..*
+  * telecom 0..*
     * value 1..1
   * address 0..1
 * extension[extendedContactDetail/mainContact].valueExtendedContactDetail
   * purpose = cs-contact-point#contact
   * purpose 1..1
   * name 1..1
-  * telecom 1..*
+  * telecom 0..*
     * value 1..1
   * address 0..1
 
@@ -276,6 +276,7 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
   summary 0..1 MS
   and attachments 0..1 MS
   and consensusProtocol 0..*
+  and other 0..*
 
 * section[summary]
   * code = $cs-ebm-ig#summary "Summary"
@@ -300,6 +301,7 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
   * section[careSetting]
     * code 1..1
     * code = cs-guideline-sections#care-setting "Care Setting"
+    * insert rs-language-section
     * section ^slicing.discriminator.type = #value
     * section ^slicing.discriminator.path = "code"
     * section ^slicing.rules = #closed
@@ -418,6 +420,12 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
     * coding 1..1
   * insert rs-language-section-nested
 
+* section[other]
+  * code = cs-guideline-sections#other "Other"
+  * code 1..1
+    * coding = cs-guideline-sections#other "Other"
+    * coding 1..1
+  * insert rs-language-section-nested
 
 Instance: GuidelineRegistryRecordExample
 InstanceOf: guideline-registry-record

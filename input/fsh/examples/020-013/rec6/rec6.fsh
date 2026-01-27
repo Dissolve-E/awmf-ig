@@ -13,6 +13,11 @@ mit Verdacht auf nosokomiale Pneumonie empfohlen?"
 * date = "2024-12-05"
 * title = "Multiplex-PCR-Diagnostik"
 
+* identifier[+]
+  * system = "http://fhir.awmf.org/examples"
+  * value = "RecommendationMultiplexPCRDiagnostic"
+  * use = #official
+
 * relatesTo[partOf]
   * targetCanonical = Canonical(NosokomialePneumonie|3.0)
 
