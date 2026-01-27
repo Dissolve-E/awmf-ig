@@ -383,7 +383,7 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
     * code from vs-content-types (preferred) // #P2.1.7 (preferred binding)
     * entry only Reference(GuidelineAttachment)
     * entry 1..* MS
- //   * obeys inv-guideline-attachment-type-match // TODO: does currently not seem to work (doesn't resolve the references - maybe in the IG publisher?) [@gregor]
+    * obeys inv-guideline-attachment-type-match // TODO: does currently not seem to work (doesn't resolve the references - maybe in the IG publisher?) [@gregor]
   * section[longVersion]
     * code 1..1
     * code.coding 1..1
