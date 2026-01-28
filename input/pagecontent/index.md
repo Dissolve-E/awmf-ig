@@ -147,12 +147,9 @@ This project is publicly funded by the Innovation Committee of the Federal Joint
 #### Links
 * DISSOLVE-E on the Website of the Federal Joint Committee (G-BA) in [German](https://innovationsfonds.g-ba.de/projekte/versorgungsforschung/dissolve-e.597) or [English](https://www.awmf.org/die-awmf/imwi/projekte/dissolve-e-english-version)
 * [GitHub project](https://github.com/Dissolve-E/awmf-ig)
+* Profile definitions in the DISSOLVE-E Implementation Guide can be downloaded as a package via <a href="https://fhir.awmf.org/awmf.ig/package.tgz" alt="DISSOLVE-E Implementation Guide profile package download">https://fhir.awmf.org/awmf.ig/package.tgz</a>.
 
 {% include link-list.md %}
 
-### Usage 
 
-#### Package download 
-
-The profile definitions in the DISSOLVE-E Implementation Guide can be downloaded as a package via <a href="https://fhir.awmf.org/awmf.ig/package.tgz" alt="DISSOLVE-E Implementation Guide profile package download">https://fhir.awmf.org/awmf.ig/package.tgz</a>.
 
