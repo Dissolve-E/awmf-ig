@@ -111,7 +111,7 @@ To support structured representation of clinical questions, we provide profiles 
 The following diagramm provides an overview of the diverse profiles used in this the DISSOLVE-E-IG and their relationship allowing for a structured representation of clinical practice guidelines with
 accompanying evidence and evidence-to-decision information. The cardinalities shown represent the respective maxima. Please consult the pages of the respective [profiles](profiles.html) for additional details.
 
-<img src="awmf-ig-klassendiagramm-v0.png" alt="Class Diagramm for DISSOLVE-E" style="width:100%;" />
+<img src="awmf-ig-0.2.0-class-diagram.png" alt="Class Diagramm for DISSOLVE-E AWMF IG" style="width:100%;" />
 
 ### Authors (in alphabetical order) with Affiliations
 * [Sophie Klopfenstein](https://github.com/klsophie) (Berlin Institute of Health at Charité)
