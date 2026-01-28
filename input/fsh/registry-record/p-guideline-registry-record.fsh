@@ -80,6 +80,7 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
 * meta.tag ^slicing.rules = #open
 * meta.tag contains 
   guideline-releaseType 0..1
+* meta.tag[guideline-releaseType] ^short = "The typ of registration of a new or updated guideline, i.e., whether it's an update, an upgrade, a completely new guideline, etc"
 
 // leading and contributing authors SHALL be Organizations
 * obeys author-leading-contributing-organization
@@ -103,10 +104,12 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
 * language 0..1 MS
 
 * title 1..1
-* title ^definition = "Title of the Guideline"
+* title ^definition = "Title of the guideline"
+* title ^short = "Human readable title of the guideline"
 // TODO: add description of this status in HTML page of the profile [@glichtner]
 * status 1..1 // used for: anmeldung, konsultationsfassung, amendment, final // #P2.2.9
 * status ^definition = "Workflow status of the guideline from registration to publication or deprecation. Please note that the ValueSet 'http://hl7.org/fhir/ValueSet/composition-status' is required; We therefore created the ConceptMap 'FHIRStatusToAWMFStatus' to store the mapping to the AWMF status values."
+* status ^short = "Workflow status of the guideline from registration to publication or deprecation, e.g., preliminary, final, amendend etc."
 
 
 * type = cs-awmf#guideline-registry-record "Guideline Registry Record"
@@ -187,6 +190,9 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
   * ^short = "Modification Date"
 
 * author only Reference(GuidelineAuthorRole or Organization) // #P2.3.1.4
+  * ^definition = "The authors of the guildeline, either organizations or persons. Their respective role is defined by extension role: content-author, moderator etc. "
+  * ^short = "Author, either as organization or person"
+  * ^comment = "Note that the authoring role defined here is disjunct with roles for the management of the guideline project as a whole (e.g., coordinatior, registrant etc). These are defined as dedicated contact points within the extension extendedContactDetail."
 * author.extension contains ext-guideline-author-role named role 1..* // #P2.3.1.4
 // "registrant" only 1..1 and disallow role = contributing & leading
 * obeys author-registrant-singleton
@@ -200,13 +206,16 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
   * system 1..1
   * system = "http://fhir.awmf.org/guidelines"
   * value 1..1
+  * ^short = "The AWMF register number of the guideline, e.g., 001-001"
 * identifier 1..*
+  * ^short = "An identifer in a (technical) system the guideline is represented in"
 * obeys inv-require-official-identifier // #P2.2.1, #P2.2.3
 
 * version 1..1 // #P2.2.1, #P2.2.7
 * version obeys inv-version-major-minor // #P2.2.1, #P2.2.8
 
 * relatesTo.extension contains ext-relates-to-label named label 0..1 // TODO: do we need this?
+* relatesTo.extension[label] ^short = "A label to display with the reference to the related object, e.g. the title of a related guideline"
 
 // RESLICING: The parent profile already has a 'similarTo' slice (type = #similar-to).
 // We reslice it here based on the extension classifier to distinguish between 
@@ -235,18 +244,21 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
   * extension[classifier] 1..1
   * extension[classifier].valueCodeableConcept from vs-dissemination-website (required)
   * extension[classifier].valueCodeableConcept.coding 1..1
+  * ^short = "A reference to a website this guideline (and accompanying informaiton) is being made available at"
   
 * relatesTo[replacesGuideline]
   * type 1..1
   * type = #replaces
   * targetReference 1..1
   * targetReference only Reference(Guideline)
+  * ^short = "A reference to another (older, outdated or obsolete) guideline this guideline is replacing"
   
 * relatesTo[replacedWithGuideline]
   * type 1..1
   * type = #replaced-with
   * targetReference 1..1
   * targetReference only Reference(Guideline)
+  * ^short = "A reference to another (newer, updated, merged) guideline this guideline has been replaced by"
 
 * note.extension contains $ext-annotationType named type 1..1
 * note ^slicing.discriminator.type = #value
@@ -257,6 +269,7 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
   * extension[type].valueCodeableConcept 1..1
   * extension[type].valueCodeableConcept from vs-remark-type (required)
   * text 1..1
+  * ^short = "A remark to go with the publication of the guideline in the register, possibly changing over time based on updates to the guideline or similar circumstances"
 
 // TODO: discuss whether to move this into AWMF Guideline profile? [all, after workshop]
 * category 0..*
@@ -268,6 +281,7 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
   * coding from vs-awmf-guideline-class (required)
     * system 1.. MS
     * code 1.. MS
+    * ^short = "The guideline class for this guideline record: S1, S2k, S2e, S3"
 
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
@@ -283,6 +297,7 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
   * code 1..1
     * coding = $cs-ebm-ig#summary "Summary"
     * coding 1..1
+  * ^short = "Overview information regarding the guideline, to be shown in the register upon publication"
   * section ^slicing.discriminator.type = #value
   * section ^slicing.discriminator.path = "code"
   * section ^slicing.rules = #open
@@ -367,6 +382,7 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
   * code 1..1
     * coding = $cs-ebm-ig#attachments "Attachments"
     * coding 1..1
+  * ^short = "References to document attachements published with the guideline, e.g., a PDF long version of the guideline, a short version, an evidence report etc"
   * section ^slicing.discriminator.type = #value
   * section ^slicing.discriminator.path = "code"
   * section ^slicing.rules = #open
