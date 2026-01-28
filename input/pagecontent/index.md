@@ -149,3 +149,10 @@ This project is publicly funded by the Innovation Committee of the Federal Joint
 * [GitHub project](https://github.com/Dissolve-E/awmf-ig)
 
 {% include link-list.md %}
+
+### Usage 
+
+#### Package download 
+
+The profile definitions in the DISSOLVE-E Implementation Guide can be downloaded as a package via <a href="https://fhir.awmf.org/awmf.ig/package.tgz" alt="DISSOLVE-E Implementation Guide profile package download">https://fhir.awmf.org/awmf.ig/package.tgz</a>.
+
