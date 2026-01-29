@@ -415,7 +415,8 @@ run_go_publish() {
     setup_go_publish_environment
 
     # Fetch existing webroot from server if not local-only and webroot is empty
-    if [ "$LOCAL_ONLY" = "false" ] && [ -z "$(ls -A "$WEBROOT" 2>/dev/null)" ]; then
+    # Skip in CI - the workflow handles fetching before Docker runs (Docker doesn't have SSH access)
+    if [ "$LOCAL_ONLY" = "false" ] && [ "${CI:-}" != "true" ] && [ -z "$(ls -A "$WEBROOT" 2>/dev/null)" ]; then
         log_info "Fetching existing publications from server..."
         fetch_existing_publications || log_warn "Could not fetch existing publications (this may be the first publication)"
     fi
@@ -1082,7 +1083,14 @@ deploy_to_server() {
         log_info "Built content is available at: ${WEBROOT}"
         return 0
     fi
-    
+
+    # In CI, the workflow handles deployment after Docker runs (Docker doesn't have SSH access)
+    if [ "${CI:-}" = "true" ]; then
+        log_info "CI mode: skipping deployment (workflow handles this step)"
+        log_info "Built content is available at: ${WEBROOT}"
+        return 0
+    fi
+
     log_info "Deploying to ${REMOTE_HOST}..."
     
     local ssh_key="${SSH_KEY_PATH:-/tmp/awmf_ig_publisher.id_ed25519}"
