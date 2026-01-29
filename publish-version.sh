@@ -29,9 +29,11 @@
 # Options:
 #   --mode        Publication mode: milestone (default), working, technical-correction
 #   --status      Release status: trial-use (default), draft, release, ballot
+#   --release-label  User-facing release label (e.g., "STU 1", "2024 Edition", "Ballot")
+#                    If not specified, derived from --status (e.g., trial-use → "STU")
 #   --sequence    Release sequence name (default: "Releases")
 #   --desc        Description of this release
-#   --first       Set to 'true' for first publication (default: auto-detect)
+#   --first       Mark as first publication (default: auto-detect from package-list.json)
 #   --dry-run     Build but don't deploy
 #   --local       Use local webroot instead of rsync to server
 #   --use-go-publish  EXPERIMENTAL: Use IG Publisher's -go-publish mode
@@ -41,6 +43,7 @@
 #
 # Examples:
 #   ./publish-version.sh 1.0.0 --mode milestone --status trial-use
+#   ./publish-version.sh 1.0.0 --mode milestone --status trial-use --release-label "STU 1"
 #   ./publish-version.sh 1.1.0-beta.1 --mode working --status draft --dry-run
 #
 
@@ -79,6 +82,7 @@ REMOTE_PATH="./${PACKAGE_ID}"
 VERSION=""
 MODE="milestone"
 STATUS="trial-use"
+RELEASE_LABEL=""  # User-facing label (e.g., "STU 1", "Ballot", "2024 Edition")
 SEQUENCE="Releases"
 DESC=""
 FIRST="auto"
@@ -119,6 +123,10 @@ parse_args() {
                 STATUS="$2"
                 shift 2
                 ;;
+            --release-label)
+                RELEASE_LABEL="$2"
+                shift 2
+                ;;
             --sequence)
                 SEQUENCE="$2"
                 shift 2
@@ -128,8 +136,8 @@ parse_args() {
                 shift 2
                 ;;
             --first)
-                FIRST="$2"
-                shift 2
+                FIRST="true"
+                shift
                 ;;
             --dry-run)
                 DRY_RUN="true"
@@ -191,13 +199,37 @@ parse_args() {
         fi
     fi
 
+    # Set default release label if not specified
+    # The releaseLabel is a user-facing text shown at the top of pages
+    # See: https://hl7.org/fhir/tools/0.9.0/CodeSystem-ig-parameters.html
+    if [ -z "$RELEASE_LABEL" ]; then
+        case "$STATUS" in
+            draft)
+                RELEASE_LABEL="Draft"
+                ;;
+            ballot)
+                RELEASE_LABEL="Ballot"
+                ;;
+            trial-use)
+                RELEASE_LABEL="STU"
+                ;;
+            release|normative)
+                RELEASE_LABEL="Release"
+                ;;
+            *)
+                RELEASE_LABEL="$STATUS"
+                ;;
+        esac
+    fi
+
     log_info "Configuration:"
-    log_info "  Version:  $VERSION"
-    log_info "  Mode:     $MODE"
-    log_info "  Status:   $STATUS"
-    log_info "  Sequence: $SEQUENCE"
-    log_info "  First:    $FIRST"
-    log_info "  Dry-run:  $DRY_RUN"
+    log_info "  Version:       $VERSION"
+    log_info "  Mode:          $MODE"
+    log_info "  Status:        $STATUS"
+    log_info "  Release Label: $RELEASE_LABEL"
+    log_info "  Sequence:      $SEQUENCE"
+    log_info "  First:         $FIRST"
+    log_info "  Dry-run:       $DRY_RUN"
 }
 
 setup_directories() {
@@ -283,36 +315,18 @@ EOF
 
 update_sushi_config() {
     log_info "Updating sushi-config.yaml with version ${VERSION}..."
-    
+
     local sushi_config="${SCRIPT_DIR}/sushi-config.yaml"
-    
+
     # Update version
     sed -i.bak "s/^version: .*/version: ${VERSION}/" "$sushi_config"
-    
-    # Update releaseLabel based on status
-    local release_label
-    case "$STATUS" in
-        draft)
-            release_label="draft"
-            ;;
-        ballot)
-            release_label="ballot"
-            ;;
-        trial-use)
-            release_label="trial-use"
-            ;;
-        release|normative)
-            release_label="release"
-            ;;
-        *)
-            release_label="$STATUS"
-            ;;
-    esac
-    
-    sed -i.bak "s/^releaseLabel: .*/releaseLabel: ${release_label}/" "$sushi_config"
+
+    # Update releaseLabel - use the configured RELEASE_LABEL
+    # This is the user-facing label shown at the top of published pages
+    sed -i.bak "s/^releaseLabel: .*/releaseLabel: ${RELEASE_LABEL}/" "$sushi_config"
     rm -f "${sushi_config}.bak"
-    
-    log_info "Updated sushi-config.yaml"
+
+    log_info "Updated sushi-config.yaml (version: ${VERSION}, releaseLabel: ${RELEASE_LABEL})"
 }
 
 download_publisher() {
@@ -408,7 +422,12 @@ run_go_publish() {
     
     # Copy history assets to webroot (IG Publisher doesn't always do this)
     copy_history_assets
-    
+
+    # For non-milestone modes, ensure there's a redirect to ci-build if no milestone exists
+    if [ "$MODE" != "milestone" ]; then
+        create_ci_build_redirect
+    fi
+
     log_info "IG Publisher -go-publish completed"
 }
 
@@ -643,6 +662,55 @@ customize_templates() {
     fi
 }
 
+# Create a redirect page at the root when no milestone has been published yet
+# This redirects users to the ci-build until a proper release is made
+create_ci_build_redirect() {
+    local ig_webroot="${WEBROOT}/${PACKAGE_ID}"
+    local redirect_file="${ig_webroot}/index.html"
+
+    # Only create redirect if no milestone version exists at root
+    # Check if there's already a proper IG index (not a template/redirect)
+    if [ -f "$redirect_file" ]; then
+        # Check if it's already a real IG page (contains ImplementationGuide) vs a template/redirect
+        if grep -q "ImplementationGuide\|ig-title" "$redirect_file" 2>/dev/null; then
+            log_info "Root already has a published IG, not creating redirect"
+            return 0
+        fi
+    fi
+
+    log_info "Creating ci-build redirect at root (no milestone published yet)..."
+
+    mkdir -p "$ig_webroot"
+    cat > "$redirect_file" << EOF
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="0; url=ci-build/index.html">
+    <title>${IG_TITLE} - Redirecting...</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; text-align: center; }
+        h1 { color: #333; }
+        a { color: #0066cc; }
+        .note { background: #f5f5f5; padding: 15px; border-radius: 5px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>${IG_TITLE}</h1>
+    <p>Redirecting to the current development build...</p>
+    <p>If you are not redirected automatically, <a href="ci-build/index.html">click here</a>.</p>
+    <div class="note">
+        <p><strong>Note:</strong> No official release has been published yet.</p>
+        <p>View the <a href="history.html">publication history</a> for available versions.</p>
+    </div>
+</body>
+</html>
+EOF
+
+    log_info "Created ci-build redirect at ${redirect_file}"
+}
+
 # Alternative: Simple build + manual directory organization
 # Use this if -go-publish doesn't work well in CI
 run_simple_publish() {
@@ -668,8 +736,11 @@ run_simple_publish() {
         cp -r "${SCRIPT_DIR}/output/"* "${WEBROOT}/"
         # Update publish box in root to show as current
         update_publish_box "${WEBROOT}" "$VERSION" "true"
+    else
+        # For non-milestone modes, create a redirect to ci-build if no milestone exists
+        create_ci_build_redirect
     fi
-    
+
     # Update package-list.json
     update_package_list
     

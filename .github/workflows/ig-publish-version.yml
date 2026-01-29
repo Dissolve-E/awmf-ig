@@ -28,6 +28,10 @@ on:
           - release
           - normative
         default: trial-use
+      release_label:
+        description: 'User-facing release label (e.g., "STU 1", "Ballot 2024"). Defaults based on status.'
+        required: false
+        type: string
       sequence:
         description: 'Release sequence (e.g., "STU1", "Releases")'
         required: false
@@ -62,6 +66,10 @@ on:
         required: false
         type: string
         default: trial-use
+      release_label:
+        required: false
+        type: string
+        description: 'User-facing release label (e.g., "STU 1", "Ballot 2024")'
       sequence:
         required: false
         type: string
@@ -138,19 +146,23 @@ jobs:
           ARGS="$ARGS --mode ${{ inputs.mode }}"
           ARGS="$ARGS --status ${{ inputs.status }}"
           ARGS="$ARGS --sequence '${{ inputs.sequence }}'"
-          
+
+          if [ -n "${{ inputs.release_label }}" ]; then
+            ARGS="$ARGS --release-label '${{ inputs.release_label }}'"
+          fi
+
           if [ -n "${{ inputs.description }}" ]; then
             ARGS="$ARGS --desc '${{ inputs.description }}'"
           fi
-          
+
           if [ "${{ inputs.first_publication }}" = "true" ]; then
             ARGS="$ARGS --first"
           fi
-          
+
           if [ "${{ inputs.use_go_publish }}" = "true" ]; then
             ARGS="$ARGS --use-go-publish"
           fi
-          
+
           echo "args=$ARGS" >> $GITHUB_OUTPUT
 
       - name: Fetch existing publications
@@ -240,6 +252,7 @@ jobs:
           echo "| Version | ${{ inputs.version }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Mode | ${{ inputs.mode }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Status | ${{ inputs.status }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Release Label | ${{ inputs.release_label || '(derived from status)' }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Sequence | ${{ inputs.sequence }} |" >> $GITHUB_STEP_SUMMARY
           echo "| First Publication | ${{ inputs.first_publication }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Go-Publish Mode | ${{ inputs.use_go_publish }} |" >> $GITHUB_STEP_SUMMARY
