@@ -92,6 +92,9 @@ permissions:
 jobs:
   publish-version:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     env:
       JAVA_TOOL_OPTIONS: "-Xmx6g"
 
