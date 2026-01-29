@@ -140,17 +140,16 @@ jobs:
           chmod 600 /tmp/awmf_ig_publisher.id_ed25519
           ssh-keyscan -p 221 register.awmf.org >> ~/.ssh/known_hosts 2>/dev/null || true
 
-      - name: Fetch existing publications
+      - name: Fetch existing package-list.json
         run: |
-          # Create webroot with package_id subdirectory (matches -go-publish structure)
+          # Create webroot with package_id subdirectory
           mkdir -p .publication/webroot/${{ steps.config.outputs.package_id }}
 
-          # Try to fetch existing publications (may fail on first publish)
-          # Exclude ci-build/ as it's managed by the CI workflow separately
-          rsync -av --ignore-existing --exclude 'ci-build/' \
-            -e "ssh -p 221 -i /tmp/awmf_ig_publisher.id_ed25519" \
-            awmf_ig_publisher@register.awmf.org:./${{ steps.config.outputs.package_id }}/ \
-            .publication/webroot/${{ steps.config.outputs.package_id }}/ 2>/dev/null || echo "No existing publications found (this may be the first publication)"
+          # Only fetch package-list.json (contains version history)
+          # Full publication fetch is not needed - we only need to track versions
+          scp -P 221 -i /tmp/awmf_ig_publisher.id_ed25519 \
+            awmf_ig_publisher@register.awmf.org:./${{ steps.config.outputs.package_id }}/package-list.json \
+            .publication/webroot/${{ steps.config.outputs.package_id }}/ 2>/dev/null || echo "No existing package-list.json found (first publication)"
 
       - name: Run publish-version.sh
         uses: docker://hl7fhir/ig-publisher-base:latest
