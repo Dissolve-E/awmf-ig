@@ -52,19 +52,25 @@ Description: "Clinical Practice Guideline Recommendation"
   * type = #predecessor
   * targetReference 1..1
   * targetReference only Reference(Recommendation)
+  * ^short = "A reference to another Recommendation which preceeds this Recommendation in a (hypothetical) clinical workflow."
 * relatesTo[specificationOfSucceedingRecommendation]
   * type 1..1
   * type = #successor
   * targetReference 1..1
   * targetReference only Reference(Recommendation)
+  * ^short = "A reference to another Recommendation which succeeds this Recommendation in a (hypothetical) clinical workflow."
 * relatesTo[replacesRecommendation]
   * type 1..1
   * type = #replaces
   * targetReference 1..1
   * targetReference only Reference(Recommendation)
+  * ^short = "A reference to an (older, outdated or obsolete) Recommendation which has been replaced by this Recommendation."
 
 
 * relatesTo[partOf] 1..* // each recommendation must be part of at least one guideline
+* relatesTo[partOf] ^short = "A reference to at least one guideline that this recommendation is part of."
+* relatesTo[partOf] ^definition = "A reference to at least one guideline that this recommendation is part of."
+* relatesTo[partOf] ^comment = "Each recommendation must be part of at least one guideline."
 
 * category 0..*
   * ^slicing.discriminator.type = #value
@@ -74,10 +80,14 @@ Description: "Clinical Practice Guideline Recommendation"
     synthesisType 1..1
     and clinicalApplicationType 0..*
 * category[synthesisType]
+  * ^definition = "Specifies whether it is an evidence-based or consensus-bases recommendation, or a statement."
+  * ^short = "Assessment type for making this recommendation: evidence, consensus only, statement."
   * coding from vs-recommendation-synthesis-type (required) 
     * system 1.. MS
     * code 1.. MS
 * category[clinicalApplicationType] // #P2.3.2.15
+  * ^definition = "Specifies whether it is a diagnostic, prognostic, therapeutic, monitoring, screening, preventative recommendation."
+  * ^short = "Clinical application the recommendation is intended for: diagnostic, prognostic, therapeutic etc."
   * coding from vs-clinical-application-type (required)
     * system 1.. MS
     * code 1.. MS
@@ -214,6 +224,7 @@ Description: "Clinical Practice Guideline Recommendation"
   * code 1..1
   * code = $cs-ebm-ig#ratings "Ratings"
   * entry only Reference(RecommendationJustification)
+  * ^short = "The reference to the structured assessment of grade of recommendations, strength of consensus, level of evidence for this recommendation and respective evidence assessment tools."
 
 
 Instance: RecommendationExample

@@ -111,7 +111,7 @@ To support structured representation of clinical questions, we provide profiles 
 The following diagramm provides an overview of the diverse profiles used in this the DISSOLVE-E-IG and their relationship allowing for a structured representation of clinical practice guidelines with
 accompanying evidence and evidence-to-decision information. The cardinalities shown represent the respective maxima. Please consult the pages of the respective [profiles](profiles.html) for additional details.
 
-<img src="awmf-ig-klassendiagramm-v0.png" alt="Class Diagramm for DISSOLVE-E" style="width:100%;" />
+<img src="awmf-ig-0.2.0-class-diagram.png" alt="Class Diagramm for DISSOLVE-E AWMF IG" style="width:100%;" />
 
 ### Authors (in alphabetical order) with Affiliations
 * [Sophie Klopfenstein](https://github.com/klsophie) (Berlin Institute of Health at Charité)
@@ -147,5 +147,6 @@ This project is publicly funded by the Innovation Committee of the Federal Joint
 #### Links
 * DISSOLVE-E on the Website of the Federal Joint Committee (G-BA) in [German](https://innovationsfonds.g-ba.de/projekte/versorgungsforschung/dissolve-e.597) or [English](https://www.awmf.org/die-awmf/imwi/projekte/dissolve-e-english-version)
 * [GitHub project](https://github.com/Dissolve-E/awmf-ig)
+* Profile definitions in the DISSOLVE-E Implementation Guide can be downloaded as a package via <a href="https://fhir.awmf.org/awmf.ig/package.tgz" alt="DISSOLVE-E Implementation Guide profile package download">https://fhir.awmf.org/awmf.ig/package.tgz</a>.
 
 {% include link-list.md %}
