@@ -92,7 +92,9 @@ permissions:
 jobs:
   publish-version:
     runs-on: ubuntu-latest
-    
+    env:
+      JAVA_TOOL_OPTIONS: "-Xmx6g"
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -105,10 +107,19 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
       - name: Install dependencies
         run: |
           sudo snap install yq
           sudo apt-get install -y jq
+          npm install -g fsh-sushi
+
+      - name: Install EBM IG dependency
+        run: ./download-ebm-ig.sh
 
       - name: Read config from sushi-config.yaml
         id: config
