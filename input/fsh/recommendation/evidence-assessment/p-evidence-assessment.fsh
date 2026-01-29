@@ -1,7 +1,7 @@
 Profile: EvidenceAssessment
-Parent: $ebm-certainty-of-evidence
-Id: certainty-of-evidence-rating
-Title: "Certainty of Evidence Rating"
+Parent: $ebm-evidence-assessment
+Id: evidence-assessment
+Title: "Evidence Assessment"
 Description: "A structured assessment of the certainty of evidence for a specific outcome."
 
 // TODO: should single study evidences point to the overall evidence assessment? (e.g. via some kind of partOf = Reference(OverallAssessment))
