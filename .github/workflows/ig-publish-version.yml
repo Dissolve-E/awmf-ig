@@ -101,22 +101,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Set up Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'temurin'
-          java-version: '21'
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
       - name: Install dependencies
         run: |
           sudo snap install yq
           sudo apt-get install -y jq
-          npm install -g fsh-sushi
 
       - name: Install EBM IG dependency
         run: ./download-ebm-ig.sh
@@ -188,13 +176,10 @@ jobs:
             .publication/webroot/ 2>/dev/null || echo "No existing publications found (this may be the first publication)"
 
       - name: Run publish-version.sh
-        run: |
-          chmod +x ./publish-version.sh
-          
-          # Run the publish script with all arguments
-          ./publish-version.sh ${{ steps.build-args.outputs.args }}
+        uses: docker://hl7fhir/ig-publisher-base:latest
+        with:
+          args: ./publish-version.sh ${{ steps.build-args.outputs.args }}
         env:
-          # Pass environment variables that the script might need
           CI: true
 
       - name: Deploy to AWMF registry
