@@ -140,32 +140,6 @@ jobs:
           chmod 600 /tmp/awmf_ig_publisher.id_ed25519
           ssh-keyscan -p 221 register.awmf.org >> ~/.ssh/known_hosts 2>/dev/null || true
 
-      - name: Build publish command arguments
-        id: build-args
-        run: |
-          ARGS="${{ inputs.version }}"
-          ARGS="$ARGS --mode ${{ inputs.mode }}"
-          ARGS="$ARGS --status ${{ inputs.status }}"
-          ARGS="$ARGS --sequence '${{ inputs.sequence }}'"
-
-          if [ -n "${{ inputs.release_label }}" ]; then
-            ARGS="$ARGS --release-label '${{ inputs.release_label }}'"
-          fi
-
-          if [ -n "${{ inputs.description }}" ]; then
-            ARGS="$ARGS --desc '${{ inputs.description }}'"
-          fi
-
-          if [ "${{ inputs.first_publication }}" = "true" ]; then
-            ARGS="$ARGS --first"
-          fi
-
-          if [ "${{ inputs.use_go_publish }}" = "true" ]; then
-            ARGS="$ARGS --use-go-publish"
-          fi
-
-          echo "args=$ARGS" >> $GITHUB_OUTPUT
-
       - name: Fetch existing publications
         run: |
           mkdir -p .publication/webroot
@@ -180,7 +154,7 @@ jobs:
       - name: Run publish-version.sh
         uses: docker://hl7fhir/ig-publisher-base:latest
         with:
-          args: ./publish-version.sh ${{ steps.build-args.outputs.args }}
+          args: ./publish-version.sh ${{ inputs.version }}
         env:
           CI: true
           # Pass config values since Docker image doesn't have yq
@@ -188,6 +162,14 @@ jobs:
           IG_PACKAGE_ID: ${{ steps.config.outputs.package_id }}
           IG_TITLE: ${{ steps.config.outputs.ig_title }}
           IG_FHIR_VERSION: ${{ steps.config.outputs.fhir_version }}
+          # Pass publication parameters as env vars (avoids shell quoting issues)
+          PUB_MODE: ${{ inputs.mode }}
+          PUB_STATUS: ${{ inputs.status }}
+          PUB_SEQUENCE: ${{ inputs.sequence }}
+          PUB_RELEASE_LABEL: ${{ inputs.release_label }}
+          PUB_DESCRIPTION: ${{ inputs.description }}
+          PUB_FIRST: ${{ inputs.first_publication }}
+          PUB_USE_GO_PUBLISH: ${{ inputs.use_go_publish }}
 
       - name: Deploy to AWMF registry
         run: |

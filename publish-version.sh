@@ -198,6 +198,16 @@ parse_args() {
         esac
     done
 
+    # Override from environment variables if set (used by CI workflow)
+    # This avoids shell quoting issues when passing args through Docker
+    [ -n "${PUB_MODE:-}" ] && MODE="$PUB_MODE"
+    [ -n "${PUB_STATUS:-}" ] && STATUS="$PUB_STATUS"
+    [ -n "${PUB_SEQUENCE:-}" ] && SEQUENCE="$PUB_SEQUENCE"
+    [ -n "${PUB_RELEASE_LABEL:-}" ] && RELEASE_LABEL="$PUB_RELEASE_LABEL"
+    [ -n "${PUB_DESCRIPTION:-}" ] && DESC="$PUB_DESCRIPTION"
+    [ "${PUB_FIRST:-}" = "true" ] && FIRST="true"
+    [ "${PUB_USE_GO_PUBLISH:-}" = "true" ] && USE_GO_PUBLISH="true"
+
     # Validate version format
     if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9.]+)?$ ]]; then
         log_error "Invalid version format: $VERSION"
