@@ -8,18 +8,10 @@ canonical: http://fhir.awmf.org/awmf.ig
 name: AWMFGuidelineRegistryIG
 title: "Dissolve-E: AWMF Guideline Registry"
 description: >
-  This implementation guide, produced by the Dissolve-E project
-  (G-BA grant 01VSF23021) in collaboration with the Association of the
-  Scientific Medical Societies in Germany (AWMF), defines FHIR profiles,
-  extensions, and guidance for a structured, FAIR, and interoperable
-  representation of German clinical practice guidelines.  
-  Built on EBMonFHIR and related international initiatives,
-  it supports authoring workflows, version control, and seamless
-  integration of guideline knowledge into clinical decision support,
-  quality management, and research infrastructures.
+  This implementation guide, produced by the Dissolve-E project (G-BA grant 01VSF23021) in collaboration with the Association of the Scientific Medical Societies in Germany (AWMF), defines FHIR profiles, extensions, and guidance for a structured, FAIR, and interoperable representation of German clinical practice guidelines.   Built on EBMonFHIR and related international initiatives, it supports authoring workflows, version control, and seamless integration of guideline knowledge into clinical decision support, quality management, and research infrastructures.
 
 status: draft # draft | active | retired | unknown
-version: 0.1.0
+version: 0.2.0
 fhirVersion: 6.0.0-ballot3 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2024+
 releaseLabel: ci-build
@@ -29,14 +21,11 @@ publisher:
   name: AWMF e.V.
   url: https://www.awmf.org
   # email: test@example.org
-
 dependencies:
   hl7.fhir.uv.ebm: ci-build
   hl7.fhir.r6.core: 6.0.0-ballot3
   hl7.fhir.uv.extensions: 5.3.0-ballot-tc1
   hl7.terminology: latest
-   
-
 # The dependencies property corresponds to IG.dependsOn. The key is the
 # package id and the value is the version (or dev/current). For advanced
 # use cases, the value can be an object with keys for id, uri, and version.
@@ -75,7 +64,6 @@ pages:
     title: Downloads
   examples.md:
     title: Examples
-
 menu:
   Home: index.html
   Profiles: profiles.html
@@ -84,7 +72,6 @@ menu:
   Value Sets: valuesets.html
   Examples: examples.html
   Downloads: downloads.html
-
 # The parameters property represents IG.definition.parameter. Rather
 # than a list of code/value pairs (as in the ImplementationGuide
 # resource), the code is the YAML key. If a parameter allows repeating
