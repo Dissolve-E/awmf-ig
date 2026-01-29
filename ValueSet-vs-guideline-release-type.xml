@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="vs-guideline-release-type"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet vs-guideline-release-type</b></p><a name="vs-guideline-release-type"> </a><a name="hcvs-guideline-release-type"> </a><ul><li>Include all codes defined in <a href="CodeSystem-cs-guideline-release-type.html"><code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-release-type</code></a><span title="Version is not explicitly stated, which means it is fixed to the version provided in this specification"> version &#x1F4E6;0.2.0</span></li></ul></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/ValueSet/vs-guideline-release-type"/>
+  <version value="0.2.0"/>
+  <name value="GuidelinesReleaseTypeVS"/>
+  <title value="Guideline Release Type"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="ValueSet listing different guideline release types"/>
+  <compose>
+    <include>
+      <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-release-type"/>
+    </include>
+  </compose>
+</ValueSet>

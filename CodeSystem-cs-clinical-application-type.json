@@ -1,0 +1,159 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "cs-clinical-application-type",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-clinical-application-type</b></p><a name=\"cs-clinical-application-type\"> </a><a name=\"hccs-clinical-application-type\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-clinical-application-type</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">diagnostic<a name=\"cs-clinical-application-type-diagnostic\"> </a></td><td>Diagnostic</td><td>Diagnostic</td><td>Diagnostisch</td></tr><tr><td style=\"white-space:nowrap\">therapeutic<a name=\"cs-clinical-application-type-therapeutic\"> </a></td><td>Therapeutic</td><td>Therapeutic</td><td>Therapeutisch</td></tr><tr><td style=\"white-space:nowrap\">prognostic<a name=\"cs-clinical-application-type-prognostic\"> </a></td><td>Prognostic</td><td>Prognostic</td><td>Prognostisch</td></tr><tr><td style=\"white-space:nowrap\">monitoring<a name=\"cs-clinical-application-type-monitoring\"> </a></td><td>Monitoring</td><td>Monitoring</td><td>Monitoring</td></tr><tr><td style=\"white-space:nowrap\">screening<a name=\"cs-clinical-application-type-screening\"> </a></td><td>Screening</td><td>Screening</td><td>Screening</td></tr><tr><td style=\"white-space:nowrap\">preventive<a name=\"cs-clinical-application-type-preventive\"> </a></td><td>Preventive</td><td>Preventive</td><td>Präventiv</td></tr></table></div>"
+  },
+  "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-clinical-application-type",
+  "version" : "0.2.0",
+  "name" : "ClinicalApplicationTypeCS",
+  "title" : "Clinical Application Type",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-01-29T18:27:10+00:00",
+  "publisher" : "AWMF e.V.",
+  "contact" : [{
+    "name" : "AWMF e.V.",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org"
+    }]
+  }],
+  "description" : "CodeSystem defining different clinical application types",
+  "caseSensitive" : false,
+  "content" : "complete",
+  "count" : 6,
+  "concept" : [{
+    "code" : "diagnostic",
+    "display" : "Diagnostic",
+    "definition" : "Diagnostic",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Diagnostisch"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Diagnostisch"
+    }]
+  },
+  {
+    "code" : "therapeutic",
+    "display" : "Therapeutic",
+    "definition" : "Therapeutic",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Therapeutisch"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Therapeutisch"
+    }]
+  },
+  {
+    "code" : "prognostic",
+    "display" : "Prognostic",
+    "definition" : "Prognostic",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Prognostisch"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Prognostisch"
+    }]
+  },
+  {
+    "code" : "monitoring",
+    "display" : "Monitoring",
+    "definition" : "Monitoring",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Monitoring"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Monitoring"
+    }]
+  },
+  {
+    "code" : "screening",
+    "display" : "Screening",
+    "definition" : "Screening",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Screening"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Screening"
+    }]
+  },
+  {
+    "code" : "preventive",
+    "display" : "Preventive",
+    "definition" : "Preventive",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Präventiv"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Präventiv"
+    }]
+  }]
+}

@@ -1,0 +1,203 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "cs-intended-audience",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-intended-audience</b></p><a name=\"cs-intended-audience\"> </a><a name=\"hccs-intended-audience\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-intended-audience</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">patient<a name=\"cs-intended-audience-patient\"> </a></td><td>Patient</td><td>The content is intended for the patient</td><td>Patient*in</td></tr><tr><td style=\"white-space:nowrap\">physician<a name=\"cs-intended-audience-physician\"> </a></td><td>Physician</td><td>The content is intended for the physician</td><td>Arzt/Ärztin</td></tr><tr><td style=\"white-space:nowrap\">nurse<a name=\"cs-intended-audience-nurse\"> </a></td><td>Nurse</td><td>The content is intended for the nurse</td><td>Pfleger*in</td></tr><tr><td style=\"white-space:nowrap\">student<a name=\"cs-intended-audience-student\"> </a></td><td>Student</td><td>The content is intended for the student</td><td>Studierende</td></tr><tr><td style=\"white-space:nowrap\">relative<a name=\"cs-intended-audience-relative\"> </a></td><td>Relative</td><td>The content is intended for the relative of the patient</td><td>Angehörige*r</td></tr><tr><td style=\"white-space:nowrap\">caregiver<a name=\"cs-intended-audience-caregiver\"> </a></td><td>Caregiver</td><td>The content is intended for the caregiver of the patient</td><td>Betreuer*in</td></tr><tr><td style=\"white-space:nowrap\">layperson<a name=\"cs-intended-audience-layperson\"> </a></td><td>Layperson</td><td>The content is intended for a layperson</td><td>Laie</td></tr><tr><td style=\"white-space:nowrap\">therapist<a name=\"cs-intended-audience-therapist\"> </a></td><td>Therapist</td><td>The content is intended for therapeutic healthcare professionals (e.g., physiotherapists, occupational therapists, speech therapists).</td><td>Therapeutisches Personal</td></tr></table></div>"
+  },
+  "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-intended-audience",
+  "version" : "0.2.0",
+  "name" : "IntendedAudienceCS",
+  "title" : "Intended Audience Code System",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-01-29T18:27:10+00:00",
+  "publisher" : "AWMF e.V.",
+  "contact" : [{
+    "name" : "AWMF e.V.",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org"
+    }]
+  }],
+  "description" : "CodeSystem defining possible intended audiences for a section",
+  "caseSensitive" : false,
+  "content" : "complete",
+  "count" : 8,
+  "concept" : [{
+    "code" : "patient",
+    "display" : "Patient",
+    "definition" : "The content is intended for the patient",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Der Inhalt richtet sich an Patient*innen."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Patient*in"
+    }]
+  },
+  {
+    "code" : "physician",
+    "display" : "Physician",
+    "definition" : "The content is intended for the physician",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Der Inhalt richtet sich an Ärzt*innen."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Arzt/Ärztin"
+    }]
+  },
+  {
+    "code" : "nurse",
+    "display" : "Nurse",
+    "definition" : "The content is intended for the nurse",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Der Inhalt richtet sich an Krankenpfleger*innen."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Pfleger*in"
+    }]
+  },
+  {
+    "code" : "student",
+    "display" : "Student",
+    "definition" : "The content is intended for the student",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Der Inhalt richtet sich an Student*innen."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Studierende"
+    }]
+  },
+  {
+    "code" : "relative",
+    "display" : "Relative",
+    "definition" : "The content is intended for the relative of the patient",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Der Inhalt richtet sich an Angehörige von Patient*innen."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Angehörige*r"
+    }]
+  },
+  {
+    "code" : "caregiver",
+    "display" : "Caregiver",
+    "definition" : "The content is intended for the caregiver of the patient",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Der Inhalt richtet sich an Betreuer*innen von Patient*innen."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Betreuer*in"
+    }]
+  },
+  {
+    "code" : "layperson",
+    "display" : "Layperson",
+    "definition" : "The content is intended for a layperson",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Der Inhalt richtet sich an Laien."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Laie"
+    }]
+  },
+  {
+    "code" : "therapist",
+    "display" : "Therapist",
+    "definition" : "The content is intended for therapeutic healthcare professionals (e.g., physiotherapists, occupational therapists, speech therapists).",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Der Inhalt richtet sich an therapeutisches Personal (z.B. Physio-, Ergo- oder Sprachtherapeut*innen)."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Therapeutisches Personal"
+    }]
+  }]
+}

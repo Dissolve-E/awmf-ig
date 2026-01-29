@@ -1,0 +1,1084 @@
+{
+  "codeSystems" : [
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-agree-ii-domains",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "AGREEIIDomains",
+      "title" : "AGREE II Domains",
+      "description" : "CodeSystem representing the domains assessed by the AGREE II instrument for evaluating the quality of clinical practice guidelines.",
+      "uses" : {
+      },
+      "ValueSet-vs-agree-ii-domains.html" : "AGREE II Domains Value Set"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-amstar2-confidence-ratings",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "AMSTAR2ConfidenceRatings",
+      "title" : "AMSTAR 2 Overall Confidence Ratings",
+      "description" : "CodeSystem representing the overall confidence ratings from the AMSTAR 2 critical appraisal tool.",
+      "uses" : {
+      },
+      "ValueSet-vs-amstar2-confidence-ratings.html" : "AMSTAR 2 Confidence Ratings Value Set"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-class",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "AWMFGuidelineClass",
+      "title" : "AWMF Guideline Class",
+      "description" : "As part of the project planning for the creation or updating of a guideline,\n    a decision should be made at an early stage about the planned level classification (\"S classification\") according to the AWMF's system of rules (1-3).\n    The S-classification scheme of the AWMF differentiates between the classes S1 treatment recommendation as well as S2e, S2k and S3 guideline.\n    The \"S\" stands for the extent of the applied systematic approach in the development process of a guideline.\n    Each class thus stands for a specific methodological concept that must be presented in a way that is comprehensible to the users.\n    The choice of class is based on the question of how much effort is appropriate and feasible.\n    The need for legitimacy for the implementation of the guideline (convincing the target group) must be taken into account.\n    When choosing a higher S-classification in the context of updating a guideline, the adaptation to the corresponding methodology has to be considered.",
+      "uses" : {
+      },
+      "ValueSet-vs-awmf-guideline-class.html" : "AWMF Guideline Class"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-status",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "AWMFGuidelineStatus",
+      "title" : "AWMF Guideline Status",
+      "description" : "CodeSystem representing the guideline status according to the AWMF.",
+      "uses" : {
+      },
+      "ValueSet-vs-awmf-guideline-status.html" : "AWMF Guideline Status",
+      "ConceptMap-FHIRStatusToAWMFStatus.html" : "Concept map from FHIR Composition Status to AWMF Guideline Status"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-body-systems-conditions",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "BodySystemConditionsCS",
+      "title" : "Body System Conditions",
+      "description" : "CodeSystem representing various body system conditions.",
+      "uses" : {
+      },
+      "ValueSet-vs-body-system-conditions.html" : "Body System Conditions"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "CareSetting",
+      "title" : "Care Setting",
+      "description" : "CodeSystem defining different care settings, including levels of care, healthcare services, and treatment contexts.",
+      "uses" : {
+      },
+      "ValueSet-vs-care-stage.html" : "Care Stage",
+      "ValueSet-vs-care-level.html" : "Care Level",
+      "ValueSet-vs-encounter-type.html" : "Encounter Type"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-clinical-application-type",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "ClinicalApplicationTypeCS",
+      "title" : "Clinical Application Type",
+      "description" : "CodeSystem defining different clinical application types",
+      "uses" : {
+      },
+      "ValueSet-vs-clinical-application-type.html" : "Clinical Application Type"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-contact-point",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "ContactPoint",
+      "title" : "Contact Point",
+      "description" : "CodeSystem defining types of contact points for a guideline",
+      "uses" : {
+      },
+      "ValueSet-vs-guideline-contact-point.html" : "Guideline Contact Point VS"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-to-decision-certainty-rating",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "EvidenceToDecisionCertaintyRating",
+      "title" : "Evidence To Decision Certainty Rating",
+      "description" : "CodeSystem defining GRADE Evidence to Decision (EtD) Framework Certainty Ratings",
+      "uses" : {
+      },
+      "ValueSet-vs-rating-resources.html" : "Rating Resources",
+      "ValueSet-vs-rating-equity.html" : "Rating Equity",
+      "ValueSet-vs-rating-benefits-and-harms.html" : "Rating Benefits And Harms",
+      "ValueSet-vs-rating-feasibility.html" : "Rating Feasibility",
+      "ValueSet-vs-rating-preference-and-values.html" : "Rating Preference And Values",
+      "ValueSet-vs-rating-acceptability.html" : "Rating Acceptability"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "GuidelineAuthorRoleCS",
+      "title" : "Guideline Author Role",
+      "description" : "CodeSystem defining roles for the author of the guideline.",
+      "uses" : {
+      },
+      "ValueSet-vs-guideline-author-role.html" : "Guideline Author Role"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-release-type",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "GuidelineReleaseType",
+      "title" : "Guideline Release Type",
+      "description" : "CodeSystem defining different guideline release types",
+      "uses" : {
+      },
+      "ValueSet-vs-guideline-release-type.html" : "Guideline Release Type"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "GuidelineSectionsCS",
+      "title" : "Guideline Sections",
+      "description" : "Sections of a guideline, describing various aspects such as its intention, target patient group, care setting, and other relevant contextual information.",
+      "uses" : {
+      },
+      "ValueSet-vs-content-types.html" : "Content Types",
+      "ValueSet-vs-guideline-sections.html" : "Guideline Sections"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-intended-audience",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "IntendedAudienceCS",
+      "title" : "Intended Audience Code System",
+      "description" : "CodeSystem defining possible intended audiences for a section",
+      "uses" : {
+      },
+      "ValueSet-vs-intended-audience.html" : "Intended Audience Value Set"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-level-of-consensus",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "LevelOfConsensusCS",
+      "title" : "Level of Consensus",
+      "description" : "CodeSystem defining the values representing the level of consensus for a recommendation.",
+      "uses" : {
+      },
+      "ValueSet-vs-level-of-consensus.html" : "Level Of Consensus"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-medical-subject-categories",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "MedicalSubjectCategoriesCS",
+      "title" : "Medical Subject Categories",
+      "description" : "CodeSystem defining values to classify medical subjects into different categories.",
+      "uses" : {
+      },
+      "ValueSet-vs-medical-subject-categories.html" : "Medical Subject Categories"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-ocebm-2009-levels-of-evidence",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "OCEBM2009LevelsOfEvidence",
+      "title" : "OCEBM 2009 Levels of Evidence",
+      "description" : "CodeSystem representing the Oxford Centre for Evidence-Based Medicine 2009 CEBM Levels of Evidence",
+      "uses" : {
+      },
+      "ValueSet-vs-ocebm-2009-levels-of-evidence.html" : "OCEBM 2009 Levels of Evidence Value Set"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-ocebm-2011-levels-of-evidence",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "OCEBM2011LevelsOfEvidence",
+      "title" : "OCEBM 2011 Levels of Evidence",
+      "description" : "CodeSystem representing the Oxford Centre for Evidence-Based Medicine 2011 Levels of Evidence.",
+      "uses" : {
+      },
+      "ValueSet-ocebm-2011-levels-of-evidence-vs.html" : "OCEBM 2011 Levels of Evidence Value Set"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "PICOCS",
+      "title" : "PICO Related Terms",
+      "description" : "CodeSystem defining different terms related to PICO question and objects",
+      "uses" : {
+      },
+      "ValueSet-vs-pico.html" : "PICO related terms"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-direction",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "RecommendationDirectionCS",
+      "title" : "Recommendation Direction",
+      "description" : "CodeSystem defining the direction of a clinical recommendation.",
+      "uses" : {
+      },
+      "ValueSet-vs-recommendation-direction.html" : "Recommendation Direction"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-review-status",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "RecommendationReviewStatusCS",
+      "title" : "Recommendation Review Status Code System",
+      "description" : "CodeSystem defining values indicating how a recommendation relates to a new revision of a recommendation",
+      "uses" : {
+      },
+      "ValueSet-vs-recommendation-review-status.html" : "Recommendation Review Status Value Set"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-strength-awmf",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "RecommendationStrengthAWMF",
+      "title" : "Recommendation Strength (AWMF)",
+      "description" : "CodeSystem defining the grading of recommendations according to German guideline methodology as used in AWMF S3 guidelines.",
+      "uses" : {
+      },
+      "ValueSet-vs-recommendation-strength-awmf.html" : "Recommendation Strength (AWMF) ValueSet"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-synthesis-type",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "RecommendationSynthesisTypeCS",
+      "title" : "Recommendation Synthesis Type",
+      "description" : "CodeSystem defining values representing the synthesis type of a recommendation",
+      "uses" : {
+      },
+      "ValueSet-vs-recommendation-synthesis-type.html" : "Recommendation Synthesis Type"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-tags",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "RecommendationTagsCS",
+      "title" : "Recommendation Tags",
+      "description" : "CodeSystem defining codes to represent tags for recommendations",
+      "uses" : {
+      },
+      "ValueSet-vs-recommendation-tags.html" : "Recommendation Tags"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "RelatedArtifactTypes",
+      "title" : "Related Artifact Types",
+      "description" : "CodeSystem defining types of related artifacts that can be part of a guideline.",
+      "uses" : {
+      },
+      "ValueSet-vs-dissemination-website.html" : "Dissemination Website"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-remark-type",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "RemarkType",
+      "title" : "Remark Type",
+      "description" : "CodeSystem defining different types of remarks that can be associated with guidelines, including restrictions, warnings, and additional notes.",
+      "uses" : {
+      },
+      "ValueSet-vs-remark-type.html" : "Remark Type"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-rob-2-overall-judgment",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "RoB2OverallJudment",
+      "title" : "RoB2 Overall Judgment",
+      "description" : "CodeSystem representing the overall judgment of risk of bias assessed by the RoB2 tool for evaluating risk of bias for randomized trials.",
+      "uses" : {
+      },
+      "ValueSet-vs-rob-2-overall-judgment.html" : "RoB2 Overall Judgment ValueSet"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-robis-judgment-of-risk-of-bias",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "ROBISJudgmentOfRiskOfBias",
+      "title" : "ROBIS Judgment of Risk of Bias",
+      "description" : "CodeSystem representing the judgment of risk of bias assessed by the ROBIS tool for evaluating risk of bias in systematic reviews.",
+      "uses" : {
+      },
+      "ValueSet-vs-robis-judgment-of-risk-of-bias.html" : "ROBIS Judgment of Risk of Bias Value Set"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-robis-risk-of-bias-domains",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "ROBISRiskOfBiasDomains",
+      "title" : "ROBIS Risk of Bias Domains",
+      "description" : "CodeSystem representing the domains assessed by the ROBIS tool for evaluating risk of bias in systematic reviews.",
+      "uses" : {
+      },
+      "ValueSet-vs-robis-risk-of-bias-domains.html" : "ROBIS Risk of Bias Domains Value Set"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-sign-grade-of-recommendation",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "SIGNGradeOfRecommendation",
+      "title" : "SIGN Grade of Recommendation",
+      "description" : "CodeSystem representing the Scottish Intercollegiate Guidelines Network (SIGN) Grades of Recommendation.",
+      "uses" : {
+      },
+      "ValueSet-vs-sign-grade-of-recommendation.html" : "SIGN Grade of Recommendation Value Set"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-sign-level-of-evidence",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "SIGNLevelOfEvidence",
+      "title" : "SIGN Level of Evidence",
+      "description" : "CodeSystem representing the Scottish Intercollegiate Guidelines Network (SIGN) Levels of Evidence.",
+      "uses" : {
+      },
+      "ValueSet-vs-sign-level-of-evidence.html" : "SIGN Level of Evidence Value Set"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-target-patient-group",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "TargetPatientGroup",
+      "title" : "Target Patient Group",
+      "description" : "CodeSystem defining the intended patient population for whom the guideline is applicable.",
+      "uses" : {
+      },
+      "ValueSet-vs-target-patient-group.html" : "Target Patient Group"
+    },
+    {
+      "url" : "http://hl7.org/fhir/administrative-gender",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "AdministrativeGender",
+      "title" : "AdministrativeGender",
+      "description" : "The gender of a person used for administrative purposes.",
+      "oids" : ["2.16.840.1.113883.4.642.4.2"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-administrative-gender.html" : "AdministrativeGender"
+    },
+    {
+      "url" : "http://hl7.org/fhir/artifact-relationship-type",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "ArtifactRelationshipType",
+      "title" : "Artifact Relationship Type",
+      "description" : "The type of relationship to the related artifact.",
+      "oids" : ["2.16.840.1.113883.4.642.4.1889"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-artifact-relationship-type.html" : "Artifact Relationship Type"
+    },
+    {
+      "url" : "http://hl7.org/fhir/artifactassessment-disposition",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "ArtifactAssessmentDisposition",
+      "title" : "Artifact Assessment Disposition",
+      "description" : "Possible values for the disposition of a comment or change request, typically used for comments and change requests, to indicate the disposition of the responsible party towards the changes suggested by the comment or change request.",
+      "oids" : ["2.16.840.1.113883.4.642.4.2024"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-artifactassessment-disposition.html" : "Artifact Assessment Disposition"
+    },
+    {
+      "url" : "http://hl7.org/fhir/artifactassessment-workflow-status",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "ArtifactAssessmentWorkflowStatus",
+      "title" : "Artifact Assessment Workflow Status",
+      "description" : "Possible values for the workflow status of the comment or assessment, typically used to coordinate workflow around the process of accepting and rejecting changes and comments on the artifact.",
+      "oids" : ["2.16.840.1.113883.4.642.4.2023"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-artifactassessment-workflow-status.html" : "Artifact Assessment Workflow Status"
+    },
+    {
+      "url" : "http://hl7.org/fhir/certainty-rating",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "EvidenceCertaintyRating",
+      "title" : "Evidence Certainty Rating",
+      "description" : "The assessment of quality, confidence, or certainty.",
+      "oids" : ["2.16.840.1.113883.4.642.4.1941"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-certainty-rating.html" : "Evidence Certainty Rating"
+    },
+    {
+      "url" : "http://hl7.org/fhir/certainty-type",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "EvidenceCertaintyType",
+      "title" : "Evidence Certainty Type",
+      "description" : "The aspect of quality, confidence, or certainty.",
+      "oids" : ["2.16.840.1.113883.4.642.4.1939"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-certainty-type.html" : "Evidence Certainty Type"
+    },
+    {
+      "url" : "http://hl7.org/fhir/characteristic-offset",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "CharacteristicOffset",
+      "title" : "Characteristic Offset",
+      "description" : "Reference point for characteristic.valueQuantity.",
+      "oids" : ["2.16.840.1.113883.4.642.4.1954"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-characteristic-offset.html" : "Characteristic Offset"
+    },
+    {
+      "url" : "http://hl7.org/fhir/citation-artifact-classifier",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "CitationArtifactClassifier",
+      "title" : "Citation Artifact Classifier",
+      "description" : "Citation artifact classifier",
+      "oids" : ["2.16.840.1.113883.4.642.4.1982"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-citation-artifact-classifier.html" : "Citation Artifact Classifier"
+    },
+    {
+      "url" : "http://hl7.org/fhir/composition-attestation-mode",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "CompositionAttestationMode",
+      "title" : "Composition Attestation Mode",
+      "description" : "The way in which a person authenticated a composition.",
+      "oids" : [
+        "2.16.840.1.113883.4.642.1.234",
+        "2.16.840.1.113883.4.642.4.239",
+        "2.16.840.1.113883.4.642.2.120"
+      ],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-composition-attestation-mode.html" : "Composition Attestation Mode"
+    },
+    {
+      "url" : "http://hl7.org/fhir/composition-status",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "CompositionStatus",
+      "title" : "Composition Status",
+      "description" : "The workflow/clinical status of the composition.",
+      "oids" : [
+        "2.16.840.1.113883.4.642.4.242",
+        "2.16.840.1.113883.4.642.2.123",
+        "2.16.840.1.113883.4.642.1.237"
+      ],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-composition-status.html" : "Composition Status",
+      "ConceptMap-FHIRStatusToAWMFStatus.html" : "Concept map from FHIR Composition Status to AWMF Guideline Status"
+    },
+    {
+      "url" : "http://hl7.org/fhir/contact-point-system",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "ContactPointSystem",
+      "title" : "ContactPointSystem",
+      "description" : "Telecommunications form for contact point.",
+      "oids" : ["2.16.840.1.113883.4.642.1.72"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-contact-point-system.html" : "ContactPointSystem"
+    },
+    {
+      "url" : "http://hl7.org/fhir/contact-point-use",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "ContactPointUse",
+      "title" : "ContactPointUse",
+      "description" : "Use of contact point.",
+      "oids" : ["2.16.840.1.113883.4.642.1.74"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-contact-point-use.html" : "ContactPointUse"
+    },
+    {
+      "url" : "http://hl7.org/fhir/definition-method",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "DefinitionMethod",
+      "title" : "Definition Method",
+      "description" : "The method used to define, describe, or determine a characteristic value.",
+      "oids" : ["2.16.840.1.113883.4.642.4.1953"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-definition-method.html" : "Definition Method"
+    },
+    {
+      "url" : "http://hl7.org/fhir/document-reference-status",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "DocumentReferenceStatus",
+      "title" : "DocumentReferenceStatus",
+      "description" : "The status of the document reference.",
+      "oids" : ["2.16.840.1.113883.4.642.4.8"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-document-reference-status.html" : "DocumentReferenceStatus"
+    },
+    {
+      "url" : "http://hl7.org/fhir/document-relationship-type",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "DocumentRelationshipType",
+      "title" : "Document Relationship Type",
+      "description" : "The type of relationship between documents.",
+      "oids" : [
+        "2.16.840.1.113883.4.642.4.245",
+        "2.16.840.1.113883.4.642.2.133",
+        "2.16.840.1.113883.4.642.1.240"
+      ],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-document-relationship-type.html" : "Document Relationship Type"
+    },
+    {
+      "url" : "http://hl7.org/fhir/fhir-types",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "FHIRTypes",
+      "title" : "All FHIR Types",
+      "description" : "One of the types defined as part of this version of FHIR.",
+      "oids" : ["2.16.840.1.113883.4.642.4.1802"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-resource-types.html" : "Resource Types"
+    },
+    {
+      "url" : "http://hl7.org/fhir/group-characteristic-combination",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "GroupCharacteristicCombination",
+      "title" : "Group Characteristic Combination",
+      "description" : "Logical grouping of characteristics.",
+      "oids" : ["2.16.840.1.113883.4.642.4.1952"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-group-characteristic-combination.html" : "Group Characteristic Combination"
+    },
+    {
+      "url" : "http://hl7.org/fhir/group-code",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "GroupType",
+      "title" : "Group Type",
+      "description" : "A code that describes the use of the group. The use of the group usually dictates what kind of entities can be members of the group.",
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-group-code.html" : "Group Code"
+    },
+    {
+      "url" : "http://hl7.org/fhir/group-membership-basis",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "GroupMembershipBasis",
+      "title" : "Group Membership Basis",
+      "description" : "Basis for membership in a group",
+      "oids" : ["2.16.840.1.113883.4.642.4.1962"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-group-membership-basis.html" : "Group Membership Basis"
+    },
+    {
+      "url" : "http://hl7.org/fhir/group-type",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "GroupType",
+      "title" : "Group Type",
+      "description" : "Types of resources that are part of group.",
+      "oids" : [
+        "2.16.840.1.113883.4.642.2.156",
+        "2.16.840.1.113883.4.642.1.278",
+        "2.16.840.1.113883.4.642.4.285"
+      ],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-group-type.html" : "Group Type"
+    },
+    {
+      "url" : "http://hl7.org/fhir/identifier-use",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "IdentifierUse",
+      "title" : "IdentifierUse",
+      "description" : "Identifies the purpose for this identifier, if known .",
+      "oids" : ["2.16.840.1.113883.4.642.1.58"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-identifier-use.html" : "IdentifierUse"
+    },
+    {
+      "url" : "http://hl7.org/fhir/list-mode",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "ListMode",
+      "title" : "List Mode",
+      "description" : "The processing mode that applies to this list.",
+      "oids" : [
+        "2.16.840.1.113883.4.642.2.174",
+        "2.16.840.1.113883.4.642.1.310",
+        "2.16.840.1.113883.4.642.4.319"
+      ],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-list-mode.html" : "List Mode"
+    },
+    {
+      "url" : "http://hl7.org/fhir/list-status",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "ListStatus",
+      "title" : "List Status",
+      "description" : "The current state of the list.",
+      "oids" : [
+        "2.16.840.1.113883.4.642.1.318",
+        "2.16.840.1.113883.4.642.2.178",
+        "2.16.840.1.113883.4.642.4.327"
+      ],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-list-status.html" : "List Status"
+    },
+    {
+      "url" : "http://hl7.org/fhir/publication-status",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "PublicationStatus",
+      "title" : "PublicationStatus",
+      "description" : "The lifecycle status of an artifact.",
+      "oids" : ["2.16.840.1.113883.4.642.4.4"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-publication-status.html" : "PublicationStatus"
+    },
+    {
+      "url" : "http://hl7.org/fhir/qualification-status",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "QualificationStatus",
+      "title" : "Qualification Status",
+      "description" : "Set of statuses that apply to qualifications of practitioners and organizations",
+      "oids" : ["2.16.840.1.113883.4.642.4.2137"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-qualification-status.html" : "Qualification Status"
+    },
+    {
+      "url" : "http://hl7.org/fhir/service-mode",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "ServiceMode",
+      "title" : "Service Mode",
+      "description" : "An example set of Service Modes that could be applicable to use to characterize HealthcareServices or PractitionerRoles while searching",
+      "oids" : ["2.16.840.1.113883.4.642.4.2116"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-service-mode.html" : "Service Mode"
+    },
+    {
+      "url" : "http://hl7.org/fhir/statistic-model-code",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "StatisticModelCode",
+      "title" : "Statistic Model Code",
+      "description" : "The role that the assertion variable plays.",
+      "oids" : ["2.16.840.1.113883.4.642.4.1938"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-statistic-model-code.html" : "Statistic Model Code"
+    },
+    {
+      "url" : "http://hl7.org/fhir/study-design",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "StudyDesign",
+      "title" : "Study Design",
+      "description" : "This is a set of terms for study design characteristics.",
+      "oids" : ["2.16.840.1.113883.4.642.4.2135"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-study-design.html" : "Study Design"
+    },
+    {
+      "url" : "http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem",
+      "version" : "1.0.0-ballot3",
+      "status" : "active",
+      "name" : "EvidenceRatingSystemClassifierCodeSystem",
+      "title" : "Evidence Rating System Classifier Code System",
+      "description" : "Codes for use with the EvidenceAssessment Profile, to provide values for the content.classifier element where content.type is Rating System.",
+      "oids" : ["2.16.840.1.113883.4.642.40.44.16.5"],
+      "uses" : {
+      },
+      "https://build.fhir.org/ig/HL7/ebm/ValueSet-evidence-rating-system-classifier.html" : "Evidence Rating System Classifier Codes Value Set"
+    },
+    {
+      "url" : "http://hl7.org/fhir/variable-handling",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "EvidenceVariableHandling",
+      "title" : "Evidence Variable Handling",
+      "description" : "The handling of the variable in statistical analysis for exposures or outcomes (E.g. Dichotomous, Continuous, Descriptive).",
+      "oids" : ["2.16.840.1.113883.4.642.4.1956"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-variable-handling.html" : "Evidence Variable Handling"
+    },
+    {
+      "url" : "http://hl7.org/fhir/variable-role",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "Variable Role",
+      "title" : "VariableRole",
+      "description" : "The role that the variable plays.",
+      "oids" : ["2.16.840.1.113883.4.642.4.2136"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-variable-role.html" : "Evidence Variable Role"
+    },
+    {
+      "url" : "http://hl7.org/fhir/version-algorithm",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "VersionAlgorithm",
+      "title" : "Version Algorithm",
+      "description" : "Indicates the mechanism used to compare versions to determine which is more current.",
+      "oids" : ["2.16.840.1.113883.4.642.4.1989"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-version-algorithm.html" : "Version Algorithm"
+    },
+    {
+      "url" : "http://loinc.org",
+      "version" : "3.1.0",
+      "status" : "active",
+      "name" : "LOINC",
+      "title" : "Logical Observation Identifiers, Names and Codes (LOINC)",
+      "description" : "LOINC provides a set of universal names and ID codes for identifying laboratory and clinical test results.1,2 LOINC facilitates the exchange and pooling of results, such as blood hemoglobin, serum potassium, or vital signs, for clinical care, outcomes management, and research. LOINC's universal identifiers (names and codes) can be used in the context of order and observation exchanges between information systems that use syntax standards such as HL73, CEN TC251, ISO TC215, ASTM4, and DICOM. Specifically, the identifier can be used as the coded value for an observation in any other standard that uses the observation/observation value paradigm, whether messages, documents, application programming interface (API), etc. For example, LOINC codes are used widely in the OBX segment Observation Identifier field (OBX-3) of an ORU HL7 (HL7 version 2.x or ASTM 1238-9410) message that may be sent between a Clinical Laboratory Information Management Systems (LIMS) and Electronic Health Record Systems (EHR).5, 6 In this way, LOINC codes provide universal identifiers that allow the exchange of clinical data between heterogeneous computing environments.",
+      "oids" : ["2.16.840.1.113883.6.1"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-doc-section-codes.html" : "Document Section Codes",
+      "http://hl7.org/fhir/R5/valueset-doc-typecodes.html" : "FHIR Document Type Codes",
+      "http://hl7.org/fhir/R5/valueset-example-characteristic-codes.html" : "Example Characterist ic Codes",
+      "http://hl7.org/fhir/R5/valueset-referenced-item-category.html" : "Referenced Item Category Value Set"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/attribute-estimate-type",
+      "version" : "1.0.1",
+      "status" : "active",
+      "name" : "StatisticAttributeEstimateType",
+      "title" : "StatisticAttribute Estimate Type",
+      "description" : "Method of reporting variability of estimates, such as confidence intervals, interquartile range or standard deviation.",
+      "oids" : ["2.16.840.1.113883.4.642.1.1413"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-attribute-estimate-type.html" : "Attribute Estimate Type"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/certainty-rating",
+      "version" : "2.0.0",
+      "status" : "draft",
+      "name" : "StatisticCertaintyRating",
+      "title" : "StatisticCertaintyRating",
+      "description" : "The relative quality of the statistic.",
+      "oids" : ["2.16.840.1.113883.4.642.1.1415"],
+      "uses" : {
+      },
+      "ValueSet-vs-rating-certainty-of-evidence.html" : "Rating Certainty Of Evidence",
+      "ValueSet-vs-rating-concern-degree.html" : "Rating Concern Degree",
+      "http://terminology.hl7.org/7.0.1/ValueSet-certainty-rating.html" : "StatisticCertaintyRating"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/certainty-type",
+      "version" : "1.0.0",
+      "status" : "active",
+      "name" : "EvidenceCertaintyType",
+      "title" : "Evidence Certainty Type",
+      "description" : "The aspect of quality, confidence, or certainty.",
+      "uses" : {
+      },
+      "http://terminology.hl7.org/7.0.1/ValueSet-certainty-type.html" : "Evidence Certainty Type"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/common-tags",
+      "version" : "1.0.1",
+      "status" : "active",
+      "name" : "CommonTags",
+      "title" : "Common Tags",
+      "description" : "Common Tag Codes defined by FHIR project",
+      "oids" : ["2.16.840.1.113883.4.642.1.1067"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-common-tags.html" : "Common Tags"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/contactentity-type",
+      "version" : "1.0.0",
+      "status" : "draft",
+      "name" : "ContactEntityType",
+      "title" : "Contact entity type",
+      "description" : "This example value set defines a set of codes that can be used to indicate the purpose for which you would contact a contact party.",
+      "oids" : ["2.16.840.1.113883.4.642.1.1129"],
+      "uses" : {
+      },
+      "http://terminology.hl7.org/7.0.1/ValueSet-contactentity-type.html" : "Contact entity type"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/contributor-role",
+      "version" : "1.0.0",
+      "status" : "active",
+      "name" : "ContributorRole",
+      "title" : "Contributor Role",
+      "description" : "Used to code the format of the display string.",
+      "uses" : {
+      },
+      "http://terminology.hl7.org/7.0.1/ValueSet-contributor-role.html" : "Contributor Role"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/directness",
+      "version" : "2.0.0",
+      "status" : "draft",
+      "name" : "EvidenceDirectness",
+      "title" : "EvidenceDirectness",
+      "description" : "The quality of how direct the match is.",
+      "oids" : ["2.16.840.1.113883.4.642.1.1459"],
+      "uses" : {
+      },
+      "http://terminology.hl7.org/7.0.1/ValueSet-directness.html" : "EvidenceDirectness"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+      "version" : "1.0.1",
+      "status" : "active",
+      "name" : "ListEmptyReasons",
+      "title" : "List Empty Reasons",
+      "description" : "General reasons for a list to be empty. Reasons are either related to a summary list (i.e. problem or medication list) or to a workflow related list (i.e. consultation list).",
+      "oids" : ["2.16.840.1.113883.4.642.1.1106"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-list-empty-reason.html" : "List Empty Reasons"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/list-example-use-codes",
+      "version" : "1.0.1",
+      "status" : "active",
+      "name" : "ExampleUseCodesForList",
+      "title" : "Example Use Codes for List",
+      "description" : "Example use codes for the List resource - typical kinds of use.",
+      "oids" : ["2.16.840.1.113883.4.642.1.1105"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-list-example-codes.html" : "Example Use Codes for List"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/list-order",
+      "version" : "2.0.0",
+      "status" : "active",
+      "name" : "ListOrderCodes",
+      "title" : "List Order Codes",
+      "description" : "Base values for the order of item lists in resources.",
+      "oids" : ["2.16.840.1.113883.4.642.1.1107"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-list-order.html" : "List Order Codes"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/media-category",
+      "version" : "4.0.0",
+      "status" : "draft",
+      "name" : "DigitalMediaCategory",
+      "title" : "Digital Media Category",
+      "description" : "Codes for high level media types - whether the media is an image, video, or audio.",
+      "oids" : ["2.16.840.1.113883.4.642.1.326"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-referenced-item-category.html" : "Referenced Item Category Value Set"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/organization-type",
+      "version" : "2.0.1",
+      "status" : "active",
+      "name" : "OrganizationType",
+      "title" : "Organization type",
+      "description" : "This example value set defines a set of codes that can be used to indicate a type of organization.",
+      "oids" : ["2.16.840.1.113883.4.642.1.1128"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-organization-type.html" : "Organization Type"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/practitioner-role",
+      "version" : "1.0.1",
+      "status" : "active",
+      "name" : "PractitionerRole",
+      "title" : "Practitioner role",
+      "description" : "This example value set defines a set of codes that can be used to indicate the role of a Practitioner.",
+      "oids" : ["2.16.840.1.113883.4.642.1.1132"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-practitioner-role.html" : "Practitioner Role"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/recommendation-strength",
+      "version" : "1.0.1",
+      "status" : "active",
+      "name" : "StrengthOfRecommendationRating",
+      "title" : "StrengthOfRecommendationRating",
+      "description" : "A rating system that describes the strength of the recommendation, such as the GRADE, DynaMed, or HGPS systems.",
+      "oids" : ["2.16.840.1.113883.4.642.1.1268"],
+      "uses" : {
+      },
+      "http://terminology.hl7.org/7.0.1/ValueSet-recommendation-strength.html" : "StrengthOfRecommendationRating"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/statistic-type",
+      "version" : "1.0.1",
+      "status" : "active",
+      "name" : "StatisticStatisticType",
+      "title" : "StatisticStatisticType",
+      "description" : "The type of a specific statistic.",
+      "oids" : ["2.16.840.1.113883.4.642.1.1411"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-statistic-type.html" : "Statistic Type"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/synthesis-type",
+      "version" : "2.0.0",
+      "status" : "active",
+      "name" : "StatisticSynthesisType",
+      "title" : "StatisticSynthesisType",
+      "description" : "Types of combining results from a body of evidence (eg. summary data meta-analysis).",
+      "oids" : ["2.16.840.1.113883.4.642.1.1348"],
+      "uses" : {
+      },
+      "http://terminology.hl7.org/7.0.1/ValueSet-synthesis-type.html" : "StatisticSynthesisType"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+      "version" : "5.0.0",
+      "status" : "active",
+      "name" : "IdentifierType",
+      "title" : "identifierType",
+      "description" : "HL7-defined code system of concepts specifying type of identifier. Used in HL7 Version 2.x messaging data types CX, PLN, PPN, XCN and XON.",
+      "oids" : ["2.16.840.1.113883.18.108"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-identifier-type.html" : "Identifier Type Codes"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/v2-0360",
+      "version" : "3.0.0",
+      "status" : "active",
+      "name" : "DegreeLicenseCertificate",
+      "title" : "degreeLicenseCertificate",
+      "description" : "Code system of concepts specifying an educational degree (e.g., MD).  Used in the CNN datatype (names and identifiers of clinicians) in Version 2 messaging.  Used in HL7 Version 2.x messaging in the CNN segment; note that in releases of HL7 prior to 2.3.1, was also used in person names (XPN), but this use was deprecated, then withdrawn in 2.7.",
+      "oids" : ["2.16.840.1.113883.18.220"],
+      "uses" : {
+      },
+      "http://terminology.hl7.org/7.0.1/ValueSet-v2-0360.html" : "hl7VS-degreeLicenseCertificate"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "version" : "9.0.0",
+      "status" : "active",
+      "name" : "ActCode",
+      "title" : "ActCode",
+      "description" : "A code specifying the particular kind of Act that the Act-instance represents within its class.\r\n\r\n*Constraints:* The kind of Act (e.g. physical examination, serum potassium, inpatient encounter, charge financial transaction, etc.) is specified with a code from one of several, typically external, coding systems. The coding system will depend on the class of Act, such as LOINC for observations, etc.\r\n\r\nConceptually, the Act.code must be a specialization of the Act.classCode. This is why the structure of ActClass domain should be reflected in the superstructure of the ActCode domain and then individual codes or externally referenced vocabularies subordinated under these domains that reflect the ActClass structure.\r\n\r\nAct.classCode and Act.code are not modifiers of each other but the Act.code concept should really imply the Act.classCode concept. For a negative example, it is not appropriate to use an Act.code \"potassium\" together with and Act.classCode for \"laboratory observation\" to somehow mean \"potassium laboratory observation\" and then use the same Act.code for \"potassium\" together with Act.classCode for \"medication\" to mean \"substitution of potassium\". This mutually modifying use of Act.code and Act.classCode is not permitted.",
+      "oids" : ["2.16.840.1.113883.5.4"],
+      "uses" : {
+      },
+      "http://terminology.hl7.org/7.0.1/ValueSet-v3-ActCode.html" : "v3 Code System ActCode"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/v3-HL7DocumentFormatCodes",
+      "version" : "4.1.0",
+      "status" : "active",
+      "name" : "HL7DocumentFormatCodes",
+      "title" : "HL7 Document Format Codes",
+      "description" : "This codeSystem contains codes which specify the technical format of a document. Each code provides sufficient information to allow any potential document consumer to know if it will be able to process the document. The codes are sufficiently specific to ensure processing/display by identifying a document encoding, structure and template. For example, formatCodes can be used in the FHIR DocumentReference resource to characterize the document being referenced.",
+      "oids" : ["2.16.840.1.113883.4.642.1.1407"],
+      "uses" : {
+      },
+      "http://terminology.hl7.org/7.0.1/ValueSet-v3-HL7FormatCodes.html" : "HL7 ValueSet of Format Codes for use with Document Sharing"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+      "version" : "4.0.0",
+      "status" : "active",
+      "name" : "ObservationValue",
+      "title" : "ObservationValue",
+      "description" : "This code system covers all concepts of HL7-defined values for the Observation value element, when it has a coded datatype.",
+      "oids" : ["2.16.840.1.113883.5.1063"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-common-tags.html" : "Common Tags"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/variable-role",
+      "version" : "2.0.1",
+      "status" : "active",
+      "name" : "EvidenceVariableRole",
+      "title" : "EvidenceVariableRole",
+      "description" : "**Deprecation Information:** This CodeSystem/ValueSet was used in FHIR R5 for a CodeableConcept binding that was changed to a code binding in FHIR R6. The replacement CodeSystem/ValueSet is http://hl7.org/fhir/variable-role and http://hl7.org/fhir/ValueSet/variable-role.",
+      "oids" : ["2.16.840.1.113883.4.642.1.1457"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-variable-role-subtype.html" : "Evidence Variable Role Subtype"
+    },
+    {
+      "url" : "https://fevir.net/resources/CodeSystem/179423",
+      "version" : "1.0.0-ballot3",
+      "status" : "active",
+      "name" : "Cs_ebm_ig",
+      "title" : "Evidence Based Medicine on FHIR Implementation Guide Code System",
+      "description" : "This code system is a temporary workspace while drafting the Evidence Based Medicine Implementation Guide. It may not be stable and may not be persistent.",
+      "oids" : ["2.16.840.1.113883.4.642.40.44.16.1"],
+      "uses" : {
+      },
+      "https://build.fhir.org/ig/HL7/ebm/ValueSet-179431.html" : "EvidenceReportSectionCode Value Set",
+      "ValueSet-vs-guideline-sections.html" : "Guideline Sections"
+    },
+    {
+      "url" : "urn:ietf:bcp:47",
+      "version" : "2.0.1",
+      "status" : "active",
+      "name" : "Ietf3066",
+      "title" : "Tags for the Identification of Languages",
+      "description" : "Older value from OID registry.  Superceded; see recommendations in BCP-47.",
+      "oids" : ["2.16.840.1.113883.6.121"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-languages.html" : "Common Languages",
+      "http://hl7.org/fhir/R5/valueset-all-languages.html" : "All Languages"
+    },
+    {
+      "url" : "urn:oid:1.2.36.1.2001.1001.101.104.16592",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "PatientMedicineChangeTypes",
+      "title" : "Patient Medicine Change Types",
+      "description" : "Example Item Flags for the List Resource. In this case, these are the kind of flags that would be used on a medication list at the end of a consultation.",
+      "oids" : [
+        "1.2.36.1.2001.1001.101.104.16592",
+        "2.16.840.1.113883.4.642.4.321",
+        "2.16.840.1.113883.4.642.1.312",
+        "2.16.840.1.113883.4.642.2.175"
+      ],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-list-item-flag.html" : "Patient Medicine Change Types"
+    }
+  ]
+}

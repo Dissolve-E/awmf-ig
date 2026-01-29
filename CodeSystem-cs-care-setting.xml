@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-care-setting"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-care-setting</b></p><a name="cs-care-setting"> </a><a name="hccs-care-setting"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style="white-space:nowrap">prevention<a name="cs-care-setting-prevention"> </a></td><td>Prevention</td><td>Activities aimed at preventing diseases or injuries before they occur.</td><td>Prävention</td></tr><tr><td style="white-space:nowrap">early-detection<a name="cs-care-setting-early-detection"> </a></td><td>Early Detection</td><td>The identification of diseases or conditions at an early stage, often before symptoms appear.</td><td>Früherkennung</td></tr><tr><td style="white-space:nowrap">diagnosis<a name="cs-care-setting-diagnosis"> </a></td><td>Diagnosis</td><td>The process of determining the nature and cause of a disease or injury through evaluation of patient history, examination, and tests.</td><td>Diagnostik</td></tr><tr><td style="white-space:nowrap">therapy<a name="cs-care-setting-therapy"> </a></td><td>Therapy</td><td>The treatment of a disease or condition, including medical, surgical, or psychological interventions.</td><td>Behandlung</td></tr><tr><td style="white-space:nowrap">rehabilitation<a name="cs-care-setting-rehabilitation"> </a></td><td>Rehabilitation</td><td>The process of restoring physical, mental, or social abilities lost due to illness or injury.</td><td>Rehabilitation</td></tr><tr><td style="white-space:nowrap">primary-care<a name="cs-care-setting-primary-care"> </a></td><td>Primary Care</td><td>First-contact healthcare provided by general practitioners or family physicians.</td><td>Primärärztliche Versorgung</td></tr><tr><td style="white-space:nowrap">specialized-care<a name="cs-care-setting-specialized-care"> </a></td><td>Specialized Care</td><td>Healthcare provided by medical specialists with advanced training in specific fields.</td><td>Spezialärztliche Versorgung</td></tr><tr><td style="white-space:nowrap">outpatient<a name="cs-care-setting-outpatient"> </a></td><td>Outpatient</td><td>Healthcare services provided to patients who are not admitted to a hospital or other facility.</td><td>Ambulant</td></tr><tr><td style="white-space:nowrap">inpatient<a name="cs-care-setting-inpatient"> </a></td><td>Inpatient</td><td>Healthcare services provided to patients who are admitted to a hospital or other facility for at least one night.</td><td>Stationär</td></tr><tr><td style="white-space:nowrap">partial-hospitalization<a name="cs-care-setting-partial-hospitalization"> </a></td><td>Partial Hospitalization</td><td>Healthcare services provided in a hospital or facility during the day, with patients returning home at night.</td><td>Teilstationär</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting"/>
+  <version value="0.2.0"/>
+  <name value="CareSetting"/>
+  <title value="Care Setting"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem defining different care settings, including levels of care, healthcare services, and treatment contexts."/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="10"/>
+  <concept>
+    <code value="prevention"/>
+    <display value="Prevention"/>
+    <definition value="Activities aimed at preventing diseases or injuries before they occur.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Aktivitäten, die darauf abzielen, Krankheiten oder Verletzungen zu verhindern, bevor sie auftreten."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Prävention"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="early-detection"/>
+    <display value="Early Detection"/>
+    <definition value="The identification of diseases or conditions at an early stage, often before symptoms appear.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Erkennung von Krankheiten oder Zuständen in einem frühen Stadium, oft bevor Symptome auftreten."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Früherkennung"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="diagnosis"/>
+    <display value="Diagnosis"/>
+    <definition value="The process of determining the nature and cause of a disease or injury through evaluation of patient history, examination, and tests.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Prozess der Bestimmung der Art und Ursache einer Krankheit oder Verletzung durch Auswertung der Krankengeschichte, Untersuchungen und Tests."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Diagnostik"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="therapy"/>
+    <display value="Therapy"/>
+    <definition value="The treatment of a disease or condition, including medical, surgical, or psychological interventions.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Behandlung einer Krankheit oder eines Zustands, einschließlich medizinischer, chirurgischer oder psychologischer Eingriffe."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Behandlung"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="rehabilitation"/>
+    <display value="Rehabilitation"/>
+    <definition value="The process of restoring physical, mental, or social abilities lost due to illness or injury.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Der Prozess der Wiederherstellung körperlicher, geistiger oder sozialer Fähigkeiten, die aufgrund von Krankheit oder Verletzung verloren gegangen sind."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Rehabilitation"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="primary-care"/>
+    <display value="Primary Care"/>
+    <definition value="First-contact healthcare provided by general practitioners or family physicians.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Medizinische Versorgung durch den Allgemein- oder Hausarzt."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Primärärztliche Versorgung"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="specialized-care"/>
+    <display value="Specialized Care"/>
+    <definition value="Healthcare provided by medical specialists with advanced training in specific fields.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Medizinische Versorgung durch Fachärzt*innen mit spezieller Ausbildung in bestimmten Bereichen."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Spezialärztliche Versorgung"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="outpatient"/>
+    <display value="Outpatient"/>
+    <definition value="Healthcare services provided to patients who are not admitted to a hospital or other facility.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Gesundheitsdienstleistungen für Patient*innen, die nicht in ein Krankenhaus oder eine andere Einrichtung eingewiesen werden."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Ambulant"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="inpatient"/>
+    <display value="Inpatient"/>
+    <definition value="Healthcare services provided to patients who are admitted to a hospital or other facility for at least one night.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Gesundheitsdienstleistungen für Patient*innen, die für mindestens eine Nacht in ein Krankenhaus oder eine andere Einrichtung eingewiesen werden."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Stationär"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="partial-hospitalization"/>
+    <display value="Partial Hospitalization"/>
+    <definition value="Healthcare services provided in a hospital or facility during the day, with patients returning home at night.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Gesundheitsdienstleistungen, die tagsüber in einem Krankenhaus oder einer Einrichtung erbracht werden; Patient*innen bleiben nicht über Nacht im Krankenhaus oder in der Gesundheitseinrichtung."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Teilstationär"/>
+    </designation>
+  </concept>
+</CodeSystem>

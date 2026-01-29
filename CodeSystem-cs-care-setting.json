@@ -1,0 +1,247 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "cs-care-setting",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-care-setting</b></p><a name=\"cs-care-setting\"> </a><a name=\"hccs-care-setting\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">prevention<a name=\"cs-care-setting-prevention\"> </a></td><td>Prevention</td><td>Activities aimed at preventing diseases or injuries before they occur.</td><td>Prävention</td></tr><tr><td style=\"white-space:nowrap\">early-detection<a name=\"cs-care-setting-early-detection\"> </a></td><td>Early Detection</td><td>The identification of diseases or conditions at an early stage, often before symptoms appear.</td><td>Früherkennung</td></tr><tr><td style=\"white-space:nowrap\">diagnosis<a name=\"cs-care-setting-diagnosis\"> </a></td><td>Diagnosis</td><td>The process of determining the nature and cause of a disease or injury through evaluation of patient history, examination, and tests.</td><td>Diagnostik</td></tr><tr><td style=\"white-space:nowrap\">therapy<a name=\"cs-care-setting-therapy\"> </a></td><td>Therapy</td><td>The treatment of a disease or condition, including medical, surgical, or psychological interventions.</td><td>Behandlung</td></tr><tr><td style=\"white-space:nowrap\">rehabilitation<a name=\"cs-care-setting-rehabilitation\"> </a></td><td>Rehabilitation</td><td>The process of restoring physical, mental, or social abilities lost due to illness or injury.</td><td>Rehabilitation</td></tr><tr><td style=\"white-space:nowrap\">primary-care<a name=\"cs-care-setting-primary-care\"> </a></td><td>Primary Care</td><td>First-contact healthcare provided by general practitioners or family physicians.</td><td>Primärärztliche Versorgung</td></tr><tr><td style=\"white-space:nowrap\">specialized-care<a name=\"cs-care-setting-specialized-care\"> </a></td><td>Specialized Care</td><td>Healthcare provided by medical specialists with advanced training in specific fields.</td><td>Spezialärztliche Versorgung</td></tr><tr><td style=\"white-space:nowrap\">outpatient<a name=\"cs-care-setting-outpatient\"> </a></td><td>Outpatient</td><td>Healthcare services provided to patients who are not admitted to a hospital or other facility.</td><td>Ambulant</td></tr><tr><td style=\"white-space:nowrap\">inpatient<a name=\"cs-care-setting-inpatient\"> </a></td><td>Inpatient</td><td>Healthcare services provided to patients who are admitted to a hospital or other facility for at least one night.</td><td>Stationär</td></tr><tr><td style=\"white-space:nowrap\">partial-hospitalization<a name=\"cs-care-setting-partial-hospitalization\"> </a></td><td>Partial Hospitalization</td><td>Healthcare services provided in a hospital or facility during the day, with patients returning home at night.</td><td>Teilstationär</td></tr></table></div>"
+  },
+  "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting",
+  "version" : "0.2.0",
+  "name" : "CareSetting",
+  "title" : "Care Setting",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-01-29T18:27:10+00:00",
+  "publisher" : "AWMF e.V.",
+  "contact" : [{
+    "name" : "AWMF e.V.",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org"
+    }]
+  }],
+  "description" : "CodeSystem defining different care settings, including levels of care, healthcare services, and treatment contexts.",
+  "caseSensitive" : false,
+  "content" : "complete",
+  "count" : 10,
+  "concept" : [{
+    "code" : "prevention",
+    "display" : "Prevention",
+    "definition" : "Activities aimed at preventing diseases or injuries before they occur.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Aktivitäten, die darauf abzielen, Krankheiten oder Verletzungen zu verhindern, bevor sie auftreten."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Prävention"
+    }]
+  },
+  {
+    "code" : "early-detection",
+    "display" : "Early Detection",
+    "definition" : "The identification of diseases or conditions at an early stage, often before symptoms appear.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Erkennung von Krankheiten oder Zuständen in einem frühen Stadium, oft bevor Symptome auftreten."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Früherkennung"
+    }]
+  },
+  {
+    "code" : "diagnosis",
+    "display" : "Diagnosis",
+    "definition" : "The process of determining the nature and cause of a disease or injury through evaluation of patient history, examination, and tests.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Prozess der Bestimmung der Art und Ursache einer Krankheit oder Verletzung durch Auswertung der Krankengeschichte, Untersuchungen und Tests."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Diagnostik"
+    }]
+  },
+  {
+    "code" : "therapy",
+    "display" : "Therapy",
+    "definition" : "The treatment of a disease or condition, including medical, surgical, or psychological interventions.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Behandlung einer Krankheit oder eines Zustands, einschließlich medizinischer, chirurgischer oder psychologischer Eingriffe."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Behandlung"
+    }]
+  },
+  {
+    "code" : "rehabilitation",
+    "display" : "Rehabilitation",
+    "definition" : "The process of restoring physical, mental, or social abilities lost due to illness or injury.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Der Prozess der Wiederherstellung körperlicher, geistiger oder sozialer Fähigkeiten, die aufgrund von Krankheit oder Verletzung verloren gegangen sind."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Rehabilitation"
+    }]
+  },
+  {
+    "code" : "primary-care",
+    "display" : "Primary Care",
+    "definition" : "First-contact healthcare provided by general practitioners or family physicians.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Medizinische Versorgung durch den Allgemein- oder Hausarzt."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Primärärztliche Versorgung"
+    }]
+  },
+  {
+    "code" : "specialized-care",
+    "display" : "Specialized Care",
+    "definition" : "Healthcare provided by medical specialists with advanced training in specific fields.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Medizinische Versorgung durch Fachärzt*innen mit spezieller Ausbildung in bestimmten Bereichen."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Spezialärztliche Versorgung"
+    }]
+  },
+  {
+    "code" : "outpatient",
+    "display" : "Outpatient",
+    "definition" : "Healthcare services provided to patients who are not admitted to a hospital or other facility.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Gesundheitsdienstleistungen für Patient*innen, die nicht in ein Krankenhaus oder eine andere Einrichtung eingewiesen werden."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Ambulant"
+    }]
+  },
+  {
+    "code" : "inpatient",
+    "display" : "Inpatient",
+    "definition" : "Healthcare services provided to patients who are admitted to a hospital or other facility for at least one night.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Gesundheitsdienstleistungen für Patient*innen, die für mindestens eine Nacht in ein Krankenhaus oder eine andere Einrichtung eingewiesen werden."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Stationär"
+    }]
+  },
+  {
+    "code" : "partial-hospitalization",
+    "display" : "Partial Hospitalization",
+    "definition" : "Healthcare services provided in a hospital or facility during the day, with patients returning home at night.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Gesundheitsdienstleistungen, die tagsüber in einem Krankenhaus oder einer Einrichtung erbracht werden; Patient*innen bleiben nicht über Nacht im Krankenhaus oder in der Gesundheitseinrichtung."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Teilstationär"
+    }]
+  }]
+}

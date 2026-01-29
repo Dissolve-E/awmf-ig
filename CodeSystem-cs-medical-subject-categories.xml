@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-medical-subject-categories"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-medical-subject-categories</b></p><a name="cs-medical-subject-categories"> </a><a name="hccs-medical-subject-categories"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-medical-subject-categories</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style="white-space:nowrap">surgical<a name="cs-medical-subject-categories-surgical"> </a></td><td>Surgical Disciplines</td><td>Operative Fächer</td></tr><tr><td style="white-space:nowrap">conservative<a name="cs-medical-subject-categories-conservative"> </a></td><td>Conservative Disciplines</td><td>Konservative Fächer</td></tr><tr><td style="white-space:nowrap">psychosocial<a name="cs-medical-subject-categories-psychosocial"> </a></td><td>Psychosocial Disciplines</td><td>Psychosoziale Fächer</td></tr><tr><td style="white-space:nowrap">basic-sciences<a name="cs-medical-subject-categories-basic-sciences"> </a></td><td>Basic Sciences</td><td>Grundlagenfächer</td></tr><tr><td style="white-space:nowrap">method-oriented<a name="cs-medical-subject-categories-method-oriented"> </a></td><td>Method-Oriented Disciplines</td><td>Methodenorientierte Fächer</td></tr><tr><td style="white-space:nowrap">clinical-theoretical<a name="cs-medical-subject-categories-clinical-theoretical"> </a></td><td>Clinical-Theoretical Disciplines</td><td>Klinisch-theoretische Fächer</td></tr><tr><td style="white-space:nowrap">ecological<a name="cs-medical-subject-categories-ecological"> </a></td><td>Ecological and Environmental Disciplines</td><td>Fächer des ökolog. Stoffgebietes</td></tr><tr><td style="white-space:nowrap">dental<a name="cs-medical-subject-categories-dental"> </a></td><td>Dental Medicine Disciplines</td><td>Zahnmedizinische Fächer</td></tr><tr><td style="white-space:nowrap">other<a name="cs-medical-subject-categories-other"> </a></td><td>Other Disciplines</td><td>Sonstige Fächer</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-medical-subject-categories"/>
+  <version value="0.2.0"/>
+  <name value="MedicalSubjectCategoriesCS"/>
+  <title value="Medical Subject Categories"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem defining values to classify medical subjects into different categories."/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="9"/>
+  <concept>
+    <code value="surgical"/>
+    <display value="Surgical Disciplines"/>
+    <designation>
+      <language value="de"/>
+      <value value="Operative Fächer"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="conservative"/>
+    <display value="Conservative Disciplines"/>
+    <designation>
+      <language value="de"/>
+      <value value="Konservative Fächer"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="psychosocial"/>
+    <display value="Psychosocial Disciplines"/>
+    <designation>
+      <language value="de"/>
+      <value value="Psychosoziale Fächer"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="basic-sciences"/>
+    <display value="Basic Sciences"/>
+    <designation>
+      <language value="de"/>
+      <value value="Grundlagenfächer"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="method-oriented"/>
+    <display value="Method-Oriented Disciplines"/>
+    <designation>
+      <language value="de"/>
+      <value value="Methodenorientierte Fächer"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="clinical-theoretical"/>
+    <display value="Clinical-Theoretical Disciplines"/>
+    <designation>
+      <language value="de"/>
+      <value value="Klinisch-theoretische Fächer"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="ecological"/>
+    <display value="Ecological and Environmental Disciplines"/>
+    <designation>
+      <language value="de"/>
+      <value value="Fächer des ökolog. Stoffgebietes"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="dental"/>
+    <display value="Dental Medicine Disciplines"/>
+    <designation>
+      <language value="de"/>
+      <value value="Zahnmedizinische Fächer"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="other"/>
+    <display value="Other Disciplines"/>
+    <designation>
+      <language value="de"/>
+      <value value="Sonstige Fächer"/>
+    </designation>
+  </concept>
+</CodeSystem>

@@ -1,0 +1,104 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/CodeSystem/cs-medical-subject-categories> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cs-medical-subject-categories"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-medical-subject-categories</b></p><a name=\"cs-medical-subject-categories\"> </a><a name=\"hccs-medical-subject-categories\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-medical-subject-categories</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">surgical<a name=\"cs-medical-subject-categories-surgical\"> </a></td><td>Surgical Disciplines</td><td>Operative Fächer</td></tr><tr><td style=\"white-space:nowrap\">conservative<a name=\"cs-medical-subject-categories-conservative\"> </a></td><td>Conservative Disciplines</td><td>Konservative Fächer</td></tr><tr><td style=\"white-space:nowrap\">psychosocial<a name=\"cs-medical-subject-categories-psychosocial\"> </a></td><td>Psychosocial Disciplines</td><td>Psychosoziale Fächer</td></tr><tr><td style=\"white-space:nowrap\">basic-sciences<a name=\"cs-medical-subject-categories-basic-sciences\"> </a></td><td>Basic Sciences</td><td>Grundlagenfächer</td></tr><tr><td style=\"white-space:nowrap\">method-oriented<a name=\"cs-medical-subject-categories-method-oriented\"> </a></td><td>Method-Oriented Disciplines</td><td>Methodenorientierte Fächer</td></tr><tr><td style=\"white-space:nowrap\">clinical-theoretical<a name=\"cs-medical-subject-categories-clinical-theoretical\"> </a></td><td>Clinical-Theoretical Disciplines</td><td>Klinisch-theoretische Fächer</td></tr><tr><td style=\"white-space:nowrap\">ecological<a name=\"cs-medical-subject-categories-ecological\"> </a></td><td>Ecological and Environmental Disciplines</td><td>Fächer des ökolog. Stoffgebietes</td></tr><tr><td style=\"white-space:nowrap\">dental<a name=\"cs-medical-subject-categories-dental\"> </a></td><td>Dental Medicine Disciplines</td><td>Zahnmedizinische Fächer</td></tr><tr><td style=\"white-space:nowrap\">other<a name=\"cs-medical-subject-categories-other\"> </a></td><td>Other Disciplines</td><td>Sonstige Fächer</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-medical-subject-categories"^^xsd:anyURI ;
+     fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-medical-subject-categories>
+  ] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:name [ fhir:v "MedicalSubjectCategoriesCS"] ; # 
+  fhir:title [ fhir:v "Medical Subject Categories"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-01-29T18:27:10+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "AWMF e.V."] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AWMF e.V." ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.awmf.org" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "CodeSystem defining values to classify medical subjects into different categories."] ; # 
+  fhir:caseSensitive [ fhir:v false] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "9"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "surgical" ] ;
+     fhir:display [ fhir:v "Surgical Disciplines" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Operative Fächer" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "conservative" ] ;
+     fhir:display [ fhir:v "Conservative Disciplines" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Konservative Fächer" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "psychosocial" ] ;
+     fhir:display [ fhir:v "Psychosocial Disciplines" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Psychosoziale Fächer" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "basic-sciences" ] ;
+     fhir:display [ fhir:v "Basic Sciences" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Grundlagenfächer" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "method-oriented" ] ;
+     fhir:display [ fhir:v "Method-Oriented Disciplines" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Methodenorientierte Fächer" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "clinical-theoretical" ] ;
+     fhir:display [ fhir:v "Clinical-Theoretical Disciplines" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Klinisch-theoretische Fächer" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "ecological" ] ;
+     fhir:display [ fhir:v "Ecological and Environmental Disciplines" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Fächer des ökolog. Stoffgebietes" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "dental" ] ;
+     fhir:display [ fhir:v "Dental Medicine Disciplines" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Zahnmedizinische Fächer" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "other" ] ;
+     fhir:display [ fhir:v "Other Disciplines" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Sonstige Fächer" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

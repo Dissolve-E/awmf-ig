@@ -1,0 +1,191 @@
+{
+  "resourceType" : "ArtifactAssessment",
+  "id" : "RecommendationMultiplexPCRDiagnostic-Justification",
+  "meta" : {
+    "profile" : ["http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Justification for Recommendation Multiplex-PCR-Diagnostik</div>"
+  },
+  "artifactReference" : {
+    "reference" : "Composition/RecommendationMultiplexPCRDiagnostic"
+  },
+  "content" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "https://fevir.net/resources/CodeSystem/179423",
+        "code" : "recommendation-rating",
+        "display" : "Recommendation Rating"
+      }]
+    },
+    "component" : [{
+      "type" : {
+        "coding" : [{
+          "system" : "https://fevir.net/resources/CodeSystem/179423",
+          "code" : "strength-of-recommendation",
+          "display" : "Strength of Recommendation"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-strength-awmf",
+          "code" : "0",
+          "display" : "Open Recommendation"
+        }]
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "https://fevir.net/resources/CodeSystem/179423",
+          "code" : "direction-of-recommendation",
+          "display" : "Direction of Recommendation"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-direction",
+          "code" : "against",
+          "display" : "Against"
+        }]
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+          "code" : "level-of-consensus"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-level-of-consensus",
+          "code" : "strong-consensus",
+          "display" : "Strong consensus"
+        }]
+      }]
+    }]
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+        "code" : "evidence-rating",
+        "display" : "Evidence Rating"
+      }]
+    },
+    "component" : [{
+      "type" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/certainty-type",
+          "code" : "Overall",
+          "display" : "Overall certainty"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/certainty-rating",
+          "code" : "very-low",
+          "display" : "Very low quality"
+        }]
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+          "code" : "overall-quality-of-evidence",
+          "display" : "Overall Quality of Evidence"
+        }]
+      },
+      "relatesTo" : [{
+        "type" : "justification",
+        "targetReference" : {
+          "reference" : "ArtifactAssessment/EvA-MultiplexPCRDiagnostic-Mortality"
+        }
+      }]
+    }]
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+        "code" : "evidence-rating",
+        "display" : "Evidence Rating"
+      }]
+    },
+    "component" : [{
+      "type" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/certainty-type",
+          "code" : "Overall",
+          "display" : "Overall certainty"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/certainty-rating",
+          "code" : "very-low",
+          "display" : "Very low quality"
+        }]
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+          "code" : "overall-quality-of-evidence",
+          "display" : "Overall Quality of Evidence"
+        }]
+      },
+      "relatesTo" : [{
+        "type" : "justification",
+        "targetReference" : {
+          "reference" : "ArtifactAssessment/EvA-MultiplexPCRDiagnostic-AntibioticDays"
+        }
+      }]
+    }]
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+        "code" : "evidence-rating",
+        "display" : "Evidence Rating"
+      }]
+    },
+    "component" : [{
+      "type" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/certainty-type",
+          "code" : "Overall",
+          "display" : "Overall certainty"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/certainty-rating",
+          "code" : "very-low",
+          "display" : "Very low quality"
+        }]
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+          "code" : "overall-quality-of-evidence",
+          "display" : "Overall Quality of Evidence"
+        }]
+      },
+      "relatesTo" : [{
+        "type" : "justification",
+        "targetReference" : {
+          "reference" : "ArtifactAssessment/EvA-MultiplexPCRDiagnostic-TimeToDeescalation"
+        }
+      }]
+    }]
+  }],
+  "workflowStatus" : "applied"
+}

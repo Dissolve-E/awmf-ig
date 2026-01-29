@@ -1,0 +1,36 @@
+{
+  "resourceType" : "Group",
+  "id" : "PICOInterventionRec17",
+  "meta" : {
+    "profile" : ["http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-intervention"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Group PICOInterventionRec17</b></p><a name=\"PICOInterventionRec17\"> </a><a name=\"hcPICOInterventionRec17\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-conceptual-cohort-definition-intervention.html\">Conceptual Cohort Definition Intervention</a></p></div><p><b>description</b>: </p><div><p>Verschiedene kognitive Kurztests</p>\n</div><p><b>membership</b>: Conceptual</p><p><b>code</b>: <span title=\"Codes:{http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico intervention}\">Intervention</span></p><h3>Characteristics</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Code</b></td><td><b>Value[x]</b></td><td><b>Exclude</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://snomed.info/sct 71388002}\">Procedure (procedure)</span></td><td><span title=\"Codes:{http://snomed.info/sct 1100881000168104}\">Assessment of cognitive function (procedure)</span></td><td>false</td></tr></table></div>"
+  },
+  "description" : "Verschiedene kognitive Kurztests",
+  "membership" : "conceptual",
+  "code" : {
+    "coding" : [{
+      "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico",
+      "code" : "intervention"
+    }]
+  },
+  "characteristic" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "71388002",
+        "display" : "Procedure (procedure)"
+      }]
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "1100881000168104",
+        "display" : "Assessment of cognitive function (procedure)"
+      }]
+    },
+    "exclude" : false
+  }]
+}

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-level-of-consensus"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-level-of-consensus</b></p><a name="cs-level-of-consensus"> </a><a name="hccs-level-of-consensus"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-level-of-consensus</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style="white-space:nowrap">strong-consensus<a name="cs-level-of-consensus-strong-consensus"> </a></td><td>Strong consensus</td><td>Agreement by &gt;95% of participants.</td><td>Starker Konsens</td></tr><tr><td style="white-space:nowrap">consensus<a name="cs-level-of-consensus-consensus"> </a></td><td>Consensus</td><td>Agreement by &gt;75-95% of participants.</td><td>Konsens</td></tr><tr><td style="white-space:nowrap">majority-agreement<a name="cs-level-of-consensus-majority-agreement"> </a></td><td>Majority agreement</td><td>Agreement by &gt;50-75% of participants.</td><td>Mehrheitliche Zustimmung</td></tr><tr><td style="white-space:nowrap">no-majority-agreement<a name="cs-level-of-consensus-no-majority-agreement"> </a></td><td>No majority agreement</td><td>Agreement by ≤50% of participants.</td><td>Keine mehrheitliche Zustimmung</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-level-of-consensus"/>
+  <version value="0.2.0"/>
+  <name value="LevelOfConsensusCS"/>
+  <title value="Level of Consensus"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem defining the values representing the level of consensus for a recommendation."/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="4"/>
+  <concept>
+    <code value="strong-consensus"/>
+    <display value="Strong consensus"/>
+    <definition value="Agreement by &gt;95% of participants.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Zustimmung von &gt; 95 % der Teilnehmenden"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Starker Konsens"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="consensus"/>
+    <display value="Consensus"/>
+    <definition value="Agreement by &gt;75-95% of participants.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Zustimmung von &gt; 75 - 95 % der Teilnehmenden"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Konsens"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="majority-agreement"/>
+    <display value="Majority agreement"/>
+    <definition value="Agreement by &gt;50-75% of participants.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Zustimmung von &gt; 50 - 75 % der Teilnehmenden"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Mehrheitliche Zustimmung"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="no-majority-agreement"/>
+    <display value="No majority agreement"/>
+    <definition value="Agreement by ≤50% of participants.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Zustimmung von ≤ 50 % der Teilnehmenden"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Keine mehrheitliche Zustimmung"/>
+    </designation>
+  </concept>
+</CodeSystem>

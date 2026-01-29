@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-sign-grade-of-recommendation"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-sign-grade-of-recommendation</b></p><a name="cs-sign-grade-of-recommendation"> </a><a name="hccs-sign-grade-of-recommendation"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-sign-grade-of-recommendation</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style="white-space:nowrap">A<a name="cs-sign-grade-of-recommendation-A"> </a></td><td>Grade A</td><td>At least one meta-analysis, systematic review, or RCT rated as 1++, and directly applicable to the target population; or a body of evidence consisting principally of studies rated as 1+, directly applicable to the target population, and demonstrating overall consistency of results.</td><td>Empfehlungsgrad A</td></tr><tr><td style="white-space:nowrap">B<a name="cs-sign-grade-of-recommendation-B"> </a></td><td>Grade B</td><td>A body of evidence including studies rated as 2++, directly applicable to the target population, and demonstrating overall consistency of results; or extrapolated evidence from studies rated as 1++ or 1+.</td><td>Empfehlungsgrad B</td></tr><tr><td style="white-space:nowrap">C<a name="cs-sign-grade-of-recommendation-C"> </a></td><td>Grade C</td><td>A body of evidence including studies rated as 2+, directly applicable to the target population and demonstrating overall consistency of results; or extrapolated evidence from studies rated as 2++.</td><td>Empfehlungsgrad C</td></tr><tr><td style="white-space:nowrap">D<a name="cs-sign-grade-of-recommendation-D"> </a></td><td>Grade D</td><td>Evidence level 3 or 4; or extrapolated evidence from studies rated as 2+; or consensus-based recommendation.</td><td>Empfehlungsgrad D</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-sign-grade-of-recommendation"/>
+  <version value="0.2.0"/>
+  <name value="SIGNGradeOfRecommendation"/>
+  <title value="SIGN Grade of Recommendation"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem representing the Scottish Intercollegiate Guidelines Network (SIGN) Grades of Recommendation."/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="4"/>
+  <concept>
+    <code value="A"/>
+    <display value="Grade A"/>
+    <definition value="At least one meta-analysis, systematic review, or RCT rated as 1++, and directly applicable to the target population; or a body of evidence consisting principally of studies rated as 1+, directly applicable to the target population, and demonstrating overall consistency of results.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Mindestens eine Metaanalyse, systematische Review oder RCT mit 1++ bewertet und direkt auf die Zielpopulation anwendbar; oder ein Evidenzkörper bestehend hauptsächlich aus Studien mit 1+ bewertet, direkt auf die Zielpopulation anwendbar und mit konsistenten Ergebnissen."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Empfehlungsgrad A"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="B"/>
+    <display value="Grade B"/>
+    <definition value="A body of evidence including studies rated as 2++, directly applicable to the target population, and demonstrating overall consistency of results; or extrapolated evidence from studies rated as 1++ or 1+.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Evidenzkörper mit Studien bewertet als 2++, direkt auf die Zielpopulation anwendbar und mit konsistenten Ergebnissen; oder extrapolierte Evidenz aus Studien bewertet als 1++ oder 1+."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Empfehlungsgrad B"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="C"/>
+    <display value="Grade C"/>
+    <definition value="A body of evidence including studies rated as 2+, directly applicable to the target population and demonstrating overall consistency of results; or extrapolated evidence from studies rated as 2++.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Evidenzkörper mit Studien bewertet als 2+, direkt auf die Zielpopulation anwendbar und mit konsistenten Ergebnissen; oder extrapolierte Evidenz aus Studien bewertet als 2++."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Empfehlungsgrad C"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="D"/>
+    <display value="Grade D"/>
+    <definition value="Evidence level 3 or 4; or extrapolated evidence from studies rated as 2+; or consensus-based recommendation.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Evidenzlevel 3 oder 4; oder extrapolierte Evidenz aus Studien bewertet als 2+; oder konsensbasierte Empfehlung."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Empfehlungsgrad D"/>
+    </designation>
+  </concept>
+</CodeSystem>

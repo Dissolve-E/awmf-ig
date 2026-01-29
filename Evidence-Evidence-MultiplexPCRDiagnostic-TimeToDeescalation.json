@@ -1,0 +1,15 @@
+{
+  "resourceType" : "Evidence",
+  "id" : "Evidence-MultiplexPCRDiagnostic-TimeToDeescalation",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Evidence for the impact of Multiplex-PCR-Diagnostik on time to deescalation</div>"
+  },
+  "status" : "active",
+  "variableDefinition" : [{
+    "variableRole" : "outcome",
+    "intended" : {
+      "reference" : "EvidenceVariable/OutcomeTimeToDeescalation"
+    }
+  }]
+}

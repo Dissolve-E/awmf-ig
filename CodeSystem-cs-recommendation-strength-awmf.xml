@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-recommendation-strength-awmf"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-recommendation-strength-awmf</b></p><a name="cs-recommendation-strength-awmf"> </a><a name="hccs-recommendation-strength-awmf"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-strength-awmf</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style="white-space:nowrap">A<a name="cs-recommendation-strength-awmf-A"> </a></td><td>Strong Recommendation</td><td>Uses wording such as 'shall' / 'shall not' (original: 'soll' / 'soll nicht').</td><td>Starke Empfehlung</td></tr><tr><td style="white-space:nowrap">B<a name="cs-recommendation-strength-awmf-B"> </a></td><td>Recommendation</td><td>Uses wording such as 'should' / 'should not' (original: 'sollte' / 'sollte nicht').</td><td>Empfehlung</td></tr><tr><td style="white-space:nowrap">0<a name="cs-recommendation-strength-awmf-0"> </a></td><td>Open Recommendation</td><td>Uses wording such as 'may be considered' / 'may be omitted' (original: 'kann erwogen werden' / 'kann verzichtet werden').</td><td>Empfehlung offen</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-strength-awmf"/>
+  <version value="0.2.0"/>
+  <name value="RecommendationStrengthAWMF"/>
+  <title value="Recommendation Strength (AWMF)"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem defining the grading of recommendations according to German guideline methodology as used in AWMF S3 guidelines."/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="3"/>
+  <concept>
+    <code value="A"/>
+    <display value="Strong Recommendation"/>
+    <definition value="Uses wording such as 'shall' / 'shall not' (original: 'soll' / 'soll nicht').">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Nutzung von Formulierungen mit 'soll' / 'soll nicht'"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Starke Empfehlung"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="B"/>
+    <display value="Recommendation"/>
+    <definition value="Uses wording such as 'should' / 'should not' (original: 'sollte' / 'sollte nicht').">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Nutzung von Formulierungen mit 'sollte' / 'sollte nicht'"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Empfehlung"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="0"/>
+    <display value="Open Recommendation"/>
+    <definition value="Uses wording such as 'may be considered' / 'may be omitted' (original: 'kann erwogen werden' / 'kann verzichtet werden').">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Nutzung von Formulierungen mit 'kann erwogen werden' / 'kann verzichtet werden'"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Empfehlung offen"/>
+    </designation>
+  </concept>
+</CodeSystem>

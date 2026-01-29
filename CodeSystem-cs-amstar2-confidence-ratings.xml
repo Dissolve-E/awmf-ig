@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-amstar2-confidence-ratings"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-amstar2-confidence-ratings</b></p><a name="cs-amstar2-confidence-ratings"> </a><a name="hccs-amstar2-confidence-ratings"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-amstar2-confidence-ratings</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style="white-space:nowrap">high<a name="cs-amstar2-confidence-ratings-high"> </a></td><td>High</td><td>Zero or one non-critical weakness: The systematic review provides an accurate and comprehensive summary of the results of the available studies that address the question of interest.</td><td>Hoch</td></tr><tr><td style="white-space:nowrap">moderate<a name="cs-amstar2-confidence-ratings-moderate"> </a></td><td>Moderate</td><td>More than one non-critical weakness: The systematic review has more than one weakness but no critical flaws. It may provide an accurate summary of the results of the available studies that were included in the review.</td><td>Moderat</td></tr><tr><td style="white-space:nowrap">low<a name="cs-amstar2-confidence-ratings-low"> </a></td><td>Low</td><td>One critical flaw with or without non-critical weaknesses: The review has a critical flaw and may not provide an accurate and comprehensive summary of the available studies that address the question of interest.</td><td>Niedrig</td></tr><tr><td style="white-space:nowrap">critically_low<a name="cs-amstar2-confidence-ratings-critically_low"> </a></td><td>Critically Low</td><td>More than one critical flaw with or without non-critical weaknesses: The review has more than one critical flaw and should not be relied on to provide an accurate and comprehensive summary of the available studies.</td><td>Kritisch niedrig</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-amstar2-confidence-ratings"/>
+  <version value="0.2.0"/>
+  <name value="AMSTAR2ConfidenceRatings"/>
+  <title value="AMSTAR 2 Overall Confidence Ratings"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem representing the overall confidence ratings from the AMSTAR 2 critical appraisal tool."/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="4"/>
+  <concept>
+    <code value="high"/>
+    <display value="High"/>
+    <definition value="Zero or one non-critical weakness: The systematic review provides an accurate and comprehensive summary of the results of the available studies that address the question of interest.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Keine oder eine nicht kritische Schwäche: Der systematische Review bietet eine verlässliche und&#xA;    umfassende Zusammenfassung der Ergebnisse der verfügbaren Studien zu der interessierenden&#xA;    Frage."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Hoch"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="moderate"/>
+    <display value="Moderate"/>
+    <definition value="More than one non-critical weakness: The systematic review has more than one weakness but no critical flaws. It may provide an accurate summary of the results of the available studies that were included in the review.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Mehr als eine nicht kritische Schwäche*: Der systematische Review hat mehr als eine Schwäche,&#xA;    aber keine kritischen Schwächen. Möglicherweise bietet es eine akkurate Zusammenfassung der&#xA;    Ergebnisse der verfügbaren, in den Review eingeschlossenen Studien. *Mehrere nicht kritische Schwächen können das Vertrauen in den Review mindern, und es kann angemessen&#xA;    sein, das Gesamturteil von moderat auf niedrig herabzustufen."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Moderat"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="low"/>
+    <display value="Low"/>
+    <definition value="One critical flaw with or without non-critical weaknesses: The review has a critical flaw and may not provide an accurate and comprehensive summary of the available studies that address the question of interest.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Eine kritische Schwäche mit oder ohne nicht kritische Schwächen: Der Review hat eine kritische&#xA;    Schwäche und bietet möglicherweise keine akkurate und umfassende Zusammenfassung der&#xA;    verfügbaren Studien zu der interessierenden Frage."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Niedrig"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="critically_low"/>
+    <display value="Critically Low"/>
+    <definition value="More than one critical flaw with or without non-critical weaknesses: The review has more than one critical flaw and should not be relied on to provide an accurate and comprehensive summary of the available studies.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Mehr als eine kritische Schwäche mit oder ohne nicht kritische Schwächen: Der Review hat mehr als&#xA;    eine kritische Schwäche. Es sollte nicht darauf vertraut werden, dass er eine akkurate und&#xA;    umfassende Zusammenfassung der verfügbaren Studien bietet."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Kritisch niedrig"/>
+    </designation>
+  </concept>
+</CodeSystem>

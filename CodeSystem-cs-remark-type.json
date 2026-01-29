@@ -1,0 +1,115 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "cs-remark-type",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-remark-type</b></p><a name=\"cs-remark-type\"> </a><a name=\"hccs-remark-type\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-remark-type</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">block<a name=\"cs-remark-type-block\"> </a></td><td>Block</td><td>A restriction or prohibition that prevents certain actions or decisions in accordance with guidelines.</td><td>Block</td></tr><tr><td style=\"white-space:nowrap\">warning<a name=\"cs-remark-type-warning\"> </a></td><td>Warning</td><td>A cautionary note indicating potential risks or issues that need to be considered.</td><td>Warnung</td></tr><tr><td style=\"white-space:nowrap\">note<a name=\"cs-remark-type-note\"> </a></td><td>Note</td><td>An informative remark or additional context provided for clarification.</td><td>Hinweis</td></tr><tr><td style=\"white-space:nowrap\">revision-note<a name=\"cs-remark-type-revision-note\"> </a></td><td>Revision Note</td><td>Guideline is currently being revised.</td><td>Überarbeitungshinweis</td></tr></table></div>"
+  },
+  "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-remark-type",
+  "version" : "0.2.0",
+  "name" : "RemarkType",
+  "title" : "Remark Type",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-01-29T18:27:10+00:00",
+  "publisher" : "AWMF e.V.",
+  "contact" : [{
+    "name" : "AWMF e.V.",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org"
+    }]
+  }],
+  "description" : "CodeSystem defining different types of remarks that can be associated with guidelines, including restrictions, warnings, and additional notes.",
+  "caseSensitive" : false,
+  "content" : "complete",
+  "count" : 4,
+  "concept" : [{
+    "code" : "block",
+    "display" : "Block",
+    "definition" : "A restriction or prohibition that prevents certain actions or decisions in accordance with guidelines.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Einschränkung oder Untersagung, die bestimmte Handlungen oder Entscheidungen in Übereinstimmung mit Leitlinien verhindert."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Block"
+    }]
+  },
+  {
+    "code" : "warning",
+    "display" : "Warning",
+    "definition" : "A cautionary note indicating potential risks or issues that need to be considered.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Ein Warnhinweis, der auf mögliche Risiken oder Probleme hinweist, die beachtet werden müssen."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Warnung"
+    }]
+  },
+  {
+    "code" : "note",
+    "display" : "Note",
+    "definition" : "An informative remark or additional context provided for clarification.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Eine informative Bemerkung oder zusätzliche Kontextinformationen, die der Klärung dient/dienen."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Hinweis"
+    }]
+  },
+  {
+    "code" : "revision-note",
+    "display" : "Revision Note",
+    "definition" : "Guideline is currently being revised.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Die Leitlinie wird derzeit überarbeitet."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Überarbeitungshinweis"
+    }]
+  }]
+}

@@ -1,0 +1,115 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "cs-level-of-consensus",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-level-of-consensus</b></p><a name=\"cs-level-of-consensus\"> </a><a name=\"hccs-level-of-consensus\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-level-of-consensus</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">strong-consensus<a name=\"cs-level-of-consensus-strong-consensus\"> </a></td><td>Strong consensus</td><td>Agreement by &gt;95% of participants.</td><td>Starker Konsens</td></tr><tr><td style=\"white-space:nowrap\">consensus<a name=\"cs-level-of-consensus-consensus\"> </a></td><td>Consensus</td><td>Agreement by &gt;75-95% of participants.</td><td>Konsens</td></tr><tr><td style=\"white-space:nowrap\">majority-agreement<a name=\"cs-level-of-consensus-majority-agreement\"> </a></td><td>Majority agreement</td><td>Agreement by &gt;50-75% of participants.</td><td>Mehrheitliche Zustimmung</td></tr><tr><td style=\"white-space:nowrap\">no-majority-agreement<a name=\"cs-level-of-consensus-no-majority-agreement\"> </a></td><td>No majority agreement</td><td>Agreement by ≤50% of participants.</td><td>Keine mehrheitliche Zustimmung</td></tr></table></div>"
+  },
+  "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-level-of-consensus",
+  "version" : "0.2.0",
+  "name" : "LevelOfConsensusCS",
+  "title" : "Level of Consensus",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-01-29T18:27:10+00:00",
+  "publisher" : "AWMF e.V.",
+  "contact" : [{
+    "name" : "AWMF e.V.",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org"
+    }]
+  }],
+  "description" : "CodeSystem defining the values representing the level of consensus for a recommendation.",
+  "caseSensitive" : false,
+  "content" : "complete",
+  "count" : 4,
+  "concept" : [{
+    "code" : "strong-consensus",
+    "display" : "Strong consensus",
+    "definition" : "Agreement by >95% of participants.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Zustimmung von > 95 % der Teilnehmenden"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Starker Konsens"
+    }]
+  },
+  {
+    "code" : "consensus",
+    "display" : "Consensus",
+    "definition" : "Agreement by >75-95% of participants.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Zustimmung von > 75 - 95 % der Teilnehmenden"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Konsens"
+    }]
+  },
+  {
+    "code" : "majority-agreement",
+    "display" : "Majority agreement",
+    "definition" : "Agreement by >50-75% of participants.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Zustimmung von > 50 - 75 % der Teilnehmenden"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Mehrheitliche Zustimmung"
+    }]
+  },
+  {
+    "code" : "no-majority-agreement",
+    "display" : "No majority agreement",
+    "definition" : "Agreement by ≤50% of participants.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Zustimmung von ≤ 50 % der Teilnehmenden"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Keine mehrheitliche Zustimmung"
+    }]
+  }]
+}

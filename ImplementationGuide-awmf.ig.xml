@@ -1,0 +1,2952 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="awmf.ig"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide awmf.ig</b></p><a name="awmf.ig"> </a><a name="hcawmf.ig"> </a><h2>AWMFGuidelineRegistryIG</h2><p>The official URL for this implementation guide is: </p><pre>http://fhir.awmf.org/awmf.ig/ImplementationGuide/awmf.ig</pre><div><p>This implementation guide, produced by the Dissolve-E project (G-BA grant 01VSF23021) in collaboration with the Association of the Scientific Medical Societies in Germany (AWMF), defines FHIR profiles, extensions, and guidance for a structured, FAIR, and interoperable representation of German clinical practice guidelines.   Built on EBMonFHIR and related international initiatives, it supports authoring workflows, version control, and seamless integration of guideline knowledge into clinical decision support, quality management, and research infrastructures.</p>
+</div></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/ImplementationGuide/awmf.ig"/>
+  <version value="0.2.0"/>
+  <name value="AWMFGuidelineRegistryIG"/>
+  <title value="Dissolve-E: AWMF Guideline Registry"/>
+  <status value="draft"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="This implementation guide, produced by the Dissolve-E project (G-BA grant 01VSF23021) in collaboration with the Association of the Scientific Medical Societies in Germany (AWMF), defines FHIR profiles, extensions, and guidance for a structured, FAIR, and interoperable representation of German clinical practice guidelines.   Built on EBMonFHIR and related international initiatives, it supports authoring workflows, version control, and seamless integration of guideline knowledge into clinical decision support, quality management, and research infrastructures.&#xA;"/>
+  <packageId value="awmf.ig"/>
+  <license value="CC0-1.0"/>
+  <fhirVersion value="6.0.0-ballot3"/>
+  <dependsOn id="hl7_fhir_uv_ebm">
+    <uri value="http://hl7.org/fhir/uv/ebm"/>
+    <packageId value="hl7.fhir.uv.ebm"/>
+    <version value="ci-build"/>
+  </dependsOn>
+  <dependsOn id="hl7_fhir_r6_core">
+    <uri value="http://hl7.org/fhir/ImplementationGuide/fhir"/>
+    <packageId value="hl7.fhir.r6.core"/>
+    <version value="6.0.0-ballot3"/>
+  </dependsOn>
+  <dependsOn id="hl7_fhir_uv_extensions">
+    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
+    <packageId value="hl7.fhir.uv.extensions"/>
+    <version value="5.3.0-ballot-tc1"/>
+  </dependsOn>
+  <dependsOn id="hl7_terminology">
+    <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+    <packageId value="hl7.terminology"/>
+    <version value="7.0.1"/>
+  </dependsOn>
+  <definition>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
+      <valueCode value="hl7.fhir.uv.tools.r5#0.9.0"/>
+    </extension>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-agree-ii-domains"/>
+      </reference>
+      <name value="AGREE II Domains"/>
+      <description value="CodeSystem representing the domains assessed by the AGREE II instrument for evaluating the quality of clinical practice guidelines."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-agree-ii-domains"/>
+      </reference>
+      <name value="AGREE II Domains Value Set"/>
+      <description value="ValueSet encompassing all domains from the AGREE II instrument."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-amstar2-confidence-ratings"/>
+      </reference>
+      <name value="AMSTAR 2 Confidence Ratings Value Set"/>
+      <description value="ValueSet encompassing all overall confidence ratings from the AMSTAR 2 critical appraisal tool."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-amstar2-confidence-ratings"/>
+      </reference>
+      <name value="AMSTAR 2 Overall Confidence Ratings"/>
+      <description value="CodeSystem representing the overall confidence ratings from the AMSTAR 2 critical appraisal tool."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/AWMF"/>
+      </reference>
+      <name value="Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften (AWMF)"/>
+      <description value="Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften (AWMF)"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ext-artifact-extended-contact"/>
+      </reference>
+      <name value="Artifact Contact (Extended)"/>
+      <description value="This extension provides additional contact details for individuals or organizations associated with an artifact (e.g., a clinical document, guideline, or other composition)."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ext-author-language"/>
+      </reference>
+      <name value="Author Language"/>
+      <description value="This extension allows for the specification of the language(s) the author contributed to a section in a FHIR Composition."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-awmf"/>
+      </reference>
+      <name value="awmf"/>
+      <description value="CodeSystem representing different codes of interest for the Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften (AWMF)"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-awmf-guideline-class"/>
+      </reference>
+      <name value="AWMF Guideline Class"/>
+      <description value="ValueSet listing values representing guideline classes according to the AWMF."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-awmf-guideline-class"/>
+      </reference>
+      <name value="AWMF Guideline Class"/>
+      <description value="As part of the project planning for the creation or updating of a guideline,&#xA;    a decision should be made at an early stage about the planned level classification (&quot;S classification&quot;) according to the AWMF's system of rules (1-3).&#xA;    The S-classification scheme of the AWMF differentiates between the classes S1 treatment recommendation as well as S2e, S2k and S3 guideline.&#xA;    The &quot;S&quot; stands for the extent of the applied systematic approach in the development process of a guideline.&#xA;    Each class thus stands for a specific methodological concept that must be presented in a way that is comprehensible to the users.&#xA;    The choice of class is based on the question of how much effort is appropriate and feasible.&#xA;    The need for legitimacy for the implementation of the guideline (convincing the target group) must be taken into account.&#xA;    When choosing a higher S-classification in the context of updating a guideline, the adaptation to the corresponding methodology has to be considered."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/AWMFGuidelineRecordS3Example"/>
+      </reference>
+      <name value="AWMF Guideline Record S3 Example"/>
+      <description value="An example of an AWMF S3 guideline."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline-record-s3"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/AWMFGuidelineS1Example"/>
+      </reference>
+      <name value="AWMF Guideline S1 Example"/>
+      <description value="An example of an AWMF S1 guideline."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline-record-s1"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/AWMFGuidelineS2eExample"/>
+      </reference>
+      <name value="AWMF Guideline S2e Example"/>
+      <description value="An example of an AWMF S2e guideline."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline-record-s2e"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/AWMFGuidelineRecordS2kExample"/>
+      </reference>
+      <name value="AWMF Guideline S2k Example"/>
+      <description value="An example of an AWMF S2k guideline."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline-record-s2k"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-awmf-guideline-status"/>
+      </reference>
+      <name value="AWMF Guideline Status"/>
+      <description value="ValueSet listing values to define the guideline status according to the AWMF."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-awmf-guideline-status"/>
+      </reference>
+      <name value="AWMF Guideline Status"/>
+      <description value="CodeSystem representing the guideline status according to the AWMF."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/awmf-member-organization"/>
+      </reference>
+      <name value="AWMF Member Organization"/>
+      <description value="An organization that is a member of the AWMF"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/AWMFMemberOrganizationExample"/>
+      </reference>
+      <name value="AWMF Member Organization Example"/>
+      <description value="An example of an AWMF member organization."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/awmf-guideline-record-s1"/>
+      </reference>
+      <name value="AWMF S1 Guideline Registry Record"/>
+      <description value="AWMF S1 guideline representing expert recommendations developed through informal consensus."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/awmf-guideline-record-s2e"/>
+      </reference>
+      <name value="AWMF S2e Guideline Registry Record"/>
+      <description value="AWMF S2e guideline based on systematic literature search and evaluation."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/awmf-guideline-record-s2k"/>
+      </reference>
+      <name value="AWMF S2k Guideline Registry Record"/>
+      <description value="AWMF S2k guideline based on structured consensus by a representative panel."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/awmf-guideline-record-s3"/>
+      </reference>
+      <name value="AWMF S3 Guideline Registry Record"/>
+      <description value="AWMF S3 guideline based on systematic evidence review and structured consensus by a representative panel."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-body-system-conditions"/>
+      </reference>
+      <name value="Body System Conditions"/>
+      <description value="ValueSet listing various body system conditions"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-body-systems-conditions"/>
+      </reference>
+      <name value="Body System Conditions"/>
+      <description value="CodeSystem representing various body system conditions."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-care-level"/>
+      </reference>
+      <name value="Care Level"/>
+      <description value="ValueSet listing levels of care."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-care-setting"/>
+      </reference>
+      <name value="Care Setting"/>
+      <description value="CodeSystem defining different care settings, including levels of care, healthcare services, and treatment contexts."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-care-stage"/>
+      </reference>
+      <name value="Care Stage"/>
+      <description value="ValueSet listing stages of care from prevention to rehabilitation."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ArtifactAssessment"/>
+      </extension>
+      <reference>
+        <reference value="ArtifactAssessment/EvA-MultiplexPCRDiagnostic-AntibioticDays"/>
+      </reference>
+      <name value="Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Antibiotic Days"/>
+      <description value="Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on antibiotic days"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-overall-assessment-grade"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ArtifactAssessment"/>
+      </extension>
+      <reference>
+        <reference value="ArtifactAssessment/EvA-MultiplexPCRDiagnostic-Mortality"/>
+      </reference>
+      <name value="Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Mortality"/>
+      <description value="Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on mortality"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-overall-assessment-grade"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ArtifactAssessment"/>
+      </extension>
+      <reference>
+        <reference value="ArtifactAssessment/EvA-MultiplexPCRDiagnostic-TimeToDeescalation"/>
+      </reference>
+      <name value="Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Time to Deescalation"/>
+      <description value="Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on time to deescalation"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-overall-assessment-grade"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ArtifactAssessment"/>
+      </extension>
+      <reference>
+        <reference value="ArtifactAssessment/RoB-CognitiveTestsWhenSuspectingDementia-Sensitivity"/>
+      </reference>
+      <name value="Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspecting Dementia - Sensitivity"/>
+      <description value="Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspecting Dementia on Sensitivity"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-internal-assessment-cochrane-rob"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ArtifactAssessment"/>
+      </extension>
+      <reference>
+        <reference value="ArtifactAssessment/RoB-CognitiveTestsWhenSuspectingDementia-Specificity"/>
+      </reference>
+      <name value="Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspecting Dementia - Specificity"/>
+      <description value="Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspecting Dementia on Specificity"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-internal-assessment-cochrane-rob"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/citation-list"/>
+      </reference>
+      <name value="Citation List"/>
+      <description value="List of citations."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Citation"/>
+      </extension>
+      <reference>
+        <reference value="Citation/CitationSystematicReviewTsoi2015"/>
+      </reference>
+      <name value="Citation Systematic Review"/>
+      <description value="Citation for the Systematic Review by Tsoi et al. 2015"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-clinical-application-type"/>
+      </reference>
+      <name value="Clinical Application Type"/>
+      <description value="ValueSet listing different clinical application types"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-clinical-application-type"/>
+      </reference>
+      <name value="Clinical Application Type"/>
+      <description value="CodeSystem defining different clinical application types"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/FHIRStatusToAWMFStatus"/>
+      </reference>
+      <name value="Concept map from concepts from standardized vocabularies (that are not standard OMOP concepts) to Concept IDs of OMOP standard Concepts"/>
+      <description value="Concept map from concepts from standardized vocabularies that are not labelled as 'standard' in Athena – OHDSI Vocabularies Repository to Concept IDs from 'standard' concepts"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/conceptual-cohort-definition-comparator"/>
+      </reference>
+      <name value="Conceptual Cohort Definition Comparator"/>
+      <description value="A structured definition of the comparator as defined for a PICO question."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/conceptual-cohort-definition-intervention"/>
+      </reference>
+      <name value="Conceptual Cohort Definition Intervention"/>
+      <description value="A structured definition of the intervention as defined for a PICO question."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/conceptual-cohort-definition-outcome"/>
+      </reference>
+      <name value="Conceptual Cohort Definition Outcome"/>
+      <description value="A structured definition of the outcome as defined for a PICO question."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/conceptual-cohort-definition-population"/>
+      </reference>
+      <name value="Conceptual Cohort Definition Population"/>
+      <description value="A structured definition of the population as defined for a PICO question."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ext-consultation-period"/>
+      </reference>
+      <name value="Consultation Period"/>
+      <description value="This extension allows for the indication of the period during which the guideline is open for consultation."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-contact-point"/>
+      </reference>
+      <name value="Contact Point"/>
+      <description value="CodeSystem defining types of contact points for a guideline"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-content-types"/>
+      </reference>
+      <name value="Content Types"/>
+      <description value="ValueSet listing types of content that can be part of a guideline or recommendation."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/contributor0"/>
+      </reference>
+      <name value="contributor0"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/contributor1"/>
+      </reference>
+      <name value="contributor1"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/contributor2"/>
+      </reference>
+      <name value="contributor2"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/contributor3"/>
+      </reference>
+      <name value="contributor3"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/contributor4"/>
+      </reference>
+      <name value="contributor4"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/DGAI"/>
+      </reference>
+      <name value="DGAI"/>
+      <description value="Deutsche Gesellschaft für Anästhesiologie und Intensivmedizin e.V. (DGAI)"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/DGCH"/>
+      </reference>
+      <name value="DGCH"/>
+      <description value="Deutsche Gesellschaft für Chirurgie e.V. (DGCH)"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/DGHM"/>
+      </reference>
+      <name value="DGHM"/>
+      <description value="Deutsche Gesellschaft für Hygiene und Mikrobiologie e.V. (DGHM)"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/DGI"/>
+      </reference>
+      <name value="DGI"/>
+      <description value="Deutsche Gesellschaft für Infektiologie e.V. (DGI)"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/DGIIN"/>
+      </reference>
+      <name value="DGIIN"/>
+      <description value="Deutsche Gesellschaft für Internistische Intensivmedizin und Notfallmedizin e.V. (DGIIN)"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/DGIM"/>
+      </reference>
+      <name value="DGIM"/>
+      <description value="Deutsche Gesellschaft für Innere Medizin e.V. (DGIM)"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/DGP"/>
+      </reference>
+      <name value="DGP"/>
+      <description value="Deutsche Gesellschaft für Pneumologie und Beatmungsmedizin e.V. (DGP)"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/DGPPN"/>
+      </reference>
+      <name value="DGPPN"/>
+      <description value="Deutsche Gesellschaft für Psychiatrie und Psychotherapie, Psychosomatik und Nervenheilkunde e. V. (DGPPN)"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-dissemination-website"/>
+      </reference>
+      <name value="Dissemination Website"/>
+      <description value="ValueSet listing types of dissemination websites"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/DRG"/>
+      </reference>
+      <name value="DRG"/>
+      <description value="Deutsche Röntgengesellschaft, Gesellschaft für Medizinische Radiologie e.V. (DRG)"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/DSG"/>
+      </reference>
+      <name value="DSG"/>
+      <description value="Deutsche Sepsis-Gesellschaft e.V. (DSG)"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-encounter-type"/>
+      </reference>
+      <name value="Encounter Type"/>
+      <description value="ValueSet listing types of patient encounters based on hospitalization status."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/evidence-assessment"/>
+      </reference>
+      <name value="Evidence Assessment"/>
+      <description value="A structured assessment of the certainty of evidence for a specific outcome."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/evidence-internal-assessment-agreeii"/>
+      </reference>
+      <name value="Evidence Internal Assessment AGREE II"/>
+      <description value="A structured assessment of the quality of guidelines using the AGREE II instrument."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/evidence-internal-assessment-amstar2"/>
+      </reference>
+      <name value="Evidence Internal Assessment AMSTAR 2"/>
+      <description value="A structured assessment of the certainty of evidence using AMSTAR 2."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/evidence-internal-assessment-cochrane-rob"/>
+      </reference>
+      <name value="Evidence Internal Assessment Cochrane Risk of Bias"/>
+      <description value="Structured assessment of risk of bias using Cochrane RoB tool."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/evidence-internal-assessment-robis"/>
+      </reference>
+      <name value="Evidence Internal Assessment ROBIS"/>
+      <description value="Structured assessment of risk of bias using ROBIS (Risk of Bias in Systematic Reviews)."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/evidence-internal-validity-assessment"/>
+      </reference>
+      <name value="Evidence Internal Validity Assessment"/>
+      <description value="A structured assessment of the internal validity of evidence."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/evidence-overall-assessment-grade"/>
+      </reference>
+      <name value="Evidence Overall Assessment GRADE"/>
+      <description value="A structured assessment of the certainty of evidence for a specific outcome, including GRADE rating."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/evidence-overall-assessment-oxford2011"/>
+      </reference>
+      <name value="Evidence Overall Assessment Oxford 2011"/>
+      <description value="A structured assessment of the certainty of evidence for a specific outcome, including Oxford 2011 rating."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/evidence-overall-quality-assessment"/>
+      </reference>
+      <name value="Evidence Overall Quality Assessment"/>
+      <description value="A structured assessment of the overall evidence for a specific outcome."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/evidence-report-with-contact-slices"/>
+      </reference>
+      <name value="Evidence Report with Contact Slices"/>
+      <description value="Intermediate profile that re-slices the extendedContactDetail extension from EvidenceReport. This workaround profile isolates the re-slicing to avoid 'Named items are out of order in the slice' errors in derived profiles. See profile comments for detailed explanation."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-evidence-to-decision-certainty-rating"/>
+      </reference>
+      <name value="Evidence To Decision Certainty Rating"/>
+      <description value="CodeSystem defining GRADE Evidence to Decision (EtD) Framework Certainty Ratings"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-evidence-to-decision-certainty-type"/>
+      </reference>
+      <name value="Evidence To Decision Certainty type"/>
+      <description value="CodeSystem defining values to represent the GRADE Evidence to Decision (EtD) Framework Certainty Type"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Evidence"/>
+      </extension>
+      <reference>
+        <reference value="Evidence/Evidence-MultiplexPCRDiagnostic-AntibioticDays"/>
+      </reference>
+      <name value="Evidence-Multiplex PCR Diagnostic-Antibiotic Days"/>
+      <description value="Evidence for the impact of Multiplex-PCR-Diagnostik on antibiotic days"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Evidence"/>
+      </extension>
+      <reference>
+        <reference value="Evidence/Evidence-MultiplexPCRDiagnostic-Mortality"/>
+      </reference>
+      <name value="Evidence-Multiplex PCR Diagnostic-Mortality"/>
+      <description value="Evidence for the impact of Multiplex-PCR-Diagnostik on mortality"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Evidence"/>
+      </extension>
+      <reference>
+        <reference value="Evidence/Evidence-MultiplexPCRDiagnostic-TimeToDeescalation"/>
+      </reference>
+      <name value="Evidence-Multiplex PCR Diagnostic-Time to Deescalation"/>
+      <description value="Evidence for the impact of Multiplex-PCR-Diagnostik on time to deescalation"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ext-first-publication-date"/>
+      </reference>
+      <name value="First Publication Date"/>
+      <description value="This extension allows for the indication of the date when the guideline was first published."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
+        <reference value="DocumentReference/Guideline-020-013-SlideDeck"/>
+      </reference>
+      <name value="Foliensatz"/>
+      <description value="Foliensatz Leitlinie 020-013"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-attachment"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/GFV"/>
+      </reference>
+      <name value="GfV"/>
+      <description value="Gesellschaft für Virologie e.V. (GfV)"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/awmf-guideline"/>
+      </reference>
+      <name value="Guideline"/>
+      <description value="Clinical Practice Guideline"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/guideline-attachment"/>
+      </reference>
+      <name value="Guideline Attachment"/>
+      <description value="Attachment to a Clinical Practice Guideline"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
+        <reference value="DocumentReference/guideline-attachment-example"/>
+      </reference>
+      <name value="Guideline Attachment Example"/>
+      <description value="An example of a guideline attachment."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-attachment"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
+        <reference value="DocumentReference/guideline-attachment-patient-version-example"/>
+      </reference>
+      <name value="Guideline Attachment Patient Version Example"/>
+      <description value="An example of a guideline attachment for the patient version."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-attachment"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/guideline-author"/>
+      </reference>
+      <name value="Guideline Author"/>
+      <description value="A person that authored a guideline."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/GuidelineAuthorExample"/>
+      </reference>
+      <name value="Guideline Author Example"/>
+      <description value="An example of a guideline author."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/guideline-author-role"/>
+      </reference>
+      <name value="Guideline Author Role"/>
+      <description value="The role of the author of the guideline."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ext-guideline-author-role"/>
+      </reference>
+      <name value="Guideline Author Role"/>
+      <description value="This extension allows for the indication of the role of the author of the guideline."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-guideline-author-role"/>
+      </reference>
+      <name value="Guideline Author Role"/>
+      <description value="ValueSet listing roles that a author can have in a guideline."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-guideline-author-role"/>
+      </reference>
+      <name value="Guideline Author Role"/>
+      <description value="CodeSystem defining roles for the author of the guideline."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/GuidelineAuthorRoleExample"/>
+      </reference>
+      <name value="Guideline Author Role Example"/>
+      <description value="An example of a guideline author role."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author-role"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-guideline-contact-point"/>
+      </reference>
+      <name value="Guideline Contact Point VS"/>
+      <description value="ValueSet listing contact points relevant to guidelines, such as registrants, coordinators, and main contacts."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/GuidelineExample"/>
+      </reference>
+      <name value="Guideline Example"/>
+      <description value="An example of a guideline."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/guideline-registry-record"/>
+      </reference>
+      <name value="Guideline Registry Record"/>
+      <description value="Guideline Registry Record containing metadata and registry-specific information for a clinical practice guideline."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/GuidelineRegistryRecordExample"/>
+      </reference>
+      <name value="Guideline Registry Record Example"/>
+      <description value="An example of a guideline registry record."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-guideline-release-type"/>
+      </reference>
+      <name value="Guideline Release Type"/>
+      <description value="ValueSet listing different guideline release types"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-guideline-release-type"/>
+      </reference>
+      <name value="Guideline Release Type"/>
+      <description value="CodeSystem defining different guideline release types"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-guideline-sections"/>
+      </reference>
+      <name value="Guideline Sections"/>
+      <description value="ValueSet listing values to use to define guideline sections"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-guideline-sections"/>
+      </reference>
+      <name value="Guideline Sections"/>
+      <description value="Sections of a guideline, describing various aspects such as its intention, target patient group, care setting, and other relevant contextual information."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/RR-TestInvContribAuthorRefPerson-SHOULD-FAIL"/>
+      </reference>
+      <name value="Guideline with contributing author referencing Practitioner (fails invariant)"/>
+      <description value="Fails because the contributing author points to a Practitioner instead of an Organization."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/RR-TestInvLeadingAuthorRefOrganization-SHOULD-PASS"/>
+      </reference>
+      <name value="Guideline with leading author referencing Organization (passes invariant)"/>
+      <description value="Passes because the leading author points to an Organization."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/RR-TestInvLeadingAuthorRefPerson-SHOULD-FAIL"/>
+      </reference>
+      <name value="Guideline with leading author referencing Practitioner (fails invariant)"/>
+      <description value="Fails because the leading author points to a Practitioner instead of an Organization."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/RecommendationHAPDiagnosis"/>
+      </reference>
+      <name value="HAP Diagnose"/>
+      <description value="Wie wird eine HAP klinisch diagnostiziert und welche Differenzialdiagnosen sind zu beachten?"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/RecommendationHAPDiagnosis-A"/>
+      </reference>
+      <name value="HAP Diagnose - Empfehlung A"/>
+      <description value="Wie wird eine HAP klinisch diagnostiziert und welche Differenzialdiagnosen sind zu beachten?"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/RecommendationHAPDiagnosis-B"/>
+      </reference>
+      <name value="HAP Diagnose - Empfehlung B"/>
+      <description value="Wie wird eine HAP klinisch diagnostiziert und welche Differenzialdiagnosen sind zu beachten?"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
+        <reference value="DocumentReference/Guideline-020-013-ImplementationGuidance"/>
+      </reference>
+      <name value="Implementierungshilfe"/>
+      <description value="Implementierungshilfe Leitlinie 020-013"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-attachment"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-intended-audience"/>
+      </reference>
+      <name value="Intended Audience Code System"/>
+      <description value="CodeSystem defining possible intended audiences for a section"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-intended-audience"/>
+      </reference>
+      <name value="Intended Audience Value Set"/>
+      <description value="ValueSet listing codes representing intended audiences for a section"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/JessicaRademacher"/>
+      </reference>
+      <name value="Jessica Rademacher"/>
+      <description value="Jessica Rademacher"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/JessicaRademacherDGPFor020-013"/>
+      </reference>
+      <name value="Jessica Rademacher for DGP in the context of 020-013"/>
+      <description value="Jessica Rademacher for DGP in the context of 020-013"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author-role"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
+        <reference value="DocumentReference/Guideline-020-013-ShortVersion"/>
+      </reference>
+      <name value="Kurzfassung"/>
+      <description value="Kurzfassung Leitlinie 020-013"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-attachment"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
+        <reference value="DocumentReference/Guideline-020-013-LongVersion"/>
+      </reference>
+      <name value="Langfassung"/>
+      <description value="Langfassung Leitlinie 020-013"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-attachment"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
+        <reference value="DocumentReference/Guideline-020-013-GuidelineReport"/>
+      </reference>
+      <name value="Leitlinienreport"/>
+      <description value="Leitlinienreport Leitlinie 020-013"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-attachment"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-level-of-consensus"/>
+      </reference>
+      <name value="Level Of Consensus"/>
+      <description value="ValueSet listing values to define the level of consensus for a recommendation."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-level-of-consensus"/>
+      </reference>
+      <name value="Level of Consensus"/>
+      <description value="CodeSystem defining the values representing the level of consensus for a recommendation."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/medical-society"/>
+      </reference>
+      <name value="Medical Society"/>
+      <description value="A profile for medical societies."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/MedicalSocietyExample"/>
+      </reference>
+      <name value="Medical Society Example"/>
+      <description value="An example of a medical society."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/medical-society"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ext-medical-subject"/>
+      </reference>
+      <name value="Medical Subject"/>
+      <description value="An extension to specify medical subjects related to an organization."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-medical-subject-categories"/>
+      </reference>
+      <name value="Medical Subject Categories"/>
+      <description value="ValueSet listing values to classify medical subjects into different categories."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-medical-subject-categories"/>
+      </reference>
+      <name value="Medical Subject Categories"/>
+      <description value="CodeSystem defining values to classify medical subjects into different categories."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ext-medical-subject-category"/>
+      </reference>
+      <name value="Medical Subject Category"/>
+      <description value="An extension to specify medical subject category related to an organization."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/RecommendationMultiplexPCRDiagnostic"/>
+      </reference>
+      <name value="Multiplex-PCR-Diagnostik"/>
+      <description value="Wird der Einsatz von Multiplex-PCR im Rahmen der mikrobiologischen Diagnostik bei Patienten &#xA;mit Verdacht auf nosokomiale Pneumonie empfohlen?"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/CPAnet"/>
+      </reference>
+      <name value="Netzwerk chronisch pulmonale Aspergillose (CPAnet)"/>
+      <description value="Netzwerk chronisch pulmonale Aspergillose (CPAnet)"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-ocebm-2009-levels-of-evidence"/>
+      </reference>
+      <name value="OCEBM 2009 Levels of Evidence"/>
+      <description value="CodeSystem representing the Oxford Centre for Evidence-Based Medicine 2009 CEBM Levels of Evidence"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-ocebm-2009-levels-of-evidence"/>
+      </reference>
+      <name value="OCEBM 2009 Levels of Evidence Value Set"/>
+      <description value="ValueSet encompassing all levels from the Oxford Centre for Evidence-Based Medicine 2009 Levels of Evidence."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-ocebm-2011-levels-of-evidence"/>
+      </reference>
+      <name value="OCEBM 2011 Levels of Evidence"/>
+      <description value="CodeSystem representing the Oxford Centre for Evidence-Based Medicine 2011 Levels of Evidence."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ocebm-2011-levels-of-evidence-vs"/>
+      </reference>
+      <name value="OCEBM 2011 Levels of Evidence Value Set"/>
+      <description value="ValueSet encompassing all levels from the OCEBM 2011 Levels of Evidence."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="EvidenceVariable"/>
+      </extension>
+      <reference>
+        <reference value="EvidenceVariable/OutcomeAntibioticDays"/>
+      </reference>
+      <name value="Outcome Antibiotic Days"/>
+      <description value="Outcome Antibiotic Days"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/outcome-evidence"/>
+      </reference>
+      <name value="Outcome Evidence"/>
+      <description value="Represents evidence supporting a specific outcome within a body of clinical or scientific evidence."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="EvidenceVariable"/>
+      </extension>
+      <reference>
+        <reference value="EvidenceVariable/OutcomeMortality"/>
+      </reference>
+      <name value="Outcome Mortality"/>
+      <description value="Outcome Mortality"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="EvidenceVariable"/>
+      </extension>
+      <reference>
+        <reference value="EvidenceVariable/OutcomeTimeToDeescalation"/>
+      </reference>
+      <name value="Outcome Time to Deescalation"/>
+      <description value="Outcome Time to Deescalation"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/patient-organization"/>
+      </reference>
+      <name value="Patient Organization"/>
+      <description value="An organization that represents patients"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
+        <reference value="DocumentReference/Guideline-020-013-PatientVersion"/>
+      </reference>
+      <name value="Patienteninformation"/>
+      <description value="Patienteninformation Leitlinie 020-013"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-attachment"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/PEG"/>
+      </reference>
+      <name value="PEG"/>
+      <description value="Paul-Ehrlich-Gesellschaft für Infektionstherapie e.V. (PEG)"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Group"/>
+      </extension>
+      <reference>
+        <reference value="Group/PICOComparatorRec17"/>
+      </reference>
+      <name value="PICO Comparator of Recommendation 17 from Guideline 038-013"/>
+      <description value="Vergleichsintervention: Kein Test, Mini-Mental-Status-Test (Standard)"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-comparator"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Group"/>
+      </extension>
+      <reference>
+        <reference value="Group/PICOInterventionRec17"/>
+      </reference>
+      <name value="PICO Intervention of Recommendation 17 from Guideline 038-013"/>
+      <description value="Intervention: Verschiedene kognitive Kurztests"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-intervention"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Group"/>
+      </extension>
+      <reference>
+        <reference value="Group/PICOOutcomeSensitivityRec17"/>
+      </reference>
+      <name value="PICO Outcome Sensitivity of Recommendation 17 from Guideline 038-013"/>
+      <description value="Sensitivität für die Indikation einer Demenz"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-outcome"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Group"/>
+      </extension>
+      <reference>
+        <reference value="Group/PICOOutcomeSpecificityRec17"/>
+      </reference>
+      <name value="PICO Outcome Specificity of Recommendation 17 from Guideline 038-013"/>
+      <description value="Spezifizität für die Indikation einer Demenz"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-outcome"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Group"/>
+      </extension>
+      <reference>
+        <reference value="Group/PICOPopulationRec17"/>
+      </reference>
+      <name value="PICO Population of Recommendation 17 from Guideline 038-013"/>
+      <description value="Population: Menschen in nicht-spezialisierten Settings (z. B. Hausarztpraxis, Krankenhaus), die über die kognitive Störungen berichten oder bei denen eine kognitive Störung beobachtet wird"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-population"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/pico-question"/>
+      </reference>
+      <name value="PICO Question"/>
+      <description value="A structured definition of the PICO question in the context of guidelines and recommendations."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Group"/>
+      </extension>
+      <reference>
+        <reference value="Group/PICOQuestionRec17"/>
+      </reference>
+      <name value="PICO Question of Recommendation 17 from Guideline 038-013"/>
+      <description value="Schlüsselfrage: Sind Tests in nicht-spezialisierten Settings sinnvoll, um eine Demenz zu erkennen bei Personen, die kognitive Störungen berichten oder bei denen eine&#xA;kognitive Störung beobachtet wird und die einer solchen Untersuchung zustimmen?"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/pico-question"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-pico"/>
+      </reference>
+      <name value="PICO related terms"/>
+      <description value="ValueSet listing different terms related to PICO question and objects"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-pico"/>
+      </reference>
+      <name value="PICO Related Terms"/>
+      <description value="CodeSystem defining different terms related to PICO question and objects"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ext-planned-completion-date"/>
+      </reference>
+      <name value="Planned Completion Date"/>
+      <description value="This extension allows for the indication of the date when the guideline is planned to be completed."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ext-publication-date"/>
+      </reference>
+      <name value="Publication Date"/>
+      <description value="This extensions allows for the indication of the date when the guideline was published."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-rating-acceptability"/>
+      </reference>
+      <name value="Rating Acceptability"/>
+      <description value="ValueSet defining if the alternatives are acceptable for the target population and its implementors?"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-rating-benefits-and-harms"/>
+      </reference>
+      <name value="Rating Benefits And Harms"/>
+      <description value="ValueSet listing values to represent the summary of the most important benefits and harms"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-rating-certainty-of-evidence"/>
+      </reference>
+      <name value="Rating Certainty Of Evidence"/>
+      <description value="Codes from EvidenceCertaintyRating related to certainty of evidence"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-rating-concern-degree"/>
+      </reference>
+      <name value="Rating Concern Degree"/>
+      <description value="ValueSet listing codes from EvidenceCertaintyRating related to degree of concern"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-rating-equity"/>
+      </reference>
+      <name value="Rating Equity"/>
+      <description value="ValueSet listing values to represent how the different alternatives affect equity"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-rating-feasibility"/>
+      </reference>
+      <name value="Rating Feasibility"/>
+      <description value="ValueSet listing values to reprensent how feasible will it be to implement the different alternatives and if there are any issues"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-rating-preference-and-values"/>
+      </reference>
+      <name value="Rating Preference And Values"/>
+      <description value="ValueSet listing typical patient preferences and values as well as common issues or expected variability"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-rating-resources"/>
+      </reference>
+      <name value="Rating Resources"/>
+      <description value="ValueSet listing values to indicate if there are issues related to costs or resource use."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/recommendation"/>
+      </reference>
+      <name value="Recommendation"/>
+      <description value="Clinical Practice Guideline Recommendation"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-recommendation-direction"/>
+      </reference>
+      <name value="Recommendation Direction"/>
+      <description value="ValueSet defining the direction of a clinical recommendation."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-recommendation-direction"/>
+      </reference>
+      <name value="Recommendation Direction"/>
+      <description value="CodeSystem defining the direction of a clinical recommendation."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/RecommendationExample"/>
+      </reference>
+      <name value="Recommendation Example"/>
+      <description value="An example of a recommendation."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/recommendation-justification"/>
+      </reference>
+      <name value="Recommendation Justification"/>
+      <description value="A structured assessment of the evidence and consensus that underpins a recommendation."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/recommendation-justification-awmf"/>
+      </reference>
+      <name value="Recommendation Justification AWMF"/>
+      <description value="A structured assessment of the evidence and consensus that underpins a recommendation, including AWMF rating."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/recommendation-justification-expert-consensus"/>
+      </reference>
+      <name value="Recommendation Justification Expert Consensus"/>
+      <description value="A structured assessment of the evidence and consensus that underpins a recommendation based on expert consensus."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/recommendation-justification-grade"/>
+      </reference>
+      <name value="Recommendation Justification GRADE"/>
+      <description value="A structured assessment of the evidence and consensus that underpins a recommendation using the GRADE evidence rating system."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/recommendation-justification-oxford-2009"/>
+      </reference>
+      <name value="Recommendation Justification OXFORD 2009"/>
+      <description value="A structured assessment of the evidence and consensus that underpins a recommendation using the OXFORD 2009 evidence rating system."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/recommendation-justification-oxford-2011"/>
+      </reference>
+      <name value="Recommendation Justification OXFORD 2011"/>
+      <description value="A structured assessment of the evidence and consensus that underpins a recommendation using the OXFORD 2011 evidence rating system."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/recommendation-justification-sign"/>
+      </reference>
+      <name value="Recommendation Justification SIGN"/>
+      <description value="A structured assessment of the evidence and consensus that underpins a recommendation using the SIGN evidence rating system."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ext-recommendation-review-status"/>
+      </reference>
+      <name value="Recommendation Review Status"/>
+      <description value="This extension allows for the indication of the status of a recommendation in the context of an updated guideline version along with an optional explanatory text"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-recommendation-review-status"/>
+      </reference>
+      <name value="Recommendation Review Status Code System"/>
+      <description value="CodeSystem defining values indicating how a recommendation relates to a new revision of a recommendation"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-recommendation-review-status"/>
+      </reference>
+      <name value="Recommendation Review Status Value Set"/>
+      <description value="ValueSet representing the review-related status of a recommendation in a new guideline version"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-recommendation-strength-awmf"/>
+      </reference>
+      <name value="Recommendation Strength (AWMF)"/>
+      <description value="CodeSystem defining the grading of recommendations according to German guideline methodology as used in AWMF S3 guidelines."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-recommendation-strength-awmf"/>
+      </reference>
+      <name value="Recommendation Strength (AWMF) ValueSet"/>
+      <description value="ValueSet of strength of recommendations as defined in AWMF guideline methodology."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-recommendation-synthesis-type"/>
+      </reference>
+      <name value="Recommendation Synthesis Type"/>
+      <description value="ValueSet listing different synthesis Types of recommendations"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-recommendation-synthesis-type"/>
+      </reference>
+      <name value="Recommendation Synthesis Type"/>
+      <description value="CodeSystem defining values representing the synthesis type of a recommendation"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-recommendation-tags"/>
+      </reference>
+      <name value="Recommendation Tags"/>
+      <description value="ValueSet listing different tags to use for recommendations"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-recommendation-tags"/>
+      </reference>
+      <name value="Recommendation Tags"/>
+      <description value="CodeSystem defining codes to represent tags for recommendations"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PlanDefinition"/>
+      </extension>
+      <reference>
+        <reference value="PlanDefinition/Recommendation-PlanDefinition-example"/>
+      </reference>
+      <name value="Recommendation-PlanDefinition-example"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ArtifactAssessment"/>
+      </extension>
+      <reference>
+        <reference value="ArtifactAssessment/RecommendationCognitiveTestsWhenSuspectingDementia-Justification"/>
+      </reference>
+      <name value="RecommendationCognitiveTestsWhenSuspectingDementia-Justification"/>
+      <description value="Justification for Recommendation Cognitive Tests When Suspecting Dementia"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification-awmf"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ArtifactAssessment"/>
+      </extension>
+      <reference>
+        <reference value="ArtifactAssessment/RecommendationHAPDiagnosis-A-Justification"/>
+      </reference>
+      <name value="RecommendationHAPDiagnosis-A-Justification"/>
+      <description value="Justification for Recommendation HAP Diagnose A"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ArtifactAssessment"/>
+      </extension>
+      <reference>
+        <reference value="ArtifactAssessment/RecommendationHAPDiagnosis-B-Justification"/>
+      </reference>
+      <name value="RecommendationHAPDiagnosis-B-Justification"/>
+      <description value="Justification for Recommendation HAP Diagnose B"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ArtifactAssessment"/>
+      </extension>
+      <reference>
+        <reference value="ArtifactAssessment/RecommendationMultiplexPCRDiagnostic-Justification"/>
+      </reference>
+      <name value="RecommendationMultiplexPCRDiagnostic-Justification"/>
+      <description value="Justification for Recommendation Multiplex-PCR-Diagnostik"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ext-registration-date"/>
+      </reference>
+      <name value="Registration Date"/>
+      <description value="This extensions allows for the indication of the date the guideline project was registered."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-related-artifact-types"/>
+      </reference>
+      <name value="Related Artifact Types"/>
+      <description value="CodeSystem defining types of related artifacts that can be part of a guideline."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ext-relates-to-classifier"/>
+      </reference>
+      <name value="RelatesTo Classifier"/>
+      <description value="This extension defines a classification for the 'relatesTo' relationship using a CodeableConcept."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ext-relates-to-label"/>
+      </reference>
+      <name value="RelatesTo Label"/>
+      <description value="This extension defines a label for the 'relatesTo' relationship using a CodeableConcept."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-remark-type"/>
+      </reference>
+      <name value="Remark Type"/>
+      <description value="ValueSet listing types of remarks that can be associated with guidelines, including restrictions, warnings, and additional notes."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-remark-type"/>
+      </reference>
+      <name value="Remark Type"/>
+      <description value="CodeSystem defining different types of remarks that can be associated with guidelines, including restrictions, warnings, and additional notes."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-rob-2-overall-judgment"/>
+      </reference>
+      <name value="RoB2 Overall Judgment"/>
+      <description value="CodeSystem representing the overall judgment of risk of bias assessed by the RoB2 tool for evaluating risk of bias for randomized trials."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-rob-2-overall-judgment"/>
+      </reference>
+      <name value="RoB2 Overall Judgment ValueSet"/>
+      <description value="ValueSet listing values to represent the overall judgment of risk of bias assessed by the RoB2 tool for evaluating risk of bias for randomized trials."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/RKI"/>
+      </reference>
+      <name value="Robert Koch-Institut"/>
+      <description value="Robert Koch-Institut"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-robis-judgment-of-risk-of-bias"/>
+      </reference>
+      <name value="ROBIS Judgment of Risk of Bias"/>
+      <description value="CodeSystem representing the judgment of risk of bias assessed by the ROBIS tool for evaluating risk of bias in systematic reviews."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-robis-judgment-of-risk-of-bias"/>
+      </reference>
+      <name value="ROBIS Judgment of Risk of Bias Value Set"/>
+      <description value="ValueSet encompassing all risk of bias judgment values from the ROBIS tool."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-robis-risk-of-bias-domains"/>
+      </reference>
+      <name value="ROBIS Risk of Bias Domains"/>
+      <description value="CodeSystem representing the domains assessed by the ROBIS tool for evaluating risk of bias in systematic reviews."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-robis-risk-of-bias-domains"/>
+      </reference>
+      <name value="ROBIS Risk of Bias Domains Value Set"/>
+      <description value="ValueSet encompassing all risk of bias domains from the ROBIS tool."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/Demenzen"/>
+      </reference>
+      <name value="S3-Leitlinie Demenzen Living Guideline - Langfassung"/>
+      <description value="S3-Leitlinie Demenzen Living Guideline - Langfassung"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/DemenzenRecord"/>
+      </reference>
+      <name value="S3-Leitlinie Demenzen Living Guideline - Record"/>
+      <description value="S3-Leitlinie Demenzen Living Guideline - Record"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/NosokomialePneumonieRecord"/>
+      </reference>
+      <name value="S3-Leitlinie Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie"/>
+      <description value="S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/NosokomialePneumonie"/>
+      </reference>
+      <name value="S3-Leitlinie Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie"/>
+      <description value="S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/RecommendationCognitiveTestsWhenSuspectingDementia"/>
+      </reference>
+      <name value="Screening auf kognitive Beeinträchtigung"/>
+      <description value="Sind Tests in nicht-spezialisierten Settings sinnvoll, um eine Demenz zu erkennen bei Personen, die kognitive Störungen berichten oder bei denen eine&#xA;kognitive Störung beobachtet wird und die einer solchen Untersuchung zustimmen?"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ext-section-coding"/>
+      </reference>
+      <name value="Section Coding"/>
+      <description value="This extension allows for the assignment of a specific code to a section within a Composition resource. The code provides a standardized way to categorize or identify the content of the section, enabling better organization, searchability, and interoperability of clinical documents or other structured artifacts."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ext-section-intended-audience"/>
+      </reference>
+      <name value="Section Intended Audience"/>
+      <description value="This extension allows for the indication of the target audience for the section"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ext-section-keyword"/>
+      </reference>
+      <name value="Section Keyword"/>
+      <description value="This extension allows for the indication of keywords associated with the section"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ext-section-language"/>
+      </reference>
+      <name value="Section Language"/>
+      <description value="This extension allows for the indication of the Language of the Section."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-sign-grade-of-recommendation"/>
+      </reference>
+      <name value="SIGN Grade of Recommendation"/>
+      <description value="CodeSystem representing the Scottish Intercollegiate Guidelines Network (SIGN) Grades of Recommendation."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-sign-grade-of-recommendation"/>
+      </reference>
+      <name value="SIGN Grade of Recommendation Value Set"/>
+      <description value="ValueSet encompassing all grades of recommendation from the SIGN (Scottish Intercollegiate Guidelines Network) Grades of Recommendation."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-sign-level-of-evidence"/>
+      </reference>
+      <name value="SIGN Level of Evidence"/>
+      <description value="CodeSystem representing the Scottish Intercollegiate Guidelines Network (SIGN) Levels of Evidence."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-sign-level-of-evidence"/>
+      </reference>
+      <name value="SIGN Level of Evidence Value Set"/>
+      <description value="ValueSet encompassing all levels from the SIGN (Scottish Intercollegiate Guidelines Network) Levels of Evidence."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ext-submission-date"/>
+      </reference>
+      <name value="Submission Date"/>
+      <description value="This extension allows for the indication of the date when the guideline was submitted to the system."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-target-patient-group"/>
+      </reference>
+      <name value="Target Patient Group"/>
+      <description value="ValueSet listing patient population categories for guidelines, such as adults and children/adolescents."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-target-patient-group"/>
+      </reference>
+      <name value="Target Patient Group"/>
+      <description value="CodeSystem defining the intended patient population for whom the guideline is applicable."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/RR-TestTestInvAuthorLeadVsContrExclusive-Both-SHOULD-FAIL"/>
+      </reference>
+      <name value="Test: Author Both Leading and Contributing (Should Fail)"/>
+      <description value="Tests that author-leading-vs-contributing-exclusive fails when author has both roles."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/G-TestTestInvRequireOfficialIdentifier-NoOfficialId-SHOULD-FAIL"/>
+      </reference>
+      <name value="Test: No Official Identifier (Should Fail)"/>
+      <description value="Tests that inv-require-official-identifier fails when no official identifier is present."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/RR-TestTestInvRequireOfficialId-NoOfficialId-SHOULD-FAIL"/>
+      </reference>
+      <name value="Test: No Official Identifier (Should Fail)"/>
+      <description value="Tests that inv-require-official-identifier fails when no official identifier is present."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/RR-TestTestInvAuthorRegistSingleton-NoRegistrant-SHOULD-FAIL"/>
+      </reference>
+      <name value="Test: No Registrant Author (Should Fail)"/>
+      <description value="Tests that author-registrant-singleton fails when no registrant is present."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/RR-TestTestInvPreliminaryCompNeedsConsultPeriod-SHOULD-PASS"/>
+      </reference>
+      <name value="Test: Preliminary With Consultation Period (Should Pass)"/>
+      <description value="Tests that preliminary-composition-needs-consultation-period passes when period is present."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/RR-TestTestInvPrelimCompNeedsConsultPeriod-NoDate-SHOULD-FAIL"/>
+      </reference>
+      <name value="Test: Preliminary Without Consultation Period (Should Fail)"/>
+      <description value="Tests that preliminary-composition-needs-consultation-period fails when period is missing."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/RR-TestTestInvRegCompNeedsPlannedComplDate-SHOULD-PASS"/>
+      </reference>
+      <name value="Test: Registered With Planned Completion Date (Should Pass)"/>
+      <description value="Tests that registered-composition-needs-planned-completion-date passes when date is present."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/RR-TestTestInvRegCompNeedsPlannedComplDate-NoDate-SHOULD-FAIL"/>
+      </reference>
+      <name value="Test: Registered Without Planned Completion Date (Should Fail)"/>
+      <description value="Tests that registered-composition-needs-planned-completion-date fails when date is missing."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/RR-TestTestInvRequireReleaseTypeIfRegistered-SHOULD-PASS"/>
+      </reference>
+      <name value="Test: Release Type If Registered (Should Pass)"/>
+      <description value="Tests that inv-require-release-type-if-registered passes when release type is present."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/RR-TestTestInvRequireReleaseTypeIfRegistered-NoTag-SHOULD-FAIL"/>
+      </reference>
+      <name value="Test: Release Type No Tag (Should Fail)"/>
+      <description value="Tests that inv-require-release-type-if-registered fails when release type tag is missing."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/RR-TestTestInvRequireReleaseTypeIfReg-WrongCode-SHOULD-FAIL"/>
+      </reference>
+      <name value="Test: Release Type Wrong Code (Should Fail)"/>
+      <description value="Tests that inv-require-release-type-if-registered fails when release type code is invalid."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/RR-TestTestInvAuthorRegistrantSingleton-SHOULD-PASS"/>
+      </reference>
+      <name value="Test: Single Registrant Author (Should Pass)"/>
+      <description value="Tests that author-registrant-singleton passes when exactly one registrant is present."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/G-TestTestInvRequireOfficialIdentifier-TwoOfficialId-SHOULD-FAIL"/>
+      </reference>
+      <name value="Test: Two Official Identifiers (Should Fail)"/>
+      <description value="Tests that inv-require-official-identifier fails when two official identifiers are present."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/RR-TestTestInvRequireOfficialId-TwoOfficialId-SHOULD-FAIL"/>
+      </reference>
+      <name value="Test: Two Official Identifiers (Should Fail)"/>
+      <description value="Tests that inv-require-official-identifier fails when two official identifiers are present."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/RR-TestTestInvAuthorRegistSingleton-TwoRegistrants-SHOULD-FAIL"/>
+      </reference>
+      <name value="Test: Two Registrant Authors (Should Fail)"/>
+      <description value="Tests that author-registrant-singleton fails when two registrants are present."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/G-TestTestInvVersionMajorMinor-VersionInvalid2-SHOULD-FAIL"/>
+      </reference>
+      <name value="Test: Version as Text (Should Fail)"/>
+      <description value="Tests that inv-version-major-minor fails when version is text."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/RR-TestTestInvVersionMajorMinor-VersionInvalid2-SHOULD-FAIL"/>
+      </reference>
+      <name value="Test: Version as Text (Should Fail)"/>
+      <description value="Tests that inv-version-major-minor fails when version is text."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/G-TestTestInvVersionMajorMinor-VersionPatch-SHOULD-FAIL"/>
+      </reference>
+      <name value="Test: Version Major.Minor.Patch (Should Fail)"/>
+      <description value="Tests that inv-version-major-minor fails when version has three parts."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/RR-TestTestInvVersionMajorMinor-VersionPatch-SHOULD-FAIL"/>
+      </reference>
+      <name value="Test: Version Major.Minor.Patch (Should Fail)"/>
+      <description value="Tests that inv-version-major-minor fails when version has three parts."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/G-TestTestInvVersionMajorMinor-VersionInvalid-SHOULD-FAIL"/>
+      </reference>
+      <name value="Test: Version with Prefix (Should Fail)"/>
+      <description value="Tests that inv-version-major-minor fails when version has 'v' prefix."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/RR-TestTestInvVersionMajorMinor-VersionInvalid-SHOULD-FAIL"/>
+      </reference>
+      <name value="Test: Version with Prefix (Should Fail)"/>
+      <description value="Tests that inv-version-major-minor fails when version has 'v' prefix."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"/>
+    </resource>
+    <page>
+      <sourceUrl value="toc.html"/>
+      <name value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <sourceUrl value="index.html"/>
+        <name value="index.html"/>
+        <title value="DISSOLVE-E Implementation Guide"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="profiles.html"/>
+        <name value="profiles.html"/>
+        <title value="Profiles"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="extensions.html"/>
+        <name value="extensions.html"/>
+        <title value="Extensions"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="codesystems.html"/>
+        <name value="codesystems.html"/>
+        <title value="Code Systems"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="valuesets.html"/>
+        <name value="valuesets.html"/>
+        <title value="Value Sets"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="downloads.html"/>
+        <name value="downloads.html"/>
+        <title value="Downloads"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="examples.html"/>
+        <name value="examples.html"/>
+        <title value="Examples"/>
+        <generation value="markdown"/>
+      </page>
+    </page>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="copyrightyear"/>
+      </code>
+      <value value="2024+"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="releaselabel"/>
+      </code>
+      <value value="ci-build"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="autoload-resources"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/capabilities"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/examples"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/extensions"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/models"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/operations"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/profiles"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/resources"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/vocabulary"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/maps"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/testing"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/history"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="fsh-generated/resources"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-pages"/>
+      </code>
+      <value value="template/config"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-pages"/>
+      </code>
+      <value value="input/images"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-liquid"/>
+      </code>
+      <value value="template/liquid"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-liquid"/>
+      </code>
+      <value value="input/liquid"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-qa"/>
+      </code>
+      <value value="temp/qa"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-temp"/>
+      </code>
+      <value value="temp/pages"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-output"/>
+      </code>
+      <value value="output"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-tx-cache"/>
+      </code>
+      <value value="input-cache/txcache"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-suppressed-warnings"/>
+      </code>
+      <value value="input/ignoreWarnings.txt"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-history"/>
+      </code>
+      <value value="http://fhir.awmf.org/awmf.ig/history.html"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="template-html"/>
+      </code>
+      <value value="template-page.html"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="template-md"/>
+      </code>
+      <value value="template-page-md.html"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-contact"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-context"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-copyright"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-jurisdiction"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-license"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-publisher"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-version"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-wg"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="active-tables"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="fmm-definition"/>
+      </code>
+      <value value="http://hl7.org/fhir/versions.html#maturity"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="propagate-status"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="excludelogbinaryformat"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="tabbed-snapshots"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>

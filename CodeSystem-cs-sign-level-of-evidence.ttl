@@ -1,0 +1,321 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/CodeSystem/cs-sign-level-of-evidence> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cs-sign-level-of-evidence"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-sign-level-of-evidence</b></p><a name=\"cs-sign-level-of-evidence\"> </a><a name=\"hccs-sign-level-of-evidence\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-sign-level-of-evidence</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">1plusplus<a name=\"cs-sign-level-of-evidence-1plusplus\"> </a></td><td>1++</td><td>High-quality meta-analyses, systematic reviews of RCTs, or RCTs with a very low risk of bias.</td><td>1++</td></tr><tr><td style=\"white-space:nowrap\">1plus<a name=\"cs-sign-level-of-evidence-1plus\"> </a></td><td>1+</td><td>Well-conducted meta-analyses, systematic reviews, or RCTs with a low risk of bias.</td><td>1+</td></tr><tr><td style=\"white-space:nowrap\">1minus<a name=\"cs-sign-level-of-evidence-1minus\"> </a></td><td>1-</td><td>Meta-analyses, systematic reviews, or RCTs with a high risk of bias.</td><td>1-</td></tr><tr><td style=\"white-space:nowrap\">2plusplus<a name=\"cs-sign-level-of-evidence-2plusplus\"> </a></td><td>2++</td><td>High-quality systematic reviews of case-control or cohort studies, or high-quality case-control or cohort studies with a very low risk of confounding or bias and a high probability that the relationship is causal.</td><td>2++</td></tr><tr><td style=\"white-space:nowrap\">2plus<a name=\"cs-sign-level-of-evidence-2plus\"> </a></td><td>2+</td><td>Well-conducted case-control or cohort studies with a low risk of confounding or bias and a moderate probability that the relationship is causal.</td><td>2+</td></tr><tr><td style=\"white-space:nowrap\">2minus<a name=\"cs-sign-level-of-evidence-2minus\"> </a></td><td>2-</td><td>Case-control or cohort studies with a high risk of confounding or bias and a significant risk that the relationship is not causal.</td><td>2-</td></tr><tr><td style=\"white-space:nowrap\">3<a name=\"cs-sign-level-of-evidence-3\"> </a></td><td>3</td><td>Non-analytic studies, e.g., case reports, case series.</td><td>3</td></tr><tr><td style=\"white-space:nowrap\">4<a name=\"cs-sign-level-of-evidence-4\"> </a></td><td>4</td><td>Expert opinion.</td><td>4</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-sign-level-of-evidence"^^xsd:anyURI ;
+     fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-sign-level-of-evidence>
+  ] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:name [ fhir:v "SIGNLevelOfEvidence"] ; # 
+  fhir:title [ fhir:v "SIGN Level of Evidence"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-01-29T18:27:10+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "AWMF e.V."] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AWMF e.V." ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.awmf.org" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "CodeSystem representing the Scottish Intercollegiate Guidelines Network (SIGN) Levels of Evidence."] ; # 
+  fhir:caseSensitive [ fhir:v false] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "8"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "1plusplus" ] ;
+     fhir:display [ fhir:v "1++" ] ;
+     fhir:definition [
+       fhir:v "High-quality meta-analyses, systematic reviews of RCTs, or RCTs with a very low risk of bias." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Hochwertige Metaanalysen, systematische Reviews von RCTs oder RCTs mit sehr niedrigem Bias-Risiko."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "1++" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "1plus" ] ;
+     fhir:display [ fhir:v "1+" ] ;
+     fhir:definition [
+       fhir:v "Well-conducted meta-analyses, systematic reviews, or RCTs with a low risk of bias." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Gut durchgeführte Metaanalysen, systematische Reviews oder RCTs mit geringem Bias-Risiko."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "1+" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "1minus" ] ;
+     fhir:display [ fhir:v "1-" ] ;
+     fhir:definition [
+       fhir:v "Meta-analyses, systematic reviews, or RCTs with a high risk of bias." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Metaanalysen, systematische Reviews oder RCTs mit hohem Bias-Risiko."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "1-" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "2plusplus" ] ;
+     fhir:display [ fhir:v "2++" ] ;
+     fhir:definition [
+       fhir:v "High-quality systematic reviews of case-control or cohort studies, or high-quality case-control or cohort studies with a very low risk of confounding or bias and a high probability that the relationship is causal." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Hochwertige systematische Reviews von Fall-Kontroll- oder Kohortenstudien oder hochwertige Fall-Kontroll- oder Kohortenstudien mit sehr niedrigem Risiko für Confounding oder Bias."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "2++" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "2plus" ] ;
+     fhir:display [ fhir:v "2+" ] ;
+     fhir:definition [
+       fhir:v "Well-conducted case-control or cohort studies with a low risk of confounding or bias and a moderate probability that the relationship is causal." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Gut durchgeführte Fall-Kontroll- oder Kohortenstudien (nicht-randomisierte Studien) mit niedrigem Risiko für Confounding oder Bias."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "2+" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "2minus" ] ;
+     fhir:display [ fhir:v "2-" ] ;
+     fhir:definition [
+       fhir:v "Case-control or cohort studies with a high risk of confounding or bias and a significant risk that the relationship is not causal." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Fall-Kontroll- oder Kohortenstudien mit hohem Risiko für Confounding oder Bias."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "2-" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "3" ] ;
+     fhir:display [ fhir:v "3" ] ;
+     fhir:definition [
+       fhir:v "Non-analytic studies, e.g., case reports, case series." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Nicht-analytische Studien, z. B. Fallberichte, Fallserien."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "3" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "4" ] ;
+     fhir:display [ fhir:v "4" ] ;
+     fhir:definition [
+       fhir:v "Expert opinion." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Expertenmeinung."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "4" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

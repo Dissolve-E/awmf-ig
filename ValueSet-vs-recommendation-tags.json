@@ -1,0 +1,29 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "vs-recommendation-tags",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet vs-recommendation-tags</b></p><a name=\"vs-recommendation-tags\"> </a><a name=\"hcvs-recommendation-tags\"> </a><ul><li>Include all codes defined in <a href=\"CodeSystem-cs-recommendation-tags.html\"><code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-tags</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version &#x1F4E6;0.2.0</span></li></ul></div>"
+  },
+  "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-recommendation-tags",
+  "version" : "0.2.0",
+  "name" : "RecommendationTagsVS",
+  "title" : "Recommendation Tags",
+  "status" : "draft",
+  "experimental" : false,
+  "date" : "2026-01-29T18:27:10+00:00",
+  "publisher" : "AWMF e.V.",
+  "contact" : [{
+    "name" : "AWMF e.V.",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org"
+    }]
+  }],
+  "description" : "ValueSet listing different tags to use for recommendations",
+  "compose" : {
+    "include" : [{
+      "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-tags"
+    }]
+  }
+}

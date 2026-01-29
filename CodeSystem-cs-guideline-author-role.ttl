@@ -1,0 +1,356 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cs-guideline-author-role"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-guideline-author-role</b></p><a name=\"cs-guideline-author-role\"> </a><a name=\"hccs-guideline-author-role\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">leading<a name=\"cs-guideline-author-role-leading\"> </a></td><td>Leading</td><td>Main party responsible for the development of the guideline.</td><td>Federführend</td></tr><tr><td style=\"white-space:nowrap\">contributing<a name=\"cs-guideline-author-role-contributing\"> </a></td><td>Contributing</td><td>Party involved in the development of the guideline.</td><td>Beteiligt</td></tr><tr><td style=\"white-space:nowrap\">registrant<a name=\"cs-guideline-author-role-registrant\"> </a></td><td>Registrant</td><td>Person responsible for registering the guideline in the registry.</td><td>Anmelder*in</td></tr><tr><td style=\"white-space:nowrap\">technical-editor<a name=\"cs-guideline-author-role-technical-editor\"> </a></td><td>Technical Editor</td><td>Responsible for preparing the technical or machine-readable format of the guideline.</td><td>Technische Redaktion</td></tr><tr><td style=\"white-space:nowrap\">content-author<a name=\"cs-guideline-author-role-content-author\"> </a></td><td>Content Author</td><td>Authored or co-authored the content of the guideline.</td><td>Inhaltliche*r Autor*in</td></tr><tr><td style=\"white-space:nowrap\">coding-author<a name=\"cs-guideline-author-role-coding-author\"> </a></td><td>Coding Author</td><td>Responsible for semantic encoding of guideline content using terminologies or ontologies.</td><td>Kodierer*in</td></tr><tr><td style=\"white-space:nowrap\">moderator<a name=\"cs-guideline-author-role-moderator\"> </a></td><td>Moderator</td><td>Person moderating consensus-building sessions in guideline development.</td><td>Moderator*in</td></tr><tr><td style=\"white-space:nowrap\">method-advisor<a name=\"cs-guideline-author-role-method-advisor\"> </a></td><td>Methodological Advisor</td><td>Supports the development team with methodological expertise.</td><td>Methodische*r Berater*in</td></tr><tr><td style=\"white-space:nowrap\">evidence-analyst<a name=\"cs-guideline-author-role-evidence-analyst\"> </a></td><td>Evidence Analyst</td><td>Conducts or oversees evidence synthesis and appraisal.</td><td>Evidenzaufbereitung</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+     fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+  ] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:name [ fhir:v "GuidelineAuthorRoleCS"] ; # 
+  fhir:title [ fhir:v "Guideline Author Role"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-01-29T18:27:10+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "AWMF e.V."] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AWMF e.V." ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.awmf.org" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "CodeSystem defining roles for the author of the guideline."] ; # 
+  fhir:caseSensitive [ fhir:v false] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "9"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "leading" ] ;
+     fhir:display [ fhir:v "Leading" ] ;
+     fhir:definition [
+       fhir:v "Main party responsible for the development of the guideline." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Federführende Organisation oder Person für die Leitlinie."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Federführend" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "contributing" ] ;
+     fhir:display [ fhir:v "Contributing" ] ;
+     fhir:definition [
+       fhir:v "Party involved in the development of the guideline." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Organisation oder Person, die an der Leitlinie mitgewirkt hat."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Beteiligt" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "registrant" ] ;
+     fhir:display [ fhir:v "Registrant" ] ;
+     fhir:definition [
+       fhir:v "Person responsible for registering the guideline in the registry." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Die Person, die das Leitlinienprojekt im Register angemeldet hat."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Anmelder*in" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "technical-editor" ] ;
+     fhir:display [ fhir:v "Technical Editor" ] ;
+     fhir:definition [
+       fhir:v "Responsible for preparing the technical or machine-readable format of the guideline." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Verantwortlich für die technische oder maschinenlesbare Formatierung der Leitlinie."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Technische Redaktion" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "content-author" ] ;
+     fhir:display [ fhir:v "Content Author" ] ;
+     fhir:definition [
+       fhir:v "Authored or co-authored the content of the guideline." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Autor*in der Inhalte der Leitlinie."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Inhaltliche*r Autor*in" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "coding-author" ] ;
+     fhir:display [ fhir:v "Coding Author" ] ;
+     fhir:definition [
+       fhir:v "Responsible for semantic encoding of guideline content using terminologies or ontologies." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Verantwortlich für die semantische Kodierung der Leitlinie mittels Terminologien oder Ontologien."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Kodierer*in" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "moderator" ] ;
+     fhir:display [ fhir:v "Moderator" ] ;
+     fhir:definition [
+       fhir:v "Person moderating consensus-building sessions in guideline development." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Moderiert den Konsensprozess während der Leitlinienentwicklung."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Moderator*in" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "method-advisor" ] ;
+     fhir:display [ fhir:v "Methodological Advisor" ] ;
+     fhir:definition [
+       fhir:v "Supports the development team with methodological expertise." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Bietet methodische Beratung zur Leitlinienentwicklung."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Methodische*r Berater*in" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "evidence-analyst" ] ;
+     fhir:display [ fhir:v "Evidence Analyst" ] ;
+     fhir:definition [
+       fhir:v "Conducts or oversees evidence synthesis and appraisal." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Verantwortlich für die Recherche, Bewertung und Aufbereitung der Evidenz."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Evidenzaufbereitung" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

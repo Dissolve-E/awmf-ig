@@ -1,0 +1,251 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/CodeSystem/cs-clinical-application-type> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cs-clinical-application-type"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-clinical-application-type</b></p><a name=\"cs-clinical-application-type\"> </a><a name=\"hccs-clinical-application-type\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-clinical-application-type</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">diagnostic<a name=\"cs-clinical-application-type-diagnostic\"> </a></td><td>Diagnostic</td><td>Diagnostic</td><td>Diagnostisch</td></tr><tr><td style=\"white-space:nowrap\">therapeutic<a name=\"cs-clinical-application-type-therapeutic\"> </a></td><td>Therapeutic</td><td>Therapeutic</td><td>Therapeutisch</td></tr><tr><td style=\"white-space:nowrap\">prognostic<a name=\"cs-clinical-application-type-prognostic\"> </a></td><td>Prognostic</td><td>Prognostic</td><td>Prognostisch</td></tr><tr><td style=\"white-space:nowrap\">monitoring<a name=\"cs-clinical-application-type-monitoring\"> </a></td><td>Monitoring</td><td>Monitoring</td><td>Monitoring</td></tr><tr><td style=\"white-space:nowrap\">screening<a name=\"cs-clinical-application-type-screening\"> </a></td><td>Screening</td><td>Screening</td><td>Screening</td></tr><tr><td style=\"white-space:nowrap\">preventive<a name=\"cs-clinical-application-type-preventive\"> </a></td><td>Preventive</td><td>Preventive</td><td>Präventiv</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-clinical-application-type"^^xsd:anyURI ;
+     fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-clinical-application-type>
+  ] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:name [ fhir:v "ClinicalApplicationTypeCS"] ; # 
+  fhir:title [ fhir:v "Clinical Application Type"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-01-29T18:27:10+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "AWMF e.V."] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AWMF e.V." ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.awmf.org" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "CodeSystem defining different clinical application types"] ; # 
+  fhir:caseSensitive [ fhir:v false] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "6"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "diagnostic" ] ;
+     fhir:display [ fhir:v "Diagnostic" ] ;
+     fhir:definition [
+       fhir:v "Diagnostic" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Diagnostisch"
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Diagnostisch" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "therapeutic" ] ;
+     fhir:display [ fhir:v "Therapeutic" ] ;
+     fhir:definition [
+       fhir:v "Therapeutic" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Therapeutisch"
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Therapeutisch" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "prognostic" ] ;
+     fhir:display [ fhir:v "Prognostic" ] ;
+     fhir:definition [
+       fhir:v "Prognostic" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Prognostisch"
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Prognostisch" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "monitoring" ] ;
+     fhir:display [ fhir:v "Monitoring" ] ;
+     fhir:definition [
+       fhir:v "Monitoring" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Monitoring"
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Monitoring" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "screening" ] ;
+     fhir:display [ fhir:v "Screening" ] ;
+     fhir:definition [
+       fhir:v "Screening" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Screening"
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Screening" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "preventive" ] ;
+     fhir:display [ fhir:v "Preventive" ] ;
+     fhir:definition [
+       fhir:v "Preventive" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Präventiv"
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Präventiv" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

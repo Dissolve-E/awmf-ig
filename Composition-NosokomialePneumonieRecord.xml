@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Composition xmlns="http://hl7.org/fhir">
+  <id value="NosokomialePneumonieRecord"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie</div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/artifact-extended-contact-detail">
+    <valueExtendedContactDetail>
+      <purpose>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-contact-point"/>
+          <code value="contact"/>
+        </coding>
+      </purpose>
+      <name>
+        <text value="PD Dr. med. Jessica Rademacher"/>
+      </name>
+      <telecom>
+        <system value="email"/>
+        <value value="Rademacher.Jessica@mh-hannover.de"/>
+      </telecom>
+      <telecom>
+        <system value="phone"/>
+        <value value="0511-532 9735"/>
+      </telecom>
+      <address>
+        <use value="work"/>
+        <line value="Klinik für Pneumologie"/>
+        <line value="Medizinische Hochschule Hannover"/>
+        <city value="Hannover"/>
+        <postalCode value="30625"/>
+      </address>
+    </valueExtendedContactDetail>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/artifact-extended-contact-detail">
+    <valueExtendedContactDetail>
+      <purpose>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-contact-point"/>
+          <code value="coordinator"/>
+        </coding>
+      </purpose>
+      <name>
+        <text value="PD Dr. med. Jessica Rademacher"/>
+      </name>
+      <telecom>
+        <system value="email"/>
+        <value value="Rademacher.Jessica@mh-hannover.de"/>
+      </telecom>
+      <telecom>
+        <system value="phone"/>
+        <value value="0511-532 9735"/>
+      </telecom>
+      <address>
+        <use value="work"/>
+        <line value="Klinik für Pneumologie"/>
+        <line value="Medizinische Hochschule Hannover"/>
+        <city value="Hannover"/>
+        <postalCode value="30625"/>
+      </address>
+    </valueExtendedContactDetail>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/artifact-lastReviewDate">
+    <valueDate value="2024-03-01"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/artifact-publicationDate">
+    <valueDate value="2024-03-22"/>
+  </extension>
+  <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-first-publication-date">
+    <valueDate value="2012-11-16"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/artifact-effectivePeriod">
+    <valuePeriod>
+      <end value="2029-02-28"/>
+    </valuePeriod>
+  </extension>
+  <identifier>
+    <use value="official"/>
+    <system value="http://fhir.awmf.org/guidelines"/>
+    <value value="020-013"/>
+  </identifier>
+  <version value="3.0"/>
+  <status value="final"/>
+  <type>
+    <coding>
+      <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"/>
+      <code value="guideline-registry-record"/>
+      <display value="Guideline Registry Record"/>
+    </coding>
+  </type>
+  <category>
+    <coding>
+      <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-class"/>
+      <code value="S3"/>
+      <display value="Evidence- and consensus-based guideline"/>
+    </coding>
+  </category>
+  <date value="2025-02-13"/>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="leading"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="registrant"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/DGP"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="contributing"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/DGAI"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="contributing"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/DGI"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="contributing"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/DGHM"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="contributing"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/PEG"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="contributing"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/DRG"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="contributing"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/GFV"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="contributing"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/DGCH"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="contributing"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/DGIM"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="contributing"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/DGIIN"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="contributing"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/DSG"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="contributing"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/CPAnet"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="contributing"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/RKI"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="content-author"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="PractitionerRole/JessicaRademacherDGPFor020-013"/>
+  </author>
+  <title value="Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie"/>
+  <note>
+    <extension url="http://hl7.org/fhir/StructureDefinition/annotationType">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-remark-type"/>
+          <code value="note"/>
+          <display value="Note"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <text value="Das dieser Veröffentlichung zugrundliegende Projekt wurde mit Mitteln des Innovationsausschusses beim Gemeinsamen Bundesausschuss unter dem Förderkennzeichen gefördert: 01VSF22007"/>
+  </note>
+  <attester>
+    <mode>
+      <coding>
+        <system value="http://hl7.org/fhir/composition-attestation-mode"/>
+        <code value="official"/>
+      </coding>
+    </mode>
+    <party>
+      <reference value="Organization/AWMF"/>
+    </party>
+  </attester>
+  <relatesTo>
+    <extension url="http://hl7.org/fhir/StructureDefinition/relatesto-classifier">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types"/>
+          <code value="related-guideline"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-relates-to-label">
+      <valueString value="Behandlung von erwachsenen Patienten mit ambulant erworbener Pneumonie"/>
+    </extension>
+    <type value="similar-to"/>
+    <targetUri value="https://www.awmf.org/leitlinien/detail/ll/020-020.html"/>
+  </relatesTo>
+  <relatesTo>
+    <extension url="http://hl7.org/fhir/StructureDefinition/relatesto-classifier">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types"/>
+          <code value="related-guideline"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-relates-to-label">
+      <valueString value="Diagnostik und Therapie von erwachsenen Patienten mit Husten"/>
+    </extension>
+    <type value="similar-to"/>
+    <targetUri value="https://www.awmf.org/leitlinien/detail/ll/020-003.html"/>
+  </relatesTo>
+  <relatesTo>
+    <extension url="http://hl7.org/fhir/StructureDefinition/relatesto-classifier">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types"/>
+          <code value="related-guideline"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-relates-to-label">
+      <valueString value="Prolongiertes Weaning"/>
+    </extension>
+    <type value="similar-to"/>
+    <targetUri value="https://www.awmf.org/leitlinien/detail/ll/020-015.html"/>
+  </relatesTo>
+  <relatesTo>
+    <extension url="http://hl7.org/fhir/StructureDefinition/relatesto-classifier">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types"/>
+          <code value="related-guideline"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-relates-to-label">
+      <valueString value="Management der ambulant erworbenen Pneumonie bei Kindern und Jugendlichen (pCAP)"/>
+    </extension>
+    <type value="similar-to"/>
+    <targetUri value="https://www.awmf.org/leitlinien/detail/ll/048-013.html"/>
+  </relatesTo>
+  <relatesTo>
+    <extension url="http://hl7.org/fhir/StructureDefinition/relatesto-classifier">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types"/>
+          <code value="awmf-detail-page"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <type value="documentation"/>
+    <targetUri value="https://register.awmf.org/de/leitlinien/detail/020-013"/>
+  </relatesTo>
+  <section>
+    <code>
+      <coding>
+        <system value="https://fevir.net/resources/CodeSystem/179423"/>
+        <code value="summary"/>
+        <display value="Summary"/>
+      </coding>
+    </code>
+    <section>
+      <code>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+          <code value="intention"/>
+          <display value="Intention"/>
+        </coding>
+      </code>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+          <valueCode value="de"/>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="language"/>
+            <display value="Language"/>
+          </coding>
+        </code>
+        <text>
+          <status value="additional"/><div xmlns="http://www.w3.org/1999/xhtml">Darstellung und Standardisierung der Diagnostik und Therapie der nosokomialen Pneumonie auf der Basis des aktuellen wissen-schaftlichen Kenntnisstandes für die Sicherstellung einer Evidenz-basierten und optimalen Versorgung von Patienten.</div>
+        </text>
+      </section>
+    </section>
+    <section>
+      <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-coding">
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-target-patient-group"/>
+            <code value="adults"/>
+            <display value="Adults"/>
+          </coding>
+        </valueCodeableConcept>
+      </extension>
+      <code>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+          <code value="target-patient-group"/>
+          <display value="Target Patient Group"/>
+        </coding>
+      </code>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+          <valueCode value="de"/>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="language"/>
+            <display value="Language"/>
+          </coding>
+        </code>
+        <text>
+          <status value="additional"/><div xmlns="http://www.w3.org/1999/xhtml">Erwachsene</div>
+        </text>
+      </section>
+    </section>
+    <section>
+      <code>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+          <code value="care-setting"/>
+          <display value="Care Setting"/>
+        </coding>
+      </code>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-coding">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting"/>
+              <code value="inpatient"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="encounter-type"/>
+            <display value="Encounter Type"/>
+          </coding>
+        </code>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="de"/>
+          </extension>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="additional"/><div xmlns="http://www.w3.org/1999/xhtml">stationär</div>
+          </text>
+        </section>
+      </section>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-coding">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting"/>
+              <code value="diagnosis"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-coding">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting"/>
+              <code value="therapy"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="care-stage"/>
+            <display value="Care Stage"/>
+          </coding>
+        </code>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="de"/>
+          </extension>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="additional"/><div xmlns="http://www.w3.org/1999/xhtml">Diagnostik, Therapie</div>
+          </text>
+        </section>
+      </section>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-coding">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting"/>
+              <code value="specialized-care"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="care-level"/>
+            <display value="Care Level"/>
+          </coding>
+        </code>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="de"/>
+          </extension>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="additional"/><div xmlns="http://www.w3.org/1999/xhtml">spezialärztliche Versorgung</div>
+          </text>
+        </section>
+      </section>
+    </section>
+    <section>
+      <code>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+          <code value="topic-selection-reason"/>
+          <display value="Topic Selection Reason"/>
+        </coding>
+      </code>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+          <valueCode value="de"/>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="language"/>
+            <display value="Language"/>
+          </coding>
+        </code>
+        <text>
+          <status value="additional"/><div xmlns="http://www.w3.org/1999/xhtml">Die nosokomiale Pneumonie ist in Deutschland eine häufige hospitalerworbene Infektion, die mit einer hohen Morbidität und Mortalität einhergeht. Diagnostik und Therapie stellen hohe Ansprüche an die behandelnden Ärzte, die häufig interdisziplinär gelöst werden müssen. Das therapeutische Vorgehen hat erheblichen Einfluss auf die Entwicklung von Antibiotikaresistenzen bei den ursächlichen Erregern. Revision der bestehenden Leitlinie wurde erforderlich, da die Empfehlungen zur Standardisierung und Qualitätssicherung der Diagnostik und Therapie bei erwachsenen Patienten mit nosokomialen Pneumonien auf den aktuellsten Forschungsergebnissen angepasst werden müssen.</div>
+        </text>
+      </section>
+    </section>
+    <section>
+      <code>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+          <code value="target-audience"/>
+          <display value="Target Audience"/>
+        </coding>
+      </code>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+          <valueCode value="de"/>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="language"/>
+            <display value="Language"/>
+          </coding>
+        </code>
+        <text>
+          <status value="additional"/><div xmlns="http://www.w3.org/1999/xhtml">Die Leitlinie wendet sich an alle im Krankenhaus tätigen Ärzte, die mit der Diagnostik und Therapie nosokomialer Pneumonien konfrontiert sind. Hierzu gehören Fachärzte für Anästhesiologie, Chirurgie, Innere Medizin, Intensivmedizin, Klinische Infektiologie, Klinische Mikrobiologie, Hygiene, Pneumologie, Virologie, und Radiologie, aber auch Ärzten anderer Fachgebiete, die Patienten mit nosokomialen Infektionen betreuen. Zugleich soll sie als Orientierung für Personen, Organisationen, Kostenträger sowie medizinisch-wissenschaftliche Fachgesellschaften und Berufsverbände dienen, die direkt oder indirekt mit diesem Thema in Verbindung stehen.</div>
+        </text>
+      </section>
+    </section>
+    <section>
+      <code>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+          <code value="keywords"/>
+          <display value="Keywords"/>
+        </coding>
+      </code>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+          <valueCode value="de"/>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="language"/>
+            <display value="Language"/>
+          </coding>
+        </code>
+        <text>
+          <status value="additional"/><div xmlns="http://www.w3.org/1999/xhtml">Pneumonie, nosokomial, hospital-acquired pneumonia, HAP, Ventilator-assoziierten Pneumonie, VAP, im Krankenhaus erworbene Lungenentzündung, Epidemiology, diagnosis and treatment of adult patients with nosocomial pneumonia</div>
+        </text>
+      </section>
+    </section>
+  </section>
+  <section>
+    <code>
+      <coding>
+        <system value="https://fevir.net/resources/CodeSystem/179423"/>
+        <code value="attachments"/>
+        <display value="Attachments"/>
+      </coding>
+    </code>
+    <section>
+      <code>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+          <code value="long-version"/>
+          <display value="Long Version"/>
+        </coding>
+      </code>
+      <entry>
+        <reference value="DocumentReference/Guideline-020-013-LongVersion"/>
+      </entry>
+    </section>
+    <section>
+      <code>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+          <code value="short-version"/>
+          <display value="Short Version"/>
+        </coding>
+      </code>
+      <entry>
+        <reference value="DocumentReference/Guideline-020-013-ShortVersion"/>
+      </entry>
+    </section>
+    <section>
+      <code>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+          <code value="guideline-report"/>
+          <display value="Guideline Report"/>
+        </coding>
+      </code>
+      <entry>
+        <reference value="DocumentReference/Guideline-020-013-GuidelineReport"/>
+      </entry>
+    </section>
+    <section>
+      <code>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+          <code value="patient-version"/>
+          <display value="Patient Version"/>
+        </coding>
+      </code>
+      <entry>
+        <reference value="DocumentReference/Guideline-020-013-PatientVersion"/>
+      </entry>
+    </section>
+    <section>
+      <code>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+          <code value="slide-deck"/>
+        </coding>
+      </code>
+      <entry>
+        <reference value="DocumentReference/Guideline-020-013-SlideDeck"/>
+      </entry>
+    </section>
+    <section>
+      <code>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+          <code value="implementation-guidance"/>
+        </coding>
+      </code>
+      <entry>
+        <reference value="DocumentReference/Guideline-020-013-ImplementationGuidance"/>
+      </entry>
+    </section>
+  </section>
+</Composition>

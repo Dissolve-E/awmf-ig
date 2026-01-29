@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-ocebm-2009-levels-of-evidence"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-ocebm-2009-levels-of-evidence</b></p><a name="cs-ocebm-2009-levels-of-evidence"> </a><a name="hccs-ocebm-2009-levels-of-evidence"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-ocebm-2009-levels-of-evidence</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style="white-space:nowrap">1a<a name="cs-ocebm-2009-levels-of-evidence-1a"> </a></td><td>Systematic reviews of high-quality RCTs</td><td>1a</td></tr><tr><td style="white-space:nowrap">1b<a name="cs-ocebm-2009-levels-of-evidence-1b"> </a></td><td>Individual RCT (with narrow confidence interval)</td><td>1b</td></tr><tr><td style="white-space:nowrap">1c<a name="cs-ocebm-2009-levels-of-evidence-1c"> </a></td><td>All or none RCTs</td><td>1c</td></tr><tr><td style="white-space:nowrap">2a<a name="cs-ocebm-2009-levels-of-evidence-2a"> </a></td><td>Systematic reviews of cohort studies</td><td>2a</td></tr><tr><td style="white-space:nowrap">2b<a name="cs-ocebm-2009-levels-of-evidence-2b"> </a></td><td>Individual cohort study or low-quality RCT</td><td>2b</td></tr><tr><td style="white-space:nowrap">2c<a name="cs-ocebm-2009-levels-of-evidence-2c"> </a></td><td>Outcomes research; ecological studies</td><td>2c</td></tr><tr><td style="white-space:nowrap">3a<a name="cs-ocebm-2009-levels-of-evidence-3a"> </a></td><td>Systematic reviews of case-control studies</td><td>3a</td></tr><tr><td style="white-space:nowrap">3b<a name="cs-ocebm-2009-levels-of-evidence-3b"> </a></td><td>Individual case-control study</td><td>3b</td></tr><tr><td style="white-space:nowrap">4<a name="cs-ocebm-2009-levels-of-evidence-4"> </a></td><td>Case series</td><td>4</td></tr><tr><td style="white-space:nowrap">5<a name="cs-ocebm-2009-levels-of-evidence-5"> </a></td><td>Expert opinion</td><td>5</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-ocebm-2009-levels-of-evidence"/>
+  <version value="0.2.0"/>
+  <name value="OCEBM2009LevelsOfEvidence"/>
+  <title value="OCEBM 2009 Levels of Evidence"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem representing the Oxford Centre for Evidence-Based Medicine 2009 CEBM Levels of Evidence"/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="10"/>
+  <concept>
+    <code value="1a"/>
+    <display value="1a"/>
+    <definition value="Systematic reviews of high-quality RCTs">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Systematische Reviews hochwertiger RCTs"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="1a"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="1b"/>
+    <display value="1b"/>
+    <definition value="Individual RCT (with narrow confidence interval)">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Einzelne randomisierte kontrollierte Studien (mit engem Konfidenzintervall)"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="1b"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="1c"/>
+    <display value="1c"/>
+    <definition value="All or none RCTs">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Alle oder keine randomisierten kontrollierten Studien"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="1c"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="2a"/>
+    <display value="2a"/>
+    <definition value="Systematic reviews of cohort studies">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Systematische Reviews von Kohortenstudien"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="2a"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="2b"/>
+    <display value="2b"/>
+    <definition value="Individual cohort study or low-quality RCT">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Individuelle Kohortenstudie oder randomisierte kontrollierte Studien mit niedriger Qualität"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="2b"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="2c"/>
+    <display value="2c"/>
+    <definition value="Outcomes research; ecological studies">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Outcomes-Forschung; ökologische Studien"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="2c"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="3a"/>
+    <display value="3a"/>
+    <definition value="Systematic reviews of case-control studies">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Systematische Überprüfung von Fall-Kontroll-Studien"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="3a"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="3b"/>
+    <display value="3b"/>
+    <definition value="Individual case-control study">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Einzelne Fall-Kontroll-Studie"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="3b"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="4"/>
+    <display value="4"/>
+    <definition value="Case series">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Fallserie"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="4"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="5"/>
+    <display value="5"/>
+    <definition value="Expert opinion">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Expertenmeinung"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="5"/>
+    </designation>
+  </concept>
+</CodeSystem>

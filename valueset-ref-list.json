@@ -1,0 +1,587 @@
+{
+  "codeSystems" : [
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/ocebm-2011-levels-of-evidence-vs",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "OCEBM2011LevelsOfEvidenceVS",
+      "title" : "OCEBM 2011 Levels of Evidence Value Set",
+      "description" : "ValueSet encompassing all levels from the OCEBM 2011 Levels of Evidence.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-ocebm-2011-levels-of-evidence"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification-oxford-2011.html" : "Recommendation Justification OXFORD 2011"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-agree-ii-domains",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "AGREEIIDomainsVS",
+      "title" : "AGREE II Domains Value Set",
+      "description" : "ValueSet encompassing all domains from the AGREE II instrument.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-agree-ii-domains"
+      ]
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-amstar2-confidence-ratings",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "AMSTAR2ConfidenceRatingsVS",
+      "title" : "AMSTAR 2 Confidence Ratings Value Set",
+      "description" : "ValueSet encompassing all overall confidence ratings from the AMSTAR 2 critical appraisal tool.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-amstar2-confidence-ratings"
+      ]
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-awmf-guideline-class",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "AWMFGuidelineClassVS",
+      "title" : "AWMF Guideline Class",
+      "description" : "ValueSet listing values representing guideline classes according to the AWMF.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-class"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-awmf-guideline-status",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "AWMFGuidelineStatusVS",
+      "title" : "AWMF Guideline Status",
+      "description" : "ValueSet listing values to define the guideline status according to the AWMF.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-status"
+      ]
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-body-system-conditions",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "BodySystemConditionsVS",
+      "title" : "Body System Conditions",
+      "description" : "ValueSet listing various body system conditions",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-body-systems-conditions"
+      ]
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-care-level",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "CareLevelVS",
+      "title" : "Care Level",
+      "description" : "ValueSet listing levels of care.",
+      "systems" : ["http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting"],
+      "uses" : {
+      },
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-care-stage",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "CareStageVS",
+      "title" : "Care Stage",
+      "description" : "ValueSet listing stages of care from prevention to rehabilitation.",
+      "systems" : ["http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting"],
+      "uses" : {
+      },
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-clinical-application-type",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "ClinicalApplicationTypeVS",
+      "title" : "Clinical Application Type",
+      "description" : "ValueSet listing different clinical application types",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-clinical-application-type"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation.html" : "Recommendation"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-content-types",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "ContentTypesVS",
+      "title" : "Content Types",
+      "description" : "ValueSet listing types of content that can be part of a guideline or recommendation.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-guideline-attachment.html" : "Guideline Attachment",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record",
+      "StructureDefinition-recommendation.html" : "Recommendation"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-dissemination-website",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "DisseminationWebsite",
+      "title" : "Dissemination Website",
+      "description" : "ValueSet listing types of dissemination websites",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-encounter-type",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "EncounterTypeVS",
+      "title" : "Encounter Type",
+      "description" : "ValueSet listing types of patient encounters based on hospitalization status.",
+      "systems" : ["http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting"],
+      "uses" : {
+      },
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-guideline-author-role",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "GuidelineAuthorRoleVS",
+      "title" : "Guideline Author Role",
+      "description" : "ValueSet listing roles that a author can have in a guideline.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-ext-guideline-author-role.html" : "Guideline Author Role"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-guideline-contact-point",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "GuidelineContactPointVS",
+      "title" : "Guideline Contact Point VS",
+      "description" : "ValueSet listing contact points relevant to guidelines, such as registrants, coordinators, and main contacts.",
+      "systems" : ["http://fhir.awmf.org/awmf.ig/CodeSystem/cs-contact-point"]
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-guideline-release-type",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "GuidelinesReleaseTypeVS",
+      "title" : "Guideline Release Type",
+      "description" : "ValueSet listing different guideline release types",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-release-type"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-guideline-sections",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "GuidelineSectionsVS",
+      "title" : "Guideline Sections",
+      "description" : "ValueSet listing values to use to define guideline sections",
+      "systems" : [
+        "https://fevir.net/resources/CodeSystem/179423",
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline.html" : "Guideline",
+      "StructureDefinition-recommendation.html" : "Recommendation"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-intended-audience",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "IntendedAudienceVS",
+      "title" : "Intended Audience Value Set",
+      "description" : "ValueSet listing codes representing intended audiences for a section",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-intended-audience"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-ext-section-intended-audience.html" : "Section Intended Audience"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-level-of-consensus",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "LevelOfConsensusVS",
+      "title" : "Level Of Consensus",
+      "description" : "ValueSet listing values to define the level of consensus for a recommendation.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-level-of-consensus"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification.html" : "Recommendation Justification"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-medical-subject-categories",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "MedicalSubjectCategoriesVS",
+      "title" : "Medical Subject Categories",
+      "description" : "ValueSet listing values to classify medical subjects into different categories.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-medical-subject-categories"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-ext-medical-subject-category.html" : "Medical Subject Category"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-ocebm-2009-levels-of-evidence",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "OCEBM2009LevelsOfEvidenceVS",
+      "title" : "OCEBM 2009 Levels of Evidence Value Set",
+      "description" : "ValueSet encompassing all levels from the Oxford Centre for Evidence-Based Medicine 2009 Levels of Evidence.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-ocebm-2009-levels-of-evidence"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification-oxford-2009.html" : "Recommendation Justification OXFORD 2009"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-pico",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "PICOVS",
+      "title" : "PICO related terms",
+      "description" : "ValueSet listing different terms related to PICO question and objects",
+      "systems" : ["http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico"]
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rating-acceptability",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RatingAcceptability",
+      "title" : "Rating Acceptability",
+      "description" : "ValueSet defining if the alternatives are acceptable for the target population and its implementors?",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-to-decision-certainty-rating"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification-grade.html" : "Recommendation Justification GRADE"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rating-benefits-and-harms",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RatingBenefitAndHarms",
+      "title" : "Rating Benefits And Harms",
+      "description" : "ValueSet listing values to represent the summary of the most important benefits and harms",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-to-decision-certainty-rating"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification-grade.html" : "Recommendation Justification GRADE"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rating-certainty-of-evidence",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RatingCertaintyofEvidence",
+      "title" : "Rating Certainty Of Evidence",
+      "description" : "Codes from EvidenceCertaintyRating related to certainty of evidence",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/certainty-rating"],
+      "uses" : {
+      },
+      "StructureDefinition-evidence-overall-assessment-grade.html" : "Evidence Overall Assessment GRADE",
+      "StructureDefinition-recommendation-justification-grade.html" : "Recommendation Justification GRADE"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rating-concern-degree",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RatingConcernDegree",
+      "title" : "Rating Concern Degree",
+      "description" : "ValueSet listing codes from EvidenceCertaintyRating related to degree of concern",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/certainty-rating"]
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rating-equity",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RatingEquity",
+      "title" : "Rating Equity",
+      "description" : "ValueSet listing values to represent how the different alternatives affect equity",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-to-decision-certainty-rating"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification-grade.html" : "Recommendation Justification GRADE"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rating-feasibility",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RatingFeasibility",
+      "title" : "Rating Feasibility",
+      "description" : "ValueSet listing values to reprensent how feasible will it be to implement the different alternatives and if there are any issues",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-to-decision-certainty-rating"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification-grade.html" : "Recommendation Justification GRADE"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rating-preference-and-values",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RatingPreferenceAndValues",
+      "title" : "Rating Preference And Values",
+      "description" : "ValueSet listing typical patient preferences and values as well as common issues or expected variability",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-to-decision-certainty-rating"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification-grade.html" : "Recommendation Justification GRADE"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rating-resources",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RatingResources",
+      "title" : "Rating Resources",
+      "description" : "ValueSet listing values to indicate if there are issues related to costs or resource use.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-to-decision-certainty-rating"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification-grade.html" : "Recommendation Justification GRADE"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-recommendation-direction",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RecommendationDirectionVS",
+      "title" : "Recommendation Direction",
+      "description" : "ValueSet defining the direction of a clinical recommendation.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-direction"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification.html" : "Recommendation Justification"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-recommendation-review-status",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RecommendationReviewStatusVS",
+      "title" : "Recommendation Review Status Value Set",
+      "description" : "ValueSet representing the review-related status of a recommendation in a new guideline version",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-review-status"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-ext-recommendation-review-status.html" : "Recommendation Review Status"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-recommendation-strength-awmf",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RecommendationStrengthAWMFVS",
+      "title" : "Recommendation Strength (AWMF) ValueSet",
+      "description" : "ValueSet of strength of recommendations as defined in AWMF guideline methodology.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-strength-awmf"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification-awmf.html" : "Recommendation Justification AWMF"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-recommendation-synthesis-type",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RecommendationSynthesisTypeVS",
+      "title" : "Recommendation Synthesis Type",
+      "description" : "ValueSet listing different synthesis Types of recommendations",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-synthesis-type"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation.html" : "Recommendation"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-recommendation-tags",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RecommendationTagsVS",
+      "title" : "Recommendation Tags",
+      "description" : "ValueSet listing different tags to use for recommendations",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-tags"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation.html" : "Recommendation"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-remark-type",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RemarkTypeVS",
+      "title" : "Remark Type",
+      "description" : "ValueSet listing types of remarks that can be associated with guidelines, including restrictions, warnings, and additional notes.",
+      "systems" : ["http://fhir.awmf.org/awmf.ig/CodeSystem/cs-remark-type"],
+      "uses" : {
+      },
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rob-2-overall-judgment",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RoB2OverallJudmentVS",
+      "title" : "RoB2 Overall Judgment ValueSet",
+      "description" : "ValueSet listing values to represent the overall judgment of risk of bias assessed by the RoB2 tool for evaluating risk of bias for randomized trials.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-rob-2-overall-judgment"
+      ]
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-robis-judgment-of-risk-of-bias",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "ROBISJudgmentOfRiskOfBiasVS",
+      "title" : "ROBIS Judgment of Risk of Bias Value Set",
+      "description" : "ValueSet encompassing all risk of bias judgment values from the ROBIS tool.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-robis-judgment-of-risk-of-bias"
+      ]
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-robis-risk-of-bias-domains",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "ROBISRiskOfBiasDomainsVS",
+      "title" : "ROBIS Risk of Bias Domains Value Set",
+      "description" : "ValueSet encompassing all risk of bias domains from the ROBIS tool.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-robis-risk-of-bias-domains"
+      ]
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-sign-grade-of-recommendation",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "SIGNGradeOfRecommendationVS",
+      "title" : "SIGN Grade of Recommendation Value Set",
+      "description" : "ValueSet encompassing all grades of recommendation from the SIGN (Scottish Intercollegiate Guidelines Network) Grades of Recommendation.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-sign-grade-of-recommendation"
+      ]
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-sign-level-of-evidence",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "SIGNLevelOfEvidenceVS",
+      "title" : "SIGN Level of Evidence Value Set",
+      "description" : "ValueSet encompassing all levels from the SIGN (Scottish Intercollegiate Guidelines Network) Levels of Evidence.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-sign-level-of-evidence"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification-sign.html" : "Recommendation Justification SIGN"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-target-patient-group",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "TargetPatientGroupVS",
+      "title" : "Target Patient Group",
+      "description" : "ValueSet listing patient population categories for guidelines, such as adults and children/adolescents.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-target-patient-group"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/languages",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "CommonLanguages",
+      "title" : "Common Languages",
+      "description" : "This value set includes common codes from BCP-47 (see http://tools.ietf.org/html/bcp47)",
+      "systems" : ["urn:ietf:bcp:47"],
+      "oids" : [
+        "2.16.840.1.113883.4.642.3.891",
+        "2.16.840.1.113883.4.642.3.20"
+      ],
+      "sources" : [
+        "2.16.840.1.113883.4.642.3.891",
+        "2.16.840.1.113883.4.642.3.20"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-ext-section-language.html" : "Section Language",
+      "StructureDefinition-ext-author-language.html" : "Author Language"
+    },
+    {
+      "url" : "http://hl7.org/fhir/uv/ebm/ValueSet/evidence-rating-system-classifier",
+      "version" : "1.0.0-ballot3",
+      "status" : "active",
+      "name" : "EvidenceRatingSystemClassifier",
+      "title" : "Evidence Rating System Classifier Codes Value Set",
+      "description" : "Codes for use with the EvidenceAssessment Profile, to provide values for the content.classifier element where content.type is Rating System.",
+      "systems" : [
+        "http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem"
+      ],
+      "oids" : ["2.16.840.1.113883.4.642.40.44.48.10"],
+      "sources" : ["2.16.840.1.113883.4.642.40.44.48.10"],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification.html" : "Recommendation Justification"
+    },
+    {
+      "url" : "http://terminology.hl7.org/ValueSet/recommendation-strength",
+      "version" : "1.0.1",
+      "status" : "active",
+      "name" : "StrengthOfRecommendationRating",
+      "title" : "StrengthOfRecommendationRating",
+      "description" : "A rating system that describes the strength of the recommendation, such as the GRADE, DynaMed, or HGPS systems.",
+      "systems" : [
+        "http://terminology.hl7.org/CodeSystem/recommendation-strength"
+      ],
+      "oids" : ["2.16.840.1.113883.4.642.3.1021"],
+      "sources" : ["2.16.840.1.113883.4.642.3.1021"],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification-grade.html" : "Recommendation Justification GRADE"
+    }
+  ]
+}

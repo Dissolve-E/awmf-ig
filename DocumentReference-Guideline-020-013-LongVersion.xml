@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DocumentReference xmlns="http://hl7.org/fhir">
+  <id value="Guideline-020-013-LongVersion"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-attachment"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Langfassung Leitlinie 020-013</div>
+  </text>
+  <status value="current"/>
+  <type>
+    <coding>
+      <system value="https://fevir.net/resources/CodeSystem/179423"/>
+      <code value="attachments"/>
+      <display value="Attachments"/>
+    </coding>
+  </type>
+  <category>
+    <coding>
+      <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+      <code value="long-version"/>
+      <display value="Long Version"/>
+    </coding>
+  </category>
+  <content>
+    <attachment>
+      <contentType value="application/pdf"/>
+      <language value="de"/>
+      <url value="020-013l_S3_Epidemiologie-Diagnostik-Therapie-erwachsener-Patienten-nosokomiale-Pneumonie__2024-03.pdf"/>
+      <title value="Langfassung"/>
+    </attachment>
+  </content>
+</DocumentReference>

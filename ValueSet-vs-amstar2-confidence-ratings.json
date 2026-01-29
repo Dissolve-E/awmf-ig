@@ -1,0 +1,28 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "vs-amstar2-confidence-ratings",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet vs-amstar2-confidence-ratings</b></p><a name=\"vs-amstar2-confidence-ratings\"> </a><a name=\"hcvs-amstar2-confidence-ratings\"> </a><ul><li>Include all codes defined in <a href=\"CodeSystem-cs-amstar2-confidence-ratings.html\"><code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-amstar2-confidence-ratings</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version &#x1F4E6;0.2.0</span></li></ul></div>"
+  },
+  "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-amstar2-confidence-ratings",
+  "version" : "0.2.0",
+  "name" : "AMSTAR2ConfidenceRatingsVS",
+  "title" : "AMSTAR 2 Confidence Ratings Value Set",
+  "status" : "active",
+  "date" : "2026-01-29T18:27:10+00:00",
+  "publisher" : "AWMF e.V.",
+  "contact" : [{
+    "name" : "AWMF e.V.",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org"
+    }]
+  }],
+  "description" : "ValueSet encompassing all overall confidence ratings from the AMSTAR 2 critical appraisal tool.",
+  "compose" : {
+    "include" : [{
+      "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-amstar2-confidence-ratings"
+    }]
+  }
+}

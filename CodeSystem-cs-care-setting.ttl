@@ -1,0 +1,391 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cs-care-setting"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-care-setting</b></p><a name=\"cs-care-setting\"> </a><a name=\"hccs-care-setting\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">prevention<a name=\"cs-care-setting-prevention\"> </a></td><td>Prevention</td><td>Activities aimed at preventing diseases or injuries before they occur.</td><td>Prävention</td></tr><tr><td style=\"white-space:nowrap\">early-detection<a name=\"cs-care-setting-early-detection\"> </a></td><td>Early Detection</td><td>The identification of diseases or conditions at an early stage, often before symptoms appear.</td><td>Früherkennung</td></tr><tr><td style=\"white-space:nowrap\">diagnosis<a name=\"cs-care-setting-diagnosis\"> </a></td><td>Diagnosis</td><td>The process of determining the nature and cause of a disease or injury through evaluation of patient history, examination, and tests.</td><td>Diagnostik</td></tr><tr><td style=\"white-space:nowrap\">therapy<a name=\"cs-care-setting-therapy\"> </a></td><td>Therapy</td><td>The treatment of a disease or condition, including medical, surgical, or psychological interventions.</td><td>Behandlung</td></tr><tr><td style=\"white-space:nowrap\">rehabilitation<a name=\"cs-care-setting-rehabilitation\"> </a></td><td>Rehabilitation</td><td>The process of restoring physical, mental, or social abilities lost due to illness or injury.</td><td>Rehabilitation</td></tr><tr><td style=\"white-space:nowrap\">primary-care<a name=\"cs-care-setting-primary-care\"> </a></td><td>Primary Care</td><td>First-contact healthcare provided by general practitioners or family physicians.</td><td>Primärärztliche Versorgung</td></tr><tr><td style=\"white-space:nowrap\">specialized-care<a name=\"cs-care-setting-specialized-care\"> </a></td><td>Specialized Care</td><td>Healthcare provided by medical specialists with advanced training in specific fields.</td><td>Spezialärztliche Versorgung</td></tr><tr><td style=\"white-space:nowrap\">outpatient<a name=\"cs-care-setting-outpatient\"> </a></td><td>Outpatient</td><td>Healthcare services provided to patients who are not admitted to a hospital or other facility.</td><td>Ambulant</td></tr><tr><td style=\"white-space:nowrap\">inpatient<a name=\"cs-care-setting-inpatient\"> </a></td><td>Inpatient</td><td>Healthcare services provided to patients who are admitted to a hospital or other facility for at least one night.</td><td>Stationär</td></tr><tr><td style=\"white-space:nowrap\">partial-hospitalization<a name=\"cs-care-setting-partial-hospitalization\"> </a></td><td>Partial Hospitalization</td><td>Healthcare services provided in a hospital or facility during the day, with patients returning home at night.</td><td>Teilstationär</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting"^^xsd:anyURI ;
+     fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting>
+  ] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:name [ fhir:v "CareSetting"] ; # 
+  fhir:title [ fhir:v "Care Setting"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-01-29T18:27:10+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "AWMF e.V."] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AWMF e.V." ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.awmf.org" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "CodeSystem defining different care settings, including levels of care, healthcare services, and treatment contexts."] ; # 
+  fhir:caseSensitive [ fhir:v false] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "10"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "prevention" ] ;
+     fhir:display [ fhir:v "Prevention" ] ;
+     fhir:definition [
+       fhir:v "Activities aimed at preventing diseases or injuries before they occur." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Aktivitäten, die darauf abzielen, Krankheiten oder Verletzungen zu verhindern, bevor sie auftreten."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Prävention" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "early-detection" ] ;
+     fhir:display [ fhir:v "Early Detection" ] ;
+     fhir:definition [
+       fhir:v "The identification of diseases or conditions at an early stage, often before symptoms appear." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Erkennung von Krankheiten oder Zuständen in einem frühen Stadium, oft bevor Symptome auftreten."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Früherkennung" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "diagnosis" ] ;
+     fhir:display [ fhir:v "Diagnosis" ] ;
+     fhir:definition [
+       fhir:v "The process of determining the nature and cause of a disease or injury through evaluation of patient history, examination, and tests." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Prozess der Bestimmung der Art und Ursache einer Krankheit oder Verletzung durch Auswertung der Krankengeschichte, Untersuchungen und Tests."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Diagnostik" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "therapy" ] ;
+     fhir:display [ fhir:v "Therapy" ] ;
+     fhir:definition [
+       fhir:v "The treatment of a disease or condition, including medical, surgical, or psychological interventions." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Behandlung einer Krankheit oder eines Zustands, einschließlich medizinischer, chirurgischer oder psychologischer Eingriffe."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Behandlung" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "rehabilitation" ] ;
+     fhir:display [ fhir:v "Rehabilitation" ] ;
+     fhir:definition [
+       fhir:v "The process of restoring physical, mental, or social abilities lost due to illness or injury." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Der Prozess der Wiederherstellung körperlicher, geistiger oder sozialer Fähigkeiten, die aufgrund von Krankheit oder Verletzung verloren gegangen sind."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Rehabilitation" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "primary-care" ] ;
+     fhir:display [ fhir:v "Primary Care" ] ;
+     fhir:definition [
+       fhir:v "First-contact healthcare provided by general practitioners or family physicians." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Medizinische Versorgung durch den Allgemein- oder Hausarzt."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Primärärztliche Versorgung" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "specialized-care" ] ;
+     fhir:display [ fhir:v "Specialized Care" ] ;
+     fhir:definition [
+       fhir:v "Healthcare provided by medical specialists with advanced training in specific fields." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Medizinische Versorgung durch Fachärzt*innen mit spezieller Ausbildung in bestimmten Bereichen."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Spezialärztliche Versorgung" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "outpatient" ] ;
+     fhir:display [ fhir:v "Outpatient" ] ;
+     fhir:definition [
+       fhir:v "Healthcare services provided to patients who are not admitted to a hospital or other facility." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Gesundheitsdienstleistungen für Patient*innen, die nicht in ein Krankenhaus oder eine andere Einrichtung eingewiesen werden."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Ambulant" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "inpatient" ] ;
+     fhir:display [ fhir:v "Inpatient" ] ;
+     fhir:definition [
+       fhir:v "Healthcare services provided to patients who are admitted to a hospital or other facility for at least one night." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Gesundheitsdienstleistungen für Patient*innen, die für mindestens eine Nacht in ein Krankenhaus oder eine andere Einrichtung eingewiesen werden."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Stationär" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "partial-hospitalization" ] ;
+     fhir:display [ fhir:v "Partial Hospitalization" ] ;
+     fhir:definition [
+       fhir:v "Healthcare services provided in a hospital or facility during the day, with patients returning home at night." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Gesundheitsdienstleistungen, die tagsüber in einem Krankenhaus oder einer Einrichtung erbracht werden; Patient*innen bleiben nicht über Nacht im Krankenhaus oder in der Gesundheitseinrichtung."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Teilstationär" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

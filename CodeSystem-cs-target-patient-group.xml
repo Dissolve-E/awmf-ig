@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-target-patient-group"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-target-patient-group</b></p><a name="cs-target-patient-group"> </a><a name="hccs-target-patient-group"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-target-patient-group</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style="white-space:nowrap">adults<a name="cs-target-patient-group-adults"> </a></td><td>Adults</td><td>Guideline specifically targeted at adult patients.</td><td>Erwachsene</td></tr><tr><td style="white-space:nowrap">children-adolescents<a name="cs-target-patient-group-children-adolescents"> </a></td><td>Children/Adolescents</td><td>Guideline specifically targeted at children and adolescents.</td><td>Kinder und Jugendliche</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-target-patient-group"/>
+  <version value="0.2.0"/>
+  <name value="TargetPatientGroup"/>
+  <title value="Target Patient Group"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem defining the intended patient population for whom the guideline is applicable."/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="2"/>
+  <concept>
+    <code value="adults"/>
+    <display value="Adults"/>
+    <definition value="Guideline specifically targeted at adult patients.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Leitlinie richtet sich an Erwachsene."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Erwachsene"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="children-adolescents"/>
+    <display value="Children/Adolescents"/>
+    <definition value="Guideline specifically targeted at children and adolescents.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Leitlinie richtet sich an Kinder und Jugendliche."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Kinder und Jugendliche"/>
+    </designation>
+  </concept>
+</CodeSystem>

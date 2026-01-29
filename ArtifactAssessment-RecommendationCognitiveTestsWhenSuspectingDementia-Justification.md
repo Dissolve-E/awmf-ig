@@ -1,0 +1,239 @@
+# RecommendationCognitiveTestsWhenSuspectingDementia-Justification - Dissolve-E: AWMF Guideline Registry v0.2.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **RecommendationCognitiveTestsWhenSuspectingDementia-Justification**
+
+## Example ArtifactAssessment: RecommendationCognitiveTestsWhenSuspectingDementia-Justification
+
+Justification for Recommendation Cognitive Tests When Suspecting Dementia
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "ArtifactAssessment",
+  "id" : "RecommendationCognitiveTestsWhenSuspectingDementia-Justification",
+  "meta" : {
+    "profile" : [
+      "http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification-awmf"
+    ]
+  },
+  "artifactReference" : {
+    "reference" : "Composition/RecommendationCognitiveTestsWhenSuspectingDementia"
+  },
+  "content" : [
+    {
+      "type" : {
+        "coding" : [
+          {
+            "system" : "https://fevir.net/resources/CodeSystem/179423",
+            "code" : "recommendation-rating",
+            "display" : "Recommendation Rating"
+          }
+        ]
+      },
+      "component" : [
+        {
+          "type" : {
+            "coding" : [
+              {
+                "system" : "https://fevir.net/resources/CodeSystem/179423",
+                "code" : "strength-of-recommendation",
+                "display" : "Strength of Recommendation"
+              }
+            ]
+          },
+          "classifier" : [
+            {
+              "coding" : [
+                {
+                  "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-strength-awmf",
+                  "code" : "A",
+                  "display" : "Strong Recommendation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type" : {
+            "coding" : [
+              {
+                "system" : "https://fevir.net/resources/CodeSystem/179423",
+                "code" : "direction-of-recommendation",
+                "display" : "Direction of Recommendation"
+              }
+            ]
+          },
+          "classifier" : [
+            {
+              "coding" : [
+                {
+                  "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-direction",
+                  "code" : "for",
+                  "display" : "For"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type" : {
+            "coding" : [
+              {
+                "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+                "code" : "level-of-consensus"
+              }
+            ]
+          },
+          "classifier" : [
+            {
+              "coding" : [
+                {
+                  "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-level-of-consensus",
+                  "code" : "strong-consensus",
+                  "display" : "Strong consensus"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type" : {
+            "coding" : [
+              {
+                "system" : "https://fevir.net/resources/CodeSystem/179423",
+                "code" : "rating-system",
+                "display" : "Rating System"
+              }
+            ]
+          },
+          "classifier" : [
+            {
+              "coding" : [
+                {
+                  "system" : "http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem",
+                  "code" : "AWMF"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type" : {
+        "coding" : [
+          {
+            "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+            "code" : "evidence-rating",
+            "display" : "Evidence Rating"
+          }
+        ]
+      },
+      "component" : [
+        {
+          "type" : {
+            "coding" : [
+              {
+                "system" : "http://hl7.org/fhir/certainty-type",
+                "code" : "Overall",
+                "display" : "Overall certainty"
+              }
+            ]
+          },
+          "classifier" : [
+            {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/certainty-rating",
+                  "code" : "very-low",
+                  "display" : "Very low quality"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type" : {
+            "coding" : [
+              {
+                "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+                "code" : "overall-quality-of-evidence",
+                "display" : "Overall Quality of Evidence"
+              }
+            ]
+          },
+          "relatesTo" : [
+            {
+              "type" : "justification",
+              "targetReference" : {
+                "reference" : "ArtifactAssessment/RoB-CognitiveTestsWhenSuspectingDementia-Sensitivity"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type" : {
+        "coding" : [
+          {
+            "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+            "code" : "evidence-rating",
+            "display" : "Evidence Rating"
+          }
+        ]
+      },
+      "component" : [
+        {
+          "type" : {
+            "coding" : [
+              {
+                "system" : "http://hl7.org/fhir/certainty-type",
+                "code" : "Overall",
+                "display" : "Overall certainty"
+              }
+            ]
+          },
+          "classifier" : [
+            {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/certainty-rating",
+                  "code" : "very-low",
+                  "display" : "Very low quality"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type" : {
+            "coding" : [
+              {
+                "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+                "code" : "overall-quality-of-evidence",
+                "display" : "Overall Quality of Evidence"
+              }
+            ]
+          },
+          "relatesTo" : [
+            {
+              "type" : "justification",
+              "targetReference" : {
+                "reference" : "ArtifactAssessment/RoB-CognitiveTestsWhenSuspectingDementia-Specificity"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "workflowStatus" : "applied"
+}
+
+```

@@ -1,0 +1,140 @@
+# ROBIS Judgment of Risk of Bias - Dissolve-E: AWMF Guideline Registry v0.2.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **ROBIS Judgment of Risk of Bias**
+
+## CodeSystem: ROBIS Judgment of Risk of Bias 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://fhir.awmf.org/awmf.ig/CodeSystem/cs-robis-judgment-of-risk-of-bias | *Version*:0.2.0 |
+| Active as of 2026-01-29 | *Computable Name*:ROBISJudgmentOfRiskOfBias |
+
+ 
+CodeSystem representing the judgment of risk of bias assessed by the ROBIS tool for evaluating risk of bias in systematic reviews. 
+
+ This Code system is referenced in the content logical definition of the following value sets: 
+
+* [ROBISJudgmentOfRiskOfBiasVS](ValueSet-vs-robis-judgment-of-risk-of-bias.md)
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "CodeSystem",
+  "id" : "cs-robis-judgment-of-risk-of-bias",
+  "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-robis-judgment-of-risk-of-bias",
+  "version" : "0.2.0",
+  "name" : "ROBISJudgmentOfRiskOfBias",
+  "title" : "ROBIS Judgment of Risk of Bias",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-01-29T18:27:10+00:00",
+  "publisher" : "AWMF e.V.",
+  "contact" : [
+    {
+      "name" : "AWMF e.V.",
+      "telecom" : [
+        {
+          "system" : "url",
+          "value" : "https://www.awmf.org"
+        }
+      ]
+    }
+  ],
+  "description" : "CodeSystem representing the judgment of risk of bias assessed by the ROBIS tool for evaluating risk of bias in systematic reviews.",
+  "caseSensitive" : false,
+  "content" : "complete",
+  "count" : 3,
+  "concept" : [
+    {
+      "code" : "low_risk_of_bias",
+      "display" : "Low risk of bias",
+      "definition" : "The findings of the review are likely to be reliable. Phase 2 did not raise any concerns with the review process or concerns were appropriately considered in the review conclusions. The conclusions were supported by the evidence and included consideration of the relevance of included studies.",
+      "_definition" : {
+        "extension" : [
+          {
+            "extension" : [
+              {
+                "url" : "lang",
+                "valueCode" : "de"
+              },
+              {
+                "url" : "content",
+                "valueString" : "Die Ergebnisse des Reviews sind wahrscheinlich zuverlässig. In Phase 2 der Bewertung wurden keine Bedenken bezüglich des Reviewprozesses identifiziert oder die identifizierten Bedenken wurden in den Schlussfolgerungen des Reviews angemessen berücksichtigt. Die Schlussfolgerungen werden durch die Evidenz gestützt und beinhalten die Berücksichtigung der Relevanz der eingeschlossenen Studien für die Fragestellung des Reviews."
+              }
+            ],
+            "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+          }
+        ]
+      },
+      "designation" : [
+        {
+          "language" : "de",
+          "value" : "Geringes Risiko für Bias"
+        }
+      ]
+    },
+    {
+      "code" : "high_risk_of_bias",
+      "display" : "High risk of bias",
+      "definition" : "One or more of the concerns raised during the Phase 2 assessment was not addressed in the review conclusions, the review conclusions were not supported by the evidence, or the conclusions did not consider the relevance of the included studies to the review question.",
+      "_definition" : {
+        "extension" : [
+          {
+            "extension" : [
+              {
+                "url" : "lang",
+                "valueCode" : "de"
+              },
+              {
+                "url" : "content",
+                "valueString" : "Bedenken, die in Phase 2 der Bewertung identifiziert wurden, sind in den Schlussfolgerungen des Reviews nicht berücksichtigt oder die Schlussfolgerungen werden durch die Evidenz nicht gestützt oder in den Schlussfolgerungen ist die Relevanz der eingeschlossenen Studien für die Fragestellung des Reviews nicht berücksichtigt."
+              }
+            ],
+            "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+          }
+        ]
+      },
+      "designation" : [
+        {
+          "language" : "de",
+          "value" : "Hohes Risiko für Bias"
+        }
+      ]
+    },
+    {
+      "code" : "unclear_risk_of_bias",
+      "display" : "Unclear risk of bias",
+      "definition" : "There is insufficient information reported to make a judgement on risk of bias.",
+      "_definition" : {
+        "extension" : [
+          {
+            "extension" : [
+              {
+                "url" : "lang",
+                "valueCode" : "de"
+              },
+              {
+                "url" : "content",
+                "valueString" : "Die verfügbaren Informationen sind unzureichend für ein Urteil über das Biasrisiko."
+              }
+            ],
+            "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+          }
+        ]
+      },
+      "designation" : [
+        {
+          "language" : "de",
+          "value" : "Unklares Risiko für Bias"
+        }
+      ]
+    }
+  ]
+}
+
+```

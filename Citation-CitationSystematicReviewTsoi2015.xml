@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Citation xmlns="http://hl7.org/fhir">
+  <id value="CitationSystematicReviewTsoi2015"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Citation CitationSystematicReviewTsoi2015</b></p><a name="CitationSystematicReviewTsoi2015"> </a><a name="hcCitationSystematicReviewTsoi2015"> </a><p><b>url</b>: <a href="Citation-CitationSystematicReviewTsoi2015.html">Citation Cognitive Tests to Detect Dementia: A Systematic Review and Meta-analysis.</a></p><p><b>version</b>: 0.2.0</p><p><b>title</b>: Cognitive Tests to Detect Dementia: A Systematic Review and Meta-analysis.</p><p><b>status</b>: Active</p><p><b>date</b>: 2026-01-29 18:27:10+0000</p><p><b>publisher</b>: AWMF e.V.</p><p><b>contact</b>: AWMF e.V.: <a href="https://www.awmf.org">https://www.awmf.org</a></p><p><b>copyright</b>: </p><div><p>https://creativecommons.org/licenses/by-nc-sa/4.0/</p>
+</div><p><b>approvalDate</b>: 2015-12-15</p><p><b>lastReviewDate</b>: 2025-07-11</p><blockquote><p><b>citedArtifact</b></p><p><b>identifier</b>: <code>https://pubmed.ncbi.nlm.nih.gov</code>/26052687, <code>https://doi.org</code>/10.1001/jamainternmed.2015.2152, pii/2301149</p><h3>Titles</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Type</b></td><td><b>Text</b></td></tr><tr><td style="display: none">*</td><td><span title="Codes:{http://hl7.org/fhir/title-type primary}">Primary title</span></td><td><div><p>Cognitive Tests to Detect Dementia: A Systematic Review and Meta-analysis.</p>
+</div></td></tr></table><blockquote><p><b>publicationForm</b></p><h3>PublishedIns</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Type</b></td><td><b>Title</b></td><td><b>PublisherLocation</b></td></tr><tr><td style="display: none">*</td><td><span title="Codes:{http://hl7.org/fhir/published-in-type D020492}">Periodical</span></td><td>JAMA internal medicine</td><td>United States</td></tr></table><p><b>volume</b>: 175</p><p><b>issue</b>: 9</p><p><b>articleDate</b>: 2015-09</p><p><b>pageString</b>: 1450-8</p></blockquote><blockquote><p><b>webLocation</b></p><p><b>classifier</b>: <span title="Codes:{http://hl7.org/fhir/artifact-url-classifier abstract}">Abstract</span></p><p><b>url</b>: <a href="https://pubmed.ncbi.nlm.nih.gov/26052687/">https://pubmed.ncbi.nlm.nih.gov/26052687/</a></p></blockquote><blockquote><p><b>webLocation</b></p><p><b>classifier</b>: <span title="Codes:{http://hl7.org/fhir/artifact-url-classifier doi-based}">DOI Based</span></p><p><b>url</b>: <a href="https://doi.org/10.1001/jamainternmed.2015.2152">https://doi.org/10.1001/jamainternmed.2015.2152</a></p></blockquote><blockquote><p><b>contributorship</b></p><p><b>complete</b>: true</p><blockquote><p><b>entry</b></p><p><b>contributor</b>: <a href="Practitioner-contributor0.html">Tsoi KK</a></p><p><b>forenameInitials</b>: KK</p><p><b>affiliation</b>: School of Public Health and Primary Care, The Chinese University of Hong Kong, Shatin2Stanley Ho Big Data Decision Analytics Research Centre, The Chinese University of Hong Kong, Shatin.</p></blockquote><blockquote><p><b>entry</b></p><p><b>contributor</b>: <a href="Practitioner-contributor1.html">Chan JY</a></p><p><b>forenameInitials</b>: JY</p><p><b>affiliation</b>: School of Public Health and Primary Care, The Chinese University of Hong Kong, Shatin.</p></blockquote><blockquote><p><b>entry</b></p><p><b>contributor</b>: <a href="Practitioner-contributor2.html">Hirai HW</a></p><p><b>forenameInitials</b>: HW</p><p><b>affiliation</b>: School of Public Health and Primary Care, The Chinese University of Hong Kong, Shatin2Stanley Ho Big Data Decision Analytics Research Centre, The Chinese University of Hong Kong, Shatin.</p></blockquote><blockquote><p><b>entry</b></p><p><b>contributor</b>: <a href="Practitioner-contributor3.html">Wong SY</a></p><p><b>forenameInitials</b>: SY</p><p><b>affiliation</b>: School of Public Health and Primary Care, The Chinese University of Hong Kong, Shatin.</p></blockquote><blockquote><p><b>entry</b></p><p><b>contributor</b>: <a href="Practitioner-contributor4.html">Kwok TC</a></p><p><b>forenameInitials</b>: TC</p><p><b>affiliation</b>: Department of Medicine and Therapeutics, The Chinese University of Hong Kong, Shatin.</p></blockquote></blockquote></blockquote></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/Citation/CitationSystematicReviewTsoi2015"/>
+  <version value="0.2.0"/>
+  <title value="Cognitive Tests to Detect Dementia: A Systematic Review and Meta-analysis."/>
+  <status value="active"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <copyright value="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+  <approvalDate value="2015-12-15"/>
+  <lastReviewDate value="2025-07-11"/>
+  <citedArtifact>
+    <identifier>
+      <system value="https://pubmed.ncbi.nlm.nih.gov"/>
+      <value value="26052687"/>
+    </identifier>
+    <identifier>
+      <system value="https://doi.org"/>
+      <value value="10.1001/jamainternmed.2015.2152"/>
+    </identifier>
+    <identifier>
+      <type>
+        <text value="pii"/>
+      </type>
+      <value value="2301149"/>
+    </identifier>
+    <title>
+      <type>
+        <coding>
+          <system value="http://hl7.org/fhir/title-type"/>
+          <code value="primary"/>
+          <display value="Primary title"/>
+        </coding>
+      </type>
+      <text value="Cognitive Tests to Detect Dementia: A Systematic Review and Meta-analysis."/>
+    </title>
+    <publicationForm>
+      <publishedIn>
+        <type>
+          <coding>
+            <system value="http://hl7.org/fhir/published-in-type"/>
+            <code value="D020492"/>
+            <display value="Periodical"/>
+          </coding>
+        </type>
+        <title value="JAMA internal medicine"/>
+        <publisherLocation value="United States"/>
+      </publishedIn>
+      <volume value="175"/>
+      <issue value="9"/>
+      <articleDate value="2015-09"/>
+      <pageString value="1450-8"/>
+    </publicationForm>
+    <webLocation>
+      <classifier>
+        <coding>
+          <system value="http://hl7.org/fhir/artifact-url-classifier"/>
+          <code value="abstract"/>
+          <display value="Abstract"/>
+        </coding>
+      </classifier>
+      <url value="https://pubmed.ncbi.nlm.nih.gov/26052687/"/>
+    </webLocation>
+    <webLocation>
+      <classifier>
+        <coding>
+          <system value="http://hl7.org/fhir/artifact-url-classifier"/>
+          <code value="doi-based"/>
+          <display value="DOI Based"/>
+        </coding>
+      </classifier>
+      <url value="https://doi.org/10.1001/jamainternmed.2015.2152"/>
+    </webLocation>
+    <contributorship>
+      <complete value="true"/>
+      <entry>
+        <contributor>
+          <reference value="Practitioner/contributor0"/>
+          <type value="Practitioner"/>
+          <display value="Tsoi KK"/>
+        </contributor>
+        <forenameInitials value="KK"/>
+        <affiliation>
+          <display value="School of Public Health and Primary Care, The Chinese University of Hong Kong, Shatin2Stanley Ho Big Data Decision Analytics Research Centre, The Chinese University of Hong Kong, Shatin."/>
+        </affiliation>
+      </entry>
+      <entry>
+        <contributor>
+          <reference value="Practitioner/contributor1"/>
+          <type value="Practitioner"/>
+          <display value="Chan JY"/>
+        </contributor>
+        <forenameInitials value="JY"/>
+        <affiliation>
+          <display value="School of Public Health and Primary Care, The Chinese University of Hong Kong, Shatin."/>
+        </affiliation>
+      </entry>
+      <entry>
+        <contributor>
+          <reference value="Practitioner/contributor2"/>
+          <type value="Practitioner"/>
+          <display value="Hirai HW"/>
+        </contributor>
+        <forenameInitials value="HW"/>
+        <affiliation>
+          <display value="School of Public Health and Primary Care, The Chinese University of Hong Kong, Shatin2Stanley Ho Big Data Decision Analytics Research Centre, The Chinese University of Hong Kong, Shatin."/>
+        </affiliation>
+      </entry>
+      <entry>
+        <contributor>
+          <reference value="Practitioner/contributor3"/>
+          <type value="Practitioner"/>
+          <display value="Wong SY"/>
+        </contributor>
+        <forenameInitials value="SY"/>
+        <affiliation>
+          <display value="School of Public Health and Primary Care, The Chinese University of Hong Kong, Shatin."/>
+        </affiliation>
+      </entry>
+      <entry>
+        <contributor>
+          <reference value="Practitioner/contributor4"/>
+          <type value="Practitioner"/>
+          <display value="Kwok TC"/>
+        </contributor>
+        <forenameInitials value="TC"/>
+        <affiliation>
+          <display value="Department of Medicine and Therapeutics, The Chinese University of Hong Kong, Shatin."/>
+        </affiliation>
+      </entry>
+    </contributorship>
+  </citedArtifact>
+</Citation>

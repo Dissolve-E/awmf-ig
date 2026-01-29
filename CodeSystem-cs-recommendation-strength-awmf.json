@@ -1,0 +1,93 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "cs-recommendation-strength-awmf",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-recommendation-strength-awmf</b></p><a name=\"cs-recommendation-strength-awmf\"> </a><a name=\"hccs-recommendation-strength-awmf\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-strength-awmf</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">A<a name=\"cs-recommendation-strength-awmf-A\"> </a></td><td>Strong Recommendation</td><td>Uses wording such as 'shall' / 'shall not' (original: 'soll' / 'soll nicht').</td><td>Starke Empfehlung</td></tr><tr><td style=\"white-space:nowrap\">B<a name=\"cs-recommendation-strength-awmf-B\"> </a></td><td>Recommendation</td><td>Uses wording such as 'should' / 'should not' (original: 'sollte' / 'sollte nicht').</td><td>Empfehlung</td></tr><tr><td style=\"white-space:nowrap\">0<a name=\"cs-recommendation-strength-awmf-0\"> </a></td><td>Open Recommendation</td><td>Uses wording such as 'may be considered' / 'may be omitted' (original: 'kann erwogen werden' / 'kann verzichtet werden').</td><td>Empfehlung offen</td></tr></table></div>"
+  },
+  "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-strength-awmf",
+  "version" : "0.2.0",
+  "name" : "RecommendationStrengthAWMF",
+  "title" : "Recommendation Strength (AWMF)",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-01-29T18:27:10+00:00",
+  "publisher" : "AWMF e.V.",
+  "contact" : [{
+    "name" : "AWMF e.V.",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org"
+    }]
+  }],
+  "description" : "CodeSystem defining the grading of recommendations according to German guideline methodology as used in AWMF S3 guidelines.",
+  "caseSensitive" : false,
+  "content" : "complete",
+  "count" : 3,
+  "concept" : [{
+    "code" : "A",
+    "display" : "Strong Recommendation",
+    "definition" : "Uses wording such as 'shall' / 'shall not' (original: 'soll' / 'soll nicht').",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Nutzung von Formulierungen mit 'soll' / 'soll nicht'"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Starke Empfehlung"
+    }]
+  },
+  {
+    "code" : "B",
+    "display" : "Recommendation",
+    "definition" : "Uses wording such as 'should' / 'should not' (original: 'sollte' / 'sollte nicht').",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Nutzung von Formulierungen mit 'sollte' / 'sollte nicht'"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Empfehlung"
+    }]
+  },
+  {
+    "code" : "0",
+    "display" : "Open Recommendation",
+    "definition" : "Uses wording such as 'may be considered' / 'may be omitted' (original: 'kann erwogen werden' / 'kann verzichtet werden').",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Nutzung von Formulierungen mit 'kann erwogen werden' / 'kann verzichtet werden'"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Empfehlung offen"
+    }]
+  }]
+}

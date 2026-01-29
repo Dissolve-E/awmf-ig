@@ -1,0 +1,496 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-to-decision-certainty-rating> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cs-evidence-to-decision-certainty-rating"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-evidence-to-decision-certainty-rating</b></p><a name=\"cs-evidence-to-decision-certainty-rating\"> </a><a name=\"hccs-evidence-to-decision-certainty-rating\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-to-decision-certainty-rating</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">small-net-benefit<a name=\"cs-evidence-to-decision-certainty-rating-small-net-benefit\"> </a></td><td>Small net benefit</td><td>Small net benefit, or little difference between alternatives</td><td>Geringer Netto-Nutzen</td></tr><tr><td style=\"white-space:nowrap\">substantial-net-benefit<a name=\"cs-evidence-to-decision-certainty-rating-substantial-net-benefit\"> </a></td><td>Substantial net benefit</td><td>Substantial net benefits of the recommended alternative</td><td>Erheblicher Netto-Nutzen</td></tr><tr><td style=\"white-space:nowrap\">important-harms<a name=\"cs-evidence-to-decision-certainty-rating-important-harms\"> </a></td><td>Important harms</td><td>Important harms</td><td>Wesentliche Schäden</td></tr><tr><td style=\"white-space:nowrap\">substantial-variability<a name=\"cs-evidence-to-decision-certainty-rating-substantial-variability\"> </a></td><td>Substantial variability</td><td>Substantial variability is expected or uncertain</td><td>Erhebliche Variabilität</td></tr><tr><td style=\"white-space:nowrap\">no-substantial-variability<a name=\"cs-evidence-to-decision-certainty-rating-no-substantial-variability\"> </a></td><td>No substantial variability</td><td>No substantial variability expected</td><td>Keine erhebliche Variabilität</td></tr><tr><td style=\"white-space:nowrap\">few-want-intervention<a name=\"cs-evidence-to-decision-certainty-rating-few-want-intervention\"> </a></td><td>Few want intervention</td><td>We expect few to want the intervention</td><td>Wenige wünschen Intervention</td></tr><tr><td style=\"white-space:nowrap\">factor-not-considered<a name=\"cs-evidence-to-decision-certainty-rating-factor-not-considered\"> </a></td><td>Factor not considered</td><td>Factor not considered</td><td>Unberücksichtigter Faktor</td></tr><tr><td style=\"white-space:nowrap\">important-issues-or-not-investigated<a name=\"cs-evidence-to-decision-certainty-rating-important-issues-or-not-investigated\"> </a></td><td>Important issues</td><td>Important issues, or potential issues not investigated</td><td>Wesentliche Probleme</td></tr><tr><td style=\"white-space:nowrap\">no-important-issues<a name=\"cs-evidence-to-decision-certainty-rating-no-important-issues\"> </a></td><td>No important issues</td><td>No important issues with the recommended alternative</td><td>Keine wesentlichen Probleme</td></tr><tr><td style=\"white-space:nowrap\">important-negative-issues<a name=\"cs-evidence-to-decision-certainty-rating-important-negative-issues\"> </a></td><td>Important negative issues</td><td>Important negative issues</td><td>Wesentliche negative Aspekte</td></tr><tr><td style=\"white-space:nowrap\">intervention-increases-inequity<a name=\"cs-evidence-to-decision-certainty-rating-intervention-increases-inequity\"> </a></td><td>Intervention increases inequity</td><td>Intervention likely increases inequity</td><td>Intervention erhöht Ungerechtigkeit</td></tr><tr><td style=\"white-space:nowrap\">intervention-poorly-accepted<a name=\"cs-evidence-to-decision-certainty-rating-intervention-poorly-accepted\"> </a></td><td>Intervention poorly accepted</td><td>Intervention is likely poorly accepted</td><td>Intervention schlecht angenommen</td></tr><tr><td style=\"white-space:nowrap\">intervention-difficult-to-implement<a name=\"cs-evidence-to-decision-certainty-rating-intervention-difficult-to-implement\"> </a></td><td>Intervention difficult to implement</td><td>Intervention is likely difficult to implement</td><td>Internvention schwer umzusetzen</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-to-decision-certainty-rating"^^xsd:anyURI ;
+     fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-to-decision-certainty-rating>
+  ] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:name [ fhir:v "EvidenceToDecisionCertaintyRating"] ; # 
+  fhir:title [ fhir:v "Evidence To Decision Certainty Rating"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-01-29T18:27:10+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "AWMF e.V."] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AWMF e.V." ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.awmf.org" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "CodeSystem defining GRADE Evidence to Decision (EtD) Framework Certainty Ratings"] ; # 
+  fhir:caseSensitive [ fhir:v false] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "13"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "small-net-benefit" ] ;
+     fhir:display [ fhir:v "Small net benefit" ] ;
+     fhir:definition [
+       fhir:v "Small net benefit, or little difference between alternatives" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Geringer Netto-Nutzen, oder geringer Unterschied zwischen den Alternativen."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Geringer Netto-Nutzen" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "substantial-net-benefit" ] ;
+     fhir:display [ fhir:v "Substantial net benefit" ] ;
+     fhir:definition [
+       fhir:v "Substantial net benefits of the recommended alternative" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Erheblicher Netto-Nutzen der empfohlenen Alternative."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Erheblicher Netto-Nutzen" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "important-harms" ] ;
+     fhir:display [ fhir:v "Important harms" ] ;
+     fhir:definition [
+       fhir:v "Important harms" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Wesentliche Schäden"
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Wesentliche Schäden" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "substantial-variability" ] ;
+     fhir:display [ fhir:v "Substantial variability" ] ;
+     fhir:definition [
+       fhir:v "Substantial variability is expected or uncertain" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Erhebliche Variabilität ist zu erwarten oder ungewiss."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Erhebliche Variabilität" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "no-substantial-variability" ] ;
+     fhir:display [ fhir:v "No substantial variability" ] ;
+     fhir:definition [
+       fhir:v "No substantial variability expected" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Keine erhebliche Variabilität erwartet."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Keine erhebliche Variabilität" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "few-want-intervention" ] ;
+     fhir:display [ fhir:v "Few want intervention" ] ;
+     fhir:definition [
+       fhir:v "We expect few to want the intervention" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Wir erwarten, dass nur wenige die Intervention wünschen."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Wenige wünschen Intervention" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "factor-not-considered" ] ;
+     fhir:display [ fhir:v "Factor not considered" ] ;
+     fhir:definition [
+       fhir:v "Factor not considered" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Unberücksichtigter Faktor"
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Unberücksichtigter Faktor" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "important-issues-or-not-investigated" ] ;
+     fhir:display [ fhir:v "Important issues" ] ;
+     fhir:definition [
+       fhir:v "Important issues, or potential issues not investigated" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Wesentliche Probleme oder potenzielle Probleme, die nicht untersucht worden sind."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Wesentliche Probleme" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "no-important-issues" ] ;
+     fhir:display [ fhir:v "No important issues" ] ;
+     fhir:definition [
+       fhir:v "No important issues with the recommended alternative" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Keine wesentlichen Probleme mit der empfohlenen Alternative"
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Keine wesentlichen Probleme" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "important-negative-issues" ] ;
+     fhir:display [ fhir:v "Important negative issues" ] ;
+     fhir:definition [
+       fhir:v "Important negative issues" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Wesentliche negative Aspekte"
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Wesentliche negative Aspekte" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "intervention-increases-inequity" ] ;
+     fhir:display [ fhir:v "Intervention increases inequity" ] ;
+     fhir:definition [
+       fhir:v "Intervention likely increases inequity" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Die Intervention erhöht wahrscheinlich die Ungerechtigkeit."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Intervention erhöht Ungerechtigkeit" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "intervention-poorly-accepted" ] ;
+     fhir:display [ fhir:v "Intervention poorly accepted" ] ;
+     fhir:definition [
+       fhir:v "Intervention is likely poorly accepted" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Die Intervention wird voraussichtlich schlecht angenommen."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Intervention schlecht angenommen" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "intervention-difficult-to-implement" ] ;
+     fhir:display [ fhir:v "Intervention difficult to implement" ] ;
+     fhir:definition [
+       fhir:v "Intervention is likely difficult to implement" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Die Intervention ist voraussichtlich schwer umzusetzen."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Internvention schwer umzusetzen" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

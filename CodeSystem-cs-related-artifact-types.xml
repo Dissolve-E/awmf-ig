@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-related-artifact-types"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-related-artifact-types</b></p><a name="cs-related-artifact-types"> </a><a name="hccs-related-artifact-types"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types</code> defines the following codes in a Is-A hierarchy:</p><table class="codes"><tr><td><b>Lvl</b></td><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td>1</td><td style="white-space:nowrap">related-guideline<a name="cs-related-artifact-types-related-guideline"> </a></td><td>Related Guideline</td><td/><td>Verwandte Leitlinie</td></tr><tr><td>1</td><td style="white-space:nowrap">app<a name="cs-related-artifact-types-app"> </a></td><td>Mobile App</td><td/><td>Mobile App</td></tr><tr><td>1</td><td style="white-space:nowrap">update-registration<a name="cs-related-artifact-types-update-registration"> </a></td><td>Registration of an Update of the Guideline</td><td/><td>Anmeldung eines Leitlinien-Updates</td></tr><tr><td>1</td><td style="white-space:nowrap">scientific-publication<a name="cs-related-artifact-types-scientific-publication"> </a></td><td>Scientific Publication</td><td/><td>Wissenschaftliche Veröffentlichung</td></tr><tr><td>1</td><td style="white-space:nowrap">dissemination-website<a name="cs-related-artifact-types-dissemination-website"> </a></td><td>Dissemination Website</td><td>A website that disseminates the guideline in a human readable format.</td><td>Webseite zur Verbreitung</td></tr><tr><td>2</td><td style="white-space:nowrap">  awmf-detail-page<a name="cs-related-artifact-types-awmf-detail-page"> </a></td><td>Detail Page on AWMF Website</td><td/><td/></tr><tr><td>2</td><td style="white-space:nowrap">  medical-society-page<a name="cs-related-artifact-types-medical-society-page"> </a></td><td>Page of the Medical Society</td><td/><td/></tr><tr><td>1</td><td style="white-space:nowrap">patient-information<a name="cs-related-artifact-types-patient-information"> </a></td><td>Patient-Facing Information</td><td>Supplementary material targeted at patients, derived from or related to the guideline.</td><td>Patientenorientierte Information</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types"/>
+  <version value="0.2.0"/>
+  <name value="RelatedArtifactTypes"/>
+  <title value="Related Artifact Types"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem defining types of related artifacts that can be part of a guideline."/>
+  <caseSensitive value="false"/>
+  <hierarchyMeaning value="is-a"/>
+  <content value="complete"/>
+  <count value="8"/>
+  <concept>
+    <code value="related-guideline"/>
+    <display value="Related Guideline"/>
+    <designation>
+      <language value="de"/>
+      <value value="Verwandte Leitlinie"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="app"/>
+    <display value="Mobile App"/>
+    <designation>
+      <language value="de"/>
+      <value value="Mobile App"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="update-registration"/>
+    <display value="Registration of an Update of the Guideline"/>
+    <designation>
+      <language value="de"/>
+      <value value="Anmeldung eines Leitlinien-Updates"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="scientific-publication"/>
+    <display value="Scientific Publication"/>
+    <designation>
+      <language value="de"/>
+      <value value="Wissenschaftliche Veröffentlichung"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="dissemination-website"/>
+    <display value="Dissemination Website"/>
+    <definition value="A website that disseminates the guideline in a human readable format.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Eine Website, die die Leitlinie in einem für Menschen lesbaren Format verbreitet."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Webseite zur Verbreitung"/>
+    </designation>
+    <designation>
+      <language value="de"/>
+      <value value="Detailseite auf der AWMF Webseite"/>
+    </designation>
+    <designation>
+      <language value="de"/>
+      <value value="Seite der Medizinischen Fachgesellschaft"/>
+    </designation>
+    <concept>
+      <code value="awmf-detail-page"/>
+      <display value="Detail Page on AWMF Website"/>
+    </concept>
+    <concept>
+      <code value="medical-society-page"/>
+      <display value="Page of the Medical Society"/>
+    </concept>
+  </concept>
+  <concept>
+    <code value="patient-information"/>
+    <display value="Patient-Facing Information"/>
+    <definition value="Supplementary material targeted at patients, derived from or related to the guideline.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Zusätzliche Materialien, die sich an Patient*innen richten und auf der Leitlinie basieren oder mit ihr in Zusammenhang stehen."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Patientenorientierte Information"/>
+    </designation>
+  </concept>
+</CodeSystem>

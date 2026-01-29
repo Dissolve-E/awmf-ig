@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-recommendation-tags"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-recommendation-tags</b></p><a name="cs-recommendation-tags"> </a><a name="hccs-recommendation-tags"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-tags</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style="white-space:nowrap">quality-indicators-derivable<a name="cs-recommendation-tags-quality-indicators-derivable"> </a></td><td>Derivable as Quality Indicator</td><td>This recommendation can be operationalized into a measurable quality indicator</td><td>Als Qualitätsindikator ableitbar</td></tr><tr><td style="white-space:nowrap">highly-care-relevant<a name="cs-recommendation-tags-highly-care-relevant"> </a></td><td>Highly Relevant for Care Delivery</td><td>This recommendation is considered particularly relevant for clinical care</td><td>Hochrelevant für die Gesundheitsversorgung</td></tr><tr><td style="white-space:nowrap">student-relevant<a name="cs-recommendation-tags-student-relevant"> </a></td><td>Relevant for Medical Education</td><td>This recommendation is considered relevant for students in medical or healthcare education</td><td>Relevant für die medizinische Ausbildung</td></tr><tr><td style="white-space:nowrap">choosing-wisely<a name="cs-recommendation-tags-choosing-wisely"> </a></td><td>Choosing Wisely Recommendation</td><td>This recommendation is part of a 'Choosing Wisely' campaign or follows similar principles</td><td>Gemeinsam Klug Entscheiden-Empfehlungen</td></tr><tr><td style="white-space:nowrap">off-label<a name="cs-recommendation-tags-off-label"> </a></td><td>Off-Label Use</td><td>This recommendation involves off-label use of a medication or device</td><td>Off-Label-Anwendung</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-tags"/>
+  <version value="0.2.0"/>
+  <name value="RecommendationTagsCS"/>
+  <title value="Recommendation Tags"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem defining codes to represent tags for recommendations"/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="5"/>
+  <concept>
+    <code value="quality-indicators-derivable"/>
+    <display value="Derivable as Quality Indicator"/>
+    <definition value="This recommendation can be operationalized into a measurable quality indicator">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Diese Empfehlung kann in einem messbaren Qualitätsindikator operationalisiert werden."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Als Qualitätsindikator ableitbar"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="highly-care-relevant"/>
+    <display value="Highly Relevant for Care Delivery"/>
+    <definition value="This recommendation is considered particularly relevant for clinical care">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Diese Empfehlung wird als besonders relevant für die klinische Versorgung angesehen."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Hochrelevant für die Gesundheitsversorgung"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="student-relevant"/>
+    <display value="Relevant for Medical Education"/>
+    <definition value="This recommendation is considered relevant for students in medical or healthcare education">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Diese Empfehlung wird als relevant für Studierende der Medizin oder weiterer Fächer im Gesundheitswesen angesehen."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Relevant für die medizinische Ausbildung"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="choosing-wisely"/>
+    <display value="Choosing Wisely Recommendation"/>
+    <definition value="This recommendation is part of a 'Choosing Wisely' campaign or follows similar principles">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Diese Empfehlung ist Teil der Gemeinsam Klug Entscheiden-Initiative oder folgt ähnlichen Prinzipien."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Gemeinsam Klug Entscheiden-Empfehlungen"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="off-label"/>
+    <display value="Off-Label Use"/>
+    <definition value="This recommendation involves off-label use of a medication or device">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Diese Empfehlung beinhaltet die Off-Label-Anwendung eines Arzneitmittels oder Geräts."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Off-Label-Anwendung"/>
+    </designation>
+  </concept>
+</CodeSystem>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-recommendation-direction"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-recommendation-direction</b></p><a name="cs-recommendation-direction"> </a><a name="hccs-recommendation-direction"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-direction</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">for<a name="cs-recommendation-direction-for"> </a></td><td>For</td><td>The recommendation is in favor of the intervention.</td></tr><tr><td style="white-space:nowrap">against<a name="cs-recommendation-direction-against"> </a></td><td>Against</td><td>The recommendation is against the intervention.</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-direction"/>
+  <version value="0.2.0"/>
+  <name value="RecommendationDirectionCS"/>
+  <title value="Recommendation Direction"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem defining the direction of a clinical recommendation."/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="2"/>
+  <concept>
+    <code value="for"/>
+    <display value="For"/>
+    <definition value="The recommendation is in favor of the intervention."/>
+  </concept>
+  <concept>
+    <code value="against"/>
+    <display value="Against"/>
+    <definition value="The recommendation is against the intervention."/>
+  </concept>
+</CodeSystem>

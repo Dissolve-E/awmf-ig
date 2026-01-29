@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="vs-care-level"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet vs-care-level</b></p><a name="vs-care-level"> </a><a name="hcvs-care-level"> </a><ul><li>Include these codes as defined in <a href="CodeSystem-cs-care-setting.html"><code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting</code></a><span title="Version is not explicitly stated, which means it is fixed to the version provided in this specification"> version &#x1F4E6;0.2.0</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href="CodeSystem-cs-care-setting.html#cs-care-setting-primary-care">primary-care</a></td><td style="color: #cccccc">Primary Care</td><td>First-contact healthcare provided by general practitioners or family physicians.</td></tr><tr><td><a href="CodeSystem-cs-care-setting.html#cs-care-setting-specialized-care">specialized-care</a></td><td style="color: #cccccc">Specialized Care</td><td>Healthcare provided by medical specialists with advanced training in specific fields.</td></tr></table></li></ul></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/ValueSet/vs-care-level"/>
+  <version value="0.2.0"/>
+  <name value="CareLevelVS"/>
+  <title value="Care Level"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="ValueSet listing levels of care."/>
+  <compose>
+    <include>
+      <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting"/>
+      <concept>
+        <code value="primary-care"/>
+      </concept>
+      <concept>
+        <code value="specialized-care"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

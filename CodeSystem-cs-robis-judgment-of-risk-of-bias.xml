@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-robis-judgment-of-risk-of-bias"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-robis-judgment-of-risk-of-bias</b></p><a name="cs-robis-judgment-of-risk-of-bias"> </a><a name="hccs-robis-judgment-of-risk-of-bias"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-robis-judgment-of-risk-of-bias</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style="white-space:nowrap">low_risk_of_bias<a name="cs-robis-judgment-of-risk-of-bias-low_risk_of_bias"> </a></td><td>Low risk of bias</td><td>The findings of the review are likely to be reliable. Phase 2 did not raise any concerns with the review process or concerns were appropriately considered in the review conclusions. The conclusions were supported by the evidence and included consideration of the relevance of included studies.</td><td>Geringes Risiko für Bias</td></tr><tr><td style="white-space:nowrap">high_risk_of_bias<a name="cs-robis-judgment-of-risk-of-bias-high_risk_of_bias"> </a></td><td>High risk of bias</td><td>One or more of the concerns raised during the Phase 2 assessment was not addressed in the review conclusions, the review conclusions were not supported by the evidence, or the conclusions did not consider the relevance of the included studies to the review question.</td><td>Hohes Risiko für Bias</td></tr><tr><td style="white-space:nowrap">unclear_risk_of_bias<a name="cs-robis-judgment-of-risk-of-bias-unclear_risk_of_bias"> </a></td><td>Unclear risk of bias</td><td>There is insufficient information reported to make a judgement on risk of bias.</td><td>Unklares Risiko für Bias</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-robis-judgment-of-risk-of-bias"/>
+  <version value="0.2.0"/>
+  <name value="ROBISJudgmentOfRiskOfBias"/>
+  <title value="ROBIS Judgment of Risk of Bias"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem representing the judgment of risk of bias assessed by the ROBIS tool for evaluating risk of bias in systematic reviews."/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="3"/>
+  <concept>
+    <code value="low_risk_of_bias"/>
+    <display value="Low risk of bias"/>
+    <definition value="The findings of the review are likely to be reliable. Phase 2 did not raise any concerns with the review process or concerns were appropriately considered in the review conclusions. The conclusions were supported by the evidence and included consideration of the relevance of included studies.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Die Ergebnisse des Reviews sind wahrscheinlich zuverlässig. In Phase 2 der Bewertung wurden keine Bedenken bezüglich des Reviewprozesses identifiziert oder die identifizierten Bedenken wurden in den Schlussfolgerungen des Reviews angemessen berücksichtigt. Die Schlussfolgerungen werden durch die Evidenz gestützt und beinhalten die Berücksichtigung der Relevanz der eingeschlossenen Studien für die Fragestellung des Reviews."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Geringes Risiko für Bias"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="high_risk_of_bias"/>
+    <display value="High risk of bias"/>
+    <definition value="One or more of the concerns raised during the Phase 2 assessment was not addressed in the review conclusions, the review conclusions were not supported by the evidence, or the conclusions did not consider the relevance of the included studies to the review question.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Bedenken, die in Phase 2 der Bewertung identifiziert wurden, sind in den Schlussfolgerungen des Reviews nicht berücksichtigt oder die Schlussfolgerungen werden durch die Evidenz nicht gestützt oder in den Schlussfolgerungen ist die Relevanz der eingeschlossenen Studien für die Fragestellung des Reviews nicht berücksichtigt."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Hohes Risiko für Bias"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="unclear_risk_of_bias"/>
+    <display value="Unclear risk of bias"/>
+    <definition value="There is insufficient information reported to make a judgement on risk of bias.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Die verfügbaren Informationen sind unzureichend für ein Urteil über das Biasrisiko."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Unklares Risiko für Bias"/>
+    </designation>
+  </concept>
+</CodeSystem>

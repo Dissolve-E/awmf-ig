@@ -1,0 +1,431 @@
+{
+  "codeSystems" : [
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-agree-ii-domains",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "AGREEIIDomains",
+      "title" : "AGREE II Domains",
+      "description" : "CodeSystem representing the domains assessed by the AGREE II instrument for evaluating the quality of clinical practice guidelines.",
+      "uses" : {
+      },
+      "ValueSet-vs-agree-ii-domains.html" : "AGREE II Domains Value Set"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-amstar2-confidence-ratings",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "AMSTAR2ConfidenceRatings",
+      "title" : "AMSTAR 2 Overall Confidence Ratings",
+      "description" : "CodeSystem representing the overall confidence ratings from the AMSTAR 2 critical appraisal tool.",
+      "uses" : {
+      },
+      "ValueSet-vs-amstar2-confidence-ratings.html" : "AMSTAR 2 Confidence Ratings Value Set"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-class",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "AWMFGuidelineClass",
+      "title" : "AWMF Guideline Class",
+      "description" : "As part of the project planning for the creation or updating of a guideline,\n    a decision should be made at an early stage about the planned level classification (\"S classification\") according to the AWMF's system of rules (1-3).\n    The S-classification scheme of the AWMF differentiates between the classes S1 treatment recommendation as well as S2e, S2k and S3 guideline.\n    The \"S\" stands for the extent of the applied systematic approach in the development process of a guideline.\n    Each class thus stands for a specific methodological concept that must be presented in a way that is comprehensible to the users.\n    The choice of class is based on the question of how much effort is appropriate and feasible.\n    The need for legitimacy for the implementation of the guideline (convincing the target group) must be taken into account.\n    When choosing a higher S-classification in the context of updating a guideline, the adaptation to the corresponding methodology has to be considered.",
+      "uses" : {
+      },
+      "ValueSet-vs-awmf-guideline-class.html" : "AWMF Guideline Class"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-status",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "AWMFGuidelineStatus",
+      "title" : "AWMF Guideline Status",
+      "description" : "CodeSystem representing the guideline status according to the AWMF.",
+      "uses" : {
+      },
+      "ValueSet-vs-awmf-guideline-status.html" : "AWMF Guideline Status",
+      "ConceptMap-FHIRStatusToAWMFStatus.html" : "Concept map from FHIR Composition Status to AWMF Guideline Status"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-body-systems-conditions",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "BodySystemConditionsCS",
+      "title" : "Body System Conditions",
+      "description" : "CodeSystem representing various body system conditions.",
+      "uses" : {
+      },
+      "ValueSet-vs-body-system-conditions.html" : "Body System Conditions"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "CareSetting",
+      "title" : "Care Setting",
+      "description" : "CodeSystem defining different care settings, including levels of care, healthcare services, and treatment contexts.",
+      "uses" : {
+      },
+      "ValueSet-vs-care-stage.html" : "Care Stage",
+      "ValueSet-vs-care-level.html" : "Care Level",
+      "ValueSet-vs-encounter-type.html" : "Encounter Type"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-clinical-application-type",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "ClinicalApplicationTypeCS",
+      "title" : "Clinical Application Type",
+      "description" : "CodeSystem defining different clinical application types",
+      "uses" : {
+      },
+      "ValueSet-vs-clinical-application-type.html" : "Clinical Application Type"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-contact-point",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "ContactPoint",
+      "title" : "Contact Point",
+      "description" : "CodeSystem defining types of contact points for a guideline",
+      "uses" : {
+      },
+      "ValueSet-vs-guideline-contact-point.html" : "Guideline Contact Point VS"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-to-decision-certainty-rating",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "EvidenceToDecisionCertaintyRating",
+      "title" : "Evidence To Decision Certainty Rating",
+      "description" : "CodeSystem defining GRADE Evidence to Decision (EtD) Framework Certainty Ratings",
+      "uses" : {
+      },
+      "ValueSet-vs-rating-resources.html" : "Rating Resources",
+      "ValueSet-vs-rating-equity.html" : "Rating Equity",
+      "ValueSet-vs-rating-benefits-and-harms.html" : "Rating Benefits And Harms",
+      "ValueSet-vs-rating-feasibility.html" : "Rating Feasibility",
+      "ValueSet-vs-rating-preference-and-values.html" : "Rating Preference And Values",
+      "ValueSet-vs-rating-acceptability.html" : "Rating Acceptability"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "GuidelineAuthorRoleCS",
+      "title" : "Guideline Author Role",
+      "description" : "CodeSystem defining roles for the author of the guideline.",
+      "uses" : {
+      },
+      "ValueSet-vs-guideline-author-role.html" : "Guideline Author Role"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-release-type",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "GuidelineReleaseType",
+      "title" : "Guideline Release Type",
+      "description" : "CodeSystem defining different guideline release types",
+      "uses" : {
+      },
+      "ValueSet-vs-guideline-release-type.html" : "Guideline Release Type"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "GuidelineSectionsCS",
+      "title" : "Guideline Sections",
+      "description" : "Sections of a guideline, describing various aspects such as its intention, target patient group, care setting, and other relevant contextual information.",
+      "uses" : {
+      },
+      "ValueSet-vs-content-types.html" : "Content Types",
+      "ValueSet-vs-guideline-sections.html" : "Guideline Sections"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-intended-audience",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "IntendedAudienceCS",
+      "title" : "Intended Audience Code System",
+      "description" : "CodeSystem defining possible intended audiences for a section",
+      "uses" : {
+      },
+      "ValueSet-vs-intended-audience.html" : "Intended Audience Value Set"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-level-of-consensus",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "LevelOfConsensusCS",
+      "title" : "Level of Consensus",
+      "description" : "CodeSystem defining the values representing the level of consensus for a recommendation.",
+      "uses" : {
+      },
+      "ValueSet-vs-level-of-consensus.html" : "Level Of Consensus"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-medical-subject-categories",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "MedicalSubjectCategoriesCS",
+      "title" : "Medical Subject Categories",
+      "description" : "CodeSystem defining values to classify medical subjects into different categories.",
+      "uses" : {
+      },
+      "ValueSet-vs-medical-subject-categories.html" : "Medical Subject Categories"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-ocebm-2009-levels-of-evidence",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "OCEBM2009LevelsOfEvidence",
+      "title" : "OCEBM 2009 Levels of Evidence",
+      "description" : "CodeSystem representing the Oxford Centre for Evidence-Based Medicine 2009 CEBM Levels of Evidence",
+      "uses" : {
+      },
+      "ValueSet-vs-ocebm-2009-levels-of-evidence.html" : "OCEBM 2009 Levels of Evidence Value Set"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-ocebm-2011-levels-of-evidence",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "OCEBM2011LevelsOfEvidence",
+      "title" : "OCEBM 2011 Levels of Evidence",
+      "description" : "CodeSystem representing the Oxford Centre for Evidence-Based Medicine 2011 Levels of Evidence.",
+      "uses" : {
+      },
+      "ValueSet-ocebm-2011-levels-of-evidence-vs.html" : "OCEBM 2011 Levels of Evidence Value Set"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "PICOCS",
+      "title" : "PICO Related Terms",
+      "description" : "CodeSystem defining different terms related to PICO question and objects",
+      "uses" : {
+      },
+      "ValueSet-vs-pico.html" : "PICO related terms"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-direction",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "RecommendationDirectionCS",
+      "title" : "Recommendation Direction",
+      "description" : "CodeSystem defining the direction of a clinical recommendation.",
+      "uses" : {
+      },
+      "ValueSet-vs-recommendation-direction.html" : "Recommendation Direction"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-review-status",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "RecommendationReviewStatusCS",
+      "title" : "Recommendation Review Status Code System",
+      "description" : "CodeSystem defining values indicating how a recommendation relates to a new revision of a recommendation",
+      "uses" : {
+      },
+      "ValueSet-vs-recommendation-review-status.html" : "Recommendation Review Status Value Set"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-strength-awmf",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "RecommendationStrengthAWMF",
+      "title" : "Recommendation Strength (AWMF)",
+      "description" : "CodeSystem defining the grading of recommendations according to German guideline methodology as used in AWMF S3 guidelines.",
+      "uses" : {
+      },
+      "ValueSet-vs-recommendation-strength-awmf.html" : "Recommendation Strength (AWMF) ValueSet"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-synthesis-type",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "RecommendationSynthesisTypeCS",
+      "title" : "Recommendation Synthesis Type",
+      "description" : "CodeSystem defining values representing the synthesis type of a recommendation",
+      "uses" : {
+      },
+      "ValueSet-vs-recommendation-synthesis-type.html" : "Recommendation Synthesis Type"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-tags",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "RecommendationTagsCS",
+      "title" : "Recommendation Tags",
+      "description" : "CodeSystem defining codes to represent tags for recommendations",
+      "uses" : {
+      },
+      "ValueSet-vs-recommendation-tags.html" : "Recommendation Tags"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "RelatedArtifactTypes",
+      "title" : "Related Artifact Types",
+      "description" : "CodeSystem defining types of related artifacts that can be part of a guideline.",
+      "uses" : {
+      },
+      "ValueSet-vs-dissemination-website.html" : "Dissemination Website"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-remark-type",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "RemarkType",
+      "title" : "Remark Type",
+      "description" : "CodeSystem defining different types of remarks that can be associated with guidelines, including restrictions, warnings, and additional notes.",
+      "uses" : {
+      },
+      "ValueSet-vs-remark-type.html" : "Remark Type"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-rob-2-overall-judgment",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "RoB2OverallJudment",
+      "title" : "RoB2 Overall Judgment",
+      "description" : "CodeSystem representing the overall judgment of risk of bias assessed by the RoB2 tool for evaluating risk of bias for randomized trials.",
+      "uses" : {
+      },
+      "ValueSet-vs-rob-2-overall-judgment.html" : "RoB2 Overall Judgment ValueSet"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-robis-judgment-of-risk-of-bias",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "ROBISJudgmentOfRiskOfBias",
+      "title" : "ROBIS Judgment of Risk of Bias",
+      "description" : "CodeSystem representing the judgment of risk of bias assessed by the ROBIS tool for evaluating risk of bias in systematic reviews.",
+      "uses" : {
+      },
+      "ValueSet-vs-robis-judgment-of-risk-of-bias.html" : "ROBIS Judgment of Risk of Bias Value Set"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-robis-risk-of-bias-domains",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "ROBISRiskOfBiasDomains",
+      "title" : "ROBIS Risk of Bias Domains",
+      "description" : "CodeSystem representing the domains assessed by the ROBIS tool for evaluating risk of bias in systematic reviews.",
+      "uses" : {
+      },
+      "ValueSet-vs-robis-risk-of-bias-domains.html" : "ROBIS Risk of Bias Domains Value Set"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-sign-grade-of-recommendation",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "SIGNGradeOfRecommendation",
+      "title" : "SIGN Grade of Recommendation",
+      "description" : "CodeSystem representing the Scottish Intercollegiate Guidelines Network (SIGN) Grades of Recommendation.",
+      "uses" : {
+      },
+      "ValueSet-vs-sign-grade-of-recommendation.html" : "SIGN Grade of Recommendation Value Set"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-sign-level-of-evidence",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "SIGNLevelOfEvidence",
+      "title" : "SIGN Level of Evidence",
+      "description" : "CodeSystem representing the Scottish Intercollegiate Guidelines Network (SIGN) Levels of Evidence.",
+      "uses" : {
+      },
+      "ValueSet-vs-sign-level-of-evidence.html" : "SIGN Level of Evidence Value Set"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-target-patient-group",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "TargetPatientGroup",
+      "title" : "Target Patient Group",
+      "description" : "CodeSystem defining the intended patient population for whom the guideline is applicable.",
+      "uses" : {
+      },
+      "ValueSet-vs-target-patient-group.html" : "Target Patient Group"
+    },
+    {
+      "url" : "http://hl7.org/fhir/composition-status",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "CompositionStatus",
+      "title" : "Composition Status",
+      "description" : "The workflow/clinical status of the composition.",
+      "oids" : [
+        "2.16.840.1.113883.4.642.4.242",
+        "2.16.840.1.113883.4.642.2.123",
+        "2.16.840.1.113883.4.642.1.237"
+      ],
+      "uses" : {
+      },
+      "ConceptMap-FHIRStatusToAWMFStatus.html" : "Concept map from FHIR Composition Status to AWMF Guideline Status"
+    },
+    {
+      "url" : "http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem",
+      "version" : "1.0.0-ballot3",
+      "status" : "active",
+      "name" : "EvidenceRatingSystemClassifierCodeSystem",
+      "title" : "Evidence Rating System Classifier Code System",
+      "description" : "Codes for use with the EvidenceAssessment Profile, to provide values for the content.classifier element where content.type is Rating System.",
+      "oids" : ["2.16.840.1.113883.4.642.40.44.16.5"],
+      "uses" : {
+      },
+      "https://build.fhir.org/ig/HL7/ebm/ValueSet-evidence-rating-system-classifier.html" : "Evidence Rating System Classifier Codes Value Set"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/certainty-rating",
+      "version" : "2.0.0",
+      "status" : "draft",
+      "name" : "StatisticCertaintyRating",
+      "title" : "StatisticCertaintyRating",
+      "description" : "The relative quality of the statistic.",
+      "oids" : ["2.16.840.1.113883.4.642.1.1415"],
+      "uses" : {
+      },
+      "ValueSet-vs-rating-certainty-of-evidence.html" : "Rating Certainty Of Evidence",
+      "ValueSet-vs-rating-concern-degree.html" : "Rating Concern Degree"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/recommendation-strength",
+      "version" : "1.0.1",
+      "status" : "active",
+      "name" : "StrengthOfRecommendationRating",
+      "title" : "StrengthOfRecommendationRating",
+      "description" : "A rating system that describes the strength of the recommendation, such as the GRADE, DynaMed, or HGPS systems.",
+      "oids" : ["2.16.840.1.113883.4.642.1.1268"],
+      "uses" : {
+      },
+      "http://terminology.hl7.org/7.0.1/ValueSet-recommendation-strength.html" : "StrengthOfRecommendationRating"
+    },
+    {
+      "url" : "https://fevir.net/resources/CodeSystem/179423",
+      "version" : "1.0.0-ballot3",
+      "status" : "active",
+      "name" : "Cs_ebm_ig",
+      "title" : "Evidence Based Medicine on FHIR Implementation Guide Code System",
+      "description" : "This code system is a temporary workspace while drafting the Evidence Based Medicine Implementation Guide. It may not be stable and may not be persistent.",
+      "oids" : ["2.16.840.1.113883.4.642.40.44.16.1"],
+      "uses" : {
+      },
+      "ValueSet-vs-guideline-sections.html" : "Guideline Sections"
+    },
+    {
+      "url" : "urn:ietf:bcp:47",
+      "version" : "2.0.1",
+      "status" : "active",
+      "name" : "Ietf3066",
+      "title" : "Tags for the Identification of Languages",
+      "description" : "Older value from OID registry.  Superceded; see recommendations in BCP-47.",
+      "oids" : ["2.16.840.1.113883.6.121"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-languages.html" : "Common Languages"
+    }
+  ]
+}

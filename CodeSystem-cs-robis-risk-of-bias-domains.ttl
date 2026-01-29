@@ -1,0 +1,181 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/CodeSystem/cs-robis-risk-of-bias-domains> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cs-robis-risk-of-bias-domains"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-robis-risk-of-bias-domains</b></p><a name=\"cs-robis-risk-of-bias-domains\"> </a><a name=\"hccs-robis-risk-of-bias-domains\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-robis-risk-of-bias-domains</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">study_eligibility_criteria<a name=\"cs-robis-risk-of-bias-domains-study_eligibility_criteria\"> </a></td><td>Study Eligibility Criteria</td><td>Concerns regarding the specification of study eligibility criteria.</td><td>Studienauswahlkriterien</td></tr><tr><td style=\"white-space:nowrap\">identification_selection_studies<a name=\"cs-robis-risk-of-bias-domains-identification_selection_studies\"> </a></td><td>Identification and Selection of Studies</td><td>Concerns regarding methods used to identify and/or select studies.</td><td>Identifizierung und Auswahl der Studien</td></tr><tr><td style=\"white-space:nowrap\">data_collection_study_appraisal<a name=\"cs-robis-risk-of-bias-domains-data_collection_study_appraisal\"> </a></td><td>Data Collection and Study Appraisal</td><td>Concerns regarding methods used to collect data and appraise studies.</td><td>Datenextraktion und kritische Bewertung der Studien</td></tr><tr><td style=\"white-space:nowrap\">synthesis_findings<a name=\"cs-robis-risk-of-bias-domains-synthesis_findings\"> </a></td><td>Synthesis and Findings</td><td>Concerns regarding the synthesis and findings of the review.</td><td>Synthese und Ergebnisse</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-robis-risk-of-bias-domains"^^xsd:anyURI ;
+     fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-robis-risk-of-bias-domains>
+  ] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:name [ fhir:v "ROBISRiskOfBiasDomains"] ; # 
+  fhir:title [ fhir:v "ROBIS Risk of Bias Domains"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-01-29T18:27:10+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "AWMF e.V."] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AWMF e.V." ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.awmf.org" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "CodeSystem representing the domains assessed by the ROBIS tool for evaluating risk of bias in systematic reviews."] ; # 
+  fhir:caseSensitive [ fhir:v false] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "4"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "study_eligibility_criteria" ] ;
+     fhir:display [ fhir:v "Study Eligibility Criteria" ] ;
+     fhir:definition [
+       fhir:v "Concerns regarding the specification of study eligibility criteria." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Bedenken im Hinblick auf die Einschlusskriterien"
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Studienauswahlkriterien" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "identification_selection_studies" ] ;
+     fhir:display [ fhir:v "Identification and Selection of Studies" ] ;
+     fhir:definition [
+       fhir:v "Concerns regarding methods used to identify and/or select studies." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Bedenken im Hinblick auf die Identifikation und Auswahl der Studien"
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Identifizierung und Auswahl der Studien" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "data_collection_study_appraisal" ] ;
+     fhir:display [ fhir:v "Data Collection and Study Appraisal" ] ;
+     fhir:definition [
+       fhir:v "Concerns regarding methods used to collect data and appraise studies." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Bedenken im Hinblick auf die Datenextraktion und Bewertung der Studien"
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Datenextraktion und kritische Bewertung der Studien" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "synthesis_findings" ] ;
+     fhir:display [ fhir:v "Synthesis and Findings" ] ;
+     fhir:definition [
+       fhir:v "Concerns regarding the synthesis and findings of the review." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Bedenken im Hinblick auf die Datensynthese und Ergebnisse"
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Synthese und Ergebnisse" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

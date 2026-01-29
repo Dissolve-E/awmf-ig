@@ -1,0 +1,139 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "cs-body-systems-conditions",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-body-systems-conditions</b></p><a name=\"cs-body-systems-conditions\"> </a><a name=\"hccs-body-systems-conditions\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-body-systems-conditions</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">respiratory<a name=\"cs-body-systems-conditions-respiratory\"> </a></td><td>Respiratory System and Lungs</td><td>Atemwege und Lunge</td></tr><tr><td style=\"white-space:nowrap\">nervous<a name=\"cs-body-systems-conditions-nervous\"> </a></td><td>Brain and Nerves</td><td>Gehirn und Nerven</td></tr><tr><td style=\"white-space:nowrap\">skin<a name=\"cs-body-systems-conditions-skin\"> </a></td><td>Skin and Hair</td><td>Haut und Haare</td></tr><tr><td style=\"white-space:nowrap\">cardiovascular<a name=\"cs-body-systems-conditions-cardiovascular\"> </a></td><td>Heart and Circulatory System</td><td>Herz und Kreislauf</td></tr><tr><td style=\"white-space:nowrap\">extremities<a name=\"cs-body-systems-conditions-extremities\"> </a></td><td>Hands and Feet</td><td>Hände und Füße</td></tr><tr><td style=\"white-space:nowrap\">musculoskeletal<a name=\"cs-body-systems-conditions-musculoskeletal\"> </a></td><td>Bones and Joints</td><td>Knochen und Gelenke</td></tr><tr><td style=\"white-space:nowrap\">headneck<a name=\"cs-body-systems-conditions-headneck\"> </a></td><td>Head and Neck</td><td>Kopf und Hals</td></tr><tr><td style=\"white-space:nowrap\">oncology<a name=\"cs-body-systems-conditions-oncology\"> </a></td><td>Cancer Conditions</td><td>Krebserkrankungen</td></tr><tr><td style=\"white-space:nowrap\">mentalhealth<a name=\"cs-body-systems-conditions-mentalhealth\"> </a></td><td>Mental Health</td><td>Psyche</td></tr><tr><td style=\"white-space:nowrap\">pain<a name=\"cs-body-systems-conditions-pain\"> </a></td><td>Pain Conditions</td><td>Schmerzen</td></tr><tr><td style=\"white-space:nowrap\">miscellaneous<a name=\"cs-body-systems-conditions-miscellaneous\"> </a></td><td>Other Conditions</td><td>Sonstige Krankheitsbilder</td></tr><tr><td style=\"white-space:nowrap\">metabolic<a name=\"cs-body-systems-conditions-metabolic\"> </a></td><td>Metabolic Disorders</td><td>Stoffwechsel-Erkrankungen</td></tr><tr><td style=\"white-space:nowrap\">digestive<a name=\"cs-body-systems-conditions-digestive\"> </a></td><td>Digestive and Urinary Organs</td><td>Verdauungs- und Harnorgane</td></tr><tr><td style=\"white-space:nowrap\">dental<a name=\"cs-body-systems-conditions-dental\"> </a></td><td>Teeth</td><td>Zähne</td></tr></table></div>"
+  },
+  "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-body-systems-conditions",
+  "version" : "0.2.0",
+  "name" : "BodySystemConditionsCS",
+  "title" : "Body System Conditions",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-01-29T18:27:10+00:00",
+  "publisher" : "AWMF e.V.",
+  "contact" : [{
+    "name" : "AWMF e.V.",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org"
+    }]
+  }],
+  "description" : "CodeSystem representing various body system conditions.",
+  "caseSensitive" : false,
+  "content" : "complete",
+  "count" : 14,
+  "concept" : [{
+    "code" : "respiratory",
+    "display" : "Respiratory System and Lungs",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Atemwege und Lunge"
+    }]
+  },
+  {
+    "code" : "nervous",
+    "display" : "Brain and Nerves",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Gehirn und Nerven"
+    }]
+  },
+  {
+    "code" : "skin",
+    "display" : "Skin and Hair",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Haut und Haare"
+    }]
+  },
+  {
+    "code" : "cardiovascular",
+    "display" : "Heart and Circulatory System",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Herz und Kreislauf"
+    }]
+  },
+  {
+    "code" : "extremities",
+    "display" : "Hands and Feet",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Hände und Füße"
+    }]
+  },
+  {
+    "code" : "musculoskeletal",
+    "display" : "Bones and Joints",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Knochen und Gelenke"
+    }]
+  },
+  {
+    "code" : "headneck",
+    "display" : "Head and Neck",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Kopf und Hals"
+    }]
+  },
+  {
+    "code" : "oncology",
+    "display" : "Cancer Conditions",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Krebserkrankungen"
+    }]
+  },
+  {
+    "code" : "mentalhealth",
+    "display" : "Mental Health",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Psyche"
+    }]
+  },
+  {
+    "code" : "pain",
+    "display" : "Pain Conditions",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Schmerzen"
+    }]
+  },
+  {
+    "code" : "miscellaneous",
+    "display" : "Other Conditions",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Sonstige Krankheitsbilder"
+    }]
+  },
+  {
+    "code" : "metabolic",
+    "display" : "Metabolic Disorders",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Stoffwechsel-Erkrankungen"
+    }]
+  },
+  {
+    "code" : "digestive",
+    "display" : "Digestive and Urinary Organs",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Verdauungs- und Harnorgane"
+    }]
+  },
+  {
+    "code" : "dental",
+    "display" : "Teeth",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Zähne"
+    }]
+  }]
+}

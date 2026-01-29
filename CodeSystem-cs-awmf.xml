@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-awmf"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-awmf</b></p><a name="cs-awmf"> </a><a name="hccs-awmf"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style="white-space:nowrap">ordered-by-authors<a name="cs-awmf-ordered-by-authors"> </a></td><td>Ordered by authors</td><td>The guideline is ordered by authors and SHALL be adhered to in the order specified.</td><td>Durch Autor*innen geordnet</td></tr><tr><td style="white-space:nowrap">major-minor<a name="cs-awmf-major-minor"> </a></td><td>Major-Minor Versioning</td><td>A versioning scheme using major and minor version numbers (e.g., 1.0, 2.1).</td><td>Major-Minor Versionierungsschema</td></tr><tr><td style="white-space:nowrap">year-month-versioning<a name="cs-awmf-year-month-versioning"> </a></td><td>Year-Month Versioning</td><td>A versioning scheme based on year and month (e.g., 2024/06).</td><td>Jahr-Monat Versionierungsschema</td></tr><tr><td style="white-space:nowrap">medical-society<a name="cs-awmf-medical-society"> </a></td><td>Medical Society</td><td>A medical society.</td><td>Medizinische Fachgesellschaft</td></tr><tr><td style="white-space:nowrap">awmf-member-organization<a name="cs-awmf-awmf-member-organization"> </a></td><td>AWMF Member Organization</td><td>An organization that is a member of the AWMF</td><td>Mitgliedsorganisation der AWMF</td></tr><tr><td style="white-space:nowrap">recommendation-rating<a name="cs-awmf-recommendation-rating"> </a></td><td>Recommendation Rating</td><td>The rating of a recommendation</td><td>Empfehlungsgraduierung</td></tr><tr><td style="white-space:nowrap">level-of-consensus<a name="cs-awmf-level-of-consensus"> </a></td><td>Level of Consensus</td><td>The level of consensus for a recommendation</td><td>Konsensusstärke</td></tr><tr><td style="white-space:nowrap">guideline-registry-record<a name="cs-awmf-guideline-registry-record"> </a></td><td>Guideline Registry Record</td><td>A registry record for a clinical practice guideline in the AWMF guideline registry</td><td>Leitlinien-Registrierungseintrag</td></tr><tr><td style="white-space:nowrap">patient-organization<a name="cs-awmf-patient-organization"> </a></td><td>Patient Organization</td><td>An organization that represents patients</td><td>Patientenorganisation</td></tr><tr><td style="white-space:nowrap">OCEBM2009<a name="cs-awmf-OCEBM2009"> </a></td><td>Oxford 2009 (OCEBM)</td><td/><td/></tr><tr><td style="white-space:nowrap">outcome<a name="cs-awmf-outcome"> </a></td><td>Outcome</td><td>An outcome used in the evidence assessment of a recommendation</td><td>Ergebnis</td></tr><tr><td style="white-space:nowrap">overall-quality-of-evidence<a name="cs-awmf-overall-quality-of-evidence"> </a></td><td>Overall Quality of Evidence</td><td>The overall quality of evidence for a recommendation</td><td>Gesamtqualität der Evidenz</td></tr><tr><td style="white-space:nowrap">evidence-rating<a name="cs-awmf-evidence-rating"> </a></td><td>Evidence Rating</td><td>The evidence rating for a recommendation</td><td>Evidenzbewertung</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"/>
+  <version value="0.2.0"/>
+  <name value="AWMFCS"/>
+  <title value="awmf"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem representing different codes of interest for the Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften (AWMF)"/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="13"/>
+  <concept>
+    <code value="ordered-by-authors"/>
+    <display value="Ordered by authors"/>
+    <definition value="The guideline is ordered by authors and SHALL be adhered to in the order specified.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Die Leitlinie wurde von den Autor*innen geordnet und MUSS in der angegebenen Reihenfolge befolgt werden."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Durch Autor*innen geordnet"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="major-minor"/>
+    <display value="Major-Minor Versioning"/>
+    <definition value="A versioning scheme using major and minor version numbers (e.g., 1.0, 2.1)."/>
+    <designation>
+      <language value="de"/>
+      <value value="Major-Minor Versionierungsschema"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="year-month-versioning"/>
+    <display value="Year-Month Versioning"/>
+    <definition value="A versioning scheme based on year and month (e.g., 2024/06).">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Versionierungsschema im Format Jahr-Monat (z.B. 2024/06)"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Jahr-Monat Versionierungsschema"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="medical-society"/>
+    <display value="Medical Society"/>
+    <definition value="A medical society.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Eine medizinische Fachgesellschaft."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Medizinische Fachgesellschaft"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="awmf-member-organization"/>
+    <display value="AWMF Member Organization"/>
+    <definition value="An organization that is a member of the AWMF">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Eine Organisation oder Fachgesellschaft, die Mitglied der AWMF ist."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Mitgliedsorganisation der AWMF"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="recommendation-rating"/>
+    <display value="Recommendation Rating"/>
+    <definition value="The rating of a recommendation">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Graduierung der Empfehlung"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Empfehlungsgraduierung"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="level-of-consensus"/>
+    <display value="Level of Consensus"/>
+    <definition value="The level of consensus for a recommendation">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Die Stärke des Konsens einer Empfehlung"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Konsensusstärke"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="guideline-registry-record"/>
+    <display value="Guideline Registry Record"/>
+    <definition value="A registry record for a clinical practice guideline in the AWMF guideline registry">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Ein Registrierungseintrag für eine klinische Praxisleitlinie im AWMF-Leitlinienregister"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Leitlinien-Registrierungseintrag"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="patient-organization"/>
+    <display value="Patient Organization"/>
+    <definition value="An organization that represents patients">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Eine Organisation, die Patienten vertritt."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Patientenorganisation"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="OCEBM2009"/>
+    <display value="Oxford 2009 (OCEBM)"/>
+  </concept>
+  <concept>
+    <code value="outcome"/>
+    <display value="Outcome"/>
+    <definition value="An outcome used in the evidence assessment of a recommendation">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Ein Ergebnis, das in der Evidenzbewertung einer Empfehlung verwendet wird."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Ergebnis"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="overall-quality-of-evidence"/>
+    <display value="Overall Quality of Evidence"/>
+    <definition value="The overall quality of evidence for a recommendation">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Die Gesamtqualität der Evidenz für eine Empfehlung."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Gesamtqualität der Evidenz"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="evidence-rating"/>
+    <display value="Evidence Rating"/>
+    <definition value="The evidence rating for a recommendation">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Die Evidenzbewertung für eine Empfehlung."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Evidenzbewertung"/>
+    </designation>
+  </concept>
+</CodeSystem>

@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>DISSOLVE-E Implementation Guide - Dissolve-E: AWMF Guideline Registry v0.2.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"1"}
+    h3,h4,h5,h6{--heading-prefix:"1"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Dissolve-E: AWMF Guideline Registry</span>
+            <br/>
+            <span style="display:inline-block;">0.2.0 - ci-build
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R5/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="profiles.html">Profiles</a>
+  </li>
+  <li>
+    <a href="extensions.html">Extensions</a>
+  </li>
+  <li>
+    <a href="codesystems.html">Code Systems</a>
+  </li>
+  <li>
+    <a href="valuesets.html">Value Sets</a>
+  </li>
+  <li>
+    <a href="examples.html">Examples</a>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>DISSOLVE-E Implementation Guide</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Dissolve-E: AWMF Guideline Registry - Local Development build (v0.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://fhir.awmf.org/awmf.ig/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>DISSOLVE-E Implementation Guide</h2>
+  
+
+
+
+
+
+
+  <table class="colsd">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://fhir.awmf.org/awmf.ig/ImplementationGuide/awmf.ig<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://fhir.awmf.org/awmf.ig/ImplementationGuide/awmf.ig"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">0.2.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://fhir.awmf.org/awmf.ig/ImplementationGuide/awmf.ig|0.2.0"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          Draft
+          
+            as of 2026-01-29
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">AWMFGuidelineRegistryIG</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#dissolve-e---digitization-of-the-awmf-guideline-registry-for-an-open-guideline-based-trustworthy-evidence-ecosystem" id="markdown-toc-dissolve-e---digitization-of-the-awmf-guideline-registry-for-an-open-guideline-based-trustworthy-evidence-ecosystem">Dissolve-E - Digitization of the AWMF guideline registry for an open, guideline-based, trustworthy evidence ecosystem</a>    <ul>
+      <li><a href="#background" id="markdown-toc-background">Background</a></li>
+      <li><a href="#summary" id="markdown-toc-summary">Summary</a></li>
+      <li><a href="#graphical-overview-of-the-fhir-resources" id="markdown-toc-graphical-overview-of-the-fhir-resources">Graphical Overview of the FHIR Resources</a></li>
+      <li><a href="#authors-in-alphabetical-order-with-affiliations" id="markdown-toc-authors-in-alphabetical-order-with-affiliations">Authors (in alphabetical order) with Affiliations</a></li>
+      <li><a href="#contributing-organisations-in-alphabetical-order" id="markdown-toc-contributing-organisations-in-alphabetical-order">Contributing Organisations (in alphabetical order)</a></li>
+      <li><a href="#further-information" id="markdown-toc-further-information">Further information</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+
+<h1 id="dissolve-e---digitization-of-the-awmf-guideline-registry-for-an-open-guideline-based-trustworthy-evidence-ecosystem">Dissolve-E - Digitization of the AWMF guideline registry for an open, guideline-based, trustworthy evidence ecosystem</h1>
+
+<h3 id="background">Background</h3>
+
+<p>Dissolve-E (<em>Digitization of the AWMF guideline registry for an open, guideline-based, trustworthy evidence ecosystem</em>) aims to digitize the guidelines registry maintained by the Association of the Scientific Medical Societies in Germany (AWMF). This registry plays a crucial role in ensuring quality medical care by providing evidence-based clinical guidelines. However, this registry is currently analog without comprehensive digital version existing yet.</p>
+
+<p><strong>Potential Objectives and Benefits are:</strong></p>
+
+<ul>
+  <li>Developing a digital infrastructure that meets national and international technical standards and requirements;</li>
+  <li>Ideally facilitating the creation, updating, and access of clinical guidelines;</li>
+  <li>Providing tailored formats and decision-support tools for medical professionals;</li>
+  <li>Potentially enabling efficient real-time comparison between guideline recommendations, treatment options, and latest scientific findings.</li>
+</ul>
+
+<h3 id="summary">Summary</h3>
+
+<p>We hereby present the Implementation Guide (IG) developed for DISSOLVE-E based combining the [evidence-based medicine on FHIR (EBMonFHIR)][EMBonFHIR] IG and further defined artifacts to represent evidence-based clinical practice guidelines and recommendations, including the evidence that led to the single recommendations. Additional FHIR artifacts allow to describe the certainty of evidence based on different rating systems or the strength of recommendation, as well as the organizations and persons involved in the guideline process.</p>
+
+<p class="stu-note">This IG is based on FHIR R6 (6.0.0-ballot3).</p>
+
+<h4 id="profiles-to-represent-a-clinical-practice-guideline">Profiles to represent a clinical practice guideline</h4>
+<p>While DISSOLVE-E is initiated by the AWMF and foremost aiming to develop a digital guidelines registry for Germany, we propose a general guideline profile as well as registry-specific profiles including AWMF specific requirements.</p>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>FHIR Base Resource</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="StructureDefinition-awmf-guideline.html">Guideline</a></td>
+      <td><a href="http://build.fhir.org/composition.html">Composition</a></td>
+      <td>Representation of a general clinical practice guideline.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-guideline-attachment.html">Guideline Attachment</a></td>
+      <td><a href="http://build.fhir.org/documentreference.html">DocumentReference</a></td>
+      <td>Representation of an attachment to a clinical practice guideline.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-guideline-registry-record.html">Guideline Registry Record</a></td>
+      <td><a href="http://build.fhir.org/composition.html">Composition</a></td>
+      <td>Representation of a guideline registry record containing metadata and registry-specific information.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-awmf-guideline-record-s1.html">AWMF S1 Guideline Registry Record</a></td>
+      <td><a href="http://build.fhir.org/composition.html">Composition</a></td>
+      <td>Representation of an AWMF S1 guideline registry record encompassing expert recommendations developed through informal consensus.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-awmf-guideline-record-s2e.html">AWMF S2e Guideline Registry Record</a></td>
+      <td><a href="http://build.fhir.org/composition.html">Composition</a></td>
+      <td>Representation of an AWMF S2e guideline registry record based on systematic literature search and evaluation.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-awmf-guideline-record-s2k.html">AWMF S2k Guideline Registry Record</a></td>
+      <td><a href="http://build.fhir.org/composition.html">Composition</a></td>
+      <td>Representation of an AWMF S2k guideline registry record based on structured consensus by a representative panel.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-awmf-guideline-record-s3.html">AWMF S3 Guideline Registry Record</a></td>
+      <td><a href="http://build.fhir.org/composition.html">Composition</a></td>
+      <td>Representation of an AWMF S3 guideline registry record based on systematic evidence review and structured consensus by a representative panel.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="profile-to-represent-a-recommendation">Profile to represent a recommendation</h4>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>FHIR Base Resource</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="StructureDefinition-recommendation.html">Recommendation</a></td>
+      <td><a href="http://build.fhir.org/composition.html">Composition</a></td>
+      <td>Representation of a clinical practice guideline recommendation.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="profiles-to-represent-the-evidence-assessment-upon-which-a-clinical-practice-guideline-recommendation-is-based">Profiles to represent the evidence assessment upon which a clinical practice guideline recommendation is based</h5>
+<p>We propose a general profile as well as profiles based on different quality and risk of bias assessment systems.</p>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>FHIR Base Resource</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="StructureDefinition-evidence-overall-quality-assessment.html">Evidence Overall Quality Assessment</a></td>
+      <td><a href="http://build.fhir.org/artifactassessment.html">ArtifactAssessment</a></td>
+      <td>General representation of a certainty of evidence rating, possibly outcome-specific.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-evidence-internal-validity-assessment.html">Evidence Internal Validity Assessment</a></td>
+      <td><a href="http://build.fhir.org/artifactassessment.html">ArtifactAssessment</a></td>
+      <td>Assessment of the internal validity of evidence.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-evidence-internal-assessment-agreeii.html">Evidence Internal Assessment AGREE II</a></td>
+      <td><a href="http://build.fhir.org/artifactassessment.html">ArtifactAssessment</a></td>
+      <td>Assessment of guideline quality using the AGREE II instrument.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-evidence-internal-assessment-amstar2.html">Evidence Internal Assessment AMSTAR 2</a></td>
+      <td><a href="http://build.fhir.org/artifactassessment.html">ArtifactAssessment</a></td>
+      <td>Assessment of systematic review quality using AMSTAR 2.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-evidence-internal-assessment-cochrane-rob.html">Evidence Internal Assessment Cochrane Risk of Bias</a></td>
+      <td><a href="http://build.fhir.org/artifactassessment.html">ArtifactAssessment</a></td>
+      <td>Assessment of risk of bias using Cochrane RoB tool.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-evidence-internal-assessment-robis.html">Evidence Internal Assessment ROBIS</a></td>
+      <td><a href="http://build.fhir.org/artifactassessment.html">ArtifactAssessment</a></td>
+      <td>Assessment of risk of bias using ROBIS (Risk of Bias in Systematic Reviews).</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-evidence-overall-quality-assessment.html">Evidence Overall Quality Assessment</a></td>
+      <td><a href="http://build.fhir.org/artifactassessment.html">ArtifactAssessment</a></td>
+      <td>Overall assessment of evidence quality.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-evidence-overall-assessment-grade.html">Evidence Overall Assessment GRADE</a></td>
+      <td><a href="http://build.fhir.org/artifactassessment.html">ArtifactAssessment</a></td>
+      <td>Overall assessment of evidence certainty using GRADE.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-evidence-overall-assessment-oxford2011.html">Evidence Overall Assessment Oxford 2011</a></td>
+      <td><a href="http://build.fhir.org/artifactassessment.html">ArtifactAssessment</a></td>
+      <td>Overall assessment of evidence certainty using Oxford 2011 levels of evidence.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="profiles-to-represent-the-recommendation-justification">Profiles to represent the recommendation justification</h5>
+
+<p>We propose a general profile as well as specific profiles based on various internationally recognized rating systems used to describe the strength of recommendation:</p>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>FHIR Base Resource</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="StructureDefinition-recommendation-justification.html">Recommendation Justification</a></td>
+      <td><a href="http://build.fhir.org/artifactassessment.html">ArtifactAssessment</a></td>
+      <td>General representation of a structured assessment of the evidence and consensus that underpins a recommendation.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-recommendation-justification-awmf.html">Recommendation Justification AWMF</a></td>
+      <td><a href="http://build.fhir.org/artifactassessment.html">ArtifactAssessment</a></td>
+      <td>Recommendation justification including AWMF strength of recommendation rating.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-recommendation-justification-expert-consensus.html">Recommendation Justification Expert Consensus</a></td>
+      <td><a href="http://build.fhir.org/artifactassessment.html">ArtifactAssessment</a></td>
+      <td>Recommendation justification based on expert consensus.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-recommendation-justification-grade.html">Recommendation Justification GRADE</a></td>
+      <td><a href="http://build.fhir.org/artifactassessment.html">ArtifactAssessment</a></td>
+      <td>Recommendation justification including GRADE strength of recommendation rating.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-recommendation-justification-oxford-2009.html">Recommendation Justification OXFORD 2009</a></td>
+      <td><a href="http://build.fhir.org/artifactassessment.html">ArtifactAssessment</a></td>
+      <td>Recommendation justification including Oxford 2009 grade of recommendation.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-recommendation-justification-oxford-2011.html">Recommendation Justification OXFORD 2011</a></td>
+      <td><a href="http://build.fhir.org/artifactassessment.html">ArtifactAssessment</a></td>
+      <td>Recommendation justification including Oxford 2011 grade of recommendation.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-recommendation-justification-sign.html">Recommendation Justification SIGN</a></td>
+      <td><a href="http://build.fhir.org/artifactassessment.html">ArtifactAssessment</a></td>
+      <td>Recommendation justification including SIGN grade of recommendation.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="profiles-for-pico-questions">Profiles for PICO Questions</h4>
+
+<p>To support structured representation of clinical questions, we provide profiles for PICO (Population, Intervention, Comparator, Outcome) questions:</p>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>FHIR Base Resource</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="StructureDefinition-pico-question.html">PICO Question</a></td>
+      <td><a href="http://build.fhir.org/group.html">Group</a></td>
+      <td>Structured definition of a PICO question in the context of guidelines and recommendations.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-conceptual-cohort-definition-population.html">Conceptual Cohort Definition Population</a></td>
+      <td><a href="http://build.fhir.org/group.html">Group</a></td>
+      <td>Definition of the population in a PICO question.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-conceptual-cohort-definition-intervention.html">Conceptual Cohort Definition Intervention</a></td>
+      <td><a href="http://build.fhir.org/group.html">Group</a></td>
+      <td>Definition of the intervention in a PICO question.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-conceptual-cohort-definition-comparator.html">Conceptual Cohort Definition Comparator</a></td>
+      <td><a href="http://build.fhir.org/group.html">Group</a></td>
+      <td>Definition of the comparator in a PICO question.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-conceptual-cohort-definition-outcome.html">Conceptual Cohort Definition Outcome</a></td>
+      <td><a href="http://build.fhir.org/group.html">Group</a></td>
+      <td>Definition of the outcome in a PICO question.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="profiles-for-involved-organizations-and-persons">Profiles for involved Organizations and Persons</h4>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>FHIR Base Resource</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="StructureDefinition-awmf-member-organization.html">AWMF Member Organization</a></td>
+      <td><a href="http://build.fhir.org/organization.html">Organization</a></td>
+      <td>Representation of an organization that is a member of the AWMF.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-medical-society.html">Medical Society</a></td>
+      <td><a href="http://build.fhir.org/organization.html">Organization</a></td>
+      <td>Representation of a medical society involved in guideline development.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-patient-organization.html">Patient Organization</a></td>
+      <td><a href="http://build.fhir.org/organization.html">Organization</a></td>
+      <td>Representation of a patient organization involved in guideline development.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-guideline-author.html">Guideline Author</a></td>
+      <td><a href="http://build.fhir.org/practitioner.html">Practitioner</a></td>
+      <td>Representation of a person that authored a guideline.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-ext-guideline-author-role.html">Guideline Author Role</a></td>
+      <td><a href="http://build.fhir.org/practitionerrole.html">PractitionerRole</a></td>
+      <td>Representation of the role of the author of the guideline.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="other-profiles">Other Profiles</h4>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>FHIR Base Resource</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="StructureDefinition-outcome-evidence.html">Outcome Evidence</a></td>
+      <td><a href="http://build.fhir.org/evidence.html">Evidence</a></td>
+      <td>Representation of evidence for a specific outcome.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-citation-list.html">Citation List</a></td>
+      <td><a href="http://build.fhir.org/citation.html">Citation</a></td>
+      <td>Representation of a list of citations supporting recommendations or evidence.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="graphical-overview-of-the-fhir-resources">Graphical Overview of the FHIR Resources</h3>
+
+<p>The following diagramm provides an overview of the diverse profiles used in this the DISSOLVE-E-IG and their relationship allowing for a structured representation of clinical practice guidelines with
+accompanying evidence and evidence-to-decision information. The cardinalities shown represent the respective maxima. Please consult the pages of the respective <a href="profiles.html">profiles</a> for additional details.</p>
+
+<p><img src="awmf-ig-0.2.0-class-diagram.png" alt="Class Diagramm for DISSOLVE-E AWMF IG" style="width:100%;" /></p>
+
+<h3 id="authors-in-alphabetical-order-with-affiliations">Authors (in alphabetical order) with Affiliations</h3>
+<ul>
+  <li><a href="https://github.com/klsophie">Sophie Klopfenstein</a> (Berlin Institute of Health at Charité)</li>
+  <li><a href="https://github.com/glichtner">Gregor Lichtner</a> (University Medicine Greifswald)</li>
+  <li>Ina Müller (Association of the Scientific Medical Societies in Germany)</li>
+  <li><a href="https://github.com/starlinger">Johannes Starlinger</a> (Howto Health GmbH)</li>
+</ul>
+
+<h3 id="contributing-organisations-in-alphabetical-order">Contributing Organisations (in alphabetical order)</h3>
+
+<ul>
+  <li>Association of the Scientific Medical Societies in Germany (AWMF)</li>
+  <li>aQua – Institute for Applied Quality Improvement and Research in Health Care</li>
+  <li>Charité–Universitätsmedizin Berlin / Berlin Institute of Health</li>
+  <li>Clinical Guideline Services GmbH</li>
+  <li>Computable Publishing LLC, Scientific Knowledge Accelerator Foundation</li>
+  <li>Evidence Prime Inc.</li>
+  <li>German Cancer Society, Office Leitlinienprogramm Onkologie</li>
+  <li>German Society for Wound Healing and Wound Treatment e.V.</li>
+  <li>German Society of Internal Medicine</li>
+  <li>HL7 Germany</li>
+  <li>Howto Health GmbH</li>
+  <li>Institute for Evidence in Medicine, University of Freiburg</li>
+  <li>MAGIC Evidence Ecosystem Foundation</li>
+  <li>University Medicine Greifswalds</li>
+</ul>
+
+<h3 id="further-information">Further information</h3>
+
+<h4 id="ethical-considerations">Ethical Considerations</h4>
+<p><em>The Ethics Committee of the Berlin chamber of physicians in accordance with its code of conduct §15 section 1 (Eth-KB-24-11) confirmed that no ethical approval is needed for this study.</em></p>
+
+<h4 id="funding-information">Funding Information</h4>
+<p>This project is publicly funded by the Innovation Committee of the Federal Joint Committee (German: Gemeinsamer Bundesausschuss, short: G-BA) for three years (April 2024 to March 2027) with a total of around 2.8 million euros under the grant number: 01VSF23021.</p>
+
+<h4 id="links">Links</h4>
+<ul>
+  <li>DISSOLVE-E on the Website of the Federal Joint Committee (G-BA) in <a href="https://innovationsfonds.g-ba.de/projekte/versorgungsforschung/dissolve-e.597">German</a> or <a href="https://www.awmf.org/die-awmf/imwi/projekte/dissolve-e-english-version">English</a></li>
+  <li><a href="https://github.com/Dissolve-E/awmf-ig">GitHub project</a></li>
+  <li>Profile definitions in the DISSOLVE-E Implementation Guide can be downloaded as a package via <a href="https://fhir.awmf.org/awmf.ig/package.tgz" alt="DISSOLVE-E Implementation Guide profile package download">https://fhir.awmf.org/awmf.ig/package.tgz</a>.</li>
+</ul>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.awmf.org">AWMF e.V.</a>.  Package awmf.ig#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR 6.0.0-ballot3</a>. Generated <span title="Thu, Jan 29, 2026 18:27+0000">2026-01-29</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

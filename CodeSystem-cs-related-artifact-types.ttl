@@ -1,0 +1,153 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cs-related-artifact-types"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-related-artifact-types</b></p><a name=\"cs-related-artifact-types\"> </a><a name=\"hccs-related-artifact-types\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types</code> defines the following codes in a Is-A hierarchy:</p><table class=\"codes\"><tr><td><b>Lvl</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td>1</td><td style=\"white-space:nowrap\">related-guideline<a name=\"cs-related-artifact-types-related-guideline\"> </a></td><td>Related Guideline</td><td/><td>Verwandte Leitlinie</td></tr><tr><td>1</td><td style=\"white-space:nowrap\">app<a name=\"cs-related-artifact-types-app\"> </a></td><td>Mobile App</td><td/><td>Mobile App</td></tr><tr><td>1</td><td style=\"white-space:nowrap\">update-registration<a name=\"cs-related-artifact-types-update-registration\"> </a></td><td>Registration of an Update of the Guideline</td><td/><td>Anmeldung eines Leitlinien-Updates</td></tr><tr><td>1</td><td style=\"white-space:nowrap\">scientific-publication<a name=\"cs-related-artifact-types-scientific-publication\"> </a></td><td>Scientific Publication</td><td/><td>Wissenschaftliche Veröffentlichung</td></tr><tr><td>1</td><td style=\"white-space:nowrap\">dissemination-website<a name=\"cs-related-artifact-types-dissemination-website\"> </a></td><td>Dissemination Website</td><td>A website that disseminates the guideline in a human readable format.</td><td>Webseite zur Verbreitung</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">  awmf-detail-page<a name=\"cs-related-artifact-types-awmf-detail-page\"> </a></td><td>Detail Page on AWMF Website</td><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  medical-society-page<a name=\"cs-related-artifact-types-medical-society-page\"> </a></td><td>Page of the Medical Society</td><td/><td/></tr><tr><td>1</td><td style=\"white-space:nowrap\">patient-information<a name=\"cs-related-artifact-types-patient-information\"> </a></td><td>Patient-Facing Information</td><td>Supplementary material targeted at patients, derived from or related to the guideline.</td><td>Patientenorientierte Information</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types"^^xsd:anyURI ;
+     fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types>
+  ] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:name [ fhir:v "RelatedArtifactTypes"] ; # 
+  fhir:title [ fhir:v "Related Artifact Types"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-01-29T18:27:10+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "AWMF e.V."] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AWMF e.V." ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.awmf.org" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "CodeSystem defining types of related artifacts that can be part of a guideline."] ; # 
+  fhir:caseSensitive [ fhir:v false] ; # 
+  fhir:hierarchyMeaning [ fhir:v "is-a"] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "8"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "related-guideline" ] ;
+     fhir:display [ fhir:v "Related Guideline" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Verwandte Leitlinie" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "app" ] ;
+     fhir:display [ fhir:v "Mobile App" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Mobile App" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "update-registration" ] ;
+     fhir:display [ fhir:v "Registration of an Update of the Guideline" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Anmeldung eines Leitlinien-Updates" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "scientific-publication" ] ;
+     fhir:display [ fhir:v "Scientific Publication" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Wissenschaftliche Veröffentlichung" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "dissemination-website" ] ;
+     fhir:display [ fhir:v "Dissemination Website" ] ;
+     fhir:definition [
+       fhir:v "A website that disseminates the guideline in a human readable format." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Eine Website, die die Leitlinie in einem für Menschen lesbaren Format verbreitet."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Webseite zur Verbreitung" ]
+     ] [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Detailseite auf der AWMF Webseite" ]
+     ] [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Seite der Medizinischen Fachgesellschaft" ]
+     ] ) ;
+     fhir:concept ( [
+       fhir:code [ fhir:v "awmf-detail-page" ] ;
+       fhir:display [ fhir:v "Detail Page on AWMF Website" ]
+     ] [
+       fhir:code [ fhir:v "medical-society-page" ] ;
+       fhir:display [ fhir:v "Page of the Medical Society" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "patient-information" ] ;
+     fhir:display [ fhir:v "Patient-Facing Information" ] ;
+     fhir:definition [
+       fhir:v "Supplementary material targeted at patients, derived from or related to the guideline." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Zusätzliche Materialien, die sich an Patient*innen richten und auf der Leitlinie basieren oder mit ihr in Zusammenhang stehen."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Patientenorientierte Information" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

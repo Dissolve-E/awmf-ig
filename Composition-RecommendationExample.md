@@ -1,0 +1,150 @@
+# Recommendation Example - Dissolve-E: AWMF Guideline Registry v0.2.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Recommendation Example**
+
+## Example Composition: Recommendation Example
+
+Recommendation Example
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Composition",
+  "id" : "RecommendationExample",
+  "meta" : {
+    "profile" : [
+      "http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation"
+    ]
+  },
+  "identifier" : [
+    {
+      "use" : "official",
+      "system" : "http://example.org/recommendations",
+      "value" : "REC-EX-001"
+    }
+  ],
+  "version" : "2.0",
+  "status" : "final",
+  "type" : {
+    "coding" : [
+      {
+        "system" : "https://fevir.net/resources/CodeSystem/179423",
+        "code" : "Recommendation",
+        "display" : "Recommendation"
+      }
+    ]
+  },
+  "category" : [
+    {
+      "coding" : [
+        {
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-synthesis-type",
+          "code" : "expert-consensus"
+        }
+      ]
+    }
+  ],
+  "date" : "2025-03-06",
+  "author" : [
+    {
+      "reference" : "PractitionerRole/GuidelineAuthorRoleExample"
+    }
+  ],
+  "title" : "Example Recommendation",
+  "relatesTo" : [
+    {
+      "type" : "part-of",
+      "targetCanonical" : "http://fhir.awmf.org/awmf.ig/Composition/GuidelineExample"
+    }
+  ],
+  "section" : [
+    {
+      "extension" : [
+        {
+          "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-intended-audience",
+          "valueCodeableConcept" : {
+            "coding" : [
+              {
+                "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-intended-audience",
+                "code" : "physician"
+              }
+            ]
+          }
+        }
+      ],
+      "code" : {
+        "coding" : [
+          {
+            "system" : "https://fevir.net/resources/CodeSystem/179423",
+            "code" : "text",
+            "display" : "Text"
+          }
+        ]
+      },
+      "section" : [
+        {
+          "extension" : [
+            {
+              "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+              "valueCode" : "de"
+            }
+          ],
+          "code" : {
+            "coding" : [
+              {
+                "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+                "code" : "language",
+                "display" : "Language"
+              }
+            ]
+          },
+          "text" : {
+            "status" : "generated",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Example Recommendation</div>"
+          }
+        }
+      ]
+    },
+    {
+      "code" : {
+        "coding" : [
+          {
+            "system" : "https://fevir.net/resources/CodeSystem/179423",
+            "code" : "recommendation-statement",
+            "display" : "Recommendation Statement"
+          }
+        ]
+      },
+      "section" : [
+        {
+          "extension" : [
+            {
+              "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+              "valueCode" : "de"
+            }
+          ],
+          "code" : {
+            "coding" : [
+              {
+                "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+                "code" : "language",
+                "display" : "Language"
+              }
+            ]
+          },
+          "text" : {
+            "status" : "generated",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Bei Patienten mit Krankheit A soll Medikament B statt Medikament C gegeben werden. Patienten mit Krankheit A, die auch noch Krankheit D haben, darf keinesfalls Medikament B gegeben, sondern müssen Medikament C erhalten.</div>"
+          }
+        }
+      ]
+    }
+  ]
+}
+
+```

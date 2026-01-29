@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-robis-risk-of-bias-domains"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-robis-risk-of-bias-domains</b></p><a name="cs-robis-risk-of-bias-domains"> </a><a name="hccs-robis-risk-of-bias-domains"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-robis-risk-of-bias-domains</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style="white-space:nowrap">study_eligibility_criteria<a name="cs-robis-risk-of-bias-domains-study_eligibility_criteria"> </a></td><td>Study Eligibility Criteria</td><td>Concerns regarding the specification of study eligibility criteria.</td><td>Studienauswahlkriterien</td></tr><tr><td style="white-space:nowrap">identification_selection_studies<a name="cs-robis-risk-of-bias-domains-identification_selection_studies"> </a></td><td>Identification and Selection of Studies</td><td>Concerns regarding methods used to identify and/or select studies.</td><td>Identifizierung und Auswahl der Studien</td></tr><tr><td style="white-space:nowrap">data_collection_study_appraisal<a name="cs-robis-risk-of-bias-domains-data_collection_study_appraisal"> </a></td><td>Data Collection and Study Appraisal</td><td>Concerns regarding methods used to collect data and appraise studies.</td><td>Datenextraktion und kritische Bewertung der Studien</td></tr><tr><td style="white-space:nowrap">synthesis_findings<a name="cs-robis-risk-of-bias-domains-synthesis_findings"> </a></td><td>Synthesis and Findings</td><td>Concerns regarding the synthesis and findings of the review.</td><td>Synthese und Ergebnisse</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-robis-risk-of-bias-domains"/>
+  <version value="0.2.0"/>
+  <name value="ROBISRiskOfBiasDomains"/>
+  <title value="ROBIS Risk of Bias Domains"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem representing the domains assessed by the ROBIS tool for evaluating risk of bias in systematic reviews."/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="4"/>
+  <concept>
+    <code value="study_eligibility_criteria"/>
+    <display value="Study Eligibility Criteria"/>
+    <definition value="Concerns regarding the specification of study eligibility criteria.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Bedenken im Hinblick auf die Einschlusskriterien"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Studienauswahlkriterien"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="identification_selection_studies"/>
+    <display value="Identification and Selection of Studies"/>
+    <definition value="Concerns regarding methods used to identify and/or select studies.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Bedenken im Hinblick auf die Identifikation und Auswahl der Studien"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Identifizierung und Auswahl der Studien"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="data_collection_study_appraisal"/>
+    <display value="Data Collection and Study Appraisal"/>
+    <definition value="Concerns regarding methods used to collect data and appraise studies.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Bedenken im Hinblick auf die Datenextraktion und Bewertung der Studien"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Datenextraktion und kritische Bewertung der Studien"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="synthesis_findings"/>
+    <display value="Synthesis and Findings"/>
+    <definition value="Concerns regarding the synthesis and findings of the review.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Bedenken im Hinblick auf die Datensynthese und Ergebnisse"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Synthese und Ergebnisse"/>
+    </designation>
+  </concept>
+</CodeSystem>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Composition xmlns="http://hl7.org/fhir">
+  <id value="Demenzen"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">S3-Leitlinie Demenzen Living Guideline - Langfassung</div>
+  </text>
+  <identifier>
+    <use value="official"/>
+    <system value="http://fhir.awmf.org/guidelines"/>
+    <value value="038-013"/>
+  </identifier>
+  <version value="5.2"/>
+  <status value="final"/>
+  <type>
+    <coding>
+      <system value="https://fevir.net/resources/CodeSystem/179423"/>
+      <code value="Guideline"/>
+      <display value="Guideline"/>
+    </coding>
+  </type>
+  <date value="2025-07-17"/>
+  <author>
+    <reference value="Organization/DGPPN"/>
+  </author>
+  <title value="Demenzen"/>
+</Composition>

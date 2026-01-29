@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="vs-content-types"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet vs-content-types</b></p><a name="vs-content-types"> </a><a name="hcvs-content-types"> </a><ul><li>Include these codes as defined in <a href="CodeSystem-cs-guideline-sections.html"><code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections</code></a><span title="Version is not explicitly stated, which means it is fixed to the version provided in this specification"> version &#x1F4E6;0.2.0</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href="CodeSystem-cs-guideline-sections.html#cs-guideline-sections-long-version">long-version</a></td><td>Long Version</td></tr><tr><td><a href="CodeSystem-cs-guideline-sections.html#cs-guideline-sections-short-version">short-version</a></td><td>Short Version</td></tr><tr><td><a href="CodeSystem-cs-guideline-sections.html#cs-guideline-sections-guideline-report">guideline-report</a></td><td>Guideline Report</td></tr><tr><td><a href="CodeSystem-cs-guideline-sections.html#cs-guideline-sections-evidence-report">evidence-report</a></td><td>Evidence Report</td></tr><tr><td><a href="CodeSystem-cs-guideline-sections.html#cs-guideline-sections-implementation-guidance">implementation-guidance</a></td><td>Implementation Guidance</td></tr><tr><td><a href="CodeSystem-cs-guideline-sections.html#cs-guideline-sections-decision-support">decision-support</a></td><td>Decision Support</td></tr><tr><td><a href="CodeSystem-cs-guideline-sections.html#cs-guideline-sections-patient-version">patient-version</a></td><td>Patient Version</td></tr><tr><td><a href="CodeSystem-cs-guideline-sections.html#cs-guideline-sections-choosing-wisely">choosing-wisely</a></td><td>Choosing Wisely</td></tr><tr><td><a href="CodeSystem-cs-guideline-sections.html#cs-guideline-sections-quality-indicators">quality-indicators</a></td><td>Quality Indicators</td></tr><tr><td><a href="CodeSystem-cs-guideline-sections.html#cs-guideline-sections-declaration-of-interests">declaration-of-interests</a></td><td>Declaration of Interests</td></tr><tr><td><a href="CodeSystem-cs-guideline-sections.html#cs-guideline-sections-short-patient-version">short-patient-version</a></td><td>Short Version for Patients</td></tr><tr><td><a href="CodeSystem-cs-guideline-sections.html#cs-guideline-sections-update-info">update-info</a></td><td>Short Information About an Update</td></tr><tr><td><a href="CodeSystem-cs-guideline-sections.html#cs-guideline-sections-slide-deck">slide-deck</a></td><td>Slide Deck</td></tr><tr><td><a href="CodeSystem-cs-guideline-sections.html#cs-guideline-sections-visual-abstract">visual-abstract</a></td><td>Visual Abstract</td></tr><tr><td><a href="CodeSystem-cs-guideline-sections.html#cs-guideline-sections-document">document</a></td><td>Document</td></tr><tr><td><a href="CodeSystem-cs-guideline-sections.html#cs-guideline-sections-image">image</a></td><td>Image</td></tr><tr><td><a href="CodeSystem-cs-guideline-sections.html#cs-guideline-sections-video">video</a></td><td>Video</td></tr><tr><td><a href="CodeSystem-cs-guideline-sections.html#cs-guideline-sections-podcast">podcast</a></td><td>Podcast</td></tr><tr><td><a href="CodeSystem-cs-guideline-sections.html#cs-guideline-sections-other">other</a></td><td>Other</td></tr></table></li></ul></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/ValueSet/vs-content-types"/>
+  <version value="0.2.0"/>
+  <name value="ContentTypesVS"/>
+  <title value="Content Types"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="ValueSet listing types of content that can be part of a guideline or recommendation."/>
+  <compose>
+    <include>
+      <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+      <concept>
+        <code value="long-version"/>
+        <display value="Long Version"/>
+      </concept>
+      <concept>
+        <code value="short-version"/>
+        <display value="Short Version"/>
+      </concept>
+      <concept>
+        <code value="guideline-report"/>
+        <display value="Guideline Report"/>
+      </concept>
+      <concept>
+        <code value="evidence-report"/>
+        <display value="Evidence Report"/>
+      </concept>
+      <concept>
+        <code value="implementation-guidance"/>
+        <display value="Implementation Guidance"/>
+      </concept>
+      <concept>
+        <code value="decision-support"/>
+        <display value="Decision Support"/>
+      </concept>
+      <concept>
+        <code value="patient-version"/>
+        <display value="Patient Version"/>
+      </concept>
+      <concept>
+        <code value="choosing-wisely"/>
+        <display value="Choosing Wisely"/>
+      </concept>
+      <concept>
+        <code value="quality-indicators"/>
+        <display value="Quality Indicators"/>
+      </concept>
+      <concept>
+        <code value="declaration-of-interests"/>
+        <display value="Declaration of Interests"/>
+      </concept>
+      <concept>
+        <code value="short-patient-version"/>
+        <display value="Short Version for Patients"/>
+      </concept>
+      <concept>
+        <code value="update-info"/>
+        <display value="Short Information About an Update"/>
+      </concept>
+      <concept>
+        <code value="slide-deck"/>
+        <display value="Slide Deck"/>
+      </concept>
+      <concept>
+        <code value="visual-abstract"/>
+        <display value="Visual Abstract"/>
+      </concept>
+      <concept>
+        <code value="document"/>
+        <display value="Document"/>
+      </concept>
+      <concept>
+        <code value="image"/>
+        <display value="Image"/>
+      </concept>
+      <concept>
+        <code value="video"/>
+        <display value="Video"/>
+      </concept>
+      <concept>
+        <code value="podcast"/>
+        <display value="Podcast"/>
+      </concept>
+      <concept>
+        <code value="other"/>
+        <display value="Other"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

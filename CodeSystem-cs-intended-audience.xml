@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-intended-audience"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-intended-audience</b></p><a name="cs-intended-audience"> </a><a name="hccs-intended-audience"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-intended-audience</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style="white-space:nowrap">patient<a name="cs-intended-audience-patient"> </a></td><td>Patient</td><td>The content is intended for the patient</td><td>Patient*in</td></tr><tr><td style="white-space:nowrap">physician<a name="cs-intended-audience-physician"> </a></td><td>Physician</td><td>The content is intended for the physician</td><td>Arzt/Ärztin</td></tr><tr><td style="white-space:nowrap">nurse<a name="cs-intended-audience-nurse"> </a></td><td>Nurse</td><td>The content is intended for the nurse</td><td>Pfleger*in</td></tr><tr><td style="white-space:nowrap">student<a name="cs-intended-audience-student"> </a></td><td>Student</td><td>The content is intended for the student</td><td>Studierende</td></tr><tr><td style="white-space:nowrap">relative<a name="cs-intended-audience-relative"> </a></td><td>Relative</td><td>The content is intended for the relative of the patient</td><td>Angehörige*r</td></tr><tr><td style="white-space:nowrap">caregiver<a name="cs-intended-audience-caregiver"> </a></td><td>Caregiver</td><td>The content is intended for the caregiver of the patient</td><td>Betreuer*in</td></tr><tr><td style="white-space:nowrap">layperson<a name="cs-intended-audience-layperson"> </a></td><td>Layperson</td><td>The content is intended for a layperson</td><td>Laie</td></tr><tr><td style="white-space:nowrap">therapist<a name="cs-intended-audience-therapist"> </a></td><td>Therapist</td><td>The content is intended for therapeutic healthcare professionals (e.g., physiotherapists, occupational therapists, speech therapists).</td><td>Therapeutisches Personal</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-intended-audience"/>
+  <version value="0.2.0"/>
+  <name value="IntendedAudienceCS"/>
+  <title value="Intended Audience Code System"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem defining possible intended audiences for a section"/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="8"/>
+  <concept>
+    <code value="patient"/>
+    <display value="Patient"/>
+    <definition value="The content is intended for the patient">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Der Inhalt richtet sich an Patient*innen."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Patient*in"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="physician"/>
+    <display value="Physician"/>
+    <definition value="The content is intended for the physician">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Der Inhalt richtet sich an Ärzt*innen."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Arzt/Ärztin"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="nurse"/>
+    <display value="Nurse"/>
+    <definition value="The content is intended for the nurse">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Der Inhalt richtet sich an Krankenpfleger*innen."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Pfleger*in"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="student"/>
+    <display value="Student"/>
+    <definition value="The content is intended for the student">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Der Inhalt richtet sich an Student*innen."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Studierende"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="relative"/>
+    <display value="Relative"/>
+    <definition value="The content is intended for the relative of the patient">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Der Inhalt richtet sich an Angehörige von Patient*innen."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Angehörige*r"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="caregiver"/>
+    <display value="Caregiver"/>
+    <definition value="The content is intended for the caregiver of the patient">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Der Inhalt richtet sich an Betreuer*innen von Patient*innen."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Betreuer*in"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="layperson"/>
+    <display value="Layperson"/>
+    <definition value="The content is intended for a layperson">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Der Inhalt richtet sich an Laien."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Laie"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="therapist"/>
+    <display value="Therapist"/>
+    <definition value="The content is intended for therapeutic healthcare professionals (e.g., physiotherapists, occupational therapists, speech therapists).">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Der Inhalt richtet sich an therapeutisches Personal (z.B. Physio-, Ergo- oder Sprachtherapeut*innen)."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Therapeutisches Personal"/>
+    </designation>
+  </concept>
+</CodeSystem>

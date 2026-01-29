@@ -1,0 +1,139 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/CodeSystem/cs-body-systems-conditions> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cs-body-systems-conditions"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-body-systems-conditions</b></p><a name=\"cs-body-systems-conditions\"> </a><a name=\"hccs-body-systems-conditions\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-body-systems-conditions</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">respiratory<a name=\"cs-body-systems-conditions-respiratory\"> </a></td><td>Respiratory System and Lungs</td><td>Atemwege und Lunge</td></tr><tr><td style=\"white-space:nowrap\">nervous<a name=\"cs-body-systems-conditions-nervous\"> </a></td><td>Brain and Nerves</td><td>Gehirn und Nerven</td></tr><tr><td style=\"white-space:nowrap\">skin<a name=\"cs-body-systems-conditions-skin\"> </a></td><td>Skin and Hair</td><td>Haut und Haare</td></tr><tr><td style=\"white-space:nowrap\">cardiovascular<a name=\"cs-body-systems-conditions-cardiovascular\"> </a></td><td>Heart and Circulatory System</td><td>Herz und Kreislauf</td></tr><tr><td style=\"white-space:nowrap\">extremities<a name=\"cs-body-systems-conditions-extremities\"> </a></td><td>Hands and Feet</td><td>Hände und Füße</td></tr><tr><td style=\"white-space:nowrap\">musculoskeletal<a name=\"cs-body-systems-conditions-musculoskeletal\"> </a></td><td>Bones and Joints</td><td>Knochen und Gelenke</td></tr><tr><td style=\"white-space:nowrap\">headneck<a name=\"cs-body-systems-conditions-headneck\"> </a></td><td>Head and Neck</td><td>Kopf und Hals</td></tr><tr><td style=\"white-space:nowrap\">oncology<a name=\"cs-body-systems-conditions-oncology\"> </a></td><td>Cancer Conditions</td><td>Krebserkrankungen</td></tr><tr><td style=\"white-space:nowrap\">mentalhealth<a name=\"cs-body-systems-conditions-mentalhealth\"> </a></td><td>Mental Health</td><td>Psyche</td></tr><tr><td style=\"white-space:nowrap\">pain<a name=\"cs-body-systems-conditions-pain\"> </a></td><td>Pain Conditions</td><td>Schmerzen</td></tr><tr><td style=\"white-space:nowrap\">miscellaneous<a name=\"cs-body-systems-conditions-miscellaneous\"> </a></td><td>Other Conditions</td><td>Sonstige Krankheitsbilder</td></tr><tr><td style=\"white-space:nowrap\">metabolic<a name=\"cs-body-systems-conditions-metabolic\"> </a></td><td>Metabolic Disorders</td><td>Stoffwechsel-Erkrankungen</td></tr><tr><td style=\"white-space:nowrap\">digestive<a name=\"cs-body-systems-conditions-digestive\"> </a></td><td>Digestive and Urinary Organs</td><td>Verdauungs- und Harnorgane</td></tr><tr><td style=\"white-space:nowrap\">dental<a name=\"cs-body-systems-conditions-dental\"> </a></td><td>Teeth</td><td>Zähne</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-body-systems-conditions"^^xsd:anyURI ;
+     fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-body-systems-conditions>
+  ] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:name [ fhir:v "BodySystemConditionsCS"] ; # 
+  fhir:title [ fhir:v "Body System Conditions"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-01-29T18:27:10+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "AWMF e.V."] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AWMF e.V." ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.awmf.org" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "CodeSystem representing various body system conditions."] ; # 
+  fhir:caseSensitive [ fhir:v false] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "14"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "respiratory" ] ;
+     fhir:display [ fhir:v "Respiratory System and Lungs" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Atemwege und Lunge" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "nervous" ] ;
+     fhir:display [ fhir:v "Brain and Nerves" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Gehirn und Nerven" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "skin" ] ;
+     fhir:display [ fhir:v "Skin and Hair" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Haut und Haare" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "cardiovascular" ] ;
+     fhir:display [ fhir:v "Heart and Circulatory System" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Herz und Kreislauf" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "extremities" ] ;
+     fhir:display [ fhir:v "Hands and Feet" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Hände und Füße" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "musculoskeletal" ] ;
+     fhir:display [ fhir:v "Bones and Joints" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Knochen und Gelenke" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "headneck" ] ;
+     fhir:display [ fhir:v "Head and Neck" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Kopf und Hals" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "oncology" ] ;
+     fhir:display [ fhir:v "Cancer Conditions" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Krebserkrankungen" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "mentalhealth" ] ;
+     fhir:display [ fhir:v "Mental Health" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Psyche" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "pain" ] ;
+     fhir:display [ fhir:v "Pain Conditions" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Schmerzen" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "miscellaneous" ] ;
+     fhir:display [ fhir:v "Other Conditions" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Sonstige Krankheitsbilder" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "metabolic" ] ;
+     fhir:display [ fhir:v "Metabolic Disorders" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Stoffwechsel-Erkrankungen" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "digestive" ] ;
+     fhir:display [ fhir:v "Digestive and Urinary Organs" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Verdauungs- und Harnorgane" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "dental" ] ;
+     fhir:display [ fhir:v "Teeth" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Zähne" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

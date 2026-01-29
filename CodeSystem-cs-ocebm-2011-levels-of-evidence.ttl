@@ -1,0 +1,216 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/CodeSystem/cs-ocebm-2011-levels-of-evidence> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cs-ocebm-2011-levels-of-evidence"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-ocebm-2011-levels-of-evidence</b></p><a name=\"cs-ocebm-2011-levels-of-evidence\"> </a><a name=\"hccs-ocebm-2011-levels-of-evidence\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-ocebm-2011-levels-of-evidence</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">level1<a name=\"cs-ocebm-2011-levels-of-evidence-level1\"> </a></td><td>Systematic Reviews and Randomized Trials</td><td>Includes systematic reviews of randomized trials or n-of-1 trials.</td><td>Systematische Reviews und randomisierte Studien</td></tr><tr><td style=\"white-space:nowrap\">level2<a name=\"cs-ocebm-2011-levels-of-evidence-level2\"> </a></td><td>Cohort Studies</td><td>Includes systematic reviews of cohort studies or individual cohort studies and low-quality randomized trials.</td><td>Kohortenstudien</td></tr><tr><td style=\"white-space:nowrap\">level3<a name=\"cs-ocebm-2011-levels-of-evidence-level3\"> </a></td><td>Case-Control Studies</td><td>Includes systematic reviews of case-control studies or individual case-control studies.</td><td>Fall-Kontroll-Studie</td></tr><tr><td style=\"white-space:nowrap\">level4<a name=\"cs-ocebm-2011-levels-of-evidence-level4\"> </a></td><td>Case Series</td><td>Includes case series and poor-quality cohort and case-control studies.</td><td>Fallserien</td></tr><tr><td style=\"white-space:nowrap\">level5<a name=\"cs-ocebm-2011-levels-of-evidence-level5\"> </a></td><td>Expert Opinion</td><td>Includes expert opinion without explicit critical appraisal, or based on physiology, bench research, or 'first principles'.</td><td>Expertenmeinung</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-ocebm-2011-levels-of-evidence"^^xsd:anyURI ;
+     fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-ocebm-2011-levels-of-evidence>
+  ] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:name [ fhir:v "OCEBM2011LevelsOfEvidence"] ; # 
+  fhir:title [ fhir:v "OCEBM 2011 Levels of Evidence"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-01-29T18:27:10+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "AWMF e.V."] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AWMF e.V." ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.awmf.org" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "CodeSystem representing the Oxford Centre for Evidence-Based Medicine 2011 Levels of Evidence."] ; # 
+  fhir:caseSensitive [ fhir:v false] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "5"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "level1" ] ;
+     fhir:display [ fhir:v "Systematic Reviews and Randomized Trials" ] ;
+     fhir:definition [
+       fhir:v "Includes systematic reviews of randomized trials or n-of-1 trials." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Schließt systematische Reviews von randomisierten Studien oder n-of-1-Studien ein."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Systematische Reviews und randomisierte Studien" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "level2" ] ;
+     fhir:display [ fhir:v "Cohort Studies" ] ;
+     fhir:definition [
+       fhir:v "Includes systematic reviews of cohort studies or individual cohort studies and low-quality randomized trials." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Schließt systematische Reviews von Kohortenstudien oder einzelne Kohortenstudien oder randomisierte Studien mit niedriger Qualität ein."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Kohortenstudien" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "level3" ] ;
+     fhir:display [ fhir:v "Case-Control Studies" ] ;
+     fhir:definition [
+       fhir:v "Includes systematic reviews of case-control studies or individual case-control studies." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Schließt systematische Reviews von Fall-Kontroll-Studien oder einzelne Fall-Kontroll-Studien."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Fall-Kontroll-Studie" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "level4" ] ;
+     fhir:display [ fhir:v "Case Series" ] ;
+     fhir:definition [
+       fhir:v "Includes case series and poor-quality cohort and case-control studies." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Schließt Fallserien sowie Kohorten- und Fall-Kontroll-Studien mit niedriger Qualität ein."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Fallserien" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "level5" ] ;
+     fhir:display [ fhir:v "Expert Opinion" ] ;
+     fhir:definition [
+       fhir:v "Includes expert opinion without explicit critical appraisal, or based on physiology, bench research, or 'first principles'." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Umfasst Expertenmeinung(en) ohne explizite kritische Beurteilung oder auf der Grundlage von Physiologie, Bench Research oder First Principles"
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Expertenmeinung" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

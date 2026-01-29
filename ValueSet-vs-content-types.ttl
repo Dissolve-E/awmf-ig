@@ -1,0 +1,103 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/ValueSet/vs-content-types> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "vs-content-types"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet vs-content-types</b></p><a name=\"vs-content-types\"> </a><a name=\"hcvs-content-types\"> </a><ul><li>Include these codes as defined in <a href=\"CodeSystem-cs-guideline-sections.html\"><code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?0.2.0</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"CodeSystem-cs-guideline-sections.html#cs-guideline-sections-long-version\">long-version</a></td><td>Long Version</td></tr><tr><td><a href=\"CodeSystem-cs-guideline-sections.html#cs-guideline-sections-short-version\">short-version</a></td><td>Short Version</td></tr><tr><td><a href=\"CodeSystem-cs-guideline-sections.html#cs-guideline-sections-guideline-report\">guideline-report</a></td><td>Guideline Report</td></tr><tr><td><a href=\"CodeSystem-cs-guideline-sections.html#cs-guideline-sections-evidence-report\">evidence-report</a></td><td>Evidence Report</td></tr><tr><td><a href=\"CodeSystem-cs-guideline-sections.html#cs-guideline-sections-implementation-guidance\">implementation-guidance</a></td><td>Implementation Guidance</td></tr><tr><td><a href=\"CodeSystem-cs-guideline-sections.html#cs-guideline-sections-decision-support\">decision-support</a></td><td>Decision Support</td></tr><tr><td><a href=\"CodeSystem-cs-guideline-sections.html#cs-guideline-sections-patient-version\">patient-version</a></td><td>Patient Version</td></tr><tr><td><a href=\"CodeSystem-cs-guideline-sections.html#cs-guideline-sections-choosing-wisely\">choosing-wisely</a></td><td>Choosing Wisely</td></tr><tr><td><a href=\"CodeSystem-cs-guideline-sections.html#cs-guideline-sections-quality-indicators\">quality-indicators</a></td><td>Quality Indicators</td></tr><tr><td><a href=\"CodeSystem-cs-guideline-sections.html#cs-guideline-sections-declaration-of-interests\">declaration-of-interests</a></td><td>Declaration of Interests</td></tr><tr><td><a href=\"CodeSystem-cs-guideline-sections.html#cs-guideline-sections-short-patient-version\">short-patient-version</a></td><td>Short Version for Patients</td></tr><tr><td><a href=\"CodeSystem-cs-guideline-sections.html#cs-guideline-sections-update-info\">update-info</a></td><td>Short Information About an Update</td></tr><tr><td><a href=\"CodeSystem-cs-guideline-sections.html#cs-guideline-sections-slide-deck\">slide-deck</a></td><td>Slide Deck</td></tr><tr><td><a href=\"CodeSystem-cs-guideline-sections.html#cs-guideline-sections-visual-abstract\">visual-abstract</a></td><td>Visual Abstract</td></tr><tr><td><a href=\"CodeSystem-cs-guideline-sections.html#cs-guideline-sections-document\">document</a></td><td>Document</td></tr><tr><td><a href=\"CodeSystem-cs-guideline-sections.html#cs-guideline-sections-image\">image</a></td><td>Image</td></tr><tr><td><a href=\"CodeSystem-cs-guideline-sections.html#cs-guideline-sections-video\">video</a></td><td>Video</td></tr><tr><td><a href=\"CodeSystem-cs-guideline-sections.html#cs-guideline-sections-podcast\">podcast</a></td><td>Podcast</td></tr><tr><td><a href=\"CodeSystem-cs-guideline-sections.html#cs-guideline-sections-other\">other</a></td><td>Other</td></tr></table></li></ul></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "http://fhir.awmf.org/awmf.ig/ValueSet/vs-content-types"^^xsd:anyURI ;
+     fhir:l <http://fhir.awmf.org/awmf.ig/ValueSet/vs-content-types>
+  ] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:name [ fhir:v "ContentTypesVS"] ; # 
+  fhir:title [ fhir:v "Content Types"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-01-29T18:27:10+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "AWMF e.V."] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AWMF e.V." ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.awmf.org" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "ValueSet listing types of content that can be part of a guideline or recommendation."] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [
+         fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+       ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "long-version" ] ;
+         fhir:display [ fhir:v "Long Version" ]
+       ] [
+         fhir:code [ fhir:v "short-version" ] ;
+         fhir:display [ fhir:v "Short Version" ]
+       ] [
+         fhir:code [ fhir:v "guideline-report" ] ;
+         fhir:display [ fhir:v "Guideline Report" ]
+       ] [
+         fhir:code [ fhir:v "evidence-report" ] ;
+         fhir:display [ fhir:v "Evidence Report" ]
+       ] [
+         fhir:code [ fhir:v "implementation-guidance" ] ;
+         fhir:display [ fhir:v "Implementation Guidance" ]
+       ] [
+         fhir:code [ fhir:v "decision-support" ] ;
+         fhir:display [ fhir:v "Decision Support" ]
+       ] [
+         fhir:code [ fhir:v "patient-version" ] ;
+         fhir:display [ fhir:v "Patient Version" ]
+       ] [
+         fhir:code [ fhir:v "choosing-wisely" ] ;
+         fhir:display [ fhir:v "Choosing Wisely" ]
+       ] [
+         fhir:code [ fhir:v "quality-indicators" ] ;
+         fhir:display [ fhir:v "Quality Indicators" ]
+       ] [
+         fhir:code [ fhir:v "declaration-of-interests" ] ;
+         fhir:display [ fhir:v "Declaration of Interests" ]
+       ] [
+         fhir:code [ fhir:v "short-patient-version" ] ;
+         fhir:display [ fhir:v "Short Version for Patients" ]
+       ] [
+         fhir:code [ fhir:v "update-info" ] ;
+         fhir:display [ fhir:v "Short Information About an Update" ]
+       ] [
+         fhir:code [ fhir:v "slide-deck" ] ;
+         fhir:display [ fhir:v "Slide Deck" ]
+       ] [
+         fhir:code [ fhir:v "visual-abstract" ] ;
+         fhir:display [ fhir:v "Visual Abstract" ]
+       ] [
+         fhir:code [ fhir:v "document" ] ;
+         fhir:display [ fhir:v "Document" ]
+       ] [
+         fhir:code [ fhir:v "image" ] ;
+         fhir:display [ fhir:v "Image" ]
+       ] [
+         fhir:code [ fhir:v "video" ] ;
+         fhir:display [ fhir:v "Video" ]
+       ] [
+         fhir:code [ fhir:v "podcast" ] ;
+         fhir:display [ fhir:v "Podcast" ]
+       ] [
+         fhir:code [ fhir:v "other" ] ;
+         fhir:display [ fhir:v "Other" ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

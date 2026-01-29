@@ -1,0 +1,2277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Artifacts Summary - Dissolve-E: AWMF Guideline Registry v0.2.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"8"}
+    h3,h4,h5,h6{--heading-prefix:"8.0"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Dissolve-E: AWMF Guideline Registry</span>
+            <br/>
+            <span style="display:inline-block;">0.2.0 - ci-build
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R5/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="profiles.html">Profiles</a>
+  </li>
+  <li>
+    <a href="extensions.html">Extensions</a>
+  </li>
+  <li>
+    <a href="codesystems.html">Code Systems</a>
+  </li>
+  <li>
+    <a href="valuesets.html">Value Sets</a>
+  </li>
+  <li>
+    <a href="examples.html">Examples</a>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Artifacts Summary</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Dissolve-E: AWMF Guideline Registry - Local Development build (v0.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://fhir.awmf.org/awmf.ig/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Artifacts Summary</h2>
+  
+  
+  
+  <!--DO NOT EDIT THIS FILE - It is generated by https://github.com/HL7/ig-template-base/blob/master/scripts/createArtifactSummary.xslt and any changes made will be overwritten--><div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://hl7.org/fhir"
+     xmlns:html="http://www.w3.org/1999/xhtml"
+     class="markdown-toc">
+   <p>Contents:</p>
+   <ul>
+      <li>
+         <a href="#1">Structures: Resource Profiles</a>
+      </li>
+      <li>
+         <a href="#2">Structures: Extension Definitions</a>
+      </li>
+      <li>
+         <a href="#3">Terminology: Value Sets</a>
+      </li>
+      <li>
+         <a href="#4">Terminology: Code Systems</a>
+      </li>
+      <li>
+         <a href="#5">Example: Example Instances</a>
+      </li>
+   </ul>
+</div>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://hl7.org/fhir"
+     xmlns:html="http://www.w3.org/1999/xhtml">
+   <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
+   <a name="1"> </a>
+   <h3>Structures: Resource Profiles </h3>
+    <p>These define constraints on FHIR resources for systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-awmf-member-organization.html"
+                  title="StructureDefinition/awmf-member-organization">AWMF Member Organization</a>
+            </td>
+            <td>
+<p>An organization that is a member of the AWMF</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-awmf-guideline-record-s1.html"
+                  title="StructureDefinition/awmf-guideline-record-s1">AWMF S1 Guideline Registry Record</a>
+            </td>
+            <td>
+<p>AWMF S1 guideline representing expert recommendations developed through informal consensus.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-awmf-guideline-record-s2e.html"
+                  title="StructureDefinition/awmf-guideline-record-s2e">AWMF S2e Guideline Registry Record</a>
+            </td>
+            <td>
+<p>AWMF S2e guideline based on systematic literature search and evaluation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-awmf-guideline-record-s2k.html"
+                  title="StructureDefinition/awmf-guideline-record-s2k">AWMF S2k Guideline Registry Record</a>
+            </td>
+            <td>
+<p>AWMF S2k guideline based on structured consensus by a representative panel.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-awmf-guideline-record-s3.html"
+                  title="StructureDefinition/awmf-guideline-record-s3">AWMF S3 Guideline Registry Record</a>
+            </td>
+            <td>
+<p>AWMF S3 guideline based on systematic evidence review and structured consensus by a representative panel.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-citation-list.html"
+                  title="StructureDefinition/citation-list">Citation List</a>
+            </td>
+            <td>
+<p>List of citations.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-conceptual-cohort-definition-comparator.html"
+                  title="StructureDefinition/conceptual-cohort-definition-comparator">Conceptual Cohort Definition Comparator</a>
+            </td>
+            <td>
+<p>A structured definition of the comparator as defined for a PICO question.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-conceptual-cohort-definition-intervention.html"
+                  title="StructureDefinition/conceptual-cohort-definition-intervention">Conceptual Cohort Definition Intervention</a>
+            </td>
+            <td>
+<p>A structured definition of the intervention as defined for a PICO question.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-conceptual-cohort-definition-outcome.html"
+                  title="StructureDefinition/conceptual-cohort-definition-outcome">Conceptual Cohort Definition Outcome</a>
+            </td>
+            <td>
+<p>A structured definition of the outcome as defined for a PICO question.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-conceptual-cohort-definition-population.html"
+                  title="StructureDefinition/conceptual-cohort-definition-population">Conceptual Cohort Definition Population</a>
+            </td>
+            <td>
+<p>A structured definition of the population as defined for a PICO question.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-evidence-assessment.html"
+                  title="StructureDefinition/evidence-assessment">Evidence Assessment</a>
+            </td>
+            <td>
+<p>A structured assessment of the certainty of evidence for a specific outcome.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-evidence-internal-assessment-agreeii.html"
+                  title="StructureDefinition/evidence-internal-assessment-agreeii">Evidence Internal Assessment AGREE II</a>
+            </td>
+            <td>
+<p>A structured assessment of the quality of guidelines using the AGREE II instrument.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-evidence-internal-assessment-amstar2.html"
+                  title="StructureDefinition/evidence-internal-assessment-amstar2">Evidence Internal Assessment AMSTAR 2</a>
+            </td>
+            <td>
+<p>A structured assessment of the certainty of evidence using AMSTAR 2.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-evidence-internal-assessment-cochrane-rob.html"
+                  title="StructureDefinition/evidence-internal-assessment-cochrane-rob">Evidence Internal Assessment Cochrane Risk of Bias</a>
+            </td>
+            <td>
+<p>Structured assessment of risk of bias using Cochrane RoB tool.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-evidence-internal-assessment-robis.html"
+                  title="StructureDefinition/evidence-internal-assessment-robis">Evidence Internal Assessment ROBIS</a>
+            </td>
+            <td>
+<p>Structured assessment of risk of bias using ROBIS (Risk of Bias in Systematic Reviews).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-evidence-internal-validity-assessment.html"
+                  title="StructureDefinition/evidence-internal-validity-assessment">Evidence Internal Validity Assessment</a>
+            </td>
+            <td>
+<p>A structured assessment of the internal validity of evidence.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-evidence-overall-assessment-grade.html"
+                  title="StructureDefinition/evidence-overall-assessment-grade">Evidence Overall Assessment GRADE</a>
+            </td>
+            <td>
+<p>A structured assessment of the certainty of evidence for a specific outcome, including GRADE rating.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-evidence-overall-assessment-oxford2011.html"
+                  title="StructureDefinition/evidence-overall-assessment-oxford2011">Evidence Overall Assessment Oxford 2011</a>
+            </td>
+            <td>
+<p>A structured assessment of the certainty of evidence for a specific outcome, including Oxford 2011 rating.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-evidence-overall-quality-assessment.html"
+                  title="StructureDefinition/evidence-overall-quality-assessment">Evidence Overall Quality Assessment</a>
+            </td>
+            <td>
+<p>A structured assessment of the overall evidence for a specific outcome.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-evidence-report-with-contact-slices.html"
+                  title="StructureDefinition/evidence-report-with-contact-slices">Evidence Report with Contact Slices</a>
+            </td>
+            <td>
+<p>Intermediate profile that re-slices the extendedContactDetail extension from EvidenceReport. This workaround profile isolates the re-slicing to avoid 'Named items are out of order in the slice' errors in derived profiles. See profile comments for detailed explanation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-awmf-guideline.html"
+                  title="StructureDefinition/awmf-guideline">Guideline</a>
+            </td>
+            <td>
+<p>Clinical Practice Guideline</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-guideline-attachment.html"
+                  title="StructureDefinition/guideline-attachment">Guideline Attachment</a>
+            </td>
+            <td>
+<p>Attachment to a Clinical Practice Guideline</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-guideline-author.html"
+                  title="StructureDefinition/guideline-author">Guideline Author</a>
+            </td>
+            <td>
+<p>A person that authored a guideline.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-guideline-author-role.html"
+                  title="StructureDefinition/guideline-author-role">Guideline Author Role</a>
+            </td>
+            <td>
+<p>The role of the author of the guideline.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-guideline-registry-record.html"
+                  title="StructureDefinition/guideline-registry-record">Guideline Registry Record</a>
+            </td>
+            <td>
+<p>Guideline Registry Record containing metadata and registry-specific information for a clinical practice guideline.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-medical-society.html"
+                  title="StructureDefinition/medical-society">Medical Society</a>
+            </td>
+            <td>
+<p>A profile for medical societies.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-outcome-evidence.html"
+                  title="StructureDefinition/outcome-evidence">Outcome Evidence</a>
+            </td>
+            <td>
+<p>Represents evidence supporting a specific outcome within a body of clinical or scientific evidence.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-pico-question.html"
+                  title="StructureDefinition/pico-question">PICO Question</a>
+            </td>
+            <td>
+<p>A structured definition of the PICO question in the context of guidelines and recommendations.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-patient-organization.html"
+                  title="StructureDefinition/patient-organization">Patient Organization</a>
+            </td>
+            <td>
+<p>An organization that represents patients</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-recommendation.html"
+                  title="StructureDefinition/recommendation">Recommendation</a>
+            </td>
+            <td>
+<p>Clinical Practice Guideline Recommendation</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-recommendation-justification.html"
+                  title="StructureDefinition/recommendation-justification">Recommendation Justification</a>
+            </td>
+            <td>
+<p>A structured assessment of the evidence and consensus that underpins a recommendation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-recommendation-justification-awmf.html"
+                  title="StructureDefinition/recommendation-justification-awmf">Recommendation Justification AWMF</a>
+            </td>
+            <td>
+<p>A structured assessment of the evidence and consensus that underpins a recommendation, including AWMF rating.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-recommendation-justification-expert-consensus.html"
+                  title="StructureDefinition/recommendation-justification-expert-consensus">Recommendation Justification Expert Consensus</a>
+            </td>
+            <td>
+<p>A structured assessment of the evidence and consensus that underpins a recommendation based on expert consensus.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-recommendation-justification-grade.html"
+                  title="StructureDefinition/recommendation-justification-grade">Recommendation Justification GRADE</a>
+            </td>
+            <td>
+<p>A structured assessment of the evidence and consensus that underpins a recommendation using the GRADE evidence rating system.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-recommendation-justification-oxford-2009.html"
+                  title="StructureDefinition/recommendation-justification-oxford-2009">Recommendation Justification OXFORD 2009</a>
+            </td>
+            <td>
+<p>A structured assessment of the evidence and consensus that underpins a recommendation using the OXFORD 2009 evidence rating system.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-recommendation-justification-oxford-2011.html"
+                  title="StructureDefinition/recommendation-justification-oxford-2011">Recommendation Justification OXFORD 2011</a>
+            </td>
+            <td>
+<p>A structured assessment of the evidence and consensus that underpins a recommendation using the OXFORD 2011 evidence rating system.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-recommendation-justification-sign.html"
+                  title="StructureDefinition/recommendation-justification-sign">Recommendation Justification SIGN</a>
+            </td>
+            <td>
+<p>A structured assessment of the evidence and consensus that underpins a recommendation using the SIGN evidence rating system.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="2"> </a>
+   <h3>Structures: Extension Definitions </h3>
+    <p>These define constraints on FHIR data types for systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ext-artifact-extended-contact.html"
+                  title="StructureDefinition/ext-artifact-extended-contact">Artifact Contact (Extended)</a>
+            </td>
+            <td>
+<p>This extension provides additional contact details for individuals or organizations associated with an artifact (e.g., a clinical document, guideline, or other composition).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ext-author-language.html"
+                  title="StructureDefinition/ext-author-language">Author Language</a>
+            </td>
+            <td>
+<p>This extension allows for the specification of the language(s) the author contributed to a section in a FHIR Composition.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ext-consultation-period.html"
+                  title="StructureDefinition/ext-consultation-period">Consultation Period</a>
+            </td>
+            <td>
+<p>This extension allows for the indication of the period during which the guideline is open for consultation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ext-first-publication-date.html"
+                  title="StructureDefinition/ext-first-publication-date">First Publication Date</a>
+            </td>
+            <td>
+<p>This extension allows for the indication of the date when the guideline was first published.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ext-guideline-author-role.html"
+                  title="StructureDefinition/ext-guideline-author-role">Guideline Author Role</a>
+            </td>
+            <td>
+<p>This extension allows for the indication of the role of the author of the guideline.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ext-medical-subject.html"
+                  title="StructureDefinition/ext-medical-subject">Medical Subject</a>
+            </td>
+            <td>
+<p>An extension to specify medical subjects related to an organization.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ext-medical-subject-category.html"
+                  title="StructureDefinition/ext-medical-subject-category">Medical Subject Category</a>
+            </td>
+            <td>
+<p>An extension to specify medical subject category related to an organization.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ext-planned-completion-date.html"
+                  title="StructureDefinition/ext-planned-completion-date">Planned Completion Date</a>
+            </td>
+            <td>
+<p>This extension allows for the indication of the date when the guideline is planned to be completed.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ext-publication-date.html"
+                  title="StructureDefinition/ext-publication-date">Publication Date</a>
+            </td>
+            <td>
+<p>This extensions allows for the indication of the date when the guideline was published.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ext-recommendation-review-status.html"
+                  title="StructureDefinition/ext-recommendation-review-status">Recommendation Review Status</a>
+            </td>
+            <td>
+<p>This extension allows for the indication of the status of a recommendation in the context of an updated guideline version along with an optional explanatory text</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ext-registration-date.html"
+                  title="StructureDefinition/ext-registration-date">Registration Date</a>
+            </td>
+            <td>
+<p>This extensions allows for the indication of the date the guideline project was registered.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ext-relates-to-classifier.html"
+                  title="StructureDefinition/ext-relates-to-classifier">RelatesTo Classifier</a>
+            </td>
+            <td>
+<p>This extension defines a classification for the 'relatesTo' relationship using a CodeableConcept.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ext-relates-to-label.html"
+                  title="StructureDefinition/ext-relates-to-label">RelatesTo Label</a>
+            </td>
+            <td>
+<p>This extension defines a label for the 'relatesTo' relationship using a CodeableConcept.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ext-section-coding.html"
+                  title="StructureDefinition/ext-section-coding">Section Coding</a>
+            </td>
+            <td>
+<p>This extension allows for the assignment of a specific code to a section within a Composition resource. The code provides a standardized way to categorize or identify the content of the section, enabling better organization, searchability, and interoperability of clinical documents or other structured artifacts.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ext-section-intended-audience.html"
+                  title="StructureDefinition/ext-section-intended-audience">Section Intended Audience</a>
+            </td>
+            <td>
+<p>This extension allows for the indication of the target audience for the section</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ext-section-keyword.html"
+                  title="StructureDefinition/ext-section-keyword">Section Keyword</a>
+            </td>
+            <td>
+<p>This extension allows for the indication of keywords associated with the section</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ext-section-language.html"
+                  title="StructureDefinition/ext-section-language">Section Language</a>
+            </td>
+            <td>
+<p>This extension allows for the indication of the Language of the Section.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ext-submission-date.html"
+                  title="StructureDefinition/ext-submission-date">Submission Date</a>
+            </td>
+            <td>
+<p>This extension allows for the indication of the date when the guideline was submitted to the system.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="3"> </a>
+   <h3>Terminology: Value Sets </h3>
+    <p>These define sets of codes used by systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-agree-ii-domains.html"
+                  title="ValueSet/vs-agree-ii-domains">AGREE II Domains Value Set</a>
+            </td>
+            <td>
+<p>ValueSet encompassing all domains from the AGREE II instrument.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-amstar2-confidence-ratings.html"
+                  title="ValueSet/vs-amstar2-confidence-ratings">AMSTAR 2 Confidence Ratings Value Set</a>
+            </td>
+            <td>
+<p>ValueSet encompassing all overall confidence ratings from the AMSTAR 2 critical appraisal tool.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-awmf-guideline-class.html"
+                  title="ValueSet/vs-awmf-guideline-class">AWMF Guideline Class</a>
+            </td>
+            <td>
+<p>ValueSet listing values representing guideline classes according to the AWMF.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-awmf-guideline-status.html"
+                  title="ValueSet/vs-awmf-guideline-status">AWMF Guideline Status</a>
+            </td>
+            <td>
+<p>ValueSet listing values to define the guideline status according to the AWMF.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-body-system-conditions.html"
+                  title="ValueSet/vs-body-system-conditions">Body System Conditions</a>
+            </td>
+            <td>
+<p>ValueSet listing various body system conditions</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-care-level.html" title="ValueSet/vs-care-level">Care Level</a>
+            </td>
+            <td>
+<p>ValueSet listing levels of care.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-care-stage.html" title="ValueSet/vs-care-stage">Care Stage</a>
+            </td>
+            <td>
+<p>ValueSet listing stages of care from prevention to rehabilitation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-clinical-application-type.html"
+                  title="ValueSet/vs-clinical-application-type">Clinical Application Type</a>
+            </td>
+            <td>
+<p>ValueSet listing different clinical application types</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-content-types.html" title="ValueSet/vs-content-types">Content Types</a>
+            </td>
+            <td>
+<p>ValueSet listing types of content that can be part of a guideline or recommendation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-dissemination-website.html"
+                  title="ValueSet/vs-dissemination-website">Dissemination Website</a>
+            </td>
+            <td>
+<p>ValueSet listing types of dissemination websites</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-encounter-type.html"
+                  title="ValueSet/vs-encounter-type">Encounter Type</a>
+            </td>
+            <td>
+<p>ValueSet listing types of patient encounters based on hospitalization status.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-guideline-author-role.html"
+                  title="ValueSet/vs-guideline-author-role">Guideline Author Role</a>
+            </td>
+            <td>
+<p>ValueSet listing roles that a author can have in a guideline.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-guideline-contact-point.html"
+                  title="ValueSet/vs-guideline-contact-point">Guideline Contact Point VS</a>
+            </td>
+            <td>
+<p>ValueSet listing contact points relevant to guidelines, such as registrants, coordinators, and main contacts.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-guideline-release-type.html"
+                  title="ValueSet/vs-guideline-release-type">Guideline Release Type</a>
+            </td>
+            <td>
+<p>ValueSet listing different guideline release types</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-guideline-sections.html"
+                  title="ValueSet/vs-guideline-sections">Guideline Sections</a>
+            </td>
+            <td>
+<p>ValueSet listing values to use to define guideline sections</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-intended-audience.html"
+                  title="ValueSet/vs-intended-audience">Intended Audience Value Set</a>
+            </td>
+            <td>
+<p>ValueSet listing codes representing intended audiences for a section</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-level-of-consensus.html"
+                  title="ValueSet/vs-level-of-consensus">Level Of Consensus</a>
+            </td>
+            <td>
+<p>ValueSet listing values to define the level of consensus for a recommendation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-medical-subject-categories.html"
+                  title="ValueSet/vs-medical-subject-categories">Medical Subject Categories</a>
+            </td>
+            <td>
+<p>ValueSet listing values to classify medical subjects into different categories.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-ocebm-2009-levels-of-evidence.html"
+                  title="ValueSet/vs-ocebm-2009-levels-of-evidence">OCEBM 2009 Levels of Evidence Value Set</a>
+            </td>
+            <td>
+<p>ValueSet encompassing all levels from the Oxford Centre for Evidence-Based Medicine 2009 Levels of Evidence.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-ocebm-2011-levels-of-evidence-vs.html"
+                  title="ValueSet/ocebm-2011-levels-of-evidence-vs">OCEBM 2011 Levels of Evidence Value Set</a>
+            </td>
+            <td>
+<p>ValueSet encompassing all levels from the OCEBM 2011 Levels of Evidence.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-pico.html" title="ValueSet/vs-pico">PICO related terms</a>
+            </td>
+            <td>
+<p>ValueSet listing different terms related to PICO question and objects</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-robis-judgment-of-risk-of-bias.html"
+                  title="ValueSet/vs-robis-judgment-of-risk-of-bias">ROBIS Judgment of Risk of Bias Value Set</a>
+            </td>
+            <td>
+<p>ValueSet encompassing all risk of bias judgment values from the ROBIS tool.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-robis-risk-of-bias-domains.html"
+                  title="ValueSet/vs-robis-risk-of-bias-domains">ROBIS Risk of Bias Domains Value Set</a>
+            </td>
+            <td>
+<p>ValueSet encompassing all risk of bias domains from the ROBIS tool.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-rating-acceptability.html"
+                  title="ValueSet/vs-rating-acceptability">Rating Acceptability</a>
+            </td>
+            <td>
+<p>ValueSet defining if the alternatives are acceptable for the target population and its implementors?</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-rating-benefits-and-harms.html"
+                  title="ValueSet/vs-rating-benefits-and-harms">Rating Benefits And Harms</a>
+            </td>
+            <td>
+<p>ValueSet listing values to represent the summary of the most important benefits and harms</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-rating-certainty-of-evidence.html"
+                  title="ValueSet/vs-rating-certainty-of-evidence">Rating Certainty Of Evidence</a>
+            </td>
+            <td>
+<p>Codes from EvidenceCertaintyRating related to certainty of evidence</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-rating-concern-degree.html"
+                  title="ValueSet/vs-rating-concern-degree">Rating Concern Degree</a>
+            </td>
+            <td>
+<p>ValueSet listing codes from EvidenceCertaintyRating related to degree of concern</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-rating-equity.html" title="ValueSet/vs-rating-equity">Rating Equity</a>
+            </td>
+            <td>
+<p>ValueSet listing values to represent how the different alternatives affect equity</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-rating-feasibility.html"
+                  title="ValueSet/vs-rating-feasibility">Rating Feasibility</a>
+            </td>
+            <td>
+<p>ValueSet listing values to reprensent how feasible will it be to implement the different alternatives and if there are any issues</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-rating-preference-and-values.html"
+                  title="ValueSet/vs-rating-preference-and-values">Rating Preference And Values</a>
+            </td>
+            <td>
+<p>ValueSet listing typical patient preferences and values as well as common issues or expected variability</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-rating-resources.html"
+                  title="ValueSet/vs-rating-resources">Rating Resources</a>
+            </td>
+            <td>
+<p>ValueSet listing values to indicate if there are issues related to costs or resource use.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-recommendation-direction.html"
+                  title="ValueSet/vs-recommendation-direction">Recommendation Direction</a>
+            </td>
+            <td>
+<p>ValueSet defining the direction of a clinical recommendation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-recommendation-review-status.html"
+                  title="ValueSet/vs-recommendation-review-status">Recommendation Review Status Value Set</a>
+            </td>
+            <td>
+<p>ValueSet representing the review-related status of a recommendation in a new guideline version</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-recommendation-strength-awmf.html"
+                  title="ValueSet/vs-recommendation-strength-awmf">Recommendation Strength (AWMF) ValueSet</a>
+            </td>
+            <td>
+<p>ValueSet of strength of recommendations as defined in AWMF guideline methodology.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-recommendation-synthesis-type.html"
+                  title="ValueSet/vs-recommendation-synthesis-type">Recommendation Synthesis Type</a>
+            </td>
+            <td>
+<p>ValueSet listing different synthesis Types of recommendations</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-recommendation-tags.html"
+                  title="ValueSet/vs-recommendation-tags">Recommendation Tags</a>
+            </td>
+            <td>
+<p>ValueSet listing different tags to use for recommendations</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-remark-type.html" title="ValueSet/vs-remark-type">Remark Type</a>
+            </td>
+            <td>
+<p>ValueSet listing types of remarks that can be associated with guidelines, including restrictions, warnings, and additional notes.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-rob-2-overall-judgment.html"
+                  title="ValueSet/vs-rob-2-overall-judgment">RoB2 Overall Judgment ValueSet</a>
+            </td>
+            <td>
+<p>ValueSet listing values to represent the overall judgment of risk of bias assessed by the RoB2 tool for evaluating risk of bias for randomized trials.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-sign-grade-of-recommendation.html"
+                  title="ValueSet/vs-sign-grade-of-recommendation">SIGN Grade of Recommendation Value Set</a>
+            </td>
+            <td>
+<p>ValueSet encompassing all grades of recommendation from the SIGN (Scottish Intercollegiate Guidelines Network) Grades of Recommendation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-sign-level-of-evidence.html"
+                  title="ValueSet/vs-sign-level-of-evidence">SIGN Level of Evidence Value Set</a>
+            </td>
+            <td>
+<p>ValueSet encompassing all levels from the SIGN (Scottish Intercollegiate Guidelines Network) Levels of Evidence.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-target-patient-group.html"
+                  title="ValueSet/vs-target-patient-group">Target Patient Group</a>
+            </td>
+            <td>
+<p>ValueSet listing patient population categories for guidelines, such as adults and children/adolescents.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="4"> </a>
+   <h3>Terminology: Code Systems </h3>
+    <p>These define new code systems used by systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-agree-ii-domains.html"
+                  title="CodeSystem/cs-agree-ii-domains">AGREE II Domains</a>
+            </td>
+            <td>
+<p>CodeSystem representing the domains assessed by the AGREE II instrument for evaluating the quality of clinical practice guidelines.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-amstar2-confidence-ratings.html"
+                  title="CodeSystem/cs-amstar2-confidence-ratings">AMSTAR 2 Overall Confidence Ratings</a>
+            </td>
+            <td>
+<p>CodeSystem representing the overall confidence ratings from the AMSTAR 2 critical appraisal tool.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-awmf-guideline-class.html"
+                  title="CodeSystem/cs-awmf-guideline-class">AWMF Guideline Class</a>
+            </td>
+            <td>
+<p>As part of the project planning for the creation or updating of a guideline,
+    a decision should be made at an early stage about the planned level classification ("S classification") according to the AWMF's system of rules (1-3).
+    The S-classification scheme of the AWMF differentiates between the classes S1 treatment recommendation as well as S2e, S2k and S3 guideline.
+    The "S" stands for the extent of the applied systematic approach in the development process of a guideline.
+    Each class thus stands for a specific methodological concept that must be presented in a way that is comprehensible to the users.
+    The choice of class is based on the question of how much effort is appropriate and feasible.
+    The need for legitimacy for the implementation of the guideline (convincing the target group) must be taken into account.
+    When choosing a higher S-classification in the context of updating a guideline, the adaptation to the corresponding methodology has to be considered.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-awmf-guideline-status.html"
+                  title="CodeSystem/cs-awmf-guideline-status">AWMF Guideline Status</a>
+            </td>
+            <td>
+<p>CodeSystem representing the guideline status according to the AWMF.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-body-systems-conditions.html"
+                  title="CodeSystem/cs-body-systems-conditions">Body System Conditions</a>
+            </td>
+            <td>
+<p>CodeSystem representing various body system conditions.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-care-setting.html"
+                  title="CodeSystem/cs-care-setting">Care Setting</a>
+            </td>
+            <td>
+<p>CodeSystem defining different care settings, including levels of care, healthcare services, and treatment contexts.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-clinical-application-type.html"
+                  title="CodeSystem/cs-clinical-application-type">Clinical Application Type</a>
+            </td>
+            <td>
+<p>CodeSystem defining different clinical application types</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-contact-point.html"
+                  title="CodeSystem/cs-contact-point">Contact Point</a>
+            </td>
+            <td>
+<p>CodeSystem defining types of contact points for a guideline</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-evidence-to-decision-certainty-rating.html"
+                  title="CodeSystem/cs-evidence-to-decision-certainty-rating">Evidence To Decision Certainty Rating</a>
+            </td>
+            <td>
+<p>CodeSystem defining GRADE Evidence to Decision (EtD) Framework Certainty Ratings</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-evidence-to-decision-certainty-type.html"
+                  title="CodeSystem/cs-evidence-to-decision-certainty-type">Evidence To Decision Certainty type</a>
+            </td>
+            <td>
+<p>CodeSystem defining values to represent the GRADE Evidence to Decision (EtD) Framework Certainty Type</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-guideline-author-role.html"
+                  title="CodeSystem/cs-guideline-author-role">Guideline Author Role</a>
+            </td>
+            <td>
+<p>CodeSystem defining roles for the author of the guideline.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-guideline-release-type.html"
+                  title="CodeSystem/cs-guideline-release-type">Guideline Release Type</a>
+            </td>
+            <td>
+<p>CodeSystem defining different guideline release types</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-guideline-sections.html"
+                  title="CodeSystem/cs-guideline-sections">Guideline Sections</a>
+            </td>
+            <td>
+<p>Sections of a guideline, describing various aspects such as its intention, target patient group, care setting, and other relevant contextual information.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-intended-audience.html"
+                  title="CodeSystem/cs-intended-audience">Intended Audience Code System</a>
+            </td>
+            <td>
+<p>CodeSystem defining possible intended audiences for a section</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-level-of-consensus.html"
+                  title="CodeSystem/cs-level-of-consensus">Level of Consensus</a>
+            </td>
+            <td>
+<p>CodeSystem defining the values representing the level of consensus for a recommendation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-medical-subject-categories.html"
+                  title="CodeSystem/cs-medical-subject-categories">Medical Subject Categories</a>
+            </td>
+            <td>
+<p>CodeSystem defining values to classify medical subjects into different categories.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-ocebm-2009-levels-of-evidence.html"
+                  title="CodeSystem/cs-ocebm-2009-levels-of-evidence">OCEBM 2009 Levels of Evidence</a>
+            </td>
+            <td>
+<p>CodeSystem representing the Oxford Centre for Evidence-Based Medicine 2009 CEBM Levels of Evidence</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-ocebm-2011-levels-of-evidence.html"
+                  title="CodeSystem/cs-ocebm-2011-levels-of-evidence">OCEBM 2011 Levels of Evidence</a>
+            </td>
+            <td>
+<p>CodeSystem representing the Oxford Centre for Evidence-Based Medicine 2011 Levels of Evidence.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-pico.html" title="CodeSystem/cs-pico">PICO Related Terms</a>
+            </td>
+            <td>
+<p>CodeSystem defining different terms related to PICO question and objects</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-robis-judgment-of-risk-of-bias.html"
+                  title="CodeSystem/cs-robis-judgment-of-risk-of-bias">ROBIS Judgment of Risk of Bias</a>
+            </td>
+            <td>
+<p>CodeSystem representing the judgment of risk of bias assessed by the ROBIS tool for evaluating risk of bias in systematic reviews.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-robis-risk-of-bias-domains.html"
+                  title="CodeSystem/cs-robis-risk-of-bias-domains">ROBIS Risk of Bias Domains</a>
+            </td>
+            <td>
+<p>CodeSystem representing the domains assessed by the ROBIS tool for evaluating risk of bias in systematic reviews.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-recommendation-direction.html"
+                  title="CodeSystem/cs-recommendation-direction">Recommendation Direction</a>
+            </td>
+            <td>
+<p>CodeSystem defining the direction of a clinical recommendation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-recommendation-review-status.html"
+                  title="CodeSystem/cs-recommendation-review-status">Recommendation Review Status Code System</a>
+            </td>
+            <td>
+<p>CodeSystem defining values indicating how a recommendation relates to a new revision of a recommendation</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-recommendation-strength-awmf.html"
+                  title="CodeSystem/cs-recommendation-strength-awmf">Recommendation Strength (AWMF)</a>
+            </td>
+            <td>
+<p>CodeSystem defining the grading of recommendations according to German guideline methodology as used in AWMF S3 guidelines.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-recommendation-synthesis-type.html"
+                  title="CodeSystem/cs-recommendation-synthesis-type">Recommendation Synthesis Type</a>
+            </td>
+            <td>
+<p>CodeSystem defining values representing the synthesis type of a recommendation</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-recommendation-tags.html"
+                  title="CodeSystem/cs-recommendation-tags">Recommendation Tags</a>
+            </td>
+            <td>
+<p>CodeSystem defining codes to represent tags for recommendations</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-related-artifact-types.html"
+                  title="CodeSystem/cs-related-artifact-types">Related Artifact Types</a>
+            </td>
+            <td>
+<p>CodeSystem defining types of related artifacts that can be part of a guideline.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-remark-type.html" title="CodeSystem/cs-remark-type">Remark Type</a>
+            </td>
+            <td>
+<p>CodeSystem defining different types of remarks that can be associated with guidelines, including restrictions, warnings, and additional notes.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-rob-2-overall-judgment.html"
+                  title="CodeSystem/cs-rob-2-overall-judgment">RoB2 Overall Judgment</a>
+            </td>
+            <td>
+<p>CodeSystem representing the overall judgment of risk of bias assessed by the RoB2 tool for evaluating risk of bias for randomized trials.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-sign-grade-of-recommendation.html"
+                  title="CodeSystem/cs-sign-grade-of-recommendation">SIGN Grade of Recommendation</a>
+            </td>
+            <td>
+<p>CodeSystem representing the Scottish Intercollegiate Guidelines Network (SIGN) Grades of Recommendation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-sign-level-of-evidence.html"
+                  title="CodeSystem/cs-sign-level-of-evidence">SIGN Level of Evidence</a>
+            </td>
+            <td>
+<p>CodeSystem representing the Scottish Intercollegiate Guidelines Network (SIGN) Levels of Evidence.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-target-patient-group.html"
+                  title="CodeSystem/cs-target-patient-group">Target Patient Group</a>
+            </td>
+            <td>
+<p>CodeSystem defining the intended patient population for whom the guideline is applicable.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cs-awmf.html" title="CodeSystem/cs-awmf">awmf</a>
+            </td>
+            <td>
+<p>CodeSystem representing different codes of interest for the Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften (AWMF)</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="5"> </a>
+   <h3>Example: Example Instances </h3>
+    <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-AWMFGuidelineRecordS3Example.html"
+                  title="Composition/AWMFGuidelineRecordS3Example">AWMF Guideline Record S3 Example</a>
+            </td>
+            <td>
+<p>An example of an AWMF S3 guideline.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-AWMFGuidelineS1Example.html"
+                  title="Composition/AWMFGuidelineS1Example">AWMF Guideline S1 Example</a>
+            </td>
+            <td>
+<p>An example of an AWMF S1 guideline.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-AWMFGuidelineS2eExample.html"
+                  title="Composition/AWMFGuidelineS2eExample">AWMF Guideline S2e Example</a>
+            </td>
+            <td>
+<p>An example of an AWMF S2e guideline.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-AWMFGuidelineRecordS2kExample.html"
+                  title="Composition/AWMFGuidelineRecordS2kExample">AWMF Guideline S2k Example</a>
+            </td>
+            <td>
+<p>An example of an AWMF S2k guideline.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Organization-AWMFMemberOrganizationExample.html"
+                  title="Organization/AWMFMemberOrganizationExample">AWMF Member Organization Example</a>
+            </td>
+            <td>
+<p>An example of an AWMF member organization.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Organization-AWMF.html" title="Organization/AWMF">Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften (AWMF)</a>
+            </td>
+            <td>
+<p>Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften (AWMF)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ArtifactAssessment-RoB-CognitiveTestsWhenSuspectingDementia-Sensitivity.html"
+                  title="ArtifactAssessment/RoB-CognitiveTestsWhenSuspectingDementia-Sensitivity">Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspecting Dementia - Sensitivity</a>
+            </td>
+            <td>
+<p>Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspecting Dementia on Sensitivity</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ArtifactAssessment-RoB-CognitiveTestsWhenSuspectingDementia-Specificity.html"
+                  title="ArtifactAssessment/RoB-CognitiveTestsWhenSuspectingDementia-Specificity">Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspecting Dementia - Specificity</a>
+            </td>
+            <td>
+<p>Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspecting Dementia on Specificity</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ArtifactAssessment-EvA-MultiplexPCRDiagnostic-AntibioticDays.html"
+                  title="ArtifactAssessment/EvA-MultiplexPCRDiagnostic-AntibioticDays">Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Antibiotic Days</a>
+            </td>
+            <td>
+<p>Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on antibiotic days</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ArtifactAssessment-EvA-MultiplexPCRDiagnostic-Mortality.html"
+                  title="ArtifactAssessment/EvA-MultiplexPCRDiagnostic-Mortality">Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Mortality</a>
+            </td>
+            <td>
+<p>Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on mortality</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ArtifactAssessment-EvA-MultiplexPCRDiagnostic-TimeToDeescalation.html"
+                  title="ArtifactAssessment/EvA-MultiplexPCRDiagnostic-TimeToDeescalation">Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Time to Deescalation</a>
+            </td>
+            <td>
+<p>Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on time to deescalation</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Citation-CitationSystematicReviewTsoi2015.html"
+                  title="Citation/CitationSystematicReviewTsoi2015">Citation Systematic Review</a>
+            </td>
+            <td>
+<p>Citation for the Systematic Review by Tsoi et al. 2015</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-FHIRStatusToAWMFStatus.html"
+                  title="ConceptMap/FHIRStatusToAWMFStatus">Concept map from concepts from standardized vocabularies (that are not standard OMOP concepts) to Concept IDs of OMOP standard Concepts</a>
+            </td>
+            <td>
+<p>Concept map from concepts from standardized vocabularies that are not labelled as 'standard' in Athena – OHDSI Vocabularies Repository to Concept IDs from 'standard' concepts</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Organization-DGAI.html" title="Organization/DGAI">DGAI</a>
+            </td>
+            <td>
+<p>Deutsche Gesellschaft für Anästhesiologie und Intensivmedizin e.V. (DGAI)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Organization-DGCH.html" title="Organization/DGCH">DGCH</a>
+            </td>
+            <td>
+<p>Deutsche Gesellschaft für Chirurgie e.V. (DGCH)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Organization-DGHM.html" title="Organization/DGHM">DGHM</a>
+            </td>
+            <td>
+<p>Deutsche Gesellschaft für Hygiene und Mikrobiologie e.V. (DGHM)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Organization-DGI.html" title="Organization/DGI">DGI</a>
+            </td>
+            <td>
+<p>Deutsche Gesellschaft für Infektiologie e.V. (DGI)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Organization-DGIIN.html" title="Organization/DGIIN">DGIIN</a>
+            </td>
+            <td>
+<p>Deutsche Gesellschaft für Internistische Intensivmedizin und Notfallmedizin e.V. (DGIIN)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Organization-DGIM.html" title="Organization/DGIM">DGIM</a>
+            </td>
+            <td>
+<p>Deutsche Gesellschaft für Innere Medizin e.V. (DGIM)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Organization-DGP.html" title="Organization/DGP">DGP</a>
+            </td>
+            <td>
+<p>Deutsche Gesellschaft für Pneumologie und Beatmungsmedizin e.V. (DGP)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Organization-DGPPN.html" title="Organization/DGPPN">DGPPN</a>
+            </td>
+            <td>
+<p>Deutsche Gesellschaft für Psychiatrie und Psychotherapie, Psychosomatik und Nervenheilkunde e. V. (DGPPN)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Organization-DRG.html" title="Organization/DRG">DRG</a>
+            </td>
+            <td>
+<p>Deutsche Röntgengesellschaft, Gesellschaft für Medizinische Radiologie e.V. (DRG)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Organization-DSG.html" title="Organization/DSG">DSG</a>
+            </td>
+            <td>
+<p>Deutsche Sepsis-Gesellschaft e.V. (DSG)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Evidence-Evidence-MultiplexPCRDiagnostic-AntibioticDays.html"
+                  title="Evidence/Evidence-MultiplexPCRDiagnostic-AntibioticDays">Evidence-Multiplex PCR Diagnostic-Antibiotic Days</a>
+            </td>
+            <td>
+<p>Evidence for the impact of Multiplex-PCR-Diagnostik on antibiotic days</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Evidence-Evidence-MultiplexPCRDiagnostic-Mortality.html"
+                  title="Evidence/Evidence-MultiplexPCRDiagnostic-Mortality">Evidence-Multiplex PCR Diagnostic-Mortality</a>
+            </td>
+            <td>
+<p>Evidence for the impact of Multiplex-PCR-Diagnostik on mortality</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Evidence-Evidence-MultiplexPCRDiagnostic-TimeToDeescalation.html"
+                  title="Evidence/Evidence-MultiplexPCRDiagnostic-TimeToDeescalation">Evidence-Multiplex PCR Diagnostic-Time to Deescalation</a>
+            </td>
+            <td>
+<p>Evidence for the impact of Multiplex-PCR-Diagnostik on time to deescalation</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DocumentReference-Guideline-020-013-SlideDeck.html"
+                  title="DocumentReference/Guideline-020-013-SlideDeck">Foliensatz</a>
+            </td>
+            <td>
+<p>Foliensatz Leitlinie 020-013</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Organization-GFV.html" title="Organization/GFV">GfV</a>
+            </td>
+            <td>
+<p>Gesellschaft für Virologie e.V. (GfV)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DocumentReference-guideline-attachment-example.html"
+                  title="DocumentReference/guideline-attachment-example">Guideline Attachment Example</a>
+            </td>
+            <td>
+<p>An example of a guideline attachment.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DocumentReference-guideline-attachment-patient-version-example.html"
+                  title="DocumentReference/guideline-attachment-patient-version-example">Guideline Attachment Patient Version Example</a>
+            </td>
+            <td>
+<p>An example of a guideline attachment for the patient version.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Practitioner-GuidelineAuthorExample.html"
+                  title="Practitioner/GuidelineAuthorExample">Guideline Author Example</a>
+            </td>
+            <td>
+<p>An example of a guideline author.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="PractitionerRole-GuidelineAuthorRoleExample.html"
+                  title="PractitionerRole/GuidelineAuthorRoleExample">Guideline Author Role Example</a>
+            </td>
+            <td>
+<p>An example of a guideline author role.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-GuidelineExample.html"
+                  title="Composition/GuidelineExample">Guideline Example</a>
+            </td>
+            <td>
+<p>An example of a guideline.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-GuidelineRegistryRecordExample.html"
+                  title="Composition/GuidelineRegistryRecordExample">Guideline Registry Record Example</a>
+            </td>
+            <td>
+<p>An example of a guideline registry record.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-RR-TestInvContribAuthorRefPerson-SHOULD-FAIL.html"
+                  title="Composition/RR-TestInvContribAuthorRefPerson-SHOULD-FAIL">Guideline with contributing author referencing Practitioner (fails invariant)</a>
+            </td>
+            <td>
+<p>Fails because the contributing author points to a Practitioner instead of an Organization.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-RR-TestInvLeadingAuthorRefOrganization-SHOULD-PASS.html"
+                  title="Composition/RR-TestInvLeadingAuthorRefOrganization-SHOULD-PASS">Guideline with leading author referencing Organization (passes invariant)</a>
+            </td>
+            <td>
+<p>Passes because the leading author points to an Organization.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-RR-TestInvLeadingAuthorRefPerson-SHOULD-FAIL.html"
+                  title="Composition/RR-TestInvLeadingAuthorRefPerson-SHOULD-FAIL">Guideline with leading author referencing Practitioner (fails invariant)</a>
+            </td>
+            <td>
+<p>Fails because the leading author points to a Practitioner instead of an Organization.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-RecommendationHAPDiagnosis.html"
+                  title="Composition/RecommendationHAPDiagnosis">HAP Diagnose</a>
+            </td>
+            <td>
+<p>Wie wird eine HAP klinisch diagnostiziert und welche Differenzialdiagnosen sind zu beachten?</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-RecommendationHAPDiagnosis-A.html"
+                  title="Composition/RecommendationHAPDiagnosis-A">HAP Diagnose - Empfehlung A</a>
+            </td>
+            <td>
+<p>Wie wird eine HAP klinisch diagnostiziert und welche Differenzialdiagnosen sind zu beachten?</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-RecommendationHAPDiagnosis-B.html"
+                  title="Composition/RecommendationHAPDiagnosis-B">HAP Diagnose - Empfehlung B</a>
+            </td>
+            <td>
+<p>Wie wird eine HAP klinisch diagnostiziert und welche Differenzialdiagnosen sind zu beachten?</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DocumentReference-Guideline-020-013-ImplementationGuidance.html"
+                  title="DocumentReference/Guideline-020-013-ImplementationGuidance">Implementierungshilfe</a>
+            </td>
+            <td>
+<p>Implementierungshilfe Leitlinie 020-013</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Practitioner-JessicaRademacher.html"
+                  title="Practitioner/JessicaRademacher">Jessica Rademacher</a>
+            </td>
+            <td>
+<p>Jessica Rademacher</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="PractitionerRole-JessicaRademacherDGPFor020-013.html"
+                  title="PractitionerRole/JessicaRademacherDGPFor020-013">Jessica Rademacher for DGP in the context of 020-013</a>
+            </td>
+            <td>
+<p>Jessica Rademacher for DGP in the context of 020-013</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DocumentReference-Guideline-020-013-ShortVersion.html"
+                  title="DocumentReference/Guideline-020-013-ShortVersion">Kurzfassung</a>
+            </td>
+            <td>
+<p>Kurzfassung Leitlinie 020-013</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DocumentReference-Guideline-020-013-LongVersion.html"
+                  title="DocumentReference/Guideline-020-013-LongVersion">Langfassung</a>
+            </td>
+            <td>
+<p>Langfassung Leitlinie 020-013</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DocumentReference-Guideline-020-013-GuidelineReport.html"
+                  title="DocumentReference/Guideline-020-013-GuidelineReport">Leitlinienreport</a>
+            </td>
+            <td>
+<p>Leitlinienreport Leitlinie 020-013</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Organization-MedicalSocietyExample.html"
+                  title="Organization/MedicalSocietyExample">Medical Society Example</a>
+            </td>
+            <td>
+<p>An example of a medical society.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-RecommendationMultiplexPCRDiagnostic.html"
+                  title="Composition/RecommendationMultiplexPCRDiagnostic">Multiplex-PCR-Diagnostik</a>
+            </td>
+            <td>
+<p>Wird der Einsatz von Multiplex-PCR im Rahmen der mikrobiologischen Diagnostik bei Patienten 
+mit Verdacht auf nosokomiale Pneumonie empfohlen?</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Organization-CPAnet.html" title="Organization/CPAnet">Netzwerk chronisch pulmonale Aspergillose (CPAnet)</a>
+            </td>
+            <td>
+<p>Netzwerk chronisch pulmonale Aspergillose (CPAnet)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="EvidenceVariable-OutcomeAntibioticDays.html"
+                  title="EvidenceVariable/OutcomeAntibioticDays">Outcome Antibiotic Days</a>
+            </td>
+            <td>
+<p>Outcome Antibiotic Days</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="EvidenceVariable-OutcomeMortality.html"
+                  title="EvidenceVariable/OutcomeMortality">Outcome Mortality</a>
+            </td>
+            <td>
+<p>Outcome Mortality</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="EvidenceVariable-OutcomeTimeToDeescalation.html"
+                  title="EvidenceVariable/OutcomeTimeToDeescalation">Outcome Time to Deescalation</a>
+            </td>
+            <td>
+<p>Outcome Time to Deescalation</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Organization-PEG.html" title="Organization/PEG">PEG</a>
+            </td>
+            <td>
+<p>Paul-Ehrlich-Gesellschaft für Infektionstherapie e.V. (PEG)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Group-PICOComparatorRec17.html" title="Group/PICOComparatorRec17">PICO Comparator of Recommendation 17 from Guideline 038-013</a>
+            </td>
+            <td>
+<p>Vergleichsintervention: Kein Test, Mini-Mental-Status-Test (Standard)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Group-PICOInterventionRec17.html"
+                  title="Group/PICOInterventionRec17">PICO Intervention of Recommendation 17 from Guideline 038-013</a>
+            </td>
+            <td>
+<p>Intervention: Verschiedene kognitive Kurztests</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Group-PICOOutcomeSensitivityRec17.html"
+                  title="Group/PICOOutcomeSensitivityRec17">PICO Outcome Sensitivity of Recommendation 17 from Guideline 038-013</a>
+            </td>
+            <td>
+<p>Sensitivität für die Indikation einer Demenz</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Group-PICOOutcomeSpecificityRec17.html"
+                  title="Group/PICOOutcomeSpecificityRec17">PICO Outcome Specificity of Recommendation 17 from Guideline 038-013</a>
+            </td>
+            <td>
+<p>Spezifizität für die Indikation einer Demenz</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Group-PICOPopulationRec17.html" title="Group/PICOPopulationRec17">PICO Population of Recommendation 17 from Guideline 038-013</a>
+            </td>
+            <td>
+<p>Population: Menschen in nicht-spezialisierten Settings (z. B. Hausarztpraxis, Krankenhaus), die über die kognitive Störungen berichten oder bei denen eine kognitive Störung beobachtet wird</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Group-PICOQuestionRec17.html" title="Group/PICOQuestionRec17">PICO Question of Recommendation 17 from Guideline 038-013</a>
+            </td>
+            <td>
+<p>Schlüsselfrage: Sind Tests in nicht-spezialisierten Settings sinnvoll, um eine Demenz zu erkennen bei Personen, die kognitive Störungen berichten oder bei denen eine
+kognitive Störung beobachtet wird und die einer solchen Untersuchung zustimmen?</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DocumentReference-Guideline-020-013-PatientVersion.html"
+                  title="DocumentReference/Guideline-020-013-PatientVersion">Patienteninformation</a>
+            </td>
+            <td>
+<p>Patienteninformation Leitlinie 020-013</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-RecommendationExample.html"
+                  title="Composition/RecommendationExample">Recommendation Example</a>
+            </td>
+            <td>
+<p>An example of a recommendation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="PlanDefinition-Recommendation-PlanDefinition-example.html"
+                  title="PlanDefinition/Recommendation-PlanDefinition-example">Recommendation-PlanDefinition-example</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ArtifactAssessment-RecommendationCognitiveTestsWhenSuspectingDementia-Justification.html"
+                  title="ArtifactAssessment/RecommendationCognitiveTestsWhenSuspectingDementia-Justification">RecommendationCognitiveTestsWhenSuspectingDementia-Justification</a>
+            </td>
+            <td>
+<p>Justification for Recommendation Cognitive Tests When Suspecting Dementia</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ArtifactAssessment-RecommendationHAPDiagnosis-A-Justification.html"
+                  title="ArtifactAssessment/RecommendationHAPDiagnosis-A-Justification">RecommendationHAPDiagnosis-A-Justification</a>
+            </td>
+            <td>
+<p>Justification for Recommendation HAP Diagnose A</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ArtifactAssessment-RecommendationHAPDiagnosis-B-Justification.html"
+                  title="ArtifactAssessment/RecommendationHAPDiagnosis-B-Justification">RecommendationHAPDiagnosis-B-Justification</a>
+            </td>
+            <td>
+<p>Justification for Recommendation HAP Diagnose B</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ArtifactAssessment-RecommendationMultiplexPCRDiagnostic-Justification.html"
+                  title="ArtifactAssessment/RecommendationMultiplexPCRDiagnostic-Justification">RecommendationMultiplexPCRDiagnostic-Justification</a>
+            </td>
+            <td>
+<p>Justification for Recommendation Multiplex-PCR-Diagnostik</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Organization-RKI.html" title="Organization/RKI">Robert Koch-Institut</a>
+            </td>
+            <td>
+<p>Robert Koch-Institut</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-Demenzen.html" title="Composition/Demenzen">S3-Leitlinie Demenzen Living Guideline - Langfassung</a>
+            </td>
+            <td>
+<p>S3-Leitlinie Demenzen Living Guideline - Langfassung</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-DemenzenRecord.html"
+                  title="Composition/DemenzenRecord">S3-Leitlinie Demenzen Living Guideline - Record</a>
+            </td>
+            <td>
+<p>S3-Leitlinie Demenzen Living Guideline - Record</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-NosokomialePneumonie.html"
+                  title="Composition/NosokomialePneumonie">S3-Leitlinie Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie</a>
+            </td>
+            <td>
+<p>S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-NosokomialePneumonieRecord.html"
+                  title="Composition/NosokomialePneumonieRecord">S3-Leitlinie Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie</a>
+            </td>
+            <td>
+<p>S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-RecommendationCognitiveTestsWhenSuspectingDementia.html"
+                  title="Composition/RecommendationCognitiveTestsWhenSuspectingDementia">Screening auf kognitive Beeinträchtigung</a>
+            </td>
+            <td>
+<p>Sind Tests in nicht-spezialisierten Settings sinnvoll, um eine Demenz zu erkennen bei Personen, die kognitive Störungen berichten oder bei denen eine
+kognitive Störung beobachtet wird und die einer solchen Untersuchung zustimmen?</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-RR-TestTestInvAuthorLeadVsContrExclusive-Both-SHOULD-FAIL.html"
+                  title="Composition/RR-TestTestInvAuthorLeadVsContrExclusive-Both-SHOULD-FAIL">Test: Author Both Leading and Contributing (Should Fail)</a>
+            </td>
+            <td>
+<p>Tests that author-leading-vs-contributing-exclusive fails when author has both roles.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-G-TestTestInvRequireOfficialIdentifier-NoOfficialId-SHOULD-FAIL.html"
+                  title="Composition/G-TestTestInvRequireOfficialIdentifier-NoOfficialId-SHOULD-FAIL">Test: No Official Identifier (Should Fail)</a>
+            </td>
+            <td>
+<p>Tests that inv-require-official-identifier fails when no official identifier is present.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-RR-TestTestInvRequireOfficialId-NoOfficialId-SHOULD-FAIL.html"
+                  title="Composition/RR-TestTestInvRequireOfficialId-NoOfficialId-SHOULD-FAIL">Test: No Official Identifier (Should Fail)</a>
+            </td>
+            <td>
+<p>Tests that inv-require-official-identifier fails when no official identifier is present.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-RR-TestTestInvAuthorRegistSingleton-NoRegistrant-SHOULD-FAIL.html"
+                  title="Composition/RR-TestTestInvAuthorRegistSingleton-NoRegistrant-SHOULD-FAIL">Test: No Registrant Author (Should Fail)</a>
+            </td>
+            <td>
+<p>Tests that author-registrant-singleton fails when no registrant is present.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-RR-TestTestInvPreliminaryCompNeedsConsultPeriod-SHOULD-PASS.html"
+                  title="Composition/RR-TestTestInvPreliminaryCompNeedsConsultPeriod-SHOULD-PASS">Test: Preliminary With Consultation Period (Should Pass)</a>
+            </td>
+            <td>
+<p>Tests that preliminary-composition-needs-consultation-period passes when period is present.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-RR-TestTestInvPrelimCompNeedsConsultPeriod-NoDate-SHOULD-FAIL.html"
+                  title="Composition/RR-TestTestInvPrelimCompNeedsConsultPeriod-NoDate-SHOULD-FAIL">Test: Preliminary Without Consultation Period (Should Fail)</a>
+            </td>
+            <td>
+<p>Tests that preliminary-composition-needs-consultation-period fails when period is missing.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-RR-TestTestInvRegCompNeedsPlannedComplDate-SHOULD-PASS.html"
+                  title="Composition/RR-TestTestInvRegCompNeedsPlannedComplDate-SHOULD-PASS">Test: Registered With Planned Completion Date (Should Pass)</a>
+            </td>
+            <td>
+<p>Tests that registered-composition-needs-planned-completion-date passes when date is present.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-RR-TestTestInvRegCompNeedsPlannedComplDate-NoDate-SHOULD-FAIL.html"
+                  title="Composition/RR-TestTestInvRegCompNeedsPlannedComplDate-NoDate-SHOULD-FAIL">Test: Registered Without Planned Completion Date (Should Fail)</a>
+            </td>
+            <td>
+<p>Tests that registered-composition-needs-planned-completion-date fails when date is missing.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-RR-TestTestInvRequireReleaseTypeIfRegistered-SHOULD-PASS.html"
+                  title="Composition/RR-TestTestInvRequireReleaseTypeIfRegistered-SHOULD-PASS">Test: Release Type If Registered (Should Pass)</a>
+            </td>
+            <td>
+<p>Tests that inv-require-release-type-if-registered passes when release type is present.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-RR-TestTestInvRequireReleaseTypeIfRegistered-NoTag-SHOULD-FAIL.html"
+                  title="Composition/RR-TestTestInvRequireReleaseTypeIfRegistered-NoTag-SHOULD-FAIL">Test: Release Type No Tag (Should Fail)</a>
+            </td>
+            <td>
+<p>Tests that inv-require-release-type-if-registered fails when release type tag is missing.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-RR-TestTestInvRequireReleaseTypeIfReg-WrongCode-SHOULD-FAIL.html"
+                  title="Composition/RR-TestTestInvRequireReleaseTypeIfReg-WrongCode-SHOULD-FAIL">Test: Release Type Wrong Code (Should Fail)</a>
+            </td>
+            <td>
+<p>Tests that inv-require-release-type-if-registered fails when release type code is invalid.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-RR-TestTestInvAuthorRegistrantSingleton-SHOULD-PASS.html"
+                  title="Composition/RR-TestTestInvAuthorRegistrantSingleton-SHOULD-PASS">Test: Single Registrant Author (Should Pass)</a>
+            </td>
+            <td>
+<p>Tests that author-registrant-singleton passes when exactly one registrant is present.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-G-TestTestInvRequireOfficialIdentifier-TwoOfficialId-SHOULD-FAIL.html"
+                  title="Composition/G-TestTestInvRequireOfficialIdentifier-TwoOfficialId-SHOULD-FAIL">Test: Two Official Identifiers (Should Fail)</a>
+            </td>
+            <td>
+<p>Tests that inv-require-official-identifier fails when two official identifiers are present.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-RR-TestTestInvRequireOfficialId-TwoOfficialId-SHOULD-FAIL.html"
+                  title="Composition/RR-TestTestInvRequireOfficialId-TwoOfficialId-SHOULD-FAIL">Test: Two Official Identifiers (Should Fail)</a>
+            </td>
+            <td>
+<p>Tests that inv-require-official-identifier fails when two official identifiers are present.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-RR-TestTestInvAuthorRegistSingleton-TwoRegistrants-SHOULD-FAIL.html"
+                  title="Composition/RR-TestTestInvAuthorRegistSingleton-TwoRegistrants-SHOULD-FAIL">Test: Two Registrant Authors (Should Fail)</a>
+            </td>
+            <td>
+<p>Tests that author-registrant-singleton fails when two registrants are present.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-G-TestTestInvVersionMajorMinor-VersionPatch-SHOULD-FAIL.html"
+                  title="Composition/G-TestTestInvVersionMajorMinor-VersionPatch-SHOULD-FAIL">Test: Version Major.Minor.Patch (Should Fail)</a>
+            </td>
+            <td>
+<p>Tests that inv-version-major-minor fails when version has three parts.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-RR-TestTestInvVersionMajorMinor-VersionPatch-SHOULD-FAIL.html"
+                  title="Composition/RR-TestTestInvVersionMajorMinor-VersionPatch-SHOULD-FAIL">Test: Version Major.Minor.Patch (Should Fail)</a>
+            </td>
+            <td>
+<p>Tests that inv-version-major-minor fails when version has three parts.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-G-TestTestInvVersionMajorMinor-VersionInvalid2-SHOULD-FAIL.html"
+                  title="Composition/G-TestTestInvVersionMajorMinor-VersionInvalid2-SHOULD-FAIL">Test: Version as Text (Should Fail)</a>
+            </td>
+            <td>
+<p>Tests that inv-version-major-minor fails when version is text.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-RR-TestTestInvVersionMajorMinor-VersionInvalid2-SHOULD-FAIL.html"
+                  title="Composition/RR-TestTestInvVersionMajorMinor-VersionInvalid2-SHOULD-FAIL">Test: Version as Text (Should Fail)</a>
+            </td>
+            <td>
+<p>Tests that inv-version-major-minor fails when version is text.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-G-TestTestInvVersionMajorMinor-VersionInvalid-SHOULD-FAIL.html"
+                  title="Composition/G-TestTestInvVersionMajorMinor-VersionInvalid-SHOULD-FAIL">Test: Version with Prefix (Should Fail)</a>
+            </td>
+            <td>
+<p>Tests that inv-version-major-minor fails when version has 'v' prefix.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-RR-TestTestInvVersionMajorMinor-VersionInvalid-SHOULD-FAIL.html"
+                  title="Composition/RR-TestTestInvVersionMajorMinor-VersionInvalid-SHOULD-FAIL">Test: Version with Prefix (Should Fail)</a>
+            </td>
+            <td>
+<p>Tests that inv-version-major-minor fails when version has 'v' prefix.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Practitioner-contributor0.html" title="Practitioner/contributor0">contributor0</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Practitioner-contributor1.html" title="Practitioner/contributor1">contributor1</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Practitioner-contributor2.html" title="Practitioner/contributor2">contributor2</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Practitioner-contributor3.html" title="Practitioner/contributor3">contributor3</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Practitioner-contributor4.html" title="Practitioner/contributor4">contributor4</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+      </tbody>
+   </table>
+</div>
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.awmf.org">AWMF e.V.</a>.  Package awmf.ig#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR 6.0.0-ballot3</a>. Generated <span title="Thu, Jan 29, 2026 18:27+0000">2026-01-29</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

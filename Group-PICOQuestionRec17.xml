@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Group xmlns="http://hl7.org/fhir">
+  <id value="PICOQuestionRec17"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/pico-question"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Group PICOQuestionRec17</b></p><a name="PICOQuestionRec17"> </a><a name="hcPICOQuestionRec17"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-pico-question.html">PICO Question</a></p></div><p><b>description</b>: </p><div><p>Schlüsselfrage: Sind Tests in nicht-spezialisierten Settings sinnvoll, um eine Demenz zu erkennen bei Personen, die kognitive Störungen berichten oder bei denen eine
+kognitive Störung beobachtet wird und die einer solchen Untersuchung zustimmen?</p>
+</div><p><b>membership</b>: Conceptual</p><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes:{http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico population}">Population</span></p><p><b>value</b>: <a href="Group-PICOPopulationRec17.html">Group Population</a></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes:{http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico intervention}">Intervention</span></p><p><b>value</b>: <a href="Group-PICOInterventionRec17.html">Group Intervention</a></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes:{http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico comparator}">Comparator</span></p><p><b>value</b>: <a href="Group-PICOComparatorRec17.html">Group Comparator</a></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes:{http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico outcome}">Outcome</span></p><p><b>value</b>: <a href="Group-PICOOutcomeSensitivityRec17.html">Group Outcome</a></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes:{http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico outcome}">Outcome</span></p><p><b>value</b>: <a href="Group-PICOOutcomeSpecificityRec17.html">Group Outcome</a></p><p><b>exclude</b>: false</p></blockquote></div>
+  </text>
+  <description value="Schlüsselfrage: Sind Tests in nicht-spezialisierten Settings sinnvoll, um eine Demenz zu erkennen bei Personen, die kognitive Störungen berichten oder bei denen eine&#xA;kognitive Störung beobachtet wird und die einer solchen Untersuchung zustimmen?"/>
+  <membership value="conceptual"/>
+  <characteristic>
+    <code>
+      <coding>
+        <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico"/>
+        <code value="population"/>
+      </coding>
+    </code>
+    <valueReference>
+      <reference value="Group/PICOPopulationRec17"/>
+    </valueReference>
+    <exclude value="false"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico"/>
+        <code value="intervention"/>
+      </coding>
+    </code>
+    <valueReference>
+      <reference value="Group/PICOInterventionRec17"/>
+    </valueReference>
+    <exclude value="false"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico"/>
+        <code value="comparator"/>
+      </coding>
+    </code>
+    <valueReference>
+      <reference value="Group/PICOComparatorRec17"/>
+    </valueReference>
+    <exclude value="false"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico"/>
+        <code value="outcome"/>
+      </coding>
+    </code>
+    <valueReference>
+      <reference value="Group/PICOOutcomeSensitivityRec17"/>
+    </valueReference>
+    <exclude value="false"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico"/>
+        <code value="outcome"/>
+      </coding>
+    </code>
+    <valueReference>
+      <reference value="Group/PICOOutcomeSpecificityRec17"/>
+    </valueReference>
+    <exclude value="false"/>
+  </characteristic>
+</Group>

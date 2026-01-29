@@ -1,0 +1,146 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/CodeSystem/cs-robis-judgment-of-risk-of-bias> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cs-robis-judgment-of-risk-of-bias"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-robis-judgment-of-risk-of-bias</b></p><a name=\"cs-robis-judgment-of-risk-of-bias\"> </a><a name=\"hccs-robis-judgment-of-risk-of-bias\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-robis-judgment-of-risk-of-bias</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">low_risk_of_bias<a name=\"cs-robis-judgment-of-risk-of-bias-low_risk_of_bias\"> </a></td><td>Low risk of bias</td><td>The findings of the review are likely to be reliable. Phase 2 did not raise any concerns with the review process or concerns were appropriately considered in the review conclusions. The conclusions were supported by the evidence and included consideration of the relevance of included studies.</td><td>Geringes Risiko für Bias</td></tr><tr><td style=\"white-space:nowrap\">high_risk_of_bias<a name=\"cs-robis-judgment-of-risk-of-bias-high_risk_of_bias\"> </a></td><td>High risk of bias</td><td>One or more of the concerns raised during the Phase 2 assessment was not addressed in the review conclusions, the review conclusions were not supported by the evidence, or the conclusions did not consider the relevance of the included studies to the review question.</td><td>Hohes Risiko für Bias</td></tr><tr><td style=\"white-space:nowrap\">unclear_risk_of_bias<a name=\"cs-robis-judgment-of-risk-of-bias-unclear_risk_of_bias\"> </a></td><td>Unclear risk of bias</td><td>There is insufficient information reported to make a judgement on risk of bias.</td><td>Unklares Risiko für Bias</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-robis-judgment-of-risk-of-bias"^^xsd:anyURI ;
+     fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-robis-judgment-of-risk-of-bias>
+  ] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:name [ fhir:v "ROBISJudgmentOfRiskOfBias"] ; # 
+  fhir:title [ fhir:v "ROBIS Judgment of Risk of Bias"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-01-29T18:27:10+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "AWMF e.V."] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AWMF e.V." ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.awmf.org" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "CodeSystem representing the judgment of risk of bias assessed by the ROBIS tool for evaluating risk of bias in systematic reviews."] ; # 
+  fhir:caseSensitive [ fhir:v false] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "3"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "low_risk_of_bias" ] ;
+     fhir:display [ fhir:v "Low risk of bias" ] ;
+     fhir:definition [
+       fhir:v "The findings of the review are likely to be reliable. Phase 2 did not raise any concerns with the review process or concerns were appropriately considered in the review conclusions. The conclusions were supported by the evidence and included consideration of the relevance of included studies." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Die Ergebnisse des Reviews sind wahrscheinlich zuverlässig. In Phase 2 der Bewertung wurden keine Bedenken bezüglich des Reviewprozesses identifiziert oder die identifizierten Bedenken wurden in den Schlussfolgerungen des Reviews angemessen berücksichtigt. Die Schlussfolgerungen werden durch die Evidenz gestützt und beinhalten die Berücksichtigung der Relevanz der eingeschlossenen Studien für die Fragestellung des Reviews."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Geringes Risiko für Bias" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "high_risk_of_bias" ] ;
+     fhir:display [ fhir:v "High risk of bias" ] ;
+     fhir:definition [
+       fhir:v "One or more of the concerns raised during the Phase 2 assessment was not addressed in the review conclusions, the review conclusions were not supported by the evidence, or the conclusions did not consider the relevance of the included studies to the review question." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Bedenken, die in Phase 2 der Bewertung identifiziert wurden, sind in den Schlussfolgerungen des Reviews nicht berücksichtigt oder die Schlussfolgerungen werden durch die Evidenz nicht gestützt oder in den Schlussfolgerungen ist die Relevanz der eingeschlossenen Studien für die Fragestellung des Reviews nicht berücksichtigt."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Hohes Risiko für Bias" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "unclear_risk_of_bias" ] ;
+     fhir:display [ fhir:v "Unclear risk of bias" ] ;
+     fhir:definition [
+       fhir:v "There is insufficient information reported to make a judgement on risk of bias." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Die verfügbaren Informationen sind unzureichend für ein Urteil über das Biasrisiko."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Unklares Risiko für Bias" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

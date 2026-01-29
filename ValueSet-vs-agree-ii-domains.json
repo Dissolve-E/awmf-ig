@@ -1,0 +1,28 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "vs-agree-ii-domains",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet vs-agree-ii-domains</b></p><a name=\"vs-agree-ii-domains\"> </a><a name=\"hcvs-agree-ii-domains\"> </a><ul><li>Include all codes defined in <a href=\"CodeSystem-cs-agree-ii-domains.html\"><code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-agree-ii-domains</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version &#x1F4E6;0.2.0</span></li></ul></div>"
+  },
+  "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-agree-ii-domains",
+  "version" : "0.2.0",
+  "name" : "AGREEIIDomainsVS",
+  "title" : "AGREE II Domains Value Set",
+  "status" : "active",
+  "date" : "2026-01-29T18:27:10+00:00",
+  "publisher" : "AWMF e.V.",
+  "contact" : [{
+    "name" : "AWMF e.V.",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org"
+    }]
+  }],
+  "description" : "ValueSet encompassing all domains from the AGREE II instrument.",
+  "compose" : {
+    "include" : [{
+      "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-agree-ii-domains"
+    }]
+  }
+}

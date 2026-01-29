@@ -1,0 +1,949 @@
+[
+  {
+    "id" : "CitationSystematicReviewTsoi2015",
+    "type" : "Citation",
+    "url" : "http://fhir.awmf.org/awmf.ig/Citation/CitationSystematicReviewTsoi2015",
+    "version" : "0.2.0"
+  },
+  {
+    "id" : "cs-agree-ii-domains",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-agree-ii-domains",
+    "version" : "0.2.0",
+    "name" : "AGREEIIDomains"
+  },
+  {
+    "id" : "cs-amstar2-confidence-ratings",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-amstar2-confidence-ratings",
+    "version" : "0.2.0",
+    "name" : "AMSTAR2ConfidenceRatings"
+  },
+  {
+    "id" : "cs-awmf",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+    "version" : "0.2.0",
+    "name" : "AWMFCS"
+  },
+  {
+    "id" : "cs-awmf-guideline-class",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-class",
+    "version" : "0.2.0",
+    "name" : "AWMFGuidelineClass"
+  },
+  {
+    "id" : "cs-awmf-guideline-status",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-status",
+    "version" : "0.2.0",
+    "name" : "AWMFGuidelineStatus"
+  },
+  {
+    "id" : "cs-body-systems-conditions",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-body-systems-conditions",
+    "version" : "0.2.0",
+    "name" : "BodySystemConditionsCS"
+  },
+  {
+    "id" : "cs-care-setting",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting",
+    "version" : "0.2.0",
+    "name" : "CareSetting"
+  },
+  {
+    "id" : "cs-clinical-application-type",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-clinical-application-type",
+    "version" : "0.2.0",
+    "name" : "ClinicalApplicationTypeCS"
+  },
+  {
+    "id" : "cs-contact-point",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-contact-point",
+    "version" : "0.2.0",
+    "name" : "ContactPoint"
+  },
+  {
+    "id" : "cs-evidence-to-decision-certainty-rating",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-to-decision-certainty-rating",
+    "version" : "0.2.0",
+    "name" : "EvidenceToDecisionCertaintyRating"
+  },
+  {
+    "id" : "cs-evidence-to-decision-certainty-type",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-to-decision-certainty-type",
+    "version" : "0.2.0",
+    "name" : "EvidenceToDecisionCertaintyType"
+  },
+  {
+    "id" : "cs-guideline-author-role",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role",
+    "version" : "0.2.0",
+    "name" : "GuidelineAuthorRoleCS"
+  },
+  {
+    "id" : "cs-guideline-release-type",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-release-type",
+    "version" : "0.2.0",
+    "name" : "GuidelineReleaseType"
+  },
+  {
+    "id" : "cs-guideline-sections",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+    "version" : "0.2.0",
+    "name" : "GuidelineSectionsCS"
+  },
+  {
+    "id" : "cs-intended-audience",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-intended-audience",
+    "version" : "0.2.0",
+    "name" : "IntendedAudienceCS"
+  },
+  {
+    "id" : "cs-level-of-consensus",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-level-of-consensus",
+    "version" : "0.2.0",
+    "name" : "LevelOfConsensusCS"
+  },
+  {
+    "id" : "cs-medical-subject-categories",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-medical-subject-categories",
+    "version" : "0.2.0",
+    "name" : "MedicalSubjectCategoriesCS"
+  },
+  {
+    "id" : "cs-ocebm-2009-levels-of-evidence",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-ocebm-2009-levels-of-evidence",
+    "version" : "0.2.0",
+    "name" : "OCEBM2009LevelsOfEvidence"
+  },
+  {
+    "id" : "cs-ocebm-2011-levels-of-evidence",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-ocebm-2011-levels-of-evidence",
+    "version" : "0.2.0",
+    "name" : "OCEBM2011LevelsOfEvidence"
+  },
+  {
+    "id" : "cs-pico",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico",
+    "version" : "0.2.0",
+    "name" : "PICOCS"
+  },
+  {
+    "id" : "cs-recommendation-direction",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-direction",
+    "version" : "0.2.0",
+    "name" : "RecommendationDirectionCS"
+  },
+  {
+    "id" : "cs-recommendation-review-status",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-review-status",
+    "version" : "0.2.0",
+    "name" : "RecommendationReviewStatusCS"
+  },
+  {
+    "id" : "cs-recommendation-strength-awmf",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-strength-awmf",
+    "version" : "0.2.0",
+    "name" : "RecommendationStrengthAWMF"
+  },
+  {
+    "id" : "cs-recommendation-synthesis-type",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-synthesis-type",
+    "version" : "0.2.0",
+    "name" : "RecommendationSynthesisTypeCS"
+  },
+  {
+    "id" : "cs-recommendation-tags",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-tags",
+    "version" : "0.2.0",
+    "name" : "RecommendationTagsCS"
+  },
+  {
+    "id" : "cs-related-artifact-types",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types",
+    "version" : "0.2.0",
+    "name" : "RelatedArtifactTypes"
+  },
+  {
+    "id" : "cs-remark-type",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-remark-type",
+    "version" : "0.2.0",
+    "name" : "RemarkType"
+  },
+  {
+    "id" : "cs-rob-2-overall-judgment",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-rob-2-overall-judgment",
+    "version" : "0.2.0",
+    "name" : "RoB2OverallJudment"
+  },
+  {
+    "id" : "cs-robis-judgment-of-risk-of-bias",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-robis-judgment-of-risk-of-bias",
+    "version" : "0.2.0",
+    "name" : "ROBISJudgmentOfRiskOfBias"
+  },
+  {
+    "id" : "cs-robis-risk-of-bias-domains",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-robis-risk-of-bias-domains",
+    "version" : "0.2.0",
+    "name" : "ROBISRiskOfBiasDomains"
+  },
+  {
+    "id" : "cs-sign-grade-of-recommendation",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-sign-grade-of-recommendation",
+    "version" : "0.2.0",
+    "name" : "SIGNGradeOfRecommendation"
+  },
+  {
+    "id" : "cs-sign-level-of-evidence",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-sign-level-of-evidence",
+    "version" : "0.2.0",
+    "name" : "SIGNLevelOfEvidence"
+  },
+  {
+    "id" : "cs-target-patient-group",
+    "type" : "CodeSystem",
+    "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-target-patient-group",
+    "version" : "0.2.0",
+    "name" : "TargetPatientGroup"
+  },
+  {
+    "id" : "FHIRStatusToAWMFStatus",
+    "type" : "ConceptMap",
+    "url" : "http://fhir.awmf.org/awmf.ig/ConceptMap/FHIRStatusToAWMFStatus",
+    "version" : "0.2.0",
+    "name" : "FHIRStatusToAWMFStatus"
+  },
+  {
+    "id" : "OutcomeAntibioticDays",
+    "type" : "EvidenceVariable",
+    "url" : "http://fhir.awmf.org/awmf.ig/EvidenceVariable/OutcomeAntibioticDays",
+    "version" : "0.2.0"
+  },
+  {
+    "id" : "OutcomeMortality",
+    "type" : "EvidenceVariable",
+    "url" : "http://fhir.awmf.org/awmf.ig/EvidenceVariable/OutcomeMortality",
+    "version" : "0.2.0"
+  },
+  {
+    "id" : "OutcomeTimeToDeescalation",
+    "type" : "EvidenceVariable",
+    "url" : "http://fhir.awmf.org/awmf.ig/EvidenceVariable/OutcomeTimeToDeescalation",
+    "version" : "0.2.0"
+  },
+  {
+    "id" : "awmf.ig",
+    "type" : "ImplementationGuide",
+    "url" : "http://fhir.awmf.org/awmf.ig/ImplementationGuide/awmf.ig",
+    "version" : "0.2.0",
+    "name" : "AWMFGuidelineRegistryIG"
+  },
+  {
+    "id" : "Recommendation-PlanDefinition-example",
+    "type" : "PlanDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/PlanDefinition/Recommendation-PlanDefinition-example",
+    "version" : "0.2.0"
+  },
+  {
+    "id" : "awmf-guideline",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline",
+    "version" : "0.2.0",
+    "name" : "AWMFGuideline"
+  },
+  {
+    "id" : "awmf-guideline-record-s1",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline-record-s1",
+    "version" : "0.2.0",
+    "name" : "AWMFGuidelineRecordS1"
+  },
+  {
+    "id" : "awmf-guideline-record-s2e",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline-record-s2e",
+    "version" : "0.2.0",
+    "name" : "AWMFGuidelineRecordS2e"
+  },
+  {
+    "id" : "awmf-guideline-record-s2k",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline-record-s2k",
+    "version" : "0.2.0",
+    "name" : "AWMFGuidelineRecordS2k"
+  },
+  {
+    "id" : "awmf-guideline-record-s3",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline-record-s3",
+    "version" : "0.2.0",
+    "name" : "AWMFGuidelineRecordS3"
+  },
+  {
+    "id" : "awmf-member-organization",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization",
+    "version" : "0.2.0",
+    "name" : "AWMFMemberOrganization"
+  },
+  {
+    "id" : "citation-list",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/citation-list",
+    "version" : "0.2.0",
+    "name" : "CitationList"
+  },
+  {
+    "id" : "conceptual-cohort-definition-comparator",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-comparator",
+    "version" : "0.2.0",
+    "name" : "ConceptualCohortDefinitionComparator"
+  },
+  {
+    "id" : "conceptual-cohort-definition-intervention",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-intervention",
+    "version" : "0.2.0",
+    "name" : "ConceptualCohortDefinitionIntervention"
+  },
+  {
+    "id" : "conceptual-cohort-definition-outcome",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-outcome",
+    "version" : "0.2.0",
+    "name" : "ConceptualCohortDefinitionOutcome"
+  },
+  {
+    "id" : "conceptual-cohort-definition-population",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-population",
+    "version" : "0.2.0",
+    "name" : "ConceptualCohortDefinitionPopulation"
+  },
+  {
+    "id" : "evidence-assessment",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-assessment",
+    "version" : "0.2.0",
+    "name" : "EvidenceAssessment"
+  },
+  {
+    "id" : "evidence-internal-assessment-agreeii",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-internal-assessment-agreeii",
+    "version" : "0.2.0",
+    "name" : "EvidenceInternalAssessmentAGREEII"
+  },
+  {
+    "id" : "evidence-internal-assessment-amstar2",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-internal-assessment-amstar2",
+    "version" : "0.2.0",
+    "name" : "EvidenceInternalAsessmentAMSTAR2"
+  },
+  {
+    "id" : "evidence-internal-assessment-cochrane-rob",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-internal-assessment-cochrane-rob",
+    "version" : "0.2.0",
+    "name" : "EvidenceInternalAssessmentCochraneRoB"
+  },
+  {
+    "id" : "evidence-internal-assessment-robis",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-internal-assessment-robis",
+    "version" : "0.2.0",
+    "name" : "EvidenceInternalAssessmentROBIS"
+  },
+  {
+    "id" : "evidence-internal-validity-assessment",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-internal-validity-assessment",
+    "version" : "0.2.0",
+    "name" : "EvidenceInternalValidityAssessment"
+  },
+  {
+    "id" : "evidence-overall-assessment-grade",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-overall-assessment-grade",
+    "version" : "0.2.0",
+    "name" : "EvidenceOverallAssessmentGRADE"
+  },
+  {
+    "id" : "evidence-overall-assessment-oxford2011",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-overall-assessment-oxford2011",
+    "version" : "0.2.0",
+    "name" : "EvidenceOverallAssessmentOXFORD2011"
+  },
+  {
+    "id" : "evidence-overall-quality-assessment",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-overall-quality-assessment",
+    "version" : "0.2.0",
+    "name" : "EvidenceOverallQualityAssessment"
+  },
+  {
+    "id" : "evidence-report-with-contact-slices",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-report-with-contact-slices",
+    "version" : "0.2.0",
+    "name" : "EvidenceReportWithContactSlices"
+  },
+  {
+    "id" : "ext-artifact-extended-contact",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-artifact-extended-contact",
+    "version" : "0.2.0",
+    "name" : "ArtifactExtendedContact"
+  },
+  {
+    "id" : "ext-author-language",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-author-language",
+    "version" : "0.2.0",
+    "name" : "AuthorLanguage"
+  },
+  {
+    "id" : "ext-consultation-period",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-consultation-period",
+    "version" : "0.2.0",
+    "name" : "ConsultationPeriod"
+  },
+  {
+    "id" : "ext-first-publication-date",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-first-publication-date",
+    "version" : "0.2.0",
+    "name" : "FirstPublicationDate"
+  },
+  {
+    "id" : "ext-guideline-author-role",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role",
+    "version" : "0.2.0",
+    "name" : "GuidelineAuthorRoleExt"
+  },
+  {
+    "id" : "ext-medical-subject",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-medical-subject",
+    "version" : "0.2.0",
+    "name" : "MedicalSubject"
+  },
+  {
+    "id" : "ext-medical-subject-category",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-medical-subject-category",
+    "version" : "0.2.0",
+    "name" : "MedicalSubjectCategory"
+  },
+  {
+    "id" : "ext-planned-completion-date",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-planned-completion-date",
+    "version" : "0.2.0",
+    "name" : "PlannedCompletionDate"
+  },
+  {
+    "id" : "ext-publication-date",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-publication-date",
+    "version" : "0.2.0",
+    "name" : "PublicationDate"
+  },
+  {
+    "id" : "ext-recommendation-review-status",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-recommendation-review-status",
+    "version" : "0.2.0",
+    "name" : "RecommendationReviewStatus"
+  },
+  {
+    "id" : "ext-registration-date",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-registration-date",
+    "version" : "0.2.0",
+    "name" : "RegistrationDate"
+  },
+  {
+    "id" : "ext-relates-to-classifier",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-relates-to-classifier",
+    "version" : "0.2.0",
+    "name" : "RelatesToClassifier"
+  },
+  {
+    "id" : "ext-relates-to-label",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-relates-to-label",
+    "version" : "0.2.0",
+    "name" : "RelatesToLabel"
+  },
+  {
+    "id" : "ext-section-coding",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-coding",
+    "version" : "0.2.0",
+    "name" : "SectionCoding"
+  },
+  {
+    "id" : "ext-section-intended-audience",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-intended-audience",
+    "version" : "0.2.0",
+    "name" : "SectionIntendedAudience"
+  },
+  {
+    "id" : "ext-section-keyword",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-keyword",
+    "version" : "0.2.0",
+    "name" : "SectionKeyword"
+  },
+  {
+    "id" : "ext-section-language",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+    "version" : "0.2.0",
+    "name" : "SectionLanguageExt"
+  },
+  {
+    "id" : "ext-submission-date",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-submission-date",
+    "version" : "0.2.0",
+    "name" : "SubmissionDate"
+  },
+  {
+    "id" : "guideline-attachment",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-attachment",
+    "version" : "0.2.0",
+    "name" : "GuidelineAttachment"
+  },
+  {
+    "id" : "guideline-author",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author",
+    "version" : "0.2.0",
+    "name" : "GuidelineAuthor"
+  },
+  {
+    "id" : "guideline-author-role",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author-role",
+    "version" : "0.2.0",
+    "name" : "GuidelineAuthorRole"
+  },
+  {
+    "id" : "guideline-registry-record",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record",
+    "version" : "0.2.0",
+    "name" : "AWMFGuidelineRegistryRecord"
+  },
+  {
+    "id" : "medical-society",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/medical-society",
+    "version" : "0.2.0",
+    "name" : "MedicalSociety"
+  },
+  {
+    "id" : "outcome-evidence",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/outcome-evidence",
+    "version" : "0.2.0",
+    "name" : "OutcomeEvidence"
+  },
+  {
+    "id" : "patient-organization",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/patient-organization",
+    "version" : "0.2.0",
+    "name" : "PatientOrganization"
+  },
+  {
+    "id" : "pico-question",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/pico-question",
+    "version" : "0.2.0",
+    "name" : "PICOQuestion"
+  },
+  {
+    "id" : "recommendation",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation",
+    "version" : "0.2.0",
+    "name" : "Recommendation"
+  },
+  {
+    "id" : "recommendation-justification",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification",
+    "version" : "0.2.0",
+    "name" : "RecommendationJustification"
+  },
+  {
+    "id" : "recommendation-justification-awmf",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification-awmf",
+    "version" : "0.2.0",
+    "name" : "RecommendationJustificationAWMF"
+  },
+  {
+    "id" : "recommendation-justification-expert-consensus",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification-expert-consensus",
+    "version" : "0.2.0",
+    "name" : "RecommendationJustificationExpertConsensus"
+  },
+  {
+    "id" : "recommendation-justification-grade",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification-grade",
+    "version" : "0.2.0",
+    "name" : "RecommendationJustificationGRADE"
+  },
+  {
+    "id" : "recommendation-justification-oxford-2009",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification-oxford-2009",
+    "version" : "0.2.0",
+    "name" : "RecommendationJustificationOxford2009"
+  },
+  {
+    "id" : "recommendation-justification-oxford-2011",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification-oxford-2011",
+    "version" : "0.2.0",
+    "name" : "RecommendationJustificationOXFORD2011"
+  },
+  {
+    "id" : "recommendation-justification-sign",
+    "type" : "StructureDefinition",
+    "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification-sign",
+    "version" : "0.2.0",
+    "name" : "RecommendationJustificationSIGN"
+  },
+  {
+    "id" : "ocebm-2011-levels-of-evidence-vs",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/ocebm-2011-levels-of-evidence-vs",
+    "version" : "0.2.0",
+    "name" : "OCEBM2011LevelsOfEvidenceVS"
+  },
+  {
+    "id" : "vs-agree-ii-domains",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-agree-ii-domains",
+    "version" : "0.2.0",
+    "name" : "AGREEIIDomainsVS"
+  },
+  {
+    "id" : "vs-amstar2-confidence-ratings",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-amstar2-confidence-ratings",
+    "version" : "0.2.0",
+    "name" : "AMSTAR2ConfidenceRatingsVS"
+  },
+  {
+    "id" : "vs-awmf-guideline-class",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-awmf-guideline-class",
+    "version" : "0.2.0",
+    "name" : "AWMFGuidelineClassVS"
+  },
+  {
+    "id" : "vs-awmf-guideline-status",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-awmf-guideline-status",
+    "version" : "0.2.0",
+    "name" : "AWMFGuidelineStatusVS"
+  },
+  {
+    "id" : "vs-body-system-conditions",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-body-system-conditions",
+    "version" : "0.2.0",
+    "name" : "BodySystemConditionsVS"
+  },
+  {
+    "id" : "vs-care-level",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-care-level",
+    "version" : "0.2.0",
+    "name" : "CareLevelVS"
+  },
+  {
+    "id" : "vs-care-stage",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-care-stage",
+    "version" : "0.2.0",
+    "name" : "CareStageVS"
+  },
+  {
+    "id" : "vs-clinical-application-type",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-clinical-application-type",
+    "version" : "0.2.0",
+    "name" : "ClinicalApplicationTypeVS"
+  },
+  {
+    "id" : "vs-content-types",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-content-types",
+    "version" : "0.2.0",
+    "name" : "ContentTypesVS"
+  },
+  {
+    "id" : "vs-dissemination-website",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-dissemination-website",
+    "version" : "0.2.0",
+    "name" : "DisseminationWebsite"
+  },
+  {
+    "id" : "vs-encounter-type",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-encounter-type",
+    "version" : "0.2.0",
+    "name" : "EncounterTypeVS"
+  },
+  {
+    "id" : "vs-guideline-author-role",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-guideline-author-role",
+    "version" : "0.2.0",
+    "name" : "GuidelineAuthorRoleVS"
+  },
+  {
+    "id" : "vs-guideline-contact-point",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-guideline-contact-point",
+    "version" : "0.2.0",
+    "name" : "GuidelineContactPointVS"
+  },
+  {
+    "id" : "vs-guideline-release-type",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-guideline-release-type",
+    "version" : "0.2.0",
+    "name" : "GuidelinesReleaseTypeVS"
+  },
+  {
+    "id" : "vs-guideline-sections",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-guideline-sections",
+    "version" : "0.2.0",
+    "name" : "GuidelineSectionsVS"
+  },
+  {
+    "id" : "vs-intended-audience",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-intended-audience",
+    "version" : "0.2.0",
+    "name" : "IntendedAudienceVS"
+  },
+  {
+    "id" : "vs-level-of-consensus",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-level-of-consensus",
+    "version" : "0.2.0",
+    "name" : "LevelOfConsensusVS"
+  },
+  {
+    "id" : "vs-medical-subject-categories",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-medical-subject-categories",
+    "version" : "0.2.0",
+    "name" : "MedicalSubjectCategoriesVS"
+  },
+  {
+    "id" : "vs-ocebm-2009-levels-of-evidence",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-ocebm-2009-levels-of-evidence",
+    "version" : "0.2.0",
+    "name" : "OCEBM2009LevelsOfEvidenceVS"
+  },
+  {
+    "id" : "vs-pico",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-pico",
+    "version" : "0.2.0",
+    "name" : "PICOVS"
+  },
+  {
+    "id" : "vs-rating-acceptability",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rating-acceptability",
+    "version" : "0.2.0",
+    "name" : "RatingAcceptability"
+  },
+  {
+    "id" : "vs-rating-benefits-and-harms",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rating-benefits-and-harms",
+    "version" : "0.2.0",
+    "name" : "RatingBenefitAndHarms"
+  },
+  {
+    "id" : "vs-rating-certainty-of-evidence",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rating-certainty-of-evidence",
+    "version" : "0.2.0",
+    "name" : "RatingCertaintyofEvidence"
+  },
+  {
+    "id" : "vs-rating-concern-degree",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rating-concern-degree",
+    "version" : "0.2.0",
+    "name" : "RatingConcernDegree"
+  },
+  {
+    "id" : "vs-rating-equity",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rating-equity",
+    "version" : "0.2.0",
+    "name" : "RatingEquity"
+  },
+  {
+    "id" : "vs-rating-feasibility",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rating-feasibility",
+    "version" : "0.2.0",
+    "name" : "RatingFeasibility"
+  },
+  {
+    "id" : "vs-rating-preference-and-values",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rating-preference-and-values",
+    "version" : "0.2.0",
+    "name" : "RatingPreferenceAndValues"
+  },
+  {
+    "id" : "vs-rating-resources",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rating-resources",
+    "version" : "0.2.0",
+    "name" : "RatingResources"
+  },
+  {
+    "id" : "vs-recommendation-direction",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-recommendation-direction",
+    "version" : "0.2.0",
+    "name" : "RecommendationDirectionVS"
+  },
+  {
+    "id" : "vs-recommendation-review-status",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-recommendation-review-status",
+    "version" : "0.2.0",
+    "name" : "RecommendationReviewStatusVS"
+  },
+  {
+    "id" : "vs-recommendation-strength-awmf",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-recommendation-strength-awmf",
+    "version" : "0.2.0",
+    "name" : "RecommendationStrengthAWMFVS"
+  },
+  {
+    "id" : "vs-recommendation-synthesis-type",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-recommendation-synthesis-type",
+    "version" : "0.2.0",
+    "name" : "RecommendationSynthesisTypeVS"
+  },
+  {
+    "id" : "vs-recommendation-tags",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-recommendation-tags",
+    "version" : "0.2.0",
+    "name" : "RecommendationTagsVS"
+  },
+  {
+    "id" : "vs-remark-type",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-remark-type",
+    "version" : "0.2.0",
+    "name" : "RemarkTypeVS"
+  },
+  {
+    "id" : "vs-rob-2-overall-judgment",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rob-2-overall-judgment",
+    "version" : "0.2.0",
+    "name" : "RoB2OverallJudmentVS"
+  },
+  {
+    "id" : "vs-robis-judgment-of-risk-of-bias",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-robis-judgment-of-risk-of-bias",
+    "version" : "0.2.0",
+    "name" : "ROBISJudgmentOfRiskOfBiasVS"
+  },
+  {
+    "id" : "vs-robis-risk-of-bias-domains",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-robis-risk-of-bias-domains",
+    "version" : "0.2.0",
+    "name" : "ROBISRiskOfBiasDomainsVS"
+  },
+  {
+    "id" : "vs-sign-grade-of-recommendation",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-sign-grade-of-recommendation",
+    "version" : "0.2.0",
+    "name" : "SIGNGradeOfRecommendationVS"
+  },
+  {
+    "id" : "vs-sign-level-of-evidence",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-sign-level-of-evidence",
+    "version" : "0.2.0",
+    "name" : "SIGNLevelOfEvidenceVS"
+  },
+  {
+    "id" : "vs-target-patient-group",
+    "type" : "ValueSet",
+    "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-target-patient-group",
+    "version" : "0.2.0",
+    "name" : "TargetPatientGroupVS"
+  }
+]

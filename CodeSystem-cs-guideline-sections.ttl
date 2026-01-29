@@ -1,0 +1,671 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cs-guideline-sections"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-guideline-sections</b></p><a name=\"cs-guideline-sections\"> </a><a name=\"hccs-guideline-sections\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">intention<a name=\"cs-guideline-sections-intention\"> </a></td><td>Intention</td><td>The section describes the intention of the guideline.</td><td>Zielorientierung</td></tr><tr><td style=\"white-space:nowrap\">target-patient-group<a name=\"cs-guideline-sections-target-patient-group\"> </a></td><td>Target Patient Group</td><td>The section describes the target patient group of the guideline.</td><td>Patientenzielgruppe</td></tr><tr><td style=\"white-space:nowrap\">care-setting<a name=\"cs-guideline-sections-care-setting\"> </a></td><td>Care Setting</td><td>The section describes the care setting of the guideline.</td><td>Versorgungsbereich</td></tr><tr><td style=\"white-space:nowrap\">topic-selection-reason<a name=\"cs-guideline-sections-topic-selection-reason\"> </a></td><td>Topic Selection Reason</td><td>The section describes the reason for selecting the topic of the guideline.</td><td>Gründe für die Themenwahl</td></tr><tr><td style=\"white-space:nowrap\">target-audience<a name=\"cs-guideline-sections-target-audience\"> </a></td><td>Target Audience</td><td>The section describes the target audience of the guideline.</td><td>Adressaten</td></tr><tr><td style=\"white-space:nowrap\">planned-methodology<a name=\"cs-guideline-sections-planned-methodology\"> </a></td><td>Planned Methodology</td><td>The section describes the planned methodology for developing the guideline.</td><td>Geplante Methodik</td></tr><tr><td style=\"white-space:nowrap\">further-information<a name=\"cs-guideline-sections-further-information\"> </a></td><td>Further Information</td><td>The section describes the further information regarding the guideline project.</td><td>Ergänzende Informationen</td></tr><tr><td style=\"white-space:nowrap\">encounter-type<a name=\"cs-guideline-sections-encounter-type\"> </a></td><td>Encounter Type</td><td>The section describes the encounter type of the guideline.</td><td>Versorgungssektor</td></tr><tr><td style=\"white-space:nowrap\">care-stage<a name=\"cs-guideline-sections-care-stage\"> </a></td><td>Care Stage</td><td>The section describes the care stage of the guideline.</td><td>Versorgungsbereich</td></tr><tr><td style=\"white-space:nowrap\">care-level<a name=\"cs-guideline-sections-care-level\"> </a></td><td>Care Level</td><td>The section describes the care level of the guideline.</td><td>Versorgungsebene</td></tr><tr><td style=\"white-space:nowrap\">keywords<a name=\"cs-guideline-sections-keywords\"> </a></td><td>Keywords</td><td>The section describes the keywords of the guideline.</td><td>Schlüsselwörter</td></tr><tr><td style=\"white-space:nowrap\">language<a name=\"cs-guideline-sections-language\"> </a></td><td>Language</td><td>The language of the content</td><td>Sprache</td></tr><tr><td style=\"white-space:nowrap\">default-section<a name=\"cs-guideline-sections-default-section\"> </a></td><td>Default section</td><td>The default slice for a section</td><td>Standardabschnitt</td></tr><tr><td style=\"white-space:nowrap\">attachments<a name=\"cs-guideline-sections-attachments\"> </a></td><td>Attachments</td><td/><td>Anhänge</td></tr><tr><td style=\"white-space:nowrap\">consensus-protocol<a name=\"cs-guideline-sections-consensus-protocol\"> </a></td><td>Consensus Protocol</td><td>The section describes the consensus protocol of the guideline.</td><td>Konsensprotokoll</td></tr><tr><td style=\"white-space:nowrap\">long-version<a name=\"cs-guideline-sections-long-version\"> </a></td><td>Long Version</td><td/><td>Langfassung</td></tr><tr><td style=\"white-space:nowrap\">short-version<a name=\"cs-guideline-sections-short-version\"> </a></td><td>Short Version</td><td/><td>Kurzfassung</td></tr><tr><td style=\"white-space:nowrap\">guideline-report<a name=\"cs-guideline-sections-guideline-report\"> </a></td><td>Guideline Report</td><td/><td>Leitlinienreport</td></tr><tr><td style=\"white-space:nowrap\">evidence-report<a name=\"cs-guideline-sections-evidence-report\"> </a></td><td>Evidence Report</td><td/><td>Evidenzbericht</td></tr><tr><td style=\"white-space:nowrap\">implementation-guidance<a name=\"cs-guideline-sections-implementation-guidance\"> </a></td><td>Implementation Guidance</td><td/><td>Implementierungshilfe</td></tr><tr><td style=\"white-space:nowrap\">decision-support<a name=\"cs-guideline-sections-decision-support\"> </a></td><td>Decision Support</td><td/><td>Entscheidungshilfe</td></tr><tr><td style=\"white-space:nowrap\">patient-version<a name=\"cs-guideline-sections-patient-version\"> </a></td><td>Patient Version</td><td/><td>Patientenleitlinie</td></tr><tr><td style=\"white-space:nowrap\">choosing-wisely<a name=\"cs-guideline-sections-choosing-wisely\"> </a></td><td>Choosing Wisely</td><td/><td>Gemeinsam Klug Entscheiden</td></tr><tr><td style=\"white-space:nowrap\">quality-indicators<a name=\"cs-guideline-sections-quality-indicators\"> </a></td><td>Quality Indicators</td><td/><td>Qualitätsindikatoren</td></tr><tr><td style=\"white-space:nowrap\">declaration-of-interests<a name=\"cs-guideline-sections-declaration-of-interests\"> </a></td><td>Declaration of Interests</td><td/><td>Interessenserklärung</td></tr><tr><td style=\"white-space:nowrap\">short-patient-version<a name=\"cs-guideline-sections-short-patient-version\"> </a></td><td>Short Version for Patients</td><td/><td>Kurzfassung für Patient*innen</td></tr><tr><td style=\"white-space:nowrap\">update-info<a name=\"cs-guideline-sections-update-info\"> </a></td><td>Short Information About an Update</td><td/><td>Kurzinformationen zu einer Aktualisierung</td></tr><tr><td style=\"white-space:nowrap\">slide-deck<a name=\"cs-guideline-sections-slide-deck\"> </a></td><td>Slide Deck</td><td/><td>Foliensatz</td></tr><tr><td style=\"white-space:nowrap\">visual-abstract<a name=\"cs-guideline-sections-visual-abstract\"> </a></td><td>Visual Abstract</td><td/><td>Graphischer Abstrakt</td></tr><tr><td style=\"white-space:nowrap\">document<a name=\"cs-guideline-sections-document\"> </a></td><td>Document</td><td/><td>Dokument</td></tr><tr><td style=\"white-space:nowrap\">image<a name=\"cs-guideline-sections-image\"> </a></td><td>Image</td><td/><td>Bild</td></tr><tr><td style=\"white-space:nowrap\">video<a name=\"cs-guideline-sections-video\"> </a></td><td>Video</td><td/><td>Video</td></tr><tr><td style=\"white-space:nowrap\">podcast<a name=\"cs-guideline-sections-podcast\"> </a></td><td>Podcast</td><td/><td>Podcast</td></tr><tr><td style=\"white-space:nowrap\">other<a name=\"cs-guideline-sections-other\"> </a></td><td>Other</td><td/><td>Sonstiges</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+     fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+  ] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:name [ fhir:v "GuidelineSectionsCS"] ; # 
+  fhir:title [ fhir:v "Guideline Sections"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-01-29T18:27:10+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "AWMF e.V."] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AWMF e.V." ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.awmf.org" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Sections of a guideline, describing various aspects such as its intention, target patient group, care setting, and other relevant contextual information."] ; # 
+  fhir:caseSensitive [ fhir:v false] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "34"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "intention" ] ;
+     fhir:display [ fhir:v "Intention" ] ;
+     fhir:definition [
+       fhir:v "The section describes the intention of the guideline." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Dieser Abschnitt beschreibt die Zielorientierung der Leitlinie."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Zielorientierung" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "target-patient-group" ] ;
+     fhir:display [ fhir:v "Target Patient Group" ] ;
+     fhir:definition [
+       fhir:v "The section describes the target patient group of the guideline." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Dieser Abschnitt beschreibt die Patientenzielgruppe der Leitlinie."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Patientenzielgruppe" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "care-setting" ] ;
+     fhir:display [ fhir:v "Care Setting" ] ;
+     fhir:definition [
+       fhir:v "The section describes the care setting of the guideline." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Dieser Abschnitt beschreibt den Versorgungsbereich dieser Leitlinie."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Versorgungsbereich" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "topic-selection-reason" ] ;
+     fhir:display [ fhir:v "Topic Selection Reason" ] ;
+     fhir:definition [
+       fhir:v "The section describes the reason for selecting the topic of the guideline." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Dieser Abschnitt beschreibt die Gründe für die Themenwahl der Leitlinie."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Gründe für die Themenwahl" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "target-audience" ] ;
+     fhir:display [ fhir:v "Target Audience" ] ;
+     fhir:definition [
+       fhir:v "The section describes the target audience of the guideline." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Dieser Abschnitt beschreibt die Adressaten der Leitlinie."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Adressaten" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "planned-methodology" ] ;
+     fhir:display [ fhir:v "Planned Methodology" ] ;
+     fhir:definition [
+       fhir:v "The section describes the planned methodology for developing the guideline." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Dieser Abschnitt beschreibt die geplante Methodik zur Entwicklung der Leitlinie."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Geplante Methodik" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "further-information" ] ;
+     fhir:display [ fhir:v "Further Information" ] ;
+     fhir:definition [
+       fhir:v "The section describes the further information regarding the guideline project." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Dieser Abschnitt beschreibt ergänzende Informationen zum Leitlinienprojekt."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Ergänzende Informationen" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "encounter-type" ] ;
+     fhir:display [ fhir:v "Encounter Type" ] ;
+     fhir:definition [
+       fhir:v "The section describes the encounter type of the guideline." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Dieser Abschnitt beschreibt den oder die Versorgungssektor(en) auf die sich die Leitlinie bezieht."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Versorgungssektor" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "care-stage" ] ;
+     fhir:display [ fhir:v "Care Stage" ] ;
+     fhir:definition [
+       fhir:v "The section describes the care stage of the guideline." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Dieser Abschnitt beschreibt den Versorgungsbereich dieser Leitlinie."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Versorgungsbereich" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "care-level" ] ;
+     fhir:display [ fhir:v "Care Level" ] ;
+     fhir:definition [
+       fhir:v "The section describes the care level of the guideline." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Dieser Abschnitt beschreibt die Versorgungsebene(n) auf die sich die Leitlinie bezieht."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Versorgungsebene" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "keywords" ] ;
+     fhir:display [ fhir:v "Keywords" ] ;
+     fhir:definition [
+       fhir:v "The section describes the keywords of the guideline." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Dieser Abschnitt beschreibt die Schlüsselwörter der Leitlinie."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Schlüsselwörter" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "language" ] ;
+     fhir:display [ fhir:v "Language" ] ;
+     fhir:definition [
+       fhir:v "The language of the content" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Sprache des Inhalts"
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Sprache" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "default-section" ] ;
+     fhir:display [ fhir:v "Default section" ] ;
+     fhir:definition [
+       fhir:v "The default slice for a section" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Default ('standard') slice für einen Abschnitt."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Standardabschnitt" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "attachments" ] ;
+     fhir:display [ fhir:v "Attachments" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Anhänge" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "consensus-protocol" ] ;
+     fhir:display [ fhir:v "Consensus Protocol" ] ;
+     fhir:definition [
+       fhir:v "The section describes the consensus protocol of the guideline." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Dieser Abschnitt beschreibt den Konsensprotokoll einer Leitlinie."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Konsensprotokoll" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "long-version" ] ;
+     fhir:display [ fhir:v "Long Version" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Langfassung" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "short-version" ] ;
+     fhir:display [ fhir:v "Short Version" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Kurzfassung" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "guideline-report" ] ;
+     fhir:display [ fhir:v "Guideline Report" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Leitlinienreport" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "evidence-report" ] ;
+     fhir:display [ fhir:v "Evidence Report" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Evidenzbericht" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "implementation-guidance" ] ;
+     fhir:display [ fhir:v "Implementation Guidance" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Implementierungshilfe" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "decision-support" ] ;
+     fhir:display [ fhir:v "Decision Support" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Entscheidungshilfe" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "patient-version" ] ;
+     fhir:display [ fhir:v "Patient Version" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Patientenleitlinie" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "choosing-wisely" ] ;
+     fhir:display [ fhir:v "Choosing Wisely" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Gemeinsam Klug Entscheiden" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "quality-indicators" ] ;
+     fhir:display [ fhir:v "Quality Indicators" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Qualitätsindikatoren" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "declaration-of-interests" ] ;
+     fhir:display [ fhir:v "Declaration of Interests" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Interessenserklärung" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "short-patient-version" ] ;
+     fhir:display [ fhir:v "Short Version for Patients" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Kurzfassung für Patient*innen" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "update-info" ] ;
+     fhir:display [ fhir:v "Short Information About an Update" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Kurzinformationen zu einer Aktualisierung" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "slide-deck" ] ;
+     fhir:display [ fhir:v "Slide Deck" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Foliensatz" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "visual-abstract" ] ;
+     fhir:display [ fhir:v "Visual Abstract" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Graphischer Abstrakt" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "document" ] ;
+     fhir:display [ fhir:v "Document" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Dokument" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "image" ] ;
+     fhir:display [ fhir:v "Image" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Bild" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "video" ] ;
+     fhir:display [ fhir:v "Video" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Video" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "podcast" ] ;
+     fhir:display [ fhir:v "Podcast" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Podcast" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "other" ] ;
+     fhir:display [ fhir:v "Other" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Sonstiges" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-awmf-guideline-status"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-awmf-guideline-status</b></p><a name="cs-awmf-guideline-status"> </a><a name="hccs-awmf-guideline-status"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-status</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style="white-space:nowrap">registered<a name="cs-awmf-guideline-status-registered"> </a></td><td>Registered</td><td>Angemeldet</td></tr><tr><td style="white-space:nowrap">preliminary<a name="cs-awmf-guideline-status-preliminary"> </a></td><td>Preliminary</td><td>Konsultationsfassung</td></tr><tr><td style="white-space:nowrap">final<a name="cs-awmf-guideline-status-final"> </a></td><td>Final</td><td>Veröffentlicht</td></tr><tr><td style="white-space:nowrap">amended<a name="cs-awmf-guideline-status-amended"> </a></td><td>Amended</td><td>Amendment publiziert</td></tr><tr><td style="white-space:nowrap">corrected<a name="cs-awmf-guideline-status-corrected"> </a></td><td>Corrected</td><td>Korrigiert</td></tr><tr><td style="white-space:nowrap">cancelled<a name="cs-awmf-guideline-status-cancelled"> </a></td><td>Cancelled</td><td>Zurückgezogen</td></tr><tr><td style="white-space:nowrap">deprecated<a name="cs-awmf-guideline-status-deprecated"> </a></td><td>Deprecated</td><td>Abgelaufen</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-status"/>
+  <version value="0.2.0"/>
+  <name value="AWMFGuidelineStatus"/>
+  <title value="AWMF Guideline Status"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem representing the guideline status according to the AWMF."/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="7"/>
+  <concept>
+    <code value="registered"/>
+    <display value="Registered"/>
+    <designation>
+      <language value="de"/>
+      <value value="Angemeldet"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="preliminary"/>
+    <display value="Preliminary"/>
+    <designation>
+      <language value="de"/>
+      <value value="Konsultationsfassung"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="final"/>
+    <display value="Final"/>
+    <designation>
+      <language value="de"/>
+      <value value="Veröffentlicht"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="amended"/>
+    <display value="Amended"/>
+    <designation>
+      <language value="de"/>
+      <value value="Amendment publiziert"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="corrected"/>
+    <display value="Corrected"/>
+    <designation>
+      <language value="de"/>
+      <value value="Korrigiert"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="cancelled"/>
+    <display value="Cancelled"/>
+    <designation>
+      <language value="de"/>
+      <value value="Zurückgezogen"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="deprecated"/>
+    <display value="Deprecated"/>
+    <designation>
+      <language value="de"/>
+      <value value="Abgelaufen"/>
+    </designation>
+  </concept>
+</CodeSystem>

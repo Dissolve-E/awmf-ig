@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Practitioner xmlns="http://hl7.org/fhir">
+  <id value="contributor4"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Practitioner contributor4</b></p><a name="contributor4"> </a><a name="hccontributor4"> </a><p><b>name</b>: Timothy C Y Kwok </p></div>
+  </text>
+  <name>
+    <family value="Kwok"/>
+    <given value="Timothy C Y"/>
+  </name>
+</Practitioner>

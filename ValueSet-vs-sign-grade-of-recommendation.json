@@ -1,0 +1,29 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "vs-sign-grade-of-recommendation",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet vs-sign-grade-of-recommendation</b></p><a name=\"vs-sign-grade-of-recommendation\"> </a><a name=\"hcvs-sign-grade-of-recommendation\"> </a><ul><li>Include all codes defined in <a href=\"CodeSystem-cs-sign-grade-of-recommendation.html\"><code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-sign-grade-of-recommendation</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version &#x1F4E6;0.2.0</span></li></ul></div>"
+  },
+  "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-sign-grade-of-recommendation",
+  "version" : "0.2.0",
+  "name" : "SIGNGradeOfRecommendationVS",
+  "title" : "SIGN Grade of Recommendation Value Set",
+  "status" : "draft",
+  "experimental" : false,
+  "date" : "2026-01-29T18:27:10+00:00",
+  "publisher" : "AWMF e.V.",
+  "contact" : [{
+    "name" : "AWMF e.V.",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org"
+    }]
+  }],
+  "description" : "ValueSet encompassing all grades of recommendation from the SIGN (Scottish Intercollegiate Guidelines Network) Grades of Recommendation.",
+  "compose" : {
+    "include" : [{
+      "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-sign-grade-of-recommendation"
+    }]
+  }
+}

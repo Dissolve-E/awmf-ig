@@ -1,0 +1,38 @@
+{
+  "resourceType" : "PlanDefinition",
+  "id" : "Recommendation-PlanDefinition-example",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n<div>\n    <table class=\"grid dict\">\n        \n        <tr>\n            <th scope=\"row\"><b>Id: </b></th>\n            <td style=\"padding-left: 4px;\">Recommendation-PlanDefinition-example</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Url: </b></th>\n            <td style=\"padding-left: 4px;\"><a href=\"PlanDefinition-Recommendation-PlanDefinition-example.html\">Recommendation-PlanDefinition-example</a></td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Version: </b></th>\n            <td style=\"padding-left: 4px;\">0.2.0</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Status: </b></th>\n            <td style=\"padding-left: 4px;\">draft</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Date: </b></th>\n            <td style=\"padding-left: 4px;\">2026-01-29 18:27:10+0000</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Publisher: </b></th>\n            <td style=\"padding-left: 4px;\">AWMF e.V.</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Actions: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    \n                    <tr>\n                        <td>\n                            \n                            <b> Recommendation 1:</b> <div><p>Mach Diagnose</p>\n</div>\n                            \n                            <br/>\n                            \n                            \n                            \n                            \n                            \n                        </td>\n                    </tr>\n                    \n                    <tr>\n                        <td>\n                            \n                            <b> Recommendation 2:</b> <div><p>Mach Therapie</p>\n</div>\n                            \n                            <br/>\n                            \n                            \n                            \n                            \n                            \n                        </td>\n                    </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n    </table>\n</div>\n</div>"
+  },
+  "url" : "http://fhir.awmf.org/awmf.ig/PlanDefinition/Recommendation-PlanDefinition-example",
+  "version" : "0.2.0",
+  "status" : "draft",
+  "date" : "2026-01-29T18:27:10+00:00",
+  "publisher" : "AWMF e.V.",
+  "contact" : [{
+    "name" : "AWMF e.V.",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org"
+    }]
+  }],
+  "action" : [{
+    "id" : "diagnose",
+    "title" : "Recommendation 1",
+    "description" : "Mach Diagnose",
+    "relatedAction" : [{
+      "targetId" : "therapie",
+      "relationship" : "after"
+    }]
+  },
+  {
+    "id" : "therapie",
+    "title" : "Recommendation 2",
+    "description" : "Mach Therapie",
+    "relatedAction" : [{
+      "targetId" : "diagnose",
+      "relationship" : "before"
+    }]
+  }]
+}

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-body-systems-conditions"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-body-systems-conditions</b></p><a name="cs-body-systems-conditions"> </a><a name="hccs-body-systems-conditions"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-body-systems-conditions</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style="white-space:nowrap">respiratory<a name="cs-body-systems-conditions-respiratory"> </a></td><td>Respiratory System and Lungs</td><td>Atemwege und Lunge</td></tr><tr><td style="white-space:nowrap">nervous<a name="cs-body-systems-conditions-nervous"> </a></td><td>Brain and Nerves</td><td>Gehirn und Nerven</td></tr><tr><td style="white-space:nowrap">skin<a name="cs-body-systems-conditions-skin"> </a></td><td>Skin and Hair</td><td>Haut und Haare</td></tr><tr><td style="white-space:nowrap">cardiovascular<a name="cs-body-systems-conditions-cardiovascular"> </a></td><td>Heart and Circulatory System</td><td>Herz und Kreislauf</td></tr><tr><td style="white-space:nowrap">extremities<a name="cs-body-systems-conditions-extremities"> </a></td><td>Hands and Feet</td><td>Hände und Füße</td></tr><tr><td style="white-space:nowrap">musculoskeletal<a name="cs-body-systems-conditions-musculoskeletal"> </a></td><td>Bones and Joints</td><td>Knochen und Gelenke</td></tr><tr><td style="white-space:nowrap">headneck<a name="cs-body-systems-conditions-headneck"> </a></td><td>Head and Neck</td><td>Kopf und Hals</td></tr><tr><td style="white-space:nowrap">oncology<a name="cs-body-systems-conditions-oncology"> </a></td><td>Cancer Conditions</td><td>Krebserkrankungen</td></tr><tr><td style="white-space:nowrap">mentalhealth<a name="cs-body-systems-conditions-mentalhealth"> </a></td><td>Mental Health</td><td>Psyche</td></tr><tr><td style="white-space:nowrap">pain<a name="cs-body-systems-conditions-pain"> </a></td><td>Pain Conditions</td><td>Schmerzen</td></tr><tr><td style="white-space:nowrap">miscellaneous<a name="cs-body-systems-conditions-miscellaneous"> </a></td><td>Other Conditions</td><td>Sonstige Krankheitsbilder</td></tr><tr><td style="white-space:nowrap">metabolic<a name="cs-body-systems-conditions-metabolic"> </a></td><td>Metabolic Disorders</td><td>Stoffwechsel-Erkrankungen</td></tr><tr><td style="white-space:nowrap">digestive<a name="cs-body-systems-conditions-digestive"> </a></td><td>Digestive and Urinary Organs</td><td>Verdauungs- und Harnorgane</td></tr><tr><td style="white-space:nowrap">dental<a name="cs-body-systems-conditions-dental"> </a></td><td>Teeth</td><td>Zähne</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-body-systems-conditions"/>
+  <version value="0.2.0"/>
+  <name value="BodySystemConditionsCS"/>
+  <title value="Body System Conditions"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem representing various body system conditions."/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="14"/>
+  <concept>
+    <code value="respiratory"/>
+    <display value="Respiratory System and Lungs"/>
+    <designation>
+      <language value="de"/>
+      <value value="Atemwege und Lunge"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="nervous"/>
+    <display value="Brain and Nerves"/>
+    <designation>
+      <language value="de"/>
+      <value value="Gehirn und Nerven"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="skin"/>
+    <display value="Skin and Hair"/>
+    <designation>
+      <language value="de"/>
+      <value value="Haut und Haare"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="cardiovascular"/>
+    <display value="Heart and Circulatory System"/>
+    <designation>
+      <language value="de"/>
+      <value value="Herz und Kreislauf"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="extremities"/>
+    <display value="Hands and Feet"/>
+    <designation>
+      <language value="de"/>
+      <value value="Hände und Füße"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="musculoskeletal"/>
+    <display value="Bones and Joints"/>
+    <designation>
+      <language value="de"/>
+      <value value="Knochen und Gelenke"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="headneck"/>
+    <display value="Head and Neck"/>
+    <designation>
+      <language value="de"/>
+      <value value="Kopf und Hals"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="oncology"/>
+    <display value="Cancer Conditions"/>
+    <designation>
+      <language value="de"/>
+      <value value="Krebserkrankungen"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="mentalhealth"/>
+    <display value="Mental Health"/>
+    <designation>
+      <language value="de"/>
+      <value value="Psyche"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="pain"/>
+    <display value="Pain Conditions"/>
+    <designation>
+      <language value="de"/>
+      <value value="Schmerzen"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="miscellaneous"/>
+    <display value="Other Conditions"/>
+    <designation>
+      <language value="de"/>
+      <value value="Sonstige Krankheitsbilder"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="metabolic"/>
+    <display value="Metabolic Disorders"/>
+    <designation>
+      <language value="de"/>
+      <value value="Stoffwechsel-Erkrankungen"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="digestive"/>
+    <display value="Digestive and Urinary Organs"/>
+    <designation>
+      <language value="de"/>
+      <value value="Verdauungs- und Harnorgane"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="dental"/>
+    <display value="Teeth"/>
+    <designation>
+      <language value="de"/>
+      <value value="Zähne"/>
+    </designation>
+  </concept>
+</CodeSystem>

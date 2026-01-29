@@ -1,0 +1,216 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-tags> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cs-recommendation-tags"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-recommendation-tags</b></p><a name=\"cs-recommendation-tags\"> </a><a name=\"hccs-recommendation-tags\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-tags</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">quality-indicators-derivable<a name=\"cs-recommendation-tags-quality-indicators-derivable\"> </a></td><td>Derivable as Quality Indicator</td><td>This recommendation can be operationalized into a measurable quality indicator</td><td>Als Qualitätsindikator ableitbar</td></tr><tr><td style=\"white-space:nowrap\">highly-care-relevant<a name=\"cs-recommendation-tags-highly-care-relevant\"> </a></td><td>Highly Relevant for Care Delivery</td><td>This recommendation is considered particularly relevant for clinical care</td><td>Hochrelevant für die Gesundheitsversorgung</td></tr><tr><td style=\"white-space:nowrap\">student-relevant<a name=\"cs-recommendation-tags-student-relevant\"> </a></td><td>Relevant for Medical Education</td><td>This recommendation is considered relevant for students in medical or healthcare education</td><td>Relevant für die medizinische Ausbildung</td></tr><tr><td style=\"white-space:nowrap\">choosing-wisely<a name=\"cs-recommendation-tags-choosing-wisely\"> </a></td><td>Choosing Wisely Recommendation</td><td>This recommendation is part of a 'Choosing Wisely' campaign or follows similar principles</td><td>Gemeinsam Klug Entscheiden-Empfehlungen</td></tr><tr><td style=\"white-space:nowrap\">off-label<a name=\"cs-recommendation-tags-off-label\"> </a></td><td>Off-Label Use</td><td>This recommendation involves off-label use of a medication or device</td><td>Off-Label-Anwendung</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-tags"^^xsd:anyURI ;
+     fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-tags>
+  ] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:name [ fhir:v "RecommendationTagsCS"] ; # 
+  fhir:title [ fhir:v "Recommendation Tags"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-01-29T18:27:10+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "AWMF e.V."] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AWMF e.V." ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.awmf.org" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "CodeSystem defining codes to represent tags for recommendations"] ; # 
+  fhir:caseSensitive [ fhir:v false] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "5"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "quality-indicators-derivable" ] ;
+     fhir:display [ fhir:v "Derivable as Quality Indicator" ] ;
+     fhir:definition [
+       fhir:v "This recommendation can be operationalized into a measurable quality indicator" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Diese Empfehlung kann in einem messbaren Qualitätsindikator operationalisiert werden."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Als Qualitätsindikator ableitbar" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "highly-care-relevant" ] ;
+     fhir:display [ fhir:v "Highly Relevant for Care Delivery" ] ;
+     fhir:definition [
+       fhir:v "This recommendation is considered particularly relevant for clinical care" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Diese Empfehlung wird als besonders relevant für die klinische Versorgung angesehen."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Hochrelevant für die Gesundheitsversorgung" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "student-relevant" ] ;
+     fhir:display [ fhir:v "Relevant for Medical Education" ] ;
+     fhir:definition [
+       fhir:v "This recommendation is considered relevant for students in medical or healthcare education" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Diese Empfehlung wird als relevant für Studierende der Medizin oder weiterer Fächer im Gesundheitswesen angesehen."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Relevant für die medizinische Ausbildung" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "choosing-wisely" ] ;
+     fhir:display [ fhir:v "Choosing Wisely Recommendation" ] ;
+     fhir:definition [
+       fhir:v "This recommendation is part of a 'Choosing Wisely' campaign or follows similar principles" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Diese Empfehlung ist Teil der Gemeinsam Klug Entscheiden-Initiative oder folgt ähnlichen Prinzipien."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Gemeinsam Klug Entscheiden-Empfehlungen" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "off-label" ] ;
+     fhir:display [ fhir:v "Off-Label Use" ] ;
+     fhir:definition [
+       fhir:v "This recommendation involves off-label use of a medication or device" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Diese Empfehlung beinhaltet die Off-Label-Anwendung eines Arzneitmittels oder Geräts."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Off-Label-Anwendung" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

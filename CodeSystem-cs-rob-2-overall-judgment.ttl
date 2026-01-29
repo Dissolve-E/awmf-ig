@@ -1,0 +1,146 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/CodeSystem/cs-rob-2-overall-judgment> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cs-rob-2-overall-judgment"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-rob-2-overall-judgment</b></p><a name=\"cs-rob-2-overall-judgment\"> </a><a name=\"hccs-rob-2-overall-judgment\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-rob-2-overall-judgment</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">low_risk_of_bias<a name=\"cs-rob-2-overall-judgment-low_risk_of_bias\"> </a></td><td>Low risk of bias</td><td><div><p>The study is judged to be at low risk of bias for all domains for this result.</p>\n</div></td><td>Geringes Risiko für Bias</td></tr><tr><td style=\"white-space:nowrap\">some_concerns<a name=\"cs-rob-2-overall-judgment-some_concerns\"> </a></td><td>Some concerns</td><td><div><p>The study is judged to raise some concerns in at least one domain for this result, but not to be at high risk of bias for any domain.</p>\n</div></td><td>Einige Bedenken</td></tr><tr><td style=\"white-space:nowrap\">high_risk_of_bias<a name=\"cs-rob-2-overall-judgment-high_risk_of_bias\"> </a></td><td>High risk of bias</td><td><div><p>The study is judged to be at high risk of bias in at least one domain for this result.\nOr\nThe study is judged to have some concerns for multiple domains in a way that substantially lowers confidence in the result.</p>\n</div></td><td>Hohes Risiko für Bias</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-rob-2-overall-judgment"^^xsd:anyURI ;
+     fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-rob-2-overall-judgment>
+  ] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:name [ fhir:v "RoB2OverallJudment"] ; # 
+  fhir:title [ fhir:v "RoB2 Overall Judgment"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-01-29T18:27:10+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "AWMF e.V."] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AWMF e.V." ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.awmf.org" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "CodeSystem representing the overall judgment of risk of bias assessed by the RoB2 tool for evaluating risk of bias for randomized trials."] ; # 
+  fhir:caseSensitive [ fhir:v false] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "3"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "low_risk_of_bias" ] ;
+     fhir:display [ fhir:v "Low risk of bias" ] ;
+     fhir:definition [
+       fhir:v "The study is judged to be at low risk of bias for all domains for this result." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Das Biasrisiko der Studie wurde in Bezug auf das Ergebnis in allen Domänen als niedrig eingeschätzt."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Geringes Risiko für Bias" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "some_concerns" ] ;
+     fhir:display [ fhir:v "Some concerns" ] ;
+     fhir:definition [
+       fhir:v "The study is judged to raise some concerns in at least one domain for this result, but not to be at high risk of bias for any domain." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Die Studie wurde hinsichtlich des Biasrisikos in Bezug auf das Ergebnis in mindestens einer Domäne als „mit einigen Bedenken“ behaftet eingeschätzt, das Biasrisiko wurde jedoch in keiner Domäne als „hoch“ eingeschätzt."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Einige Bedenken" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "high_risk_of_bias" ] ;
+     fhir:display [ fhir:v "High risk of bias" ] ;
+     fhir:definition [
+       fhir:v "The study is judged to be at high risk of bias in at least one domain for this result.\n                     Or \n                     The study is judged to have some concerns for multiple domains in a way that substantially lowers confidence in the result." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Das Biasrisiko der Studie wurde in Bezug auf das Ergebnis in mindestens einer Domäne als hoch eingeschätzt; \n                                                                             oder \n                                                                             Die Studie wurde hinsichtlich des Biasrisikos in Bezug auf das Ergebnis in mehreren Domänen als „mit einigen Bedenken“ behaftet eingeschätzt, in einer Weise, die das Vertrauen in das Ergebnis substantiell verringert."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Hohes Risiko für Bias" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-ocebm-2011-levels-of-evidence"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-ocebm-2011-levels-of-evidence</b></p><a name="cs-ocebm-2011-levels-of-evidence"> </a><a name="hccs-ocebm-2011-levels-of-evidence"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-ocebm-2011-levels-of-evidence</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style="white-space:nowrap">level1<a name="cs-ocebm-2011-levels-of-evidence-level1"> </a></td><td>Systematic Reviews and Randomized Trials</td><td>Includes systematic reviews of randomized trials or n-of-1 trials.</td><td>Systematische Reviews und randomisierte Studien</td></tr><tr><td style="white-space:nowrap">level2<a name="cs-ocebm-2011-levels-of-evidence-level2"> </a></td><td>Cohort Studies</td><td>Includes systematic reviews of cohort studies or individual cohort studies and low-quality randomized trials.</td><td>Kohortenstudien</td></tr><tr><td style="white-space:nowrap">level3<a name="cs-ocebm-2011-levels-of-evidence-level3"> </a></td><td>Case-Control Studies</td><td>Includes systematic reviews of case-control studies or individual case-control studies.</td><td>Fall-Kontroll-Studie</td></tr><tr><td style="white-space:nowrap">level4<a name="cs-ocebm-2011-levels-of-evidence-level4"> </a></td><td>Case Series</td><td>Includes case series and poor-quality cohort and case-control studies.</td><td>Fallserien</td></tr><tr><td style="white-space:nowrap">level5<a name="cs-ocebm-2011-levels-of-evidence-level5"> </a></td><td>Expert Opinion</td><td>Includes expert opinion without explicit critical appraisal, or based on physiology, bench research, or 'first principles'.</td><td>Expertenmeinung</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-ocebm-2011-levels-of-evidence"/>
+  <version value="0.2.0"/>
+  <name value="OCEBM2011LevelsOfEvidence"/>
+  <title value="OCEBM 2011 Levels of Evidence"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem representing the Oxford Centre for Evidence-Based Medicine 2011 Levels of Evidence."/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="5"/>
+  <concept>
+    <code value="level1"/>
+    <display value="Systematic Reviews and Randomized Trials"/>
+    <definition value="Includes systematic reviews of randomized trials or n-of-1 trials.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Schließt systematische Reviews von randomisierten Studien oder n-of-1-Studien ein."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Systematische Reviews und randomisierte Studien"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="level2"/>
+    <display value="Cohort Studies"/>
+    <definition value="Includes systematic reviews of cohort studies or individual cohort studies and low-quality randomized trials.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Schließt systematische Reviews von Kohortenstudien oder einzelne Kohortenstudien oder randomisierte Studien mit niedriger Qualität ein."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Kohortenstudien"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="level3"/>
+    <display value="Case-Control Studies"/>
+    <definition value="Includes systematic reviews of case-control studies or individual case-control studies.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Schließt systematische Reviews von Fall-Kontroll-Studien oder einzelne Fall-Kontroll-Studien."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Fall-Kontroll-Studie"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="level4"/>
+    <display value="Case Series"/>
+    <definition value="Includes case series and poor-quality cohort and case-control studies.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Schließt Fallserien sowie Kohorten- und Fall-Kontroll-Studien mit niedriger Qualität ein."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Fallserien"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="level5"/>
+    <display value="Expert Opinion"/>
+    <definition value="Includes expert opinion without explicit critical appraisal, or based on physiology, bench research, or 'first principles'.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Umfasst Expertenmeinung(en) ohne explizite kritische Beurteilung oder auf der Grundlage von Physiologie, Bench Research oder First Principles"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Expertenmeinung"/>
+    </designation>
+  </concept>
+</CodeSystem>

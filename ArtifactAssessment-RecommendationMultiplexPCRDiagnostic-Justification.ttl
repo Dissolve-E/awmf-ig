@@ -1,0 +1,261 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/ArtifactAssessment/RecommendationMultiplexPCRDiagnostic-Justification> a fhir:ArtifactAssessment ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "RecommendationMultiplexPCRDiagnostic-Justification"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Justification for Recommendation Multiplex-PCR-Diagnostik</div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:artifact [
+     a fhir:Reference ;
+     fhir:l <http://fhir.awmf.org/awmf.ig/Composition/RecommendationMultiplexPCRDiagnostic> ;
+     fhir:reference [ fhir:v "Composition/RecommendationMultiplexPCRDiagnostic" ]
+  ] ; # 
+  fhir:content ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+           fhir:l <https://fevir.net/resources/CodeSystem/179423>
+         ] ;
+         fhir:code [ fhir:v "recommendation-rating" ] ;
+         fhir:display [ fhir:v "Recommendation Rating" ]
+       ] )
+     ] ;
+     fhir:component ( [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+             fhir:l <https://fevir.net/resources/CodeSystem/179423>
+           ] ;
+           fhir:code [ fhir:v "strength-of-recommendation" ] ;
+           fhir:display [ fhir:v "Strength of Recommendation" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-strength-awmf"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-strength-awmf>
+           ] ;
+           fhir:code [ fhir:v "0" ] ;
+           fhir:display [ fhir:v "Open Recommendation" ]
+         ] )
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+             fhir:l <https://fevir.net/resources/CodeSystem/179423>
+           ] ;
+           fhir:code [ fhir:v "direction-of-recommendation" ] ;
+           fhir:display [ fhir:v "Direction of Recommendation" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-direction"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-direction>
+           ] ;
+           fhir:code [ fhir:v "against" ] ;
+           fhir:display [ fhir:v "Against" ]
+         ] )
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+           ] ;
+           fhir:code [ fhir:v "level-of-consensus" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-level-of-consensus"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-level-of-consensus>
+           ] ;
+           fhir:code [ fhir:v "strong-consensus" ] ;
+           fhir:display [ fhir:v "Strong consensus" ]
+         ] )
+       ] )
+     ] )
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+         ] ;
+         fhir:code [ fhir:v "evidence-rating" ] ;
+         fhir:display [ fhir:v "Evidence Rating" ]
+       ] )
+     ] ;
+     fhir:component ( [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/certainty-type"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/certainty-type>
+           ] ;
+           fhir:code [ fhir:v "Overall" ] ;
+           fhir:display [ fhir:v "Overall certainty" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://terminology.hl7.org/CodeSystem/certainty-rating"^^xsd:anyURI ;
+             fhir:l <http://terminology.hl7.org/CodeSystem/certainty-rating>
+           ] ;
+           fhir:code [ fhir:v "very-low" ] ;
+           fhir:display [ fhir:v "Very low quality" ]
+         ] )
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+           ] ;
+           fhir:code [ fhir:v "overall-quality-of-evidence" ] ;
+           fhir:display [ fhir:v "Overall Quality of Evidence" ]
+         ] )
+       ] ;
+       fhir:relatesTo ( [
+         fhir:type [ fhir:v "justification" ] ;
+         fhir:target [
+           a fhir:Reference ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/ArtifactAssessment/EvA-MultiplexPCRDiagnostic-Mortality> ;
+           fhir:reference [ fhir:v "ArtifactAssessment/EvA-MultiplexPCRDiagnostic-Mortality" ]
+         ]
+       ] )
+     ] )
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+         ] ;
+         fhir:code [ fhir:v "evidence-rating" ] ;
+         fhir:display [ fhir:v "Evidence Rating" ]
+       ] )
+     ] ;
+     fhir:component ( [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/certainty-type"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/certainty-type>
+           ] ;
+           fhir:code [ fhir:v "Overall" ] ;
+           fhir:display [ fhir:v "Overall certainty" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://terminology.hl7.org/CodeSystem/certainty-rating"^^xsd:anyURI ;
+             fhir:l <http://terminology.hl7.org/CodeSystem/certainty-rating>
+           ] ;
+           fhir:code [ fhir:v "very-low" ] ;
+           fhir:display [ fhir:v "Very low quality" ]
+         ] )
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+           ] ;
+           fhir:code [ fhir:v "overall-quality-of-evidence" ] ;
+           fhir:display [ fhir:v "Overall Quality of Evidence" ]
+         ] )
+       ] ;
+       fhir:relatesTo ( [
+         fhir:type [ fhir:v "justification" ] ;
+         fhir:target [
+           a fhir:Reference ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/ArtifactAssessment/EvA-MultiplexPCRDiagnostic-AntibioticDays> ;
+           fhir:reference [ fhir:v "ArtifactAssessment/EvA-MultiplexPCRDiagnostic-AntibioticDays" ]
+         ]
+       ] )
+     ] )
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+         ] ;
+         fhir:code [ fhir:v "evidence-rating" ] ;
+         fhir:display [ fhir:v "Evidence Rating" ]
+       ] )
+     ] ;
+     fhir:component ( [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/certainty-type"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/certainty-type>
+           ] ;
+           fhir:code [ fhir:v "Overall" ] ;
+           fhir:display [ fhir:v "Overall certainty" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://terminology.hl7.org/CodeSystem/certainty-rating"^^xsd:anyURI ;
+             fhir:l <http://terminology.hl7.org/CodeSystem/certainty-rating>
+           ] ;
+           fhir:code [ fhir:v "very-low" ] ;
+           fhir:display [ fhir:v "Very low quality" ]
+         ] )
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+           ] ;
+           fhir:code [ fhir:v "overall-quality-of-evidence" ] ;
+           fhir:display [ fhir:v "Overall Quality of Evidence" ]
+         ] )
+       ] ;
+       fhir:relatesTo ( [
+         fhir:type [ fhir:v "justification" ] ;
+         fhir:target [
+           a fhir:Reference ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/ArtifactAssessment/EvA-MultiplexPCRDiagnostic-TimeToDeescalation> ;
+           fhir:reference [ fhir:v "ArtifactAssessment/EvA-MultiplexPCRDiagnostic-TimeToDeescalation" ]
+         ]
+       ] )
+     ] )
+  ] ) ; # 
+  fhir:workflowStatus [ fhir:v "applied"] . # 
+
+# -------------------------------------------------------------------------------------
+

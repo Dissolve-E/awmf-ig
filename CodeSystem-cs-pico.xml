@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-pico"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-pico</b></p><a name="cs-pico"> </a><a name="hccs-pico"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style="white-space:nowrap">pico-question<a name="cs-pico-pico-question"> </a></td><td>PICO question</td><td>PICO question</td><td>PICO Fragestellung</td></tr><tr><td style="white-space:nowrap">population<a name="cs-pico-population"> </a></td><td>Population</td><td>Population</td><td>Population</td></tr><tr><td style="white-space:nowrap">intervention<a name="cs-pico-intervention"> </a></td><td>Intervention</td><td>Intervention</td><td>Intervention</td></tr><tr><td style="white-space:nowrap">comparator<a name="cs-pico-comparator"> </a></td><td>Comparator</td><td>Comparator</td><td>Vergleichsintervention</td></tr><tr><td style="white-space:nowrap">outcome<a name="cs-pico-outcome"> </a></td><td>Outcome</td><td>Outcome</td><td>Outcome</td></tr><tr><td style="white-space:nowrap">setting<a name="cs-pico-setting"> </a></td><td>Setting</td><td>Setting</td><td>Setting</td></tr><tr><td style="white-space:nowrap">timing<a name="cs-pico-timing"> </a></td><td>Timing</td><td>Timing</td><td>Zeitpunkt</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico"/>
+  <version value="0.2.0"/>
+  <name value="PICOCS"/>
+  <title value="PICO Related Terms"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem defining different terms related to PICO question and objects"/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="7"/>
+  <concept>
+    <code value="pico-question"/>
+    <display value="PICO question"/>
+    <definition value="PICO question">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="PICO Fragestellung"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="PICO Fragestellung"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="population"/>
+    <display value="Population"/>
+    <definition value="Population">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Population"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Population"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="intervention"/>
+    <display value="Intervention"/>
+    <definition value="Intervention">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Intervention"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Intervention"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="comparator"/>
+    <display value="Comparator"/>
+    <definition value="Comparator">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Vergleichsintervention"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Vergleichsintervention"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="outcome"/>
+    <display value="Outcome"/>
+    <definition value="Outcome">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Outcome"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Outcome"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="setting"/>
+    <display value="Setting"/>
+    <definition value="Setting">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Setting"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Setting"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="timing"/>
+    <display value="Timing"/>
+    <definition value="Timing">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Zeitpunkt"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Zeitpunkt"/>
+    </designation>
+  </concept>
+</CodeSystem>

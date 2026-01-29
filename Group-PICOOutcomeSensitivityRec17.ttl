@@ -1,0 +1,35 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/Group/PICOOutcomeSensitivityRec17> a fhir:Group ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "PICOOutcomeSensitivityRec17"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-outcome"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-outcome>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Group PICOOutcomeSensitivityRec17</b></p><a name=\"PICOOutcomeSensitivityRec17\"> </a><a name=\"hcPICOOutcomeSensitivityRec17\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-conceptual-cohort-definition-outcome.html\">Conceptual Cohort Definition Outcome</a></p></div><p><b>description</b>: </p><div><p>Sensitivität für die Indikation einer Demenz</p>\n</div><p><b>membership</b>: Conceptual</p><p><b>code</b>: <span title=\"Codes:{http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico outcome}\">Outcome</span></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:description [ fhir:v "Sensitivität für die Indikation einer Demenz"] ; # 
+  fhir:membership [ fhir:v "conceptual"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico>
+       ] ;
+       fhir:code [ fhir:v "outcome" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

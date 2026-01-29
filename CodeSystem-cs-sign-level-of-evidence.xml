@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-sign-level-of-evidence"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-sign-level-of-evidence</b></p><a name="cs-sign-level-of-evidence"> </a><a name="hccs-sign-level-of-evidence"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-sign-level-of-evidence</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style="white-space:nowrap">1plusplus<a name="cs-sign-level-of-evidence-1plusplus"> </a></td><td>1++</td><td>High-quality meta-analyses, systematic reviews of RCTs, or RCTs with a very low risk of bias.</td><td>1++</td></tr><tr><td style="white-space:nowrap">1plus<a name="cs-sign-level-of-evidence-1plus"> </a></td><td>1+</td><td>Well-conducted meta-analyses, systematic reviews, or RCTs with a low risk of bias.</td><td>1+</td></tr><tr><td style="white-space:nowrap">1minus<a name="cs-sign-level-of-evidence-1minus"> </a></td><td>1-</td><td>Meta-analyses, systematic reviews, or RCTs with a high risk of bias.</td><td>1-</td></tr><tr><td style="white-space:nowrap">2plusplus<a name="cs-sign-level-of-evidence-2plusplus"> </a></td><td>2++</td><td>High-quality systematic reviews of case-control or cohort studies, or high-quality case-control or cohort studies with a very low risk of confounding or bias and a high probability that the relationship is causal.</td><td>2++</td></tr><tr><td style="white-space:nowrap">2plus<a name="cs-sign-level-of-evidence-2plus"> </a></td><td>2+</td><td>Well-conducted case-control or cohort studies with a low risk of confounding or bias and a moderate probability that the relationship is causal.</td><td>2+</td></tr><tr><td style="white-space:nowrap">2minus<a name="cs-sign-level-of-evidence-2minus"> </a></td><td>2-</td><td>Case-control or cohort studies with a high risk of confounding or bias and a significant risk that the relationship is not causal.</td><td>2-</td></tr><tr><td style="white-space:nowrap">3<a name="cs-sign-level-of-evidence-3"> </a></td><td>3</td><td>Non-analytic studies, e.g., case reports, case series.</td><td>3</td></tr><tr><td style="white-space:nowrap">4<a name="cs-sign-level-of-evidence-4"> </a></td><td>4</td><td>Expert opinion.</td><td>4</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-sign-level-of-evidence"/>
+  <version value="0.2.0"/>
+  <name value="SIGNLevelOfEvidence"/>
+  <title value="SIGN Level of Evidence"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem representing the Scottish Intercollegiate Guidelines Network (SIGN) Levels of Evidence."/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="8"/>
+  <concept>
+    <code value="1plusplus"/>
+    <display value="1++"/>
+    <definition value="High-quality meta-analyses, systematic reviews of RCTs, or RCTs with a very low risk of bias.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Hochwertige Metaanalysen, systematische Reviews von RCTs oder RCTs mit sehr niedrigem Bias-Risiko."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="1++"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="1plus"/>
+    <display value="1+"/>
+    <definition value="Well-conducted meta-analyses, systematic reviews, or RCTs with a low risk of bias.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Gut durchgeführte Metaanalysen, systematische Reviews oder RCTs mit geringem Bias-Risiko."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="1+"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="1minus"/>
+    <display value="1-"/>
+    <definition value="Meta-analyses, systematic reviews, or RCTs with a high risk of bias.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Metaanalysen, systematische Reviews oder RCTs mit hohem Bias-Risiko."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="1-"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="2plusplus"/>
+    <display value="2++"/>
+    <definition value="High-quality systematic reviews of case-control or cohort studies, or high-quality case-control or cohort studies with a very low risk of confounding or bias and a high probability that the relationship is causal.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Hochwertige systematische Reviews von Fall-Kontroll- oder Kohortenstudien oder hochwertige Fall-Kontroll- oder Kohortenstudien mit sehr niedrigem Risiko für Confounding oder Bias."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="2++"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="2plus"/>
+    <display value="2+"/>
+    <definition value="Well-conducted case-control or cohort studies with a low risk of confounding or bias and a moderate probability that the relationship is causal.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Gut durchgeführte Fall-Kontroll- oder Kohortenstudien (nicht-randomisierte Studien) mit niedrigem Risiko für Confounding oder Bias."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="2+"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="2minus"/>
+    <display value="2-"/>
+    <definition value="Case-control or cohort studies with a high risk of confounding or bias and a significant risk that the relationship is not causal.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Fall-Kontroll- oder Kohortenstudien mit hohem Risiko für Confounding oder Bias."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="2-"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="3"/>
+    <display value="3"/>
+    <definition value="Non-analytic studies, e.g., case reports, case series.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Nicht-analytische Studien, z. B. Fallberichte, Fallserien."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="3"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="4"/>
+    <display value="4"/>
+    <definition value="Expert opinion.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Expertenmeinung."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="4"/>
+    </designation>
+  </concept>
+</CodeSystem>

@@ -1,0 +1,2042 @@
+{
+  "codeSystems" : [
+    {
+      "url" : "http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_33.html",
+      "version" : "2025.3.20250714",
+      "status" : "active",
+      "name" : "Modality",
+      "title" : null,
+      "description" : "Transitive closure of CID 33 Modality",
+      "systems" : ["http://dicom.nema.org/resources/ontology/DCM"],
+      "oids" : ["1.2.840.10008.6.1.1283"],
+      "sources" : ["1.2.840.10008.6.1.1283"],
+      "uses" : {
+      },
+      "StructureDefinition-guideline-attachment.html" : "Guideline Attachment"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/ocebm-2011-levels-of-evidence-vs",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "OCEBM2011LevelsOfEvidenceVS",
+      "title" : "OCEBM 2011 Levels of Evidence Value Set",
+      "description" : "ValueSet encompassing all levels from the OCEBM 2011 Levels of Evidence.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-ocebm-2011-levels-of-evidence"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification-oxford-2011.html" : "Recommendation Justification OXFORD 2011"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-agree-ii-domains",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "AGREEIIDomainsVS",
+      "title" : "AGREE II Domains Value Set",
+      "description" : "ValueSet encompassing all domains from the AGREE II instrument.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-agree-ii-domains"
+      ]
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-amstar2-confidence-ratings",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "AMSTAR2ConfidenceRatingsVS",
+      "title" : "AMSTAR 2 Confidence Ratings Value Set",
+      "description" : "ValueSet encompassing all overall confidence ratings from the AMSTAR 2 critical appraisal tool.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-amstar2-confidence-ratings"
+      ]
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-awmf-guideline-class",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "AWMFGuidelineClassVS",
+      "title" : "AWMF Guideline Class",
+      "description" : "ValueSet listing values representing guideline classes according to the AWMF.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-class"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-awmf-guideline-status",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "AWMFGuidelineStatusVS",
+      "title" : "AWMF Guideline Status",
+      "description" : "ValueSet listing values to define the guideline status according to the AWMF.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-status"
+      ]
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-body-system-conditions",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "BodySystemConditionsVS",
+      "title" : "Body System Conditions",
+      "description" : "ValueSet listing various body system conditions",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-body-systems-conditions"
+      ]
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-care-level",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "CareLevelVS",
+      "title" : "Care Level",
+      "description" : "ValueSet listing levels of care.",
+      "systems" : ["http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting"],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-care-stage",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "CareStageVS",
+      "title" : "Care Stage",
+      "description" : "ValueSet listing stages of care from prevention to rehabilitation.",
+      "systems" : ["http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting"],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-clinical-application-type",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "ClinicalApplicationTypeVS",
+      "title" : "Clinical Application Type",
+      "description" : "ValueSet listing different clinical application types",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-clinical-application-type"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation.html" : "Recommendation"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-content-types",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "ContentTypesVS",
+      "title" : "Content Types",
+      "description" : "ValueSet listing types of content that can be part of a guideline or recommendation.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-guideline-attachment.html" : "Guideline Attachment",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record",
+      "StructureDefinition-recommendation.html" : "Recommendation"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-dissemination-website",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "DisseminationWebsite",
+      "title" : "Dissemination Website",
+      "description" : "ValueSet listing types of dissemination websites",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-encounter-type",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "EncounterTypeVS",
+      "title" : "Encounter Type",
+      "description" : "ValueSet listing types of patient encounters based on hospitalization status.",
+      "systems" : ["http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting"],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-guideline-author-role",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "GuidelineAuthorRoleVS",
+      "title" : "Guideline Author Role",
+      "description" : "ValueSet listing roles that a author can have in a guideline.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-ext-guideline-author-role.html" : "Guideline Author Role"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-guideline-contact-point",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "GuidelineContactPointVS",
+      "title" : "Guideline Contact Point VS",
+      "description" : "ValueSet listing contact points relevant to guidelines, such as registrants, coordinators, and main contacts.",
+      "systems" : ["http://fhir.awmf.org/awmf.ig/CodeSystem/cs-contact-point"]
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-guideline-release-type",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "GuidelinesReleaseTypeVS",
+      "title" : "Guideline Release Type",
+      "description" : "ValueSet listing different guideline release types",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-release-type"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-guideline-sections",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "GuidelineSectionsVS",
+      "title" : "Guideline Sections",
+      "description" : "ValueSet listing values to use to define guideline sections",
+      "systems" : [
+        "https://fevir.net/resources/CodeSystem/179423",
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline.html" : "Guideline",
+      "StructureDefinition-recommendation.html" : "Recommendation"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-intended-audience",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "IntendedAudienceVS",
+      "title" : "Intended Audience Value Set",
+      "description" : "ValueSet listing codes representing intended audiences for a section",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-intended-audience"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-ext-section-intended-audience.html" : "Section Intended Audience"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-level-of-consensus",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "LevelOfConsensusVS",
+      "title" : "Level Of Consensus",
+      "description" : "ValueSet listing values to define the level of consensus for a recommendation.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-level-of-consensus"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification.html" : "Recommendation Justification",
+      "StructureDefinition-recommendation-justification-sign.html" : "Recommendation Justification SIGN",
+      "StructureDefinition-recommendation-justification-expert-consensus.html" : "Recommendation Justification Expert Consensus",
+      "StructureDefinition-recommendation-justification-awmf.html" : "Recommendation Justification AWMF",
+      "StructureDefinition-recommendation-justification-oxford-2009.html" : "Recommendation Justification OXFORD 2009",
+      "StructureDefinition-recommendation-justification-grade.html" : "Recommendation Justification GRADE",
+      "StructureDefinition-recommendation-justification-oxford-2011.html" : "Recommendation Justification OXFORD 2011"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-medical-subject-categories",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "MedicalSubjectCategoriesVS",
+      "title" : "Medical Subject Categories",
+      "description" : "ValueSet listing values to classify medical subjects into different categories.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-medical-subject-categories"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-ext-medical-subject-category.html" : "Medical Subject Category"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-ocebm-2009-levels-of-evidence",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "OCEBM2009LevelsOfEvidenceVS",
+      "title" : "OCEBM 2009 Levels of Evidence Value Set",
+      "description" : "ValueSet encompassing all levels from the Oxford Centre for Evidence-Based Medicine 2009 Levels of Evidence.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-ocebm-2009-levels-of-evidence"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification-oxford-2009.html" : "Recommendation Justification OXFORD 2009"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-pico",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "PICOVS",
+      "title" : "PICO related terms",
+      "description" : "ValueSet listing different terms related to PICO question and objects",
+      "systems" : ["http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico"]
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rating-acceptability",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RatingAcceptability",
+      "title" : "Rating Acceptability",
+      "description" : "ValueSet defining if the alternatives are acceptable for the target population and its implementors?",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-to-decision-certainty-rating"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification-grade.html" : "Recommendation Justification GRADE"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rating-benefits-and-harms",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RatingBenefitAndHarms",
+      "title" : "Rating Benefits And Harms",
+      "description" : "ValueSet listing values to represent the summary of the most important benefits and harms",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-to-decision-certainty-rating"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification-grade.html" : "Recommendation Justification GRADE"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rating-certainty-of-evidence",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RatingCertaintyofEvidence",
+      "title" : "Rating Certainty Of Evidence",
+      "description" : "Codes from EvidenceCertaintyRating related to certainty of evidence",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/certainty-rating"],
+      "uses" : {
+      },
+      "StructureDefinition-evidence-overall-assessment-grade.html" : "Evidence Overall Assessment GRADE",
+      "StructureDefinition-recommendation-justification-grade.html" : "Recommendation Justification GRADE"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rating-concern-degree",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RatingConcernDegree",
+      "title" : "Rating Concern Degree",
+      "description" : "ValueSet listing codes from EvidenceCertaintyRating related to degree of concern",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/certainty-rating"]
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rating-equity",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RatingEquity",
+      "title" : "Rating Equity",
+      "description" : "ValueSet listing values to represent how the different alternatives affect equity",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-to-decision-certainty-rating"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification-grade.html" : "Recommendation Justification GRADE"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rating-feasibility",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RatingFeasibility",
+      "title" : "Rating Feasibility",
+      "description" : "ValueSet listing values to reprensent how feasible will it be to implement the different alternatives and if there are any issues",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-to-decision-certainty-rating"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification-grade.html" : "Recommendation Justification GRADE"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rating-preference-and-values",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RatingPreferenceAndValues",
+      "title" : "Rating Preference And Values",
+      "description" : "ValueSet listing typical patient preferences and values as well as common issues or expected variability",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-to-decision-certainty-rating"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification-grade.html" : "Recommendation Justification GRADE"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rating-resources",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RatingResources",
+      "title" : "Rating Resources",
+      "description" : "ValueSet listing values to indicate if there are issues related to costs or resource use.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-to-decision-certainty-rating"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification-grade.html" : "Recommendation Justification GRADE"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-recommendation-direction",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RecommendationDirectionVS",
+      "title" : "Recommendation Direction",
+      "description" : "ValueSet defining the direction of a clinical recommendation.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-direction"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification.html" : "Recommendation Justification",
+      "StructureDefinition-recommendation-justification-sign.html" : "Recommendation Justification SIGN",
+      "StructureDefinition-recommendation-justification-expert-consensus.html" : "Recommendation Justification Expert Consensus",
+      "StructureDefinition-recommendation-justification-awmf.html" : "Recommendation Justification AWMF",
+      "StructureDefinition-recommendation-justification-oxford-2009.html" : "Recommendation Justification OXFORD 2009",
+      "StructureDefinition-recommendation-justification-grade.html" : "Recommendation Justification GRADE",
+      "StructureDefinition-recommendation-justification-oxford-2011.html" : "Recommendation Justification OXFORD 2011"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-recommendation-review-status",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RecommendationReviewStatusVS",
+      "title" : "Recommendation Review Status Value Set",
+      "description" : "ValueSet representing the review-related status of a recommendation in a new guideline version",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-review-status"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-ext-recommendation-review-status.html" : "Recommendation Review Status"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-recommendation-strength-awmf",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RecommendationStrengthAWMFVS",
+      "title" : "Recommendation Strength (AWMF) ValueSet",
+      "description" : "ValueSet of strength of recommendations as defined in AWMF guideline methodology.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-strength-awmf"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification-awmf.html" : "Recommendation Justification AWMF"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-recommendation-synthesis-type",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RecommendationSynthesisTypeVS",
+      "title" : "Recommendation Synthesis Type",
+      "description" : "ValueSet listing different synthesis Types of recommendations",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-synthesis-type"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation.html" : "Recommendation"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-recommendation-tags",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RecommendationTagsVS",
+      "title" : "Recommendation Tags",
+      "description" : "ValueSet listing different tags to use for recommendations",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-tags"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation.html" : "Recommendation"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-remark-type",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RemarkTypeVS",
+      "title" : "Remark Type",
+      "description" : "ValueSet listing types of remarks that can be associated with guidelines, including restrictions, warnings, and additional notes.",
+      "systems" : ["http://fhir.awmf.org/awmf.ig/CodeSystem/cs-remark-type"],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rob-2-overall-judgment",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "RoB2OverallJudmentVS",
+      "title" : "RoB2 Overall Judgment ValueSet",
+      "description" : "ValueSet listing values to represent the overall judgment of risk of bias assessed by the RoB2 tool for evaluating risk of bias for randomized trials.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-rob-2-overall-judgment"
+      ]
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-robis-judgment-of-risk-of-bias",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "ROBISJudgmentOfRiskOfBiasVS",
+      "title" : "ROBIS Judgment of Risk of Bias Value Set",
+      "description" : "ValueSet encompassing all risk of bias judgment values from the ROBIS tool.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-robis-judgment-of-risk-of-bias"
+      ]
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-robis-risk-of-bias-domains",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "ROBISRiskOfBiasDomainsVS",
+      "title" : "ROBIS Risk of Bias Domains Value Set",
+      "description" : "ValueSet encompassing all risk of bias domains from the ROBIS tool.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-robis-risk-of-bias-domains"
+      ]
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-sign-grade-of-recommendation",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "SIGNGradeOfRecommendationVS",
+      "title" : "SIGN Grade of Recommendation Value Set",
+      "description" : "ValueSet encompassing all grades of recommendation from the SIGN (Scottish Intercollegiate Guidelines Network) Grades of Recommendation.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-sign-grade-of-recommendation"
+      ]
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-sign-level-of-evidence",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "SIGNLevelOfEvidenceVS",
+      "title" : "SIGN Level of Evidence Value Set",
+      "description" : "ValueSet encompassing all levels from the SIGN (Scottish Intercollegiate Guidelines Network) Levels of Evidence.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-sign-level-of-evidence"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification-sign.html" : "Recommendation Justification SIGN"
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-target-patient-group",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "TargetPatientGroupVS",
+      "title" : "Target Patient Group",
+      "description" : "ValueSet listing patient population categories for guidelines, such as adults and children/adolescents.",
+      "systems" : [
+        "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-target-patient-group"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/administrative-gender",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "AdministrativeGender",
+      "title" : "AdministrativeGender",
+      "description" : "The gender of a person used for administrative purposes.",
+      "systems" : ["http://hl7.org/fhir/administrative-gender"],
+      "oids" : ["2.16.840.1.113883.4.642.3.1"],
+      "sources" : ["2.16.840.1.113883.4.642.3.1"],
+      "uses" : {
+      },
+      "StructureDefinition-guideline-author.html" : "Guideline Author"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/all-languages",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "AllLanguages",
+      "title" : "All Languages",
+      "description" : "This value set includes all possible codes from BCP-47 (see http://tools.ietf.org/html/bcp47)",
+      "systems" : ["urn:ietf:bcp:47"],
+      "oids" : ["2.16.840.1.113883.4.642.3.21"],
+      "sources" : ["2.16.840.1.113883.4.642.3.21"],
+      "uses" : {
+      },
+      "StructureDefinition-evidence-internal-assessment-cochrane-rob.html" : "Evidence Internal Assessment Cochrane Risk of Bias",
+      "StructureDefinition-guideline-author.html" : "Guideline Author",
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-evidence-overall-quality-assessment.html" : "Evidence Overall Quality Assessment",
+      "StructureDefinition-evidence-overall-assessment-grade.html" : "Evidence Overall Assessment GRADE",
+      "StructureDefinition-evidence-overall-assessment-oxford2011.html" : "Evidence Overall Assessment Oxford 2011",
+      "StructureDefinition-evidence-internal-assessment-robis.html" : "Evidence Internal Assessment ROBIS",
+      "StructureDefinition-patient-organization.html" : "Patient Organization",
+      "StructureDefinition-recommendation.html" : "Recommendation",
+      "StructureDefinition-conceptual-cohort-definition-comparator.html" : "Conceptual Cohort Definition Comparator",
+      "StructureDefinition-evidence-internal-assessment-amstar2.html" : "Evidence Internal Assessment AMSTAR 2",
+      "StructureDefinition-recommendation-justification-oxford-2009.html" : "Recommendation Justification OXFORD 2009",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-conceptual-cohort-definition-intervention.html" : "Conceptual Cohort Definition Intervention",
+      "StructureDefinition-outcome-evidence.html" : "Outcome Evidence",
+      "StructureDefinition-recommendation-justification-oxford-2011.html" : "Recommendation Justification OXFORD 2011",
+      "StructureDefinition-citation-list.html" : "Citation List",
+      "StructureDefinition-evidence-report-with-contact-slices.html" : "Evidence Report with Contact Slices",
+      "StructureDefinition-recommendation-justification-sign.html" : "Recommendation Justification SIGN",
+      "StructureDefinition-recommendation-justification.html" : "Recommendation Justification",
+      "StructureDefinition-awmf-guideline.html" : "Guideline",
+      "StructureDefinition-conceptual-cohort-definition-outcome.html" : "Conceptual Cohort Definition Outcome",
+      "StructureDefinition-evidence-internal-assessment-agreeii.html" : "Evidence Internal Assessment AGREE II",
+      "StructureDefinition-guideline-attachment.html" : "Guideline Attachment",
+      "StructureDefinition-recommendation-justification-awmf.html" : "Recommendation Justification AWMF",
+      "StructureDefinition-evidence-assessment.html" : "Evidence Assessment",
+      "StructureDefinition-guideline-author-role.html" : "Guideline Author Role",
+      "StructureDefinition-evidence-internal-validity-assessment.html" : "Evidence Internal Validity Assessment",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record",
+      "StructureDefinition-conceptual-cohort-definition-population.html" : "Conceptual Cohort Definition Population",
+      "StructureDefinition-awmf-member-organization.html" : "AWMF Member Organization",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-medical-society.html" : "Medical Society",
+      "StructureDefinition-recommendation-justification-expert-consensus.html" : "Recommendation Justification Expert Consensus",
+      "StructureDefinition-pico-question.html" : "PICO Question",
+      "StructureDefinition-recommendation-justification-grade.html" : "Recommendation Justification GRADE"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/artifact-relationship-type",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "ArtifactRelationshipType",
+      "title" : "Artifact Relationship Type",
+      "description" : "Type of relationship to the related artifact.",
+      "systems" : ["http://hl7.org/fhir/artifact-relationship-type"],
+      "oids" : ["2.16.840.1.113883.4.642.3.2957"],
+      "sources" : ["2.16.840.1.113883.4.642.3.2957"],
+      "uses" : {
+      },
+      "StructureDefinition-evidence-internal-assessment-cochrane-rob.html" : "Evidence Internal Assessment Cochrane Risk of Bias",
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-evidence-overall-quality-assessment.html" : "Evidence Overall Quality Assessment",
+      "StructureDefinition-evidence-overall-assessment-grade.html" : "Evidence Overall Assessment GRADE",
+      "StructureDefinition-evidence-overall-assessment-oxford2011.html" : "Evidence Overall Assessment Oxford 2011",
+      "StructureDefinition-evidence-internal-assessment-robis.html" : "Evidence Internal Assessment ROBIS",
+      "StructureDefinition-recommendation.html" : "Recommendation",
+      "StructureDefinition-evidence-internal-assessment-amstar2.html" : "Evidence Internal Assessment AMSTAR 2",
+      "StructureDefinition-recommendation-justification-oxford-2009.html" : "Recommendation Justification OXFORD 2009",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-outcome-evidence.html" : "Outcome Evidence",
+      "StructureDefinition-recommendation-justification-oxford-2011.html" : "Recommendation Justification OXFORD 2011",
+      "StructureDefinition-evidence-report-with-contact-slices.html" : "Evidence Report with Contact Slices",
+      "StructureDefinition-recommendation-justification-sign.html" : "Recommendation Justification SIGN",
+      "StructureDefinition-recommendation-justification.html" : "Recommendation Justification",
+      "StructureDefinition-awmf-guideline.html" : "Guideline",
+      "StructureDefinition-evidence-internal-assessment-agreeii.html" : "Evidence Internal Assessment AGREE II",
+      "StructureDefinition-recommendation-justification-awmf.html" : "Recommendation Justification AWMF",
+      "StructureDefinition-evidence-assessment.html" : "Evidence Assessment",
+      "StructureDefinition-evidence-internal-validity-assessment.html" : "Evidence Internal Validity Assessment",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-recommendation-justification-expert-consensus.html" : "Recommendation Justification Expert Consensus",
+      "StructureDefinition-recommendation-justification-grade.html" : "Recommendation Justification GRADE"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/artifactassessment-disposition",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "ArtifactAssessmentDisposition",
+      "title" : "Artifact Assessment Disposition",
+      "description" : "Possible values for the disposition of a comment or change request, typically used for comments and change requests, to indicate the disposition of the responsible party towards the changes suggested by the comment or change request.",
+      "systems" : ["http://hl7.org/fhir/artifactassessment-disposition"],
+      "oids" : ["2.16.840.1.113883.4.642.3.3155"],
+      "sources" : ["2.16.840.1.113883.4.642.3.3155"],
+      "uses" : {
+      },
+      "StructureDefinition-evidence-internal-assessment-cochrane-rob.html" : "Evidence Internal Assessment Cochrane Risk of Bias",
+      "StructureDefinition-recommendation-justification-sign.html" : "Recommendation Justification SIGN",
+      "StructureDefinition-recommendation-justification.html" : "Recommendation Justification",
+      "StructureDefinition-evidence-internal-assessment-agreeii.html" : "Evidence Internal Assessment AGREE II",
+      "StructureDefinition-recommendation-justification-awmf.html" : "Recommendation Justification AWMF",
+      "StructureDefinition-evidence-assessment.html" : "Evidence Assessment",
+      "StructureDefinition-evidence-overall-quality-assessment.html" : "Evidence Overall Quality Assessment",
+      "StructureDefinition-evidence-internal-validity-assessment.html" : "Evidence Internal Validity Assessment",
+      "StructureDefinition-evidence-overall-assessment-grade.html" : "Evidence Overall Assessment GRADE",
+      "StructureDefinition-evidence-overall-assessment-oxford2011.html" : "Evidence Overall Assessment Oxford 2011",
+      "StructureDefinition-evidence-internal-assessment-robis.html" : "Evidence Internal Assessment ROBIS",
+      "StructureDefinition-recommendation-justification-expert-consensus.html" : "Recommendation Justification Expert Consensus",
+      "StructureDefinition-evidence-internal-assessment-amstar2.html" : "Evidence Internal Assessment AMSTAR 2",
+      "StructureDefinition-recommendation-justification-oxford-2009.html" : "Recommendation Justification OXFORD 2009",
+      "StructureDefinition-recommendation-justification-grade.html" : "Recommendation Justification GRADE",
+      "StructureDefinition-recommendation-justification-oxford-2011.html" : "Recommendation Justification OXFORD 2011"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/artifactassessment-workflow-status",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "ArtifactAssessmentWorkflowStatus",
+      "title" : "Artifact Assessment Workflow Status",
+      "description" : "Possible values for the workflow status of the comment or assessment, typically used to coordinate workflow around the process of accepting and rejecting changes and comments on the artifact.",
+      "systems" : ["http://hl7.org/fhir/artifactassessment-workflow-status"],
+      "oids" : ["2.16.840.1.113883.4.642.3.3157"],
+      "sources" : ["2.16.840.1.113883.4.642.3.3157"],
+      "uses" : {
+      },
+      "StructureDefinition-evidence-internal-assessment-cochrane-rob.html" : "Evidence Internal Assessment Cochrane Risk of Bias",
+      "StructureDefinition-recommendation-justification-sign.html" : "Recommendation Justification SIGN",
+      "StructureDefinition-recommendation-justification.html" : "Recommendation Justification",
+      "StructureDefinition-evidence-internal-assessment-agreeii.html" : "Evidence Internal Assessment AGREE II",
+      "StructureDefinition-recommendation-justification-awmf.html" : "Recommendation Justification AWMF",
+      "StructureDefinition-evidence-assessment.html" : "Evidence Assessment",
+      "StructureDefinition-evidence-overall-quality-assessment.html" : "Evidence Overall Quality Assessment",
+      "StructureDefinition-evidence-internal-validity-assessment.html" : "Evidence Internal Validity Assessment",
+      "StructureDefinition-evidence-overall-assessment-grade.html" : "Evidence Overall Assessment GRADE",
+      "StructureDefinition-evidence-overall-assessment-oxford2011.html" : "Evidence Overall Assessment Oxford 2011",
+      "StructureDefinition-evidence-internal-assessment-robis.html" : "Evidence Internal Assessment ROBIS",
+      "StructureDefinition-recommendation-justification-expert-consensus.html" : "Recommendation Justification Expert Consensus",
+      "StructureDefinition-evidence-internal-assessment-amstar2.html" : "Evidence Internal Assessment AMSTAR 2",
+      "StructureDefinition-recommendation-justification-oxford-2009.html" : "Recommendation Justification OXFORD 2009",
+      "StructureDefinition-recommendation-justification-grade.html" : "Recommendation Justification GRADE",
+      "StructureDefinition-recommendation-justification-oxford-2011.html" : "Recommendation Justification OXFORD 2011"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/attribute-estimate-type",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "AttributeEstimateType",
+      "title" : "Attribute Estimate Type",
+      "description" : "A statistic about a statistic, e.g.  Confidence interval or p-value",
+      "systems" : [
+        "http://terminology.hl7.org/CodeSystem/attribute-estimate-type"
+      ],
+      "oids" : ["2.16.840.1.113883.4.642.3.3050"],
+      "sources" : ["2.16.840.1.113883.4.642.3.3050"],
+      "uses" : {
+      },
+      "StructureDefinition-outcome-evidence.html" : "Outcome Evidence"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/body-site",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "SNOMEDCTBodyStructures",
+      "title" : "SNOMED CT Body Structures",
+      "description" : "This value set includes all codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 442083009 (Anatomical or acquired body site (body structure)).",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : [
+        "2.16.840.1.113883.4.642.3.653",
+        "2.16.840.1.113883.4.642.2.78",
+        "2.16.840.1.113883.4.642.3.141"
+      ],
+      "sources" : [
+        "2.16.840.1.113883.4.642.3.653",
+        "2.16.840.1.113883.4.642.2.78",
+        "2.16.840.1.113883.4.642.3.141"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-guideline-attachment.html" : "Guideline Attachment"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/c80-facilitycodes",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "FacilityTypeCodeValueSet",
+      "title" : "Facility Type Code Value Set",
+      "description" : "This is the code representing the type of organizational setting where the clinical encounter,    service, interaction, or treatment occurred. The value set used for Healthcare Facility    Type has been defined by HITSP to be the value set reproduced from HITSP C80 Table 2-147.",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : [
+        "2.16.840.1.113883.3.88.12.80.67",
+        "2.16.840.1.113883.4.642.2.131"
+      ],
+      "sources" : [
+        "2.16.840.1.113883.3.88.12.80.67",
+        "2.16.840.1.113883.4.642.2.131"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-guideline-attachment.html" : "Guideline Attachment"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/c80-practice-codes",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "PracticeSettingCodeValueSet",
+      "title" : "Practice Setting Code Value Set",
+      "description" : "This is the code representing the clinical specialty of the clinician or provider who    interacted with, treated, or provided a service to/for the patient. The value set used    for clinical specialty has been limited by HITSP to the value set reproduced from HITSP    C80 Table 2-149 Clinical Specialty Value Set Definition.",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : [
+        "2.16.840.1.113883.4.642.2.134",
+        "2.16.840.1.113883.3.88.12.80.72"
+      ],
+      "sources" : [
+        "2.16.840.1.113883.4.642.2.134",
+        "2.16.840.1.113883.3.88.12.80.72"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-guideline-attachment.html" : "Guideline Attachment",
+      "StructureDefinition-guideline-author-role.html" : "Guideline Author Role"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/certainty-rating",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "EvidenceCertaintyRating",
+      "title" : "Evidence Certainty Rating",
+      "description" : "The assessment of quality, confidence, or certainty.",
+      "systems" : ["http://hl7.org/fhir/certainty-rating"],
+      "oids" : ["2.16.840.1.113883.4.642.3.3049"],
+      "sources" : ["2.16.840.1.113883.4.642.3.3049"],
+      "uses" : {
+      },
+      "StructureDefinition-evidence-internal-assessment-cochrane-rob.html" : "Evidence Internal Assessment Cochrane Risk of Bias",
+      "StructureDefinition-recommendation-justification-sign.html" : "Recommendation Justification SIGN",
+      "StructureDefinition-recommendation-justification.html" : "Recommendation Justification",
+      "StructureDefinition-evidence-internal-assessment-agreeii.html" : "Evidence Internal Assessment AGREE II",
+      "StructureDefinition-recommendation-justification-awmf.html" : "Recommendation Justification AWMF",
+      "StructureDefinition-evidence-assessment.html" : "Evidence Assessment",
+      "StructureDefinition-evidence-overall-quality-assessment.html" : "Evidence Overall Quality Assessment",
+      "StructureDefinition-evidence-internal-validity-assessment.html" : "Evidence Internal Validity Assessment",
+      "StructureDefinition-evidence-overall-assessment-grade.html" : "Evidence Overall Assessment GRADE",
+      "StructureDefinition-evidence-overall-assessment-oxford2011.html" : "Evidence Overall Assessment Oxford 2011",
+      "StructureDefinition-evidence-internal-assessment-robis.html" : "Evidence Internal Assessment ROBIS",
+      "StructureDefinition-recommendation-justification-expert-consensus.html" : "Recommendation Justification Expert Consensus",
+      "StructureDefinition-evidence-internal-assessment-amstar2.html" : "Evidence Internal Assessment AMSTAR 2",
+      "StructureDefinition-recommendation-justification-oxford-2009.html" : "Recommendation Justification OXFORD 2009",
+      "StructureDefinition-outcome-evidence.html" : "Outcome Evidence",
+      "StructureDefinition-recommendation-justification-grade.html" : "Recommendation Justification GRADE",
+      "StructureDefinition-recommendation-justification-oxford-2011.html" : "Recommendation Justification OXFORD 2011"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/certainty-type",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "EvidenceCertaintyType",
+      "title" : "Evidence Certainty Type",
+      "description" : "The aspect of quality, confidence, or certainty.",
+      "systems" : ["http://hl7.org/fhir/certainty-type"],
+      "oids" : ["2.16.840.1.113883.4.642.3.3043"],
+      "sources" : ["2.16.840.1.113883.4.642.3.3043"],
+      "uses" : {
+      },
+      "StructureDefinition-evidence-internal-assessment-cochrane-rob.html" : "Evidence Internal Assessment Cochrane Risk of Bias",
+      "StructureDefinition-recommendation-justification-sign.html" : "Recommendation Justification SIGN",
+      "StructureDefinition-recommendation-justification.html" : "Recommendation Justification",
+      "StructureDefinition-evidence-internal-assessment-agreeii.html" : "Evidence Internal Assessment AGREE II",
+      "StructureDefinition-recommendation-justification-awmf.html" : "Recommendation Justification AWMF",
+      "StructureDefinition-evidence-assessment.html" : "Evidence Assessment",
+      "StructureDefinition-evidence-overall-quality-assessment.html" : "Evidence Overall Quality Assessment",
+      "StructureDefinition-evidence-internal-validity-assessment.html" : "Evidence Internal Validity Assessment",
+      "StructureDefinition-evidence-overall-assessment-grade.html" : "Evidence Overall Assessment GRADE",
+      "StructureDefinition-evidence-overall-assessment-oxford2011.html" : "Evidence Overall Assessment Oxford 2011",
+      "StructureDefinition-evidence-internal-assessment-robis.html" : "Evidence Internal Assessment ROBIS",
+      "StructureDefinition-recommendation-justification-expert-consensus.html" : "Recommendation Justification Expert Consensus",
+      "StructureDefinition-evidence-internal-assessment-amstar2.html" : "Evidence Internal Assessment AMSTAR 2",
+      "StructureDefinition-recommendation-justification-oxford-2009.html" : "Recommendation Justification OXFORD 2009",
+      "StructureDefinition-outcome-evidence.html" : "Outcome Evidence",
+      "StructureDefinition-recommendation-justification-grade.html" : "Recommendation Justification GRADE",
+      "StructureDefinition-recommendation-justification-oxford-2011.html" : "Recommendation Justification OXFORD 2011"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/characteristic-offset",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "CharacteristicOffset",
+      "title" : "Characteristic Offset",
+      "description" : "Reference point for characteristic.valueQuantity.",
+      "systems" : ["http://hl7.org/fhir/characteristic-offset"],
+      "oids" : ["2.16.840.1.113883.4.642.3.3061"],
+      "sources" : ["2.16.840.1.113883.4.642.3.3061"],
+      "uses" : {
+      },
+      "StructureDefinition-conceptual-cohort-definition-population.html" : "Conceptual Cohort Definition Population",
+      "StructureDefinition-conceptual-cohort-definition-comparator.html" : "Conceptual Cohort Definition Comparator",
+      "StructureDefinition-conceptual-cohort-definition-outcome.html" : "Conceptual Cohort Definition Outcome",
+      "StructureDefinition-pico-question.html" : "PICO Question",
+      "StructureDefinition-conceptual-cohort-definition-intervention.html" : "Conceptual Cohort Definition Intervention"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/citation-artifact-classifier",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "CitationArtifactClassifier",
+      "title" : "Citation Artifact Classifier",
+      "description" : "Citation artifact classifier",
+      "systems" : ["http://hl7.org/fhir/citation-artifact-classifier"],
+      "oids" : ["2.16.840.1.113883.4.642.3.3092"],
+      "sources" : ["2.16.840.1.113883.4.642.3.3092"],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record",
+      "StructureDefinition-recommendation.html" : "Recommendation"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/common-tags",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "CommonTags",
+      "title" : "Common Tags",
+      "description" : "Common Tag Codes defined by FHIR project",
+      "systems" : [
+        "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+        "http://terminology.hl7.org/CodeSystem/common-tags"
+      ],
+      "oids" : ["2.16.840.1.113883.4.642.3.79"],
+      "sources" : ["2.16.840.1.113883.4.642.3.79"],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/composition-attestation-mode",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "CompositionAttestationMode",
+      "title" : "Composition Attestation Mode",
+      "description" : "The way in which a person authenticated a composition.",
+      "systems" : ["http://hl7.org/fhir/composition-attestation-mode"],
+      "oids" : [
+        "2.16.840.1.113883.4.642.3.233",
+        "2.16.840.1.113883.4.642.3.238",
+        "2.16.840.1.113883.4.642.2.120"
+      ],
+      "sources" : [
+        "2.16.840.1.113883.4.642.3.233",
+        "2.16.840.1.113883.4.642.3.238",
+        "2.16.840.1.113883.4.642.2.120"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-guideline-attachment.html" : "Guideline Attachment"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/composition-status",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "CompositionStatus",
+      "title" : "Composition Status",
+      "description" : "The workflow/clinical status of the composition.",
+      "systems" : ["http://hl7.org/fhir/composition-status"],
+      "oids" : [
+        "2.16.840.1.113883.4.642.2.123",
+        "2.16.840.1.113883.4.642.3.236",
+        "2.16.840.1.113883.4.642.3.241"
+      ],
+      "sources" : [
+        "2.16.840.1.113883.4.642.2.123",
+        "2.16.840.1.113883.4.642.3.236",
+        "2.16.840.1.113883.4.642.3.241"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-evidence-report-with-contact-slices.html" : "Evidence Report with Contact Slices",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-awmf-guideline.html" : "Guideline",
+      "StructureDefinition-guideline-attachment.html" : "Guideline Attachment",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record",
+      "StructureDefinition-recommendation.html" : "Recommendation"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/contact-point-system",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "ContactPointSystem",
+      "title" : "ContactPointSystem",
+      "description" : "Telecommunications form for contact point.",
+      "systems" : ["http://hl7.org/fhir/contact-point-system"],
+      "oids" : ["2.16.840.1.113883.4.642.3.71"],
+      "sources" : ["2.16.840.1.113883.4.642.3.71"],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-evidence-report-with-contact-slices.html" : "Evidence Report with Contact Slices",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/contact-point-use",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "ContactPointUse",
+      "title" : "ContactPointUse",
+      "description" : "Use of contact point.",
+      "systems" : ["http://hl7.org/fhir/contact-point-use"],
+      "oids" : ["2.16.840.1.113883.4.642.3.73"],
+      "sources" : ["2.16.840.1.113883.4.642.3.73"],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-evidence-report-with-contact-slices.html" : "Evidence Report with Contact Slices",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/definition-method",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "DefinitionMethod",
+      "title" : "Definition Method",
+      "description" : "The method used to define, describe, or determine a characteristic value.",
+      "systems" : ["http://hl7.org/fhir/definition-method"],
+      "oids" : ["2.16.840.1.113883.4.642.3.3059"],
+      "sources" : ["2.16.840.1.113883.4.642.3.3059"],
+      "uses" : {
+      },
+      "StructureDefinition-conceptual-cohort-definition-population.html" : "Conceptual Cohort Definition Population",
+      "StructureDefinition-conceptual-cohort-definition-comparator.html" : "Conceptual Cohort Definition Comparator",
+      "StructureDefinition-conceptual-cohort-definition-outcome.html" : "Conceptual Cohort Definition Outcome",
+      "StructureDefinition-pico-question.html" : "PICO Question",
+      "StructureDefinition-conceptual-cohort-definition-intervention.html" : "Conceptual Cohort Definition Intervention"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/doc-section-codes",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "DocumentSectionCodes",
+      "title" : "Document Section Codes",
+      "description" : "Document section codes (LOINC codes used in CCDA sections).",
+      "systems" : ["http://loinc.org"],
+      "oids" : [
+        "2.16.840.1.113883.4.642.3.232",
+        "2.16.840.1.113883.4.642.2.119",
+        "2.16.840.1.113883.4.642.3.237"
+      ],
+      "sources" : [
+        "2.16.840.1.113883.4.642.3.232",
+        "2.16.840.1.113883.4.642.2.119",
+        "2.16.840.1.113883.4.642.3.237"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-awmf-guideline.html" : "Guideline",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record",
+      "StructureDefinition-recommendation.html" : "Recommendation"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/doc-typecodes",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "FHIRDocumentTypeCodes",
+      "title" : "FHIR Document Type Codes",
+      "description" : "FHIR Document Codes - all LOINC codes where scale type = 'DOC'.",
+      "systems" : ["http://loinc.org"],
+      "oids" : [
+        "2.16.840.1.113883.4.642.3.235",
+        "2.16.840.1.113883.4.642.2.121",
+        "2.16.840.1.113883.4.642.3.240"
+      ],
+      "sources" : [
+        "2.16.840.1.113883.4.642.3.235",
+        "2.16.840.1.113883.4.642.2.121",
+        "2.16.840.1.113883.4.642.3.240"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-evidence-report-with-contact-slices.html" : "Evidence Report with Contact Slices",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-awmf-guideline.html" : "Guideline",
+      "StructureDefinition-guideline-attachment.html" : "Guideline Attachment",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record",
+      "StructureDefinition-recommendation.html" : "Recommendation"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/document-reference-status",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "DocumentReferenceStatus",
+      "title" : "DocumentReferenceStatus",
+      "description" : "The status of the document reference.",
+      "systems" : ["http://hl7.org/fhir/document-reference-status"],
+      "oids" : ["2.16.840.1.113883.4.642.3.7"],
+      "sources" : ["2.16.840.1.113883.4.642.3.7"],
+      "uses" : {
+      },
+      "StructureDefinition-guideline-attachment.html" : "Guideline Attachment"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/document-relationship-type",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "DocumentRelationshipType",
+      "title" : "Document Relationship Type",
+      "description" : "The type of relationship between documents.",
+      "systems" : ["http://hl7.org/fhir/document-relationship-type"],
+      "oids" : [
+        "2.16.840.1.113883.4.642.3.244",
+        "2.16.840.1.113883.4.642.3.239",
+        "2.16.840.1.113883.4.642.2.133"
+      ],
+      "sources" : [
+        "2.16.840.1.113883.4.642.3.244",
+        "2.16.840.1.113883.4.642.3.239",
+        "2.16.840.1.113883.4.642.2.133"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-guideline-attachment.html" : "Guideline Attachment"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/example-characteristic-codes",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "ExampleCharacteristicCodes",
+      "title" : "Example Characterist ic Codes",
+      "description" : "This value set contains an example set of LOINC codes that might be used to define common characteristics for grouping individuals in FHIR Group resources.",
+      "systems" : ["http://loinc.org"],
+      "uses" : {
+      },
+      "StructureDefinition-conceptual-cohort-definition-population.html" : "Conceptual Cohort Definition Population",
+      "StructureDefinition-conceptual-cohort-definition-comparator.html" : "Conceptual Cohort Definition Comparator",
+      "StructureDefinition-conceptual-cohort-definition-outcome.html" : "Conceptual Cohort Definition Outcome",
+      "StructureDefinition-pico-question.html" : "PICO Question",
+      "StructureDefinition-conceptual-cohort-definition-intervention.html" : "Conceptual Cohort Definition Intervention"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/group-characteristic-combination",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "GroupCharacteristicCombination",
+      "title" : "Group Characteristic Combination",
+      "description" : "Logical grouping of characteristics for the Group Resource.",
+      "systems" : ["http://hl7.org/fhir/group-characteristic-combination"],
+      "oids" : ["2.16.840.1.113883.4.642.3.1344"],
+      "sources" : ["2.16.840.1.113883.4.642.3.1344"],
+      "uses" : {
+      },
+      "StructureDefinition-conceptual-cohort-definition-population.html" : "Conceptual Cohort Definition Population",
+      "StructureDefinition-conceptual-cohort-definition-comparator.html" : "Conceptual Cohort Definition Comparator",
+      "StructureDefinition-conceptual-cohort-definition-outcome.html" : "Conceptual Cohort Definition Outcome",
+      "StructureDefinition-pico-question.html" : "PICO Question",
+      "StructureDefinition-conceptual-cohort-definition-intervention.html" : "Conceptual Cohort Definition Intervention"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/group-code",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "GroupCode",
+      "title" : "Group Code",
+      "description" : "A code that describes the use of the group. The use of the group usually dictates what kind of entities can be members of the group",
+      "systems" : ["http://hl7.org/fhir/group-code"],
+      "uses" : {
+      },
+      "StructureDefinition-conceptual-cohort-definition-population.html" : "Conceptual Cohort Definition Population",
+      "StructureDefinition-conceptual-cohort-definition-comparator.html" : "Conceptual Cohort Definition Comparator",
+      "StructureDefinition-conceptual-cohort-definition-outcome.html" : "Conceptual Cohort Definition Outcome",
+      "StructureDefinition-pico-question.html" : "PICO Question",
+      "StructureDefinition-conceptual-cohort-definition-intervention.html" : "Conceptual Cohort Definition Intervention"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/group-involvement-set",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "GroupInvolvement",
+      "title" : "Group Involvement",
+      "description" : "A code that describes how a member of the group participates in the group.",
+      "systems" : ["http://hl7.org/fhir/group-involvement"],
+      "uses" : {
+      },
+      "StructureDefinition-conceptual-cohort-definition-population.html" : "Conceptual Cohort Definition Population",
+      "StructureDefinition-conceptual-cohort-definition-comparator.html" : "Conceptual Cohort Definition Comparator",
+      "StructureDefinition-conceptual-cohort-definition-outcome.html" : "Conceptual Cohort Definition Outcome",
+      "StructureDefinition-pico-question.html" : "PICO Question",
+      "StructureDefinition-conceptual-cohort-definition-intervention.html" : "Conceptual Cohort Definition Intervention"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/group-membership-basis",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "GroupMembershipBasis",
+      "title" : "Group Membership Basis",
+      "description" : "Basis for membership in a group",
+      "systems" : ["http://hl7.org/fhir/group-membership-basis"],
+      "oids" : ["2.16.840.1.113883.4.642.3.3069"],
+      "sources" : ["2.16.840.1.113883.4.642.3.3069"],
+      "uses" : {
+      },
+      "StructureDefinition-conceptual-cohort-definition-population.html" : "Conceptual Cohort Definition Population",
+      "StructureDefinition-conceptual-cohort-definition-comparator.html" : "Conceptual Cohort Definition Comparator",
+      "StructureDefinition-conceptual-cohort-definition-outcome.html" : "Conceptual Cohort Definition Outcome",
+      "StructureDefinition-pico-question.html" : "PICO Question",
+      "StructureDefinition-conceptual-cohort-definition-intervention.html" : "Conceptual Cohort Definition Intervention"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/group-type",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "GroupType",
+      "title" : "Group Type",
+      "description" : "Types of resources that are part of group.",
+      "systems" : ["http://hl7.org/fhir/group-type"],
+      "oids" : [
+        "2.16.840.1.113883.4.642.3.277",
+        "2.16.840.1.113883.4.642.2.156",
+        "2.16.840.1.113883.4.642.3.284"
+      ],
+      "sources" : [
+        "2.16.840.1.113883.4.642.3.277",
+        "2.16.840.1.113883.4.642.2.156",
+        "2.16.840.1.113883.4.642.3.284"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-conceptual-cohort-definition-population.html" : "Conceptual Cohort Definition Population",
+      "StructureDefinition-conceptual-cohort-definition-comparator.html" : "Conceptual Cohort Definition Comparator",
+      "StructureDefinition-conceptual-cohort-definition-outcome.html" : "Conceptual Cohort Definition Outcome",
+      "StructureDefinition-pico-question.html" : "PICO Question",
+      "StructureDefinition-conceptual-cohort-definition-intervention.html" : "Conceptual Cohort Definition Intervention"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/identifier-type",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "IdentifierTypeCodes",
+      "title" : "Identifier Type Codes",
+      "description" : "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0203"],
+      "oids" : ["2.16.840.1.113883.4.642.3.45"],
+      "sources" : ["2.16.840.1.113883.4.642.3.45"],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-member-organization.html" : "AWMF Member Organization",
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-awmf-guideline.html" : "Guideline",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/identifier-use",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "IdentifierUse",
+      "title" : "IdentifierUse",
+      "description" : "Identifies the purpose for this identifier, if known .",
+      "systems" : ["http://hl7.org/fhir/identifier-use"],
+      "oids" : ["2.16.840.1.113883.4.642.3.57"],
+      "sources" : ["2.16.840.1.113883.4.642.3.57"],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-member-organization.html" : "AWMF Member Organization",
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-awmf-guideline.html" : "Guideline",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/languages",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "CommonLanguages",
+      "title" : "Common Languages",
+      "description" : "This value set includes common codes from BCP-47 (see http://tools.ietf.org/html/bcp47)",
+      "systems" : ["urn:ietf:bcp:47"],
+      "oids" : [
+        "2.16.840.1.113883.4.642.3.891",
+        "2.16.840.1.113883.4.642.3.20"
+      ],
+      "sources" : [
+        "2.16.840.1.113883.4.642.3.891",
+        "2.16.840.1.113883.4.642.3.20"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-evidence-internal-assessment-cochrane-rob.html" : "Evidence Internal Assessment Cochrane Risk of Bias",
+      "StructureDefinition-guideline-author.html" : "Guideline Author",
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-evidence-overall-quality-assessment.html" : "Evidence Overall Quality Assessment",
+      "StructureDefinition-evidence-overall-assessment-grade.html" : "Evidence Overall Assessment GRADE",
+      "StructureDefinition-evidence-overall-assessment-oxford2011.html" : "Evidence Overall Assessment Oxford 2011",
+      "StructureDefinition-evidence-internal-assessment-robis.html" : "Evidence Internal Assessment ROBIS",
+      "StructureDefinition-patient-organization.html" : "Patient Organization",
+      "StructureDefinition-recommendation.html" : "Recommendation",
+      "StructureDefinition-conceptual-cohort-definition-comparator.html" : "Conceptual Cohort Definition Comparator",
+      "StructureDefinition-evidence-internal-assessment-amstar2.html" : "Evidence Internal Assessment AMSTAR 2",
+      "StructureDefinition-recommendation-justification-oxford-2009.html" : "Recommendation Justification OXFORD 2009",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-conceptual-cohort-definition-intervention.html" : "Conceptual Cohort Definition Intervention",
+      "StructureDefinition-outcome-evidence.html" : "Outcome Evidence",
+      "StructureDefinition-recommendation-justification-oxford-2011.html" : "Recommendation Justification OXFORD 2011",
+      "StructureDefinition-citation-list.html" : "Citation List",
+      "StructureDefinition-evidence-report-with-contact-slices.html" : "Evidence Report with Contact Slices",
+      "StructureDefinition-recommendation-justification-sign.html" : "Recommendation Justification SIGN",
+      "StructureDefinition-recommendation-justification.html" : "Recommendation Justification",
+      "StructureDefinition-ext-section-language.html" : "Section Language",
+      "StructureDefinition-awmf-guideline.html" : "Guideline",
+      "StructureDefinition-conceptual-cohort-definition-outcome.html" : "Conceptual Cohort Definition Outcome",
+      "StructureDefinition-evidence-internal-assessment-agreeii.html" : "Evidence Internal Assessment AGREE II",
+      "StructureDefinition-ext-author-language.html" : "Author Language",
+      "StructureDefinition-guideline-attachment.html" : "Guideline Attachment",
+      "StructureDefinition-recommendation-justification-awmf.html" : "Recommendation Justification AWMF",
+      "StructureDefinition-evidence-assessment.html" : "Evidence Assessment",
+      "StructureDefinition-guideline-author-role.html" : "Guideline Author Role",
+      "StructureDefinition-evidence-internal-validity-assessment.html" : "Evidence Internal Validity Assessment",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record",
+      "StructureDefinition-conceptual-cohort-definition-population.html" : "Conceptual Cohort Definition Population",
+      "StructureDefinition-awmf-member-organization.html" : "AWMF Member Organization",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-medical-society.html" : "Medical Society",
+      "StructureDefinition-recommendation-justification-expert-consensus.html" : "Recommendation Justification Expert Consensus",
+      "StructureDefinition-pico-question.html" : "PICO Question",
+      "StructureDefinition-recommendation-justification-grade.html" : "Recommendation Justification GRADE"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/list-empty-reason",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "ListEmptyReasons",
+      "title" : "List Empty Reasons",
+      "description" : "General reasons for a list to be empty. Reasons are either related to a summary list (i.e. problem or medication list) or to a workflow related list (i.e. consultation list).",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/list-empty-reason"],
+      "oids" : [
+        "2.16.840.1.113883.4.642.3.322",
+        "2.16.840.1.113883.4.642.3.313",
+        "2.16.840.1.113883.4.642.2.176"
+      ],
+      "sources" : [
+        "2.16.840.1.113883.4.642.3.322",
+        "2.16.840.1.113883.4.642.3.313",
+        "2.16.840.1.113883.4.642.2.176"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-evidence-report-with-contact-slices.html" : "Evidence Report with Contact Slices",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-awmf-guideline.html" : "Guideline",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-citation-list.html" : "Citation List",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record",
+      "StructureDefinition-recommendation.html" : "Recommendation"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/list-example-codes",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "ExampleUseCodesForList",
+      "title" : "Example Use Codes for List",
+      "description" : "Example use codes for the List resource - typical kinds of use.",
+      "systems" : [
+        "http://terminology.hl7.org/CodeSystem/list-example-use-codes"
+      ],
+      "oids" : [
+        "2.16.840.1.113883.4.642.3.316",
+        "2.16.840.1.113883.4.642.3.307",
+        "2.16.840.1.113883.4.642.2.173"
+      ],
+      "sources" : [
+        "2.16.840.1.113883.4.642.3.316",
+        "2.16.840.1.113883.4.642.3.307",
+        "2.16.840.1.113883.4.642.2.173"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-citation-list.html" : "Citation List"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/list-item-flag",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "PatientMedicineChangeTypes",
+      "title" : "Patient Medicine Change Types",
+      "description" : "Example Item Flags for the List Resource. In this case, these are the kind of flags that would be used on a medication list at the end of a consultation.",
+      "systems" : ["urn:oid:1.2.36.1.2001.1001.101.104.16592"],
+      "oids" : [
+        "2.16.840.1.113883.4.642.3.311",
+        "2.16.840.1.113883.4.642.3.320",
+        "2.16.840.1.113883.4.642.2.175"
+      ],
+      "sources" : [
+        "2.16.840.1.113883.4.642.3.311",
+        "2.16.840.1.113883.4.642.3.320",
+        "2.16.840.1.113883.4.642.2.175"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-citation-list.html" : "Citation List"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/list-mode",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "ListMode",
+      "title" : "List Mode",
+      "description" : "The processing mode that applies to this list.",
+      "systems" : ["http://hl7.org/fhir/list-mode"],
+      "oids" : [
+        "2.16.840.1.113883.4.642.2.174",
+        "2.16.840.1.113883.4.642.3.309",
+        "2.16.840.1.113883.4.642.3.318"
+      ],
+      "sources" : [
+        "2.16.840.1.113883.4.642.2.174",
+        "2.16.840.1.113883.4.642.3.309",
+        "2.16.840.1.113883.4.642.3.318"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-citation-list.html" : "Citation List"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/list-order",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "ListOrderCodes",
+      "title" : "List Order Codes",
+      "description" : "Base values for the order of the items in a list resource.",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/list-order"],
+      "oids" : [
+        "2.16.840.1.113883.4.642.3.315",
+        "2.16.840.1.113883.4.642.3.324",
+        "2.16.840.1.113883.4.642.2.177"
+      ],
+      "sources" : [
+        "2.16.840.1.113883.4.642.3.315",
+        "2.16.840.1.113883.4.642.3.324",
+        "2.16.840.1.113883.4.642.2.177"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-evidence-report-with-contact-slices.html" : "Evidence Report with Contact Slices",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-awmf-guideline.html" : "Guideline",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-citation-list.html" : "Citation List",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record",
+      "StructureDefinition-recommendation.html" : "Recommendation"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/list-status",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "ListStatus",
+      "title" : "List Status",
+      "description" : "The current state of the list.",
+      "systems" : ["http://hl7.org/fhir/list-status"],
+      "oids" : [
+        "2.16.840.1.113883.4.642.3.326",
+        "2.16.840.1.113883.4.642.2.178",
+        "2.16.840.1.113883.4.642.3.317"
+      ],
+      "sources" : [
+        "2.16.840.1.113883.4.642.3.326",
+        "2.16.840.1.113883.4.642.2.178",
+        "2.16.840.1.113883.4.642.3.317"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-citation-list.html" : "Citation List"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/organization-type",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "OrganizationType",
+      "title" : "Organization Type",
+      "description" : "This example value set defines a set of codes that can be used to indicate a type of organization.",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/organization-type"],
+      "oids" : [
+        "2.16.840.1.113883.4.642.2.228",
+        "2.16.840.1.113883.4.642.3.414",
+        "2.16.840.1.113883.4.642.3.403"
+      ],
+      "sources" : [
+        "2.16.840.1.113883.4.642.2.228",
+        "2.16.840.1.113883.4.642.3.414",
+        "2.16.840.1.113883.4.642.3.403"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-member-organization.html" : "AWMF Member Organization",
+      "StructureDefinition-medical-society.html" : "Medical Society",
+      "StructureDefinition-patient-organization.html" : "Patient Organization"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/practitioner-role",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "PractitionerRole",
+      "title" : "Practitioner Role",
+      "description" : "This example value set defines a set of codes that can be used to indicate the role of a Practitioner.",
+      "systems" : [
+        "http://terminology.hl7.org/CodeSystem/practitioner-role",
+        "http://snomed.info/sct"
+      ],
+      "oids" : [
+        "2.16.840.1.113883.4.642.3.430",
+        "2.16.840.1.113883.4.642.2.251",
+        "2.16.840.1.113883.4.642.3.439"
+      ],
+      "sources" : [
+        "2.16.840.1.113883.4.642.3.430",
+        "2.16.840.1.113883.4.642.2.251",
+        "2.16.840.1.113883.4.642.3.439"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-guideline-author-role.html" : "Guideline Author Role"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/publication-status",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "PublicationStatus",
+      "title" : "PublicationStatus",
+      "description" : "The lifecycle status of an artifact.",
+      "systems" : ["http://hl7.org/fhir/publication-status"],
+      "oids" : ["2.16.840.1.113883.4.642.3.3"],
+      "sources" : ["2.16.840.1.113883.4.642.3.3"],
+      "uses" : {
+      },
+      "StructureDefinition-conceptual-cohort-definition-population.html" : "Conceptual Cohort Definition Population",
+      "StructureDefinition-conceptual-cohort-definition-comparator.html" : "Conceptual Cohort Definition Comparator",
+      "StructureDefinition-conceptual-cohort-definition-outcome.html" : "Conceptual Cohort Definition Outcome",
+      "StructureDefinition-pico-question.html" : "PICO Question",
+      "StructureDefinition-conceptual-cohort-definition-intervention.html" : "Conceptual Cohort Definition Intervention",
+      "StructureDefinition-outcome-evidence.html" : "Outcome Evidence"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/qualification-status",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "QualificationStatus",
+      "title" : "Qualification Status",
+      "description" : "Set of statuses that apply to qualifications of practitioners and organizations",
+      "systems" : ["http://hl7.org/fhir/qualification-status"],
+      "oids" : ["2.16.840.1.113883.4.642.3.3346"],
+      "sources" : ["2.16.840.1.113883.4.642.3.3346"],
+      "uses" : {
+      },
+      "StructureDefinition-guideline-author.html" : "Guideline Author",
+      "StructureDefinition-awmf-member-organization.html" : "AWMF Member Organization",
+      "StructureDefinition-medical-society.html" : "Medical Society",
+      "StructureDefinition-patient-organization.html" : "Patient Organization"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/referenced-item-category",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "ReferencedItemCategoryValueSet",
+      "title" : "Referenced Item Category Value Set",
+      "description" : "This is the code specifying the high-level kind of document (e.g. Prescription, Discharge Summary, Report, etc.). Made up of a set of non-healthcare specific codes and all LOINC codes where scale type = 'DOC'.",
+      "systems" : [
+        "http://loinc.org",
+        "http://terminology.hl7.org/CodeSystem/media-category"
+      ],
+      "oids" : ["2.16.840.1.113883.4.642.3.3275"],
+      "sources" : ["2.16.840.1.113883.4.642.3.3275"],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-evidence-report-with-contact-slices.html" : "Evidence Report with Contact Slices",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-awmf-guideline.html" : "Guideline",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record",
+      "StructureDefinition-recommendation.html" : "Recommendation"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/resource-types",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "ResourceType",
+      "title" : "Resource Types",
+      "description" : "Concrete FHIR Resource Types",
+      "systems" : ["http://hl7.org/fhir/fhir-types"],
+      "oids" : ["2.16.840.1.113883.4.642.3.27"],
+      "sources" : ["2.16.840.1.113883.4.642.3.27"],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/security-label-examples",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "SecurityLabelExamples",
+      "title" : "Example set of Security Labels",
+      "description" : "A sample of security labels from [Healthcare Privacy and Security Classification System](http://hl7.org/fhir/R5/security-labels.html#hcs) as the combination of data and event codes.",
+      "systems" : [
+        "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "http://terminology.hl7.org/CodeSystem/v3-Confidentiality"
+      ],
+      "oids" : ["2.16.840.1.113883.4.642.3.3011"],
+      "sources" : ["2.16.840.1.113883.4.642.3.3011"],
+      "uses" : {
+      },
+      "StructureDefinition-guideline-attachment.html" : "Guideline Attachment"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/security-labels",
+      "version" : "6.0.0-ballot3",
+      "status" : "active",
+      "name" : "AllSecurityLabels",
+      "title" : "All Security Labels",
+      "description" : "A single value set for all security labels defined by FHIR.",
+      "systems" : [
+        "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "http://terminology.hl7.org/CodeSystem/v3-ActUSPrivacyLaw",
+        "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+        "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "http://terminology.hl7.org/CodeSystem/v3-Confidentiality"
+      ],
+      "oids" : [
+        "2.16.840.1.113883.4.642.3.46",
+        "2.16.840.1.113883.4.642.2.31",
+        "2.16.840.1.113883.4.642.3.47"
+      ],
+      "sources" : [
+        "2.16.840.1.113883.4.642.3.46",
+        "2.16.840.1.113883.4.642.2.31",
+        "2.16.840.1.113883.4.642.3.47"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record",
+      "StructureDefinition-recommendation.html" : "Recommendation"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/service-mode",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "ServiceMode",
+      "title" : "Service Mode",
+      "description" : "An example set of Service Modes that could be applicable to use to characterize HealthcareServices or PractitionerRoles while searching",
+      "systems" : ["http://hl7.org/fhir/service-mode"],
+      "oids" : ["2.16.840.1.113883.4.642.4.3322"],
+      "sources" : ["2.16.840.1.113883.4.642.4.3322"],
+      "uses" : {
+      },
+      "StructureDefinition-guideline-author-role.html" : "Guideline Author Role"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/statistic-model-code",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "StatisticModelCode",
+      "title" : "Statistic Model Code",
+      "description" : "The handling of the variable in statistical analysis for exposures or outcomes.",
+      "systems" : ["http://hl7.org/fhir/statistic-model-code"],
+      "oids" : ["2.16.840.1.113883.4.642.3.3046"],
+      "sources" : ["2.16.840.1.113883.4.642.3.3046"],
+      "uses" : {
+      },
+      "StructureDefinition-outcome-evidence.html" : "Outcome Evidence"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/statistic-type",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "StatisticType",
+      "title" : "Statistic Type",
+      "description" : "The type of a statistic, e.g. relative risk or mean",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/statistic-type"],
+      "oids" : ["2.16.840.1.113883.4.642.3.3044"],
+      "sources" : ["2.16.840.1.113883.4.642.3.3044"],
+      "uses" : {
+      },
+      "StructureDefinition-outcome-evidence.html" : "Outcome Evidence"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/study-design",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "StudyDesign",
+      "title" : "Study Design",
+      "description" : "This is a set of terms for study design characteristics.",
+      "systems" : ["http://hl7.org/fhir/study-design"],
+      "oids" : ["2.16.840.1.113883.4.642.3.3045"],
+      "sources" : ["2.16.840.1.113883.4.642.3.3045"],
+      "uses" : {
+      },
+      "StructureDefinition-outcome-evidence.html" : "Outcome Evidence"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/variable-handling",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "EvidenceVariableHandling",
+      "title" : "Evidence Variable Handling",
+      "description" : "The handling of the variable in statistical analysis for exposures or outcomes (E.g. Dichotomous, Continuous, Descriptive).",
+      "systems" : ["http://hl7.org/fhir/variable-handling"],
+      "oids" : ["2.16.840.1.113883.4.642.3.3062"],
+      "sources" : ["2.16.840.1.113883.4.642.3.3062"],
+      "uses" : {
+      },
+      "StructureDefinition-outcome-evidence.html" : "Outcome Evidence"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/variable-role",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "EvidenceVariableRole",
+      "title" : "Evidence Variable Role",
+      "description" : "The role that the variable plays.",
+      "systems" : ["http://hl7.org/fhir/variable-role"],
+      "oids" : ["2.16.840.1.113883.4.642.3.3048"],
+      "sources" : ["2.16.840.1.113883.4.642.3.3048"],
+      "uses" : {
+      },
+      "StructureDefinition-outcome-evidence.html" : "Outcome Evidence"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/variable-role-subtype",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "EvidenceVariableRoleSubtype",
+      "title" : "Evidence Variable Role Subtype",
+      "description" : "The sub-role that the variable plays.",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/variable-role"],
+      "oids" : ["2.16.840.1.113883.4.642.3.3345"],
+      "sources" : ["2.16.840.1.113883.4.642.3.3345"],
+      "uses" : {
+      },
+      "StructureDefinition-outcome-evidence.html" : "Outcome Evidence"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/version-algorithm",
+      "version" : "6.0.0-ballot3",
+      "status" : "draft",
+      "name" : "VersionAlgorithm",
+      "title" : "Version Algorithm",
+      "description" : "Indicates the mechanism used to compare versions to determine which is more current.",
+      "systems" : ["http://hl7.org/fhir/version-algorithm"],
+      "oids" : ["2.16.840.1.113883.4.642.3.3103"],
+      "sources" : ["2.16.840.1.113883.4.642.3.3103"],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-awmf-guideline.html" : "Guideline",
+      "StructureDefinition-conceptual-cohort-definition-outcome.html" : "Conceptual Cohort Definition Outcome",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record",
+      "StructureDefinition-recommendation.html" : "Recommendation",
+      "StructureDefinition-conceptual-cohort-definition-population.html" : "Conceptual Cohort Definition Population",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-conceptual-cohort-definition-comparator.html" : "Conceptual Cohort Definition Comparator",
+      "StructureDefinition-pico-question.html" : "PICO Question",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-conceptual-cohort-definition-intervention.html" : "Conceptual Cohort Definition Intervention",
+      "StructureDefinition-outcome-evidence.html" : "Outcome Evidence"
+    },
+    {
+      "url" : "http://hl7.org/fhir/uv/ebm/ValueSet/evidence-rating-system-classifier",
+      "version" : "1.0.0-ballot3",
+      "status" : "active",
+      "name" : "EvidenceRatingSystemClassifier",
+      "title" : "Evidence Rating System Classifier Codes Value Set",
+      "description" : "Codes for use with the EvidenceAssessment Profile, to provide values for the content.classifier element where content.type is Rating System.",
+      "systems" : [
+        "http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem"
+      ],
+      "oids" : ["2.16.840.1.113883.4.642.40.44.48.10"],
+      "sources" : ["2.16.840.1.113883.4.642.40.44.48.10"],
+      "uses" : {
+      },
+      "StructureDefinition-evidence-internal-assessment-cochrane-rob.html" : "Evidence Internal Assessment Cochrane Risk of Bias",
+      "StructureDefinition-recommendation-justification.html" : "Recommendation Justification",
+      "StructureDefinition-recommendation-justification-sign.html" : "Recommendation Justification SIGN",
+      "StructureDefinition-evidence-internal-assessment-agreeii.html" : "Evidence Internal Assessment AGREE II",
+      "StructureDefinition-recommendation-justification-awmf.html" : "Recommendation Justification AWMF",
+      "StructureDefinition-evidence-assessment.html" : "Evidence Assessment",
+      "StructureDefinition-evidence-overall-quality-assessment.html" : "Evidence Overall Quality Assessment",
+      "StructureDefinition-evidence-internal-validity-assessment.html" : "Evidence Internal Validity Assessment",
+      "StructureDefinition-evidence-overall-assessment-grade.html" : "Evidence Overall Assessment GRADE",
+      "StructureDefinition-evidence-overall-assessment-oxford2011.html" : "Evidence Overall Assessment Oxford 2011",
+      "StructureDefinition-evidence-internal-assessment-robis.html" : "Evidence Internal Assessment ROBIS",
+      "StructureDefinition-recommendation-justification-expert-consensus.html" : "Recommendation Justification Expert Consensus",
+      "StructureDefinition-evidence-internal-assessment-amstar2.html" : "Evidence Internal Assessment AMSTAR 2",
+      "StructureDefinition-recommendation-justification-oxford-2009.html" : "Recommendation Justification OXFORD 2009",
+      "StructureDefinition-recommendation-justification-grade.html" : "Recommendation Justification GRADE",
+      "StructureDefinition-recommendation-justification-oxford-2011.html" : "Recommendation Justification OXFORD 2011"
+    },
+    {
+      "url" : "http://terminology.hl7.org/ValueSet/certainty-rating",
+      "version" : "1.0.0",
+      "status" : "draft",
+      "name" : "StatisticCertaintyRating",
+      "title" : "StatisticCertaintyRating",
+      "description" : "The relative quality of the statistic.",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/certainty-rating"],
+      "oids" : ["2.16.840.1.113883.4.642.3.1414"],
+      "sources" : ["2.16.840.1.113883.4.642.3.1414"],
+      "uses" : {
+      },
+      "StructureDefinition-evidence-internal-assessment-cochrane-rob.html" : "Evidence Internal Assessment Cochrane Risk of Bias",
+      "StructureDefinition-evidence-internal-assessment-agreeii.html" : "Evidence Internal Assessment AGREE II",
+      "StructureDefinition-evidence-assessment.html" : "Evidence Assessment",
+      "StructureDefinition-evidence-internal-assessment-amstar2.html" : "Evidence Internal Assessment AMSTAR 2",
+      "StructureDefinition-evidence-overall-quality-assessment.html" : "Evidence Overall Quality Assessment",
+      "StructureDefinition-evidence-internal-validity-assessment.html" : "Evidence Internal Validity Assessment",
+      "StructureDefinition-evidence-overall-assessment-grade.html" : "Evidence Overall Assessment GRADE",
+      "StructureDefinition-evidence-overall-assessment-oxford2011.html" : "Evidence Overall Assessment Oxford 2011",
+      "StructureDefinition-evidence-internal-assessment-robis.html" : "Evidence Internal Assessment ROBIS"
+    },
+    {
+      "url" : "http://terminology.hl7.org/ValueSet/certainty-type",
+      "version" : "1.0.0",
+      "status" : "active",
+      "name" : "EvidenceCertaintyType",
+      "title" : "Evidence Certainty Type",
+      "description" : "The aspect of quality, confidence, or certainty.",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/certainty-type"],
+      "uses" : {
+      },
+      "StructureDefinition-evidence-internal-assessment-cochrane-rob.html" : "Evidence Internal Assessment Cochrane Risk of Bias",
+      "StructureDefinition-evidence-internal-assessment-agreeii.html" : "Evidence Internal Assessment AGREE II",
+      "StructureDefinition-evidence-assessment.html" : "Evidence Assessment",
+      "StructureDefinition-evidence-internal-assessment-amstar2.html" : "Evidence Internal Assessment AMSTAR 2",
+      "StructureDefinition-evidence-overall-quality-assessment.html" : "Evidence Overall Quality Assessment",
+      "StructureDefinition-evidence-internal-validity-assessment.html" : "Evidence Internal Validity Assessment",
+      "StructureDefinition-evidence-overall-assessment-grade.html" : "Evidence Overall Assessment GRADE",
+      "StructureDefinition-evidence-overall-assessment-oxford2011.html" : "Evidence Overall Assessment Oxford 2011",
+      "StructureDefinition-evidence-internal-assessment-robis.html" : "Evidence Internal Assessment ROBIS"
+    },
+    {
+      "url" : "http://terminology.hl7.org/ValueSet/contactentity-type",
+      "version" : "1.0.0",
+      "status" : "draft",
+      "name" : "ContactEntityType",
+      "title" : "Contact entity type",
+      "description" : "This example value set defines a set of codes that can be used to indicate the purpose for which you would contact a contact party.",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/contactentity-type"],
+      "oids" : ["2.16.840.1.113883.4.642.3.416"],
+      "sources" : ["2.16.840.1.113883.4.642.3.416"],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-evidence-report-with-contact-slices.html" : "Evidence Report with Contact Slices",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record"
+    },
+    {
+      "url" : "http://terminology.hl7.org/ValueSet/contributor-role",
+      "version" : "1.0.0",
+      "status" : "active",
+      "name" : "ContributorRole",
+      "title" : "Contributor Role",
+      "description" : "Used to code the format of the display string.",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/contributor-role"],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-evidence-report-with-contact-slices.html" : "Evidence Report with Contact Slices",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-awmf-guideline.html" : "Guideline",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record",
+      "StructureDefinition-recommendation.html" : "Recommendation"
+    },
+    {
+      "url" : "http://terminology.hl7.org/ValueSet/directness",
+      "version" : "1.0.0",
+      "status" : "draft",
+      "name" : "EvidenceDirectness",
+      "title" : "EvidenceDirectness",
+      "description" : "The quality of how direct the match is.",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/directness"],
+      "oids" : ["2.16.840.1.113883.4.642.3.1458"],
+      "sources" : ["2.16.840.1.113883.4.642.3.1458"],
+      "uses" : {
+      },
+      "StructureDefinition-outcome-evidence.html" : "Outcome Evidence"
+    },
+    {
+      "url" : "http://terminology.hl7.org/ValueSet/recommendation-strength",
+      "version" : "1.0.1",
+      "status" : "active",
+      "name" : "StrengthOfRecommendationRating",
+      "title" : "StrengthOfRecommendationRating",
+      "description" : "A rating system that describes the strength of the recommendation, such as the GRADE, DynaMed, or HGPS systems.",
+      "systems" : [
+        "http://terminology.hl7.org/CodeSystem/recommendation-strength"
+      ],
+      "oids" : ["2.16.840.1.113883.4.642.3.1021"],
+      "sources" : ["2.16.840.1.113883.4.642.3.1021"],
+      "uses" : {
+      },
+      "StructureDefinition-recommendation-justification-grade.html" : "Recommendation Justification GRADE"
+    },
+    {
+      "url" : "http://terminology.hl7.org/ValueSet/synthesis-type",
+      "version" : "1.0.0",
+      "status" : "draft",
+      "name" : "StatisticSynthesisType",
+      "title" : "StatisticSynthesisType",
+      "description" : "Types of combining results from a body of evidence (eg. summary data meta-analysis).",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/synthesis-type"],
+      "oids" : ["2.16.840.1.113883.4.642.3.1347"],
+      "sources" : ["2.16.840.1.113883.4.642.3.1347"],
+      "uses" : {
+      },
+      "StructureDefinition-outcome-evidence.html" : "Outcome Evidence"
+    },
+    {
+      "url" : "http://terminology.hl7.org/ValueSet/v2-0360",
+      "version" : "2.0.0",
+      "status" : "active",
+      "name" : "Hl7VSDegreeLicenseCertificate",
+      "title" : "hl7VS-degreeLicenseCertificate",
+      "description" : "Concepts specifying an educational degree (e.g., MD).  Used in the CNN datatype (names and identifiers of clinicians) in Version 2 messaging.  Used in Version 2 messaging; note that in releases of HL7 prior to 2.3.1, was also used in person names (XPN), but this use was deprecated, then withdrawn in 2.7.",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0360"],
+      "oids" : ["2.16.840.1.113883.21.236"],
+      "sources" : ["2.16.840.1.113883.21.236"],
+      "uses" : {
+      },
+      "StructureDefinition-guideline-author.html" : "Guideline Author"
+    },
+    {
+      "url" : "http://terminology.hl7.org/ValueSet/v3-ActCode",
+      "version" : "3.0.0",
+      "status" : "active",
+      "name" : "ActCode",
+      "title" : "v3 Code System ActCode",
+      "description" : "A code specifying the particular kind of Act that the Act-instance represents within its class.  Constraints:\r\nThe kind of Act (e.g. physical examination, serum potassium, inpatient encounter, charge financial transaction, etc.) is specified with a code from one of several, typically external, coding systems.  The coding system will depend on the class of Act, such as LOINC for observations, etc. Conceptually, the Act.code must be a specialization of the Act.classCode. This is why the structure of ActClass domain should be reflected in the superstructure of the ActCode domain and then individual codes or externally referenced vocabularies subordinated under these domains that reflect the ActClass structure. Act.classCode and Act.code are not modifiers of each other but the Act.code concept should really imply the Act.classCode concept. For a negative example, it is not appropriate to use an Act.code \"potassium\" together with and Act.classCode for \"laboratory observation\" to somehow mean \"potassium laboratory observation\" and then use the same Act.code for \"potassium\" together with Act.classCode for \"medication\" to mean \"substitution of potassium\". This mutually modifying use of Act.code and Act.classCode is not permitted.",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActCode"],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-evidence-report-with-contact-slices.html" : "Evidence Report with Contact Slices",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-awmf-guideline.html" : "Guideline",
+      "StructureDefinition-guideline-attachment.html" : "Guideline Attachment",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record",
+      "StructureDefinition-recommendation.html" : "Recommendation"
+    },
+    {
+      "url" : "http://terminology.hl7.org/ValueSet/v3-HL7FormatCodes",
+      "version" : "2.1.0",
+      "status" : "active",
+      "name" : "HL7FormatCodes",
+      "title" : "HL7 ValueSet of Format Codes for use with Document Sharing",
+      "description" : "The HL7-FormatCodes value set is defined to be the set of FormatCode(s) defined by implementation guides published by HL7 and other SDOs. The use of a formatCode from the FormatCodes value set specifies the technical format that a document conforms to. The formatCode is a further specialization more detailed than the mime-type. The formatCode provides sufficient information to allow any potential document content consumer to know if it can process and/or display the content of the document based on the document encoding, structure and template conformance indicated by the formatCode. The set of formatCodes is intended to be extensible. The Content Logical Description is defined intentionally to permit formatCodes defined by other Standards Development Organizations to be added by inclusion of additional formatCode Code Systems.",
+      "systems" : [
+        "http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode",
+        "http://terminology.hl7.org/CodeSystem/v3-HL7DocumentFormatCodes"
+      ],
+      "oids" : ["2.16.840.1.113883.11.19752"],
+      "sources" : ["2.16.840.1.113883.11.19752"],
+      "uses" : {
+      },
+      "StructureDefinition-guideline-attachment.html" : "Guideline Attachment"
+    },
+    {
+      "url" : "https://fevir.net/resources/ValueSet/179431",
+      "version" : "1.0.0-ballot3",
+      "status" : "active",
+      "name" : "EvidenceReportSectionCode_Value_Set",
+      "title" : "EvidenceReportSectionCode Value Set",
+      "description" : "This value set is a temporary workspace while drafting the Evidence Based Medicine Implementation Guide. It may not be stable and may not be persistent.",
+      "systems" : ["https://fevir.net/resources/CodeSystem/179423"],
+      "oids" : ["2.16.840.1.113883.4.642.40.44.48.4"],
+      "sources" : ["2.16.840.1.113883.4.642.40.44.48.4"],
+      "uses" : {
+      },
+      "StructureDefinition-awmf-guideline-record-s2e.html" : "AWMF S2e Guideline Registry Record",
+      "StructureDefinition-evidence-report-with-contact-slices.html" : "Evidence Report with Contact Slices",
+      "StructureDefinition-awmf-guideline-record-s1.html" : "AWMF S1 Guideline Registry Record",
+      "StructureDefinition-awmf-guideline.html" : "Guideline",
+      "StructureDefinition-awmf-guideline-record-s2k.html" : "AWMF S2k Guideline Registry Record",
+      "StructureDefinition-awmf-guideline-record-s3.html" : "AWMF S3 Guideline Registry Record",
+      "StructureDefinition-guideline-registry-record.html" : "Guideline Registry Record",
+      "StructureDefinition-recommendation.html" : "Recommendation"
+    }
+  ]
+}

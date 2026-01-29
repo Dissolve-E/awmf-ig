@@ -1,0 +1,159 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "cs-agree-ii-domains",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-agree-ii-domains</b></p><a name=\"cs-agree-ii-domains\"> </a><a name=\"hccs-agree-ii-domains\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-agree-ii-domains</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">scope_and_purpose<a name=\"cs-agree-ii-domains-scope_and_purpose\"> </a></td><td>Scope and Purpose</td><td>Concerns the overall aim of the guideline, the specific health questions, and the target population.</td><td>Geltungsbereich und Zweck</td></tr><tr><td style=\"white-space:nowrap\">stakeholder_involvement<a name=\"cs-agree-ii-domains-stakeholder_involvement\"> </a></td><td>Stakeholder Involvement</td><td>Focuses on the extent to which the guideline was developed by the appropriate stakeholders and represents the views of its intended users.</td><td>Beteiligung von Interessengruppen</td></tr><tr><td style=\"white-space:nowrap\">rigour_of_development<a name=\"cs-agree-ii-domains-rigour_of_development\"> </a></td><td>Rigour of Development</td><td>Relates to the process used to gather and synthesize the evidence, the methods to formulate the recommendations, and to update them.</td><td>Genauigkeit der Leitlinienentwicklung</td></tr><tr><td style=\"white-space:nowrap\">clarity_of_presentation<a name=\"cs-agree-ii-domains-clarity_of_presentation\"> </a></td><td>Clarity of Presentation</td><td>Deals with the language, structure, and format of the guideline.</td><td>Klarheit der Gestaltung</td></tr><tr><td style=\"white-space:nowrap\">applicability<a name=\"cs-agree-ii-domains-applicability\"> </a></td><td>Applicability</td><td>Pertains to the likely barriers and facilitators to implementation, strategies to improve uptake, and resource implications of applying the guideline.</td><td>Anwendbarkeit</td></tr><tr><td style=\"white-space:nowrap\">editorial_independence<a name=\"cs-agree-ii-domains-editorial_independence\"> </a></td><td>Editorial Independence</td><td>Is concerned with the formulation of recommendations not being unduly biased with competing interests.</td><td>Redaktionelle Unabhängigkeit</td></tr></table></div>"
+  },
+  "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-agree-ii-domains",
+  "version" : "0.2.0",
+  "name" : "AGREEIIDomains",
+  "title" : "AGREE II Domains",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-01-29T18:27:10+00:00",
+  "publisher" : "AWMF e.V.",
+  "contact" : [{
+    "name" : "AWMF e.V.",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org"
+    }]
+  }],
+  "description" : "CodeSystem representing the domains assessed by the AGREE II instrument for evaluating the quality of clinical practice guidelines.",
+  "caseSensitive" : false,
+  "content" : "complete",
+  "count" : 6,
+  "concept" : [{
+    "code" : "scope_and_purpose",
+    "display" : "Scope and Purpose",
+    "definition" : "Concerns the overall aim of the guideline, the specific health questions, and the target population.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Bezieht sich auf das Gesamtziel einer Leitlinie, die in der Leitlinie behandelten gesundheitsrelevanten Fragen und die Zielpopulation der Leitlinie."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Geltungsbereich und Zweck"
+    }]
+  },
+  {
+    "code" : "stakeholder_involvement",
+    "display" : "Stakeholder Involvement",
+    "definition" : "Focuses on the extent to which the guideline was developed by the appropriate stakeholders and represents the views of its intended users.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Fragt, inwieweit alle relevanten Berufsgruppen an der Erstellung der Leitlinie beteiligt waren und diese die Ansichten der Anwenderzielgruppe repräsentieren."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Beteiligung von Interessengruppen"
+    }]
+  },
+  {
+    "code" : "rigour_of_development",
+    "display" : "Rigour of Development",
+    "definition" : "Relates to the process used to gather and synthesize the evidence, the methods to formulate the recommendations, and to update them.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Bezieht sich auf das Verfahren, mit dem die Evidenz gesucht und zusammengefasst wurde, sowie auf die Methoden zur Formulierung und zur Aktualisierung der Empfehlungen"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Genauigkeit der Leitlinienentwicklung"
+    }]
+  },
+  {
+    "code" : "clarity_of_presentation",
+    "display" : "Clarity of Presentation",
+    "definition" : "Deals with the language, structure, and format of the guideline.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Befasst sich mit der Sprache, der Struktur und dem Format der Leitlinie"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Klarheit der Gestaltung"
+    }]
+  },
+  {
+    "code" : "applicability",
+    "display" : "Applicability",
+    "definition" : "Pertains to the likely barriers and facilitators to implementation, strategies to improve uptake, and resource implications of applying the guideline.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Betrifft mögliche förderliche und hinderliche Faktoren für die Anwendung der Leitlinie, Strategien zur Förderung der Leitlinienanwendung und Auswirkungen der Anwendung der Leitlinie auf den Ressourcenverbrauch"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Anwendbarkeit"
+    }]
+  },
+  {
+    "code" : "editorial_independence",
+    "display" : "Editorial Independence",
+    "definition" : "Is concerned with the formulation of recommendations not being unduly biased with competing interests.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Befasst sich mit dem Einfluss möglicher Interessenkonflikte auf die Formulierung der Empfehlungen."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Redaktionelle Unabhängigkeit"
+    }]
+  }]
+}

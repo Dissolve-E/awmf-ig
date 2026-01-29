@@ -1,0 +1,195 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/Citation/CitationSystematicReviewTsoi2015> a fhir:Citation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "CitationSystematicReviewTsoi2015"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Citation CitationSystematicReviewTsoi2015</b></p><a name=\"CitationSystematicReviewTsoi2015\"> </a><a name=\"hcCitationSystematicReviewTsoi2015\"> </a><p><b>url</b>: <a href=\"Citation-CitationSystematicReviewTsoi2015.html\">Citation Cognitive Tests to Detect Dementia: A Systematic Review and Meta-analysis.</a></p><p><b>version</b>: 0.2.0</p><p><b>title</b>: Cognitive Tests to Detect Dementia: A Systematic Review and Meta-analysis.</p><p><b>status</b>: Active</p><p><b>date</b>: 2026-01-29 18:27:10+0000</p><p><b>publisher</b>: AWMF e.V.</p><p><b>contact</b>: AWMF e.V.: <a href=\"https://www.awmf.org\">https://www.awmf.org</a></p><p><b>copyright</b>: </p><div><p>https://creativecommons.org/licenses/by-nc-sa/4.0/</p>\n</div><p><b>approvalDate</b>: 2015-12-15</p><p><b>lastReviewDate</b>: 2025-07-11</p><blockquote><p><b>citedArtifact</b></p><p><b>identifier</b>: <code>https://pubmed.ncbi.nlm.nih.gov</code>/26052687, <code>https://doi.org</code>/10.1001/jamainternmed.2015.2152, pii/2301149</p><h3>Titles</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td><td><b>Text</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://hl7.org/fhir/title-type primary}\">Primary title</span></td><td><div><p>Cognitive Tests to Detect Dementia: A Systematic Review and Meta-analysis.</p>\n</div></td></tr></table><blockquote><p><b>publicationForm</b></p><h3>PublishedIns</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td><td><b>Title</b></td><td><b>PublisherLocation</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://hl7.org/fhir/published-in-type D020492}\">Periodical</span></td><td>JAMA internal medicine</td><td>United States</td></tr></table><p><b>volume</b>: 175</p><p><b>issue</b>: 9</p><p><b>articleDate</b>: 2015-09</p><p><b>pageString</b>: 1450-8</p></blockquote><blockquote><p><b>webLocation</b></p><p><b>classifier</b>: <span title=\"Codes:{http://hl7.org/fhir/artifact-url-classifier abstract}\">Abstract</span></p><p><b>url</b>: <a href=\"https://pubmed.ncbi.nlm.nih.gov/26052687/\">https://pubmed.ncbi.nlm.nih.gov/26052687/</a></p></blockquote><blockquote><p><b>webLocation</b></p><p><b>classifier</b>: <span title=\"Codes:{http://hl7.org/fhir/artifact-url-classifier doi-based}\">DOI Based</span></p><p><b>url</b>: <a href=\"https://doi.org/10.1001/jamainternmed.2015.2152\">https://doi.org/10.1001/jamainternmed.2015.2152</a></p></blockquote><blockquote><p><b>contributorship</b></p><p><b>complete</b>: true</p><blockquote><p><b>entry</b></p><p><b>contributor</b>: <a href=\"Practitioner-contributor0.html\">Tsoi KK</a></p><p><b>forenameInitials</b>: KK</p><p><b>affiliation</b>: School of Public Health and Primary Care, The Chinese University of Hong Kong, Shatin2Stanley Ho Big Data Decision Analytics Research Centre, The Chinese University of Hong Kong, Shatin.</p></blockquote><blockquote><p><b>entry</b></p><p><b>contributor</b>: <a href=\"Practitioner-contributor1.html\">Chan JY</a></p><p><b>forenameInitials</b>: JY</p><p><b>affiliation</b>: School of Public Health and Primary Care, The Chinese University of Hong Kong, Shatin.</p></blockquote><blockquote><p><b>entry</b></p><p><b>contributor</b>: <a href=\"Practitioner-contributor2.html\">Hirai HW</a></p><p><b>forenameInitials</b>: HW</p><p><b>affiliation</b>: School of Public Health and Primary Care, The Chinese University of Hong Kong, Shatin2Stanley Ho Big Data Decision Analytics Research Centre, The Chinese University of Hong Kong, Shatin.</p></blockquote><blockquote><p><b>entry</b></p><p><b>contributor</b>: <a href=\"Practitioner-contributor3.html\">Wong SY</a></p><p><b>forenameInitials</b>: SY</p><p><b>affiliation</b>: School of Public Health and Primary Care, The Chinese University of Hong Kong, Shatin.</p></blockquote><blockquote><p><b>entry</b></p><p><b>contributor</b>: <a href=\"Practitioner-contributor4.html\">Kwok TC</a></p><p><b>forenameInitials</b>: TC</p><p><b>affiliation</b>: Department of Medicine and Therapeutics, The Chinese University of Hong Kong, Shatin.</p></blockquote></blockquote></blockquote></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "http://fhir.awmf.org/awmf.ig/Citation/CitationSystematicReviewTsoi2015"^^xsd:anyURI ;
+     fhir:l <http://fhir.awmf.org/awmf.ig/Citation/CitationSystematicReviewTsoi2015>
+  ] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:title [ fhir:v "Cognitive Tests to Detect Dementia: A Systematic Review and Meta-analysis."] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-01-29T18:27:10+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "AWMF e.V."] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AWMF e.V." ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.awmf.org" ]
+     ] )
+  ] ) ; # 
+  fhir:copyright [ fhir:v "https://creativecommons.org/licenses/by-nc-sa/4.0/"] ; # 
+  fhir:approvalDate [ fhir:v "2015-12-15"^^xsd:date] ; # 
+  fhir:lastReviewDate [ fhir:v "2025-07-11"^^xsd:date] ; # 
+  fhir:citedArtifact [
+     fhir:identifier ( [
+       fhir:system [
+         fhir:v "https://pubmed.ncbi.nlm.nih.gov"^^xsd:anyURI ;
+         fhir:l <https://pubmed.ncbi.nlm.nih.gov>
+       ] ;
+       fhir:value [ fhir:v "26052687" ]
+     ] [
+       fhir:system [
+         fhir:v "https://doi.org"^^xsd:anyURI ;
+         fhir:l <https://doi.org>
+       ] ;
+       fhir:value [ fhir:v "10.1001/jamainternmed.2015.2152" ]
+     ] [
+       fhir:type [
+         fhir:text [ fhir:v "pii" ]
+       ] ;
+       fhir:value [ fhir:v "2301149" ]
+     ] ) ;
+     fhir:title ( [
+       fhir:type ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/title-type"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/title-type>
+           ] ;
+           fhir:code [ fhir:v "primary" ] ;
+           fhir:display [ fhir:v "Primary title" ]
+         ] )
+       ] ) ;
+       fhir:text [ fhir:v "Cognitive Tests to Detect Dementia: A Systematic Review and Meta-analysis." ]
+     ] ) ;
+     fhir:publicationForm ( [
+       fhir:publishedIn [
+         fhir:type [
+           fhir:coding ( [
+             fhir:system [
+               fhir:v "http://hl7.org/fhir/published-in-type"^^xsd:anyURI ;
+               fhir:l <http://hl7.org/fhir/published-in-type>
+             ] ;
+             fhir:code [ fhir:v "D020492" ] ;
+             fhir:display [ fhir:v "Periodical" ]
+           ] )
+         ] ;
+         fhir:title [ fhir:v "JAMA internal medicine" ] ;
+         fhir:publisherLocation [ fhir:v "United States" ]
+       ] ;
+       fhir:volume [ fhir:v "175" ] ;
+       fhir:issue [ fhir:v "9" ] ;
+       fhir:articleDate [ fhir:v "2015-09"^^xsd:gYearMonth ] ;
+       fhir:pageString [ fhir:v "1450-8" ]
+     ] ) ;
+     fhir:webLocation ( [
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/artifact-url-classifier"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/artifact-url-classifier>
+           ] ;
+           fhir:code [ fhir:v "abstract" ] ;
+           fhir:display [ fhir:v "Abstract" ]
+         ] )
+       ] ) ;
+       fhir:url [
+         fhir:v "https://pubmed.ncbi.nlm.nih.gov/26052687/"^^xsd:anyURI ;
+         fhir:l <https://pubmed.ncbi.nlm.nih.gov/26052687/>
+       ]
+     ] [
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/artifact-url-classifier"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/artifact-url-classifier>
+           ] ;
+           fhir:code [ fhir:v "doi-based" ] ;
+           fhir:display [ fhir:v "DOI Based" ]
+         ] )
+       ] ) ;
+       fhir:url [
+         fhir:v "https://doi.org/10.1001/jamainternmed.2015.2152"^^xsd:anyURI ;
+         fhir:l <https://doi.org/10.1001/jamainternmed.2015.2152>
+       ]
+     ] ) ;
+     fhir:contributorship [
+       fhir:complete [ fhir:v true ] ;
+       fhir:entry ( [
+         fhir:contributor [
+           fhir:l <http://fhir.awmf.org/awmf.ig/Practitioner/contributor0> ;
+           fhir:reference [ fhir:v "Practitioner/contributor0" ] ;
+           fhir:type [
+             fhir:v "Practitioner"^^xsd:anyURI ;
+             fhir:l fhir:Practitioner
+           ] ;
+           fhir:display [ fhir:v "Tsoi KK" ]
+         ] ;
+         fhir:forenameInitials [ fhir:v "KK" ] ;
+         fhir:affiliation ( [
+           fhir:display [ fhir:v "School of Public Health and Primary Care, The Chinese University of Hong Kong, Shatin2Stanley Ho Big Data Decision Analytics Research Centre, The Chinese University of Hong Kong, Shatin." ]
+         ] )
+       ] [
+         fhir:contributor [
+           fhir:l <http://fhir.awmf.org/awmf.ig/Practitioner/contributor1> ;
+           fhir:reference [ fhir:v "Practitioner/contributor1" ] ;
+           fhir:type [
+             fhir:v "Practitioner"^^xsd:anyURI ;
+             fhir:l fhir:Practitioner
+           ] ;
+           fhir:display [ fhir:v "Chan JY" ]
+         ] ;
+         fhir:forenameInitials [ fhir:v "JY" ] ;
+         fhir:affiliation ( [
+           fhir:display [ fhir:v "School of Public Health and Primary Care, The Chinese University of Hong Kong, Shatin." ]
+         ] )
+       ] [
+         fhir:contributor [
+           fhir:l <http://fhir.awmf.org/awmf.ig/Practitioner/contributor2> ;
+           fhir:reference [ fhir:v "Practitioner/contributor2" ] ;
+           fhir:type [
+             fhir:v "Practitioner"^^xsd:anyURI ;
+             fhir:l fhir:Practitioner
+           ] ;
+           fhir:display [ fhir:v "Hirai HW" ]
+         ] ;
+         fhir:forenameInitials [ fhir:v "HW" ] ;
+         fhir:affiliation ( [
+           fhir:display [ fhir:v "School of Public Health and Primary Care, The Chinese University of Hong Kong, Shatin2Stanley Ho Big Data Decision Analytics Research Centre, The Chinese University of Hong Kong, Shatin." ]
+         ] )
+       ] [
+         fhir:contributor [
+           fhir:l <http://fhir.awmf.org/awmf.ig/Practitioner/contributor3> ;
+           fhir:reference [ fhir:v "Practitioner/contributor3" ] ;
+           fhir:type [
+             fhir:v "Practitioner"^^xsd:anyURI ;
+             fhir:l fhir:Practitioner
+           ] ;
+           fhir:display [ fhir:v "Wong SY" ]
+         ] ;
+         fhir:forenameInitials [ fhir:v "SY" ] ;
+         fhir:affiliation ( [
+           fhir:display [ fhir:v "School of Public Health and Primary Care, The Chinese University of Hong Kong, Shatin." ]
+         ] )
+       ] [
+         fhir:contributor [
+           fhir:l <http://fhir.awmf.org/awmf.ig/Practitioner/contributor4> ;
+           fhir:reference [ fhir:v "Practitioner/contributor4" ] ;
+           fhir:type [
+             fhir:v "Practitioner"^^xsd:anyURI ;
+             fhir:l fhir:Practitioner
+           ] ;
+           fhir:display [ fhir:v "Kwok TC" ]
+         ] ;
+         fhir:forenameInitials [ fhir:v "TC" ] ;
+         fhir:affiliation ( [
+           fhir:display [ fhir:v "Department of Medicine and Therapeutics, The Chinese University of Hong Kong, Shatin." ]
+         ] )
+       ] )
+     ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

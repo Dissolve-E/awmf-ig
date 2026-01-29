@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-recommendation-synthesis-type"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-recommendation-synthesis-type</b></p><a name="cs-recommendation-synthesis-type"> </a><a name="hccs-recommendation-synthesis-type"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-synthesis-type</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style="white-space:nowrap">evidence-based<a name="cs-recommendation-synthesis-type-evidence-based"> </a></td><td>Evidence-based</td><td>Evidence-based recommendation</td><td>Evidenzbasiert</td></tr><tr><td style="white-space:nowrap">expert-consensus<a name="cs-recommendation-synthesis-type-expert-consensus"> </a></td><td>Expert Consensus</td><td>Expert consensus recommendation</td><td>Konsensbasiert</td></tr><tr><td style="white-space:nowrap">statement<a name="cs-recommendation-synthesis-type-statement"> </a></td><td>Statement</td><td>Statement</td><td>Aussage</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-synthesis-type"/>
+  <version value="0.2.0"/>
+  <name value="RecommendationSynthesisTypeCS"/>
+  <title value="Recommendation Synthesis Type"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem defining values representing the synthesis type of a recommendation"/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="3"/>
+  <concept>
+    <code value="evidence-based"/>
+    <display value="Evidence-based"/>
+    <definition value="Evidence-based recommendation">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Evidenzbasierte Empfehlung"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Evidenzbasiert"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="expert-consensus"/>
+    <display value="Expert Consensus"/>
+    <definition value="Expert consensus recommendation">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Konsensbasierte Empfehlung"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Konsensbasiert"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="statement"/>
+    <display value="Statement"/>
+    <definition value="Statement">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Aussage"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Aussage"/>
+    </designation>
+  </concept>
+</CodeSystem>

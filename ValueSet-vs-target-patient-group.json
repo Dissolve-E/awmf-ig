@@ -1,0 +1,29 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "vs-target-patient-group",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet vs-target-patient-group</b></p><a name=\"vs-target-patient-group\"> </a><a name=\"hcvs-target-patient-group\"> </a><ul><li>Include all codes defined in <a href=\"CodeSystem-cs-target-patient-group.html\"><code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-target-patient-group</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version &#x1F4E6;0.2.0</span></li></ul></div>"
+  },
+  "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-target-patient-group",
+  "version" : "0.2.0",
+  "name" : "TargetPatientGroupVS",
+  "title" : "Target Patient Group",
+  "status" : "draft",
+  "experimental" : false,
+  "date" : "2026-01-29T18:27:10+00:00",
+  "publisher" : "AWMF e.V.",
+  "contact" : [{
+    "name" : "AWMF e.V.",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org"
+    }]
+  }],
+  "description" : "ValueSet listing patient population categories for guidelines, such as adults and children/adolescents.",
+  "compose" : {
+    "include" : [{
+      "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-target-patient-group"
+    }]
+  }
+}

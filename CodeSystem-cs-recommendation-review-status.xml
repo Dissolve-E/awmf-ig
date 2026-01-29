@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-recommendation-review-status"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-recommendation-review-status</b></p><a name="cs-recommendation-review-status"> </a><a name="hccs-recommendation-review-status"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-review-status</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style="white-space:nowrap">added<a name="cs-recommendation-review-status-added"> </a></td><td>Added</td><td>Recommendation was newly added in this version of the guideline</td><td>Hinzugefügt</td></tr><tr><td style="white-space:nowrap">updated<a name="cs-recommendation-review-status-updated"> </a></td><td>Updated</td><td>Recommendation was modified or updated</td><td>Aktualisiert</td></tr><tr><td style="white-space:nowrap">reaffirmed<a name="cs-recommendation-review-status-reaffirmed"> </a></td><td>Reaffirmed</td><td>Recommendation was reviewed and explicitly confirmed to still be valid</td><td>Bestätigt.</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-review-status"/>
+  <version value="0.2.0"/>
+  <name value="RecommendationReviewStatusCS"/>
+  <title value="Recommendation Review Status Code System"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem defining values indicating how a recommendation relates to a new revision of a recommendation"/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="3"/>
+  <concept>
+    <code value="added"/>
+    <display value="Added"/>
+    <definition value="Recommendation was newly added in this version of the guideline">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Diese Empfehlung ist in dieser Version der Leitlinie neu dazugekommen."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Hinzugefügt"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="updated"/>
+    <display value="Updated"/>
+    <definition value="Recommendation was modified or updated">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Diese Empfehlung wurde geändert oder aktualisiert."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Aktualisiert"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="reaffirmed"/>
+    <display value="Reaffirmed"/>
+    <definition value="Recommendation was reviewed and explicitly confirmed to still be valid">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Diese Empfehlung wurde geprüft und ihre Gültigkeit explizit bestätigt."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Bestätigt."/>
+    </designation>
+  </concept>
+</CodeSystem>

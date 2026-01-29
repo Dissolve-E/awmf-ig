@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-guideline-release-type"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-guideline-release-type</b></p><a name="cs-guideline-release-type"> </a><a name="hccs-guideline-release-type"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-release-type</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style="white-space:nowrap">new-registration<a name="cs-guideline-release-type-new-registration"> </a></td><td>New Registration</td><td>New Registration</td><td>Neuanmeldung</td></tr><tr><td style="white-space:nowrap">update<a name="cs-guideline-release-type-update"> </a></td><td>Update</td><td>Update</td><td>Aktualisierung</td></tr><tr><td style="white-space:nowrap">class-upgrade<a name="cs-guideline-release-type-class-upgrade"> </a></td><td>Class Upgrade</td><td>Upgrade to a higher guideline class</td><td>Klassen-Upgrade</td></tr><tr><td style="white-space:nowrap">class-downgrade<a name="cs-guideline-release-type-class-downgrade"> </a></td><td>Class Downgrade</td><td>Downgrade to a lower guideline class</td><td>Klassen-Downgrade</td></tr><tr><td style="white-space:nowrap">living-guideline<a name="cs-guideline-release-type-living-guideline"> </a></td><td>Living Guideline</td><td>A guideline designated as a continuously updated living guideline.</td><td>Living Guideline</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-release-type"/>
+  <version value="0.2.0"/>
+  <name value="GuidelineReleaseType"/>
+  <title value="Guideline Release Type"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem defining different guideline release types"/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="5"/>
+  <concept>
+    <code value="new-registration"/>
+    <display value="New Registration"/>
+    <definition value="New Registration">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Neuanmeldung"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Neuanmeldung"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="update"/>
+    <display value="Update"/>
+    <definition value="Update">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Aktualisierung"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Aktualisierung"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="class-upgrade"/>
+    <display value="Class Upgrade"/>
+    <definition value="Upgrade to a higher guideline class">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Klassen-Upgrade"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Klassen-Upgrade"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="class-downgrade"/>
+    <display value="Class Downgrade"/>
+    <definition value="Downgrade to a lower guideline class">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Herabstufung in eine niedrigere Leitlinienklasse."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Klassen-Downgrade"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="living-guideline"/>
+    <display value="Living Guideline"/>
+    <definition value="A guideline designated as a continuously updated living guideline.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Leitlinie mit dem Status einer Living Guideline (kontinuierlich aktualisiert)."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Living Guideline"/>
+    </designation>
+  </concept>
+</CodeSystem>

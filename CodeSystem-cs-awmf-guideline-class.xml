@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-awmf-guideline-class"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-awmf-guideline-class</b></p><a name="cs-awmf-guideline-class"> </a><a name="hccs-awmf-guideline-class"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-class</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style="white-space:nowrap">S3<a name="cs-awmf-guideline-class-S3"> </a></td><td>Evidence- and consensus-based guideline</td><td>Representative panel, Systematic search, selection, evaluation of literature, Structured consensus building.</td><td>Evidenz- und Konsensusbasierte Leitlinie</td></tr><tr><td style="white-space:nowrap">S2e<a name="cs-awmf-guideline-class-S2e"> </a></td><td>Evidence-based Guideline</td><td>Systematic search, selection, evaluation of literature</td><td>Evidenzbasierte Leitlinie</td></tr><tr><td style="white-space:nowrap">S2k<a name="cs-awmf-guideline-class-S2k"> </a></td><td>Consensus-based Guideline</td><td>Representative panel, structured consensus building</td><td>Konsensusbasierte Leitlinie</td></tr><tr><td style="white-space:nowrap">S1<a name="cs-awmf-guideline-class-S1"> </a></td><td>Action recommendations from expert groups</td><td>Consensus building in an informal process</td><td>Handlungsempfehlungen von Expertengruppen</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-class"/>
+  <version value="0.2.0"/>
+  <name value="AWMFGuidelineClass"/>
+  <title value="AWMF Guideline Class"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="As part of the project planning for the creation or updating of a guideline,&#xA;    a decision should be made at an early stage about the planned level classification (&quot;S classification&quot;) according to the AWMF's system of rules (1-3).&#xA;    The S-classification scheme of the AWMF differentiates between the classes S1 treatment recommendation as well as S2e, S2k and S3 guideline.&#xA;    The &quot;S&quot; stands for the extent of the applied systematic approach in the development process of a guideline.&#xA;    Each class thus stands for a specific methodological concept that must be presented in a way that is comprehensible to the users.&#xA;    The choice of class is based on the question of how much effort is appropriate and feasible.&#xA;    The need for legitimacy for the implementation of the guideline (convincing the target group) must be taken into account.&#xA;    When choosing a higher S-classification in the context of updating a guideline, the adaptation to the corresponding methodology has to be considered."/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="4"/>
+  <concept>
+    <code value="S3"/>
+    <display value="Evidence- and consensus-based guideline"/>
+    <definition value="Representative panel, Systematic search, selection, evaluation of literature, Structured consensus building.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Repräsentatives Gremium, Systematische Recherche, Auswahl, Bewertung der Literatur, Strukturierte Konsensfindung"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Evidenz- und Konsensusbasierte Leitlinie"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="S2e"/>
+    <display value="Evidence-based Guideline"/>
+    <definition value="Systematic search, selection, evaluation of literature">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Systematische Recherche, Auswahl, Bewertung der Literatur"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Evidenzbasierte Leitlinie"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="S2k"/>
+    <display value="Consensus-based Guideline"/>
+    <definition value="Representative panel, structured consensus building">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Repräsentatives Gremium, Strukturierte Konsensfindung"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Konsensusbasierte Leitlinie"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="S1"/>
+    <display value="Action recommendations from expert groups"/>
+    <definition value="Consensus building in an informal process">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Konsensfindung in einem informellen Verfahren"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Handlungsempfehlungen von Expertengruppen"/>
+    </designation>
+  </concept>
+</CodeSystem>

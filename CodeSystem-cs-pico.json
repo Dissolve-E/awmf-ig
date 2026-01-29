@@ -1,0 +1,181 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "cs-pico",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-pico</b></p><a name=\"cs-pico\"> </a><a name=\"hccs-pico\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">pico-question<a name=\"cs-pico-pico-question\"> </a></td><td>PICO question</td><td>PICO question</td><td>PICO Fragestellung</td></tr><tr><td style=\"white-space:nowrap\">population<a name=\"cs-pico-population\"> </a></td><td>Population</td><td>Population</td><td>Population</td></tr><tr><td style=\"white-space:nowrap\">intervention<a name=\"cs-pico-intervention\"> </a></td><td>Intervention</td><td>Intervention</td><td>Intervention</td></tr><tr><td style=\"white-space:nowrap\">comparator<a name=\"cs-pico-comparator\"> </a></td><td>Comparator</td><td>Comparator</td><td>Vergleichsintervention</td></tr><tr><td style=\"white-space:nowrap\">outcome<a name=\"cs-pico-outcome\"> </a></td><td>Outcome</td><td>Outcome</td><td>Outcome</td></tr><tr><td style=\"white-space:nowrap\">setting<a name=\"cs-pico-setting\"> </a></td><td>Setting</td><td>Setting</td><td>Setting</td></tr><tr><td style=\"white-space:nowrap\">timing<a name=\"cs-pico-timing\"> </a></td><td>Timing</td><td>Timing</td><td>Zeitpunkt</td></tr></table></div>"
+  },
+  "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico",
+  "version" : "0.2.0",
+  "name" : "PICOCS",
+  "title" : "PICO Related Terms",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-01-29T18:27:10+00:00",
+  "publisher" : "AWMF e.V.",
+  "contact" : [{
+    "name" : "AWMF e.V.",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org"
+    }]
+  }],
+  "description" : "CodeSystem defining different terms related to PICO question and objects",
+  "caseSensitive" : false,
+  "content" : "complete",
+  "count" : 7,
+  "concept" : [{
+    "code" : "pico-question",
+    "display" : "PICO question",
+    "definition" : "PICO question",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "PICO Fragestellung"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "PICO Fragestellung"
+    }]
+  },
+  {
+    "code" : "population",
+    "display" : "Population",
+    "definition" : "Population",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Population"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Population"
+    }]
+  },
+  {
+    "code" : "intervention",
+    "display" : "Intervention",
+    "definition" : "Intervention",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Intervention"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Intervention"
+    }]
+  },
+  {
+    "code" : "comparator",
+    "display" : "Comparator",
+    "definition" : "Comparator",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Vergleichsintervention"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Vergleichsintervention"
+    }]
+  },
+  {
+    "code" : "outcome",
+    "display" : "Outcome",
+    "definition" : "Outcome",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Outcome"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Outcome"
+    }]
+  },
+  {
+    "code" : "setting",
+    "display" : "Setting",
+    "definition" : "Setting",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Setting"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Setting"
+    }]
+  },
+  {
+    "code" : "timing",
+    "display" : "Timing",
+    "definition" : "Timing",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Zeitpunkt"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Zeitpunkt"
+    }]
+  }]
+}

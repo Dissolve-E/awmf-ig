@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Composition xmlns="http://hl7.org/fhir">
+  <id value="RR-TestTestInvRequireReleaseTypeIfReg-WrongCode-SHOULD-FAIL"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"/>
+    <tag>
+      <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"/>
+      <code value="major-minor"/>
+      <display value="Major-Minor Versioning"/>
+    </tag>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Guideline Example</div>
+  </text>
+  <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-planned-completion-date">
+    <valueDate value="2025-03-06"/>
+  </extension>
+  <identifier>
+    <use value="official"/>
+    <system value="https://example.org/identifiers"/>
+    <value value="AWMF-Guideline-Example"/>
+  </identifier>
+  <version value="2.0"/>
+  <status value="registered"/>
+  <type>
+    <coding>
+      <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"/>
+      <code value="guideline-registry-record"/>
+      <display value="Guideline Registry Record"/>
+    </coding>
+  </type>
+  <date value="2025-03-06"/>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="registrant"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="PractitionerRole/GuidelineAuthorRoleExample"/>
+  </author>
+  <title value="Example Guideline"/>
+</Composition>

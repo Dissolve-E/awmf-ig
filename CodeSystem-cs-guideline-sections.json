@@ -1,0 +1,495 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "cs-guideline-sections",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-guideline-sections</b></p><a name=\"cs-guideline-sections\"> </a><a name=\"hccs-guideline-sections\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">intention<a name=\"cs-guideline-sections-intention\"> </a></td><td>Intention</td><td>The section describes the intention of the guideline.</td><td>Zielorientierung</td></tr><tr><td style=\"white-space:nowrap\">target-patient-group<a name=\"cs-guideline-sections-target-patient-group\"> </a></td><td>Target Patient Group</td><td>The section describes the target patient group of the guideline.</td><td>Patientenzielgruppe</td></tr><tr><td style=\"white-space:nowrap\">care-setting<a name=\"cs-guideline-sections-care-setting\"> </a></td><td>Care Setting</td><td>The section describes the care setting of the guideline.</td><td>Versorgungsbereich</td></tr><tr><td style=\"white-space:nowrap\">topic-selection-reason<a name=\"cs-guideline-sections-topic-selection-reason\"> </a></td><td>Topic Selection Reason</td><td>The section describes the reason for selecting the topic of the guideline.</td><td>Gründe für die Themenwahl</td></tr><tr><td style=\"white-space:nowrap\">target-audience<a name=\"cs-guideline-sections-target-audience\"> </a></td><td>Target Audience</td><td>The section describes the target audience of the guideline.</td><td>Adressaten</td></tr><tr><td style=\"white-space:nowrap\">planned-methodology<a name=\"cs-guideline-sections-planned-methodology\"> </a></td><td>Planned Methodology</td><td>The section describes the planned methodology for developing the guideline.</td><td>Geplante Methodik</td></tr><tr><td style=\"white-space:nowrap\">further-information<a name=\"cs-guideline-sections-further-information\"> </a></td><td>Further Information</td><td>The section describes the further information regarding the guideline project.</td><td>Ergänzende Informationen</td></tr><tr><td style=\"white-space:nowrap\">encounter-type<a name=\"cs-guideline-sections-encounter-type\"> </a></td><td>Encounter Type</td><td>The section describes the encounter type of the guideline.</td><td>Versorgungssektor</td></tr><tr><td style=\"white-space:nowrap\">care-stage<a name=\"cs-guideline-sections-care-stage\"> </a></td><td>Care Stage</td><td>The section describes the care stage of the guideline.</td><td>Versorgungsbereich</td></tr><tr><td style=\"white-space:nowrap\">care-level<a name=\"cs-guideline-sections-care-level\"> </a></td><td>Care Level</td><td>The section describes the care level of the guideline.</td><td>Versorgungsebene</td></tr><tr><td style=\"white-space:nowrap\">keywords<a name=\"cs-guideline-sections-keywords\"> </a></td><td>Keywords</td><td>The section describes the keywords of the guideline.</td><td>Schlüsselwörter</td></tr><tr><td style=\"white-space:nowrap\">language<a name=\"cs-guideline-sections-language\"> </a></td><td>Language</td><td>The language of the content</td><td>Sprache</td></tr><tr><td style=\"white-space:nowrap\">default-section<a name=\"cs-guideline-sections-default-section\"> </a></td><td>Default section</td><td>The default slice for a section</td><td>Standardabschnitt</td></tr><tr><td style=\"white-space:nowrap\">attachments<a name=\"cs-guideline-sections-attachments\"> </a></td><td>Attachments</td><td/><td>Anhänge</td></tr><tr><td style=\"white-space:nowrap\">consensus-protocol<a name=\"cs-guideline-sections-consensus-protocol\"> </a></td><td>Consensus Protocol</td><td>The section describes the consensus protocol of the guideline.</td><td>Konsensprotokoll</td></tr><tr><td style=\"white-space:nowrap\">long-version<a name=\"cs-guideline-sections-long-version\"> </a></td><td>Long Version</td><td/><td>Langfassung</td></tr><tr><td style=\"white-space:nowrap\">short-version<a name=\"cs-guideline-sections-short-version\"> </a></td><td>Short Version</td><td/><td>Kurzfassung</td></tr><tr><td style=\"white-space:nowrap\">guideline-report<a name=\"cs-guideline-sections-guideline-report\"> </a></td><td>Guideline Report</td><td/><td>Leitlinienreport</td></tr><tr><td style=\"white-space:nowrap\">evidence-report<a name=\"cs-guideline-sections-evidence-report\"> </a></td><td>Evidence Report</td><td/><td>Evidenzbericht</td></tr><tr><td style=\"white-space:nowrap\">implementation-guidance<a name=\"cs-guideline-sections-implementation-guidance\"> </a></td><td>Implementation Guidance</td><td/><td>Implementierungshilfe</td></tr><tr><td style=\"white-space:nowrap\">decision-support<a name=\"cs-guideline-sections-decision-support\"> </a></td><td>Decision Support</td><td/><td>Entscheidungshilfe</td></tr><tr><td style=\"white-space:nowrap\">patient-version<a name=\"cs-guideline-sections-patient-version\"> </a></td><td>Patient Version</td><td/><td>Patientenleitlinie</td></tr><tr><td style=\"white-space:nowrap\">choosing-wisely<a name=\"cs-guideline-sections-choosing-wisely\"> </a></td><td>Choosing Wisely</td><td/><td>Gemeinsam Klug Entscheiden</td></tr><tr><td style=\"white-space:nowrap\">quality-indicators<a name=\"cs-guideline-sections-quality-indicators\"> </a></td><td>Quality Indicators</td><td/><td>Qualitätsindikatoren</td></tr><tr><td style=\"white-space:nowrap\">declaration-of-interests<a name=\"cs-guideline-sections-declaration-of-interests\"> </a></td><td>Declaration of Interests</td><td/><td>Interessenserklärung</td></tr><tr><td style=\"white-space:nowrap\">short-patient-version<a name=\"cs-guideline-sections-short-patient-version\"> </a></td><td>Short Version for Patients</td><td/><td>Kurzfassung für Patient*innen</td></tr><tr><td style=\"white-space:nowrap\">update-info<a name=\"cs-guideline-sections-update-info\"> </a></td><td>Short Information About an Update</td><td/><td>Kurzinformationen zu einer Aktualisierung</td></tr><tr><td style=\"white-space:nowrap\">slide-deck<a name=\"cs-guideline-sections-slide-deck\"> </a></td><td>Slide Deck</td><td/><td>Foliensatz</td></tr><tr><td style=\"white-space:nowrap\">visual-abstract<a name=\"cs-guideline-sections-visual-abstract\"> </a></td><td>Visual Abstract</td><td/><td>Graphischer Abstrakt</td></tr><tr><td style=\"white-space:nowrap\">document<a name=\"cs-guideline-sections-document\"> </a></td><td>Document</td><td/><td>Dokument</td></tr><tr><td style=\"white-space:nowrap\">image<a name=\"cs-guideline-sections-image\"> </a></td><td>Image</td><td/><td>Bild</td></tr><tr><td style=\"white-space:nowrap\">video<a name=\"cs-guideline-sections-video\"> </a></td><td>Video</td><td/><td>Video</td></tr><tr><td style=\"white-space:nowrap\">podcast<a name=\"cs-guideline-sections-podcast\"> </a></td><td>Podcast</td><td/><td>Podcast</td></tr><tr><td style=\"white-space:nowrap\">other<a name=\"cs-guideline-sections-other\"> </a></td><td>Other</td><td/><td>Sonstiges</td></tr></table></div>"
+  },
+  "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+  "version" : "0.2.0",
+  "name" : "GuidelineSectionsCS",
+  "title" : "Guideline Sections",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-01-29T18:27:10+00:00",
+  "publisher" : "AWMF e.V.",
+  "contact" : [{
+    "name" : "AWMF e.V.",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org"
+    }]
+  }],
+  "description" : "Sections of a guideline, describing various aspects such as its intention, target patient group, care setting, and other relevant contextual information.",
+  "caseSensitive" : false,
+  "content" : "complete",
+  "count" : 34,
+  "concept" : [{
+    "code" : "intention",
+    "display" : "Intention",
+    "definition" : "The section describes the intention of the guideline.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Dieser Abschnitt beschreibt die Zielorientierung der Leitlinie."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Zielorientierung"
+    }]
+  },
+  {
+    "code" : "target-patient-group",
+    "display" : "Target Patient Group",
+    "definition" : "The section describes the target patient group of the guideline.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Dieser Abschnitt beschreibt die Patientenzielgruppe der Leitlinie."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Patientenzielgruppe"
+    }]
+  },
+  {
+    "code" : "care-setting",
+    "display" : "Care Setting",
+    "definition" : "The section describes the care setting of the guideline.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Dieser Abschnitt beschreibt den Versorgungsbereich dieser Leitlinie."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Versorgungsbereich"
+    }]
+  },
+  {
+    "code" : "topic-selection-reason",
+    "display" : "Topic Selection Reason",
+    "definition" : "The section describes the reason for selecting the topic of the guideline.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Dieser Abschnitt beschreibt die Gründe für die Themenwahl der Leitlinie."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Gründe für die Themenwahl"
+    }]
+  },
+  {
+    "code" : "target-audience",
+    "display" : "Target Audience",
+    "definition" : "The section describes the target audience of the guideline.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Dieser Abschnitt beschreibt die Adressaten der Leitlinie."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Adressaten"
+    }]
+  },
+  {
+    "code" : "planned-methodology",
+    "display" : "Planned Methodology",
+    "definition" : "The section describes the planned methodology for developing the guideline.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Dieser Abschnitt beschreibt die geplante Methodik zur Entwicklung der Leitlinie."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Geplante Methodik"
+    }]
+  },
+  {
+    "code" : "further-information",
+    "display" : "Further Information",
+    "definition" : "The section describes the further information regarding the guideline project.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Dieser Abschnitt beschreibt ergänzende Informationen zum Leitlinienprojekt."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Ergänzende Informationen"
+    }]
+  },
+  {
+    "code" : "encounter-type",
+    "display" : "Encounter Type",
+    "definition" : "The section describes the encounter type of the guideline.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Dieser Abschnitt beschreibt den oder die Versorgungssektor(en) auf die sich die Leitlinie bezieht."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Versorgungssektor"
+    }]
+  },
+  {
+    "code" : "care-stage",
+    "display" : "Care Stage",
+    "definition" : "The section describes the care stage of the guideline.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Dieser Abschnitt beschreibt den Versorgungsbereich dieser Leitlinie."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Versorgungsbereich"
+    }]
+  },
+  {
+    "code" : "care-level",
+    "display" : "Care Level",
+    "definition" : "The section describes the care level of the guideline.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Dieser Abschnitt beschreibt die Versorgungsebene(n) auf die sich die Leitlinie bezieht."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Versorgungsebene"
+    }]
+  },
+  {
+    "code" : "keywords",
+    "display" : "Keywords",
+    "definition" : "The section describes the keywords of the guideline.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Dieser Abschnitt beschreibt die Schlüsselwörter der Leitlinie."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Schlüsselwörter"
+    }]
+  },
+  {
+    "code" : "language",
+    "display" : "Language",
+    "definition" : "The language of the content",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Sprache des Inhalts"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Sprache"
+    }]
+  },
+  {
+    "code" : "default-section",
+    "display" : "Default section",
+    "definition" : "The default slice for a section",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Default ('standard') slice für einen Abschnitt."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Standardabschnitt"
+    }]
+  },
+  {
+    "code" : "attachments",
+    "display" : "Attachments",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Anhänge"
+    }]
+  },
+  {
+    "code" : "consensus-protocol",
+    "display" : "Consensus Protocol",
+    "definition" : "The section describes the consensus protocol of the guideline.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Dieser Abschnitt beschreibt den Konsensprotokoll einer Leitlinie."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Konsensprotokoll"
+    }]
+  },
+  {
+    "code" : "long-version",
+    "display" : "Long Version",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Langfassung"
+    }]
+  },
+  {
+    "code" : "short-version",
+    "display" : "Short Version",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Kurzfassung"
+    }]
+  },
+  {
+    "code" : "guideline-report",
+    "display" : "Guideline Report",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Leitlinienreport"
+    }]
+  },
+  {
+    "code" : "evidence-report",
+    "display" : "Evidence Report",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Evidenzbericht"
+    }]
+  },
+  {
+    "code" : "implementation-guidance",
+    "display" : "Implementation Guidance",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Implementierungshilfe"
+    }]
+  },
+  {
+    "code" : "decision-support",
+    "display" : "Decision Support",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Entscheidungshilfe"
+    }]
+  },
+  {
+    "code" : "patient-version",
+    "display" : "Patient Version",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Patientenleitlinie"
+    }]
+  },
+  {
+    "code" : "choosing-wisely",
+    "display" : "Choosing Wisely",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Gemeinsam Klug Entscheiden"
+    }]
+  },
+  {
+    "code" : "quality-indicators",
+    "display" : "Quality Indicators",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Qualitätsindikatoren"
+    }]
+  },
+  {
+    "code" : "declaration-of-interests",
+    "display" : "Declaration of Interests",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Interessenserklärung"
+    }]
+  },
+  {
+    "code" : "short-patient-version",
+    "display" : "Short Version for Patients",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Kurzfassung für Patient*innen"
+    }]
+  },
+  {
+    "code" : "update-info",
+    "display" : "Short Information About an Update",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Kurzinformationen zu einer Aktualisierung"
+    }]
+  },
+  {
+    "code" : "slide-deck",
+    "display" : "Slide Deck",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Foliensatz"
+    }]
+  },
+  {
+    "code" : "visual-abstract",
+    "display" : "Visual Abstract",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Graphischer Abstrakt"
+    }]
+  },
+  {
+    "code" : "document",
+    "display" : "Document",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Dokument"
+    }]
+  },
+  {
+    "code" : "image",
+    "display" : "Image",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Bild"
+    }]
+  },
+  {
+    "code" : "video",
+    "display" : "Video",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Video"
+    }]
+  },
+  {
+    "code" : "podcast",
+    "display" : "Podcast",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Podcast"
+    }]
+  },
+  {
+    "code" : "other",
+    "display" : "Other",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Sonstiges"
+    }]
+  }]
+}

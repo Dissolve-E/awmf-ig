@@ -1,0 +1,251 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/CodeSystem/cs-agree-ii-domains> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cs-agree-ii-domains"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-agree-ii-domains</b></p><a name=\"cs-agree-ii-domains\"> </a><a name=\"hccs-agree-ii-domains\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-agree-ii-domains</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">scope_and_purpose<a name=\"cs-agree-ii-domains-scope_and_purpose\"> </a></td><td>Scope and Purpose</td><td>Concerns the overall aim of the guideline, the specific health questions, and the target population.</td><td>Geltungsbereich und Zweck</td></tr><tr><td style=\"white-space:nowrap\">stakeholder_involvement<a name=\"cs-agree-ii-domains-stakeholder_involvement\"> </a></td><td>Stakeholder Involvement</td><td>Focuses on the extent to which the guideline was developed by the appropriate stakeholders and represents the views of its intended users.</td><td>Beteiligung von Interessengruppen</td></tr><tr><td style=\"white-space:nowrap\">rigour_of_development<a name=\"cs-agree-ii-domains-rigour_of_development\"> </a></td><td>Rigour of Development</td><td>Relates to the process used to gather and synthesize the evidence, the methods to formulate the recommendations, and to update them.</td><td>Genauigkeit der Leitlinienentwicklung</td></tr><tr><td style=\"white-space:nowrap\">clarity_of_presentation<a name=\"cs-agree-ii-domains-clarity_of_presentation\"> </a></td><td>Clarity of Presentation</td><td>Deals with the language, structure, and format of the guideline.</td><td>Klarheit der Gestaltung</td></tr><tr><td style=\"white-space:nowrap\">applicability<a name=\"cs-agree-ii-domains-applicability\"> </a></td><td>Applicability</td><td>Pertains to the likely barriers and facilitators to implementation, strategies to improve uptake, and resource implications of applying the guideline.</td><td>Anwendbarkeit</td></tr><tr><td style=\"white-space:nowrap\">editorial_independence<a name=\"cs-agree-ii-domains-editorial_independence\"> </a></td><td>Editorial Independence</td><td>Is concerned with the formulation of recommendations not being unduly biased with competing interests.</td><td>Redaktionelle Unabhängigkeit</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-agree-ii-domains"^^xsd:anyURI ;
+     fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-agree-ii-domains>
+  ] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:name [ fhir:v "AGREEIIDomains"] ; # 
+  fhir:title [ fhir:v "AGREE II Domains"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-01-29T18:27:10+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "AWMF e.V."] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AWMF e.V." ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.awmf.org" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "CodeSystem representing the domains assessed by the AGREE II instrument for evaluating the quality of clinical practice guidelines."] ; # 
+  fhir:caseSensitive [ fhir:v false] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "6"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "scope_and_purpose" ] ;
+     fhir:display [ fhir:v "Scope and Purpose" ] ;
+     fhir:definition [
+       fhir:v "Concerns the overall aim of the guideline, the specific health questions, and the target population." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Bezieht sich auf das Gesamtziel einer Leitlinie, die in der Leitlinie behandelten gesundheitsrelevanten Fragen und die Zielpopulation der Leitlinie."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Geltungsbereich und Zweck" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "stakeholder_involvement" ] ;
+     fhir:display [ fhir:v "Stakeholder Involvement" ] ;
+     fhir:definition [
+       fhir:v "Focuses on the extent to which the guideline was developed by the appropriate stakeholders and represents the views of its intended users." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Fragt, inwieweit alle relevanten Berufsgruppen an der Erstellung der Leitlinie beteiligt waren und diese die Ansichten der Anwenderzielgruppe repräsentieren."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Beteiligung von Interessengruppen" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "rigour_of_development" ] ;
+     fhir:display [ fhir:v "Rigour of Development" ] ;
+     fhir:definition [
+       fhir:v "Relates to the process used to gather and synthesize the evidence, the methods to formulate the recommendations, and to update them." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Bezieht sich auf das Verfahren, mit dem die Evidenz gesucht und zusammengefasst wurde, sowie auf die Methoden zur Formulierung und zur Aktualisierung der Empfehlungen"
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Genauigkeit der Leitlinienentwicklung" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "clarity_of_presentation" ] ;
+     fhir:display [ fhir:v "Clarity of Presentation" ] ;
+     fhir:definition [
+       fhir:v "Deals with the language, structure, and format of the guideline." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Befasst sich mit der Sprache, der Struktur und dem Format der Leitlinie"
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Klarheit der Gestaltung" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "applicability" ] ;
+     fhir:display [ fhir:v "Applicability" ] ;
+     fhir:definition [
+       fhir:v "Pertains to the likely barriers and facilitators to implementation, strategies to improve uptake, and resource implications of applying the guideline." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Betrifft mögliche förderliche und hinderliche Faktoren für die Anwendung der Leitlinie, Strategien zur Förderung der Leitlinienanwendung und Auswirkungen der Anwendung der Leitlinie auf den Ressourcenverbrauch"
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Anwendbarkeit" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "editorial_independence" ] ;
+     fhir:display [ fhir:v "Editorial Independence" ] ;
+     fhir:definition [
+       fhir:v "Is concerned with the formulation of recommendations not being unduly biased with competing interests." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Befasst sich mit dem Einfluss möglicher Interessenkonflikte auf die Formulierung der Empfehlungen."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Redaktionelle Unabhängigkeit" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ArtifactAssessment xmlns="http://hl7.org/fhir">
+  <id value="RoB-CognitiveTestsWhenSuspectingDementia-Specificity"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-internal-assessment-cochrane-rob"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspecting Dementia on Specificity</div>
+  </text>
+  <artifactReference>
+    <reference value="Citation/CitationSystematicReviewTsoi2015"/>
+  </artifactReference>
+  <content>
+    <type>
+      <coding>
+        <system value="http://hl7.org/fhir/certainty-type"/>
+        <code value="Overall"/>
+        <display value="Overall certainty"/>
+      </coding>
+    </type>
+    <classifier>
+      <coding>
+        <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-rob-2-overall-judgment"/>
+        <code value="low_risk_of_bias"/>
+        <display value="Low risk of bias"/>
+      </coding>
+    </classifier>
+  </content>
+  <workflowStatus value="applied"/>
+</ArtifactAssessment>

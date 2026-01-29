@@ -1,0 +1,83 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "cs-awmf-guideline-status",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-awmf-guideline-status</b></p><a name=\"cs-awmf-guideline-status\"> </a><a name=\"hccs-awmf-guideline-status\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-status</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">registered<a name=\"cs-awmf-guideline-status-registered\"> </a></td><td>Registered</td><td>Angemeldet</td></tr><tr><td style=\"white-space:nowrap\">preliminary<a name=\"cs-awmf-guideline-status-preliminary\"> </a></td><td>Preliminary</td><td>Konsultationsfassung</td></tr><tr><td style=\"white-space:nowrap\">final<a name=\"cs-awmf-guideline-status-final\"> </a></td><td>Final</td><td>Veröffentlicht</td></tr><tr><td style=\"white-space:nowrap\">amended<a name=\"cs-awmf-guideline-status-amended\"> </a></td><td>Amended</td><td>Amendment publiziert</td></tr><tr><td style=\"white-space:nowrap\">corrected<a name=\"cs-awmf-guideline-status-corrected\"> </a></td><td>Corrected</td><td>Korrigiert</td></tr><tr><td style=\"white-space:nowrap\">cancelled<a name=\"cs-awmf-guideline-status-cancelled\"> </a></td><td>Cancelled</td><td>Zurückgezogen</td></tr><tr><td style=\"white-space:nowrap\">deprecated<a name=\"cs-awmf-guideline-status-deprecated\"> </a></td><td>Deprecated</td><td>Abgelaufen</td></tr></table></div>"
+  },
+  "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-status",
+  "version" : "0.2.0",
+  "name" : "AWMFGuidelineStatus",
+  "title" : "AWMF Guideline Status",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-01-29T18:27:10+00:00",
+  "publisher" : "AWMF e.V.",
+  "contact" : [{
+    "name" : "AWMF e.V.",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org"
+    }]
+  }],
+  "description" : "CodeSystem representing the guideline status according to the AWMF.",
+  "caseSensitive" : false,
+  "content" : "complete",
+  "count" : 7,
+  "concept" : [{
+    "code" : "registered",
+    "display" : "Registered",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Angemeldet"
+    }]
+  },
+  {
+    "code" : "preliminary",
+    "display" : "Preliminary",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Konsultationsfassung"
+    }]
+  },
+  {
+    "code" : "final",
+    "display" : "Final",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Veröffentlicht"
+    }]
+  },
+  {
+    "code" : "amended",
+    "display" : "Amended",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Amendment publiziert"
+    }]
+  },
+  {
+    "code" : "corrected",
+    "display" : "Corrected",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Korrigiert"
+    }]
+  },
+  {
+    "code" : "cancelled",
+    "display" : "Cancelled",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Zurückgezogen"
+    }]
+  },
+  {
+    "code" : "deprecated",
+    "display" : "Deprecated",
+    "designation" : [{
+      "language" : "de",
+      "value" : "Abgelaufen"
+    }]
+  }]
+}

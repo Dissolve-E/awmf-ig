@@ -1,0 +1,1129 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/Composition/NosokomialePneumonieRecord> a fhir:Composition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "NosokomialePneumonieRecord"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie</div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/artifact-extended-contact-detail"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/artifact-extended-contact-detail>
+     ] ;
+     fhir:value [
+       a fhir:ExtendedContactDetail ;
+       fhir:purpose [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-contact-point"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-contact-point>
+           ] ;
+           fhir:code [ fhir:v "contact" ]
+         ] )
+       ] ;
+       fhir:name ( [
+         fhir:text [ fhir:v "PD Dr. med. Jessica Rademacher" ]
+       ] ) ;
+       fhir:telecom ( [
+         fhir:system [ fhir:v "email" ] ;
+         fhir:value [ fhir:v "Rademacher.Jessica@mh-hannover.de" ]
+       ] [
+         fhir:system [ fhir:v "phone" ] ;
+         fhir:value [ fhir:v "0511-532 9735" ]
+       ] ) ;
+       fhir:address [
+         fhir:use [ fhir:v "work" ] ;
+         fhir:line ( [ fhir:v "Klinik für Pneumologie" ] [ fhir:v "Medizinische Hochschule Hannover" ] ) ;
+         fhir:city [ fhir:v "Hannover" ] ;
+         fhir:postalCode [ fhir:v "30625" ]
+       ]
+     ]
+  ] [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/artifact-extended-contact-detail"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/artifact-extended-contact-detail>
+     ] ;
+     fhir:value [
+       a fhir:ExtendedContactDetail ;
+       fhir:purpose [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-contact-point"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-contact-point>
+           ] ;
+           fhir:code [ fhir:v "coordinator" ]
+         ] )
+       ] ;
+       fhir:name ( [
+         fhir:text [ fhir:v "PD Dr. med. Jessica Rademacher" ]
+       ] ) ;
+       fhir:telecom ( [
+         fhir:system [ fhir:v "email" ] ;
+         fhir:value [ fhir:v "Rademacher.Jessica@mh-hannover.de" ]
+       ] [
+         fhir:system [ fhir:v "phone" ] ;
+         fhir:value [ fhir:v "0511-532 9735" ]
+       ] ) ;
+       fhir:address [
+         fhir:use [ fhir:v "work" ] ;
+         fhir:line ( [ fhir:v "Klinik für Pneumologie" ] [ fhir:v "Medizinische Hochschule Hannover" ] ) ;
+         fhir:city [ fhir:v "Hannover" ] ;
+         fhir:postalCode [ fhir:v "30625" ]
+       ]
+     ]
+  ] [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/artifact-lastReviewDate"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/artifact-lastReviewDate>
+     ] ;
+     fhir:value [
+       a fhir:Date ;
+       fhir:v "2024-03-01"^^xsd:date
+     ]
+  ] [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/artifact-publicationDate"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/artifact-publicationDate>
+     ] ;
+     fhir:value [
+       a fhir:Date ;
+       fhir:v "2024-03-22"^^xsd:date
+     ]
+  ] [
+     fhir:url [
+       fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-first-publication-date"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-first-publication-date>
+     ] ;
+     fhir:value [
+       a fhir:Date ;
+       fhir:v "2012-11-16"^^xsd:date
+     ]
+  ] [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/artifact-effectivePeriod"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/artifact-effectivePeriod>
+     ] ;
+     fhir:value [
+       a fhir:Period ;
+       fhir:end [ fhir:v "2029-02-28"^^xsd:date ]
+     ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:system [
+       fhir:v "http://fhir.awmf.org/guidelines"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/guidelines>
+     ] ;
+     fhir:value [ fhir:v "020-013" ]
+  ] ) ; # 
+  fhir:version [ fhir:v "3.0"] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+       ] ;
+       fhir:code [ fhir:v "guideline-registry-record" ] ;
+       fhir:display [ fhir:v "Guideline Registry Record" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-class"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-class>
+       ] ;
+       fhir:code [ fhir:v "S3" ] ;
+       fhir:display [ fhir:v "Evidence- and consensus-based guideline" ]
+     ] )
+  ] ) ; # 
+  fhir:date [ fhir:v "2025-02-13"^^xsd:date] ; # 
+  fhir:author ( [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/DGP> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "leading" ]
+         ] )
+       ]
+     ] [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "registrant" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/DGP" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/DGAI> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "contributing" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/DGAI" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/DGI> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "contributing" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/DGI" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/DGHM> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "contributing" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/DGHM" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/PEG> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "contributing" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/PEG" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/DRG> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "contributing" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/DRG" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/GFV> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "contributing" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/GFV" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/DGCH> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "contributing" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/DGCH" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/DGIM> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "contributing" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/DGIM" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/DGIIN> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "contributing" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/DGIIN" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/DSG> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "contributing" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/DSG" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/CPAnet> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "contributing" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/CPAnet" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/RKI> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "contributing" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/RKI" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/PractitionerRole/JessicaRademacherDGPFor020-013> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "content-author" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "PractitionerRole/JessicaRademacherDGPFor020-013" ]
+  ] ) ; # 
+  fhir:title [ fhir:v "Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie"] ; # 
+  fhir:note ( [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/annotationType"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/StructureDefinition/annotationType>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-remark-type"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-remark-type>
+           ] ;
+           fhir:code [ fhir:v "note" ] ;
+           fhir:display [ fhir:v "Note" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:text [ fhir:v "Das dieser Veröffentlichung zugrundliegende Projekt wurde mit Mitteln des Innovationsausschusses beim Gemeinsamen Bundesausschuss unter dem Förderkennzeichen gefördert: 01VSF22007" ]
+  ] ) ; # 
+  fhir:attester ( [
+     fhir:mode [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/composition-attestation-mode"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/composition-attestation-mode>
+         ] ;
+         fhir:code [ fhir:v "official" ]
+       ] )
+     ] ;
+     fhir:party [
+       fhir:l <http://fhir.awmf.org/awmf.ig/Organization/AWMF> ;
+       fhir:reference [ fhir:v "Organization/AWMF" ]
+     ]
+  ] ) ; # 
+  fhir:relatesTo ( [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/relatesto-classifier"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/StructureDefinition/relatesto-classifier>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types>
+           ] ;
+           fhir:code [ fhir:v "related-guideline" ]
+         ] )
+       ]
+     ] [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-relates-to-label"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-relates-to-label>
+       ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "Behandlung von erwachsenen Patienten mit ambulant erworbener Pneumonie"
+       ]
+     ] ) ;
+     fhir:type [ fhir:v "similar-to" ] ;
+     fhir:target [
+       a fhir:Uri ;
+       fhir:v "https://www.awmf.org/leitlinien/detail/ll/020-020.html"^^xsd:anyURI ;
+       fhir:l <https://www.awmf.org/leitlinien/detail/ll/020-020.html>
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/relatesto-classifier"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/StructureDefinition/relatesto-classifier>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types>
+           ] ;
+           fhir:code [ fhir:v "related-guideline" ]
+         ] )
+       ]
+     ] [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-relates-to-label"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-relates-to-label>
+       ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "Diagnostik und Therapie von erwachsenen Patienten mit Husten"
+       ]
+     ] ) ;
+     fhir:type [ fhir:v "similar-to" ] ;
+     fhir:target [
+       a fhir:Uri ;
+       fhir:v "https://www.awmf.org/leitlinien/detail/ll/020-003.html"^^xsd:anyURI ;
+       fhir:l <https://www.awmf.org/leitlinien/detail/ll/020-003.html>
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/relatesto-classifier"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/StructureDefinition/relatesto-classifier>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types>
+           ] ;
+           fhir:code [ fhir:v "related-guideline" ]
+         ] )
+       ]
+     ] [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-relates-to-label"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-relates-to-label>
+       ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "Prolongiertes Weaning"
+       ]
+     ] ) ;
+     fhir:type [ fhir:v "similar-to" ] ;
+     fhir:target [
+       a fhir:Uri ;
+       fhir:v "https://www.awmf.org/leitlinien/detail/ll/020-015.html"^^xsd:anyURI ;
+       fhir:l <https://www.awmf.org/leitlinien/detail/ll/020-015.html>
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/relatesto-classifier"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/StructureDefinition/relatesto-classifier>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types>
+           ] ;
+           fhir:code [ fhir:v "related-guideline" ]
+         ] )
+       ]
+     ] [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-relates-to-label"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-relates-to-label>
+       ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "Management der ambulant erworbenen Pneumonie bei Kindern und Jugendlichen (pCAP)"
+       ]
+     ] ) ;
+     fhir:type [ fhir:v "similar-to" ] ;
+     fhir:target [
+       a fhir:Uri ;
+       fhir:v "https://www.awmf.org/leitlinien/detail/ll/048-013.html"^^xsd:anyURI ;
+       fhir:l <https://www.awmf.org/leitlinien/detail/ll/048-013.html>
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/relatesto-classifier"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/StructureDefinition/relatesto-classifier>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types>
+           ] ;
+           fhir:code [ fhir:v "awmf-detail-page" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:type [ fhir:v "documentation" ] ;
+     fhir:target [
+       a fhir:Uri ;
+       fhir:v "https://register.awmf.org/de/leitlinien/detail/020-013"^^xsd:anyURI ;
+       fhir:l <https://register.awmf.org/de/leitlinien/detail/020-013>
+     ]
+  ] ) ; # 
+  fhir:section ( [
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+           fhir:l <https://fevir.net/resources/CodeSystem/179423>
+         ] ;
+         fhir:code [ fhir:v "summary" ] ;
+         fhir:display [ fhir:v "Summary" ]
+       ] )
+     ] ;
+     fhir:section ( [
+       fhir:code [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+           ] ;
+           fhir:code [ fhir:v "intention" ] ;
+           fhir:display [ fhir:v "Intention" ]
+         ] )
+       ] ;
+       fhir:section ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] ) ;
+         fhir:code [
+           fhir:coding ( [
+             fhir:system [
+               fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+               fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+             ] ;
+             fhir:code [ fhir:v "language" ] ;
+             fhir:display [ fhir:v "Language" ]
+           ] )
+         ] ;
+         fhir:text [
+           fhir:status [ fhir:v "additional" ] ;
+           fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\">Darstellung und Standardisierung der Diagnostik und Therapie der nosokomialen Pneumonie auf der Basis des aktuellen wissen-schaftlichen Kenntnisstandes für die Sicherstellung einer Evidenz-basierten und optimalen Versorgung von Patienten.</div>"^^rdf:XMLLiteral ]
+         ]
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-coding"^^xsd:anyURI ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-coding>
+         ] ;
+         fhir:value [
+           a fhir:CodeableConcept ;
+           fhir:coding ( [
+             fhir:system [
+               fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-target-patient-group"^^xsd:anyURI ;
+               fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-target-patient-group>
+             ] ;
+             fhir:code [ fhir:v "adults" ] ;
+             fhir:display [ fhir:v "Adults" ]
+           ] )
+         ]
+       ] ) ;
+       fhir:code [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+           ] ;
+           fhir:code [ fhir:v "target-patient-group" ] ;
+           fhir:display [ fhir:v "Target Patient Group" ]
+         ] )
+       ] ;
+       fhir:section ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] ) ;
+         fhir:code [
+           fhir:coding ( [
+             fhir:system [
+               fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+               fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+             ] ;
+             fhir:code [ fhir:v "language" ] ;
+             fhir:display [ fhir:v "Language" ]
+           ] )
+         ] ;
+         fhir:text [
+           fhir:status [ fhir:v "additional" ] ;
+           fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\">Erwachsene</div>"^^rdf:XMLLiteral ]
+         ]
+       ] )
+     ] [
+       fhir:code [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+           ] ;
+           fhir:code [ fhir:v "care-setting" ] ;
+           fhir:display [ fhir:v "Care Setting" ]
+         ] )
+       ] ;
+       fhir:section ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-coding"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-coding>
+           ] ;
+           fhir:value [
+             a fhir:CodeableConcept ;
+             fhir:coding ( [
+               fhir:system [
+                 fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting"^^xsd:anyURI ;
+                 fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting>
+               ] ;
+               fhir:code [ fhir:v "inpatient" ]
+             ] )
+           ]
+         ] ) ;
+         fhir:code [
+           fhir:coding ( [
+             fhir:system [
+               fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+               fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+             ] ;
+             fhir:code [ fhir:v "encounter-type" ] ;
+             fhir:display [ fhir:v "Encounter Type" ]
+           ] )
+         ] ;
+         fhir:section ( [
+           fhir:extension ( [
+             fhir:url [
+               fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language"^^xsd:anyURI ;
+               fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language>
+             ] ;
+             fhir:value [
+               a fhir:Code ;
+               fhir:v "de"
+             ]
+           ] ) ;
+           fhir:code [
+             fhir:coding ( [
+               fhir:system [
+                 fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+                 fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+               ] ;
+               fhir:code [ fhir:v "language" ] ;
+               fhir:display [ fhir:v "Language" ]
+             ] )
+           ] ;
+           fhir:text [
+             fhir:status [ fhir:v "additional" ] ;
+             fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\">stationär</div>"^^rdf:XMLLiteral ]
+           ]
+         ] )
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-coding"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-coding>
+           ] ;
+           fhir:value [
+             a fhir:CodeableConcept ;
+             fhir:coding ( [
+               fhir:system [
+                 fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting"^^xsd:anyURI ;
+                 fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting>
+               ] ;
+               fhir:code [ fhir:v "diagnosis" ]
+             ] )
+           ]
+         ] [
+           fhir:url [
+             fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-coding"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-coding>
+           ] ;
+           fhir:value [
+             a fhir:CodeableConcept ;
+             fhir:coding ( [
+               fhir:system [
+                 fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting"^^xsd:anyURI ;
+                 fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting>
+               ] ;
+               fhir:code [ fhir:v "therapy" ]
+             ] )
+           ]
+         ] ) ;
+         fhir:code [
+           fhir:coding ( [
+             fhir:system [
+               fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+               fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+             ] ;
+             fhir:code [ fhir:v "care-stage" ] ;
+             fhir:display [ fhir:v "Care Stage" ]
+           ] )
+         ] ;
+         fhir:section ( [
+           fhir:extension ( [
+             fhir:url [
+               fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language"^^xsd:anyURI ;
+               fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language>
+             ] ;
+             fhir:value [
+               a fhir:Code ;
+               fhir:v "de"
+             ]
+           ] ) ;
+           fhir:code [
+             fhir:coding ( [
+               fhir:system [
+                 fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+                 fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+               ] ;
+               fhir:code [ fhir:v "language" ] ;
+               fhir:display [ fhir:v "Language" ]
+             ] )
+           ] ;
+           fhir:text [
+             fhir:status [ fhir:v "additional" ] ;
+             fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\">Diagnostik, Therapie</div>"^^rdf:XMLLiteral ]
+           ]
+         ] )
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-coding"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-coding>
+           ] ;
+           fhir:value [
+             a fhir:CodeableConcept ;
+             fhir:coding ( [
+               fhir:system [
+                 fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting"^^xsd:anyURI ;
+                 fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting>
+               ] ;
+               fhir:code [ fhir:v "specialized-care" ]
+             ] )
+           ]
+         ] ) ;
+         fhir:code [
+           fhir:coding ( [
+             fhir:system [
+               fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+               fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+             ] ;
+             fhir:code [ fhir:v "care-level" ] ;
+             fhir:display [ fhir:v "Care Level" ]
+           ] )
+         ] ;
+         fhir:section ( [
+           fhir:extension ( [
+             fhir:url [
+               fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language"^^xsd:anyURI ;
+               fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language>
+             ] ;
+             fhir:value [
+               a fhir:Code ;
+               fhir:v "de"
+             ]
+           ] ) ;
+           fhir:code [
+             fhir:coding ( [
+               fhir:system [
+                 fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+                 fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+               ] ;
+               fhir:code [ fhir:v "language" ] ;
+               fhir:display [ fhir:v "Language" ]
+             ] )
+           ] ;
+           fhir:text [
+             fhir:status [ fhir:v "additional" ] ;
+             fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\">spezialärztliche Versorgung</div>"^^rdf:XMLLiteral ]
+           ]
+         ] )
+       ] )
+     ] [
+       fhir:code [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+           ] ;
+           fhir:code [ fhir:v "topic-selection-reason" ] ;
+           fhir:display [ fhir:v "Topic Selection Reason" ]
+         ] )
+       ] ;
+       fhir:section ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] ) ;
+         fhir:code [
+           fhir:coding ( [
+             fhir:system [
+               fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+               fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+             ] ;
+             fhir:code [ fhir:v "language" ] ;
+             fhir:display [ fhir:v "Language" ]
+           ] )
+         ] ;
+         fhir:text [
+           fhir:status [ fhir:v "additional" ] ;
+           fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\">Die nosokomiale Pneumonie ist in Deutschland eine häufige hospitalerworbene Infektion, die mit einer hohen Morbidität und Mortalität einhergeht. Diagnostik und Therapie stellen hohe Ansprüche an die behandelnden Ärzte, die häufig interdisziplinär gelöst werden müssen. Das therapeutische Vorgehen hat erheblichen Einfluss auf die Entwicklung von Antibiotikaresistenzen bei den ursächlichen Erregern. Revision der bestehenden Leitlinie wurde erforderlich, da die Empfehlungen zur Standardisierung und Qualitätssicherung der Diagnostik und Therapie bei erwachsenen Patienten mit nosokomialen Pneumonien auf den aktuellsten Forschungsergebnissen angepasst werden müssen.</div>"^^rdf:XMLLiteral ]
+         ]
+       ] )
+     ] [
+       fhir:code [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+           ] ;
+           fhir:code [ fhir:v "target-audience" ] ;
+           fhir:display [ fhir:v "Target Audience" ]
+         ] )
+       ] ;
+       fhir:section ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] ) ;
+         fhir:code [
+           fhir:coding ( [
+             fhir:system [
+               fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+               fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+             ] ;
+             fhir:code [ fhir:v "language" ] ;
+             fhir:display [ fhir:v "Language" ]
+           ] )
+         ] ;
+         fhir:text [
+           fhir:status [ fhir:v "additional" ] ;
+           fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\">Die Leitlinie wendet sich an alle im Krankenhaus tätigen Ärzte, die mit der Diagnostik und Therapie nosokomialer Pneumonien konfrontiert sind. Hierzu gehören Fachärzte für Anästhesiologie, Chirurgie, Innere Medizin, Intensivmedizin, Klinische Infektiologie, Klinische Mikrobiologie, Hygiene, Pneumologie, Virologie, und Radiologie, aber auch Ärzten anderer Fachgebiete, die Patienten mit nosokomialen Infektionen betreuen. Zugleich soll sie als Orientierung für Personen, Organisationen, Kostenträger sowie medizinisch-wissenschaftliche Fachgesellschaften und Berufsverbände dienen, die direkt oder indirekt mit diesem Thema in Verbindung stehen.</div>"^^rdf:XMLLiteral ]
+         ]
+       ] )
+     ] [
+       fhir:code [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+           ] ;
+           fhir:code [ fhir:v "keywords" ] ;
+           fhir:display [ fhir:v "Keywords" ]
+         ] )
+       ] ;
+       fhir:section ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] ) ;
+         fhir:code [
+           fhir:coding ( [
+             fhir:system [
+               fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+               fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+             ] ;
+             fhir:code [ fhir:v "language" ] ;
+             fhir:display [ fhir:v "Language" ]
+           ] )
+         ] ;
+         fhir:text [
+           fhir:status [ fhir:v "additional" ] ;
+           fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\">Pneumonie, nosokomial, hospital-acquired pneumonia, HAP, Ventilator-assoziierten Pneumonie, VAP, im Krankenhaus erworbene Lungenentzündung, Epidemiology, diagnosis and treatment of adult patients with nosocomial pneumonia</div>"^^rdf:XMLLiteral ]
+         ]
+       ] )
+     ] )
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+           fhir:l <https://fevir.net/resources/CodeSystem/179423>
+         ] ;
+         fhir:code [ fhir:v "attachments" ] ;
+         fhir:display [ fhir:v "Attachments" ]
+       ] )
+     ] ;
+     fhir:section ( [
+       fhir:code [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+           ] ;
+           fhir:code [ fhir:v "long-version" ] ;
+           fhir:display [ fhir:v "Long Version" ]
+         ] )
+       ] ;
+       fhir:entry ( [
+         fhir:l <http://fhir.awmf.org/awmf.ig/DocumentReference/Guideline-020-013-LongVersion> ;
+         fhir:reference [ fhir:v "DocumentReference/Guideline-020-013-LongVersion" ]
+       ] )
+     ] [
+       fhir:code [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+           ] ;
+           fhir:code [ fhir:v "short-version" ] ;
+           fhir:display [ fhir:v "Short Version" ]
+         ] )
+       ] ;
+       fhir:entry ( [
+         fhir:l <http://fhir.awmf.org/awmf.ig/DocumentReference/Guideline-020-013-ShortVersion> ;
+         fhir:reference [ fhir:v "DocumentReference/Guideline-020-013-ShortVersion" ]
+       ] )
+     ] [
+       fhir:code [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+           ] ;
+           fhir:code [ fhir:v "guideline-report" ] ;
+           fhir:display [ fhir:v "Guideline Report" ]
+         ] )
+       ] ;
+       fhir:entry ( [
+         fhir:l <http://fhir.awmf.org/awmf.ig/DocumentReference/Guideline-020-013-GuidelineReport> ;
+         fhir:reference [ fhir:v "DocumentReference/Guideline-020-013-GuidelineReport" ]
+       ] )
+     ] [
+       fhir:code [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+           ] ;
+           fhir:code [ fhir:v "patient-version" ] ;
+           fhir:display [ fhir:v "Patient Version" ]
+         ] )
+       ] ;
+       fhir:entry ( [
+         fhir:l <http://fhir.awmf.org/awmf.ig/DocumentReference/Guideline-020-013-PatientVersion> ;
+         fhir:reference [ fhir:v "DocumentReference/Guideline-020-013-PatientVersion" ]
+       ] )
+     ] [
+       fhir:code [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+           ] ;
+           fhir:code [ fhir:v "slide-deck" ]
+         ] )
+       ] ;
+       fhir:entry ( [
+         fhir:l <http://fhir.awmf.org/awmf.ig/DocumentReference/Guideline-020-013-SlideDeck> ;
+         fhir:reference [ fhir:v "DocumentReference/Guideline-020-013-SlideDeck" ]
+       ] )
+     ] [
+       fhir:code [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+           ] ;
+           fhir:code [ fhir:v "implementation-guidance" ]
+         ] )
+       ] ;
+       fhir:entry ( [
+         fhir:l <http://fhir.awmf.org/awmf.ig/DocumentReference/Guideline-020-013-ImplementationGuidance> ;
+         fhir:reference [ fhir:v "DocumentReference/Guideline-020-013-ImplementationGuidance" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

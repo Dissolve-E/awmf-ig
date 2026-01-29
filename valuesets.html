@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Value Sets - Dissolve-E: AWMF Guideline Registry v0.2.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"5"}
+    h3,h4,h5,h6{--heading-prefix:"5"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Dissolve-E: AWMF Guideline Registry</span>
+            <br/>
+            <span style="display:inline-block;">0.2.0 - ci-build
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R5/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="profiles.html">Profiles</a>
+  </li>
+  <li>
+    <a href="extensions.html">Extensions</a>
+  </li>
+  <li>
+    <a href="codesystems.html">Code Systems</a>
+  </li>
+  <li>
+    <a href="valuesets.html">Value Sets</a>
+  </li>
+  <li>
+    <a href="examples.html">Examples</a>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Value Sets</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Dissolve-E: AWMF Guideline Registry - Local Development build (v0.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://fhir.awmf.org/awmf.ig/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Value Sets</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<h3 id="value-sets-related-to-guidelines">Value Sets related to Guidelines</h3>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-awmf-guideline-class.html">AWMF Guideline Class</a>
+  </td>
+  <td>
+    <p>ValueSet listing values representing guideline classes according to the AWMF.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-awmf-guideline-status.html">AWMF Guideline Status</a>
+  </td>
+  <td>
+    <p>ValueSet listing values to define the guideline status according to the AWMF.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-body-system-conditions.html">Body System Conditions</a>
+  </td>
+  <td>
+    <p>ValueSet listing various body system conditions</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-care-level.html">Care Level</a>
+  </td>
+  <td>
+    <p>ValueSet listing levels of care.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-care-stage.html">Care Stage</a>
+  </td>
+  <td>
+    <p>ValueSet listing stages of care from prevention to rehabilitation.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-clinical-application-type.html">Clinical Application Type</a>
+  </td>
+  <td>
+    <p>ValueSet listing different clinical application types</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-content-types.html">Content Types</a>
+  </td>
+  <td>
+    <p>ValueSet listing types of content that can be part of a guideline or recommendation.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-dissemination-website.html">Dissemination Website</a>
+  </td>
+  <td>
+    <p>ValueSet listing types of dissemination websites</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-encounter-type.html">Encounter Type</a>
+  </td>
+  <td>
+    <p>ValueSet listing types of patient encounters based on hospitalization status.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-guideline-author-role.html">Guideline Author Role</a>
+  </td>
+  <td>
+    <p>ValueSet listing roles that a author can have in a guideline.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-guideline-contact-point.html">Guideline Contact Point VS</a>
+  </td>
+  <td>
+    <p>ValueSet listing contact points relevant to guidelines, such as registrants, coordinators, and main contacts.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-guideline-release-type.html">Guideline Release Type</a>
+  </td>
+  <td>
+    <p>ValueSet listing different guideline release types</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-guideline-sections.html">Guideline Sections</a>
+  </td>
+  <td>
+    <p>ValueSet listing values to use to define guideline sections</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-medical-subject-categories.html">Medical Subject Categories</a>
+  </td>
+  <td>
+    <p>ValueSet listing values to classify medical subjects into different categories.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-recommendation-tags.html">Recommendation Tags</a>
+  </td>
+  <td>
+    <p>ValueSet listing different tags to use for recommendations</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-remark-type.html">Remark Type</a>
+  </td>
+  <td>
+    <p>ValueSet listing types of remarks that can be associated with guidelines, including restrictions, warnings, and additional notes.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-target-patient-group.html">Target Patient Group</a>
+  </td>
+  <td>
+    <p>ValueSet listing patient population categories for guidelines, such as adults and children/adolescents.</p>
+  </td>
+</tr>
+
+<h4 id="value-sets-related-to-recommendations">Value Sets related to Recommendations</h4>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-intended-audience.html">Intended Audience Value Set</a>
+  </td>
+  <td>
+    <p>ValueSet listing codes representing intended audiences for a section</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-level-of-consensus.html">Level Of Consensus</a>
+  </td>
+  <td>
+    <p>ValueSet listing values to define the level of consensus for a recommendation.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-recommendation-direction.html">Recommendation Direction</a>
+  </td>
+  <td>
+    <p>ValueSet defining the direction of a clinical recommendation.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-recommendation-review-status.html">Recommendation Review Status Value Set</a>
+  </td>
+  <td>
+    <p>ValueSet representing the review-related status of a recommendation in a new guideline version</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-recommendation-strength-awmf.html">Recommendation Strength (AWMF) ValueSet</a>
+  </td>
+  <td>
+    <p>ValueSet of strength of recommendations as defined in AWMF guideline methodology.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-recommendation-synthesis-type.html">Recommendation Synthesis Type</a>
+  </td>
+  <td>
+    <p>ValueSet listing different synthesis Types of recommendations</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-recommendation-tags.html">Recommendation Tags</a>
+  </td>
+  <td>
+    <p>ValueSet listing different tags to use for recommendations</p>
+  </td>
+</tr>
+
+<h4 id="value-sets-related-to-ratings">Value Sets related to Ratings</h4>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-agree-ii-domains.html">AGREE II Domains Value Set</a>
+  </td>
+  <td>
+    <p>ValueSet encompassing all domains from the AGREE II instrument.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-amstar2-confidence-ratings.html">AMSTAR 2 Confidence Ratings Value Set</a>
+  </td>
+  <td>
+    <p>ValueSet encompassing all overall confidence ratings from the AMSTAR 2 critical appraisal tool.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-ocebm-2009-levels-of-evidence.html">OCEBM 2009 Levels of Evidence Value Set</a>
+  </td>
+  <td>
+    <p>ValueSet encompassing all levels from the Oxford Centre for Evidence-Based Medicine 2009 Levels of Evidence.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-ocebm-2011-levels-of-evidence-vs.html">OCEBM 2011 Levels of Evidence Value Set</a>
+  </td>
+  <td>
+    <p>ValueSet encompassing all levels from the OCEBM 2011 Levels of Evidence.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-pico.html">PICO related terms</a>
+  </td>
+  <td>
+    <p>ValueSet listing different terms related to PICO question and objects</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-robis-judgment-of-risk-of-bias.html">ROBIS Judgment of Risk of Bias Value Set</a>
+  </td>
+  <td>
+    <p>ValueSet encompassing all risk of bias judgment values from the ROBIS tool.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-robis-risk-of-bias-domains.html">ROBIS Risk of Bias Domains Value Set</a>
+  </td>
+  <td>
+    <p>ValueSet encompassing all risk of bias domains from the ROBIS tool.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-rob-2-overall-judgment.html">RoB2 Overall Judgment ValueSet</a>
+  </td>
+  <td>
+    <p>ValueSet listing values to represent the overall judgment of risk of bias assessed by the RoB2 tool for evaluating risk of bias for randomized trials.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-sign-grade-of-recommendation.html">SIGN Grade of Recommendation Value Set</a>
+  </td>
+  <td>
+    <p>ValueSet encompassing all grades of recommendation from the SIGN (Scottish Intercollegiate Guidelines Network) Grades of Recommendation.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-sign-level-of-evidence.html">SIGN Level of Evidence Value Set</a>
+  </td>
+  <td>
+    <p>ValueSet encompassing all levels from the SIGN (Scottish Intercollegiate Guidelines Network) Levels of Evidence.</p>
+  </td>
+</tr>
+
+<h5 id="value-sets-related-to-grade">Value Sets related to GRADE</h5>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-rating-acceptability.html">Rating Acceptability</a>
+  </td>
+  <td>
+    <p>ValueSet defining if the alternatives are acceptable for the target population and its implementors?</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-rating-benefits-and-harms.html">Rating Benefits And Harms</a>
+  </td>
+  <td>
+    <p>ValueSet listing values to represent the summary of the most important benefits and harms</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-rating-certainty-of-evidence.html">Rating Certainty Of Evidence</a>
+  </td>
+  <td>
+    <p>Codes from EvidenceCertaintyRating related to certainty of evidence</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-rating-concern-degree.html">Rating Concern Degree</a>
+  </td>
+  <td>
+    <p>ValueSet listing codes from EvidenceCertaintyRating related to degree of concern</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-rating-equity.html">Rating Equity</a>
+  </td>
+  <td>
+    <p>ValueSet listing values to represent how the different alternatives affect equity</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-rating-feasibility.html">Rating Feasibility</a>
+  </td>
+  <td>
+    <p>ValueSet listing values to reprensent how feasible will it be to implement the different alternatives and if there are any issues</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-rating-preference-and-values.html">Rating Preference And Values</a>
+  </td>
+  <td>
+    <p>ValueSet listing typical patient preferences and values as well as common issues or expected variability</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="ValueSet-vs-rating-resources.html">Rating Resources</a>
+  </td>
+  <td>
+    <p>ValueSet listing values to indicate if there are issues related to costs or resource use.</p>
+  </td>
+</tr>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.awmf.org">AWMF e.V.</a>.  Package awmf.ig#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR 6.0.0-ballot3</a>. Generated <span title="Thu, Jan 29, 2026 18:27+0000">2026-01-29</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

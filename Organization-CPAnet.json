@@ -1,0 +1,9 @@
+{
+  "resourceType" : "Organization",
+  "id" : "CPAnet",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Netzwerk chronisch pulmonale Aspergillose (CPAnet)</div>"
+  },
+  "name" : "Netzwerk chronisch pulmonale Aspergillose (CPAnet)"
+}

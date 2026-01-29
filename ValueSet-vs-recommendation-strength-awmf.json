@@ -1,0 +1,28 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "vs-recommendation-strength-awmf",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet vs-recommendation-strength-awmf</b></p><a name=\"vs-recommendation-strength-awmf\"> </a><a name=\"hcvs-recommendation-strength-awmf\"> </a><ul><li>Include all codes defined in <a href=\"CodeSystem-cs-recommendation-strength-awmf.html\"><code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-strength-awmf</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version &#x1F4E6;0.2.0</span></li></ul></div>"
+  },
+  "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-recommendation-strength-awmf",
+  "version" : "0.2.0",
+  "name" : "RecommendationStrengthAWMFVS",
+  "title" : "Recommendation Strength (AWMF) ValueSet",
+  "status" : "draft",
+  "date" : "2026-01-29T18:27:10+00:00",
+  "publisher" : "AWMF e.V.",
+  "contact" : [{
+    "name" : "AWMF e.V.",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org"
+    }]
+  }],
+  "description" : "ValueSet of strength of recommendations as defined in AWMF guideline methodology.",
+  "compose" : {
+    "include" : [{
+      "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-strength-awmf"
+    }]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "resourceType" : "Evidence",
+  "id" : "Evidence-MultiplexPCRDiagnostic-AntibioticDays",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Evidence for the impact of Multiplex-PCR-Diagnostik on antibiotic days</div>"
+  },
+  "status" : "active",
+  "variableDefinition" : [{
+    "variableRole" : "outcome",
+    "intended" : {
+      "reference" : "EvidenceVariable/OutcomeAntibioticDays"
+    }
+  }]
+}

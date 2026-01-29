@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Extensions - Dissolve-E: AWMF Guideline Registry v0.2.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"3"}
+    h3,h4,h5,h6{--heading-prefix:"3"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Dissolve-E: AWMF Guideline Registry</span>
+            <br/>
+            <span style="display:inline-block;">0.2.0 - ci-build
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R5/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="profiles.html">Profiles</a>
+  </li>
+  <li>
+    <a href="extensions.html">Extensions</a>
+  </li>
+  <li>
+    <a href="codesystems.html">Code Systems</a>
+  </li>
+  <li>
+    <a href="valuesets.html">Value Sets</a>
+  </li>
+  <li>
+    <a href="examples.html">Examples</a>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Extensions</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Dissolve-E: AWMF Guideline Registry - Local Development build (v0.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://fhir.awmf.org/awmf.ig/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Extensions</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#extensions-related-to-guidelines" id="markdown-toc-extensions-related-to-guidelines">Extensions related to Guidelines</a></li>
+  <li><a href="#extensions-related-to-recommendations" id="markdown-toc-extensions-related-to-recommendations">Extensions related to Recommendations</a></li>
+  <li><a href="#other-extensions" id="markdown-toc-other-extensions">Other Extensions</a></li>
+</ul>
+
+</div>
+<p>The following extensions were defined as part of the DISSOLVE-E project:</p>
+
+<h3 id="extensions-related-to-guidelines">Extensions related to Guidelines</h3>
+
+<tr>
+  <td>
+    <a href="StructureDefinition-ext-artifact-extended-contact.html">Artifact Contact (Extended)</a>
+  </td>
+  <td>
+    <p>This extension provides additional contact details for individuals or organizations associated with an artifact (e.g., a clinical document, guideline, or other composition).</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="StructureDefinition-ext-consultation-period.html">Consultation Period</a>
+  </td>
+  <td>
+    <p>This extension allows for the indication of the period during which the guideline is open for consultation.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="StructureDefinition-ext-first-publication-date.html">First Publication Date</a>
+  </td>
+  <td>
+    <p>This extension allows for the indication of the date when the guideline was first published.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="StructureDefinition-guideline-author.html">Guideline Author</a>
+  </td>
+  <td>
+    <p>A person that authored a guideline.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="StructureDefinition-guideline-author-role.html">Guideline Author Role</a>
+  </td>
+  <td>
+    <p>The role of the author of the guideline.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="StructureDefinition-ext-guideline-author-role.html">Guideline Author Role</a>
+  </td>
+  <td>
+    <p>This extension allows for the indication of the role of the author of the guideline.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="StructureDefinition-ext-medical-subject.html">Medical Subject</a>
+  </td>
+  <td>
+    <p>An extension to specify medical subjects related to an organization.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="StructureDefinition-ext-medical-subject-category.html">Medical Subject Category</a>
+  </td>
+  <td>
+    <p>An extension to specify medical subject category related to an organization.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="StructureDefinition-ext-planned-completion-date.html">Planned Completion Date</a>
+  </td>
+  <td>
+    <p>This extension allows for the indication of the date when the guideline is planned to be completed.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="StructureDefinition-ext-publication-date.html">Publication Date</a>
+  </td>
+  <td>
+    <p>This extensions allows for the indication of the date when the guideline was published.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="StructureDefinition-ext-registration-date.html">Registration Date</a>
+  </td>
+  <td>
+    <p>This extensions allows for the indication of the date the guideline project was registered.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="StructureDefinition-ext-relates-to-label.html">RelatesTo Label</a>
+  </td>
+  <td>
+    <p>This extension defines a label for the 'relatesTo' relationship using a CodeableConcept.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="StructureDefinition-ext-section-coding.html">Section Coding</a>
+  </td>
+  <td>
+    <p>This extension allows for the assignment of a specific code to a section within a Composition resource. The code provides a standardized way to categorize or identify the content of the section, enabling better organization, searchability, and interoperability of clinical documents or other structured artifacts.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="StructureDefinition-ext-submission-date.html">Submission Date</a>
+  </td>
+  <td>
+    <p>This extension allows for the indication of the date when the guideline was submitted to the system.</p>
+  </td>
+</tr>
+
+<h3 id="extensions-related-to-recommendations">Extensions related to Recommendations</h3>
+
+<tr>
+  <td>
+    <a href="StructureDefinition-ext-recommendation-review-status.html">Recommendation Review Status</a>
+  </td>
+  <td>
+    <p>This extension allows for the indication of the status of a recommendation in the context of an updated guideline version along with an optional explanatory text</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="StructureDefinition-ext-section-intended-audience.html">Section Intended Audience</a>
+  </td>
+  <td>
+    <p>This extension allows for the indication of the target audience for the section</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="StructureDefinition-ext-section-keyword.html">Section Keyword</a>
+  </td>
+  <td>
+    <p>This extension allows for the indication of keywords associated with the section</p>
+  </td>
+</tr>
+
+<h3 id="other-extensions">Other Extensions</h3>
+
+<tr>
+  <td>
+    <a href="StructureDefinition-ext-author-language.html">Author Language</a>
+  </td>
+  <td>
+    <p>This extension allows for the specification of the language(s) the author contributed to a section in a FHIR Composition.</p>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="StructureDefinition-ext-section-language.html">Section Language</a>
+  </td>
+  <td>
+    <p>This extension allows for the indication of the Language of the Section.</p>
+  </td>
+</tr>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.awmf.org">AWMF e.V.</a>.  Package awmf.ig#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR 6.0.0-ballot3</a>. Generated <span title="Thu, Jan 29, 2026 18:27+0000">2026-01-29</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

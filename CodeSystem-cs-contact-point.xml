@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-contact-point"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-contact-point</b></p><a name="cs-contact-point"> </a><a name="hccs-contact-point"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-contact-point</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style="white-space:nowrap">registrant<a name="cs-contact-point-registrant"> </a></td><td>Registrant</td><td>The contact is the registrant of the guideline.</td><td>Anmelder*in</td></tr><tr><td style="white-space:nowrap">contact<a name="cs-contact-point-contact"> </a></td><td>Contact</td><td>The main contact for the guideline.</td><td>Kontakt</td></tr><tr><td style="white-space:nowrap">coordinator<a name="cs-contact-point-coordinator"> </a></td><td>Coordinator</td><td>The contact is the coordinator of the guideline.</td><td>Koordination</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-contact-point"/>
+  <version value="0.2.0"/>
+  <name value="ContactPoint"/>
+  <title value="Contact Point"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem defining types of contact points for a guideline"/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="3"/>
+  <concept>
+    <code value="registrant"/>
+    <display value="Registrant"/>
+    <definition value="The contact is the registrant of the guideline.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Der Kontakt ist die anmeldende Person oder Organisation der Leitlinie."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Anmelder*in"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="contact"/>
+    <display value="Contact"/>
+    <definition value="The main contact for the guideline.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Der Kontakt ist der/die Hauptansprechpartner*in für die Leitlinie."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Kontakt"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="coordinator"/>
+    <display value="Coordinator"/>
+    <definition value="The contact is the coordinator of the guideline.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Der Kontakt ist der/die Koordinator*in der Leitlinie."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Koordination"/>
+    </designation>
+  </concept>
+</CodeSystem>

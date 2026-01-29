@@ -1,0 +1,90 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-status> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cs-awmf-guideline-status"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-awmf-guideline-status</b></p><a name=\"cs-awmf-guideline-status\"> </a><a name=\"hccs-awmf-guideline-status\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-status</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">registered<a name=\"cs-awmf-guideline-status-registered\"> </a></td><td>Registered</td><td>Angemeldet</td></tr><tr><td style=\"white-space:nowrap\">preliminary<a name=\"cs-awmf-guideline-status-preliminary\"> </a></td><td>Preliminary</td><td>Konsultationsfassung</td></tr><tr><td style=\"white-space:nowrap\">final<a name=\"cs-awmf-guideline-status-final\"> </a></td><td>Final</td><td>Veröffentlicht</td></tr><tr><td style=\"white-space:nowrap\">amended<a name=\"cs-awmf-guideline-status-amended\"> </a></td><td>Amended</td><td>Amendment publiziert</td></tr><tr><td style=\"white-space:nowrap\">corrected<a name=\"cs-awmf-guideline-status-corrected\"> </a></td><td>Corrected</td><td>Korrigiert</td></tr><tr><td style=\"white-space:nowrap\">cancelled<a name=\"cs-awmf-guideline-status-cancelled\"> </a></td><td>Cancelled</td><td>Zurückgezogen</td></tr><tr><td style=\"white-space:nowrap\">deprecated<a name=\"cs-awmf-guideline-status-deprecated\"> </a></td><td>Deprecated</td><td>Abgelaufen</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-status"^^xsd:anyURI ;
+     fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-status>
+  ] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:name [ fhir:v "AWMFGuidelineStatus"] ; # 
+  fhir:title [ fhir:v "AWMF Guideline Status"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-01-29T18:27:10+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "AWMF e.V."] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AWMF e.V." ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.awmf.org" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "CodeSystem representing the guideline status according to the AWMF."] ; # 
+  fhir:caseSensitive [ fhir:v false] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "7"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "registered" ] ;
+     fhir:display [ fhir:v "Registered" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Angemeldet" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "preliminary" ] ;
+     fhir:display [ fhir:v "Preliminary" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Konsultationsfassung" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "final" ] ;
+     fhir:display [ fhir:v "Final" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Veröffentlicht" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "amended" ] ;
+     fhir:display [ fhir:v "Amended" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Amendment publiziert" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "corrected" ] ;
+     fhir:display [ fhir:v "Corrected" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Korrigiert" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "cancelled" ] ;
+     fhir:display [ fhir:v "Cancelled" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Zurückgezogen" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "deprecated" ] ;
+     fhir:display [ fhir:v "Deprecated" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Abgelaufen" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-evidence-to-decision-certainty-rating"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-evidence-to-decision-certainty-rating</b></p><a name="cs-evidence-to-decision-certainty-rating"> </a><a name="hccs-evidence-to-decision-certainty-rating"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-to-decision-certainty-rating</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style="white-space:nowrap">small-net-benefit<a name="cs-evidence-to-decision-certainty-rating-small-net-benefit"> </a></td><td>Small net benefit</td><td>Small net benefit, or little difference between alternatives</td><td>Geringer Netto-Nutzen</td></tr><tr><td style="white-space:nowrap">substantial-net-benefit<a name="cs-evidence-to-decision-certainty-rating-substantial-net-benefit"> </a></td><td>Substantial net benefit</td><td>Substantial net benefits of the recommended alternative</td><td>Erheblicher Netto-Nutzen</td></tr><tr><td style="white-space:nowrap">important-harms<a name="cs-evidence-to-decision-certainty-rating-important-harms"> </a></td><td>Important harms</td><td>Important harms</td><td>Wesentliche Schäden</td></tr><tr><td style="white-space:nowrap">substantial-variability<a name="cs-evidence-to-decision-certainty-rating-substantial-variability"> </a></td><td>Substantial variability</td><td>Substantial variability is expected or uncertain</td><td>Erhebliche Variabilität</td></tr><tr><td style="white-space:nowrap">no-substantial-variability<a name="cs-evidence-to-decision-certainty-rating-no-substantial-variability"> </a></td><td>No substantial variability</td><td>No substantial variability expected</td><td>Keine erhebliche Variabilität</td></tr><tr><td style="white-space:nowrap">few-want-intervention<a name="cs-evidence-to-decision-certainty-rating-few-want-intervention"> </a></td><td>Few want intervention</td><td>We expect few to want the intervention</td><td>Wenige wünschen Intervention</td></tr><tr><td style="white-space:nowrap">factor-not-considered<a name="cs-evidence-to-decision-certainty-rating-factor-not-considered"> </a></td><td>Factor not considered</td><td>Factor not considered</td><td>Unberücksichtigter Faktor</td></tr><tr><td style="white-space:nowrap">important-issues-or-not-investigated<a name="cs-evidence-to-decision-certainty-rating-important-issues-or-not-investigated"> </a></td><td>Important issues</td><td>Important issues, or potential issues not investigated</td><td>Wesentliche Probleme</td></tr><tr><td style="white-space:nowrap">no-important-issues<a name="cs-evidence-to-decision-certainty-rating-no-important-issues"> </a></td><td>No important issues</td><td>No important issues with the recommended alternative</td><td>Keine wesentlichen Probleme</td></tr><tr><td style="white-space:nowrap">important-negative-issues<a name="cs-evidence-to-decision-certainty-rating-important-negative-issues"> </a></td><td>Important negative issues</td><td>Important negative issues</td><td>Wesentliche negative Aspekte</td></tr><tr><td style="white-space:nowrap">intervention-increases-inequity<a name="cs-evidence-to-decision-certainty-rating-intervention-increases-inequity"> </a></td><td>Intervention increases inequity</td><td>Intervention likely increases inequity</td><td>Intervention erhöht Ungerechtigkeit</td></tr><tr><td style="white-space:nowrap">intervention-poorly-accepted<a name="cs-evidence-to-decision-certainty-rating-intervention-poorly-accepted"> </a></td><td>Intervention poorly accepted</td><td>Intervention is likely poorly accepted</td><td>Intervention schlecht angenommen</td></tr><tr><td style="white-space:nowrap">intervention-difficult-to-implement<a name="cs-evidence-to-decision-certainty-rating-intervention-difficult-to-implement"> </a></td><td>Intervention difficult to implement</td><td>Intervention is likely difficult to implement</td><td>Internvention schwer umzusetzen</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-evidence-to-decision-certainty-rating"/>
+  <version value="0.2.0"/>
+  <name value="EvidenceToDecisionCertaintyRating"/>
+  <title value="Evidence To Decision Certainty Rating"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem defining GRADE Evidence to Decision (EtD) Framework Certainty Ratings"/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="13"/>
+  <concept>
+    <code value="small-net-benefit"/>
+    <display value="Small net benefit"/>
+    <definition value="Small net benefit, or little difference between alternatives">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Geringer Netto-Nutzen, oder geringer Unterschied zwischen den Alternativen."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Geringer Netto-Nutzen"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="substantial-net-benefit"/>
+    <display value="Substantial net benefit"/>
+    <definition value="Substantial net benefits of the recommended alternative">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Erheblicher Netto-Nutzen der empfohlenen Alternative."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Erheblicher Netto-Nutzen"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="important-harms"/>
+    <display value="Important harms"/>
+    <definition value="Important harms">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Wesentliche Schäden"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Wesentliche Schäden"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="substantial-variability"/>
+    <display value="Substantial variability"/>
+    <definition value="Substantial variability is expected or uncertain">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Erhebliche Variabilität ist zu erwarten oder ungewiss."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Erhebliche Variabilität"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="no-substantial-variability"/>
+    <display value="No substantial variability"/>
+    <definition value="No substantial variability expected">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Keine erhebliche Variabilität erwartet."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Keine erhebliche Variabilität"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="few-want-intervention"/>
+    <display value="Few want intervention"/>
+    <definition value="We expect few to want the intervention">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Wir erwarten, dass nur wenige die Intervention wünschen."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Wenige wünschen Intervention"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="factor-not-considered"/>
+    <display value="Factor not considered"/>
+    <definition value="Factor not considered">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Unberücksichtigter Faktor"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Unberücksichtigter Faktor"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="important-issues-or-not-investigated"/>
+    <display value="Important issues"/>
+    <definition value="Important issues, or potential issues not investigated">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Wesentliche Probleme oder potenzielle Probleme, die nicht untersucht worden sind."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Wesentliche Probleme"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="no-important-issues"/>
+    <display value="No important issues"/>
+    <definition value="No important issues with the recommended alternative">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Keine wesentlichen Probleme mit der empfohlenen Alternative"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Keine wesentlichen Probleme"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="important-negative-issues"/>
+    <display value="Important negative issues"/>
+    <definition value="Important negative issues">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Wesentliche negative Aspekte"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Wesentliche negative Aspekte"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="intervention-increases-inequity"/>
+    <display value="Intervention increases inequity"/>
+    <definition value="Intervention likely increases inequity">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Die Intervention erhöht wahrscheinlich die Ungerechtigkeit."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Intervention erhöht Ungerechtigkeit"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="intervention-poorly-accepted"/>
+    <display value="Intervention poorly accepted"/>
+    <definition value="Intervention is likely poorly accepted">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Die Intervention wird voraussichtlich schlecht angenommen."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Intervention schlecht angenommen"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="intervention-difficult-to-implement"/>
+    <display value="Intervention difficult to implement"/>
+    <definition value="Intervention is likely difficult to implement">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Die Intervention ist voraussichtlich schwer umzusetzen."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Internvention schwer umzusetzen"/>
+    </designation>
+  </concept>
+</CodeSystem>

@@ -1,0 +1,137 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "cs-guideline-release-type",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-guideline-release-type</b></p><a name=\"cs-guideline-release-type\"> </a><a name=\"hccs-guideline-release-type\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-release-type</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">new-registration<a name=\"cs-guideline-release-type-new-registration\"> </a></td><td>New Registration</td><td>New Registration</td><td>Neuanmeldung</td></tr><tr><td style=\"white-space:nowrap\">update<a name=\"cs-guideline-release-type-update\"> </a></td><td>Update</td><td>Update</td><td>Aktualisierung</td></tr><tr><td style=\"white-space:nowrap\">class-upgrade<a name=\"cs-guideline-release-type-class-upgrade\"> </a></td><td>Class Upgrade</td><td>Upgrade to a higher guideline class</td><td>Klassen-Upgrade</td></tr><tr><td style=\"white-space:nowrap\">class-downgrade<a name=\"cs-guideline-release-type-class-downgrade\"> </a></td><td>Class Downgrade</td><td>Downgrade to a lower guideline class</td><td>Klassen-Downgrade</td></tr><tr><td style=\"white-space:nowrap\">living-guideline<a name=\"cs-guideline-release-type-living-guideline\"> </a></td><td>Living Guideline</td><td>A guideline designated as a continuously updated living guideline.</td><td>Living Guideline</td></tr></table></div>"
+  },
+  "url" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-release-type",
+  "version" : "0.2.0",
+  "name" : "GuidelineReleaseType",
+  "title" : "Guideline Release Type",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-01-29T18:27:10+00:00",
+  "publisher" : "AWMF e.V.",
+  "contact" : [{
+    "name" : "AWMF e.V.",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org"
+    }]
+  }],
+  "description" : "CodeSystem defining different guideline release types",
+  "caseSensitive" : false,
+  "content" : "complete",
+  "count" : 5,
+  "concept" : [{
+    "code" : "new-registration",
+    "display" : "New Registration",
+    "definition" : "New Registration",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Neuanmeldung"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Neuanmeldung"
+    }]
+  },
+  {
+    "code" : "update",
+    "display" : "Update",
+    "definition" : "Update",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Aktualisierung"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Aktualisierung"
+    }]
+  },
+  {
+    "code" : "class-upgrade",
+    "display" : "Class Upgrade",
+    "definition" : "Upgrade to a higher guideline class",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Klassen-Upgrade"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Klassen-Upgrade"
+    }]
+  },
+  {
+    "code" : "class-downgrade",
+    "display" : "Class Downgrade",
+    "definition" : "Downgrade to a lower guideline class",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Herabstufung in eine niedrigere Leitlinienklasse."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Klassen-Downgrade"
+    }]
+  },
+  {
+    "code" : "living-guideline",
+    "display" : "Living Guideline",
+    "definition" : "A guideline designated as a continuously updated living guideline.",
+    "_definition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "lang",
+          "valueCode" : "de"
+        },
+        {
+          "url" : "content",
+          "valueString" : "Leitlinie mit dem Status einer Living Guideline (kontinuierlich aktualisiert)."
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }]
+    },
+    "designation" : [{
+      "language" : "de",
+      "value" : "Living Guideline"
+    }]
+  }]
+}

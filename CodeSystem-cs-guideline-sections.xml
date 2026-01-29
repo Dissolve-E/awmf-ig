@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-guideline-sections"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-guideline-sections</b></p><a name="cs-guideline-sections"> </a><a name="hccs-guideline-sections"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style="white-space:nowrap">intention<a name="cs-guideline-sections-intention"> </a></td><td>Intention</td><td>The section describes the intention of the guideline.</td><td>Zielorientierung</td></tr><tr><td style="white-space:nowrap">target-patient-group<a name="cs-guideline-sections-target-patient-group"> </a></td><td>Target Patient Group</td><td>The section describes the target patient group of the guideline.</td><td>Patientenzielgruppe</td></tr><tr><td style="white-space:nowrap">care-setting<a name="cs-guideline-sections-care-setting"> </a></td><td>Care Setting</td><td>The section describes the care setting of the guideline.</td><td>Versorgungsbereich</td></tr><tr><td style="white-space:nowrap">topic-selection-reason<a name="cs-guideline-sections-topic-selection-reason"> </a></td><td>Topic Selection Reason</td><td>The section describes the reason for selecting the topic of the guideline.</td><td>Gründe für die Themenwahl</td></tr><tr><td style="white-space:nowrap">target-audience<a name="cs-guideline-sections-target-audience"> </a></td><td>Target Audience</td><td>The section describes the target audience of the guideline.</td><td>Adressaten</td></tr><tr><td style="white-space:nowrap">planned-methodology<a name="cs-guideline-sections-planned-methodology"> </a></td><td>Planned Methodology</td><td>The section describes the planned methodology for developing the guideline.</td><td>Geplante Methodik</td></tr><tr><td style="white-space:nowrap">further-information<a name="cs-guideline-sections-further-information"> </a></td><td>Further Information</td><td>The section describes the further information regarding the guideline project.</td><td>Ergänzende Informationen</td></tr><tr><td style="white-space:nowrap">encounter-type<a name="cs-guideline-sections-encounter-type"> </a></td><td>Encounter Type</td><td>The section describes the encounter type of the guideline.</td><td>Versorgungssektor</td></tr><tr><td style="white-space:nowrap">care-stage<a name="cs-guideline-sections-care-stage"> </a></td><td>Care Stage</td><td>The section describes the care stage of the guideline.</td><td>Versorgungsbereich</td></tr><tr><td style="white-space:nowrap">care-level<a name="cs-guideline-sections-care-level"> </a></td><td>Care Level</td><td>The section describes the care level of the guideline.</td><td>Versorgungsebene</td></tr><tr><td style="white-space:nowrap">keywords<a name="cs-guideline-sections-keywords"> </a></td><td>Keywords</td><td>The section describes the keywords of the guideline.</td><td>Schlüsselwörter</td></tr><tr><td style="white-space:nowrap">language<a name="cs-guideline-sections-language"> </a></td><td>Language</td><td>The language of the content</td><td>Sprache</td></tr><tr><td style="white-space:nowrap">default-section<a name="cs-guideline-sections-default-section"> </a></td><td>Default section</td><td>The default slice for a section</td><td>Standardabschnitt</td></tr><tr><td style="white-space:nowrap">attachments<a name="cs-guideline-sections-attachments"> </a></td><td>Attachments</td><td/><td>Anhänge</td></tr><tr><td style="white-space:nowrap">consensus-protocol<a name="cs-guideline-sections-consensus-protocol"> </a></td><td>Consensus Protocol</td><td>The section describes the consensus protocol of the guideline.</td><td>Konsensprotokoll</td></tr><tr><td style="white-space:nowrap">long-version<a name="cs-guideline-sections-long-version"> </a></td><td>Long Version</td><td/><td>Langfassung</td></tr><tr><td style="white-space:nowrap">short-version<a name="cs-guideline-sections-short-version"> </a></td><td>Short Version</td><td/><td>Kurzfassung</td></tr><tr><td style="white-space:nowrap">guideline-report<a name="cs-guideline-sections-guideline-report"> </a></td><td>Guideline Report</td><td/><td>Leitlinienreport</td></tr><tr><td style="white-space:nowrap">evidence-report<a name="cs-guideline-sections-evidence-report"> </a></td><td>Evidence Report</td><td/><td>Evidenzbericht</td></tr><tr><td style="white-space:nowrap">implementation-guidance<a name="cs-guideline-sections-implementation-guidance"> </a></td><td>Implementation Guidance</td><td/><td>Implementierungshilfe</td></tr><tr><td style="white-space:nowrap">decision-support<a name="cs-guideline-sections-decision-support"> </a></td><td>Decision Support</td><td/><td>Entscheidungshilfe</td></tr><tr><td style="white-space:nowrap">patient-version<a name="cs-guideline-sections-patient-version"> </a></td><td>Patient Version</td><td/><td>Patientenleitlinie</td></tr><tr><td style="white-space:nowrap">choosing-wisely<a name="cs-guideline-sections-choosing-wisely"> </a></td><td>Choosing Wisely</td><td/><td>Gemeinsam Klug Entscheiden</td></tr><tr><td style="white-space:nowrap">quality-indicators<a name="cs-guideline-sections-quality-indicators"> </a></td><td>Quality Indicators</td><td/><td>Qualitätsindikatoren</td></tr><tr><td style="white-space:nowrap">declaration-of-interests<a name="cs-guideline-sections-declaration-of-interests"> </a></td><td>Declaration of Interests</td><td/><td>Interessenserklärung</td></tr><tr><td style="white-space:nowrap">short-patient-version<a name="cs-guideline-sections-short-patient-version"> </a></td><td>Short Version for Patients</td><td/><td>Kurzfassung für Patient*innen</td></tr><tr><td style="white-space:nowrap">update-info<a name="cs-guideline-sections-update-info"> </a></td><td>Short Information About an Update</td><td/><td>Kurzinformationen zu einer Aktualisierung</td></tr><tr><td style="white-space:nowrap">slide-deck<a name="cs-guideline-sections-slide-deck"> </a></td><td>Slide Deck</td><td/><td>Foliensatz</td></tr><tr><td style="white-space:nowrap">visual-abstract<a name="cs-guideline-sections-visual-abstract"> </a></td><td>Visual Abstract</td><td/><td>Graphischer Abstrakt</td></tr><tr><td style="white-space:nowrap">document<a name="cs-guideline-sections-document"> </a></td><td>Document</td><td/><td>Dokument</td></tr><tr><td style="white-space:nowrap">image<a name="cs-guideline-sections-image"> </a></td><td>Image</td><td/><td>Bild</td></tr><tr><td style="white-space:nowrap">video<a name="cs-guideline-sections-video"> </a></td><td>Video</td><td/><td>Video</td></tr><tr><td style="white-space:nowrap">podcast<a name="cs-guideline-sections-podcast"> </a></td><td>Podcast</td><td/><td>Podcast</td></tr><tr><td style="white-space:nowrap">other<a name="cs-guideline-sections-other"> </a></td><td>Other</td><td/><td>Sonstiges</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+  <version value="0.2.0"/>
+  <name value="GuidelineSectionsCS"/>
+  <title value="Guideline Sections"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="Sections of a guideline, describing various aspects such as its intention, target patient group, care setting, and other relevant contextual information."/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="34"/>
+  <concept>
+    <code value="intention"/>
+    <display value="Intention"/>
+    <definition value="The section describes the intention of the guideline.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Dieser Abschnitt beschreibt die Zielorientierung der Leitlinie."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Zielorientierung"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="target-patient-group"/>
+    <display value="Target Patient Group"/>
+    <definition value="The section describes the target patient group of the guideline.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Dieser Abschnitt beschreibt die Patientenzielgruppe der Leitlinie."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Patientenzielgruppe"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="care-setting"/>
+    <display value="Care Setting"/>
+    <definition value="The section describes the care setting of the guideline.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Dieser Abschnitt beschreibt den Versorgungsbereich dieser Leitlinie."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Versorgungsbereich"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="topic-selection-reason"/>
+    <display value="Topic Selection Reason"/>
+    <definition value="The section describes the reason for selecting the topic of the guideline.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Dieser Abschnitt beschreibt die Gründe für die Themenwahl der Leitlinie."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Gründe für die Themenwahl"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="target-audience"/>
+    <display value="Target Audience"/>
+    <definition value="The section describes the target audience of the guideline.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Dieser Abschnitt beschreibt die Adressaten der Leitlinie."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Adressaten"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="planned-methodology"/>
+    <display value="Planned Methodology"/>
+    <definition value="The section describes the planned methodology for developing the guideline.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Dieser Abschnitt beschreibt die geplante Methodik zur Entwicklung der Leitlinie."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Geplante Methodik"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="further-information"/>
+    <display value="Further Information"/>
+    <definition value="The section describes the further information regarding the guideline project.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Dieser Abschnitt beschreibt ergänzende Informationen zum Leitlinienprojekt."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Ergänzende Informationen"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="encounter-type"/>
+    <display value="Encounter Type"/>
+    <definition value="The section describes the encounter type of the guideline.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Dieser Abschnitt beschreibt den oder die Versorgungssektor(en) auf die sich die Leitlinie bezieht."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Versorgungssektor"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="care-stage"/>
+    <display value="Care Stage"/>
+    <definition value="The section describes the care stage of the guideline.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Dieser Abschnitt beschreibt den Versorgungsbereich dieser Leitlinie."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Versorgungsbereich"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="care-level"/>
+    <display value="Care Level"/>
+    <definition value="The section describes the care level of the guideline.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Dieser Abschnitt beschreibt die Versorgungsebene(n) auf die sich die Leitlinie bezieht."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Versorgungsebene"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="keywords"/>
+    <display value="Keywords"/>
+    <definition value="The section describes the keywords of the guideline.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Dieser Abschnitt beschreibt die Schlüsselwörter der Leitlinie."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Schlüsselwörter"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="language"/>
+    <display value="Language"/>
+    <definition value="The language of the content">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Sprache des Inhalts"/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Sprache"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="default-section"/>
+    <display value="Default section"/>
+    <definition value="The default slice for a section">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Default ('standard') slice für einen Abschnitt."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Standardabschnitt"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="attachments"/>
+    <display value="Attachments"/>
+    <designation>
+      <language value="de"/>
+      <value value="Anhänge"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="consensus-protocol"/>
+    <display value="Consensus Protocol"/>
+    <definition value="The section describes the consensus protocol of the guideline.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Dieser Abschnitt beschreibt den Konsensprotokoll einer Leitlinie."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Konsensprotokoll"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="long-version"/>
+    <display value="Long Version"/>
+    <designation>
+      <language value="de"/>
+      <value value="Langfassung"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="short-version"/>
+    <display value="Short Version"/>
+    <designation>
+      <language value="de"/>
+      <value value="Kurzfassung"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="guideline-report"/>
+    <display value="Guideline Report"/>
+    <designation>
+      <language value="de"/>
+      <value value="Leitlinienreport"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="evidence-report"/>
+    <display value="Evidence Report"/>
+    <designation>
+      <language value="de"/>
+      <value value="Evidenzbericht"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="implementation-guidance"/>
+    <display value="Implementation Guidance"/>
+    <designation>
+      <language value="de"/>
+      <value value="Implementierungshilfe"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="decision-support"/>
+    <display value="Decision Support"/>
+    <designation>
+      <language value="de"/>
+      <value value="Entscheidungshilfe"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="patient-version"/>
+    <display value="Patient Version"/>
+    <designation>
+      <language value="de"/>
+      <value value="Patientenleitlinie"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="choosing-wisely"/>
+    <display value="Choosing Wisely"/>
+    <designation>
+      <language value="de"/>
+      <value value="Gemeinsam Klug Entscheiden"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="quality-indicators"/>
+    <display value="Quality Indicators"/>
+    <designation>
+      <language value="de"/>
+      <value value="Qualitätsindikatoren"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="declaration-of-interests"/>
+    <display value="Declaration of Interests"/>
+    <designation>
+      <language value="de"/>
+      <value value="Interessenserklärung"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="short-patient-version"/>
+    <display value="Short Version for Patients"/>
+    <designation>
+      <language value="de"/>
+      <value value="Kurzfassung für Patient*innen"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="update-info"/>
+    <display value="Short Information About an Update"/>
+    <designation>
+      <language value="de"/>
+      <value value="Kurzinformationen zu einer Aktualisierung"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="slide-deck"/>
+    <display value="Slide Deck"/>
+    <designation>
+      <language value="de"/>
+      <value value="Foliensatz"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="visual-abstract"/>
+    <display value="Visual Abstract"/>
+    <designation>
+      <language value="de"/>
+      <value value="Graphischer Abstrakt"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="document"/>
+    <display value="Document"/>
+    <designation>
+      <language value="de"/>
+      <value value="Dokument"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="image"/>
+    <display value="Image"/>
+    <designation>
+      <language value="de"/>
+      <value value="Bild"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="video"/>
+    <display value="Video"/>
+    <designation>
+      <language value="de"/>
+      <value value="Video"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="podcast"/>
+    <display value="Podcast"/>
+    <designation>
+      <language value="de"/>
+      <value value="Podcast"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="other"/>
+    <display value="Other"/>
+    <designation>
+      <language value="de"/>
+      <value value="Sonstiges"/>
+    </designation>
+  </concept>
+</CodeSystem>

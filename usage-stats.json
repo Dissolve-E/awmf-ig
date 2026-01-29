@@ -1,0 +1,516 @@
+{
+  "package": "awmf.ig",
+  "version": "0.2.0",
+  "fhirVersion": "6.0.0-ballot3",
+  "extensions": [
+    {
+      "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-artifact-extended-contact",
+      "title": "Artifact Contact (Extended)",
+      "types": [
+        "ExtendedContactDetail"
+      ]
+    },
+    {
+      "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-author-language",
+      "title": "Author Language",
+      "types": [
+        "code"
+      ]
+    },
+    {
+      "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-consultation-period",
+      "title": "Consultation Period",
+      "types": [
+        "Period"
+      ]
+    },
+    {
+      "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-first-publication-date",
+      "title": "First Publication Date",
+      "types": [
+        "date"
+      ]
+    },
+    {
+      "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role",
+      "title": "Guideline Author Role",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-medical-subject",
+      "title": "Medical Subject",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-medical-subject-category",
+      "title": "Medical Subject Category",
+      "types": [
+        "CodeableConcept",
+        "id",
+        "Extension",
+        "Coding",
+        "id",
+        "Extension",
+        "uri",
+        "string",
+        "code",
+        "string",
+        "boolean",
+        "string"
+      ]
+    },
+    {
+      "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-planned-completion-date",
+      "title": "Planned Completion Date",
+      "types": [
+        "date"
+      ]
+    },
+    {
+      "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-publication-date",
+      "title": "Publication Date",
+      "types": [
+        "date"
+      ]
+    },
+    {
+      "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-recommendation-review-status",
+      "title": "Recommendation Review Status",
+      "types": [
+        "CodeableConcept",
+        "string",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "integer64",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "CodeableReference",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "RatioRange",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Availability",
+        "ExtendedContactDetail",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-registration-date",
+      "title": "Registration Date",
+      "types": [
+        "date"
+      ]
+    },
+    {
+      "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-relates-to-classifier",
+      "title": "RelatesTo Classifier",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-relates-to-label",
+      "title": "RelatesTo Label",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-coding",
+      "title": "Section Coding",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-intended-audience",
+      "title": "Section Intended Audience",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-keyword",
+      "title": "Section Keyword",
+      "types": [
+        "CodeableConcept",
+        "id",
+        "Extension",
+        "Coding",
+        "Coding",
+        "id",
+        "Extension",
+        "uri",
+        "string",
+        "code",
+        "string",
+        "boolean",
+        "Coding",
+        "id",
+        "Extension",
+        "uri",
+        "string",
+        "code",
+        "string",
+        "boolean",
+        "Coding",
+        "id",
+        "Extension",
+        "uri",
+        "string",
+        "code",
+        "string",
+        "boolean",
+        "Coding",
+        "id",
+        "Extension",
+        "uri",
+        "string",
+        "code",
+        "string",
+        "boolean",
+        "Coding",
+        "id",
+        "Extension",
+        "uri",
+        "string",
+        "code",
+        "string",
+        "boolean",
+        "Coding",
+        "id",
+        "Extension",
+        "uri",
+        "string",
+        "code",
+        "string",
+        "boolean",
+        "string"
+      ]
+    },
+    {
+      "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+      "title": "Section Language",
+      "types": [
+        "code"
+      ]
+    },
+    {
+      "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-submission-date",
+      "title": "Submission Date",
+      "types": [
+        "date"
+      ]
+    }
+  ],
+  "profiles": {
+    "Composition": [
+      {
+        "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation",
+        "title": "Recommendation"
+      }
+    ],
+    "Organization": [
+      {
+        "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/patient-organization",
+        "title": "Patient Organization"
+      }
+    ],
+    "List": [
+      {
+        "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/citation-list",
+        "title": "Citation List"
+      }
+    ],
+    "Group": [
+      {
+        "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/pico-question",
+        "title": "PICO Question"
+      }
+    ],
+    "ArtifactAssessment": [
+      {
+        "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification",
+        "title": "Recommendation Justification"
+      },
+      {
+        "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification-awmf",
+        "title": "Recommendation Justification AWMF"
+      },
+      {
+        "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification-expert-consensus",
+        "title": "Recommendation Justification Expert Consensus"
+      },
+      {
+        "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification-grade",
+        "title": "Recommendation Justification GRADE"
+      },
+      {
+        "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification-oxford-2009",
+        "title": "Recommendation Justification OXFORD 2009"
+      },
+      {
+        "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification-oxford-2011",
+        "title": "Recommendation Justification OXFORD 2011"
+      },
+      {
+        "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification-sign",
+        "title": "Recommendation Justification SIGN"
+      }
+    ],
+    "DocumentReference": [
+      {
+        "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-attachment",
+        "title": "Guideline Attachment"
+      }
+    ],
+    "Practitioner": [
+      {
+        "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author",
+        "title": "Guideline Author"
+      }
+    ],
+    "PractitionerRole": [
+      {
+        "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author-role",
+        "title": "Guideline Author Role"
+      }
+    ],
+    "Evidence": [
+      {
+        "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/outcome-evidence",
+        "title": "Outcome Evidence"
+      }
+    ]
+  },
+  "usage": {
+    "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-consultation-period": [
+      "Composition"
+    ],
+    "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-first-publication-date": [
+      "Composition"
+    ],
+    "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role": [
+      "Composition.author"
+    ],
+    "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-medical-subject": [
+      "Organization"
+    ],
+    "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-medical-subject-category": [
+      "Organization"
+    ],
+    "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-planned-completion-date": [
+      "Composition"
+    ],
+    "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-recommendation-review-status": [
+      "Composition"
+    ],
+    "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-registration-date": [
+      "Composition"
+    ],
+    "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-relates-to-label": [
+      "Composition.relatesTo"
+    ],
+    "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-coding": [
+      "Composition.section.section",
+      "Composition.section.section.section"
+    ],
+    "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-intended-audience": [
+      "Composition.section"
+    ],
+    "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-keyword": [
+      "Composition.section.section"
+    ],
+    "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language": [
+      "Composition.section.section",
+      "Composition.section.section.section",
+      "Composition.section.section.section.section",
+      "Composition.section.section.section.section.section",
+      "Composition.section.section.section.section.section.section",
+      "Composition.section.section.section.section.section.section.section",
+      "Composition.section.section.section.section.section.section.section.section"
+    ],
+    "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-submission-date": [
+      "Composition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/additional-language": [
+      "Composition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/annotationType": [
+      "Composition.note"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-approvalDate": [
+      "Composition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-author": [
+      "ArtifactAssessment",
+      "Group"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-copyright": [
+      "Composition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-copyrightLabel": [
+      "Composition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-description": [
+      "ArtifactAssessment",
+      "Composition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-effectivePeriod": [
+      "Composition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-experimental": [
+      "Composition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-extended-contact-detail": [
+      "Composition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-lastReviewDate": [
+      "Composition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-publicationDate": [
+      "Composition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-purpose": [
+      "Composition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-url": [
+      "ArtifactAssessment"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-useContext": [
+      "ArtifactAssessment"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm": [
+      "Composition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/characteristicExpression": [
+      "Group"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice-explanation": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName": [
+      "StructureDefinition.differential.element.binding",
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding": [
+      "StructureDefinition.differential.element.binding",
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet": [
+      "StructureDefinition.differential.element.binding",
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/organization-brand": [
+      "Organization"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/organization-period": [
+      "Organization"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/relatesto-classifier": [
+      "Composition.relatesTo"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-implements": [
+      "StructureDefinition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics": [
+      "StructureDefinition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/translation": [
+      "CodeSystem.concept.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/binding-definition": [
+      "StructureDefinition.differential.element.binding",
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
+      "ImplementationGuide.definition.resource"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version": [
+      "StructureDefinition.snapshot"
+    ],
+    "http://hl7.org/fhir/uv/ebm/StructureDefinition/artifact-publication-status": [
+      "ArtifactAssessment",
+      "Composition",
+      "Group"
+    ],
+    "http://hl7.org/fhir/uv/ebm/StructureDefinition/artifact-recorder": [
+      "Group"
+    ],
+    "http://hl7.org/fhir/uv/ebm/StructureDefinition/cite-as": [
+      "Group"
+    ],
+    "http://hl7.org/fhir/uv/ebm/StructureDefinition/guideline-registration": [
+      "Composition"
+    ],
+    "http://hl7.org/fhir/uv/ebm/StructureDefinition/relates-to": [
+      "Group"
+    ],
+    "http://hl7.org/fhir/uv/ebm/StructureDefinition/relates-to-with-quotation": [
+      "ArtifactAssessment",
+      "ArtifactAssessment.content",
+      "ArtifactAssessment.content.component",
+      "Group"
+    ]
+  }
+}

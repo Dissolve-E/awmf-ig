@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ArtifactAssessment xmlns="http://hl7.org/fhir">
+  <id value="EvA-MultiplexPCRDiagnostic-TimeToDeescalation"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-overall-assessment-grade"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on time to deescalation</div>
+  </text>
+  <artifactReference>
+    <reference value="Evidence/Evidence-MultiplexPCRDiagnostic-TimeToDeescalation"/>
+  </artifactReference>
+  <content>
+    <type>
+      <coding>
+        <system value="http://hl7.org/fhir/certainty-type"/>
+        <code value="Overall"/>
+        <display value="Overall certainty"/>
+      </coding>
+    </type>
+    <classifier>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/certainty-rating"/>
+        <code value="very-low"/>
+        <display value="Very low quality"/>
+      </coding>
+    </classifier>
+  </content>
+  <content>
+    <type>
+      <coding>
+        <system value="https://fevir.net/resources/CodeSystem/179423"/>
+        <code value="rating-system"/>
+        <display value="Rating System"/>
+      </coding>
+    </type>
+    <classifier>
+      <coding>
+        <system value="http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem"/>
+        <code value="GRADE"/>
+      </coding>
+    </classifier>
+  </content>
+  <workflowStatus value="applied"/>
+</ArtifactAssessment>

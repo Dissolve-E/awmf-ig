@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="vs-ocebm-2009-levels-of-evidence"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet vs-ocebm-2009-levels-of-evidence</b></p><a name="vs-ocebm-2009-levels-of-evidence"> </a><a name="hcvs-ocebm-2009-levels-of-evidence"> </a><ul><li>Include all codes defined in <a href="CodeSystem-cs-ocebm-2009-levels-of-evidence.html"><code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-ocebm-2009-levels-of-evidence</code></a><span title="Version is not explicitly stated, which means it is fixed to the version provided in this specification"> version &#x1F4E6;0.2.0</span></li></ul></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/ValueSet/vs-ocebm-2009-levels-of-evidence"/>
+  <version value="0.2.0"/>
+  <name value="OCEBM2009LevelsOfEvidenceVS"/>
+  <title value="OCEBM 2009 Levels of Evidence Value Set"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="ValueSet encompassing all levels from the Oxford Centre for Evidence-Based Medicine 2009 Levels of Evidence."/>
+  <compose>
+    <include>
+      <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-ocebm-2009-levels-of-evidence"/>
+    </include>
+  </compose>
+</ValueSet>

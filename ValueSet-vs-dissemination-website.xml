@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="vs-dissemination-website"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet vs-dissemination-website</b></p><a name="vs-dissemination-website"> </a><a name="hcvs-dissemination-website"> </a><ul><li>Include codes from<a href="CodeSystem-cs-related-artifact-types.html"><code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types</code></a><span title="Version is not explicitly stated, which means it is fixed to the version provided in this specification"> version &#x1F4E6;0.2.0</span> where concept  is-a <a href="CodeSystem-cs-related-artifact-types.html#cs-related-artifact-types-dissemination-website">dissemination-website</a></li></ul></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/ValueSet/vs-dissemination-website"/>
+  <version value="0.2.0"/>
+  <name value="DisseminationWebsite"/>
+  <title value="Dissemination Website"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="ValueSet listing types of dissemination websites"/>
+  <compose>
+    <include>
+      <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types"/>
+      <filter>
+        <property value="concept"/>
+        <op value="is-a"/>
+        <value value="dissemination-website"/>
+      </filter>
+    </include>
+  </compose>
+</ValueSet>

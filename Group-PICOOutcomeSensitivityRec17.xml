@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Group xmlns="http://hl7.org/fhir">
+  <id value="PICOOutcomeSensitivityRec17"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-outcome"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Group PICOOutcomeSensitivityRec17</b></p><a name="PICOOutcomeSensitivityRec17"> </a><a name="hcPICOOutcomeSensitivityRec17"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-conceptual-cohort-definition-outcome.html">Conceptual Cohort Definition Outcome</a></p></div><p><b>description</b>: </p><div><p>Sensitivität für die Indikation einer Demenz</p>
+</div><p><b>membership</b>: Conceptual</p><p><b>code</b>: <span title="Codes:{http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico outcome}">Outcome</span></p></div>
+  </text>
+  <description value="Sensitivität für die Indikation einer Demenz"/>
+  <membership value="conceptual"/>
+  <code>
+    <coding>
+      <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico"/>
+      <code value="outcome"/>
+    </coding>
+  </code>
+</Group>

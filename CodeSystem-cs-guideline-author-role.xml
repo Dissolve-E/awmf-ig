@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cs-guideline-author-role"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem cs-guideline-author-role</b></p><a name="cs-guideline-author-role"> </a><a name="hccs-guideline-author-role"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style="white-space:nowrap">leading<a name="cs-guideline-author-role-leading"> </a></td><td>Leading</td><td>Main party responsible for the development of the guideline.</td><td>Federführend</td></tr><tr><td style="white-space:nowrap">contributing<a name="cs-guideline-author-role-contributing"> </a></td><td>Contributing</td><td>Party involved in the development of the guideline.</td><td>Beteiligt</td></tr><tr><td style="white-space:nowrap">registrant<a name="cs-guideline-author-role-registrant"> </a></td><td>Registrant</td><td>Person responsible for registering the guideline in the registry.</td><td>Anmelder*in</td></tr><tr><td style="white-space:nowrap">technical-editor<a name="cs-guideline-author-role-technical-editor"> </a></td><td>Technical Editor</td><td>Responsible for preparing the technical or machine-readable format of the guideline.</td><td>Technische Redaktion</td></tr><tr><td style="white-space:nowrap">content-author<a name="cs-guideline-author-role-content-author"> </a></td><td>Content Author</td><td>Authored or co-authored the content of the guideline.</td><td>Inhaltliche*r Autor*in</td></tr><tr><td style="white-space:nowrap">coding-author<a name="cs-guideline-author-role-coding-author"> </a></td><td>Coding Author</td><td>Responsible for semantic encoding of guideline content using terminologies or ontologies.</td><td>Kodierer*in</td></tr><tr><td style="white-space:nowrap">moderator<a name="cs-guideline-author-role-moderator"> </a></td><td>Moderator</td><td>Person moderating consensus-building sessions in guideline development.</td><td>Moderator*in</td></tr><tr><td style="white-space:nowrap">method-advisor<a name="cs-guideline-author-role-method-advisor"> </a></td><td>Methodological Advisor</td><td>Supports the development team with methodological expertise.</td><td>Methodische*r Berater*in</td></tr><tr><td style="white-space:nowrap">evidence-analyst<a name="cs-guideline-author-role-evidence-analyst"> </a></td><td>Evidence Analyst</td><td>Conducts or oversees evidence synthesis and appraisal.</td><td>Evidenzaufbereitung</td></tr></table></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+  <version value="0.2.0"/>
+  <name value="GuidelineAuthorRoleCS"/>
+  <title value="Guideline Author Role"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem defining roles for the author of the guideline."/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="9"/>
+  <concept>
+    <code value="leading"/>
+    <display value="Leading"/>
+    <definition value="Main party responsible for the development of the guideline.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Federführende Organisation oder Person für die Leitlinie."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Federführend"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="contributing"/>
+    <display value="Contributing"/>
+    <definition value="Party involved in the development of the guideline.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Organisation oder Person, die an der Leitlinie mitgewirkt hat."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Beteiligt"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="registrant"/>
+    <display value="Registrant"/>
+    <definition value="Person responsible for registering the guideline in the registry.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Die Person, die das Leitlinienprojekt im Register angemeldet hat."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Anmelder*in"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="technical-editor"/>
+    <display value="Technical Editor"/>
+    <definition value="Responsible for preparing the technical or machine-readable format of the guideline.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Verantwortlich für die technische oder maschinenlesbare Formatierung der Leitlinie."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Technische Redaktion"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="content-author"/>
+    <display value="Content Author"/>
+    <definition value="Authored or co-authored the content of the guideline.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Autor*in der Inhalte der Leitlinie."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Inhaltliche*r Autor*in"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="coding-author"/>
+    <display value="Coding Author"/>
+    <definition value="Responsible for semantic encoding of guideline content using terminologies or ontologies.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Verantwortlich für die semantische Kodierung der Leitlinie mittels Terminologien oder Ontologien."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Kodierer*in"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="moderator"/>
+    <display value="Moderator"/>
+    <definition value="Person moderating consensus-building sessions in guideline development.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Moderiert den Konsensprozess während der Leitlinienentwicklung."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Moderator*in"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="method-advisor"/>
+    <display value="Methodological Advisor"/>
+    <definition value="Supports the development team with methodological expertise.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Bietet methodische Beratung zur Leitlinienentwicklung."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Methodische*r Berater*in"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="evidence-analyst"/>
+    <display value="Evidence Analyst"/>
+    <definition value="Conducts or oversees evidence synthesis and appraisal.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+        <extension url="lang">
+          <valueCode value="de"/>
+        </extension>
+        <extension url="content">
+          <valueString value="Verantwortlich für die Recherche, Bewertung und Aufbereitung der Evidenz."/>
+        </extension>
+      </extension>
+    </definition>
+    <designation>
+      <language value="de"/>
+      <value value="Evidenzaufbereitung"/>
+    </designation>
+  </concept>
+</CodeSystem>

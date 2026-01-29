@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="vs-encounter-type"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet vs-encounter-type</b></p><a name="vs-encounter-type"> </a><a name="hcvs-encounter-type"> </a><ul><li>Include these codes as defined in <a href="CodeSystem-cs-care-setting.html"><code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting</code></a><span title="Version is not explicitly stated, which means it is fixed to the version provided in this specification"> version &#x1F4E6;0.2.0</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href="CodeSystem-cs-care-setting.html#cs-care-setting-outpatient">outpatient</a></td><td style="color: #cccccc">Outpatient</td><td>Healthcare services provided to patients who are not admitted to a hospital or other facility.</td></tr><tr><td><a href="CodeSystem-cs-care-setting.html#cs-care-setting-inpatient">inpatient</a></td><td style="color: #cccccc">Inpatient</td><td>Healthcare services provided to patients who are admitted to a hospital or other facility for at least one night.</td></tr><tr><td><a href="CodeSystem-cs-care-setting.html#cs-care-setting-partial-hospitalization">partial-hospitalization</a></td><td style="color: #cccccc">Partial Hospitalization</td><td>Healthcare services provided in a hospital or facility during the day, with patients returning home at night.</td></tr></table></li></ul></div>
+  </text>
+  <url value="http://fhir.awmf.org/awmf.ig/ValueSet/vs-encounter-type"/>
+  <version value="0.2.0"/>
+  <name value="EncounterTypeVS"/>
+  <title value="Encounter Type"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2026-01-29T18:27:10+00:00"/>
+  <publisher value="AWMF e.V."/>
+  <contact>
+    <name value="AWMF e.V."/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org"/>
+    </telecom>
+  </contact>
+  <description value="ValueSet listing types of patient encounters based on hospitalization status."/>
+  <compose>
+    <include>
+      <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-care-setting"/>
+      <concept>
+        <code value="outpatient"/>
+      </concept>
+      <concept>
+        <code value="inpatient"/>
+      </concept>
+      <concept>
+        <code value="partial-hospitalization"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

@@ -1,0 +1,437 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cs-awmf"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem cs-awmf</b></p><a name=\"cs-awmf\"> </a><a name=\"hccs-awmf\"> </a><p>This case-insensitive code system <code>http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (German, de)</b></td></tr><tr><td style=\"white-space:nowrap\">ordered-by-authors<a name=\"cs-awmf-ordered-by-authors\"> </a></td><td>Ordered by authors</td><td>The guideline is ordered by authors and SHALL be adhered to in the order specified.</td><td>Durch Autor*innen geordnet</td></tr><tr><td style=\"white-space:nowrap\">major-minor<a name=\"cs-awmf-major-minor\"> </a></td><td>Major-Minor Versioning</td><td>A versioning scheme using major and minor version numbers (e.g., 1.0, 2.1).</td><td>Major-Minor Versionierungsschema</td></tr><tr><td style=\"white-space:nowrap\">year-month-versioning<a name=\"cs-awmf-year-month-versioning\"> </a></td><td>Year-Month Versioning</td><td>A versioning scheme based on year and month (e.g., 2024/06).</td><td>Jahr-Monat Versionierungsschema</td></tr><tr><td style=\"white-space:nowrap\">medical-society<a name=\"cs-awmf-medical-society\"> </a></td><td>Medical Society</td><td>A medical society.</td><td>Medizinische Fachgesellschaft</td></tr><tr><td style=\"white-space:nowrap\">awmf-member-organization<a name=\"cs-awmf-awmf-member-organization\"> </a></td><td>AWMF Member Organization</td><td>An organization that is a member of the AWMF</td><td>Mitgliedsorganisation der AWMF</td></tr><tr><td style=\"white-space:nowrap\">recommendation-rating<a name=\"cs-awmf-recommendation-rating\"> </a></td><td>Recommendation Rating</td><td>The rating of a recommendation</td><td>Empfehlungsgraduierung</td></tr><tr><td style=\"white-space:nowrap\">level-of-consensus<a name=\"cs-awmf-level-of-consensus\"> </a></td><td>Level of Consensus</td><td>The level of consensus for a recommendation</td><td>Konsensusstärke</td></tr><tr><td style=\"white-space:nowrap\">guideline-registry-record<a name=\"cs-awmf-guideline-registry-record\"> </a></td><td>Guideline Registry Record</td><td>A registry record for a clinical practice guideline in the AWMF guideline registry</td><td>Leitlinien-Registrierungseintrag</td></tr><tr><td style=\"white-space:nowrap\">patient-organization<a name=\"cs-awmf-patient-organization\"> </a></td><td>Patient Organization</td><td>An organization that represents patients</td><td>Patientenorganisation</td></tr><tr><td style=\"white-space:nowrap\">OCEBM2009<a name=\"cs-awmf-OCEBM2009\"> </a></td><td>Oxford 2009 (OCEBM)</td><td/><td/></tr><tr><td style=\"white-space:nowrap\">outcome<a name=\"cs-awmf-outcome\"> </a></td><td>Outcome</td><td>An outcome used in the evidence assessment of a recommendation</td><td>Ergebnis</td></tr><tr><td style=\"white-space:nowrap\">overall-quality-of-evidence<a name=\"cs-awmf-overall-quality-of-evidence\"> </a></td><td>Overall Quality of Evidence</td><td>The overall quality of evidence for a recommendation</td><td>Gesamtqualität der Evidenz</td></tr><tr><td style=\"white-space:nowrap\">evidence-rating<a name=\"cs-awmf-evidence-rating\"> </a></td><td>Evidence Rating</td><td>The evidence rating for a recommendation</td><td>Evidenzbewertung</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+     fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+  ] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:name [ fhir:v "AWMFCS"] ; # 
+  fhir:title [ fhir:v "awmf"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-01-29T18:27:10+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "AWMF e.V."] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AWMF e.V." ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.awmf.org" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "CodeSystem representing different codes of interest for the Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften (AWMF)"] ; # 
+  fhir:caseSensitive [ fhir:v false] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "13"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "ordered-by-authors" ] ;
+     fhir:display [ fhir:v "Ordered by authors" ] ;
+     fhir:definition [
+       fhir:v "The guideline is ordered by authors and SHALL be adhered to in the order specified." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Die Leitlinie wurde von den Autor*innen geordnet und MUSS in der angegebenen Reihenfolge befolgt werden."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Durch Autor*innen geordnet" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "major-minor" ] ;
+     fhir:display [ fhir:v "Major-Minor Versioning" ] ;
+     fhir:definition [ fhir:v "A versioning scheme using major and minor version numbers (e.g., 1.0, 2.1)." ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Major-Minor Versionierungsschema" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "year-month-versioning" ] ;
+     fhir:display [ fhir:v "Year-Month Versioning" ] ;
+     fhir:definition [
+       fhir:v "A versioning scheme based on year and month (e.g., 2024/06)." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Versionierungsschema im Format Jahr-Monat (z.B. 2024/06)"
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Jahr-Monat Versionierungsschema" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "medical-society" ] ;
+     fhir:display [ fhir:v "Medical Society" ] ;
+     fhir:definition [
+       fhir:v "A medical society." ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Eine medizinische Fachgesellschaft."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Medizinische Fachgesellschaft" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "awmf-member-organization" ] ;
+     fhir:display [ fhir:v "AWMF Member Organization" ] ;
+     fhir:definition [
+       fhir:v "An organization that is a member of the AWMF" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Eine Organisation oder Fachgesellschaft, die Mitglied der AWMF ist."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Mitgliedsorganisation der AWMF" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "recommendation-rating" ] ;
+     fhir:display [ fhir:v "Recommendation Rating" ] ;
+     fhir:definition [
+       fhir:v "The rating of a recommendation" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Graduierung der Empfehlung"
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Empfehlungsgraduierung" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "level-of-consensus" ] ;
+     fhir:display [ fhir:v "Level of Consensus" ] ;
+     fhir:definition [
+       fhir:v "The level of consensus for a recommendation" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Die Stärke des Konsens einer Empfehlung"
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Konsensusstärke" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "guideline-registry-record" ] ;
+     fhir:display [ fhir:v "Guideline Registry Record" ] ;
+     fhir:definition [
+       fhir:v "A registry record for a clinical practice guideline in the AWMF guideline registry" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Ein Registrierungseintrag für eine klinische Praxisleitlinie im AWMF-Leitlinienregister"
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Leitlinien-Registrierungseintrag" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "patient-organization" ] ;
+     fhir:display [ fhir:v "Patient Organization" ] ;
+     fhir:definition [
+       fhir:v "An organization that represents patients" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Eine Organisation, die Patienten vertritt."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Patientenorganisation" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "OCEBM2009" ] ;
+     fhir:display [ fhir:v "Oxford 2009 (OCEBM)" ]
+  ] [
+     fhir:code [ fhir:v "outcome" ] ;
+     fhir:display [ fhir:v "Outcome" ] ;
+     fhir:definition [
+       fhir:v "An outcome used in the evidence assessment of a recommendation" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Ein Ergebnis, das in der Evidenzbewertung einer Empfehlung verwendet wird."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Ergebnis" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "overall-quality-of-evidence" ] ;
+     fhir:display [ fhir:v "Overall Quality of Evidence" ] ;
+     fhir:definition [
+       fhir:v "The overall quality of evidence for a recommendation" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Die Gesamtqualität der Evidenz für eine Empfehlung."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Gesamtqualität der Evidenz" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "evidence-rating" ] ;
+     fhir:display [ fhir:v "Evidence Rating" ] ;
+     fhir:definition [
+       fhir:v "The evidence rating for a recommendation" ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "lang"^^xsd:anyURI ;
+             fhir:l fhir:lang
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "content"^^xsd:anyURI ;
+             fhir:l fhir:content
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Die Evidenzbewertung für eine Empfehlung."
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/translation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/translation>
+         ]
+       ] )
+     ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de" ] ;
+       fhir:value [ fhir:v "Evidenzbewertung" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

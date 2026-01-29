@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Group xmlns="http://hl7.org/fhir">
+  <id value="PICOPopulationRec17"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-population"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Group PICOPopulationRec17</b></p><a name="PICOPopulationRec17"> </a><a name="hcPICOPopulationRec17"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-conceptual-cohort-definition-population.html">Conceptual Cohort Definition Population</a></p></div><p><b>description</b>: </p><div><p>Menschen in nicht-spezialisierten Settings (z. B. Hausarztpraxis, Krankenhaus), die über die kognitive Störungen berichten oder bei denen eine kognitive Störung beobachtet wird</p>
+</div><p><b>membership</b>: Conceptual</p><p><b>code</b>: <span title="Codes:{http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico population}">Population</span></p></div>
+  </text>
+  <description value="Menschen in nicht-spezialisierten Settings (z. B. Hausarztpraxis, Krankenhaus), die über die kognitive Störungen berichten oder bei denen eine kognitive Störung beobachtet wird"/>
+  <membership value="conceptual"/>
+  <code>
+    <coding>
+      <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico"/>
+      <code value="population"/>
+    </coding>
+  </code>
+</Group>
