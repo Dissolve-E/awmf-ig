@@ -142,14 +142,15 @@ jobs:
 
       - name: Fetch existing publications
         run: |
-          mkdir -p .publication/webroot
-          
+          # Create webroot with package_id subdirectory (matches -go-publish structure)
+          mkdir -p .publication/webroot/${{ steps.config.outputs.package_id }}
+
           # Try to fetch existing publications (may fail on first publish)
           # Exclude ci-build/ as it's managed by the CI workflow separately
           rsync -av --ignore-existing --exclude 'ci-build/' \
             -e "ssh -p 221 -i /tmp/awmf_ig_publisher.id_ed25519" \
             awmf_ig_publisher@register.awmf.org:./${{ steps.config.outputs.package_id }}/ \
-            .publication/webroot/ 2>/dev/null || echo "No existing publications found (this may be the first publication)"
+            .publication/webroot/${{ steps.config.outputs.package_id }}/ 2>/dev/null || echo "No existing publications found (this may be the first publication)"
 
       - name: Run publish-version.sh
         uses: docker://hl7fhir/ig-publisher-base:latest
@@ -174,9 +175,10 @@ jobs:
       - name: Deploy to AWMF registry
         run: |
           # Deploy published versions (exclude ci-build/ as it's managed by CI workflow)
+          # Deploy from package_id subdirectory (matches -go-publish structure)
           rsync -av --delete --exclude 'ci-build/' \
             -e "ssh -p 221 -i /tmp/awmf_ig_publisher.id_ed25519" \
-            .publication/webroot/ \
+            .publication/webroot/${{ steps.config.outputs.package_id }}/ \
             awmf_ig_publisher@register.awmf.org:./${{ steps.config.outputs.package_id }}/
           
           echo "========================================="

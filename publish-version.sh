@@ -473,9 +473,18 @@ run_go_publish() {
 
     local exit_code=$?
 
-    # Restore package-list.json to source directory
-    if [ "$backed_up_package_list" = "true" ] && [ -f "$backup_package_list" ]; then
-        log_info "Restoring package-list.json to source directory..."
+    # Copy updated package-list.json from webroot to source directory (for version control)
+    # The -go-publish updates/creates package-list.json in the webroot
+    local webroot_package_list="${WEBROOT}/${PACKAGE_ID}/package-list.json"
+    if [ -f "$webroot_package_list" ]; then
+        log_info "Copying updated package-list.json from webroot to source..."
+        cp "$webroot_package_list" "$source_package_list"
+        backed_up_package_list="false"
+        # Remove the backup since we have the updated version
+        rm -f "$backup_package_list"
+    elif [ "$backed_up_package_list" = "true" ] && [ -f "$backup_package_list" ]; then
+        # Fallback: restore backup if webroot doesn't have package-list.json
+        log_warn "No package-list.json in webroot, restoring backup..."
         mv "$backup_package_list" "$source_package_list"
         backed_up_package_list="false"
     fi
@@ -489,12 +498,12 @@ run_go_publish() {
 
     # Remove the trap
     trap - EXIT
-    
+
     if [ $exit_code -ne 0 ]; then
         log_error "IG Publisher -go-publish failed with exit code $exit_code"
         return $exit_code
     fi
-    
+
     # Copy history assets to webroot (IG Publisher doesn't always do this)
     copy_history_assets
 
