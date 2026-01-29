@@ -351,7 +351,7 @@ download_dependencies() {
 
 run_go_publish() {
     log_info "Running IG Publisher in -go-publish mode..."
-    
+
     local publisher="${SCRIPT_DIR}/input-cache/publisher.jar"
     local source_package_list="${SCRIPT_DIR}/package-list.json"
     local backup_package_list="${PUBLICATION_DIR}/package-list.json.backup"
@@ -359,36 +359,61 @@ run_go_publish() {
     # IMPORTANT: Backup location must be OUTSIDE the source directory tree
     # because -go-publish copies the entire source directory to temp
     local backup_venv_dir="/tmp/awmf-ig-venv-backup-$$"
-    
+
+    # Track what we've backed up for the trap handler
+    local backed_up_package_list="false"
+    local backed_up_venv="false"
+
     # Setup the complete publication environment required by -go-publish
     setup_go_publish_environment
-    
+
     # Fetch existing webroot from server if not local-only and webroot is empty
     if [ "$LOCAL_ONLY" = "false" ] && [ -z "$(ls -A "$WEBROOT" 2>/dev/null)" ]; then
         log_info "Fetching existing publications from server..."
         fetch_existing_publications || log_warn "Could not fetch existing publications (this may be the first publication)"
     fi
-    
+
+    # STEP 1: Build the IG first (required before -go-publish)
+    # -go-publish expects the IG to already be built with output/ and output/qa.json
+    log_info "Building IG before publication..."
+    java -Xmx6g -jar "$publisher" -ig "$SCRIPT_DIR" -publish "${CANONICAL}"
+
+    if [ ! -f "${SCRIPT_DIR}/output/qa.json" ]; then
+        log_error "IG build failed - output/qa.json not found"
+        return 1
+    fi
+    log_info "IG build completed successfully"
+
     # IMPORTANT: -go-publish mode requires that package-list.json does NOT exist in the source directory
     # The IG Publisher manages package-list.json in the webroot, not in source
     # We temporarily move it out of the way and restore it afterward (for version control)
     if [ -f "$source_package_list" ]; then
         log_info "Temporarily moving package-list.json out of source directory..."
         mv "$source_package_list" "$backup_package_list"
+        backed_up_package_list="true"
     fi
-    
+
     # IMPORTANT: -go-publish tries to zip the entire source directory including .venv
     # Python virtual environments contain symlinks that cause "Case mismatch" errors
     # on case-insensitive filesystems (macOS). Move .venv out temporarily.
     if [ -d "$venv_dir" ]; then
         log_info "Temporarily moving .venv out of source directory..."
         mv "$venv_dir" "$backup_venv_dir"
+        backed_up_venv="true"
     fi
-    
+
     # Set up a trap to restore package-list.json and .venv even if the script fails
-    trap 'if [ -f "$backup_package_list" ]; then mv "$backup_package_list" "$source_package_list"; fi; if [ -d "$backup_venv_dir" ]; then mv "$backup_venv_dir" "$venv_dir"; fi' EXIT
-    
-    # Run the IG Publisher with -go-publish
+    # Use the tracking variables to know what to restore
+    trap '
+        if [ "$backed_up_package_list" = "true" ] && [ -f "$backup_package_list" ]; then
+            mv "$backup_package_list" "$source_package_list" 2>/dev/null || true
+        fi
+        if [ "$backed_up_venv" = "true" ] && [ -d "$backup_venv_dir" ]; then
+            mv "$backup_venv_dir" "$venv_dir" 2>/dev/null || true
+        fi
+    ' EXIT
+
+    # STEP 2: Run the IG Publisher with -go-publish to organize output
     log_info "Executing IG Publisher -go-publish..."
     java -Xmx6g -jar "$publisher" -go-publish \
         -source "$SCRIPT_DIR" \
@@ -397,21 +422,23 @@ run_go_publish() {
         -registry "${WEBROOT}/fhir-ig-list.json" \
         -temp "$TEMP_DIR" \
         -templates "$TEMPLATES_DIR"
-    
+
     local exit_code=$?
-    
+
     # Restore package-list.json to source directory
-    if [ -f "$backup_package_list" ]; then
+    if [ "$backed_up_package_list" = "true" ] && [ -f "$backup_package_list" ]; then
         log_info "Restoring package-list.json to source directory..."
         mv "$backup_package_list" "$source_package_list"
+        backed_up_package_list="false"
     fi
-    
+
     # Restore .venv to source directory
-    if [ -d "$backup_venv_dir" ]; then
+    if [ "$backed_up_venv" = "true" ] && [ -d "$backup_venv_dir" ]; then
         log_info "Restoring .venv to source directory..."
         mv "$backup_venv_dir" "$venv_dir"
+        backed_up_venv="false"
     fi
-    
+
     # Remove the trap
     trap - EXIT
     
