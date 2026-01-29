@@ -115,9 +115,11 @@ jobs:
           CANONICAL=$(yq eval '.canonical' sushi-config.yaml)
           PACKAGE_ID=$(yq eval '.id' sushi-config.yaml)
           IG_TITLE=$(yq eval '.title' sushi-config.yaml)
+          FHIR_VERSION=$(yq eval '.fhirVersion' sushi-config.yaml)
           echo "canonical=$CANONICAL" >> $GITHUB_OUTPUT
           echo "package_id=$PACKAGE_ID" >> $GITHUB_OUTPUT
           echo "ig_title=$IG_TITLE" >> $GITHUB_OUTPUT
+          echo "fhir_version=$FHIR_VERSION" >> $GITHUB_OUTPUT
         env:
           JAVA_TOOL_OPTIONS: "-Xmx6g"
 
@@ -181,6 +183,11 @@ jobs:
           args: ./publish-version.sh ${{ steps.build-args.outputs.args }}
         env:
           CI: true
+          # Pass config values since Docker image doesn't have yq
+          IG_CANONICAL: ${{ steps.config.outputs.canonical }}
+          IG_PACKAGE_ID: ${{ steps.config.outputs.package_id }}
+          IG_TITLE: ${{ steps.config.outputs.ig_title }}
+          IG_FHIR_VERSION: ${{ steps.config.outputs.fhir_version }}
 
       - name: Deploy to AWMF registry
         run: |

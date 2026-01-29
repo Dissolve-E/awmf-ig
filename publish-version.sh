@@ -39,7 +39,9 @@
 #   --use-go-publish  EXPERIMENTAL: Use IG Publisher's -go-publish mode
 #
 # Configuration is read from sushi-config.yaml (canonical, id, title).
-# Requires: yq (brew install yq / snap install yq)
+# Requires: yq (brew install yq / snap install yq) for local runs.
+#           In CI, config values can be passed via environment variables:
+#           IG_CANONICAL, IG_PACKAGE_ID, IG_TITLE, IG_FHIR_VERSION
 #
 # Examples:
 #   ./publish-version.sh 1.0.0 --mode milestone --status trial-use
@@ -57,16 +59,51 @@ TEMP_DIR="${PUBLICATION_DIR}/temp"
 HISTORY_DIR="${PUBLICATION_DIR}/history"
 TEMPLATES_DIR="${PUBLICATION_DIR}/templates"
 
-# Read configuration from sushi-config.yaml
+# Read configuration from environment variables (set by CI) or sushi-config.yaml
 SUSHI_CONFIG="${SCRIPT_DIR}/sushi-config.yaml"
 if [ ! -f "$SUSHI_CONFIG" ]; then
     echo "ERROR: sushi-config.yaml not found at ${SUSHI_CONFIG}"
     exit 1
 fi
 
-CANONICAL=$(yq eval '.canonical' "$SUSHI_CONFIG")
-PACKAGE_ID=$(yq eval '.id' "$SUSHI_CONFIG")
-IG_TITLE=$(yq eval '.title' "$SUSHI_CONFIG")
+# Use environment variables if set (from CI workflow), otherwise read from sushi-config.yaml
+if [ -n "${IG_CANONICAL:-}" ]; then
+    CANONICAL="$IG_CANONICAL"
+elif command -v yq &> /dev/null; then
+    CANONICAL=$(yq eval '.canonical' "$SUSHI_CONFIG")
+else
+    echo "ERROR: IG_CANONICAL not set and yq not available"
+    exit 1
+fi
+
+if [ -n "${IG_PACKAGE_ID:-}" ]; then
+    PACKAGE_ID="$IG_PACKAGE_ID"
+elif command -v yq &> /dev/null; then
+    PACKAGE_ID=$(yq eval '.id' "$SUSHI_CONFIG")
+else
+    echo "ERROR: IG_PACKAGE_ID not set and yq not available"
+    exit 1
+fi
+
+if [ -n "${IG_TITLE:-}" ]; then
+    # IG_TITLE is already set from environment
+    :
+elif command -v yq &> /dev/null; then
+    IG_TITLE=$(yq eval '.title' "$SUSHI_CONFIG")
+else
+    echo "ERROR: IG_TITLE not set and yq not available"
+    exit 1
+fi
+
+# FHIR version - used in package-list.json
+if [ -n "${IG_FHIR_VERSION:-}" ]; then
+    FHIR_VERSION="$IG_FHIR_VERSION"
+elif command -v yq &> /dev/null; then
+    FHIR_VERSION=$(yq eval '.fhirVersion' "$SUSHI_CONFIG")
+else
+    # Default fallback if neither env var nor yq available
+    FHIR_VERSION="4.0.1"
+fi
 
 # Other configuration
 CATEGORY="Clinical Practice Guidelines"
@@ -648,7 +685,6 @@ EOF
     
     if [ ! -f "${ig_dest}/package-list.json" ]; then
         log_info "Creating initial package-list.json in destination..."
-        local fhir_version=$(yq eval '.fhirVersion' "${SCRIPT_DIR}/sushi-config.yaml" 2>/dev/null || echo "4.0.1")
         cat > "${ig_dest}/package-list.json" << EOF
 {
   "package-id": "${PACKAGE_ID}",
@@ -831,11 +867,10 @@ update_publish_box() {
 
 update_package_list() {
     log_info "Updating package-list.json..."
-    
+
     local package_list="${SCRIPT_DIR}/package-list.json"
     local pub_date=$(date +%Y-%m-%d)
-    local fhir_version=$(yq eval '.fhirVersion' "${SCRIPT_DIR}/sushi-config.yaml")
-    
+
     # Create new version entry
     local new_entry=$(cat << EOF
 {
@@ -845,7 +880,7 @@ update_package_list() {
   "path": "${CANONICAL}/${VERSION}",
   "status": "${STATUS}",
   "sequence": "${SEQUENCE}",
-  "fhirversion": "${fhir_version}",
+  "fhirversion": "${FHIR_VERSION}",
   "current": $([ "$MODE" = "milestone" ] && echo "true" || echo "false")
 }
 EOF
