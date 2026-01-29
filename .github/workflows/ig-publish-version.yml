@@ -191,18 +191,26 @@ jobs:
           echo "  ${{ steps.config.outputs.canonical }}/history.html"
           echo "========================================="
 
-      - name: Commit updated package-list.json
+      - name: Prepare files for commit
         run: |
-          git config user.name 'github-actions'
-          git config user.email 'github-actions@github.com'
-          
-          # Reset sushi-config to ci-build for ongoing development
+          # Reset sushi-config releaseLabel to ci-build for ongoing development
           yq eval '.releaseLabel = "ci-build"' -i sushi-config.yaml
-          
-          git add package-list.json
-          git add sushi-config.yaml
-          git diff --cached --quiet || git commit -m "chore: update package-list.json for version ${{ inputs.version }}"
-          git push
+
+      - name: Create PR for package-list.json update
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: update package-list.json for version ${{ inputs.version }}"
+          title: "chore: update package-list.json for version ${{ inputs.version }}"
+          body: |
+            Automated update of package-list.json after publishing version ${{ inputs.version }}.
+
+            This PR was created by the ig-publish-version workflow.
+          branch: chore/package-list-${{ inputs.version }}
+          add-paths: |
+            package-list.json
+            sushi-config.yaml
+          delete-branch: true
 
       - name: Create GitHub Release
         if: inputs.mode == 'milestone'
