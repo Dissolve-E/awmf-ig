@@ -4,7 +4,7 @@
 [VS:AWMF Guideline Status]: ValueSet-vs-awmf-guideline-status.html
 [VS:Body System Conditions]: ValueSet-vs-body-system-conditions.html
 [VS:Care Level]: ValueSet-vs-care-level.html
-[VS:CareStage]: ValueSet-vs-care-stage.html
+[VS:Care Stage]: ValueSet-vs-care-stage.html
 [VS:Clinical Application Type]: ValueSet-vs-clinical-application-type.html
 [VS:Content Types]: ValueSet-vs-content-types.html
 [VS:Dissemination Website]: ValueSet-vs-dissemination-website.html
@@ -29,7 +29,7 @@
 [VS:Rating Feasibility]: ValueSet-vs-rating-feasibility.html
 [VS:Rating Preference And Values]: ValueSet-vs-rating-preference-and-values.html
 [VS:Rating Resources]: ValueSet-vs-rating-resources.html
-[VS:Recommenadtion Direction]: ValueSet-vs-recommendation-direction.html
+[VS:Recommendation Direction]: ValueSet-vs-recommendation-direction.html
 [VS:Recommendation Review Status Value Set]: ValueSet-vs-recommendation-review-status.html
 [VS:Recommendation Strength (AWMF) ValueSet]: ValueSet-vs-recommendation-strength-awmf.html
 [VS:Recommendation Synthesis Type]: ValueSet-vs-recommendation-synthesis-type.html
@@ -81,13 +81,13 @@
 [SD:AWMF S3 Guideline Registry Record]: StructureDefinition-awmf-guideline-record-s3.html
 [SD:Artifact Contact (Extended)]: StructureDefinition-ext-artifact-extended-contact.html
 [SD:Author Language]: StructureDefinition-ext-author-language.html
-[SD:Certainty of Evidence Rating]: StructureDefinition-certainty-of-evidence-rating.html
 [SD:Citation List]: StructureDefinition-citation-list.html
 [SD:Conceptual Cohort Definition Comparator]: StructureDefinition-conceptual-cohort-definition-comparator.html
 [SD:Conceptual Cohort Definition Intervention]: StructureDefinition-conceptual-cohort-definition-intervention.html
 [SD:Conceptual Cohort Definition Outcome]: StructureDefinition-conceptual-cohort-definition-outcome.html
 [SD:Conceptual Cohort Definition Population]: StructureDefinition-conceptual-cohort-definition-population.html
 [SD:Consultation Period]: StructureDefinition-ext-consultation-period.html
+[SD:Evidence Assessment]: StructureDefinition-evidence-assessment.html
 [SD:Evidence Internal Assessment AGREE II]: StructureDefinition-evidence-internal-assessment-agreeii.html
 [SD:Evidence Internal Assessment AMSTAR 2]: StructureDefinition-evidence-internal-assessment-amstar2.html
 [SD:Evidence Internal Assessment Cochrane Risk of Bias]: StructureDefinition-evidence-internal-assessment-cochrane-rob.html

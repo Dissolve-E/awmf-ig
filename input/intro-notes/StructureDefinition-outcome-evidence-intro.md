@@ -25,9 +25,9 @@ The `variableDefinition` element must include at least one outcome definition:
 #### Relationship to Other Profiles
 
 Outcome Evidence resources are:
-- Assessed by [Certainty of Evidence Rating](StructureDefinition-certainty-of-evidence-rating.html) profiles
-- Referenced from [Recommendation Justification](StructureDefinition-recommendation-justification.html) to link evidence to recommendations
-- Derived from PICO questions via the [Conceptual Cohort Definition Outcome](StructureDefinition-conceptual-cohort-definition-outcome.html)
+- Assessed by [Evidence Overall Quality Assessment][SD:Evidence Overall Quality Assessment] profiles
+- Referenced from [Recommendation Justification][SD:Recommendation Justification] to link evidence to recommendations
+- Derived from PICO questions via the [Conceptual Cohort Definition Outcome][SD:Conceptual Cohort Definition Outcome] profile.
 
 #### Example Usage
 

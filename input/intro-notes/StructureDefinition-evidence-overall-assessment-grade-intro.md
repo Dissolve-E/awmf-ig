@@ -71,7 +71,7 @@ Usage: #example
 * content[imprecision].type = $cs-certainty-type#Imprecision
 ```
 
-For the base profile structure, see [Certainty of Evidence Rating](StructureDefinition-certainty-of-evidence-rating.html).
+For the base profile structure, see [Evidence Overall Quality Assessment][SD:Evidence Overall Quality Assessment].
 
 {% capture resource_inheritance %}
 This profile of a FHIR {{resource.type}} is derived from the [{{resource.base | split: '/' | last}}]({{resource.base}}) FHIR resource.

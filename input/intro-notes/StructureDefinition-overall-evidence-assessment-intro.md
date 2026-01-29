@@ -12,10 +12,10 @@ This profile serves as the base for overall evidence assessments using various r
 
 #### Relationship to Other Profiles
 
-- **Parent profile:** [Certainty of Evidence Rating](StructureDefinition-certainty-of-evidence-rating.html)
+- **Parent profile:** [Evidence Overall Quality Assessment][SD:Evidence Overall Quality Assessment] – Base profile for overall evidence assessments
 - **Child profiles:**
-  - [Evidence Assessment GRADE](StructureDefinition-evidence-assessment-grade.html)
-  - [Evidence Assessment Oxford 2011](StructureDefinition-evidence-assessment-oxford2011.html)
+  - [Evidence Assessment GRADE][SD:Evidence Overall Assessment GRADE] – For GRADE assessments
+  - [Evidence Assessment Oxford 2011][SD:Evidence Overall Assessment Oxford 2011] – For Oxford 2011 assessments
 
 #### Example Usage
 

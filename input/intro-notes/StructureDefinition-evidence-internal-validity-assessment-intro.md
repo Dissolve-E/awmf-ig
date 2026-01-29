@@ -12,7 +12,7 @@ This profile serves as the base for internal validity assessments using various 
 
 #### Relationship to Other Profiles
 
-- **Parent profile:** [Certainty of Evidence Rating](StructureDefinition-certainty-of-evidence-rating.html)
+- **Parent profile:** [Evidence Internal Validity Assessment][SD:Evidence Internal Validity Assessment] – Base profile for internal validity assessments
 - **Child profiles:**
   - [Evidence Internal Assessment ROBIS][SD:Evidence Internal Assessment ROBIS] – For systematic reviews
   - [Evidence Internal Assessment Cochrane Risk of Bias][SD:Evidence Internal Assessment Cochrane Risk of Bias] – For RCTs

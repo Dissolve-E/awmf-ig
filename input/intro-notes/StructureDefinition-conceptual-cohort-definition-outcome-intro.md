@@ -22,7 +22,7 @@ The `code` element identifies this as an outcome definition:
 
 #### Usage in PICO Questions
 
-Multiple outcomes can be defined for a single PICO question. This profile is referenced from the [PICO Question](StructureDefinition-pico-question.html) profile:
+Multiple outcomes can be defined for a single PICO question. This profile is referenced from the [PICO Question][SD:PICO Question] profile:
 
 ```fsh
 // In PICOQuestion:
@@ -36,7 +36,7 @@ Multiple outcomes can be defined for a single PICO question. This profile is ref
 
 #### Relationship to Evidence Assessment
 
-Outcome definitions are also referenced by [Certainty of Evidence Rating](StructureDefinition-certainty-of-evidence-rating.html) profiles when assessing the evidence for specific outcomes.
+Outcome definitions are also referenced by [Evidence Overall Quality Assessment][SD:Evidence Overall Quality Assessment] profiles when assessing the evidence for specific outcomes.
 
 #### Example Usage
 

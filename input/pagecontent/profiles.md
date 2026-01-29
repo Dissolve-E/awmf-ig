@@ -30,14 +30,18 @@
 
 #### Profiles related to Evidence Assessment
 
-{% include profile-reference.md name='SD:Certainty of Evidence Rating' %}
+##### Overall Evidence Assessment
+{% include profile-reference.md name='SD:Evidence Overall Quality Assessment' %}
+{% include profile-reference.md name='SD:Evidence Overall Assessment GRADE' %}
+{% include profile-reference.md name='SD:Evidence Overall Assessment Oxford 2011' %}
+
+##### Internal Validity Assessment
+{% include profile-reference.md name='SD:Evidence Internal Validity Assessment' %}
 {% include profile-reference.md name='SD:Evidence Internal Assessment AGREE II' %}
 {% include profile-reference.md name='SD:Evidence Internal Assessment AMSTAR 2' %}
 {% include profile-reference.md name='SD:Evidence Internal Assessment Cochrane Risk of Bias' %}
 {% include profile-reference.md name='SD:Evidence Internal Assessment ROBIS' %}
 {% include profile-reference.md name='SD:Evidence Internal Validity Assessment' %}
-{% include profile-reference.md name='SD:Evidence Overall Assessment GRADE' %}
-{% include profile-reference.md name='SD:Evidence Overall Assessment Oxford 2011' %}
 {% include profile-reference.md name='SD:Evidence Overall Quality Assessment' %}
 
 #### Profiles related to PICO Questions

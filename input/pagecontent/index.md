@@ -43,12 +43,12 @@ While DISSOLVE-E is initiated by the AWMF and foremost aiming to develop a digit
 | [Recommendation][SD:Recommendation] | [Composition]({{ fhir_base_url }}composition.html) | Representation of a clinical practice guideline recommendation. |
 {:.grid}
 
-##### Profiles to represent the certainty of evidence upon which a clinical practice guideline recommendation is based
+##### Profiles to represent the evidence assessment upon which a clinical practice guideline recommendation is based
 We propose a general profile as well as profiles based on different quality and risk of bias assessment systems.
 
 | Name | FHIR Base Resource | Description |
 | ---- | ------------- | ----------- |
-| [Certainty of Evidence Rating][SD:Certainty of Evidence Rating] | [ArtifactAssessment]({{ fhir_base_url }}artifactassessment.html) | General representation of a certainty of evidence rating for a specific outcome. |
+| [Evidence Overall Quality Assessment][SD:Evidence Overall Quality Assessment] | [ArtifactAssessment]({{ fhir_base_url }}artifactassessment.html) | General representation of a certainty of evidence rating, possibly outcome-specific. |
 | [Evidence Internal Validity Assessment][SD:Evidence Internal Validity Assessment] | [ArtifactAssessment]({{ fhir_base_url }}artifactassessment.html) | Assessment of the internal validity of evidence. |
 | [Evidence Internal Assessment AGREE II][SD:Evidence Internal Assessment AGREE II] | [ArtifactAssessment]({{ fhir_base_url }}artifactassessment.html) | Assessment of guideline quality using the AGREE II instrument. |
 | [Evidence Internal Assessment AMSTAR 2][SD:Evidence Internal Assessment AMSTAR 2] | [ArtifactAssessment]({{ fhir_base_url }}artifactassessment.html) | Assessment of systematic review quality using AMSTAR 2. |

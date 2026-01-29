@@ -29,6 +29,10 @@ definition:
       sourceUrl: valuesets.html
       title: Value Sets
     - generation: markdown
+      name: downloads.html
+      sourceUrl: downloads.html
+      title: Downloads
+    - generation: markdown
       name: examples.html
       sourceUrl: examples.html
       title: Examples
@@ -42,7 +46,7 @@ definition:
   - code:
       code: releaselabel
       system: http://hl7.org/fhir/tools/CodeSystem/ig-parameters
-    value: ci-build
+    value: Draft
   resource:
   - description: CodeSystem representing the domains assessed by the AGREE II instrument
       for evaluating the quality of clinical practice guidelines.
@@ -217,12 +221,6 @@ definition:
     name: Care Stage
     reference:
       reference: ValueSet/vs-care-stage
-  - description: A structured assessment of the certainty of evidence for a specific
-      outcome.
-    isExample: false
-    name: Certainty of Evidence Rating
-    reference:
-      reference: StructureDefinition/certainty-of-evidence-rating
   - description: Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik
       on antibiotic days
     isExample: true
@@ -437,6 +435,12 @@ definition:
     name: Encounter Type
     reference:
       reference: ValueSet/vs-encounter-type
+  - description: A structured assessment of the certainty of evidence for a specific
+      outcome.
+    isExample: false
+    name: Evidence Assessment
+    reference:
+      reference: StructureDefinition/evidence-assessment
   - description: A structured assessment of the quality of guidelines using the AGREE
       II instrument.
     isExample: false
@@ -1525,4 +1529,4 @@ resourceType: ImplementationGuide
 status: draft
 title: 'Dissolve-E: AWMF Guideline Registry'
 url: http://fhir.awmf.org/awmf.ig/ImplementationGuide/awmf.ig
-version: 0.1.0
+version: 0.2.0
