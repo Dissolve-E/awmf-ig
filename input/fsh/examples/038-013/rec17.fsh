@@ -19,7 +19,7 @@ kognitive Störung beobachtet wird und die einer solchen Untersuchung zustimmen?
 * title = "Screening auf kognitive Beeinträchtigung"
 
 * identifier[+]
-  * system = "https://example.org/recommendations"
+  * system = "https://fhir.awmf.org/examples"
   * value = "RecommendationCognitiveTestsWhenSuspectingDementia"
   * use = #official
 

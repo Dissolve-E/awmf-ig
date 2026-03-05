@@ -146,7 +146,7 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
         * status = #additional
         * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Erwachsene</div>"
   * section[careSetting]
-    * section[careSetting]
+    * section[encounterType]
       * extension[value].valueCodeableConcept = cs-care-setting#inpatient
       * section[language]
         * extension[language].valueCode = #de

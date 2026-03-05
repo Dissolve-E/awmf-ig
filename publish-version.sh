@@ -378,17 +378,7 @@ update_sushi_config() {
 
 download_publisher() {
     log_info "Ensuring IG Publisher is available..."
-    
-    local publisher="${SCRIPT_DIR}/input-cache/publisher.jar"
-    
-    if [ ! -f "$publisher" ]; then
-        log_info "Downloading IG Publisher..."
-        mkdir -p "${SCRIPT_DIR}/input-cache"
-        curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar \
-            -o "$publisher"
-    fi
-    
-    log_info "IG Publisher ready: $publisher"
+    "${SCRIPT_DIR}/download-publisher.sh"
 }
 
 download_dependencies() {
