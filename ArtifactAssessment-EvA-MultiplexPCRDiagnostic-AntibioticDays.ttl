@@ -1,0 +1,72 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/ArtifactAssessment/EvA-MultiplexPCRDiagnostic-AntibioticDays> a fhir:ArtifactAssessment ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "EvA-MultiplexPCRDiagnostic-AntibioticDays"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-overall-assessment-grade"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-overall-assessment-grade>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on antibiotic days</div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:artifact [
+     a fhir:Reference ;
+     fhir:l <http://fhir.awmf.org/awmf.ig/Evidence/Evidence-MultiplexPCRDiagnostic-AntibioticDays> ;
+     fhir:reference [ fhir:v "Evidence/Evidence-MultiplexPCRDiagnostic-AntibioticDays" ]
+  ] ; # 
+  fhir:content ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/certainty-type"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/certainty-type>
+         ] ;
+         fhir:code [ fhir:v "Overall" ] ;
+         fhir:display [ fhir:v "Overall certainty" ]
+       ] )
+     ] ;
+     fhir:classifier ( [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/certainty-rating"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/certainty-rating>
+         ] ;
+         fhir:code [ fhir:v "very-low" ] ;
+         fhir:display [ fhir:v "Very low quality" ]
+       ] )
+     ] )
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+           fhir:l <https://fevir.net/resources/CodeSystem/179423>
+         ] ;
+         fhir:code [ fhir:v "rating-system" ] ;
+         fhir:display [ fhir:v "Rating System" ]
+       ] )
+     ] ;
+     fhir:classifier ( [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem>
+         ] ;
+         fhir:code [ fhir:v "GRADE" ]
+       ] )
+     ] )
+  ] ) ; # 
+  fhir:workflowStatus [ fhir:v "applied"] . # 
+
+# -------------------------------------------------------------------------------------
+

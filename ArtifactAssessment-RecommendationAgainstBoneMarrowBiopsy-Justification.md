@@ -1,0 +1,652 @@
+# RecommendationAgainstBoneMarrowBiopsy-Justification - Dissolve-E: AWMF Guideline Registry v0.2.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **RecommendationAgainstBoneMarrowBiopsy-Justification**
+
+## Example ArtifactAssessment: RecommendationAgainstBoneMarrowBiopsy-Justification
+
+Begründung für Empfehlung 5.13: Situationen mit Empfehlungen gegen eine Knochenmarkbiopsie
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "ArtifactAssessment",
+  "id" : "RecommendationAgainstBoneMarrowBiopsy-Justification",
+  "meta" : {
+    "profile" : ["http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification"]
+  },
+  "artifactReference" : {
+    "reference" : "Composition/RecommendationAgainstBoneMarrowBiopsy"
+  },
+  "content" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "https://fevir.net/resources/CodeSystem/179423",
+        "code" : "recommendation-rating",
+        "display" : "Recommendation Rating"
+      }]
+    },
+    "component" : [{
+      "type" : {
+        "coding" : [{
+          "system" : "https://fevir.net/resources/CodeSystem/179423",
+          "code" : "strength-of-recommendation",
+          "display" : "Strength of Recommendation"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-strength-awmf",
+          "code" : "A",
+          "display" : "Strong Recommendation"
+        }]
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "https://fevir.net/resources/CodeSystem/179423",
+          "code" : "direction-of-recommendation",
+          "display" : "Direction of Recommendation"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-direction",
+          "code" : "against",
+          "display" : "Against"
+        }]
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+          "code" : "level-of-consensus"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-level-of-consensus",
+          "code" : "strong-consensus",
+          "display" : "Strong consensus"
+        }]
+      }]
+    }]
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+        "code" : "evidence-rating",
+        "display" : "Evidence Rating"
+      }]
+    },
+    "component" : [{
+      "type" : {
+        "coding" : [{
+          "system" : "https://fevir.net/resources/CodeSystem/179423",
+          "code" : "rating-system",
+          "display" : "Rating System"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem",
+          "code" : "grade",
+          "display" : "GRADE"
+        }]
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/certainty-type",
+          "code" : "Overall",
+          "display" : "Overall certainty"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/certainty-rating",
+          "code" : "moderate",
+          "display" : "Moderate quality"
+        }]
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico",
+          "code" : "outcome",
+          "display" : "Outcome"
+        }]
+      },
+      "relatesTo" : [{
+        "type" : "depends-on",
+        "targetReference" : {
+          "reference" : "Group/Outcome-OverallSurvival"
+        }
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+          "code" : "overall-quality-of-evidence",
+          "display" : "Overall Quality of Evidence"
+        }]
+      },
+      "relatesTo" : [{
+        "type" : "justification",
+        "targetReference" : {
+          "reference" : "ArtifactAssessment/EvA-BoneMarrowBiopsy-OS"
+        }
+      }]
+    }]
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+        "code" : "evidence-rating",
+        "display" : "Evidence Rating"
+      }]
+    },
+    "component" : [{
+      "type" : {
+        "coding" : [{
+          "system" : "https://fevir.net/resources/CodeSystem/179423",
+          "code" : "rating-system",
+          "display" : "Rating System"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem",
+          "code" : "grade",
+          "display" : "GRADE"
+        }]
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/certainty-type",
+          "code" : "Overall",
+          "display" : "Overall certainty"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/certainty-rating",
+          "code" : "moderate",
+          "display" : "Moderate quality"
+        }]
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico",
+          "code" : "outcome",
+          "display" : "Outcome"
+        }]
+      },
+      "relatesTo" : [{
+        "type" : "depends-on",
+        "targetReference" : {
+          "reference" : "Group/Outcome-ProgressionFreeSurvival"
+        }
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+          "code" : "overall-quality-of-evidence",
+          "display" : "Overall Quality of Evidence"
+        }]
+      },
+      "relatesTo" : [{
+        "type" : "justification",
+        "targetReference" : {
+          "reference" : "ArtifactAssessment/EvA-BoneMarrowBiopsy-PFS"
+        }
+      }]
+    }]
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+        "code" : "evidence-rating",
+        "display" : "Evidence Rating"
+      }]
+    },
+    "component" : [{
+      "type" : {
+        "coding" : [{
+          "system" : "https://fevir.net/resources/CodeSystem/179423",
+          "code" : "rating-system",
+          "display" : "Rating System"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem",
+          "code" : "grade",
+          "display" : "GRADE"
+        }]
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/certainty-type",
+          "code" : "Overall",
+          "display" : "Overall certainty"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/certainty-rating",
+          "code" : "moderate",
+          "display" : "Moderate quality"
+        }]
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico",
+          "code" : "outcome",
+          "display" : "Outcome"
+        }]
+      },
+      "relatesTo" : [{
+        "type" : "depends-on",
+        "targetReference" : {
+          "reference" : "Group/Outcome-EventFreeSurvival"
+        }
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+          "code" : "overall-quality-of-evidence",
+          "display" : "Overall Quality of Evidence"
+        }]
+      },
+      "relatesTo" : [{
+        "type" : "justification",
+        "targetReference" : {
+          "reference" : "ArtifactAssessment/EvA-BoneMarrowBiopsy-EFS"
+        }
+      }]
+    }]
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+        "code" : "evidence-rating",
+        "display" : "Evidence Rating"
+      }]
+    },
+    "component" : [{
+      "type" : {
+        "coding" : [{
+          "system" : "https://fevir.net/resources/CodeSystem/179423",
+          "code" : "rating-system",
+          "display" : "Rating System"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem",
+          "code" : "grade",
+          "display" : "GRADE"
+        }]
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/certainty-type",
+          "code" : "Overall",
+          "display" : "Overall certainty"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/certainty-rating",
+          "code" : "moderate",
+          "display" : "Moderate quality"
+        }]
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico",
+          "code" : "outcome",
+          "display" : "Outcome"
+        }]
+      },
+      "relatesTo" : [{
+        "type" : "depends-on",
+        "targetReference" : {
+          "reference" : "Group/Outcome-Staging-Sensitivity"
+        }
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+          "code" : "overall-quality-of-evidence",
+          "display" : "Overall Quality of Evidence"
+        }]
+      },
+      "relatesTo" : [{
+        "type" : "justification",
+        "targetReference" : {
+          "reference" : "ArtifactAssessment/EvA-BoneMarrowBiopsy-Sensitivity"
+        }
+      }]
+    }]
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+        "code" : "evidence-rating",
+        "display" : "Evidence Rating"
+      }]
+    },
+    "component" : [{
+      "type" : {
+        "coding" : [{
+          "system" : "https://fevir.net/resources/CodeSystem/179423",
+          "code" : "rating-system",
+          "display" : "Rating System"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem",
+          "code" : "grade",
+          "display" : "GRADE"
+        }]
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/certainty-type",
+          "code" : "Overall",
+          "display" : "Overall certainty"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/certainty-rating",
+          "code" : "moderate",
+          "display" : "Moderate quality"
+        }]
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico",
+          "code" : "outcome",
+          "display" : "Outcome"
+        }]
+      },
+      "relatesTo" : [{
+        "type" : "depends-on",
+        "targetReference" : {
+          "reference" : "Group/Outcome-Staging-Specificity"
+        }
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+          "code" : "overall-quality-of-evidence",
+          "display" : "Overall Quality of Evidence"
+        }]
+      },
+      "relatesTo" : [{
+        "type" : "justification",
+        "targetReference" : {
+          "reference" : "ArtifactAssessment/EvA-BoneMarrowBiopsy-Specificity"
+        }
+      }]
+    }]
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+        "code" : "evidence-rating",
+        "display" : "Evidence Rating"
+      }]
+    },
+    "component" : [{
+      "type" : {
+        "coding" : [{
+          "system" : "https://fevir.net/resources/CodeSystem/179423",
+          "code" : "rating-system",
+          "display" : "Rating System"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem",
+          "code" : "grade",
+          "display" : "GRADE"
+        }]
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/certainty-type",
+          "code" : "Overall",
+          "display" : "Overall certainty"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/certainty-rating",
+          "code" : "low",
+          "display" : "Low quality"
+        }]
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico",
+          "code" : "outcome",
+          "display" : "Outcome"
+        }]
+      },
+      "relatesTo" : [{
+        "type" : "depends-on",
+        "targetReference" : {
+          "reference" : "Group/Outcome-Staging-PPV"
+        }
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+          "code" : "overall-quality-of-evidence",
+          "display" : "Overall Quality of Evidence"
+        }]
+      },
+      "relatesTo" : [{
+        "type" : "justification",
+        "targetReference" : {
+          "reference" : "ArtifactAssessment/EvA-BoneMarrowBiopsy-PPV"
+        }
+      }]
+    }]
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+        "code" : "evidence-rating",
+        "display" : "Evidence Rating"
+      }]
+    },
+    "component" : [{
+      "type" : {
+        "coding" : [{
+          "system" : "https://fevir.net/resources/CodeSystem/179423",
+          "code" : "rating-system",
+          "display" : "Rating System"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem",
+          "code" : "grade",
+          "display" : "GRADE"
+        }]
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/certainty-type",
+          "code" : "Overall",
+          "display" : "Overall certainty"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/certainty-rating",
+          "code" : "high",
+          "display" : "High quality"
+        }]
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico",
+          "code" : "outcome",
+          "display" : "Outcome"
+        }]
+      },
+      "relatesTo" : [{
+        "type" : "depends-on",
+        "targetReference" : {
+          "reference" : "Group/Outcome-Staging-NPV"
+        }
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+          "code" : "overall-quality-of-evidence",
+          "display" : "Overall Quality of Evidence"
+        }]
+      },
+      "relatesTo" : [{
+        "type" : "justification",
+        "targetReference" : {
+          "reference" : "ArtifactAssessment/EvA-BoneMarrowBiopsy-NPV"
+        }
+      }]
+    }]
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+        "code" : "evidence-rating",
+        "display" : "Evidence Rating"
+      }]
+    },
+    "component" : [{
+      "type" : {
+        "coding" : [{
+          "system" : "https://fevir.net/resources/CodeSystem/179423",
+          "code" : "rating-system",
+          "display" : "Rating System"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem",
+          "code" : "grade",
+          "display" : "GRADE"
+        }]
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/certainty-type",
+          "code" : "Overall",
+          "display" : "Overall certainty"
+        }]
+      },
+      "classifier" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/certainty-rating",
+          "code" : "moderate",
+          "display" : "Moderate quality"
+        }]
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico",
+          "code" : "outcome",
+          "display" : "Outcome"
+        }]
+      },
+      "relatesTo" : [{
+        "type" : "depends-on",
+        "targetReference" : {
+          "reference" : "Group/Outcome-Staging"
+        }
+      }]
+    },
+    {
+      "type" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+          "code" : "overall-quality-of-evidence",
+          "display" : "Overall Quality of Evidence"
+        }]
+      },
+      "relatesTo" : [{
+        "type" : "justification",
+        "targetReference" : {
+          "reference" : "ArtifactAssessment/EvA-BoneMarrowBiopsy-Staging"
+        }
+      }]
+    }]
+  }],
+  "workflowStatus" : "applied"
+}
+
+```

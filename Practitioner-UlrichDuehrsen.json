@@ -1,0 +1,16 @@
+{
+  "resourceType" : "Practitioner",
+  "id" : "UlrichDuehrsen",
+  "meta" : {
+    "profile" : ["http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Ulrich Dührsen</div>"
+  },
+  "name" : [{
+    "family" : "Dührsen",
+    "given" : ["Ulrich"],
+    "prefix" : ["Prof. Dr. med."]
+  }]
+}

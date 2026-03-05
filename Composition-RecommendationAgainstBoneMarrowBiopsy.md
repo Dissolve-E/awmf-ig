@@ -1,0 +1,92 @@
+# Situationen mit Empfehlungen gegen eine Knochenmarkbiopsie - Dissolve-E: AWMF Guideline Registry v0.2.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Situationen mit Empfehlungen gegen eine Knochenmarkbiopsie**
+
+## Example Composition: Situationen mit Empfehlungen gegen eine Knochenmarkbiopsie
+
+Situationen mit Empfehlungen gegen eine Knochenmarkbiopsie
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Composition",
+  "id" : "RecommendationAgainstBoneMarrowBiopsy",
+  "meta" : {
+    "profile" : ["http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation"]
+  },
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://fhir.awmf.org/examples",
+    "value" : "RecommendationAgainstBoneMarrowBiopsy"
+  }],
+  "version" : "2022",
+  "status" : "final",
+  "type" : {
+    "coding" : [{
+      "system" : "https://fevir.net/resources/CodeSystem/179423",
+      "code" : "Recommendation",
+      "display" : "Recommendation"
+    }]
+  },
+  "category" : [{
+    "coding" : [{
+      "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-synthesis-type",
+      "code" : "evidence-based",
+      "display" : "Evidence-based"
+    }]
+  }],
+  "date" : "2022-10-01",
+  "author" : [{
+    "reference" : "Organization/DGHO"
+  },
+  {
+    "reference" : "PractitionerRole/UlrichDuehrsenDGIMFor018-038"
+  },
+  {
+    "reference" : "PractitionerRole/DirkHellwigDGNFor018-038"
+  },
+  {
+    "reference" : "PractitionerRole/ThorstenPersigehlDRGFor018-038"
+  },
+  {
+    "reference" : "PractitionerRole/LaleUmutluDRGFor018-038"
+  }],
+  "title" : "Situationen mit Empfehlungen gegen eine Knochenmarkbiopsie",
+  "relatesTo" : [{
+    "type" : "part-of",
+    "targetCanonical" : "http://fhir.awmf.org/awmf.ig/Composition/DiffuseLargeBCellLymphomaGuideline|2022"
+  }],
+  "section" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "https://fevir.net/resources/CodeSystem/179423",
+        "code" : "recommendation-statement",
+        "display" : "Recommendation Statement"
+      }]
+    },
+    "section" : [{
+      "extension" : [{
+        "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+        "valueCode" : "de"
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+          "code" : "language",
+          "display" : "Language"
+        }]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\"><div><p>Bei Einsatz der PET/CT zur Stadieneinteilung soll bei kurativem Konzept in folgenden Situationen auf eine Knochenmarkbiopsie verzichtet werden:</p><ul><li>Nachweis einer Knochenmarkbeteiligung durch die PET/CT</li><li>Fortgeschrittenes Ausbreitungsstadium (Ann Arbor-Stadium III oder IV; <a data-linktype=\"chapter\" data-val=\"763b0e9defa448049388e36f66688bff\">s. 5.2.3.1</a>)</li><li>Limitiertes Ausbreitungsstadium (Ann Arbor-Stadium I oder II) mit ‚bulky disease‘ (<a data-linktype=\"chapter\" data-val=\"d422b7e3b4614c4a88005ac19b211f30\">s. 5.3.2.1.</a>) und/oder ≥ 1 ungünstigem Faktor des altersadjustierten ‚Internationalen Prognostischen Index‘ (IPI) (s. <a data-linktype=\"chapter\" data-val=\"05dd8ffc0bca4aeeb13b0ce5b24896c0\">5.3.1.2</a>).</li></ul></div></div>"
+      }
+    }]
+  }]
+}
+
+```

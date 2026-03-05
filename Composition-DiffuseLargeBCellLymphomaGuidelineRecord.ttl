@@ -1,0 +1,406 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/Composition/DiffuseLargeBCellLymphomaGuidelineRecord> a fhir:Composition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "DiffuseLargeBCellLymphomaGuidelineRecord"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">S3-Leitlinie Diagnostik, Therapie und Nachsorge für erwachsene Patient*innen mit einem diffusen großzelligen B-Zell-Lymphom und verwandten Entitäten</div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/artifact-publicationDate"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/artifact-publicationDate>
+     ] ;
+     fhir:value [
+       a fhir:Date ;
+       fhir:v "2022-10"^^xsd:gYearMonth
+     ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:system [
+       fhir:v "http://fhir.awmf.org/guidelines"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/guidelines>
+     ] ;
+     fhir:value [ fhir:v "018-038" ]
+  ] ) ; # 
+  fhir:version [ fhir:v "1.0"] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+       ] ;
+       fhir:code [ fhir:v "guideline-registry-record" ] ;
+       fhir:display [ fhir:v "Guideline Registry Record" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-class"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-class>
+       ] ;
+       fhir:code [ fhir:v "S3" ] ;
+       fhir:display [ fhir:v "Evidence- and consensus-based guideline" ]
+     ] )
+  ] ) ; # 
+  fhir:date [ fhir:v "2022-10"^^xsd:gYearMonth] ; # 
+  fhir:author ( [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/DGHO> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "leading" ]
+         ] )
+       ]
+     ] [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "registrant" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/DGHO" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/DGA> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "contributing" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/DGA" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/DGCH> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "contributing" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/DGCH" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/DGEBV> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "contributing" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/DGEBV" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/DGG> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "contributing" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/DGG" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/DGGG> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "contributing" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/DGGG" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/DGIM> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "contributing" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/DGIM" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/DGN> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "contributing" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/DGN" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/DGPalliativ> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "contributing" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/DGPalliativ" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/DGPathologie> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "contributing" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/DGPathologie" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/DEGRO> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "contributing" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/DEGRO" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/DEGUM> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "contributing" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/DEGUM" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/DGU> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "contributing" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/DGU" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/DRG> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "contributing" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/DRG" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/EbMNetzwerk> ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role>
+           ] ;
+           fhir:code [ fhir:v "contributing" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "Organization/EbMNetzwerk" ]
+  ] ) ; # 
+  fhir:title [ fhir:v "Diagnostik, Therapie und Nachsorge für erwachsene Patient*innen mit einem diffusen großzelligen B-Zell-Lymphom und verwandten Entitäten"] ; # 
+  fhir:attester ( [
+     fhir:mode [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/composition-attestation-mode"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/composition-attestation-mode>
+         ] ;
+         fhir:code [ fhir:v "official" ]
+       ] )
+     ] ;
+     fhir:party [
+       fhir:l <http://fhir.awmf.org/awmf.ig/Organization/AWMF> ;
+       fhir:reference [ fhir:v "Organization/AWMF" ]
+     ]
+  ] ) ; # 
+  fhir:relatesTo ( [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/relatesto-classifier"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/StructureDefinition/relatesto-classifier>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types>
+           ] ;
+           fhir:code [ fhir:v "awmf-detail-page" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:type [ fhir:v "documentation" ] ;
+     fhir:target [
+       a fhir:Uri ;
+       fhir:v "https://register.awmf.org/de/leitlinien/detail/018-038"^^xsd:anyURI ;
+       fhir:l <https://register.awmf.org/de/leitlinien/detail/018-038>
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

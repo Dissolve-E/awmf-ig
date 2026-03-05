@@ -1,0 +1,39 @@
+{
+  "resourceType" : "Composition",
+  "id" : "RR-TestInvLeadingAuthorRefPerson-SHOULD-FAIL",
+  "meta" : {
+    "profile" : ["http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Composition RR-TestInvLeadingAuthorRefPerson-SHOULD-FAIL</b></p><a name=\"RR-TestInvLeadingAuthorRefPerson-SHOULD-FAIL\"> </a><a name=\"hcRR-TestInvLeadingAuthorRefPerson-SHOULD-FAIL\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-guideline-registry-record.html\">Guideline Registry Record</a></p></div><p><b>identifier</b>: <code>http://fhir.awmf.org/guidelines</code>/888-001\u00a0(use:\u00a0official,\u00a0)</p><p><b>version</b>: 1.0</p><p><b>status</b>: Final</p><p><b>type</b>: <span title=\"Codes:{http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf guideline-registry-record}\">Guideline Registry Record</span></p><p><b>date</b>: 2025-06-17</p><p><b>author</b>: <a href=\"PractitionerRole-GuidelineAuthorRoleExample.html\">PractitionerRole </a></p><p><b>title</b>: Leading Author Practitioner Fail</p></div>"
+  },
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://fhir.awmf.org/guidelines",
+    "value" : "888-001"
+  }],
+  "version" : "1.0",
+  "status" : "final",
+  "type" : {
+    "coding" : [{
+      "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+      "code" : "guideline-registry-record",
+      "display" : "Guideline Registry Record"
+    }]
+  },
+  "date" : "2025-06-17",
+  "author" : [{
+    "extension" : [{
+      "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role",
+          "code" : "registrant"
+        }]
+      }
+    }],
+    "reference" : "PractitionerRole/GuidelineAuthorRoleExample"
+  }],
+  "title" : "Leading Author Practitioner Fail"
+}

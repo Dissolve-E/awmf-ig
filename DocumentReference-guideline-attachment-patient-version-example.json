@@ -1,0 +1,38 @@
+{
+  "resourceType" : "DocumentReference",
+  "id" : "guideline-attachment-patient-version-example",
+  "meta" : {
+    "profile" : ["http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-attachment"],
+    "tag" : [{
+      "display" : "Herz-Kreislauf-Erkrankungen"
+    },
+    {
+      "display" : "Diabetes"
+    }]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Guideline Attachment Patient Version Example</div>"
+  },
+  "status" : "current",
+  "type" : {
+    "coding" : [{
+      "system" : "https://fevir.net/resources/CodeSystem/179423",
+      "code" : "attachments",
+      "display" : "Attachments"
+    }]
+  },
+  "category" : [{
+    "coding" : [{
+      "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+      "code" : "patient-version"
+    }]
+  }],
+  "content" : [{
+    "attachment" : {
+      "contentType" : "application/pdf",
+      "language" : "de",
+      "title" : "Patient Version"
+    }
+  }]
+}

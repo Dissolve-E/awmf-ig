@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PractitionerRole xmlns="http://hl7.org/fhir">
+  <id value="GuidelineAuthorRoleExample"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author-role"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Guideline Author Role Example</div>
+  </text>
+  <period>
+    <start value="2022-08-01"/>
+    <end value="2023-12-31"/>
+  </period>
+  <practitioner>
+    <reference value="Practitioner/GuidelineAuthorExample"/>
+  </practitioner>
+  <organization>
+    <reference value="Organization/AWMFMemberOrganizationExample"/>
+  </organization>
+  <code>
+    <text value="Coordinaion and scientific leadership"/>
+  </code>
+</PractitionerRole>

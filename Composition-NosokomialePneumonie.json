@@ -1,0 +1,1095 @@
+{
+  "resourceType" : "Composition",
+  "id" : "NosokomialePneumonie",
+  "meta" : {
+    "profile" : ["http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie</div>"
+  },
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://fhir.awmf.org/guidelines",
+    "value" : "020-013"
+  }],
+  "version" : "3.0",
+  "status" : "final",
+  "type" : {
+    "coding" : [{
+      "system" : "https://fevir.net/resources/CodeSystem/179423",
+      "code" : "Guideline",
+      "display" : "Guideline"
+    }]
+  },
+  "date" : "2025-02-13",
+  "author" : [{
+    "reference" : "PractitionerRole/JessicaRademacherDGPFor020-013"
+  }],
+  "title" : "Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie",
+  "section" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "https://fevir.net/resources/CodeSystem/179423",
+        "code" : "introduction",
+        "display" : "Introduction"
+      }]
+    },
+    "section" : [{
+      "code" : {
+        "coding" : [{
+          "system" : "https://fevir.net/resources/CodeSystem/179423",
+          "code" : "text",
+          "display" : "Text"
+        }]
+      },
+      "section" : [{
+        "extension" : [{
+          "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+          "valueCode" : "de"
+        }],
+        "title" : "Übersicht der Empfehlungen und Statements",
+        "code" : {
+          "coding" : [{
+            "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+            "code" : "language",
+            "display" : "Language"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Übersicht der Empfehlungen und Statements</div>"
+        }
+      },
+      {
+        "extension" : [{
+          "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+          "valueCode" : "en"
+        }],
+        "title" : "Overview of Recommendations and Statements",
+        "code" : {
+          "coding" : [{
+            "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+            "code" : "language",
+            "display" : "Language"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Overview of Recommendations and Statements</div>"
+        }
+      },
+      {
+        "extension" : [{
+          "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+          "valueCode" : "ar"
+        }],
+        "title" : "نظرة عامة على التوصيات والبيانات",
+        "code" : {
+          "coding" : [{
+            "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+            "code" : "language",
+            "display" : "Language"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"rtl\">نظرة عامة على التوصيات والبيانات</div>"
+        }
+      }]
+    },
+    {
+      "code" : {
+        "coding" : [{
+          "system" : "https://fevir.net/resources/CodeSystem/179423",
+          "code" : "text",
+          "display" : "Text"
+        }]
+      },
+      "section" : [{
+        "extension" : [{
+          "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+          "valueCode" : "de"
+        }],
+        "title" : "Geltungsbereich und Zweck",
+        "code" : {
+          "coding" : [{
+            "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+            "code" : "language",
+            "display" : "Language"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Geltungsbereich und Zweck</div>"
+        }
+      },
+      {
+        "extension" : [{
+          "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+          "valueCode" : "en"
+        }],
+        "title" : "Scope and Purpose",
+        "code" : {
+          "coding" : [{
+            "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+            "code" : "language",
+            "display" : "Language"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Scope and Purpose</div>"
+        }
+      },
+      {
+        "code" : {
+          "coding" : [{
+            "system" : "https://fevir.net/resources/CodeSystem/179423",
+            "code" : "text",
+            "display" : "Text"
+          }]
+        },
+        "section" : [{
+          "extension" : [{
+            "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+            "valueCode" : "de"
+          }],
+          "title" : "Zielsetzung und Fragestellung",
+          "code" : {
+            "coding" : [{
+              "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+              "code" : "language",
+              "display" : "Language"
+            }]
+          },
+          "text" : {
+            "status" : "generated",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Zielsetzung und Fragestellung</div>"
+          }
+        },
+        {
+          "extension" : [{
+            "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+            "valueCode" : "en"
+          }],
+          "title" : "Objective and Research Question",
+          "code" : {
+            "coding" : [{
+              "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+              "code" : "language",
+              "display" : "Language"
+            }]
+          },
+          "text" : {
+            "status" : "generated",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Objective and Research Question</div>"
+          }
+        }]
+      },
+      {
+        "code" : {
+          "coding" : [{
+            "system" : "https://fevir.net/resources/CodeSystem/179423",
+            "code" : "text",
+            "display" : "Text"
+          }]
+        },
+        "section" : [{
+          "extension" : [{
+            "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+            "valueCode" : "de"
+          }],
+          "title" : "Versorgungsbereich",
+          "code" : {
+            "coding" : [{
+              "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+              "code" : "language",
+              "display" : "Language"
+            }]
+          },
+          "text" : {
+            "status" : "generated",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Versorgungsbereich</div>"
+          }
+        },
+        {
+          "extension" : [{
+            "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+            "valueCode" : "en"
+          }],
+          "title" : "Healthcare Sector",
+          "code" : {
+            "coding" : [{
+              "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+              "code" : "language",
+              "display" : "Language"
+            }]
+          },
+          "text" : {
+            "status" : "generated",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Healthcare Sector</div>"
+          }
+        }]
+      },
+      {
+        "code" : {
+          "coding" : [{
+            "system" : "https://fevir.net/resources/CodeSystem/179423",
+            "code" : "text",
+            "display" : "Text"
+          }]
+        },
+        "section" : [{
+          "extension" : [{
+            "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+            "valueCode" : "de"
+          }],
+          "title" : "Patientenzielgruppe",
+          "code" : {
+            "coding" : [{
+              "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+              "code" : "language",
+              "display" : "Language"
+            }]
+          },
+          "text" : {
+            "status" : "generated",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Patientenzielgruppe</div>"
+          }
+        },
+        {
+          "extension" : [{
+            "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+            "valueCode" : "en"
+          }],
+          "title" : "Target Patient Group",
+          "code" : {
+            "coding" : [{
+              "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+              "code" : "language",
+              "display" : "Language"
+            }]
+          },
+          "text" : {
+            "status" : "generated",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Target Patient Group</div>"
+          }
+        }]
+      },
+      {
+        "code" : {
+          "coding" : [{
+            "system" : "https://fevir.net/resources/CodeSystem/179423",
+            "code" : "text",
+            "display" : "Text"
+          }]
+        },
+        "section" : [{
+          "extension" : [{
+            "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+            "valueCode" : "de"
+          }],
+          "title" : "Adressaten",
+          "code" : {
+            "coding" : [{
+              "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+              "code" : "language",
+              "display" : "Language"
+            }]
+          },
+          "text" : {
+            "status" : "generated",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Adressaten</div>"
+          }
+        },
+        {
+          "extension" : [{
+            "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+            "valueCode" : "en"
+          }],
+          "title" : "Audience",
+          "code" : {
+            "coding" : [{
+              "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+              "code" : "language",
+              "display" : "Language"
+            }]
+          },
+          "text" : {
+            "status" : "generated",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Audience</div>"
+          }
+        }]
+      },
+      {
+        "code" : {
+          "coding" : [{
+            "system" : "https://fevir.net/resources/CodeSystem/179423",
+            "code" : "text",
+            "display" : "Text"
+          }]
+        },
+        "section" : [{
+          "extension" : [{
+            "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+            "valueCode" : "de"
+          }],
+          "title" : "Gültigkeitsdauer und Aktualisierungsverfahren",
+          "code" : {
+            "coding" : [{
+              "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+              "code" : "language",
+              "display" : "Language"
+            }]
+          },
+          "text" : {
+            "status" : "generated",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Gültigkeitsdauer und Aktualisierungsverfahren</div>"
+          }
+        },
+        {
+          "extension" : [{
+            "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+            "valueCode" : "en"
+          }],
+          "title" : "Validity Period and Update Procedure",
+          "code" : {
+            "coding" : [{
+              "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+              "code" : "language",
+              "display" : "Language"
+            }]
+          },
+          "text" : {
+            "status" : "generated",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Validity Period and Update Procedure</div>"
+          }
+        }]
+      }]
+    },
+    {
+      "code" : {
+        "coding" : [{
+          "system" : "https://fevir.net/resources/CodeSystem/179423",
+          "code" : "text",
+          "display" : "Text"
+        }]
+      },
+      "section" : [{
+        "extension" : [{
+          "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+          "valueCode" : "de"
+        }],
+        "title" : "Methodische Grundlagen",
+        "code" : {
+          "coding" : [{
+            "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+            "code" : "language",
+            "display" : "Language"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Methodische Grundlagen</div>"
+        }
+      },
+      {
+        "extension" : [{
+          "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+          "valueCode" : "en"
+        }],
+        "title" : "Methodological Foundations",
+        "code" : {
+          "coding" : [{
+            "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+            "code" : "language",
+            "display" : "Language"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Methodological Foundations</div>"
+        }
+      },
+      {
+        "code" : {
+          "coding" : [{
+            "system" : "https://fevir.net/resources/CodeSystem/179423",
+            "code" : "text",
+            "display" : "Text"
+          }]
+        },
+        "section" : [{
+          "extension" : [{
+            "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+            "valueCode" : "de"
+          }],
+          "title" : "Kritische Bewertung der Evidenz",
+          "code" : {
+            "coding" : [{
+              "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+              "code" : "language",
+              "display" : "Language"
+            }]
+          },
+          "text" : {
+            "status" : "generated",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Kritische Bewertung der Evidenz</div>"
+          }
+        },
+        {
+          "extension" : [{
+            "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+            "valueCode" : "en"
+          }],
+          "title" : "Critical Appraisal of Evidence",
+          "code" : {
+            "coding" : [{
+              "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+              "code" : "language",
+              "display" : "Language"
+            }]
+          },
+          "text" : {
+            "status" : "generated",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Critical Appraisal of Evidence</div>"
+          }
+        }]
+      },
+      {
+        "code" : {
+          "coding" : [{
+            "system" : "https://fevir.net/resources/CodeSystem/179423",
+            "code" : "text",
+            "display" : "Text"
+          }]
+        },
+        "section" : [{
+          "extension" : [{
+            "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+            "valueCode" : "de"
+          }],
+          "title" : "Strukturierte Konsensfindung",
+          "code" : {
+            "coding" : [{
+              "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+              "code" : "language",
+              "display" : "Language"
+            }]
+          },
+          "text" : {
+            "status" : "generated",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Strukturierte Konsensfindung</div>"
+          }
+        },
+        {
+          "extension" : [{
+            "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+            "valueCode" : "en"
+          }],
+          "title" : "Structured Consensus Process",
+          "code" : {
+            "coding" : [{
+              "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+              "code" : "language",
+              "display" : "Language"
+            }]
+          },
+          "text" : {
+            "status" : "generated",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Structured Consensus Process</div>"
+          }
+        }]
+      },
+      {
+        "code" : {
+          "coding" : [{
+            "system" : "https://fevir.net/resources/CodeSystem/179423",
+            "code" : "text",
+            "display" : "Text"
+          }]
+        },
+        "section" : [{
+          "extension" : [{
+            "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+            "valueCode" : "de"
+          }],
+          "title" : "Empfehlungsgraduierung und Feststellung der Konsensstärke",
+          "code" : {
+            "coding" : [{
+              "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+              "code" : "language",
+              "display" : "Language"
+            }]
+          },
+          "text" : {
+            "status" : "generated",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Empfehlungsgraduierung und Feststellung der Konsensstärke</div>"
+          }
+        },
+        {
+          "extension" : [{
+            "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+            "valueCode" : "en"
+          }],
+          "title" : "Recommendation Grading and Consensus Strength",
+          "code" : {
+            "coding" : [{
+              "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+              "code" : "language",
+              "display" : "Language"
+            }]
+          },
+          "text" : {
+            "status" : "generated",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Recommendation Grading and Consensus Strength</div>"
+          }
+        }]
+      },
+      {
+        "code" : {
+          "coding" : [{
+            "system" : "https://fevir.net/resources/CodeSystem/179423",
+            "code" : "text",
+            "display" : "Text"
+          }]
+        },
+        "section" : [{
+          "extension" : [{
+            "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+            "valueCode" : "de"
+          }],
+          "title" : "Statements",
+          "code" : {
+            "coding" : [{
+              "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+              "code" : "language",
+              "display" : "Language"
+            }]
+          },
+          "text" : {
+            "status" : "generated",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Statements</div>"
+          }
+        },
+        {
+          "extension" : [{
+            "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+            "valueCode" : "en"
+          }],
+          "title" : "Statements",
+          "code" : {
+            "coding" : [{
+              "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+              "code" : "language",
+              "display" : "Language"
+            }]
+          },
+          "text" : {
+            "status" : "generated",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Statements</div>"
+          }
+        }]
+      },
+      {
+        "code" : {
+          "coding" : [{
+            "system" : "https://fevir.net/resources/CodeSystem/179423",
+            "code" : "text",
+            "display" : "Text"
+          }]
+        },
+        "section" : [{
+          "extension" : [{
+            "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+            "valueCode" : "de"
+          }],
+          "title" : "Expertenkonsens",
+          "code" : {
+            "coding" : [{
+              "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+              "code" : "language",
+              "display" : "Language"
+            }]
+          },
+          "text" : {
+            "status" : "generated",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Expertenkonsens</div>"
+          }
+        },
+        {
+          "extension" : [{
+            "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+            "valueCode" : "en"
+          }],
+          "title" : "Expert Consensus",
+          "code" : {
+            "coding" : [{
+              "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+              "code" : "language",
+              "display" : "Language"
+            }]
+          },
+          "text" : {
+            "status" : "generated",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Expert Consensus</div>"
+          }
+        }]
+      }]
+    },
+    {
+      "code" : {
+        "coding" : [{
+          "system" : "https://fevir.net/resources/CodeSystem/179423",
+          "code" : "text",
+          "display" : "Text"
+        }]
+      },
+      "section" : [{
+        "extension" : [{
+          "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+          "valueCode" : "de"
+        }],
+        "title" : "Umgang mit Interessenkonflikten",
+        "code" : {
+          "coding" : [{
+            "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+            "code" : "language",
+            "display" : "Language"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Umgang mit Interessenkonflikten</div>"
+        }
+      },
+      {
+        "extension" : [{
+          "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+          "valueCode" : "en"
+        }],
+        "title" : "Handling Conflicts of Interest",
+        "code" : {
+          "coding" : [{
+            "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+            "code" : "language",
+            "display" : "Language"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Handling Conflicts of Interest</div>"
+        }
+      }]
+    },
+    {
+      "code" : {
+        "coding" : [{
+          "system" : "https://fevir.net/resources/CodeSystem/179423",
+          "code" : "text",
+          "display" : "Text"
+        }]
+      },
+      "section" : [{
+        "extension" : [{
+          "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+          "valueCode" : "de"
+        }],
+        "title" : "Externe Begutachtung und Verabschiedung",
+        "code" : {
+          "coding" : [{
+            "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+            "code" : "language",
+            "display" : "Language"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Externe Begutachtung und Verabschiedung</div>"
+        }
+      },
+      {
+        "extension" : [{
+          "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+          "valueCode" : "en"
+        }],
+        "title" : "External Review and Approval",
+        "code" : {
+          "coding" : [{
+            "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+            "code" : "language",
+            "display" : "Language"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">External Review and Approval</div>"
+        }
+      }]
+    },
+    {
+      "code" : {
+        "coding" : [{
+          "system" : "https://fevir.net/resources/CodeSystem/179423",
+          "code" : "text",
+          "display" : "Text"
+        }]
+      },
+      "section" : [{
+        "extension" : [{
+          "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+          "valueCode" : "de"
+        }],
+        "title" : "Redaktionelle Hinweise",
+        "code" : {
+          "coding" : [{
+            "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+            "code" : "language",
+            "display" : "Language"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Redaktionelle Hinweise</div>"
+        }
+      },
+      {
+        "extension" : [{
+          "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+          "valueCode" : "en"
+        }],
+        "title" : "Editorial Notes",
+        "code" : {
+          "coding" : [{
+            "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+            "code" : "language",
+            "display" : "Language"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Editorial Notes</div>"
+        }
+      }]
+    },
+    {
+      "code" : {
+        "coding" : [{
+          "system" : "https://fevir.net/resources/CodeSystem/179423",
+          "code" : "text",
+          "display" : "Text"
+        }]
+      },
+      "section" : [{
+        "extension" : [{
+          "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+          "valueCode" : "de"
+        }],
+        "title" : "Einführung und Epidemiologie",
+        "code" : {
+          "coding" : [{
+            "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+            "code" : "language",
+            "display" : "Language"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Einführung und Epidemiologie</div>"
+        }
+      },
+      {
+        "extension" : [{
+          "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+          "valueCode" : "en"
+        }],
+        "title" : "Introduction and Epidemiology",
+        "code" : {
+          "coding" : [{
+            "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+            "code" : "language",
+            "display" : "Language"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Introduction and Epidemiology</div>"
+        }
+      }]
+    }]
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://fevir.net/resources/CodeSystem/179423",
+        "code" : "text",
+        "display" : "Text"
+      }]
+    },
+    "section" : [{
+      "extension" : [{
+        "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+        "valueCode" : "de"
+      }],
+      "title" : "Diagnostik",
+      "code" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+          "code" : "language",
+          "display" : "Language"
+        }]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Diagnostik</div>"
+      }
+    },
+    {
+      "code" : {
+        "coding" : [{
+          "system" : "https://fevir.net/resources/CodeSystem/179423",
+          "code" : "text",
+          "display" : "Text"
+        }]
+      },
+      "section" : [{
+        "extension" : [{
+          "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+          "valueCode" : "de"
+        }],
+        "title" : "Klinische Diagnose der nosokomialen Pneumonie",
+        "code" : {
+          "coding" : [{
+            "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+            "code" : "language",
+            "display" : "Language"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">[[]]</div>"
+        },
+        "emptyReason" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "code" : "unavailable"
+          }]
+        }
+      },
+      {
+        "code" : {
+          "coding" : [{
+            "system" : "https://fevir.net/resources/CodeSystem/179423",
+            "code" : "text",
+            "display" : "Text"
+          }]
+        },
+        "entry" : [{
+          "reference" : "Composition/RecommendationHAPDiagnosis"
+        }]
+      }]
+    },
+    {
+      "code" : {
+        "coding" : [{
+          "system" : "https://fevir.net/resources/CodeSystem/179423",
+          "code" : "text",
+          "display" : "Text"
+        }]
+      },
+      "section" : [{
+        "extension" : [{
+          "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+          "valueCode" : "de"
+        }],
+        "title" : "Biomarker",
+        "code" : {
+          "coding" : [{
+            "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+            "code" : "language",
+            "display" : "Language"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Biomarker</div>"
+        }
+      }]
+    },
+    {
+      "code" : {
+        "coding" : [{
+          "system" : "https://fevir.net/resources/CodeSystem/179423",
+          "code" : "text",
+          "display" : "Text"
+        }]
+      },
+      "section" : [{
+        "extension" : [{
+          "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+          "valueCode" : "de"
+        }],
+        "title" : "Mikrobiologische Diagnostik",
+        "code" : {
+          "coding" : [{
+            "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+            "code" : "language",
+            "display" : "Language"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Mikrobiologische Diagnostik</div>"
+        }
+      },
+      {
+        "code" : {
+          "coding" : [{
+            "system" : "https://fevir.net/resources/CodeSystem/179423",
+            "code" : "text",
+            "display" : "Text"
+          }]
+        },
+        "section" : [{
+          "extension" : [{
+            "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+            "valueCode" : "de"
+          }],
+          "title" : "Bakteriologische Diagnostik",
+          "code" : {
+            "coding" : [{
+              "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+              "code" : "language",
+              "display" : "Language"
+            }]
+          },
+          "text" : {
+            "status" : "generated",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Bakteriologische Diagnostik</div>"
+          }
+        },
+        {
+          "code" : {
+            "coding" : [{
+              "system" : "https://fevir.net/resources/CodeSystem/179423",
+              "code" : "text",
+              "display" : "Text"
+            }]
+          },
+          "entry" : [{
+            "reference" : "Composition/RecommendationMultiplexPCRDiagnostic"
+          }]
+        }]
+      },
+      {
+        "code" : {
+          "coding" : [{
+            "system" : "https://fevir.net/resources/CodeSystem/179423",
+            "code" : "text",
+            "display" : "Text"
+          }]
+        },
+        "section" : [{
+          "extension" : [{
+            "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+            "valueCode" : "de"
+          }],
+          "title" : "Mykologische Diagnostik",
+          "code" : {
+            "coding" : [{
+              "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+              "code" : "language",
+              "display" : "Language"
+            }]
+          },
+          "text" : {
+            "status" : "generated",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Mykologische Diagnostik</div>"
+          }
+        }]
+      },
+      {
+        "code" : {
+          "coding" : [{
+            "system" : "https://fevir.net/resources/CodeSystem/179423",
+            "code" : "text",
+            "display" : "Text"
+          }]
+        },
+        "section" : [{
+          "extension" : [{
+            "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+            "valueCode" : "de"
+          }],
+          "title" : "Virologische Diagnostik",
+          "code" : {
+            "coding" : [{
+              "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+              "code" : "language",
+              "display" : "Language"
+            }]
+          },
+          "text" : {
+            "status" : "generated",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Virologische Diagnostik</div>"
+          }
+        }]
+      },
+      {
+        "code" : {
+          "coding" : [{
+            "system" : "https://fevir.net/resources/CodeSystem/179423",
+            "code" : "text",
+            "display" : "Text"
+          }]
+        },
+        "section" : [{
+          "extension" : [{
+            "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+            "valueCode" : "de"
+          }],
+          "title" : "Materialgewinnung",
+          "code" : {
+            "coding" : [{
+              "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+              "code" : "language",
+              "display" : "Language"
+            }]
+          },
+          "text" : {
+            "status" : "generated",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Materialgewinnung</div>"
+          }
+        }]
+      }]
+    },
+    {
+      "code" : {
+        "coding" : [{
+          "system" : "https://fevir.net/resources/CodeSystem/179423",
+          "code" : "text",
+          "display" : "Text"
+        }]
+      },
+      "section" : [{
+        "extension" : [{
+          "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language",
+          "valueCode" : "de"
+        }],
+        "title" : "Bildgebung",
+        "code" : {
+          "coding" : [{
+            "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+            "code" : "language",
+            "display" : "Language"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Bildgebung</div>"
+        }
+      }]
+    }]
+  }]
+}

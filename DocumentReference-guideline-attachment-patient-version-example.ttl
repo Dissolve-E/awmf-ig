@@ -1,0 +1,56 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/DocumentReference/guideline-attachment-patient-version-example> a fhir:DocumentReference ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "guideline-attachment-patient-version-example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-attachment"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-attachment>
+     ] ) ;
+     fhir:tag ( [
+       fhir:display [ fhir:v "Herz-Kreislauf-Erkrankungen" ]
+     ] [
+       fhir:display [ fhir:v "Diabetes" ]
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Guideline Attachment Patient Version Example</div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "current"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+         fhir:l <https://fevir.net/resources/CodeSystem/179423>
+       ] ;
+       fhir:code [ fhir:v "attachments" ] ;
+       fhir:display [ fhir:v "Attachments" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+       ] ;
+       fhir:code [ fhir:v "patient-version" ]
+     ] )
+  ] ) ; # 
+  fhir:content ( [
+     fhir:attachment [
+       fhir:contentType [ fhir:v "application/pdf" ] ;
+       fhir:language [ fhir:v "de" ] ;
+       fhir:title [ fhir:v "Patient Version" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

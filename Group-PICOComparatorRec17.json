@@ -1,0 +1,19 @@
+{
+  "resourceType" : "Group",
+  "id" : "PICOComparatorRec17",
+  "meta" : {
+    "profile" : ["http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-comparator"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Group PICOComparatorRec17</b></p><a name=\"PICOComparatorRec17\"> </a><a name=\"hcPICOComparatorRec17\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-conceptual-cohort-definition-comparator.html\">Conceptual Cohort Definition Comparator</a></p></div><p><b>description</b>: </p><div><p>Kein Test, Mini-Mental-Status-Test (Standard)</p>\n</div><p><b>membership</b>: Conceptual</p><p><b>code</b>: <span title=\"Codes:{http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico comparator}\">Comparator</span></p></div>"
+  },
+  "description" : "Kein Test, Mini-Mental-Status-Test (Standard)",
+  "membership" : "conceptual",
+  "code" : {
+    "coding" : [{
+      "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico",
+      "code" : "comparator"
+    }]
+  }
+}

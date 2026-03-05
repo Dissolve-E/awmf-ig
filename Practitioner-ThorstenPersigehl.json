@@ -1,0 +1,16 @@
+{
+  "resourceType" : "Practitioner",
+  "id" : "ThorstenPersigehl",
+  "meta" : {
+    "profile" : ["http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Thorsten Persigehl</div>"
+  },
+  "name" : [{
+    "family" : "Persigehl",
+    "given" : ["Thorsten"],
+    "prefix" : ["Prof. Dr. med."]
+  }]
+}

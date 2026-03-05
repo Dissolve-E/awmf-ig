@@ -1,0 +1,30 @@
+{
+  "resourceType" : "Composition",
+  "id" : "Demenzen",
+  "meta" : {
+    "profile" : ["http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">S3-Leitlinie Demenzen Living Guideline - Langfassung</div>"
+  },
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://fhir.awmf.org/guidelines",
+    "value" : "038-013"
+  }],
+  "version" : "5.2",
+  "status" : "final",
+  "type" : {
+    "coding" : [{
+      "system" : "https://fevir.net/resources/CodeSystem/179423",
+      "code" : "Guideline",
+      "display" : "Guideline"
+    }]
+  },
+  "date" : "2025-07-17",
+  "author" : [{
+    "reference" : "Organization/DGPPN"
+  }],
+  "title" : "Demenzen"
+}

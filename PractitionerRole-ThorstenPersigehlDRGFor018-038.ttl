@@ -1,0 +1,38 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/PractitionerRole/ThorstenPersigehlDRGFor018-038> a fhir:PractitionerRole ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ThorstenPersigehlDRGFor018-038"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author-role"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author-role>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: PractitionerRole ThorstenPersigehlDRGFor018-038</b></p><a name=\"ThorstenPersigehlDRGFor018-038\"> </a><a name=\"hcThorstenPersigehlDRGFor018-038\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-guideline-author-role.html\">Guideline Author Role</a></p></div><p><b>period</b>: 2022 --&gt; (ongoing)</p><p><b>practitioner</b>: <a href=\"Practitioner-ThorstenPersigehl.html\">Practitioner Thorsten Persigehl </a></p><p><b>organization</b>: <a href=\"Organization-DRG.html\">Organization Deutsche Röntgengesellschaft, Gesellschaft für Medizinische Radiologie e.V. (DRG)</a></p><p><b>code</b>: <span title=\"Codes:\">Kapitelverantwortung 5.2 Bildgebende Verfahren, Knochenmarkbiopsie und Stadieneinteilung</span></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:period [
+     fhir:start [ fhir:v "2022"^^xsd:gYear ]
+  ] ; # 
+  fhir:practitioner [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Practitioner/ThorstenPersigehl> ;
+     fhir:reference [ fhir:v "Practitioner/ThorstenPersigehl" ]
+  ] ; # 
+  fhir:organization [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/DRG> ;
+     fhir:reference [ fhir:v "Organization/DRG" ]
+  ] ; # 
+  fhir:code ( [
+     fhir:text [ fhir:v "Kapitelverantwortung 5.2 Bildgebende Verfahren, Knochenmarkbiopsie und Stadieneinteilung" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

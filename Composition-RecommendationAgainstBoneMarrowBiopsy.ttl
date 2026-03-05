@@ -1,0 +1,118 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/Composition/RecommendationAgainstBoneMarrowBiopsy> a fhir:Composition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "RecommendationAgainstBoneMarrowBiopsy"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Situationen mit Empfehlungen gegen eine Knochenmarkbiopsie</div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:system [
+       fhir:v "http://fhir.awmf.org/examples"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/examples>
+     ] ;
+     fhir:value [ fhir:v "RecommendationAgainstBoneMarrowBiopsy" ]
+  ] ) ; # 
+  fhir:version [ fhir:v "2022"] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+         fhir:l <https://fevir.net/resources/CodeSystem/179423>
+       ] ;
+       fhir:code [ fhir:v "Recommendation" ] ;
+       fhir:display [ fhir:v "Recommendation" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-synthesis-type"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-synthesis-type>
+       ] ;
+       fhir:code [ fhir:v "evidence-based" ] ;
+       fhir:display [ fhir:v "Evidence-based" ]
+     ] )
+  ] ) ; # 
+  fhir:date [ fhir:v "2022-10-01"^^xsd:date] ; # 
+  fhir:author ( [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/DGHO> ;
+     fhir:reference [ fhir:v "Organization/DGHO" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/PractitionerRole/UlrichDuehrsenDGIMFor018-038> ;
+     fhir:reference [ fhir:v "PractitionerRole/UlrichDuehrsenDGIMFor018-038" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/PractitionerRole/DirkHellwigDGNFor018-038> ;
+     fhir:reference [ fhir:v "PractitionerRole/DirkHellwigDGNFor018-038" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/PractitionerRole/ThorstenPersigehlDRGFor018-038> ;
+     fhir:reference [ fhir:v "PractitionerRole/ThorstenPersigehlDRGFor018-038" ]
+  ] [
+     fhir:l <http://fhir.awmf.org/awmf.ig/PractitionerRole/LaleUmutluDRGFor018-038> ;
+     fhir:reference [ fhir:v "PractitionerRole/LaleUmutluDRGFor018-038" ]
+  ] ) ; # 
+  fhir:title [ fhir:v "Situationen mit Empfehlungen gegen eine Knochenmarkbiopsie"] ; # 
+  fhir:relatesTo ( [
+     fhir:type [ fhir:v "part-of" ] ;
+     fhir:target [
+       a fhir:Canonical ;
+       fhir:v "http://fhir.awmf.org/awmf.ig/Composition/DiffuseLargeBCellLymphomaGuideline|2022"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/awmf.ig/Composition/DiffuseLargeBCellLymphomaGuideline?version=2022>
+     ]
+  ] ) ; # 
+  fhir:section ( [
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+           fhir:l <https://fevir.net/resources/CodeSystem/179423>
+         ] ;
+         fhir:code [ fhir:v "recommendation-statement" ] ;
+         fhir:display [ fhir:v "Recommendation Statement" ]
+       ] )
+     ] ;
+     fhir:section ( [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language"^^xsd:anyURI ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language>
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "de"
+         ]
+       ] ) ;
+       fhir:code [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+           ] ;
+           fhir:code [ fhir:v "language" ] ;
+           fhir:display [ fhir:v "Language" ]
+         ] )
+       ] ;
+       fhir:text [
+         fhir:status [ fhir:v "generated" ] ;
+         fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\"><div><p>Bei Einsatz der PET/CT zur Stadieneinteilung soll bei kurativem Konzept in folgenden Situationen auf eine Knochenmarkbiopsie verzichtet werden:</p><ul><li>Nachweis einer Knochenmarkbeteiligung durch die PET/CT</li><li>Fortgeschrittenes Ausbreitungsstadium (Ann Arbor-Stadium III oder IV; <a data-linktype=\"chapter\" data-val=\"763b0e9defa448049388e36f66688bff\">s. 5.2.3.1</a>)</li><li>Limitiertes Ausbreitungsstadium (Ann Arbor-Stadium I oder II) mit ‚bulky disease‘ (<a data-linktype=\"chapter\" data-val=\"d422b7e3b4614c4a88005ac19b211f30\">s. 5.3.2.1.</a>) und/oder ≥ 1 ungünstigem Faktor des altersadjustierten ‚Internationalen Prognostischen Index‘ (IPI) (s. <a data-linktype=\"chapter\" data-val=\"05dd8ffc0bca4aeeb13b0ce5b24896c0\">5.3.1.2</a>).</li></ul></div></div>"^^rdf:XMLLiteral ]
+       ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

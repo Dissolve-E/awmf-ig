@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Composition xmlns="http://hl7.org/fhir">
+  <id value="RecommendationMultiplexPCRDiagnostic"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">HAP Diagnose</div>
+  </text>
+  <identifier>
+    <use value="official"/>
+    <system value="http://fhir.awmf.org/examples"/>
+    <value value="RecommendationMultiplexPCRDiagnostic"/>
+  </identifier>
+  <version value="3.0"/>
+  <status value="final"/>
+  <type>
+    <coding>
+      <system value="https://fevir.net/resources/CodeSystem/179423"/>
+      <code value="Recommendation"/>
+      <display value="Recommendation"/>
+    </coding>
+  </type>
+  <category>
+    <coding>
+      <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-synthesis-type"/>
+      <code value="evidence-based"/>
+      <display value="Evidence-based"/>
+    </coding>
+  </category>
+  <date value="2024-12-05"/>
+  <author>
+    <reference value="PractitionerRole/JessicaRademacherDGPFor020-013"/>
+  </author>
+  <title value="Multiplex-PCR-Diagnostik"/>
+  <relatesTo>
+    <type value="part-of"/>
+    <targetCanonical value="http://fhir.awmf.org/awmf.ig/Composition/NosokomialePneumonie|3.0"/>
+  </relatesTo>
+  <section>
+    <code>
+      <coding>
+        <system value="https://fevir.net/resources/CodeSystem/179423"/>
+        <code value="recommendation-statement"/>
+        <display value="Recommendation Statement"/>
+      </coding>
+    </code>
+    <section>
+      <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+        <valueCode value="de"/>
+      </extension>
+      <code>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+          <code value="language"/>
+          <display value="Language"/>
+        </coding>
+      </code>
+      <text>
+        <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Der regelhafte Einsatz von bakteriellen Multiplex-PCR-Systemen bei Patienten mit Verdacht auf eine nosokomiale Pneumonie kann nicht empfohlen werden.</div>
+      </text>
+    </section>
+  </section>
+  <section>
+    <code>
+      <coding>
+        <system value="https://fevir.net/resources/CodeSystem/179423"/>
+        <code value="text"/>
+        <display value="Text"/>
+      </coding>
+    </code>
+    <section>
+      <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+        <valueCode value="de"/>
+      </extension>
+      <code>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+          <code value="language"/>
+          <display value="Language"/>
+        </coding>
+      </code>
+      <text>
+        <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Inwieweit neue, molekulare Techniken, die einen gleichzeitigen Erregernachweis und die Detektion einiger Resistenzgene erlauben, die in sie gesetzten Erwartungen erfüllen können, bleibt abzuwarten. Derzeit sind zwei gut untersuchte Multiplex-PCR-Systeme zum Nachweis von bakteriellen Pneumonieerregern (inklusive Legionellen, Mykoplasmen, Chlamydien, Pneumocystis jirovecii) und einigen Resistenzgenen kommerziell erhältlich (BioFire FilmArray Pneumonia (bioMerieux), Unyvero Pneumonia Pannel (Curetis)). Das Unyvero-Pannel umfasst 20 Bakterien und Pneumocystis jirovecii sowie 16 Resistenzgene, der FilmArray 18 Bakterien und 8 Resistenzgene sowie 9 Viren. Einige retrospektive Studien mit nur wenigen (&lt; 100) HAP-Patienten sind publiziert. In einer aktuellen Studie (112) wurden beide Systeme anhand von 6523 tiefen respiratorischen Materialien von 15 Krankenhäusern verglichen. Es konnten signifikant mehr Erregernachweise erbracht werden als durch die Kultur (Unyvero 60,4 %, FilmArray 74,2 % vs. Kultur 44,2 %). Für typische HAP/VAP-Pathogene betrug die Sensitivität und Spezifität vom FilmArray 91,7 % bis 100 % und 87,5 % bis 99,5 %, für Unyvero 50 % bis 100 % und 89,4 % bis 99 %. Der Nachweis von Resistenzgenen scheint mit einer Fehlerquote zwischen 20 und 30 % nicht sicher zu sein (113). Bislang liegen nur wenige Studien vor, die die klinischen Konsequenzen der molekularbiologischen Diagnostik hinsichtlich z.B. Antibiotikaverbrauch, Beatmungs-/Liegedauer und Letalität prospektiv untersucht haben. In einer monozentrischen, prospektiven Studie wurde bei 605 unselektierten nicht-intubierten Patienten mit radiologisch diagnostizierter Pneumonie die Frage untersucht, ob die Ergebnisse des Curetis unyvero P50 assay aus BALF einen Einfluss auf die Länge des Krankenhausaufenthaltes und auf den Einsatz von Antibiotika haben. 54 % der Patienten waren immunsupprimiert, die meisten davon mit Zustand nach Lungentransplantation. Zwar war die Nachweishäufigkeit der molekularbiologischen Methode deutlich höher als die der kulturellen Analyse (82 % vs. 56 %, insbesondere H. influenzae, A. baumannii), dennoch hatten die molekularbiologischen Ergebnisse keinen Einfluss auf die Länge des Krankenhausaufenthaltes und die Gabe (Dauer und Anzahl) von Antibiotika. Immunkompetente Patienten hatten häufiger positive Resultate in der Molekularbiologie und Kultur als immuninkompetente. Insgesamt zeigte die molekularbiologische Methode eine Sensitivität von 81,3 % und eine Spezifität von 86,9 % (Referenz: Kultur) (111). Die Daten einer großen multizentrischen, randomisierten Studie, die den Einfluss der Ergebnisse des FilmArrays auf den klinischen Verlauf der Patienten zeigen soll, sind bislang nicht publiziert (114). Obwohl molekularbiologische Befunde innerhalb von wenigen Stunden vorliegen, sind Transportzeiten zum Labor, Möglichkeit der taggleichen Abarbeitung und Analyse der Resultate Faktoren, die dazu führen, dass nicht selten kulturelle Ergebnisse vor molekularbiologischen Daten auf Station vorliegen. Auf Basis von drei randomisierten Studien mit nicht unerheblichen methodischen Schwächen kann der Schluss gezogen werden, dass der Einsatz von Multiplex-PCR-Methoden nicht zu einer Reduktion der Letalität führt. Ob der Einsatz dieser Methoden zu einer Reduktion der Therapiedauer oder der Zeit bis zur Deeskalation führt, lässt sich derzeit nicht sagen.</div>
+      </text>
+    </section>
+  </section>
+</Composition>
