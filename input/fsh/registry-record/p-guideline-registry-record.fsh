@@ -320,9 +320,9 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
     * section ^slicing.discriminator.type = #value
     * section ^slicing.discriminator.path = "code"
     * section ^slicing.rules = #closed
-    * section contains careSetting 0..1 and careStage 0..1 and careLevel 0..1
+    * section contains encounterType 0..1 and careStage 0..1 and careLevel 0..1
     // versorgungssektor, versorgungsabschnitt, versorgungsebene
-    * section[careSetting]
+    * section[encounterType]
       * code 1..1
       * code = cs-guideline-sections#encounter-type "Encounter Type"
       // ambulant, stationär, teilstationär
