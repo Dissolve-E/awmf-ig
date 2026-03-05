@@ -25,7 +25,10 @@ echo "Downloading IG Publisher..."
 mkdir -p "${SCRIPT_DIR}/input-cache"
 
 download_url=$(curl -s https://api.github.com/repos/glichtner/fhir-ig-publisher/releases \
-    | jq -r '.[0].assets[] | select(.name | test("^org\\.hl7\\.fhir\\.publisher\\.cli-.*\\.jar$")) | select(.name | test("sources|javadoc") | not) | .browser_download_url')
+    | grep -o '"browser_download_url": *"[^"]*org\.hl7\.fhir\.publisher\.cli-[^"]*\.jar"' \
+    | grep -v 'sources\|javadoc' \
+    | head -1 \
+    | sed 's/.*"browser_download_url": *"//;s/"$//')
 
 if [ -z "$download_url" ]; then
     echo "ERROR: Could not find publisher JAR in latest release"
