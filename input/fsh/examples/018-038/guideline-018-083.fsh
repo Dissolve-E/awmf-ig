@@ -13,7 +13,7 @@ Description: "S3-Leitlinie Diagnostik, Therapie und Nachsorge für erwachsene Pa
 * date = "2022-10-01"
 
 * title = "Diagnostik, Therapie und Nachsorge für erwachsene Patient*innen mit einem diffusen großzelligen B-Zell-Lymphom und verwandten Entitäten"
-* version = "2022"
+* version = "1.0"
 * status = #final
 
 // AWMF member organizations
