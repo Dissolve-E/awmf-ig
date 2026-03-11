@@ -8,3 +8,5 @@ Description: "ValueSet listing stages of care from prevention to rehabilitation.
 * cs-care-setting#diagnosis
 * cs-care-setting#therapy
 * cs-care-setting#rehabilitation
+* cs-care-setting#other
+* cs-care-setting#none

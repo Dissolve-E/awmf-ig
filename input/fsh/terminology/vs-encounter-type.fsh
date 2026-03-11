@@ -6,3 +6,5 @@ Description: "ValueSet listing types of patient encounters based on hospitalizat
 * cs-care-setting#outpatient
 * cs-care-setting#inpatient
 * cs-care-setting#partial-hospitalization
+* cs-care-setting#other
+* cs-care-setting#none
