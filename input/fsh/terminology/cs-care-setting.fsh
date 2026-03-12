@@ -56,3 +56,13 @@ Description: "CodeSystem defining different care settings, including levels of c
   * ^designation[=].value = "Teilstationär"
   * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
   * ^definition.extension[$ext-translation].extension[content].valueString = "Gesundheitsdienstleistungen, die tagsüber in einem Krankenhaus oder einer Einrichtung erbracht werden; Patient*innen bleiben nicht über Nacht im Krankenhaus oder in der Gesundheitseinrichtung."
+* #other "Other Setting" "A different type of care setting"
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Anderes"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Andere Arten von Versorgungsbereichen"
+* #none "None" "No such care setting"
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Keines"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Kein solcher Versorgungsbereich"
