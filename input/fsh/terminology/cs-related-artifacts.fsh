@@ -32,3 +32,13 @@ Description: "CodeSystem defining types of related artifacts that can be part of
   * ^designation[=].value = "Patientenorientierte Information"
   * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
   * ^definition.extension[$ext-translation].extension[content].valueString = "Zusätzliche Materialien, die sich an Patient*innen richten und auf der Leitlinie basieren oder mit ihr in Zusammenhang stehen."
+* #related-information "Related Information" "Supplementary material, derived from or related to the guideline."
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Verwandte Information"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Zusätzliche Materialien, die auf der Leitlinie basieren oder mit ihr in Zusammenhang stehen."
+* #other "Other" "A different type of information or material"
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Sonstiges"
+  * ^definition.extension[$ext-translation].extension[lang].valueCode = #de
+  * ^definition.extension[$ext-translation].extension[content].valueString = "Sonstige Informationen oder Materialien."
