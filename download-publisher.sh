@@ -3,13 +3,6 @@
 # download-publisher.sh - Download the IG Publisher JAR if not already present
 #
 # Downloads to input-cache/publisher.jar. Skips download if the file already exists.
-#
-# TEMPORARY: Uses a custom-built publisher from glichtner/fhir-ig-publisher
-# to work around a bug in the official HL7 publisher.
-# Revert to official publisher once the bug is fixed by replacing the curl/jq
-# block below with:
-#   curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar \
-#       -o "$publisher" --create-dirs
 
 set -euo pipefail
 
@@ -24,16 +17,7 @@ fi
 echo "Downloading IG Publisher..."
 mkdir -p "${SCRIPT_DIR}/input-cache"
 
-download_url=$(curl -s https://api.github.com/repos/glichtner/fhir-ig-publisher/releases \
-    | grep -o '"browser_download_url": *"[^"]*org\.hl7\.fhir\.publisher\.cli-[^"]*\.jar"' \
-    | grep -v 'sources\|javadoc' \
-    | head -1 \
-    | sed 's/.*"browser_download_url": *"//;s/"$//')
-
-if [ -z "$download_url" ]; then
-    echo "ERROR: Could not find publisher JAR in latest release"
-    exit 1
-fi
+download_url="https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar"
 
 echo "Downloading from: $download_url"
 curl -L "$download_url" -o "$publisher"
