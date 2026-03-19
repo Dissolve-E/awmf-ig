@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Composition xmlns="http://hl7.org/fhir">
+  <id value="GuidelineExample"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Guideline Example</div>
+  </text>
+  <identifier>
+    <use value="official"/>
+    <system value="https://example.org/identifiers"/>
+    <value value="AWMF-Guideline-Example"/>
+  </identifier>
+  <version value="2.0"/>
+  <status value="final"/>
+  <type>
+    <coding>
+      <system value="https://fevir.net/resources/CodeSystem/179423"/>
+      <code value="Guideline"/>
+      <display value="Guideline"/>
+    </coding>
+  </type>
+  <date value="2025-03-06"/>
+  <author>
+    <reference value="Practitioner/GuidelineAuthorExample"/>
+  </author>
+  <title value="Example Guideline"/>
+</Composition>

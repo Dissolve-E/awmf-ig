@@ -1,0 +1,264 @@
+# S3-Leitlinie Diagnostik, Therapie und Nachsorge für erwachsene Patient*innen mit einem diffusen großzelligen B-Zell-Lymphom und verwandten Entitäten - Dissolve-E: AWMF Guideline Registry v0.2.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **S3-Leitlinie Diagnostik, Therapie und Nachsorge für erwachsene Patient*innen mit einem diffusen großzelligen B-Zell-Lymphom und verwandten Entitäten**
+
+## Example Composition: S3-Leitlinie Diagnostik, Therapie und Nachsorge für erwachsene Patient*innen mit einem diffusen großzelligen B-Zell-Lymphom und verwandten Entitäten
+
+S3-Leitlinie Diagnostik, Therapie und Nachsorge für erwachsene Patient*innen mit einem diffusen großzelligen B-Zell-Lymphom und verwandten Entitäten
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Composition",
+  "id" : "DiffuseLargeBCellLymphomaGuidelineRecord",
+  "meta" : {
+    "profile" : ["http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"]
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-publicationDate",
+    "valueDate" : "2022-10"
+  }],
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://fhir.awmf.org/guidelines",
+    "value" : "018-038"
+  }],
+  "version" : "1.0",
+  "status" : "final",
+  "type" : {
+    "coding" : [{
+      "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+      "code" : "guideline-registry-record",
+      "display" : "Guideline Registry Record"
+    }]
+  },
+  "category" : [{
+    "coding" : [{
+      "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-class",
+      "code" : "S3",
+      "display" : "Evidence- and consensus-based guideline"
+    }]
+  }],
+  "date" : "2022-10",
+  "author" : [{
+    "extension" : [{
+      "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role",
+          "code" : "leading"
+        }]
+      }
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role",
+          "code" : "registrant"
+        }]
+      }
+    }],
+    "reference" : "Organization/DGHO"
+  },
+  {
+    "extension" : [{
+      "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role",
+          "code" : "contributing"
+        }]
+      }
+    }],
+    "reference" : "Organization/DGA"
+  },
+  {
+    "extension" : [{
+      "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role",
+          "code" : "contributing"
+        }]
+      }
+    }],
+    "reference" : "Organization/DGCH"
+  },
+  {
+    "extension" : [{
+      "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role",
+          "code" : "contributing"
+        }]
+      }
+    }],
+    "reference" : "Organization/DGEBV"
+  },
+  {
+    "extension" : [{
+      "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role",
+          "code" : "contributing"
+        }]
+      }
+    }],
+    "reference" : "Organization/DGG"
+  },
+  {
+    "extension" : [{
+      "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role",
+          "code" : "contributing"
+        }]
+      }
+    }],
+    "reference" : "Organization/DGGG"
+  },
+  {
+    "extension" : [{
+      "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role",
+          "code" : "contributing"
+        }]
+      }
+    }],
+    "reference" : "Organization/DGIM"
+  },
+  {
+    "extension" : [{
+      "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role",
+          "code" : "contributing"
+        }]
+      }
+    }],
+    "reference" : "Organization/DGN"
+  },
+  {
+    "extension" : [{
+      "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role",
+          "code" : "contributing"
+        }]
+      }
+    }],
+    "reference" : "Organization/DGPalliativ"
+  },
+  {
+    "extension" : [{
+      "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role",
+          "code" : "contributing"
+        }]
+      }
+    }],
+    "reference" : "Organization/DGPathologie"
+  },
+  {
+    "extension" : [{
+      "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role",
+          "code" : "contributing"
+        }]
+      }
+    }],
+    "reference" : "Organization/DEGRO"
+  },
+  {
+    "extension" : [{
+      "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role",
+          "code" : "contributing"
+        }]
+      }
+    }],
+    "reference" : "Organization/DEGUM"
+  },
+  {
+    "extension" : [{
+      "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role",
+          "code" : "contributing"
+        }]
+      }
+    }],
+    "reference" : "Organization/DGU"
+  },
+  {
+    "extension" : [{
+      "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role",
+          "code" : "contributing"
+        }]
+      }
+    }],
+    "reference" : "Organization/DRG"
+  },
+  {
+    "extension" : [{
+      "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role",
+          "code" : "contributing"
+        }]
+      }
+    }],
+    "reference" : "Organization/EbMNetzwerk"
+  }],
+  "title" : "Diagnostik, Therapie und Nachsorge für erwachsene Patient*innen mit einem diffusen großzelligen B-Zell-Lymphom und verwandten Entitäten",
+  "attester" : [{
+    "mode" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/composition-attestation-mode",
+        "code" : "official"
+      }]
+    },
+    "party" : {
+      "reference" : "Organization/AWMF"
+    }
+  }],
+  "relatesTo" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/relatesto-classifier",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types",
+          "code" : "awmf-detail-page"
+        }]
+      }
+    }],
+    "type" : "documentation",
+    "targetUri" : "https://register.awmf.org/de/leitlinien/detail/018-038"
+  }]
+}
+
+```

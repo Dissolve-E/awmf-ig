@@ -1,0 +1,48 @@
+{
+  "resourceType" : "Composition",
+  "id" : "DemenzenRecord",
+  "meta" : {
+    "profile" : ["http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Composition DemenzenRecord</b></p><a name=\"DemenzenRecord\"> </a><a name=\"hcDemenzenRecord\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-guideline-registry-record.html\">Guideline Registry Record</a></p></div><p><b>identifier</b>: <code>http://fhir.awmf.org/guidelines</code>/038-013\u00a0(use:\u00a0official,\u00a0)</p><p><b>version</b>: 5.2</p><p><b>status</b>: Final</p><p><b>type</b>: <span title=\"Codes:{http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf guideline-registry-record}\">Guideline Registry Record</span></p><p><b>date</b>: 2025-07-17</p><p><b>author</b>: <a href=\"Organization-DGPPN.html\">Organization Deutsche Gesellschaft für Psychiatrie und Psychotherapie, Psychosomatik und Nervenheilkunde e. V. (DGPPN)</a></p><p><b>title</b>: Demenzen</p></div>"
+  },
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://fhir.awmf.org/guidelines",
+    "value" : "038-013"
+  }],
+  "version" : "5.2",
+  "status" : "final",
+  "type" : {
+    "coding" : [{
+      "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+      "code" : "guideline-registry-record",
+      "display" : "Guideline Registry Record"
+    }]
+  },
+  "date" : "2025-07-17",
+  "author" : [{
+    "extension" : [{
+      "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role",
+          "code" : "leading"
+        }]
+      }
+    },
+    {
+      "url" : "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role",
+          "code" : "registrant"
+        }]
+      }
+    }],
+    "reference" : "Organization/DGPPN"
+  }],
+  "title" : "Demenzen"
+}

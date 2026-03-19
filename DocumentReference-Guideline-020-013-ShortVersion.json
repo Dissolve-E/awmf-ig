@@ -1,0 +1,33 @@
+{
+  "resourceType" : "DocumentReference",
+  "id" : "Guideline-020-013-ShortVersion",
+  "meta" : {
+    "profile" : ["http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-attachment"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Kurzfassung Leitlinie 020-013</div>"
+  },
+  "status" : "current",
+  "type" : {
+    "coding" : [{
+      "system" : "https://fevir.net/resources/CodeSystem/179423",
+      "code" : "attachments",
+      "display" : "Attachments"
+    }]
+  },
+  "category" : [{
+    "coding" : [{
+      "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections",
+      "code" : "short-version"
+    }]
+  }],
+  "content" : [{
+    "attachment" : {
+      "contentType" : "application/pdf",
+      "language" : "de",
+      "url" : "020-013k_S3_Epidemiologie-Diagnostik-Therapie-erwachsener-Patienten-nosokomiale-Pneumonie__2024-03.pdf",
+      "title" : "Kurzfassung"
+    }
+  }]
+}

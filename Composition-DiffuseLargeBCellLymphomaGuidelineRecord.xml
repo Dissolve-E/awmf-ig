@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Composition xmlns="http://hl7.org/fhir">
+  <id value="DiffuseLargeBCellLymphomaGuidelineRecord"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">S3-Leitlinie Diagnostik, Therapie und Nachsorge für erwachsene Patient*innen mit einem diffusen großzelligen B-Zell-Lymphom und verwandten Entitäten</div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/artifact-publicationDate">
+    <valueDate value="2022-10"/>
+  </extension>
+  <identifier>
+    <use value="official"/>
+    <system value="http://fhir.awmf.org/guidelines"/>
+    <value value="018-038"/>
+  </identifier>
+  <version value="1.0"/>
+  <status value="final"/>
+  <type>
+    <coding>
+      <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"/>
+      <code value="guideline-registry-record"/>
+      <display value="Guideline Registry Record"/>
+    </coding>
+  </type>
+  <category>
+    <coding>
+      <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf-guideline-class"/>
+      <code value="S3"/>
+      <display value="Evidence- and consensus-based guideline"/>
+    </coding>
+  </category>
+  <date value="2022-10"/>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="leading"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="registrant"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/DGHO"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="contributing"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/DGA"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="contributing"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/DGCH"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="contributing"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/DGEBV"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="contributing"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/DGG"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="contributing"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/DGGG"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="contributing"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/DGIM"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="contributing"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/DGN"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="contributing"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/DGPalliativ"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="contributing"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/DGPathologie"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="contributing"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/DEGRO"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="contributing"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/DEGUM"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="contributing"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/DGU"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="contributing"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/DRG"/>
+  </author>
+  <author>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-guideline-author-role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-author-role"/>
+          <code value="contributing"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <reference value="Organization/EbMNetzwerk"/>
+  </author>
+  <title value="Diagnostik, Therapie und Nachsorge für erwachsene Patient*innen mit einem diffusen großzelligen B-Zell-Lymphom und verwandten Entitäten"/>
+  <attester>
+    <mode>
+      <coding>
+        <system value="http://hl7.org/fhir/composition-attestation-mode"/>
+        <code value="official"/>
+      </coding>
+    </mode>
+    <party>
+      <reference value="Organization/AWMF"/>
+    </party>
+  </attester>
+  <relatesTo>
+    <extension url="http://hl7.org/fhir/StructureDefinition/relatesto-classifier">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-related-artifact-types"/>
+          <code value="awmf-detail-page"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <type value="documentation"/>
+    <targetUri value="https://register.awmf.org/de/leitlinien/detail/018-038"/>
+  </relatesTo>
+</Composition>

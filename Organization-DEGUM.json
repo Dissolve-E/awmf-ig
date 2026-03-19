@@ -1,0 +1,36 @@
+{
+  "resourceType" : "Organization",
+  "id" : "DEGUM",
+  "meta" : {
+    "profile" : ["http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Deutsche Gesellschaft für Ultraschall in der Medizin e.V. (DEGUM)</div>"
+  },
+  "identifier" : [{
+    "system" : "http://fhir.awmf.org/association",
+    "value" : "-1"
+  }],
+  "type" : [{
+    "coding" : [{
+      "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+      "code" : "medical-society"
+    }]
+  }],
+  "name" : "Deutsche Gesellschaft für Ultraschall in der Medizin e.V. (DEGUM)",
+  "contact" : [{
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org/fachgesellschaften/deutsche-gesellschaft-fuer-ultraschall-in-der-medizin-e-v-degum"
+    }]
+  }],
+  "qualification" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+        "code" : "awmf-member-organization"
+      }]
+    }
+  }]
+}

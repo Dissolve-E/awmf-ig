@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Composition xmlns="http://hl7.org/fhir">
+  <id value="DiffuseLargeBCellLymphomaGuideline"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">S3-Leitlinie Diagnostik, Therapie und Nachsorge für erwachsene Patient*innen mit einem diffusen großzelligen B-Zell-Lymphom und verwandten Entitäten</div>
+  </text>
+  <identifier>
+    <use value="official"/>
+    <system value="http://fhir.awmf.org/guidelines"/>
+    <value value="018-038"/>
+  </identifier>
+  <version value="1.0"/>
+  <status value="final"/>
+  <type>
+    <coding>
+      <system value="https://fevir.net/resources/CodeSystem/179423"/>
+      <code value="Guideline"/>
+      <display value="Guideline"/>
+    </coding>
+  </type>
+  <date value="2022-10-01"/>
+  <author>
+    <reference value="Organization/DGHO"/>
+  </author>
+  <title value="Diagnostik, Therapie und Nachsorge für erwachsene Patient*innen mit einem diffusen großzelligen B-Zell-Lymphom und verwandten Entitäten"/>
+  <section>
+    <code>
+      <coding>
+        <system value="https://fevir.net/resources/CodeSystem/179423"/>
+        <code value="text"/>
+        <display value="Text"/>
+      </coding>
+    </code>
+    <section>
+      <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+        <valueCode value="de"/>
+      </extension>
+      <title value="5. Diagnostik II – Staging und andere prätherapeutische Maßnahmen"/>
+      <code>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+          <code value="language"/>
+          <display value="Language"/>
+        </coding>
+      </code>
+      <text>
+        <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">5. Diagnostik II – Staging und andere prätherapeutische Maßnahmen</div>
+      </text>
+    </section>
+    <section>
+      <code>
+        <coding>
+          <system value="https://fevir.net/resources/CodeSystem/179423"/>
+          <code value="text"/>
+          <display value="Text"/>
+        </coding>
+      </code>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+          <valueCode value="de"/>
+        </extension>
+        <title value="5.2. Bildgebende Verfahren, Knochenmarkbiopsie und Stadieneinteilung"/>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="language"/>
+            <display value="Language"/>
+          </coding>
+        </code>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Knochenmarkbiopsie</div>
+        </text>
+      </section>
+      <section>
+        <code>
+          <coding>
+            <system value="https://fevir.net/resources/CodeSystem/179423"/>
+            <code value="text"/>
+            <display value="Text"/>
+          </coding>
+        </code>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="de"/>
+          </extension>
+          <title value="5.2.2. Knochenmarkbiopsie"/>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">[[]]</div>
+          </text>
+          <emptyReason>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/list-empty-reason"/>
+              <code value="unavailable"/>
+            </coding>
+          </emptyReason>
+        </section>
+        <section>
+          <code>
+            <coding>
+              <system value="https://fevir.net/resources/CodeSystem/179423"/>
+              <code value="text"/>
+              <display value="Text"/>
+            </coding>
+          </code>
+          <section>
+            <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+              <valueCode value="de"/>
+            </extension>
+            <title value="5.2.2.1. Situationen mit Empfehlungen gegen eine Knochenmarkbiopsie"/>
+            <code>
+              <coding>
+                <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+                <code value="language"/>
+                <display value="Language"/>
+              </coding>
+            </code>
+            <text>
+              <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">[[]]</div>
+            </text>
+            <emptyReason>
+              <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/list-empty-reason"/>
+                <code value="unavailable"/>
+              </coding>
+            </emptyReason>
+          </section>
+          <section>
+            <code>
+              <coding>
+                <system value="https://fevir.net/resources/CodeSystem/179423"/>
+                <code value="text"/>
+                <display value="Text"/>
+              </coding>
+            </code>
+            <entry>
+              <reference value="Composition/RecommendationAgainstBoneMarrowBiopsy"/>
+            </entry>
+          </section>
+        </section>
+      </section>
+    </section>
+  </section>
+</Composition>

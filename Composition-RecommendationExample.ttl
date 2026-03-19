@@ -1,0 +1,158 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/Composition/RecommendationExample> a fhir:Composition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "RecommendationExample"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Recommendation Example</div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:system [
+       fhir:v "http://example.org/recommendations"^^xsd:anyURI ;
+       fhir:l <http://example.org/recommendations>
+     ] ;
+     fhir:value [ fhir:v "REC-EX-001" ]
+  ] ) ; # 
+  fhir:version [ fhir:v "2.0"] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+         fhir:l <https://fevir.net/resources/CodeSystem/179423>
+       ] ;
+       fhir:code [ fhir:v "Recommendation" ] ;
+       fhir:display [ fhir:v "Recommendation" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-synthesis-type"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-synthesis-type>
+       ] ;
+       fhir:code [ fhir:v "expert-consensus" ]
+     ] )
+  ] ) ; # 
+  fhir:date [ fhir:v "2025-03-06"^^xsd:date] ; # 
+  fhir:author ( [
+     fhir:l <http://fhir.awmf.org/awmf.ig/PractitionerRole/GuidelineAuthorRoleExample> ;
+     fhir:reference [ fhir:v "PractitionerRole/GuidelineAuthorRoleExample" ]
+  ] ) ; # 
+  fhir:title [ fhir:v "Example Recommendation"] ; # 
+  fhir:relatesTo ( [
+     fhir:type [ fhir:v "part-of" ] ;
+     fhir:target [
+       a fhir:Canonical ;
+       fhir:v "http://fhir.awmf.org/awmf.ig/Composition/GuidelineExample"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/awmf.ig/Composition/GuidelineExample>
+     ]
+  ] ) ; # 
+  fhir:section ( [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-intended-audience"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-intended-audience>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-intended-audience"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-intended-audience>
+           ] ;
+           fhir:code [ fhir:v "physician" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+           fhir:l <https://fevir.net/resources/CodeSystem/179423>
+         ] ;
+         fhir:code [ fhir:v "text" ] ;
+         fhir:display [ fhir:v "Text" ]
+       ] )
+     ] ;
+     fhir:section ( [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language"^^xsd:anyURI ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language>
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "de"
+         ]
+       ] ) ;
+       fhir:code [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+           ] ;
+           fhir:code [ fhir:v "language" ] ;
+           fhir:display [ fhir:v "Language" ]
+         ] )
+       ] ;
+       fhir:text [
+         fhir:status [ fhir:v "generated" ] ;
+         fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Example Recommendation</div>"^^rdf:XMLLiteral ]
+       ]
+     ] )
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+           fhir:l <https://fevir.net/resources/CodeSystem/179423>
+         ] ;
+         fhir:code [ fhir:v "recommendation-statement" ] ;
+         fhir:display [ fhir:v "Recommendation Statement" ]
+       ] )
+     ] ;
+     fhir:section ( [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language"^^xsd:anyURI ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language>
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "de"
+         ]
+       ] ) ;
+       fhir:code [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+           ] ;
+           fhir:code [ fhir:v "language" ] ;
+           fhir:display [ fhir:v "Language" ]
+         ] )
+       ] ;
+       fhir:text [
+         fhir:status [ fhir:v "generated" ] ;
+         fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Bei Patienten mit Krankheit A soll Medikament B statt Medikament C gegeben werden. Patienten mit Krankheit A, die auch noch Krankheit D haben, darf keinesfalls Medikament B gegeben, sondern müssen Medikament C erhalten.</div>"^^rdf:XMLLiteral ]
+       ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

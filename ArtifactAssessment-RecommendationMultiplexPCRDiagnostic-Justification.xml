@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ArtifactAssessment xmlns="http://hl7.org/fhir">
+  <id value="RecommendationMultiplexPCRDiagnostic-Justification"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Justification for Recommendation Multiplex-PCR-Diagnostik</div>
+  </text>
+  <artifactReference>
+    <reference value="Composition/RecommendationMultiplexPCRDiagnostic"/>
+  </artifactReference>
+  <content>
+    <type>
+      <coding>
+        <system value="https://fevir.net/resources/CodeSystem/179423"/>
+        <code value="recommendation-rating"/>
+        <display value="Recommendation Rating"/>
+      </coding>
+    </type>
+    <component>
+      <type>
+        <coding>
+          <system value="https://fevir.net/resources/CodeSystem/179423"/>
+          <code value="strength-of-recommendation"/>
+          <display value="Strength of Recommendation"/>
+        </coding>
+      </type>
+      <classifier>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-strength-awmf"/>
+          <code value="0"/>
+          <display value="Open Recommendation"/>
+        </coding>
+      </classifier>
+    </component>
+    <component>
+      <type>
+        <coding>
+          <system value="https://fevir.net/resources/CodeSystem/179423"/>
+          <code value="direction-of-recommendation"/>
+          <display value="Direction of Recommendation"/>
+        </coding>
+      </type>
+      <classifier>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-direction"/>
+          <code value="against"/>
+          <display value="Against"/>
+        </coding>
+      </classifier>
+    </component>
+    <component>
+      <type>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"/>
+          <code value="level-of-consensus"/>
+        </coding>
+      </type>
+      <classifier>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-level-of-consensus"/>
+          <code value="strong-consensus"/>
+          <display value="Strong consensus"/>
+        </coding>
+      </classifier>
+    </component>
+  </content>
+  <content>
+    <type>
+      <coding>
+        <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"/>
+        <code value="evidence-rating"/>
+        <display value="Evidence Rating"/>
+      </coding>
+    </type>
+    <component>
+      <type>
+        <coding>
+          <system value="http://hl7.org/fhir/certainty-type"/>
+          <code value="Overall"/>
+          <display value="Overall certainty"/>
+        </coding>
+      </type>
+      <classifier>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/certainty-rating"/>
+          <code value="very-low"/>
+          <display value="Very low quality"/>
+        </coding>
+      </classifier>
+    </component>
+    <component>
+      <type>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"/>
+          <code value="overall-quality-of-evidence"/>
+          <display value="Overall Quality of Evidence"/>
+        </coding>
+      </type>
+      <relatesTo>
+        <type value="justification"/>
+        <targetReference>
+          <reference value="ArtifactAssessment/EvA-MultiplexPCRDiagnostic-Mortality"/>
+        </targetReference>
+      </relatesTo>
+    </component>
+  </content>
+  <content>
+    <type>
+      <coding>
+        <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"/>
+        <code value="evidence-rating"/>
+        <display value="Evidence Rating"/>
+      </coding>
+    </type>
+    <component>
+      <type>
+        <coding>
+          <system value="http://hl7.org/fhir/certainty-type"/>
+          <code value="Overall"/>
+          <display value="Overall certainty"/>
+        </coding>
+      </type>
+      <classifier>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/certainty-rating"/>
+          <code value="very-low"/>
+          <display value="Very low quality"/>
+        </coding>
+      </classifier>
+    </component>
+    <component>
+      <type>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"/>
+          <code value="overall-quality-of-evidence"/>
+          <display value="Overall Quality of Evidence"/>
+        </coding>
+      </type>
+      <relatesTo>
+        <type value="justification"/>
+        <targetReference>
+          <reference value="ArtifactAssessment/EvA-MultiplexPCRDiagnostic-AntibioticDays"/>
+        </targetReference>
+      </relatesTo>
+    </component>
+  </content>
+  <content>
+    <type>
+      <coding>
+        <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"/>
+        <code value="evidence-rating"/>
+        <display value="Evidence Rating"/>
+      </coding>
+    </type>
+    <component>
+      <type>
+        <coding>
+          <system value="http://hl7.org/fhir/certainty-type"/>
+          <code value="Overall"/>
+          <display value="Overall certainty"/>
+        </coding>
+      </type>
+      <classifier>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/certainty-rating"/>
+          <code value="very-low"/>
+          <display value="Very low quality"/>
+        </coding>
+      </classifier>
+    </component>
+    <component>
+      <type>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"/>
+          <code value="overall-quality-of-evidence"/>
+          <display value="Overall Quality of Evidence"/>
+        </coding>
+      </type>
+      <relatesTo>
+        <type value="justification"/>
+        <targetReference>
+          <reference value="ArtifactAssessment/EvA-MultiplexPCRDiagnostic-TimeToDeescalation"/>
+        </targetReference>
+      </relatesTo>
+    </component>
+  </content>
+  <workflowStatus value="applied"/>
+</ArtifactAssessment>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Organization xmlns="http://hl7.org/fhir">
+  <id value="RKI"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Robert Koch-Institut (RKI)</div>
+  </text>
+  <name value="Robert Koch-Institut (RKI)"/>
+</Organization>

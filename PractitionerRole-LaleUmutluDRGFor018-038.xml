@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PractitionerRole xmlns="http://hl7.org/fhir">
+  <id value="LaleUmutluDRGFor018-038"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author-role"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: PractitionerRole LaleUmutluDRGFor018-038</b></p><a name="LaleUmutluDRGFor018-038"> </a><a name="hcLaleUmutluDRGFor018-038"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-guideline-author-role.html">Guideline Author Role</a></p></div><p><b>period</b>: 2022 --&gt; (ongoing)</p><p><b>practitioner</b>: <a href="Practitioner-LaleUmutlu.html">Practitioner Lale Umutlu </a></p><p><b>organization</b>: <a href="Organization-DRG.html">Organization Deutsche Röntgengesellschaft, Gesellschaft für Medizinische Radiologie e.V. (DRG)</a></p><p><b>code</b>: <span title="Codes:">Kapitelverantwortung 5.2 Bildgebende Verfahren, Knochenmarkbiopsie und Stadieneinteilung</span></p></div>
+  </text>
+  <period>
+    <start value="2022"/>
+  </period>
+  <practitioner>
+    <reference value="Practitioner/LaleUmutlu"/>
+  </practitioner>
+  <organization>
+    <reference value="Organization/DRG"/>
+  </organization>
+  <code>
+    <text value="Kapitelverantwortung 5.2 Bildgebende Verfahren, Knochenmarkbiopsie und Stadieneinteilung"/>
+  </code>
+</PractitionerRole>

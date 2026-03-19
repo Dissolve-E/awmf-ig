@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Practitioner xmlns="http://hl7.org/fhir">
+  <id value="contributor3"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Practitioner contributor3</b></p><a name="contributor3"> </a><a name="hccontributor3"> </a><p><b>name</b>: Samuel Y S Wong </p></div>
+  </text>
+  <name>
+    <family value="Wong"/>
+    <given value="Samuel Y S"/>
+  </name>
+</Practitioner>

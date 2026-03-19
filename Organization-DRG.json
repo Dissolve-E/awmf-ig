@@ -1,0 +1,36 @@
+{
+  "resourceType" : "Organization",
+  "id" : "DRG",
+  "meta" : {
+    "profile" : ["http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Deutsche Röntgengesellschaft, Gesellschaft für Medizinische Radiologie e.V. (DRG)</div>"
+  },
+  "identifier" : [{
+    "system" : "http://fhir.awmf.org/association",
+    "value" : "039"
+  }],
+  "type" : [{
+    "coding" : [{
+      "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+      "code" : "medical-society"
+    }]
+  }],
+  "name" : "Deutsche Röntgengesellschaft, Gesellschaft für Medizinische Radiologie e.V. (DRG)",
+  "contact" : [{
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org/fachgesellschaften/deutsche-roentgengesellschaft-gesellschaft-fuer-medizinische-radiologie-e-v-drg"
+    }]
+  }],
+  "qualification" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+        "code" : "awmf-member-organization"
+      }]
+    }
+  }]
+}

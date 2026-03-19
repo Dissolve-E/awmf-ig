@@ -1,0 +1,45 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "vs-rating-concern-degree",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet vs-rating-concern-degree</b></p><a name=\"vs-rating-concern-degree\"> </a><a name=\"hcvs-rating-concern-degree\"> </a><ul><li>Include these codes as defined in <a href=\"http://terminology.hl7.org/7.1.0/CodeSystem-certainty-rating.html\"><code>http://terminology.hl7.org/CodeSystem/certainty-rating</code></a><span title=\"Version is explicitly stated to be 3.0.0\"> version &#x1F4CD;3.0.0</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"http://terminology.hl7.org/7.1.0/CodeSystem-certainty-rating.html#certainty-rating-no-concern\">no-concern</a></td><td>no serious concern</td><td>no serious concern.</td></tr><tr><td><a href=\"http://terminology.hl7.org/7.1.0/CodeSystem-certainty-rating.html#certainty-rating-serious-concern\">serious-concern</a></td><td>serious concern</td><td>serious concern.</td></tr><tr><td><a href=\"http://terminology.hl7.org/7.1.0/CodeSystem-certainty-rating.html#certainty-rating-very-serious-concern\">very-serious-concern</a></td><td>very serious concern</td><td>very serious concern.</td></tr><tr><td><a href=\"http://terminology.hl7.org/7.1.0/CodeSystem-certainty-rating.html#certainty-rating-extremely-serious-concern\">extremely-serious-concern</a></td><td>extremely serious concern</td><td>extremely serious concern.</td></tr></table></li></ul></div>"
+  },
+  "url" : "http://fhir.awmf.org/awmf.ig/ValueSet/vs-rating-concern-degree",
+  "version" : "0.2.0",
+  "name" : "RatingConcernDegree",
+  "title" : "Rating Concern Degree",
+  "status" : "draft",
+  "date" : "2026-03-19T10:36:56+00:00",
+  "publisher" : "AWMF e.V.",
+  "contact" : [{
+    "name" : "AWMF e.V.",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org"
+    }]
+  }],
+  "description" : "ValueSet listing codes from EvidenceCertaintyRating related to degree of concern",
+  "compose" : {
+    "include" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/certainty-rating",
+      "version" : "3.0.0",
+      "concept" : [{
+        "code" : "no-concern",
+        "display" : "no serious concern"
+      },
+      {
+        "code" : "serious-concern",
+        "display" : "serious concern"
+      },
+      {
+        "code" : "very-serious-concern",
+        "display" : "very serious concern"
+      },
+      {
+        "code" : "extremely-serious-concern",
+        "display" : "extremely serious concern"
+      }]
+    }]
+  }
+}

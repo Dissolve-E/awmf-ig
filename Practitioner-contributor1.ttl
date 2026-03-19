@@ -1,0 +1,22 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/Practitioner/contributor1> a fhir:Practitioner ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "contributor1"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Practitioner contributor1</b></p><a name=\"contributor1\"> </a><a name=\"hccontributor1\"> </a><p><b>name</b>: Joyce Y C Chan </p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:name ( [
+     fhir:family [ fhir:v "Chan" ] ;
+     fhir:given ( [ fhir:v "Joyce Y C" ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
