@@ -155,6 +155,9 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
   and ext-consultation-period named consultationPeriod 0..1 MS
   and ext-planned-completion-date named plannedCompletionDate 0..1 MS
   and ext-registration-date named registrationDate 0..1 MS
+  and ext-composition-last-review-date named guidelineLastReviewDate 0..1 MS
+  and ext-composition-approval-date named guidelineApprovalDate 0..1 MS
+  and ext-composition-effective-period named guidelineEffectivePeriod 0..1 MS
 
 * extension[firstPublicationDate] // MAGIC-AWMF: publishedDate, AWMF: "Veröffentlicht seit"  // #P2.3.1.9
   * ^definition = "The date on which the guideline was first published in its initial version."
