@@ -33,6 +33,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Install jq
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq
+
       - name: setup python
         uses: actions/setup-python@v4
         with:
