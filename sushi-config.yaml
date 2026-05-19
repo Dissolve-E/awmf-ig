@@ -54,6 +54,16 @@ dependencies:
 pages:
   index.md:
     title: DISSOLVE-E Implementation Guide
+  authoring-guideline.md:
+    title: Authoring a Guideline
+  authoring-registry-record.md:
+    title: Authoring a Registry Record
+  authoring-recommendation.md:
+    title: Authoring a Recommendation
+  authoring-justification.md:
+    title: Authoring a Justification
+  cheat-sheet.md:
+    title: Cheat Sheet
   profiles.md:
     title: Profiles
   extensions.md:
@@ -68,6 +78,12 @@ pages:
     title: Examples
 menu:
   Home: index.html
+  Authoring Guide:
+    Guideline: authoring-guideline.html
+    Registry Record: authoring-registry-record.html
+    Recommendation: authoring-recommendation.html
+    Justification: authoring-justification.html
+    Cheat Sheet: cheat-sheet.html
   Profiles: profiles.html
   Extensions: extensions.html
   Code Systems: codesystems.html
