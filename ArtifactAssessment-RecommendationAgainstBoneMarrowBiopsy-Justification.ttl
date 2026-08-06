@@ -1,0 +1,841 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/ArtifactAssessment/RecommendationAgainstBoneMarrowBiopsy-Justification> a fhir:ArtifactAssessment ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "RecommendationAgainstBoneMarrowBiopsy-Justification"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Begründung für Empfehlung 5.13: Situationen mit Empfehlungen gegen eine Knochenmarkbiopsie</div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:artifact [
+     a fhir:Reference ;
+     fhir:l <http://fhir.awmf.org/awmf.ig/Composition/RecommendationAgainstBoneMarrowBiopsy> ;
+     fhir:reference [ fhir:v "Composition/RecommendationAgainstBoneMarrowBiopsy" ]
+  ] ; # 
+  fhir:content ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+           fhir:l <https://fevir.net/resources/CodeSystem/179423>
+         ] ;
+         fhir:code [ fhir:v "recommendation-rating" ] ;
+         fhir:display [ fhir:v "Recommendation Rating" ]
+       ] )
+     ] ;
+     fhir:component ( [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+             fhir:l <https://fevir.net/resources/CodeSystem/179423>
+           ] ;
+           fhir:code [ fhir:v "strength-of-recommendation" ] ;
+           fhir:display [ fhir:v "Strength of Recommendation" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-strength-awmf"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-strength-awmf>
+           ] ;
+           fhir:code [ fhir:v "A" ] ;
+           fhir:display [ fhir:v "Strong Recommendation" ]
+         ] )
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+             fhir:l <https://fevir.net/resources/CodeSystem/179423>
+           ] ;
+           fhir:code [ fhir:v "direction-of-recommendation" ] ;
+           fhir:display [ fhir:v "Direction of Recommendation" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-direction"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-direction>
+           ] ;
+           fhir:code [ fhir:v "against" ] ;
+           fhir:display [ fhir:v "Against" ]
+         ] )
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+           ] ;
+           fhir:code [ fhir:v "level-of-consensus" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-level-of-consensus"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-level-of-consensus>
+           ] ;
+           fhir:code [ fhir:v "strong-consensus" ] ;
+           fhir:display [ fhir:v "Strong consensus" ]
+         ] )
+       ] )
+     ] )
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+         ] ;
+         fhir:code [ fhir:v "evidence-rating" ] ;
+         fhir:display [ fhir:v "Evidence Rating" ]
+       ] )
+     ] ;
+     fhir:component ( [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+             fhir:l <https://fevir.net/resources/CodeSystem/179423>
+           ] ;
+           fhir:code [ fhir:v "rating-system" ] ;
+           fhir:display [ fhir:v "Rating System" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem>
+           ] ;
+           fhir:code [ fhir:v "grade" ] ;
+           fhir:display [ fhir:v "GRADE" ]
+         ] )
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/certainty-type"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/certainty-type>
+           ] ;
+           fhir:code [ fhir:v "Overall" ] ;
+           fhir:display [ fhir:v "Overall certainty" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://terminology.hl7.org/CodeSystem/certainty-rating"^^xsd:anyURI ;
+             fhir:l <http://terminology.hl7.org/CodeSystem/certainty-rating>
+           ] ;
+           fhir:code [ fhir:v "moderate" ] ;
+           fhir:display [ fhir:v "Moderate quality" ]
+         ] )
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico>
+           ] ;
+           fhir:code [ fhir:v "outcome" ] ;
+           fhir:display [ fhir:v "Outcome" ]
+         ] )
+       ] ;
+       fhir:relatesTo ( [
+         fhir:type [ fhir:v "depends-on" ] ;
+         fhir:target [
+           a fhir:Reference ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/Group/Outcome-OverallSurvival> ;
+           fhir:reference [ fhir:v "Group/Outcome-OverallSurvival" ]
+         ]
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+           ] ;
+           fhir:code [ fhir:v "overall-quality-of-evidence" ] ;
+           fhir:display [ fhir:v "Overall Quality of Evidence" ]
+         ] )
+       ] ;
+       fhir:relatesTo ( [
+         fhir:type [ fhir:v "justification" ] ;
+         fhir:target [
+           a fhir:Reference ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/ArtifactAssessment/EvA-BoneMarrowBiopsy-OS> ;
+           fhir:reference [ fhir:v "ArtifactAssessment/EvA-BoneMarrowBiopsy-OS" ]
+         ]
+       ] )
+     ] )
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+         ] ;
+         fhir:code [ fhir:v "evidence-rating" ] ;
+         fhir:display [ fhir:v "Evidence Rating" ]
+       ] )
+     ] ;
+     fhir:component ( [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+             fhir:l <https://fevir.net/resources/CodeSystem/179423>
+           ] ;
+           fhir:code [ fhir:v "rating-system" ] ;
+           fhir:display [ fhir:v "Rating System" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem>
+           ] ;
+           fhir:code [ fhir:v "grade" ] ;
+           fhir:display [ fhir:v "GRADE" ]
+         ] )
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/certainty-type"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/certainty-type>
+           ] ;
+           fhir:code [ fhir:v "Overall" ] ;
+           fhir:display [ fhir:v "Overall certainty" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://terminology.hl7.org/CodeSystem/certainty-rating"^^xsd:anyURI ;
+             fhir:l <http://terminology.hl7.org/CodeSystem/certainty-rating>
+           ] ;
+           fhir:code [ fhir:v "moderate" ] ;
+           fhir:display [ fhir:v "Moderate quality" ]
+         ] )
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico>
+           ] ;
+           fhir:code [ fhir:v "outcome" ] ;
+           fhir:display [ fhir:v "Outcome" ]
+         ] )
+       ] ;
+       fhir:relatesTo ( [
+         fhir:type [ fhir:v "depends-on" ] ;
+         fhir:target [
+           a fhir:Reference ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/Group/Outcome-ProgressionFreeSurvival> ;
+           fhir:reference [ fhir:v "Group/Outcome-ProgressionFreeSurvival" ]
+         ]
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+           ] ;
+           fhir:code [ fhir:v "overall-quality-of-evidence" ] ;
+           fhir:display [ fhir:v "Overall Quality of Evidence" ]
+         ] )
+       ] ;
+       fhir:relatesTo ( [
+         fhir:type [ fhir:v "justification" ] ;
+         fhir:target [
+           a fhir:Reference ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/ArtifactAssessment/EvA-BoneMarrowBiopsy-PFS> ;
+           fhir:reference [ fhir:v "ArtifactAssessment/EvA-BoneMarrowBiopsy-PFS" ]
+         ]
+       ] )
+     ] )
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+         ] ;
+         fhir:code [ fhir:v "evidence-rating" ] ;
+         fhir:display [ fhir:v "Evidence Rating" ]
+       ] )
+     ] ;
+     fhir:component ( [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+             fhir:l <https://fevir.net/resources/CodeSystem/179423>
+           ] ;
+           fhir:code [ fhir:v "rating-system" ] ;
+           fhir:display [ fhir:v "Rating System" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem>
+           ] ;
+           fhir:code [ fhir:v "grade" ] ;
+           fhir:display [ fhir:v "GRADE" ]
+         ] )
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/certainty-type"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/certainty-type>
+           ] ;
+           fhir:code [ fhir:v "Overall" ] ;
+           fhir:display [ fhir:v "Overall certainty" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://terminology.hl7.org/CodeSystem/certainty-rating"^^xsd:anyURI ;
+             fhir:l <http://terminology.hl7.org/CodeSystem/certainty-rating>
+           ] ;
+           fhir:code [ fhir:v "moderate" ] ;
+           fhir:display [ fhir:v "Moderate quality" ]
+         ] )
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico>
+           ] ;
+           fhir:code [ fhir:v "outcome" ] ;
+           fhir:display [ fhir:v "Outcome" ]
+         ] )
+       ] ;
+       fhir:relatesTo ( [
+         fhir:type [ fhir:v "depends-on" ] ;
+         fhir:target [
+           a fhir:Reference ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/Group/Outcome-EventFreeSurvival> ;
+           fhir:reference [ fhir:v "Group/Outcome-EventFreeSurvival" ]
+         ]
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+           ] ;
+           fhir:code [ fhir:v "overall-quality-of-evidence" ] ;
+           fhir:display [ fhir:v "Overall Quality of Evidence" ]
+         ] )
+       ] ;
+       fhir:relatesTo ( [
+         fhir:type [ fhir:v "justification" ] ;
+         fhir:target [
+           a fhir:Reference ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/ArtifactAssessment/EvA-BoneMarrowBiopsy-EFS> ;
+           fhir:reference [ fhir:v "ArtifactAssessment/EvA-BoneMarrowBiopsy-EFS" ]
+         ]
+       ] )
+     ] )
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+         ] ;
+         fhir:code [ fhir:v "evidence-rating" ] ;
+         fhir:display [ fhir:v "Evidence Rating" ]
+       ] )
+     ] ;
+     fhir:component ( [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+             fhir:l <https://fevir.net/resources/CodeSystem/179423>
+           ] ;
+           fhir:code [ fhir:v "rating-system" ] ;
+           fhir:display [ fhir:v "Rating System" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem>
+           ] ;
+           fhir:code [ fhir:v "grade" ] ;
+           fhir:display [ fhir:v "GRADE" ]
+         ] )
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/certainty-type"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/certainty-type>
+           ] ;
+           fhir:code [ fhir:v "Overall" ] ;
+           fhir:display [ fhir:v "Overall certainty" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://terminology.hl7.org/CodeSystem/certainty-rating"^^xsd:anyURI ;
+             fhir:l <http://terminology.hl7.org/CodeSystem/certainty-rating>
+           ] ;
+           fhir:code [ fhir:v "moderate" ] ;
+           fhir:display [ fhir:v "Moderate quality" ]
+         ] )
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico>
+           ] ;
+           fhir:code [ fhir:v "outcome" ] ;
+           fhir:display [ fhir:v "Outcome" ]
+         ] )
+       ] ;
+       fhir:relatesTo ( [
+         fhir:type [ fhir:v "depends-on" ] ;
+         fhir:target [
+           a fhir:Reference ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/Group/Outcome-Staging-Sensitivity> ;
+           fhir:reference [ fhir:v "Group/Outcome-Staging-Sensitivity" ]
+         ]
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+           ] ;
+           fhir:code [ fhir:v "overall-quality-of-evidence" ] ;
+           fhir:display [ fhir:v "Overall Quality of Evidence" ]
+         ] )
+       ] ;
+       fhir:relatesTo ( [
+         fhir:type [ fhir:v "justification" ] ;
+         fhir:target [
+           a fhir:Reference ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/ArtifactAssessment/EvA-BoneMarrowBiopsy-Sensitivity> ;
+           fhir:reference [ fhir:v "ArtifactAssessment/EvA-BoneMarrowBiopsy-Sensitivity" ]
+         ]
+       ] )
+     ] )
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+         ] ;
+         fhir:code [ fhir:v "evidence-rating" ] ;
+         fhir:display [ fhir:v "Evidence Rating" ]
+       ] )
+     ] ;
+     fhir:component ( [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+             fhir:l <https://fevir.net/resources/CodeSystem/179423>
+           ] ;
+           fhir:code [ fhir:v "rating-system" ] ;
+           fhir:display [ fhir:v "Rating System" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem>
+           ] ;
+           fhir:code [ fhir:v "grade" ] ;
+           fhir:display [ fhir:v "GRADE" ]
+         ] )
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/certainty-type"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/certainty-type>
+           ] ;
+           fhir:code [ fhir:v "Overall" ] ;
+           fhir:display [ fhir:v "Overall certainty" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://terminology.hl7.org/CodeSystem/certainty-rating"^^xsd:anyURI ;
+             fhir:l <http://terminology.hl7.org/CodeSystem/certainty-rating>
+           ] ;
+           fhir:code [ fhir:v "moderate" ] ;
+           fhir:display [ fhir:v "Moderate quality" ]
+         ] )
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico>
+           ] ;
+           fhir:code [ fhir:v "outcome" ] ;
+           fhir:display [ fhir:v "Outcome" ]
+         ] )
+       ] ;
+       fhir:relatesTo ( [
+         fhir:type [ fhir:v "depends-on" ] ;
+         fhir:target [
+           a fhir:Reference ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/Group/Outcome-Staging-Specificity> ;
+           fhir:reference [ fhir:v "Group/Outcome-Staging-Specificity" ]
+         ]
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+           ] ;
+           fhir:code [ fhir:v "overall-quality-of-evidence" ] ;
+           fhir:display [ fhir:v "Overall Quality of Evidence" ]
+         ] )
+       ] ;
+       fhir:relatesTo ( [
+         fhir:type [ fhir:v "justification" ] ;
+         fhir:target [
+           a fhir:Reference ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/ArtifactAssessment/EvA-BoneMarrowBiopsy-Specificity> ;
+           fhir:reference [ fhir:v "ArtifactAssessment/EvA-BoneMarrowBiopsy-Specificity" ]
+         ]
+       ] )
+     ] )
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+         ] ;
+         fhir:code [ fhir:v "evidence-rating" ] ;
+         fhir:display [ fhir:v "Evidence Rating" ]
+       ] )
+     ] ;
+     fhir:component ( [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+             fhir:l <https://fevir.net/resources/CodeSystem/179423>
+           ] ;
+           fhir:code [ fhir:v "rating-system" ] ;
+           fhir:display [ fhir:v "Rating System" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem>
+           ] ;
+           fhir:code [ fhir:v "grade" ] ;
+           fhir:display [ fhir:v "GRADE" ]
+         ] )
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/certainty-type"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/certainty-type>
+           ] ;
+           fhir:code [ fhir:v "Overall" ] ;
+           fhir:display [ fhir:v "Overall certainty" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://terminology.hl7.org/CodeSystem/certainty-rating"^^xsd:anyURI ;
+             fhir:l <http://terminology.hl7.org/CodeSystem/certainty-rating>
+           ] ;
+           fhir:code [ fhir:v "low" ] ;
+           fhir:display [ fhir:v "Low quality" ]
+         ] )
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico>
+           ] ;
+           fhir:code [ fhir:v "outcome" ] ;
+           fhir:display [ fhir:v "Outcome" ]
+         ] )
+       ] ;
+       fhir:relatesTo ( [
+         fhir:type [ fhir:v "depends-on" ] ;
+         fhir:target [
+           a fhir:Reference ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/Group/Outcome-Staging-PPV> ;
+           fhir:reference [ fhir:v "Group/Outcome-Staging-PPV" ]
+         ]
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+           ] ;
+           fhir:code [ fhir:v "overall-quality-of-evidence" ] ;
+           fhir:display [ fhir:v "Overall Quality of Evidence" ]
+         ] )
+       ] ;
+       fhir:relatesTo ( [
+         fhir:type [ fhir:v "justification" ] ;
+         fhir:target [
+           a fhir:Reference ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/ArtifactAssessment/EvA-BoneMarrowBiopsy-PPV> ;
+           fhir:reference [ fhir:v "ArtifactAssessment/EvA-BoneMarrowBiopsy-PPV" ]
+         ]
+       ] )
+     ] )
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+         ] ;
+         fhir:code [ fhir:v "evidence-rating" ] ;
+         fhir:display [ fhir:v "Evidence Rating" ]
+       ] )
+     ] ;
+     fhir:component ( [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+             fhir:l <https://fevir.net/resources/CodeSystem/179423>
+           ] ;
+           fhir:code [ fhir:v "rating-system" ] ;
+           fhir:display [ fhir:v "Rating System" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem>
+           ] ;
+           fhir:code [ fhir:v "grade" ] ;
+           fhir:display [ fhir:v "GRADE" ]
+         ] )
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/certainty-type"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/certainty-type>
+           ] ;
+           fhir:code [ fhir:v "Overall" ] ;
+           fhir:display [ fhir:v "Overall certainty" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://terminology.hl7.org/CodeSystem/certainty-rating"^^xsd:anyURI ;
+             fhir:l <http://terminology.hl7.org/CodeSystem/certainty-rating>
+           ] ;
+           fhir:code [ fhir:v "high" ] ;
+           fhir:display [ fhir:v "High quality" ]
+         ] )
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico>
+           ] ;
+           fhir:code [ fhir:v "outcome" ] ;
+           fhir:display [ fhir:v "Outcome" ]
+         ] )
+       ] ;
+       fhir:relatesTo ( [
+         fhir:type [ fhir:v "depends-on" ] ;
+         fhir:target [
+           a fhir:Reference ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/Group/Outcome-Staging-NPV> ;
+           fhir:reference [ fhir:v "Group/Outcome-Staging-NPV" ]
+         ]
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+           ] ;
+           fhir:code [ fhir:v "overall-quality-of-evidence" ] ;
+           fhir:display [ fhir:v "Overall Quality of Evidence" ]
+         ] )
+       ] ;
+       fhir:relatesTo ( [
+         fhir:type [ fhir:v "justification" ] ;
+         fhir:target [
+           a fhir:Reference ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/ArtifactAssessment/EvA-BoneMarrowBiopsy-NPV> ;
+           fhir:reference [ fhir:v "ArtifactAssessment/EvA-BoneMarrowBiopsy-NPV" ]
+         ]
+       ] )
+     ] )
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+         ] ;
+         fhir:code [ fhir:v "evidence-rating" ] ;
+         fhir:display [ fhir:v "Evidence Rating" ]
+       ] )
+     ] ;
+     fhir:component ( [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+             fhir:l <https://fevir.net/resources/CodeSystem/179423>
+           ] ;
+           fhir:code [ fhir:v "rating-system" ] ;
+           fhir:display [ fhir:v "Rating System" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/uv/ebm/CodeSystem/evidence-rating-system-classifier-codesystem>
+           ] ;
+           fhir:code [ fhir:v "grade" ] ;
+           fhir:display [ fhir:v "GRADE" ]
+         ] )
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/certainty-type"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/certainty-type>
+           ] ;
+           fhir:code [ fhir:v "Overall" ] ;
+           fhir:display [ fhir:v "Overall certainty" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://terminology.hl7.org/CodeSystem/certainty-rating"^^xsd:anyURI ;
+             fhir:l <http://terminology.hl7.org/CodeSystem/certainty-rating>
+           ] ;
+           fhir:code [ fhir:v "moderate" ] ;
+           fhir:display [ fhir:v "Moderate quality" ]
+         ] )
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-pico>
+           ] ;
+           fhir:code [ fhir:v "outcome" ] ;
+           fhir:display [ fhir:v "Outcome" ]
+         ] )
+       ] ;
+       fhir:relatesTo ( [
+         fhir:type [ fhir:v "depends-on" ] ;
+         fhir:target [
+           a fhir:Reference ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/Group/Outcome-Staging> ;
+           fhir:reference [ fhir:v "Group/Outcome-Staging" ]
+         ]
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+           ] ;
+           fhir:code [ fhir:v "overall-quality-of-evidence" ] ;
+           fhir:display [ fhir:v "Overall Quality of Evidence" ]
+         ] )
+       ] ;
+       fhir:relatesTo ( [
+         fhir:type [ fhir:v "justification" ] ;
+         fhir:target [
+           a fhir:Reference ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/ArtifactAssessment/EvA-BoneMarrowBiopsy-Staging> ;
+           fhir:reference [ fhir:v "ArtifactAssessment/EvA-BoneMarrowBiopsy-Staging" ]
+         ]
+       ] )
+     ] )
+  ] ) ; # 
+  fhir:workflowStatus [ fhir:v "applied"] . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,20 @@
+{
+  "resourceType" : "Practitioner",
+  "id" : "JessicaRademacher",
+  "meta" : {
+    "profile" : ["http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Jessica Rademacher</div>"
+  },
+  "name" : [{
+    "family" : "Rademacher",
+    "given" : ["Jessica"],
+    "prefix" : ["PD Dr. med."]
+  }],
+  "address" : [{
+    "use" : "work",
+    "text" : "Klinik für Pneumologie und Infektiologie, Medizinische Hochschule Hannover"
+  }]
+}

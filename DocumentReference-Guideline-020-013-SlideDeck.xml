@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DocumentReference xmlns="http://hl7.org/fhir">
+  <id value="Guideline-020-013-SlideDeck"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-attachment"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Foliensatz Leitlinie 020-013</div>
+  </text>
+  <status value="current"/>
+  <type>
+    <coding>
+      <system value="https://fevir.net/resources/CodeSystem/179423"/>
+      <code value="attachments"/>
+      <display value="Attachments"/>
+    </coding>
+  </type>
+  <category>
+    <coding>
+      <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+      <code value="slide-deck"/>
+    </coding>
+  </category>
+  <content>
+    <attachment>
+      <contentType value="application/pdf"/>
+      <language value="de"/>
+      <url value="020_D_Ges_fuer_Pneumologie/020-013fol_S3_Epidemiologie-Diagnostik-Therapie-erwachsener-Patienten-nosokomiale-Pneumonie__2024-03.pdf"/>
+      <title value="Foliensatz"/>
+    </attachment>
+  </content>
+</DocumentReference>

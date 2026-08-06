@@ -1,0 +1,58 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/Organization/GFV> a fhir:Organization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "GFV"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Gesellschaft für Virologie e.V. (GfV)</div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "http://fhir.awmf.org/association"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/association>
+     ] ;
+     fhir:value [ fhir:v "093" ]
+  ] ) ; # 
+  fhir:type ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+       ] ;
+       fhir:code [ fhir:v "medical-society" ]
+     ] )
+  ] ) ; # 
+  fhir:name [ fhir:v "Gesellschaft für Virologie e.V. (GfV)"] ; # 
+  fhir:contact ( [
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.awmf.org/fachgesellschaften/gesellschaft-fuer-virologie-e-v-gfv" ]
+     ] )
+  ] ) ; # 
+  fhir:qualification ( [
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+         ] ;
+         fhir:code [ fhir:v "awmf-member-organization" ]
+       ] )
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

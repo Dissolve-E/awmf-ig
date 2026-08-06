@@ -1,0 +1,52 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/ArtifactAssessment/RoB-CognitiveTestsWhenSuspectingDementia-Specificity> a fhir:ArtifactAssessment ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "RoB-CognitiveTestsWhenSuspectingDementia-Specificity"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-internal-assessment-cochrane-rob"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-internal-assessment-cochrane-rob>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspecting Dementia on Specificity</div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:artifact [
+     a fhir:Reference ;
+     fhir:l <http://fhir.awmf.org/awmf.ig/Citation/CitationSystematicReviewTsoi2015> ;
+     fhir:reference [ fhir:v "Citation/CitationSystematicReviewTsoi2015" ]
+  ] ; # 
+  fhir:content ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/certainty-type"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/certainty-type>
+         ] ;
+         fhir:code [ fhir:v "Overall" ] ;
+         fhir:display [ fhir:v "Overall certainty" ]
+       ] )
+     ] ;
+     fhir:classifier ( [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-rob-2-overall-judgment"^^xsd:anyURI ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-rob-2-overall-judgment>
+         ] ;
+         fhir:code [ fhir:v "low_risk_of_bias" ] ;
+         fhir:display [ fhir:v "Low risk of bias" ]
+       ] )
+     ] )
+  ] ) ; # 
+  fhir:workflowStatus [ fhir:v "applied"] . # 
+
+# -------------------------------------------------------------------------------------
+

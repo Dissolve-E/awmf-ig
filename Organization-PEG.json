@@ -1,0 +1,36 @@
+{
+  "resourceType" : "Organization",
+  "id" : "PEG",
+  "meta" : {
+    "profile" : ["http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Paul-Ehrlich-Gesellschaft für Infektionstherapie e.V. (PEG)</div>"
+  },
+  "identifier" : [{
+    "system" : "http://fhir.awmf.org/association",
+    "value" : "082"
+  }],
+  "type" : [{
+    "coding" : [{
+      "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+      "code" : "medical-society"
+    }]
+  }],
+  "name" : "Paul-Ehrlich-Gesellschaft für Infektionstherapie e.V. (PEG)",
+  "contact" : [{
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org/fachgesellschaften/paul-ehrlich-gesellschaft-fuer-chemotherapie-e-v-peg"
+    }]
+  }],
+  "qualification" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+        "code" : "awmf-member-organization"
+      }]
+    }
+  }]
+}

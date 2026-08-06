@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ArtifactAssessment xmlns="http://hl7.org/fhir">
+  <id value="RecommendationHAPDiagnosis-B-Justification"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Justification for Recommendation HAP Diagnose B</div>
+  </text>
+  <artifactReference>
+    <reference value="Composition/RecommendationHAPDiagnosis-B"/>
+  </artifactReference>
+  <content>
+    <type>
+      <coding>
+        <system value="https://fevir.net/resources/CodeSystem/179423"/>
+        <code value="recommendation-rating"/>
+        <display value="Recommendation Rating"/>
+      </coding>
+    </type>
+    <component>
+      <type>
+        <coding>
+          <system value="https://fevir.net/resources/CodeSystem/179423"/>
+          <code value="strength-of-recommendation"/>
+          <display value="Strength of Recommendation"/>
+        </coding>
+      </type>
+      <classifier>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/recommendation-strength"/>
+          <code value="weak"/>
+          <display value="Weak"/>
+        </coding>
+      </classifier>
+    </component>
+    <component>
+      <type>
+        <coding>
+          <system value="https://fevir.net/resources/CodeSystem/179423"/>
+          <code value="direction-of-recommendation"/>
+          <display value="Direction of Recommendation"/>
+        </coding>
+      </type>
+      <classifier>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-direction"/>
+          <code value="for"/>
+          <display value="For"/>
+        </coding>
+      </classifier>
+    </component>
+    <component>
+      <type>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"/>
+          <code value="level-of-consensus"/>
+        </coding>
+      </type>
+      <classifier>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-level-of-consensus"/>
+          <code value="strong-consensus"/>
+          <display value="Strong consensus"/>
+        </coding>
+      </classifier>
+    </component>
+  </content>
+  <workflowStatus value="applied"/>
+</ArtifactAssessment>

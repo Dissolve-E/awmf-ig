@@ -1,0 +1,36 @@
+{
+  "resourceType" : "Organization",
+  "id" : "DEGRO",
+  "meta" : {
+    "profile" : ["http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Deutsche Gesellschaft für Radioonkologie e.V. (DEGRO)</div>"
+  },
+  "identifier" : [{
+    "system" : "http://fhir.awmf.org/association",
+    "value" : "032"
+  }],
+  "type" : [{
+    "coding" : [{
+      "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+      "code" : "medical-society"
+    }]
+  }],
+  "name" : "Deutsche Gesellschaft für Radioonkologie e.V. (DEGRO)",
+  "contact" : [{
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org/fachgesellschaften/deutsche-gesellschaft-fuer-radioonkologie-e-v-degro"
+    }]
+  }],
+  "qualification" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+        "code" : "awmf-member-organization"
+      }]
+    }
+  }]
+}

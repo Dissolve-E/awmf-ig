@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Organization xmlns="http://hl7.org/fhir">
+  <id value="DGI"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Deutsche Gesellschaft für Infektiologie e.V. (DGI)</div>
+  </text>
+  <identifier>
+    <system value="http://fhir.awmf.org/association"/>
+    <value value="092"/>
+  </identifier>
+  <type>
+    <coding>
+      <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"/>
+      <code value="medical-society"/>
+    </coding>
+  </type>
+  <name value="Deutsche Gesellschaft für Infektiologie e.V. (DGI)"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org/fachgesellschaften/deutsche-gesellschaft-fuer-infektiologie-e-v-dgi"/>
+    </telecom>
+  </contact>
+  <qualification>
+    <code>
+      <coding>
+        <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"/>
+        <code value="awmf-member-organization"/>
+      </coding>
+    </code>
+  </qualification>
+</Organization>

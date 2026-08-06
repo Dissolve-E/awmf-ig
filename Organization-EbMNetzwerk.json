@@ -1,0 +1,15 @@
+{
+  "resourceType" : "Organization",
+  "id" : "EbMNetzwerk",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Netzwerk Evidenzbasierte Medizin e.V. (EbM-Netzwerk)</div>"
+  },
+  "name" : "Netzwerk Evidenzbasierte Medizin e.V. (EbM-Netzwerk)",
+  "contact" : [{
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.ebm-netzwerk.de"
+    }]
+  }]
+}

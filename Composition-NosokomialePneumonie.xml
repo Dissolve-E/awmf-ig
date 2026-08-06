@@ -1,0 +1,1007 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Composition xmlns="http://hl7.org/fhir">
+  <id value="NosokomialePneumonie"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie</div>
+  </text>
+  <identifier>
+    <use value="official"/>
+    <system value="http://fhir.awmf.org/guidelines"/>
+    <value value="020-013"/>
+  </identifier>
+  <version value="3.0"/>
+  <status value="final"/>
+  <type>
+    <coding>
+      <system value="https://fevir.net/resources/CodeSystem/179423"/>
+      <code value="Guideline"/>
+      <display value="Guideline"/>
+    </coding>
+  </type>
+  <date value="2025-02-13"/>
+  <author>
+    <reference value="PractitionerRole/JessicaRademacherDGPFor020-013"/>
+  </author>
+  <title value="Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie"/>
+  <section>
+    <code>
+      <coding>
+        <system value="https://fevir.net/resources/CodeSystem/179423"/>
+        <code value="introduction"/>
+        <display value="Introduction"/>
+      </coding>
+    </code>
+    <section>
+      <code>
+        <coding>
+          <system value="https://fevir.net/resources/CodeSystem/179423"/>
+          <code value="text"/>
+          <display value="Text"/>
+        </coding>
+      </code>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+          <valueCode value="de"/>
+        </extension>
+        <title value="Übersicht der Empfehlungen und Statements"/>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="language"/>
+            <display value="Language"/>
+          </coding>
+        </code>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Übersicht der Empfehlungen und Statements</div>
+        </text>
+      </section>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+          <valueCode value="en"/>
+        </extension>
+        <title value="Overview of Recommendations and Statements"/>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="language"/>
+            <display value="Language"/>
+          </coding>
+        </code>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Overview of Recommendations and Statements</div>
+        </text>
+      </section>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+          <valueCode value="ar"/>
+        </extension>
+        <title value="نظرة عامة على التوصيات والبيانات"/>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="language"/>
+            <display value="Language"/>
+          </coding>
+        </code>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="rtl">نظرة عامة على التوصيات والبيانات</div>
+        </text>
+      </section>
+    </section>
+    <section>
+      <code>
+        <coding>
+          <system value="https://fevir.net/resources/CodeSystem/179423"/>
+          <code value="text"/>
+          <display value="Text"/>
+        </coding>
+      </code>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+          <valueCode value="de"/>
+        </extension>
+        <title value="Geltungsbereich und Zweck"/>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="language"/>
+            <display value="Language"/>
+          </coding>
+        </code>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Geltungsbereich und Zweck</div>
+        </text>
+      </section>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+          <valueCode value="en"/>
+        </extension>
+        <title value="Scope and Purpose"/>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="language"/>
+            <display value="Language"/>
+          </coding>
+        </code>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Scope and Purpose</div>
+        </text>
+      </section>
+      <section>
+        <code>
+          <coding>
+            <system value="https://fevir.net/resources/CodeSystem/179423"/>
+            <code value="text"/>
+            <display value="Text"/>
+          </coding>
+        </code>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="de"/>
+          </extension>
+          <title value="Zielsetzung und Fragestellung"/>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Zielsetzung und Fragestellung</div>
+          </text>
+        </section>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="en"/>
+          </extension>
+          <title value="Objective and Research Question"/>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Objective and Research Question</div>
+          </text>
+        </section>
+      </section>
+      <section>
+        <code>
+          <coding>
+            <system value="https://fevir.net/resources/CodeSystem/179423"/>
+            <code value="text"/>
+            <display value="Text"/>
+          </coding>
+        </code>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="de"/>
+          </extension>
+          <title value="Versorgungsbereich"/>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Versorgungsbereich</div>
+          </text>
+        </section>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="en"/>
+          </extension>
+          <title value="Healthcare Sector"/>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Healthcare Sector</div>
+          </text>
+        </section>
+      </section>
+      <section>
+        <code>
+          <coding>
+            <system value="https://fevir.net/resources/CodeSystem/179423"/>
+            <code value="text"/>
+            <display value="Text"/>
+          </coding>
+        </code>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="de"/>
+          </extension>
+          <title value="Patientenzielgruppe"/>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Patientenzielgruppe</div>
+          </text>
+        </section>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="en"/>
+          </extension>
+          <title value="Target Patient Group"/>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Target Patient Group</div>
+          </text>
+        </section>
+      </section>
+      <section>
+        <code>
+          <coding>
+            <system value="https://fevir.net/resources/CodeSystem/179423"/>
+            <code value="text"/>
+            <display value="Text"/>
+          </coding>
+        </code>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="de"/>
+          </extension>
+          <title value="Adressaten"/>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Adressaten</div>
+          </text>
+        </section>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="en"/>
+          </extension>
+          <title value="Audience"/>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Audience</div>
+          </text>
+        </section>
+      </section>
+      <section>
+        <code>
+          <coding>
+            <system value="https://fevir.net/resources/CodeSystem/179423"/>
+            <code value="text"/>
+            <display value="Text"/>
+          </coding>
+        </code>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="de"/>
+          </extension>
+          <title value="Gültigkeitsdauer und Aktualisierungsverfahren"/>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Gültigkeitsdauer und Aktualisierungsverfahren</div>
+          </text>
+        </section>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="en"/>
+          </extension>
+          <title value="Validity Period and Update Procedure"/>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Validity Period and Update Procedure</div>
+          </text>
+        </section>
+      </section>
+    </section>
+    <section>
+      <code>
+        <coding>
+          <system value="https://fevir.net/resources/CodeSystem/179423"/>
+          <code value="text"/>
+          <display value="Text"/>
+        </coding>
+      </code>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+          <valueCode value="de"/>
+        </extension>
+        <title value="Methodische Grundlagen"/>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="language"/>
+            <display value="Language"/>
+          </coding>
+        </code>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Methodische Grundlagen</div>
+        </text>
+      </section>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+          <valueCode value="en"/>
+        </extension>
+        <title value="Methodological Foundations"/>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="language"/>
+            <display value="Language"/>
+          </coding>
+        </code>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Methodological Foundations</div>
+        </text>
+      </section>
+      <section>
+        <code>
+          <coding>
+            <system value="https://fevir.net/resources/CodeSystem/179423"/>
+            <code value="text"/>
+            <display value="Text"/>
+          </coding>
+        </code>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="de"/>
+          </extension>
+          <title value="Kritische Bewertung der Evidenz"/>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Kritische Bewertung der Evidenz</div>
+          </text>
+        </section>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="en"/>
+          </extension>
+          <title value="Critical Appraisal of Evidence"/>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Critical Appraisal of Evidence</div>
+          </text>
+        </section>
+      </section>
+      <section>
+        <code>
+          <coding>
+            <system value="https://fevir.net/resources/CodeSystem/179423"/>
+            <code value="text"/>
+            <display value="Text"/>
+          </coding>
+        </code>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="de"/>
+          </extension>
+          <title value="Strukturierte Konsensfindung"/>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Strukturierte Konsensfindung</div>
+          </text>
+        </section>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="en"/>
+          </extension>
+          <title value="Structured Consensus Process"/>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Structured Consensus Process</div>
+          </text>
+        </section>
+      </section>
+      <section>
+        <code>
+          <coding>
+            <system value="https://fevir.net/resources/CodeSystem/179423"/>
+            <code value="text"/>
+            <display value="Text"/>
+          </coding>
+        </code>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="de"/>
+          </extension>
+          <title value="Empfehlungsgraduierung und Feststellung der Konsensstärke"/>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Empfehlungsgraduierung und Feststellung der Konsensstärke</div>
+          </text>
+        </section>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="en"/>
+          </extension>
+          <title value="Recommendation Grading and Consensus Strength"/>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Recommendation Grading and Consensus Strength</div>
+          </text>
+        </section>
+      </section>
+      <section>
+        <code>
+          <coding>
+            <system value="https://fevir.net/resources/CodeSystem/179423"/>
+            <code value="text"/>
+            <display value="Text"/>
+          </coding>
+        </code>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="de"/>
+          </extension>
+          <title value="Statements"/>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Statements</div>
+          </text>
+        </section>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="en"/>
+          </extension>
+          <title value="Statements"/>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Statements</div>
+          </text>
+        </section>
+      </section>
+      <section>
+        <code>
+          <coding>
+            <system value="https://fevir.net/resources/CodeSystem/179423"/>
+            <code value="text"/>
+            <display value="Text"/>
+          </coding>
+        </code>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="de"/>
+          </extension>
+          <title value="Expertenkonsens"/>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Expertenkonsens</div>
+          </text>
+        </section>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="en"/>
+          </extension>
+          <title value="Expert Consensus"/>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Expert Consensus</div>
+          </text>
+        </section>
+      </section>
+    </section>
+    <section>
+      <code>
+        <coding>
+          <system value="https://fevir.net/resources/CodeSystem/179423"/>
+          <code value="text"/>
+          <display value="Text"/>
+        </coding>
+      </code>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+          <valueCode value="de"/>
+        </extension>
+        <title value="Umgang mit Interessenkonflikten"/>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="language"/>
+            <display value="Language"/>
+          </coding>
+        </code>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Umgang mit Interessenkonflikten</div>
+        </text>
+      </section>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+          <valueCode value="en"/>
+        </extension>
+        <title value="Handling Conflicts of Interest"/>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="language"/>
+            <display value="Language"/>
+          </coding>
+        </code>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Handling Conflicts of Interest</div>
+        </text>
+      </section>
+    </section>
+    <section>
+      <code>
+        <coding>
+          <system value="https://fevir.net/resources/CodeSystem/179423"/>
+          <code value="text"/>
+          <display value="Text"/>
+        </coding>
+      </code>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+          <valueCode value="de"/>
+        </extension>
+        <title value="Externe Begutachtung und Verabschiedung"/>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="language"/>
+            <display value="Language"/>
+          </coding>
+        </code>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Externe Begutachtung und Verabschiedung</div>
+        </text>
+      </section>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+          <valueCode value="en"/>
+        </extension>
+        <title value="External Review and Approval"/>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="language"/>
+            <display value="Language"/>
+          </coding>
+        </code>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">External Review and Approval</div>
+        </text>
+      </section>
+    </section>
+    <section>
+      <code>
+        <coding>
+          <system value="https://fevir.net/resources/CodeSystem/179423"/>
+          <code value="text"/>
+          <display value="Text"/>
+        </coding>
+      </code>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+          <valueCode value="de"/>
+        </extension>
+        <title value="Redaktionelle Hinweise"/>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="language"/>
+            <display value="Language"/>
+          </coding>
+        </code>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Redaktionelle Hinweise</div>
+        </text>
+      </section>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+          <valueCode value="en"/>
+        </extension>
+        <title value="Editorial Notes"/>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="language"/>
+            <display value="Language"/>
+          </coding>
+        </code>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Editorial Notes</div>
+        </text>
+      </section>
+    </section>
+    <section>
+      <code>
+        <coding>
+          <system value="https://fevir.net/resources/CodeSystem/179423"/>
+          <code value="text"/>
+          <display value="Text"/>
+        </coding>
+      </code>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+          <valueCode value="de"/>
+        </extension>
+        <title value="Einführung und Epidemiologie"/>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="language"/>
+            <display value="Language"/>
+          </coding>
+        </code>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Einführung und Epidemiologie</div>
+        </text>
+      </section>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+          <valueCode value="en"/>
+        </extension>
+        <title value="Introduction and Epidemiology"/>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="language"/>
+            <display value="Language"/>
+          </coding>
+        </code>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Introduction and Epidemiology</div>
+        </text>
+      </section>
+    </section>
+  </section>
+  <section>
+    <code>
+      <coding>
+        <system value="https://fevir.net/resources/CodeSystem/179423"/>
+        <code value="text"/>
+        <display value="Text"/>
+      </coding>
+    </code>
+    <section>
+      <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+        <valueCode value="de"/>
+      </extension>
+      <title value="Diagnostik"/>
+      <code>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+          <code value="language"/>
+          <display value="Language"/>
+        </coding>
+      </code>
+      <text>
+        <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Diagnostik</div>
+      </text>
+    </section>
+    <section>
+      <code>
+        <coding>
+          <system value="https://fevir.net/resources/CodeSystem/179423"/>
+          <code value="text"/>
+          <display value="Text"/>
+        </coding>
+      </code>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+          <valueCode value="de"/>
+        </extension>
+        <title value="Klinische Diagnose der nosokomialen Pneumonie"/>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="language"/>
+            <display value="Language"/>
+          </coding>
+        </code>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">[[]]</div>
+        </text>
+        <emptyReason>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/list-empty-reason"/>
+            <code value="unavailable"/>
+          </coding>
+        </emptyReason>
+      </section>
+      <section>
+        <code>
+          <coding>
+            <system value="https://fevir.net/resources/CodeSystem/179423"/>
+            <code value="text"/>
+            <display value="Text"/>
+          </coding>
+        </code>
+        <entry>
+          <reference value="Composition/RecommendationHAPDiagnosis"/>
+        </entry>
+      </section>
+    </section>
+    <section>
+      <code>
+        <coding>
+          <system value="https://fevir.net/resources/CodeSystem/179423"/>
+          <code value="text"/>
+          <display value="Text"/>
+        </coding>
+      </code>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+          <valueCode value="de"/>
+        </extension>
+        <title value="Biomarker"/>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="language"/>
+            <display value="Language"/>
+          </coding>
+        </code>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Biomarker</div>
+        </text>
+      </section>
+    </section>
+    <section>
+      <code>
+        <coding>
+          <system value="https://fevir.net/resources/CodeSystem/179423"/>
+          <code value="text"/>
+          <display value="Text"/>
+        </coding>
+      </code>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+          <valueCode value="de"/>
+        </extension>
+        <title value="Mikrobiologische Diagnostik"/>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="language"/>
+            <display value="Language"/>
+          </coding>
+        </code>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Mikrobiologische Diagnostik</div>
+        </text>
+      </section>
+      <section>
+        <code>
+          <coding>
+            <system value="https://fevir.net/resources/CodeSystem/179423"/>
+            <code value="text"/>
+            <display value="Text"/>
+          </coding>
+        </code>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="de"/>
+          </extension>
+          <title value="Bakteriologische Diagnostik"/>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Bakteriologische Diagnostik</div>
+          </text>
+        </section>
+        <section>
+          <code>
+            <coding>
+              <system value="https://fevir.net/resources/CodeSystem/179423"/>
+              <code value="text"/>
+              <display value="Text"/>
+            </coding>
+          </code>
+          <entry>
+            <reference value="Composition/RecommendationMultiplexPCRDiagnostic"/>
+          </entry>
+        </section>
+      </section>
+      <section>
+        <code>
+          <coding>
+            <system value="https://fevir.net/resources/CodeSystem/179423"/>
+            <code value="text"/>
+            <display value="Text"/>
+          </coding>
+        </code>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="de"/>
+          </extension>
+          <title value="Mykologische Diagnostik"/>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Mykologische Diagnostik</div>
+          </text>
+        </section>
+      </section>
+      <section>
+        <code>
+          <coding>
+            <system value="https://fevir.net/resources/CodeSystem/179423"/>
+            <code value="text"/>
+            <display value="Text"/>
+          </coding>
+        </code>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="de"/>
+          </extension>
+          <title value="Virologische Diagnostik"/>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Virologische Diagnostik</div>
+          </text>
+        </section>
+      </section>
+      <section>
+        <code>
+          <coding>
+            <system value="https://fevir.net/resources/CodeSystem/179423"/>
+            <code value="text"/>
+            <display value="Text"/>
+          </coding>
+        </code>
+        <section>
+          <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+            <valueCode value="de"/>
+          </extension>
+          <title value="Materialgewinnung"/>
+          <code>
+            <coding>
+              <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+              <code value="language"/>
+              <display value="Language"/>
+            </coding>
+          </code>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Materialgewinnung</div>
+          </text>
+        </section>
+      </section>
+    </section>
+    <section>
+      <code>
+        <coding>
+          <system value="https://fevir.net/resources/CodeSystem/179423"/>
+          <code value="text"/>
+          <display value="Text"/>
+        </coding>
+      </code>
+      <section>
+        <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+          <valueCode value="de"/>
+        </extension>
+        <title value="Bildgebung"/>
+        <code>
+          <coding>
+            <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+            <code value="language"/>
+            <display value="Language"/>
+          </coding>
+        </code>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Bildgebung</div>
+        </text>
+      </section>
+    </section>
+  </section>
+</Composition>

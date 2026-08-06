@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Composition xmlns="http://hl7.org/fhir">
+  <id value="RecommendationHAPDiagnosis"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">HAP Diagnose</div>
+  </text>
+  <identifier>
+    <use value="official"/>
+    <system value="http://fhir.awmf.org/examples"/>
+    <value value="RecommendationHAPDiagnosis"/>
+  </identifier>
+  <version value="3.0"/>
+  <status value="final"/>
+  <type>
+    <coding>
+      <system value="https://fevir.net/resources/CodeSystem/179423"/>
+      <code value="Recommendation"/>
+      <display value="Recommendation"/>
+    </coding>
+  </type>
+  <category>
+    <coding>
+      <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-synthesis-type"/>
+      <code value="expert-consensus"/>
+    </coding>
+  </category>
+  <date value="2024-12-05"/>
+  <author>
+    <reference value="PractitionerRole/JessicaRademacherDGPFor020-013"/>
+  </author>
+  <title value="HAP Diagnose"/>
+  <relatesTo>
+    <type value="part-of"/>
+    <targetCanonical value="http://fhir.awmf.org/awmf.ig/Composition/NosokomialePneumonie|3.0"/>
+  </relatesTo>
+  <section>
+    <code>
+      <coding>
+        <system value="https://fevir.net/resources/CodeSystem/179423"/>
+        <code value="recommendation-statement"/>
+        <display value="Recommendation Statement"/>
+      </coding>
+    </code>
+    <entry>
+      <reference value="Composition/RecommendationHAPDiagnosis-A"/>
+    </entry>
+    <entry>
+      <reference value="Composition/RecommendationHAPDiagnosis-B"/>
+    </entry>
+  </section>
+  <section>
+    <code>
+      <coding>
+        <system value="https://fevir.net/resources/CodeSystem/179423"/>
+        <code value="text"/>
+        <display value="Text"/>
+      </coding>
+    </code>
+    <section>
+      <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+        <valueCode value="de"/>
+      </extension>
+      <code>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+          <code value="language"/>
+          <display value="Language"/>
+        </coding>
+      </code>
+      <text>
+        <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Die klinische Diagnose einer HAP ist schwierig. Es gibt keine allgemein akzeptierten Kriterien auf der Basis randomisierter Studien, sondern lediglich prospektive Kohortenanalysen. Die Inzidenz der VAP variiert stark in Abhängigkeit von den eingesetzten Diagnosekriterien (62). Therapierelevant ist die klinisch zu stellende Verdachtsdiagnose einer HAP. Die in der 1. Empfehlung genannten Kriterien von Johanson et al. (Infiltrat in Kombination mit 2-3 weiteren Kriterien) werden in den meisten Leitlinien verwendet und sind in einer prospektiven Kohortenanalyse an 25 verstorbenen beatmeten Patienten validiert worden (36,63). In dieser lag die histologisch überprüfte Sensitivität bei 69 % und die Spezifität bei 75 % (64). Fagon et al. konnte 1993 in einer Studie an 84 beatmeten Patienten zeigen, dass die klinische Diagnose in 62 % eine VAP korrekt vorhersagt, und bei 84 % korrekt keine VAP diagnostiziert wurde (65). In allen Studien liegen Sensitivität und Spezifität dieser Kriterien bei ca. 70 %, sodass etwa 30 % der HAP-Patienten nicht erkannt werden und bei ca. 30% eine andere Diagnose als eine HAP vorliegt. Kritisch zu bedenken ist zudem, dass die Beurteilung des Röntgenbildes einer Interobservervariabilität unterliegt (66) und im klinischen Alltag etwa 1/3 der Patienten, die als V. a. HAP diagnostiziert werden, die oben beschriebenen radiologischen Veränderungen (Infiltrate) objektiv nicht erfüllen (67,68). Der Einsatz mikrobiologischer Kriterien zur Diagnose einer HAP verbessert die Sensitivität und Spezifität (64). Andere Autoren konnten zeigen, dass postoperative Patienten mit der klinischen Diagnose HAP (beruhend auf diesen Kriterien) eine höhere Letalität hatten als Patienten ohne Verdacht auf HAP (8 von 46, 17 % vs. 16 von 306, 5 %, p = 0,046) (69). Insbesondere bei schwerer HAP sollten die klinischen Kriterien der Sepsis beachtet werden (70). Zeichen der Sepsis oder des septischen Schocks sind jedoch nicht spezifisch für eine HAP. Insgesamt ist die klinische Diagnose der HAP eine Arbeitsdiagnose, die für die zeitnahe Einleitung einer kalkulierten antimikrobiellen Therapie relevant ist und der regelmäßigen Überprüfung bedarf. In diesem Zusammenhang sind die aufgeführten Differenzialdiagnosen zu bedenken</div>
+      </text>
+    </section>
+  </section>
+</Composition>

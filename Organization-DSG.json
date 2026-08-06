@@ -1,0 +1,36 @@
+{
+  "resourceType" : "Organization",
+  "id" : "DSG",
+  "meta" : {
+    "profile" : ["http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Deutsche Sepsis-Gesellschaft e.V. (DSG)</div>"
+  },
+  "identifier" : [{
+    "system" : "http://fhir.awmf.org/association",
+    "value" : "079"
+  }],
+  "type" : [{
+    "coding" : [{
+      "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+      "code" : "medical-society"
+    }]
+  }],
+  "name" : "Deutsche Sepsis-Gesellschaft e.V. (DSG)",
+  "contact" : [{
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.awmf.org/fachgesellschaften/deutsche-sepsis-gesellschaft-e-v-dsg"
+    }]
+  }],
+  "qualification" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf",
+        "code" : "awmf-member-organization"
+      }]
+    }
+  }]
+}

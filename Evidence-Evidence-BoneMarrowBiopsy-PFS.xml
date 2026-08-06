@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Evidence xmlns="http://hl7.org/fhir">
+  <id value="Evidence-BoneMarrowBiopsy-PFS"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/outcome-evidence"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Evidenz zum Einfluss von Knochenmarkbiopsie vs. PET/CT-Staging auf das progressionsfreie Überleben</div>
+  </text>
+  <status value="active"/>
+  <variableDefinition>
+    <variableRole value="outcome"/>
+    <observed>
+      <reference value="Group/Outcome-ProgressionFreeSurvival"/>
+    </observed>
+    <intended>
+      <reference value="Group/Outcome-ProgressionFreeSurvival"/>
+    </intended>
+  </variableDefinition>
+</Evidence>

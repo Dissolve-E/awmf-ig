@@ -1,0 +1,117 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/Organization/AWMFMemberOrganizationExample> a fhir:Organization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "AWMFMemberOrganizationExample"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">AWMF Member Organization Example</div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-medical-subject-category"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-medical-subject-category>
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-medical-subject-categories"^^xsd:anyURI ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-medical-subject-categories>
+         ] ;
+         fhir:code [ fhir:v "psychosocial" ] ;
+         fhir:display [ fhir:v "Psychosocial Disciplines" ]
+       ] )
+     ]
+  ] [
+     fhir:url [
+       fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-medical-subject-category"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-medical-subject-category>
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-medical-subject-categories"^^xsd:anyURI ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-medical-subject-categories>
+         ] ;
+         fhir:code [ fhir:v "surgical" ] ;
+         fhir:display [ fhir:v "Surgical Disciplines" ]
+       ] )
+     ]
+  ] [
+     fhir:url [
+       fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-medical-subject"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-medical-subject>
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:text [ fhir:v "Anesthesiology and Intensive Care Medicine" ]
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "brandLogo"^^xsd:anyURI ;
+         fhir:l fhir:brandLogo
+       ] ;
+       fhir:value [
+         a fhir:Url ;
+         fhir:v "https://www.example.org/logo.png"^^xsd:anyURI ;
+         fhir:l <https://www.example.org/logo.png>
+       ]
+     ] ) ;
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/organization-brand"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/organization-brand>
+     ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "http://fhir.awmf.org/association"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/association>
+     ] ;
+     fhir:value [ fhir:v "-1" ]
+  ] ) ; # 
+  fhir:type ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+         fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+       ] ;
+       fhir:code [ fhir:v "medical-society" ]
+     ] )
+  ] ) ; # 
+  fhir:name [ fhir:v "Example AWMF Member Organization"] ; # 
+  fhir:alias ( [ fhir:v "Chirurgie.Example"] ) ; # 
+  fhir:contact ( [
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.example.org" ]
+     ] )
+  ] ) ; # 
+  fhir:qualification ( [
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+         ] ;
+         fhir:code [ fhir:v "awmf-member-organization" ]
+       ] )
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

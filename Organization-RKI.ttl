@@ -1,0 +1,19 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/Organization/RKI> a fhir:Organization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "RKI"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Robert Koch-Institut (RKI)</div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:name [ fhir:v "Robert Koch-Institut (RKI)"] . # 
+
+# -------------------------------------------------------------------------------------
+

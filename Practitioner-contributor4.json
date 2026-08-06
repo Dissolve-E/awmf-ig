@@ -1,0 +1,12 @@
+{
+  "resourceType" : "Practitioner",
+  "id" : "contributor4",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Practitioner contributor4</b></p><a name=\"contributor4\"> </a><a name=\"hccontributor4\"> </a><p><b>name</b>: Timothy C Y Kwok </p></div>"
+  },
+  "name" : [{
+    "family" : "Kwok",
+    "given" : ["Timothy C Y"]
+  }]
+}

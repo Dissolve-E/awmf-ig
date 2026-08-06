@@ -1,0 +1,105 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/ArtifactAssessment/RecommendationHAPDiagnosis-A-Justification> a fhir:ArtifactAssessment ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "RecommendationHAPDiagnosis-A-Justification"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Justification for Recommendation HAP Diagnose A</div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:artifact [
+     a fhir:Reference ;
+     fhir:l <http://fhir.awmf.org/awmf.ig/Composition/RecommendationHAPDiagnosis-A> ;
+     fhir:reference [ fhir:v "Composition/RecommendationHAPDiagnosis-A" ]
+  ] ; # 
+  fhir:content ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+           fhir:l <https://fevir.net/resources/CodeSystem/179423>
+         ] ;
+         fhir:code [ fhir:v "recommendation-rating" ] ;
+         fhir:display [ fhir:v "Recommendation Rating" ]
+       ] )
+     ] ;
+     fhir:component ( [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+             fhir:l <https://fevir.net/resources/CodeSystem/179423>
+           ] ;
+           fhir:code [ fhir:v "strength-of-recommendation" ] ;
+           fhir:display [ fhir:v "Strength of Recommendation" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://terminology.hl7.org/CodeSystem/recommendation-strength"^^xsd:anyURI ;
+             fhir:l <http://terminology.hl7.org/CodeSystem/recommendation-strength>
+           ] ;
+           fhir:code [ fhir:v "strong" ] ;
+           fhir:display [ fhir:v "Strong" ]
+         ] )
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+             fhir:l <https://fevir.net/resources/CodeSystem/179423>
+           ] ;
+           fhir:code [ fhir:v "direction-of-recommendation" ] ;
+           fhir:display [ fhir:v "Direction of Recommendation" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-direction"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-direction>
+           ] ;
+           fhir:code [ fhir:v "for" ] ;
+           fhir:display [ fhir:v "For" ]
+         ] )
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf>
+           ] ;
+           fhir:code [ fhir:v "level-of-consensus" ]
+         ] )
+       ] ;
+       fhir:classifier ( [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-level-of-consensus"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-level-of-consensus>
+           ] ;
+           fhir:code [ fhir:v "strong-consensus" ] ;
+           fhir:display [ fhir:v "Strong consensus" ]
+         ] )
+       ] )
+     ] )
+  ] ) ; # 
+  fhir:workflowStatus [ fhir:v "applied"] . # 
+
+# -------------------------------------------------------------------------------------
+

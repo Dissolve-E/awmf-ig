@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Organization xmlns="http://hl7.org/fhir">
+  <id value="DRG"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Deutsche Röntgengesellschaft, Gesellschaft für Medizinische Radiologie e.V. (DRG)</div>
+  </text>
+  <identifier>
+    <system value="http://fhir.awmf.org/association"/>
+    <value value="039"/>
+  </identifier>
+  <type>
+    <coding>
+      <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"/>
+      <code value="medical-society"/>
+    </coding>
+  </type>
+  <name value="Deutsche Röntgengesellschaft, Gesellschaft für Medizinische Radiologie e.V. (DRG)"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.awmf.org/fachgesellschaften/deutsche-roentgengesellschaft-gesellschaft-fuer-medizinische-radiologie-e-v-drg"/>
+    </telecom>
+  </contact>
+  <qualification>
+    <code>
+      <coding>
+        <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"/>
+        <code value="awmf-member-organization"/>
+      </coding>
+    </code>
+  </qualification>
+</Organization>

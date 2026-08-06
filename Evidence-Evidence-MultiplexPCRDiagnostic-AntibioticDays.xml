@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Evidence xmlns="http://hl7.org/fhir">
+  <id value="Evidence-MultiplexPCRDiagnostic-AntibioticDays"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Evidence for the impact of Multiplex-PCR-Diagnostik on antibiotic days</div>
+  </text>
+  <status value="active"/>
+  <variableDefinition>
+    <variableRole value="outcome"/>
+    <intended>
+      <reference value="EvidenceVariable/OutcomeAntibioticDays"/>
+    </intended>
+  </variableDefinition>
+</Evidence>

@@ -1,0 +1,24 @@
+{
+  "resourceType" : "PractitionerRole",
+  "id" : "GuidelineAuthorRoleExample",
+  "meta" : {
+    "profile" : ["http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author-role"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Guideline Author Role Example</div>"
+  },
+  "period" : {
+    "start" : "2022-08-01",
+    "end" : "2023-12-31"
+  },
+  "practitioner" : {
+    "reference" : "Practitioner/GuidelineAuthorExample"
+  },
+  "organization" : {
+    "reference" : "Organization/AWMFMemberOrganizationExample"
+  },
+  "code" : [{
+    "text" : "Coordinaion and scientific leadership"
+  }]
+}

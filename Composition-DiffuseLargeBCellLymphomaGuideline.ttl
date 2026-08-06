@@ -1,0 +1,236 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.awmf.org/awmf.ig/Composition/DiffuseLargeBCellLymphomaGuideline> a fhir:Composition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "DiffuseLargeBCellLymphomaGuideline"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">S3-Leitlinie Diagnostik, Therapie und Nachsorge für erwachsene Patient*innen mit einem diffusen großzelligen B-Zell-Lymphom und verwandten Entitäten</div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:system [
+       fhir:v "http://fhir.awmf.org/guidelines"^^xsd:anyURI ;
+       fhir:l <http://fhir.awmf.org/guidelines>
+     ] ;
+     fhir:value [ fhir:v "018-038" ]
+  ] ) ; # 
+  fhir:version [ fhir:v "1.0"] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+         fhir:l <https://fevir.net/resources/CodeSystem/179423>
+       ] ;
+       fhir:code [ fhir:v "Guideline" ] ;
+       fhir:display [ fhir:v "Guideline" ]
+     ] )
+  ] ; # 
+  fhir:date [ fhir:v "2022-10-01"^^xsd:date] ; # 
+  fhir:author ( [
+     fhir:l <http://fhir.awmf.org/awmf.ig/Organization/DGHO> ;
+     fhir:reference [ fhir:v "Organization/DGHO" ]
+  ] ) ; # 
+  fhir:title [ fhir:v "Diagnostik, Therapie und Nachsorge für erwachsene Patient*innen mit einem diffusen großzelligen B-Zell-Lymphom und verwandten Entitäten"] ; # 
+  fhir:section ( [
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+           fhir:l <https://fevir.net/resources/CodeSystem/179423>
+         ] ;
+         fhir:code [ fhir:v "text" ] ;
+         fhir:display [ fhir:v "Text" ]
+       ] )
+     ] ;
+     fhir:section ( [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language"^^xsd:anyURI ;
+           fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language>
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "de"
+         ]
+       ] ) ;
+       fhir:title [ fhir:v "5. Diagnostik II – Staging und andere prätherapeutische Maßnahmen" ] ;
+       fhir:code [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+           ] ;
+           fhir:code [ fhir:v "language" ] ;
+           fhir:display [ fhir:v "Language" ]
+         ] )
+       ] ;
+       fhir:text [
+         fhir:status [ fhir:v "generated" ] ;
+         fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">5. Diagnostik II – Staging und andere prätherapeutische Maßnahmen</div>"^^rdf:XMLLiteral ]
+       ]
+     ] [
+       fhir:code [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+             fhir:l <https://fevir.net/resources/CodeSystem/179423>
+           ] ;
+           fhir:code [ fhir:v "text" ] ;
+           fhir:display [ fhir:v "Text" ]
+         ] )
+       ] ;
+       fhir:section ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language"^^xsd:anyURI ;
+             fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "de"
+           ]
+         ] ) ;
+         fhir:title [ fhir:v "5.2. Bildgebende Verfahren, Knochenmarkbiopsie und Stadieneinteilung" ] ;
+         fhir:code [
+           fhir:coding ( [
+             fhir:system [
+               fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+               fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+             ] ;
+             fhir:code [ fhir:v "language" ] ;
+             fhir:display [ fhir:v "Language" ]
+           ] )
+         ] ;
+         fhir:text [
+           fhir:status [ fhir:v "generated" ] ;
+           fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Knochenmarkbiopsie</div>"^^rdf:XMLLiteral ]
+         ]
+       ] [
+         fhir:code [
+           fhir:coding ( [
+             fhir:system [
+               fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+               fhir:l <https://fevir.net/resources/CodeSystem/179423>
+             ] ;
+             fhir:code [ fhir:v "text" ] ;
+             fhir:display [ fhir:v "Text" ]
+           ] )
+         ] ;
+         fhir:section ( [
+           fhir:extension ( [
+             fhir:url [
+               fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language"^^xsd:anyURI ;
+               fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language>
+             ] ;
+             fhir:value [
+               a fhir:Code ;
+               fhir:v "de"
+             ]
+           ] ) ;
+           fhir:title [ fhir:v "5.2.2. Knochenmarkbiopsie" ] ;
+           fhir:code [
+             fhir:coding ( [
+               fhir:system [
+                 fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+                 fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+               ] ;
+               fhir:code [ fhir:v "language" ] ;
+               fhir:display [ fhir:v "Language" ]
+             ] )
+           ] ;
+           fhir:text [
+             fhir:status [ fhir:v "generated" ] ;
+             fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">[[]]</div>"^^rdf:XMLLiteral ]
+           ] ;
+           fhir:emptyReason [
+             fhir:coding ( [
+               fhir:system [
+                 fhir:v "http://terminology.hl7.org/CodeSystem/list-empty-reason"^^xsd:anyURI ;
+                 fhir:l <http://terminology.hl7.org/CodeSystem/list-empty-reason>
+               ] ;
+               fhir:code [ fhir:v "unavailable" ]
+             ] )
+           ]
+         ] [
+           fhir:code [
+             fhir:coding ( [
+               fhir:system [
+                 fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+                 fhir:l <https://fevir.net/resources/CodeSystem/179423>
+               ] ;
+               fhir:code [ fhir:v "text" ] ;
+               fhir:display [ fhir:v "Text" ]
+             ] )
+           ] ;
+           fhir:section ( [
+             fhir:extension ( [
+               fhir:url [
+                 fhir:v "http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language"^^xsd:anyURI ;
+                 fhir:l <http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language>
+               ] ;
+               fhir:value [
+                 a fhir:Code ;
+                 fhir:v "de"
+               ]
+             ] ) ;
+             fhir:title [ fhir:v "5.2.2.1. Situationen mit Empfehlungen gegen eine Knochenmarkbiopsie" ] ;
+             fhir:code [
+               fhir:coding ( [
+                 fhir:system [
+                   fhir:v "http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"^^xsd:anyURI ;
+                   fhir:l <http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections>
+                 ] ;
+                 fhir:code [ fhir:v "language" ] ;
+                 fhir:display [ fhir:v "Language" ]
+               ] )
+             ] ;
+             fhir:text [
+               fhir:status [ fhir:v "generated" ] ;
+               fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">[[]]</div>"^^rdf:XMLLiteral ]
+             ] ;
+             fhir:emptyReason [
+               fhir:coding ( [
+                 fhir:system [
+                   fhir:v "http://terminology.hl7.org/CodeSystem/list-empty-reason"^^xsd:anyURI ;
+                   fhir:l <http://terminology.hl7.org/CodeSystem/list-empty-reason>
+                 ] ;
+                 fhir:code [ fhir:v "unavailable" ]
+               ] )
+             ]
+           ] [
+             fhir:code [
+               fhir:coding ( [
+                 fhir:system [
+                   fhir:v "https://fevir.net/resources/CodeSystem/179423"^^xsd:anyURI ;
+                   fhir:l <https://fevir.net/resources/CodeSystem/179423>
+                 ] ;
+                 fhir:code [ fhir:v "text" ] ;
+                 fhir:display [ fhir:v "Text" ]
+               ] )
+             ] ;
+             fhir:entry ( [
+               fhir:l <http://fhir.awmf.org/awmf.ig/Composition/RecommendationAgainstBoneMarrowBiopsy> ;
+               fhir:reference [ fhir:v "Composition/RecommendationAgainstBoneMarrowBiopsy" ]
+             ] )
+           ] )
+         ] )
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

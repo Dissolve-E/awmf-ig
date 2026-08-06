@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Composition xmlns="http://hl7.org/fhir">
+  <id value="RecommendationExample"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Recommendation Example</div>
+  </text>
+  <identifier>
+    <use value="official"/>
+    <system value="http://example.org/recommendations"/>
+    <value value="REC-EX-001"/>
+  </identifier>
+  <version value="2.0"/>
+  <status value="final"/>
+  <type>
+    <coding>
+      <system value="https://fevir.net/resources/CodeSystem/179423"/>
+      <code value="Recommendation"/>
+      <display value="Recommendation"/>
+    </coding>
+  </type>
+  <category>
+    <coding>
+      <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-recommendation-synthesis-type"/>
+      <code value="expert-consensus"/>
+    </coding>
+  </category>
+  <date value="2025-03-06"/>
+  <author>
+    <reference value="PractitionerRole/GuidelineAuthorRoleExample"/>
+  </author>
+  <title value="Example Recommendation"/>
+  <relatesTo>
+    <type value="part-of"/>
+    <targetCanonical value="http://fhir.awmf.org/awmf.ig/Composition/GuidelineExample"/>
+  </relatesTo>
+  <section>
+    <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-intended-audience">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-intended-audience"/>
+          <code value="physician"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <code>
+      <coding>
+        <system value="https://fevir.net/resources/CodeSystem/179423"/>
+        <code value="text"/>
+        <display value="Text"/>
+      </coding>
+    </code>
+    <section>
+      <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+        <valueCode value="de"/>
+      </extension>
+      <code>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+          <code value="language"/>
+          <display value="Language"/>
+        </coding>
+      </code>
+      <text>
+        <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Example Recommendation</div>
+      </text>
+    </section>
+  </section>
+  <section>
+    <code>
+      <coding>
+        <system value="https://fevir.net/resources/CodeSystem/179423"/>
+        <code value="recommendation-statement"/>
+        <display value="Recommendation Statement"/>
+      </coding>
+    </code>
+    <section>
+      <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-section-language">
+        <valueCode value="de"/>
+      </extension>
+      <code>
+        <coding>
+          <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-guideline-sections"/>
+          <code value="language"/>
+          <display value="Language"/>
+        </coding>
+      </code>
+      <text>
+        <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Bei Patienten mit Krankheit A soll Medikament B statt Medikament C gegeben werden. Patienten mit Krankheit A, die auch noch Krankheit D haben, darf keinesfalls Medikament B gegeben, sondern müssen Medikament C erhalten.</div>
+      </text>
+    </section>
+  </section>
+</Composition>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Organization xmlns="http://hl7.org/fhir">
+  <id value="AWMFMemberOrganizationExample"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">AWMF Member Organization Example</div>
+  </text>
+  <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-medical-subject-category">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-medical-subject-categories"/>
+        <code value="psychosocial"/>
+        <display value="Psychosocial Disciplines"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-medical-subject-category">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-medical-subject-categories"/>
+        <code value="surgical"/>
+        <display value="Surgical Disciplines"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="http://fhir.awmf.org/awmf.ig/StructureDefinition/ext-medical-subject">
+    <valueCodeableConcept>
+      <text value="Anesthesiology and Intensive Care Medicine"/>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/organization-brand">
+    <extension url="brandLogo">
+      <valueUrl value="https://www.example.org/logo.png"/>
+    </extension>
+  </extension>
+  <identifier>
+    <system value="http://fhir.awmf.org/association"/>
+    <value value="-1"/>
+  </identifier>
+  <type>
+    <coding>
+      <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"/>
+      <code value="medical-society"/>
+    </coding>
+  </type>
+  <name value="Example AWMF Member Organization"/>
+  <alias value="Chirurgie.Example"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.example.org"/>
+    </telecom>
+  </contact>
+  <qualification>
+    <code>
+      <coding>
+        <system value="http://fhir.awmf.org/awmf.ig/CodeSystem/cs-awmf"/>
+        <code value="awmf-member-organization"/>
+      </coding>
+    </code>
+  </qualification>
+</Organization>

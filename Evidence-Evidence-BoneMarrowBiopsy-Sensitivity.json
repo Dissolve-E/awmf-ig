@@ -1,0 +1,21 @@
+{
+  "resourceType" : "Evidence",
+  "id" : "Evidence-BoneMarrowBiopsy-Sensitivity",
+  "meta" : {
+    "profile" : ["http://fhir.awmf.org/awmf.ig/StructureDefinition/outcome-evidence"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Evidenz zur Sensitivität von PET/CT vs. Knochenmarkbiopsie für die Stadieneinteilung</div>"
+  },
+  "status" : "active",
+  "variableDefinition" : [{
+    "variableRole" : "outcome",
+    "observed" : {
+      "reference" : "Group/Outcome-Staging-Sensitivity"
+    },
+    "intended" : {
+      "reference" : "Group/Outcome-Staging-Sensitivity"
+    }
+  }]
+}

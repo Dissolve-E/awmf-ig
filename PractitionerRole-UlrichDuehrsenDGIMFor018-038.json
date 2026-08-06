@@ -1,0 +1,23 @@
+{
+  "resourceType" : "PractitionerRole",
+  "id" : "UlrichDuehrsenDGIMFor018-038",
+  "meta" : {
+    "profile" : ["http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author-role"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: PractitionerRole UlrichDuehrsenDGIMFor018-038</b></p><a name=\"UlrichDuehrsenDGIMFor018-038\"> </a><a name=\"hcUlrichDuehrsenDGIMFor018-038\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-guideline-author-role.html\">Guideline Author Role</a></p></div><p><b>period</b>: 2022 --&gt; (ongoing)</p><p><b>practitioner</b>: <a href=\"Practitioner-UlrichDuehrsen.html\">Practitioner Ulrich Dührsen </a></p><p><b>organization</b>: <a href=\"Organization-DGIM.html\">Organization Deutsche Gesellschaft für Innere Medizin e.V. (DGIM)</a></p><p><b>code</b>: <span title=\"Codes:\">Kapitelverantwortung 5.2 Bildgebende Verfahren, Knochenmarkbiopsie und Stadieneinteilung</span></p></div>"
+  },
+  "period" : {
+    "start" : "2022"
+  },
+  "practitioner" : {
+    "reference" : "Practitioner/UlrichDuehrsen"
+  },
+  "organization" : {
+    "reference" : "Organization/DGIM"
+  },
+  "code" : [{
+    "text" : "Kapitelverantwortung 5.2 Bildgebende Verfahren, Knochenmarkbiopsie und Stadieneinteilung"
+  }]
+}

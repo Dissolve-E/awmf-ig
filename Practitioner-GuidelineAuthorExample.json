@@ -1,0 +1,19 @@
+{
+  "resourceType" : "Practitioner",
+  "id" : "GuidelineAuthorExample",
+  "meta" : {
+    "profile" : ["http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">Guideline Author Example</div>"
+  },
+  "name" : [{
+    "family" : "Smith",
+    "given" : ["John"]
+  }],
+  "telecom" : [{
+    "system" : "phone",
+    "value" : "555-555-5555"
+  }]
+}

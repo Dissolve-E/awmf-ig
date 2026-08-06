@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Evidence xmlns="http://hl7.org/fhir">
+  <id value="Evidence-BoneMarrowBiopsy-Specificity"/>
+  <meta>
+    <profile value="http://fhir.awmf.org/awmf.ig/StructureDefinition/outcome-evidence"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" dir="ltr">Evidenz zur Spezifität von PET/CT vs. Knochenmarkbiopsie für die Stadieneinteilung</div>
+  </text>
+  <status value="active"/>
+  <variableDefinition>
+    <variableRole value="outcome"/>
+    <observed>
+      <reference value="Group/Outcome-Staging-Specificity"/>
+    </observed>
+    <intended>
+      <reference value="Group/Outcome-Staging-Specificity"/>
+    </intended>
+  </variableDefinition>
+</Evidence>
