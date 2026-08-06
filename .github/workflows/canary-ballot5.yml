@@ -1,0 +1,29 @@
+name: Canary ballot5 build
+
+# Weekly drift detection for the fhir-r6-ballot5 line: triggers the branch
+# build even when nobody pushes, so breakage from moving dependencies
+# (publisher releases/latest, registry packages, templates, EBM artifacts)
+# surfaces early. Lives on main because GitHub only evaluates schedules on
+# the default branch.
+
+on:
+  schedule:
+    - cron: '30 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  actions: write
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Dispatch build-ig-glichtner.yml on fhir-r6-ballot5
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -X POST \
+            "repos/${{ github.repository }}/actions/workflows/build-ig-glichtner.yml/dispatches" \
+            -f ref=fhir-r6-ballot5
+          echo "Dispatched build-ig-glichtner.yml on fhir-r6-ballot5"
