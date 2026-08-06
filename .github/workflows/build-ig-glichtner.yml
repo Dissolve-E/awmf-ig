@@ -21,6 +21,7 @@ permissions:
 env:
   JAVA_TOOL_OPTIONS: "-Xmx6g -Dfile.encoding=UTF-8"
   PUBLISHER_REPO: glichtner/fhir-ig-publisher
+  SUSHI_VERSION: "3.20.0"
   EBM_INCUBATOR_REPO: glichtner/ebm-incubator
   EBM_INCUBATOR_ARTIFACT: ebm-incubator-package
   EBM_REPO: glichtner/ebm
@@ -61,7 +62,7 @@ jobs:
         run: gem install bundler jekyll
 
       - name: Install SUSHI
-        run: npm install -g fsh-sushi
+        run: npm install -g "fsh-sushi@${SUSHI_VERSION}"
 
       # Seeds hl7.fhir.r6.core/expansions#6.0.0-ballot5 from hl7.org (ballot5
       # is not on the package registries yet) and fixes the packages' web
@@ -168,6 +169,9 @@ jobs:
 
       - name: Run IG Publisher
         run: java -jar input-cache/publisher.jar -ig . -no-sushi
+
+      - name: QA baseline check (warn-only)
+        run: ./check-qa-baseline.sh
 
       - name: Upload build output
         uses: actions/upload-artifact@v4
