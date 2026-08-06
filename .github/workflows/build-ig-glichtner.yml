@@ -6,6 +6,7 @@ on:
       - main
       - master
       - staging
+      - fhir-r6-ballot5
   pull_request:
     branches:
       - main
@@ -61,6 +62,12 @@ jobs:
 
       - name: Install SUSHI
         run: npm install -g fsh-sushi
+
+      # Seeds hl7.fhir.r6.core/expansions#6.0.0-ballot5 from hl7.org (ballot5
+      # is not on the package registries yet) and fixes the packages' web
+      # location and materialized extension slicing; see script for details.
+      - name: Install FHIR R6 ballot5 packages into local FHIR cache
+        run: ./download-fhir-r6-ballot5.sh
 
       - name: Download EBM Incubator package artifact
         uses: dawidd6/action-download-artifact@v6

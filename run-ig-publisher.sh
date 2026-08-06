@@ -60,6 +60,9 @@ function set_release_label() {
 # download EBM IG (ci build)
 ./download-ebm-ig.sh
 
+# seed FHIR R6 ballot5 core packages (not yet on the package registries)
+./download-fhir-r6-ballot5.sh
+
 # download publisher
 ./download-publisher.sh
 publisher=$input_cache_path/$publisher_jar

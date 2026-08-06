@@ -6,6 +6,7 @@ on:
       - main
       - master
       - staging
+      - fhir-r6-ballot5
   pull_request:
     branches:
       - main
@@ -60,8 +61,16 @@ jobs:
       - name: Install fsh-sushi
         run: npm install -g fsh-sushi
 
+      # Use the glichtner fork validator (patched for R6 ballot5) instead of
+      # the official release, which does not support ballot5 yet.
       - name: Load validator
-        run: curl -L https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar -o ./validator_cli.jar
+        run: curl -fL https://github.com/glichtner/org.hl7.fhir.core/releases/latest/download/validator_cli.jar -o ./validator_cli.jar
+
+      # Seeds hl7.fhir.r6.core/expansions#6.0.0-ballot5 from hl7.org (ballot5
+      # is not on the package registries yet) and fixes the packages' web
+      # location and materialized extension slicing; see script for details.
+      - name: Install FHIR R6 ballot5 packages into local FHIR cache
+        run: ./download-fhir-r6-ballot5.sh
 
       - name: Install EBM IG continuous build
         run: ./download-ebm-ig.sh

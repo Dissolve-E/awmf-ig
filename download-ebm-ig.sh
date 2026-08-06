@@ -1,7 +1,10 @@
 #!/bin/bash
 
-# This script installs the latest GitHub release package of the EBM IG.
-# It deliberately does not use the FHIR package registry or build.fhir.org.
+# This script installs the EBM IG (and EBM Incubator) packages from the
+# rolling "ci-build" GitHub releases of the glichtner forks, which are built
+# on FHIR R6 ballot5 with the patched IG publisher.
+# It deliberately does not use the FHIR package registry or build.fhir.org
+# (neither serves ballot5-based builds of these IGs).
 
 set -euo pipefail
 
@@ -20,35 +23,22 @@ if [ "$package_version" != "ci-build" ]; then
     exit 0
 fi
 
-release_api_url="https://api.github.com/repos/HL7/ebm/releases?per_page=20"
-package_url=$(curl -fsSL "$release_api_url" \
-  | grep '"browser_download_url":' \
-  | grep -E 'package\.tgz|\.tgz' \
-  | head -n 1 \
-  | cut -d '"' -f 4)
+install_rolling_release() {
+    local repo="$1"        # e.g. glichtner/ebm
+    local package_id="$2"  # e.g. hl7.fhir.uv.ebm
+    local version="$3"     # cache version label, e.g. ci-build or dev
 
-if [ -z "$package_url" ]; then
-    echo "Could not find a package.tgz asset in the latest HL7/ebm GitHub release"
-    exit 1
-fi
+    local package_url="https://github.com/${repo}/releases/download/ci-build/package.tgz"
+    local path="$HOME/.fhir/packages/${package_id}#${version}"
 
-filename="package.tgz"
+    echo "Installing ${package_id}#${version} from ${package_url}"
+    rm -rf "$path"
+    mkdir -p "$path"
+    curl -fL "$package_url" | tar -xz -C "$path"
+    test -f "$path/package/package.json"
+}
+
 mkdir -p "$HOME/.fhir/packages"
 
-path="$HOME/.fhir/packages/hl7.fhir.uv.ebm#$package_version"
-
-# Remove path and all contents if it exists
-if [ -d "$path" ]; then
-    echo "Removing existing path: $path"
-    rm -rf "$path"
-fi
-
-echo "Installing to: $path"
-mkdir -p "$path"
-cd "$path" || exit
-
-echo "Downloading $filename from GitHub release..."
-curl -fL -o "$filename" "$package_url"
-tar -zxf "$filename"
-rm "$filename"
-test -f "$path/package/package.json"
+install_rolling_release glichtner/ebm hl7.fhir.uv.ebm ci-build
+install_rolling_release glichtner/ebm-incubator hl7.fhir.uv.ebm-incubator dev
