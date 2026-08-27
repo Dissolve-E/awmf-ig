@@ -35,6 +35,8 @@ jobs:
       - name: Install dependencies
         run: |
           sudo snap install yq
+          sudo apt-get update
+          sudo apt-get install -y jq
 
       # read id, version and canonical from sushi-config.yaml
       - name: Read YAML file

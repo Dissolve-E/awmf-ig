@@ -17,7 +17,7 @@ fi
 echo "Downloading IG Publisher..."
 mkdir -p "${SCRIPT_DIR}/input-cache"
 
-download_url="https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar"
+download_url="https://github.com/glichtner/fhir-ig-publisher/releases/latest/download/publisher.jar"
 
 echo "Downloading from: $download_url"
 curl -L "$download_url" -o "$publisher"
