@@ -18,7 +18,7 @@ Alias: $v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
 Alias: $Thesaurus.owl = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
 
 Instance: CitationSystematicReviewTsoi2015
-InstanceOf: Citation
+InstanceOf: PublicationRecord
 Usage: #example
 Title: "Citation Systematic Review"
 Description: "Citation for the Systematic Review by Tsoi et al. 2015"

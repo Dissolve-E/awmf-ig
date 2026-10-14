@@ -20,3 +20,12 @@ Examples of the FHIR resources used in this Implementation Guide can be download
 The full implementation guide can be downloaded here.
 
 *   [Full IG](full-ig.zip)
+
+### Dependency Packages
+
+The following packages match the dependencies of this AWMF build. Install both
+in your validator's package cache before loading the AWMF package.
+
+*   [EBM package](dependencies/hl7.fhir.uv.ebm.tgz)
+*   [EBM Incubator package](dependencies/hl7.fhir.uv.ebm-incubator.tgz)
+*   [Package versions, source commits and checksums](dependencies/build-info.json)

@@ -19,7 +19,7 @@ Dissolve-E (*Digitization of the AWMF guideline registry for an open, guideline-
 
 We hereby present the Implementation Guide (IG) developed for DISSOLVE-E based combining the [evidence-based medicine on FHIR (EBMonFHIR)][EMBonFHIR] IG and further defined artifacts to represent evidence-based clinical practice guidelines and recommendations, including the evidence that led to the single recommendations. Additional FHIR artifacts allow to describe the certainty of evidence based on different rating systems or the strength of recommendation, as well as the organizations and persons involved in the guideline process.
 
-This IG is based on FHIR R6 (6.0.0-ballot3).
+This IG is based on FHIR R6 (6.0.0-snapshot1).
 {:.stu-note}
 
 #### Profiles to represent a clinical practice guideline

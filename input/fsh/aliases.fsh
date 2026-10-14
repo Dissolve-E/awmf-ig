@@ -40,7 +40,7 @@ Alias: $atc = http://www.whocc.no/atc
 Alias: $atcde = http://fhir.de/CodeSystem/bfarm/atc
 
 Alias: $cs-related-artifact-type = http://hl7.org/fhir/related-artifact-type
-Alias: $cs-variable-role = http://terminology.hl7.org/CodeSystem/variable-role|6.0.0-ballot2
+Alias: $cs-variable-role = http://hl7.org/fhir/variable-role
 
 
 Alias: $cs-etd-certainty-rating = cs-evidence-to-decision-certainty-rating

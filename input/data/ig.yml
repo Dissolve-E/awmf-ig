@@ -46,7 +46,11 @@ definition:
   - code:
       code: releaselabel
       system: http://hl7.org/fhir/tools/CodeSystem/ig-parameters
-    value: Draft
+    value: ci-build
+  - code:
+      code: version-comparison
+      system: http://hl7.org/fhir/tools/CodeSystem/ig-parameters
+    value: n/a
   resource:
   - description: CodeSystem representing the domains assessed by the AGREE II instrument
       for evaluating the quality of clinical practice guidelines.
@@ -272,7 +276,7 @@ definition:
     isExample: true
     name: Citation Systematic Review
     reference:
-      reference: Citation/CitationSystematicReviewTsoi2015
+      reference: PublicationRecord/CitationSystematicReviewTsoi2015
   - description: ValueSet listing different clinical application types
     isExample: false
     name: Clinical Application Type
@@ -283,9 +287,27 @@ definition:
     name: Clinical Application Type
     reference:
       reference: CodeSystem/cs-clinical-application-type
-  - description: "Concept map from concepts from standardized vocabularies that are\
-      \ not labelled as 'standard' in Athena \u2013 OHDSI Vocabularies Repository\
-      \ to Concept IDs from 'standard' concepts"
+  - description: The date on which the composition content was approved by the publisher.
+      Approval happens once when the content is officially approved for usage.
+    isExample: false
+    name: Composition Approval Date
+    reference:
+      reference: StructureDefinition/ext-composition-approval-date
+  - description: The period during which the composition content was or is planned
+      to be effective.
+    isExample: false
+    name: Composition Effective Period
+    reference:
+      reference: StructureDefinition/ext-composition-effective-period
+  - description: The date on which the composition content was last reviewed. Review
+      happens periodically after that, but doesn't change the original approval date.
+    isExample: false
+    name: Composition Last Review Date
+    reference:
+      reference: StructureDefinition/ext-composition-last-review-date
+  - description: Concept map from concepts from standardized vocabularies that are
+      not labelled as 'standard' in Athena – OHDSI Vocabularies Repository to Concept
+      IDs from 'standard' concepts
     isExample: true
     name: Concept map from concepts from standardized vocabularies (that are not standard
       OMOP concepts) to Concept IDs of OMOP standard Concepts
@@ -349,73 +371,165 @@ definition:
     name: contributor4
     reference:
       reference: Practitioner/contributor4
-  - description: "Deutsche Gesellschaft f\xFCr An\xE4sthesiologie und Intensivmedizin\
-      \ e.V. (DGAI)"
+  - description: Deutsche Gesellschaft für Radioonkologie e.V. (DEGRO)
+    isExample: true
+    name: DEGRO
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
+    reference:
+      reference: Organization/DEGRO
+  - description: Deutsche Gesellschaft für Ultraschall in der Medizin e.V. (DEGUM)
+    isExample: true
+    name: DEGUM
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
+    reference:
+      reference: Organization/DEGUM
+  - description: Deutsche Gesellschaft für Andrologie e.V. (DGA)
+    isExample: true
+    name: DGA
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
+    reference:
+      reference: Organization/DGA
+  - description: Deutsche Gesellschaft für Anästhesiologie und Intensivmedizin e.V.
+      (DGAI)
     isExample: true
     name: DGAI
     profile:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
     reference:
       reference: Organization/DGAI
-  - description: "Deutsche Gesellschaft f\xFCr Chirurgie e.V. (DGCH)"
+  - description: Deutsche Gesellschaft für Chirurgie e.V. (DGCH)
     isExample: true
     name: DGCH
     profile:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
     reference:
       reference: Organization/DGCH
-  - description: "Deutsche Gesellschaft f\xFCr Hygiene und Mikrobiologie e.V. (DGHM)"
+  - description: Deutsche Gesellschaft für Endoskopie und Bildgebende Verfahren e.V.
+      (DGE-BV)
+    isExample: true
+    name: DGE-BV
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
+    reference:
+      reference: Organization/DGEBV
+  - description: Deutsche Gesellschaft für Geriatrie e.V. (DGG)
+    isExample: true
+    name: DGG
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
+    reference:
+      reference: Organization/DGG
+  - description: Deutsche Gesellschaft für Gynäkologie und Geburtshilfe e.V. (DGGG)
+    isExample: true
+    name: DGGG
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
+    reference:
+      reference: Organization/DGGG
+  - description: Deutsche Gesellschaft für Hygiene und Mikrobiologie e.V. (DGHM)
     isExample: true
     name: DGHM
     profile:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
     reference:
       reference: Organization/DGHM
-  - description: "Deutsche Gesellschaft f\xFCr Infektiologie e.V. (DGI)"
+  - description: Deutsche Gesellschaft für Hämatologie und Medizinische Onkologie
+      e.V. (DGHO)
+    isExample: true
+    name: DGHO
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
+    reference:
+      reference: Organization/DGHO
+  - description: Deutsche Gesellschaft für Infektiologie e.V. (DGI)
     isExample: true
     name: DGI
     profile:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
     reference:
       reference: Organization/DGI
-  - description: "Deutsche Gesellschaft f\xFCr Internistische Intensivmedizin und\
-      \ Notfallmedizin e.V. (DGIIN)"
+  - description: Deutsche Gesellschaft für Internistische Intensivmedizin und Notfallmedizin
+      e.V. (DGIIN)
     isExample: true
     name: DGIIN
     profile:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
     reference:
       reference: Organization/DGIIN
-  - description: "Deutsche Gesellschaft f\xFCr Innere Medizin e.V. (DGIM)"
+  - description: Deutsche Gesellschaft für Innere Medizin e.V. (DGIM)
     isExample: true
     name: DGIM
     profile:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
     reference:
       reference: Organization/DGIM
-  - description: "Deutsche Gesellschaft f\xFCr Pneumologie und Beatmungsmedizin e.V.\
-      \ (DGP)"
+  - description: Deutsche Gesellschaft für Nuklearmedizin e.V. (DGN)
+    isExample: true
+    name: DGN
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
+    reference:
+      reference: Organization/DGN
+  - description: Deutsche Gesellschaft für Pneumologie und Beatmungsmedizin e.V. (DGP)
     isExample: true
     name: DGP
     profile:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
     reference:
       reference: Organization/DGP
-  - description: "Deutsche Gesellschaft f\xFCr Psychiatrie und Psychotherapie, Psychosomatik\
-      \ und Nervenheilkunde e. V. (DGPPN)"
+  - description: Deutsche Gesellschaft für Palliativmedizin e.V. (DGP)
+    isExample: true
+    name: DGP (Palliativmedizin)
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
+    reference:
+      reference: Organization/DGPalliativ
+  - description: Deutsche Gesellschaft für Pathologie e.V. (DGP)
+    isExample: true
+    name: DGP (Pathologie)
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
+    reference:
+      reference: Organization/DGPathologie
+  - description: Deutsche Gesellschaft für Psychiatrie und Psychotherapie, Psychosomatik
+      und Nervenheilkunde e. V. (DGPPN)
     isExample: true
     name: DGPPN
     profile:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
     reference:
       reference: Organization/DGPPN
+  - description: Deutsche Gesellschaft für Urologie e.V. (DGU)
+    isExample: true
+    name: DGU
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
+    reference:
+      reference: Organization/DGU
+  - description: Dirk Hellwig
+    isExample: true
+    name: Dirk Hellwig
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author
+    reference:
+      reference: Practitioner/DirkHellwig
+  - description: Dirk Hellwig for DGN in the context of 018-038
+    isExample: true
+    name: Dirk Hellwig for DGN in the context of 018-038
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author-role
+    reference:
+      reference: PractitionerRole/DirkHellwigDGNFor018-038
   - description: ValueSet listing types of dissemination websites
     isExample: false
     name: Dissemination Website
     reference:
       reference: ValueSet/vs-dissemination-website
-  - description: "Deutsche R\xF6ntgengesellschaft, Gesellschaft f\xFCr Medizinische\
-      \ Radiologie e.V. (DRG)"
+  - description: Deutsche Röntgengesellschaft, Gesellschaft für Medizinische Radiologie
+      e.V. (DRG)
     isExample: true
     name: DRG
     profile:
@@ -429,6 +543,11 @@ definition:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-member-organization
     reference:
       reference: Organization/DSG
+  - description: Netzwerk Evidenzbasierte Medizin e.V. (EbM-Netzwerk)
+    isExample: true
+    name: EbM-Netzwerk
+    reference:
+      reference: Organization/EbMNetzwerk
   - description: ValueSet listing types of patient encounters based on hospitalization
       status.
     isExample: false
@@ -441,6 +560,68 @@ definition:
     name: Evidence Assessment
     reference:
       reference: StructureDefinition/evidence-assessment
+  - description: 'Evidenzsicherheit für Knochenmarkbiopsie vs. PET/CT-Staging: Ereignisfreies
+      Überleben'
+    isExample: true
+    name: 'Evidence Assessment: Knochenmarkbiopsie - Ereignisfreies Überleben'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-overall-assessment-grade
+    reference:
+      reference: ArtifactAssessment/EvA-BoneMarrowBiopsy-EFS
+  - description: 'Evidenzsicherheit für Knochenmarkbiopsie vs. PET/CT-Staging: Gesamtüberleben'
+    isExample: true
+    name: 'Evidence Assessment: Knochenmarkbiopsie - Gesamtüberleben'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-overall-assessment-grade
+    reference:
+      reference: ArtifactAssessment/EvA-BoneMarrowBiopsy-OS
+  - description: 'Evidenzsicherheit für Knochenmarkbiopsie vs. PET/CT-Staging: Negativer
+      Vorhersagewert (Stadieneinteilung)'
+    isExample: true
+    name: 'Evidence Assessment: Knochenmarkbiopsie - Negativer Vorhersagewert (Stadieneinteilung)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-overall-assessment-grade
+    reference:
+      reference: ArtifactAssessment/EvA-BoneMarrowBiopsy-NPV
+  - description: 'Evidenzsicherheit für Knochenmarkbiopsie vs. PET/CT-Staging: Positiver
+      Vorhersagewert (Stadieneinteilung)'
+    isExample: true
+    name: 'Evidence Assessment: Knochenmarkbiopsie - Positiver Vorhersagewert (Stadieneinteilung)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-overall-assessment-grade
+    reference:
+      reference: ArtifactAssessment/EvA-BoneMarrowBiopsy-PPV
+  - description: 'Evidenzsicherheit für Knochenmarkbiopsie vs. PET/CT-Staging: Progressionsfreies
+      Überleben'
+    isExample: true
+    name: 'Evidence Assessment: Knochenmarkbiopsie - Progressionsfreies Überleben'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-overall-assessment-grade
+    reference:
+      reference: ArtifactAssessment/EvA-BoneMarrowBiopsy-PFS
+  - description: 'Evidenzsicherheit für Knochenmarkbiopsie vs. PET/CT-Staging: Sensitivität
+      (Stadieneinteilung)'
+    isExample: true
+    name: 'Evidence Assessment: Knochenmarkbiopsie - Sensitivität (Stadieneinteilung)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-overall-assessment-grade
+    reference:
+      reference: ArtifactAssessment/EvA-BoneMarrowBiopsy-Sensitivity
+  - description: 'Evidenzsicherheit für Knochenmarkbiopsie vs. PET/CT-Staging: Spezifität
+      (Stadieneinteilung)'
+    isExample: true
+    name: 'Evidence Assessment: Knochenmarkbiopsie - Spezifität (Stadieneinteilung)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-overall-assessment-grade
+    reference:
+      reference: ArtifactAssessment/EvA-BoneMarrowBiopsy-Specificity
+  - description: 'Evidenzsicherheit für Knochenmarkbiopsie vs. PET/CT-Staging: Stadieneinteilung'
+    isExample: true
+    name: 'Evidence Assessment: Knochenmarkbiopsie - Stadieneinteilung'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/evidence-overall-assessment-grade
+    reference:
+      reference: ArtifactAssessment/EvA-BoneMarrowBiopsy-Staging
   - description: A structured assessment of the quality of guidelines using the AGREE
       II instrument.
     isExample: false
@@ -522,6 +703,70 @@ definition:
     name: Evidence-Multiplex PCR Diagnostic-Time to Deescalation
     reference:
       reference: Evidence/Evidence-MultiplexPCRDiagnostic-TimeToDeescalation
+  - description: Evidenz zum Einfluss von Knochenmarkbiopsie vs. PET/CT-Staging auf
+      das ereignisfreie Überleben
+    isExample: true
+    name: 'Evidence: Knochenmarkbiopsie - Ereignisfreies Überleben'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/outcome-evidence
+    reference:
+      reference: Evidence/Evidence-BoneMarrowBiopsy-EFS
+  - description: Evidenz zum Einfluss von Knochenmarkbiopsie vs. PET/CT-Staging auf
+      das Gesamtüberleben
+    isExample: true
+    name: 'Evidence: Knochenmarkbiopsie - Gesamtüberleben'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/outcome-evidence
+    reference:
+      reference: Evidence/Evidence-BoneMarrowBiopsy-OS
+  - description: Evidenz zum negativen Vorhersagewert von PET/CT vs. Knochenmarkbiopsie
+      für die Stadieneinteilung
+    isExample: true
+    name: 'Evidence: Knochenmarkbiopsie - Negativer Vorhersagewert (Stadieneinteilung)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/outcome-evidence
+    reference:
+      reference: Evidence/Evidence-BoneMarrowBiopsy-NPV
+  - description: Evidenz zum positiven Vorhersagewert von PET/CT vs. Knochenmarkbiopsie
+      für die Stadieneinteilung
+    isExample: true
+    name: 'Evidence: Knochenmarkbiopsie - Positiver Vorhersagewert (Stadieneinteilung)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/outcome-evidence
+    reference:
+      reference: Evidence/Evidence-BoneMarrowBiopsy-PPV
+  - description: Evidenz zum Einfluss von Knochenmarkbiopsie vs. PET/CT-Staging auf
+      das progressionsfreie Überleben
+    isExample: true
+    name: 'Evidence: Knochenmarkbiopsie - Progressionsfreies Überleben'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/outcome-evidence
+    reference:
+      reference: Evidence/Evidence-BoneMarrowBiopsy-PFS
+  - description: Evidenz zur Sensitivität von PET/CT vs. Knochenmarkbiopsie für die
+      Stadieneinteilung
+    isExample: true
+    name: 'Evidence: Knochenmarkbiopsie - Sensitivität (Stadieneinteilung)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/outcome-evidence
+    reference:
+      reference: Evidence/Evidence-BoneMarrowBiopsy-Sensitivity
+  - description: Evidenz zur Spezifität von PET/CT vs. Knochenmarkbiopsie für die
+      Stadieneinteilung
+    isExample: true
+    name: 'Evidence: Knochenmarkbiopsie - Spezifität (Stadieneinteilung)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/outcome-evidence
+    reference:
+      reference: Evidence/Evidence-BoneMarrowBiopsy-Specificity
+  - description: Evidenz zur Genauigkeit von PET/CT vs. Knochenmarkbiopsie für die
+      Stadieneinteilung
+    isExample: true
+    name: 'Evidence: Knochenmarkbiopsie - Stadieneinteilung'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/outcome-evidence
+    reference:
+      reference: Evidence/Evidence-BoneMarrowBiopsy-Staging
   - description: This extension allows for the indication of the date when the guideline
       was first published.
     isExample: false
@@ -535,7 +780,7 @@ definition:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-attachment
     reference:
       reference: DocumentReference/Guideline-020-013-SlideDeck
-  - description: "Gesellschaft f\xFCr Virologie e.V. (GfV)"
+  - description: Gesellschaft für Virologie e.V. (GfV)
     isExample: true
     name: GfV
     profile:
@@ -738,6 +983,20 @@ definition:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-attachment
     reference:
       reference: DocumentReference/Guideline-020-013-ShortVersion
+  - description: Lale Umutlu
+    isExample: true
+    name: Lale Umutlu
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author
+    reference:
+      reference: Practitioner/LaleUmutlu
+  - description: Lale Umutlu for DRG in the context of 018-038
+    isExample: true
+    name: Lale Umutlu for DRG in the context of 018-038
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author-role
+    reference:
+      reference: PractitionerRole/LaleUmutluDRGFor018-038
   - description: Langfassung Leitlinie 020-013
     isExample: true
     name: Langfassung
@@ -854,6 +1113,62 @@ definition:
     name: Outcome Time to Deescalation
     reference:
       reference: EvidenceVariable/OutcomeTimeToDeescalation
+  - description: 'Endpunkt: Ereignisfreies Überleben'
+    isExample: true
+    name: 'Outcome: Ereignisfreies Überleben'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-outcome
+    reference:
+      reference: Group/Outcome-EventFreeSurvival
+  - description: 'Endpunkt: Gesamtüberleben'
+    isExample: true
+    name: 'Outcome: Gesamtüberleben'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-outcome
+    reference:
+      reference: Group/Outcome-OverallSurvival
+  - description: 'Endpunkt: Negativer Vorhersagewert (Stadieneinteilung)'
+    isExample: true
+    name: 'Outcome: Negativer Vorhersagewert (Stadieneinteilung)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-outcome
+    reference:
+      reference: Group/Outcome-Staging-NPV
+  - description: 'Endpunkt: Positiver Vorhersagewert (Stadieneinteilung)'
+    isExample: true
+    name: 'Outcome: Positiver Vorhersagewert (Stadieneinteilung)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-outcome
+    reference:
+      reference: Group/Outcome-Staging-PPV
+  - description: 'Endpunkt: Progressionsfreies Überleben'
+    isExample: true
+    name: 'Outcome: Progressionsfreies Überleben'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-outcome
+    reference:
+      reference: Group/Outcome-ProgressionFreeSurvival
+  - description: 'Endpunkt: Sensitivität (Stadieneinteilung)'
+    isExample: true
+    name: 'Outcome: Sensitivität (Stadieneinteilung)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-outcome
+    reference:
+      reference: Group/Outcome-Staging-Sensitivity
+  - description: 'Endpunkt: Spezifität (Stadieneinteilung)'
+    isExample: true
+    name: 'Outcome: Spezifität (Stadieneinteilung)'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-outcome
+    reference:
+      reference: Group/Outcome-Staging-Specificity
+  - description: 'Endpunkt: Stadieneinteilung'
+    isExample: true
+    name: 'Outcome: Stadieneinteilung'
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-outcome
+    reference:
+      reference: Group/Outcome-Staging
   - description: An organization that represents patients
     isExample: false
     name: Patient Organization
@@ -866,7 +1181,7 @@ definition:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-attachment
     reference:
       reference: DocumentReference/Guideline-020-013-PatientVersion
-  - description: "Paul-Ehrlich-Gesellschaft f\xFCr Infektionstherapie e.V. (PEG)"
+  - description: Paul-Ehrlich-Gesellschaft für Infektionstherapie e.V. (PEG)
     isExample: true
     name: PEG
     profile:
@@ -887,23 +1202,23 @@ definition:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-intervention
     reference:
       reference: Group/PICOInterventionRec17
-  - description: "Sensitivit\xE4t f\xFCr die Indikation einer Demenz"
+  - description: Sensitivität für die Indikation einer Demenz
     isExample: true
     name: PICO Outcome Sensitivity of Recommendation 17 from Guideline 038-013
     profile:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-outcome
     reference:
       reference: Group/PICOOutcomeSensitivityRec17
-  - description: "Spezifizit\xE4t f\xFCr die Indikation einer Demenz"
+  - description: Spezifizität für die Indikation einer Demenz
     isExample: true
     name: PICO Outcome Specificity of Recommendation 17 from Guideline 038-013
     profile:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/conceptual-cohort-definition-outcome
     reference:
       reference: Group/PICOOutcomeSpecificityRec17
-  - description: "Population: Menschen in nicht-spezialisierten Settings (z. B. Hausarztpraxis,\
-      \ Krankenhaus), die \xFCber die kognitive St\xF6rungen berichten oder bei denen\
-      \ eine kognitive St\xF6rung beobachtet wird"
+  - description: 'Population: Menschen in nicht-spezialisierten Settings (z. B. Hausarztpraxis,
+      Krankenhaus), die über die kognitive Störungen berichten oder bei denen eine
+      kognitive Störung beobachtet wird'
     isExample: true
     name: PICO Population of Recommendation 17 from Guideline 038-013
     profile:
@@ -916,10 +1231,11 @@ definition:
     name: PICO Question
     reference:
       reference: StructureDefinition/pico-question
-  - description: "Schl\xFCsselfrage: Sind Tests in nicht-spezialisierten Settings\
-      \ sinnvoll, um eine Demenz zu erkennen bei Personen, die kognitive St\xF6rungen\
-      \ berichten oder bei denen eine\nkognitive St\xF6rung beobachtet wird und die\
-      \ einer solchen Untersuchung zustimmen?"
+  - description: 'Schlüsselfrage: Sind Tests in nicht-spezialisierten Settings sinnvoll,
+      um eine Demenz zu erkennen bei Personen, die kognitive Störungen berichten oder
+      bei denen eine
+
+      kognitive Störung beobachtet wird und die einer solchen Untersuchung zustimmen?'
     isExample: true
     name: PICO Question of Recommendation 17 from Guideline 038-013
     profile:
@@ -1115,6 +1431,14 @@ definition:
     name: Recommendation-PlanDefinition-example
     reference:
       reference: PlanDefinition/Recommendation-PlanDefinition-example
+  - description: 'Begründung für Empfehlung 5.13: Situationen mit Empfehlungen gegen
+      eine Knochenmarkbiopsie'
+    isExample: true
+    name: RecommendationAgainstBoneMarrowBiopsy-Justification
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation-justification
+    reference:
+      reference: ArtifactAssessment/RecommendationAgainstBoneMarrowBiopsy-Justification
   - description: Justification for Recommendation Cognitive Tests When Suspecting
       Dementia
     isExample: true
@@ -1235,6 +1559,24 @@ definition:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record
     reference:
       reference: Composition/DemenzenRecord
+  - description: S3-Leitlinie Diagnostik, Therapie und Nachsorge für erwachsene Patient*innen
+      mit einem diffusen großzelligen B-Zell-Lymphom (DLBCL) und verwandten Entitäten
+    isExample: true
+    name: S3-Leitlinie Diagnostik, Therapie und Nachsorge für erwachsene Patient*innen
+      mit einem diffusen großzelligen B-Zell-Lymphom und verwandten Entitäten
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record
+    reference:
+      reference: Composition/DiffuseLargeBCellLymphomaGuidelineRecord
+  - description: S3-Leitlinie Diagnostik, Therapie und Nachsorge für erwachsene Patient*innen
+      mit einem diffusen großzelligen B-Zell-Lymphom (DLBCL) und verwandten Entitäten
+    isExample: true
+    name: S3-Leitlinie Diagnostik, Therapie und Nachsorge für erwachsene Patient*innen
+      mit einem diffusen großzelligen B-Zell-Lymphom und verwandten Entitäten
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline
+    reference:
+      reference: Composition/DiffuseLargeBCellLymphomaGuideline
   - description: S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsener
       Patienten mit nosokomialer Pneumonie
     isExample: true
@@ -1253,12 +1595,12 @@ definition:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline
     reference:
       reference: Composition/NosokomialePneumonie
-  - description: "Sind Tests in nicht-spezialisierten Settings sinnvoll, um eine Demenz\
-      \ zu erkennen bei Personen, die kognitive St\xF6rungen berichten oder bei denen\
-      \ eine\nkognitive St\xF6rung beobachtet wird und die einer solchen Untersuchung\
-      \ zustimmen?"
+  - description: 'Sind Tests in nicht-spezialisierten Settings sinnvoll, um eine Demenz
+      zu erkennen bei Personen, die kognitive Störungen berichten oder bei denen eine
+
+      kognitive Störung beobachtet wird und die einer solchen Untersuchung zustimmen?'
     isExample: true
-    name: "Screening auf kognitive Beeintr\xE4chtigung"
+    name: Screening auf kognitive Beeinträchtigung
     profile:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation
     reference:
@@ -1313,6 +1655,14 @@ definition:
     name: SIGN Level of Evidence Value Set
     reference:
       reference: ValueSet/vs-sign-level-of-evidence
+  - description: 'Empfehlung 5.13: Situationen mit Empfehlungen gegen eine Knochenmarkbiopsie
+      beim PET/CT-gestützten Staging des DLBCL.'
+    isExample: true
+    name: Situationen mit Empfehlungen gegen eine Knochenmarkbiopsie
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/recommendation
+    reference:
+      reference: Composition/RecommendationAgainstBoneMarrowBiopsy
   - description: This extension allows for the indication of the date when the guideline
       was submitted to the system.
     isExample: false
@@ -1493,23 +1843,55 @@ definition:
     - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record
     reference:
       reference: Composition/RR-TestTestInvVersionMajorMinor-VersionInvalid-SHOULD-FAIL
+  - description: Thorsten Persigehl
+    isExample: true
+    name: Thorsten Persigehl
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author
+    reference:
+      reference: Practitioner/ThorstenPersigehl
+  - description: Thorsten Persigehl for DRG in the context of 018-038
+    isExample: true
+    name: Thorsten Persigehl for DRG in the context of 018-038
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author-role
+    reference:
+      reference: PractitionerRole/ThorstenPersigehlDRGFor018-038
+  - description: Ulrich Dührsen
+    isExample: true
+    name: Ulrich Dührsen
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author
+    reference:
+      reference: Practitioner/UlrichDuehrsen
+  - description: Ulrich Dührsen for DGIM in the context of 018-038
+    isExample: true
+    name: Ulrich Dührsen for DGIM in the context of 018-038
+    profile:
+    - http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-author-role
+    reference:
+      reference: PractitionerRole/UlrichDuehrsenDGIMFor018-038
 dependsOn:
 - id: hl7_fhir_uv_ebm
   packageId: hl7.fhir.uv.ebm
-  uri: http://hl7.org/fhir/uv/ebm
-  version: ci-build
+  uri: http://hl7.org/fhir/uv/ebm/ImplementationGuide/hl7.fhir.uv.ebm
+  version: dev
+- id: hl7_fhir_uv_ebm_incubator
+  packageId: hl7.fhir.uv.ebm-incubator
+  uri: http://hl7.org/fhir/uv/ebm-incubator/ImplementationGuide/hl7.fhir.uv.ebm-incubator
+  version: dev
 - id: hl7_fhir_r6_core
   packageId: hl7.fhir.r6.core
   uri: http://hl7.org/fhir/ImplementationGuide/fhir
-  version: 6.0.0-ballot3
-- id: hl7_fhir_uv_extensions
-  packageId: hl7.fhir.uv.extensions
+  version: 6.0.0-snapshot1
+- id: hl7_fhir_uv_extensions_r5
+  packageId: hl7.fhir.uv.extensions.r5
   uri: http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions
-  version: 5.3.0-ballot-tc1
+  version: 5.3.0
 - id: hl7_terminology
   packageId: hl7.terminology
   uri: http://terminology.hl7.org/ImplementationGuide/hl7.terminology
-  version: 7.0.1
+  version: 7.4.0
 description: 'This implementation guide, produced by the Dissolve-E project (G-BA
   grant 01VSF23021) in collaboration with the Association of the Scientific Medical
   Societies in Germany (AWMF), defines FHIR profiles, extensions, and guidance for
@@ -1520,7 +1902,7 @@ description: 'This implementation guide, produced by the Dissolve-E project (G-B
 
   '
 fhirVersion:
-- 6.0.0-ballot3
+- 6.0.0-snapshot1
 id: awmf.ig
 name: AWMFGuidelineRegistryIG
 packageId: awmf.ig

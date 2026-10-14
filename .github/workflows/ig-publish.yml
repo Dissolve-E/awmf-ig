@@ -1,12 +1,11 @@
 name: ImplementationGuide Publisher (CI Build)
 
 on:
-  # Triggers the workflow on push or pull request events but only for the main or master branch
+  # Build deployment branches on push; validate development branches through PRs.
   push:
     branches:
       - main
       - master
-      - staging
     paths-ignore:
       - '.github/workflows/canary-ballot5.yml'
   pull_request:
@@ -14,6 +13,7 @@ on:
       - main
       - master
       - staging
+      - 6.0.0-snapshot1
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -25,6 +25,7 @@ jobs:
   run-publisher:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    timeout-minutes: 90
     env:
       JAVA_TOOL_OPTIONS: "-Xmx6g"
 
@@ -57,14 +58,32 @@ jobs:
           echo "version: ${{ steps.yaml-data.outputs.version }}"
           echo "fhir_version: ${{ steps.yaml-data.outputs.fhir_version }}"
 
-      - name: Install EBM IG continuous build
-        run: ./download-ebm-ig.sh
-
-      - name: Run the IG publisher
+      - name: Build Incubator, EBM and AWMF
         uses: docker://hl7fhir/ig-publisher-base:latest
         with:
           # --ci-build runs without -publish flag, generating "continuous build" banner
           args: ./run-ig-publisher.sh ${{ steps.yaml-data.outputs.canonical }} --ci-build
+
+      - name: Upload AWMF and dependency packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: fhir-packages
+          path: |
+            output/package.tgz
+            output/dependencies/
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Upload QA reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ig-qa-reports
+          path: |
+            output/qa.*
+            input-cache/ig-dependencies.*/ebm/output/qa.*
+            input-cache/ig-dependencies.*/ebm-incubator/output/qa.*
+          if-no-files-found: ignore
 
       # deploy implementation guide to github pages
       - name: Deploy

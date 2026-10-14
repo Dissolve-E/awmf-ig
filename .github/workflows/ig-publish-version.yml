@@ -109,9 +109,6 @@ jobs:
           sudo snap install yq
           sudo apt-get install -y jq
 
-      - name: Install EBM IG dependency
-        run: ./download-ebm-ig.sh
-
       - name: Read config from sushi-config.yaml
         id: config
         run: |
@@ -174,6 +171,16 @@ jobs:
           PUB_FIRST: ${{ inputs.first_publication }}
           PUB_USE_GO_PUBLISH: ${{ inputs.use_go_publish }}
 
+      - name: Upload AWMF and dependency packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: fhir-packages-${{ inputs.version }}
+          path: |
+            output/package.tgz
+            input-cache/dependency-packages/
+          if-no-files-found: error
+          retention-days: 90
+
       - name: Deploy to AWMF registry
         run: |
           # Deploy published versions (exclude ci-build/ as it's managed by CI workflow)
@@ -216,7 +223,7 @@ jobs:
 
       - name: Create GitHub Release
         if: inputs.mode == 'milestone'
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ inputs.version }}
           name: Release ${{ inputs.version }}
@@ -235,6 +242,8 @@ jobs:
             - **Package:** ${{ steps.config.outputs.canonical }}/${{ inputs.version }}/package.tgz
           files: |
             output/package.tgz
+            input-cache/dependency-packages/*.tgz
+            input-cache/dependency-packages/build-info.json
           draft: false
           prerelease: ${{ contains(inputs.version, '-') }}
         env:

@@ -30,3 +30,12 @@ Description: "CodeSystem defining values to classify medical subjects into diffe
 * #other "Other Disciplines"
   * ^designation[+].language = #de
   * ^designation[=].value = "Sonstige Fächer"
+* #clinical "clinical"
+  * ^designation[+].language = #de
+  * ^designation[=].value = "klinisch"
+* #pre-clinical "pre-clinical"
+  * ^designation[+].language = #de
+  * ^designation[=].value = "vorklinisch"
+* #methodological "methodological"
+  * ^designation[+].language = #de
+  * ^designation[=].value = "methodisch"
