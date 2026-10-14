@@ -78,5 +78,3 @@ else
 fi
 
 test -s output/package.tgz
-mkdir -p output/dependencies
-cp input-cache/dependency-packages/*.tgz input-cache/dependency-packages/build-info.json output/dependencies/

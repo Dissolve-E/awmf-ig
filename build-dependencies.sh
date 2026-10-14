@@ -126,6 +126,7 @@ ruby -rjson -rdigest -e '
   File.write(File.join(output, "build-info.json"), JSON.pretty_generate(info) + "\n")
 ' "$packages_dir" "$work_dir/ebm-incubator" "$work_dir/ebm" "$publisher" "$incubator_version" "$ebm_version"
 
-# Publish these files as static IG content, so download links are checked too.
-mkdir -p "$repo_dir/input/pagecontent/dependencies"
-cp "$packages_dir"/*.tgz "$packages_dir/build-info.json" "$repo_dir/input/pagecontent/dependencies/"
+# The template copies assets unchanged, including into the language directories.
+# Make downloads available before link checking and full-ig.zip generation.
+mkdir -p "$repo_dir/input/assets/dependencies"
+cp "$packages_dir"/*.tgz "$packages_dir/build-info.json" "$repo_dir/input/assets/dependencies/"
