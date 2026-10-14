@@ -16,6 +16,8 @@
 
 set -euo pipefail               # ← abort on any non-zero exit
 
+cd "$(dirname "${BASH_SOURCE[0]}")"
+
 # Parse arguments
 CI_BUILD=false
 targetUrl=""
@@ -40,10 +42,7 @@ if [ -z "$targetUrl" ]; then
   exit 1
 fi
 
-publisher_jar=publisher.jar
-input_cache_path=./input-cache/
-
-export JAVA_TOOL_OPTIONS="$JAVA_TOOL_OPTIONS -Dfile.encoding=UTF-8"
+export JAVA_TOOL_OPTIONS="${JAVA_TOOL_OPTIONS:-} -Dfile.encoding=UTF-8"
 
 function set_release_label() {
   local release_label=$1
@@ -57,21 +56,27 @@ function set_release_label() {
   sed -i "s/^releaseLabel: .*/releaseLabel: $release_label/g" "$sushi_config_file"
 }
 
-# download EBM IG (ci build)
-./download-ebm-ig.sh
+mkdir -p input-cache
+config_backup="$(mktemp input-cache/sushi-config.XXXXXX)"
+cp sushi-config.yaml "$config_backup"
+trap 'cp "$config_backup" sushi-config.yaml; rm -f "$config_backup"' EXIT
 
-# download publisher
-./download-publisher.sh
-publisher=$input_cache_path/$publisher_jar
+# Fetch and build both upstream dependencies with the same Publisher as AWMF.
+./build-dependencies.sh
+publisher="$PWD/input-cache/publisher.jar"
 
 if [ "$CI_BUILD" = true ]; then
   # CI build - no -publish flag generates "continuous build" banner
   echo "Running CI build..."
   set_release_label "ci-build"
-  java -jar $publisher -ig .
+  java -Duser.home="$HOME" -Xmx6g -jar "$publisher" -ig .
 else
   # Release build - with -publish flag generates "Downloaded Version" banner
   echo "Running release build..."
   set_release_label "qa-preview"
-  java -jar $publisher -ig . -publish $targetUrl
+  java -Duser.home="$HOME" -Xmx6g -jar "$publisher" -ig . -publish "$targetUrl"
 fi
+
+test -s output/package.tgz
+mkdir -p output/dependencies
+cp input-cache/dependency-packages/*.tgz input-cache/dependency-packages/build-info.json output/dependencies/

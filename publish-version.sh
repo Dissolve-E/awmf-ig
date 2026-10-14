@@ -376,14 +376,9 @@ update_sushi_config() {
     log_info "Updated sushi-config.yaml (version: ${VERSION}, releaseLabel: ${RELEASE_LABEL})"
 }
 
-download_publisher() {
-    log_info "Ensuring IG Publisher is available..."
-    "${SCRIPT_DIR}/download-publisher.sh"
-}
-
 download_dependencies() {
-    log_info "Downloading EBM IG dependency..."
-    "${SCRIPT_DIR}/download-ebm-ig.sh"
+    log_info "Building EBM Incubator and EBM dependency packages..."
+    "${SCRIPT_DIR}/build-dependencies.sh"
 }
 
 run_go_publish() {
@@ -414,8 +409,9 @@ run_go_publish() {
     # STEP 1: Build the IG first (required before -go-publish)
     # -go-publish expects the IG to already be built with output/ and output/qa.json
     log_info "Building IG before publication..."
-    java -Xmx6g -jar "$publisher" -ig "$SCRIPT_DIR" -publish "${CANONICAL}"
+    java -Duser.home="$HOME" -Xmx6g -jar "$publisher" -ig "$SCRIPT_DIR" -publish "${CANONICAL}"
 
+    test -s "${SCRIPT_DIR}/output/package.tgz"
     if [ ! -f "${SCRIPT_DIR}/output/qa.json" ]; then
         log_error "IG build failed - output/qa.json not found"
         return 1
@@ -453,7 +449,7 @@ run_go_publish() {
 
     # STEP 2: Run the IG Publisher with -go-publish to organize output
     log_info "Executing IG Publisher -go-publish..."
-    java -Xmx6g -jar "$publisher" -go-publish \
+    java -Duser.home="$HOME" -Xmx6g -jar "$publisher" -go-publish \
         -source "$SCRIPT_DIR" \
         -web "$WEBROOT" \
         -history "$HISTORY_DIR" \
@@ -792,7 +788,8 @@ run_simple_publish() {
     local publisher="${SCRIPT_DIR}/input-cache/publisher.jar"
     
     # Build the IG with -publish flag
-    java -Xmx6g -jar "$publisher" -ig "$SCRIPT_DIR" -publish "${CANONICAL}"
+    java -Duser.home="$HOME" -Xmx6g -jar "$publisher" -ig "$SCRIPT_DIR" -publish "${CANONICAL}"
+    test -s "${SCRIPT_DIR}/output/package.tgz"
     
     # Create version directory structure
     local version_dir="${WEBROOT}/${VERSION}"
@@ -1128,7 +1125,6 @@ main() {
     
     create_publication_request
     update_sushi_config
-    download_publisher
     download_dependencies
     
     # Choose publication method

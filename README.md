@@ -36,11 +36,9 @@ The project is a collaboration between:
 - **Howto Health GmbH**
 - **Universitätsmedizin Greifswald**
 
-## Usage 
+## Usage
 
-You may want to use [fsh-sushi](https://www.npmjs.com/package/fsh-sushi) to compile the FHIR Shorthand (fsh) specifications found in this repository to FHIR JSON files. 
-Before doing so, please run _download-ebm-ig.sh_ at the repository's root first, in order to retrieve relevant reference specifications from the current build of the [EBM IG](https://hl7.org/fhir/uv/ebm/2025May/).
-
+This implementation guide targets FHIR `6.0.0-snapshot1`.
 
 ## Contributing
 
