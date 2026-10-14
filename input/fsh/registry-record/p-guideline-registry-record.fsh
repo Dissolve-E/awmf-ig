@@ -1,36 +1,9 @@
-// ============================================================================
-// WORKAROUND PROFILE: EvidenceReportWithContactSlices
-// ============================================================================
-// This intermediate profile exists as a workaround for a limitation in the 
-// FHIR IG Publisher's snapshot generation algorithm.
-//
-// PROBLEM: The FHIR snapshot generator (ProfilePathProcessor.processPathWithSlicedBase)
-// enforces strict ordering rules for slices:
-//   1. Definition order must be maintained
-//   2. Slice element names have to match
-//   3. New slices must be introduced at the end
-//
-// When re-slicing the parent's 'extendedContactDetail' slice (e.g., creating
-// extendedContactDetail/registrant, extendedContactDetail/coordinator), these
-// new sub-slices appear in the differential BETWEEN the parent's existing slices
-// (extendedContactDetail and publicationDate), violating rule #3.
-//
-// This causes the error: "Named items are out of order in the slice"
-//
-// WORKAROUND: By isolating the re-slicing in a separate intermediate profile,
-// we ensure that the main child profile (AWMFGuidelineRegistryRecord) does not
-// have its differential contain both parent slice constraints and re-sliced
-// sub-slices in a way that violates the ordering rules.
-//
-// The intermediate profile handles ONLY the extendedContactDetail re-slicing,
-// and the main profile inherits from it instead of directly from EvidenceReport.
-// ============================================================================
-
-Profile: EvidenceReportWithContactSlices
+Profile: AWMFGuidelineRegistryRecord
 Parent: $ebm-evidence-report
-Id: evidence-report-with-contact-slices
-Title: "Evidence Report with Contact Slices"
-Description: "Intermediate profile that re-slices the extendedContactDetail extension from EvidenceReport. This workaround profile isolates the re-slicing to avoid 'Named items are out of order in the slice' errors in derived profiles. See profile comments for detailed explanation."
+Id: guideline-registry-record
+Title: "Guideline Registry Record"
+Description: "Guideline Registry Record containing metadata and registry-specific information for a clinical practice guideline."
+
 * extension ^slicing.discriminator[1].type = #value
 * extension ^slicing.discriminator[1].path = "value.ofType(ExtendedContactDetail).purpose"
 * extension[extendedContactDetail] contains 
@@ -62,16 +35,6 @@ Description: "Intermediate profile that re-slices the extendedContactDetail exte
     * value 1..1
   * address 0..1
 
-
-// ============================================================================
-// MAIN PROFILE: AWMFGuidelineRegistryRecord
-// ============================================================================
-
-Profile: AWMFGuidelineRegistryRecord
-Parent: EvidenceReportWithContactSlices // Inherits from workaround profile instead of EvidenceReport directly
-Id: guideline-registry-record
-Title: "Guideline Registry Record"
-Description: "Guideline Registry Record containing metadata and registry-specific information for a clinical practice guideline."
 
 // TODO: Decide whether to make another AWMF profile that contains all AWMF-specific logic [all, after workshop]
 
