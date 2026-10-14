@@ -17,7 +17,7 @@ git clone --quiet --depth 1 --branch master \
   https://github.com/HL7/ebm.git "$work_dir/ebm"
 
 prepare_config() {
-  ruby -ryaml -e '
+  ruby -ryaml -rjson -rrexml/document -e '
     path, build_id, incubator_version = ARGV
     config = YAML.load_file(path)
     abort "Expected FHIR 6.0.0-snapshot1 in #{path}" unless config["fhirVersion"] == "6.0.0-snapshot1"
@@ -26,6 +26,47 @@ prepare_config() {
     config["parameters"]["version-comparison"] = "n/a"
     unless incubator_version.to_s.empty?
       config.fetch("dependencies")["hl7.fhir.uv.ebm-incubator"] = incubator_version
+    end
+
+    # Additional resource definitions must use the IG version. Update their
+    # versioned references too, including resourceDefinition on XML examples.
+    root = File.dirname(path)
+    references = {}
+    Array(config["parameters"]["additional-resource"]).each do |relative_path|
+      resource_path = File.join(root, relative_path)
+      case File.extname(resource_path)
+      when ".json"
+        definition = JSON.parse(File.read(resource_path))
+        abort "Expected StructureDefinition in #{resource_path}" unless definition["resourceType"] == "StructureDefinition"
+        url = definition.fetch("url")
+        old_version = definition["version"]
+        if old_version
+          definition["version"] = config.fetch("version")
+          File.write(resource_path, JSON.pretty_generate(definition) + "\n")
+        end
+      when ".xml"
+        definition = REXML::Document.new(File.read(resource_path))
+        abort "Expected FHIR StructureDefinition in #{resource_path}" unless
+          definition.root.name == "StructureDefinition" && definition.root.namespace == "http://hl7.org/fhir"
+        url = definition.root.elements["url"].attributes.fetch("value")
+        version_element = definition.root.elements["version"]
+        old_version = version_element&.attributes&.fetch("value", nil)
+        if version_element
+          version_element.attributes["value"] = config.fetch("version")
+          File.write(resource_path, definition.to_s)
+        end
+      else
+        abort "Expected JSON or XML additional resource: #{resource_path}"
+      end
+      references["#{url}|#{old_version}"] = "#{url}|#{config.fetch("version")}" unless old_version.to_s.empty?
+    end
+    unless references.empty?
+      pattern = /(?:#{Regexp.union(references.keys).source})(?=["\x27<\s]|$)/
+      Dir.glob(File.join(root, "input", "**", "*.{xml,json,fsh}")).each do |source|
+        text = File.read(source)
+        updated = text.gsub(pattern) { |reference| references.fetch(reference) }
+        File.write(source, updated) unless updated == text
+      end
     end
     File.write(path, YAML.dump(config))
     puts config["version"]
