@@ -96,7 +96,6 @@
 [SD:Evidence Overall Assessment GRADE]: StructureDefinition-evidence-overall-assessment-grade.html
 [SD:Evidence Overall Assessment Oxford 2011]: StructureDefinition-evidence-overall-assessment-oxford2011.html
 [SD:Evidence Overall Quality Assessment]: StructureDefinition-evidence-overall-quality-assessment.html
-[SD:Evidence Report with Contact Slices]: StructureDefinition-evidence-report-with-contact-slices.html
 [SD:First Publication Date]: StructureDefinition-ext-first-publication-date.html
 [SD:Guideline]: StructureDefinition-awmf-guideline.html
 [SD:Guideline Attachment]: StructureDefinition-guideline-attachment.html
