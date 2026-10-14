@@ -1,13 +1,11 @@
 name: ImplementationGuide Publisher (CI Build)
 
 on:
-  # Triggers the workflow on push or pull request events but only for the main or master branch
+  # Build deployment branches on push; validate development branches through PRs.
   push:
     branches:
       - main
       - master
-      - staging
-      - 6.0.0-snapshot1
     paths-ignore:
       - '.github/workflows/canary-ballot5.yml'
   pull_request:
