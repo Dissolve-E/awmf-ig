@@ -6,6 +6,7 @@ Thumbs.db
 /output
 /temp
 /template
+/awmf-template/**/.index.*
 /.publication
 pdf/
 *.jar
