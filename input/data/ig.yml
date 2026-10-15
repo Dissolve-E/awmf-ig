@@ -667,14 +667,6 @@ definition:
     name: Evidence Overall Quality Assessment
     reference:
       reference: StructureDefinition/evidence-overall-quality-assessment
-  - description: Intermediate profile that re-slices the extendedContactDetail extension
-      from EvidenceReport. This workaround profile isolates the re-slicing to avoid
-      'Named items are out of order in the slice' errors in derived profiles. See
-      profile comments for detailed explanation.
-    isExample: false
-    name: Evidence Report with Contact Slices
-    reference:
-      reference: StructureDefinition/evidence-report-with-contact-slices
   - description: CodeSystem defining GRADE Evidence to Decision (EtD) Framework Certainty
       Ratings
     isExample: false
