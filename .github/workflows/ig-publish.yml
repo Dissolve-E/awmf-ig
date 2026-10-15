@@ -19,7 +19,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
     
 jobs:
   run-publisher:
@@ -84,16 +84,6 @@ jobs:
             input-cache/ig-dependencies.*/ebm/output/qa.*
             input-cache/ig-dependencies.*/ebm-incubator/output/qa.*
           if-no-files-found: ignore
-
-      # deploy implementation guide to github pages
-      - name: Deploy
-        if: (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./output
-          force_orphan: true
-
 
       # ───────────  Upload CI build to AWMF host  ───────────
       # NOTE: CI builds go to /ci-build/ subdirectory to preserve published versions
