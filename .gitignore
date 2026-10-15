@@ -17,5 +17,6 @@ notebooks/
 *-generated.md
 .vscode/
 /examples/
+dev/
 publication-request.json
 ig-registry.json

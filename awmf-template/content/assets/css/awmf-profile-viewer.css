@@ -1,4 +1,6 @@
 /* Layout stays local; colors come from project.css, typography from native IG content. */
+html.apv-loading #tabs { display: none !important; }
+html.apv-loading #profile::after { content: "Loading FHIR structure…"; display: block; margin-block: 18px; font-size: 14px; font-weight: normal; }
 .apv {
   --apv-surface: var(--ig-header-container-color, Canvas);
   --apv-soft: var(--breadcrumb-bg-color, Canvas);
@@ -12,7 +14,7 @@
 .apv *, .apv *::before, .apv *::after { box-sizing: border-box; font-family: inherit; }
 .apv button, .apv input { font: inherit; }
 .apv button { cursor: pointer; }
-.apv button:focus-visible, .apv a:focus-visible, .apv input:focus-visible, .apv-original summary:focus-visible { outline: 2px solid var(--link-color, Highlight); outline-offset: 3px; }
+.apv button:focus-visible, .apv a:focus-visible, .apv input:focus-visible, .apv-original summary:focus-visible { outline: 2px solid var(--apv-link-color, Highlight); outline-offset: 3px; }
 .apv-toolbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; padding: 18px 20px 12px; }
 .apv-heading.h4 { margin: 0; font-family: var(--apv-heading-font-family, inherit); }
 .apv-heading .apv-subtitle { display: block; margin-top: 3px; color: var(--breadcrumb-text-color, inherit); font-family: var(--apv-font-family, inherit); font-size: var(--apv-font-size, inherit); line-height: var(--apv-line-height, normal); font-weight: normal; }
@@ -42,7 +44,8 @@
 .apv-tree-branch { position: absolute; top: var(--apv-branch-y); width: 18px; border-top: 1px dotted var(--stripe-bg-color, GrayText); }
 .apv-tree-leaf { width: 28px; }
 .apv .apv-name a { color: inherit; text-decoration: none; }
-.apv .apv-name a:hover { color: var(--link-hover-color, LinkText); text-decoration: underline; }
+.apv .apv-name a.apv-inherited { color: var(--apv-muted); }
+.apv .apv-name a:hover { color: var(--apv-link-color, LinkText); text-decoration: underline; }
 .apv-toggle { display: inline-block; flex: 0 0 14px; width: 14px; padding: 0; border: 0; background: transparent; color: var(--breadcrumb-text-color, inherit); text-align: center; }
 .apv .apv-icon { display: block; flex: 0 0 16px; width: 16px; height: 16px; padding: 0; margin: 0; border: 0; background: transparent; }
 .apv[data-mode="hybrid"] .apv-icon-inherited { opacity: .6; filter: grayscale(.65); }
@@ -52,11 +55,11 @@
 .apv-flags .apv-specified { color: var(--btn-active-color, inherit); font-weight: bold; }
 .apv .apv-table .apv-card { width: 6%; white-space: nowrap; }
 .apv-types { width: 18%; overflow-wrap: anywhere; }
-.apv-types a, .apv-details a { color: var(--link-color, LinkText); text-decoration: none; }
+.apv .apv-types a[href], .apv .apv-details a[href], .apv-popover a[href] { color: var(--apv-link-color, LinkText); text-decoration: none; }
+.apv .apv-types a[href]:hover, .apv-popover a[href]:hover { text-decoration: underline; }
 .apv-details { max-width: 550px; overflow-wrap: anywhere; }
-.apv-constraint { display: flex; gap: 5px; margin-top: 1px; }
-.apv-tag { border: 1px solid var(--apv-border); border-radius: 3px; padding: 0 4px; align-self: flex-start; flex-shrink: 0; background: var(--apv-soft); }
-.apv .apv-inherited, .apv .apv-inherited a { color: var(--apv-muted); }
+.apv .apv-detail-trigger { display: block; width: 100%; min-height: 1.4em; border: 0; background: transparent; color: inherit; padding: 0; margin: 0; text-align: start; cursor: help; }
+.apv .apv-inherited { color: var(--apv-muted); }
 .apv .apv-diff-inherited { visibility: hidden; }
 .apv .apv-details .apv-diff-inherited { display: none; }
 .apv .apv-specified { font-weight: 500; }
@@ -69,5 +72,20 @@
 .apv-original > summary::before { content: "▸"; display: inline-block; margin-inline-end: 7px; }
 .apv-original[open] > summary::before { content: "▾"; }
 .apv-empty { text-align: center; padding: 30px !important; }
+.apv-popover { position: fixed; inset: auto; z-index: 1100; width: 620px; max-width: calc(100vw - 24px); max-height: min(720px, calc(100vh - 24px)); margin: 0; padding: 16px; overflow: auto; box-shadow: 0 5px 24px #0003; }
+.apv-popover-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 12px; overflow-wrap: anywhere; }
+.apv-popover-actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.apv-popover-pin { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; padding: 3px; border: 1px solid transparent; border-radius: 3px; background: transparent; color: inherit; }
+.apv-popover-pin svg { display: block; width: 18px; height: 18px; transform: rotate(-35deg); }
+.apv-popover-pin[aria-pressed="true"] { color: var(--apv-link-color, LinkText); border-color: currentColor; background: var(--apv-soft); }
+.apv-popover-pin[aria-pressed="true"] svg { transform: none; }
+.apv-popover-close { border: 0; background: transparent; color: inherit; font-size: 22px !important; line-height: 1; padding: 0 3px; }
+.apv-detail-section { margin-block: 14px; }
+.apv-detail-heading { margin: 0 0 6px; color: var(--apv-color, inherit); font-weight: bold; }
+.apv-detail-section p { margin: 0 0 6px; white-space: pre-wrap; }
+.apv-invariant { margin-bottom: 14px; }
+.apv-popover .apv-value { margin: 6px 0; padding: 10px; border: 1px solid var(--apv-border); border-radius: 3px; background: var(--apv-soft); color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; tab-size: 2; }
+.apv-popover .apv-value { font-family: ui-monospace, monospace; font-size: .95em; line-height: 1.5; }
+.apv-popover .apv-value code { font-family: inherit; font-size: inherit; line-height: inherit; }
 @media (max-width: 650px) { .apv-toolbar { align-items: flex-start; } .apv-controls { width: 100%; justify-content: space-between; } }
-@media print { .apv-scroll { overflow: visible; max-height: none; } .apv-tools { display: none; } .apv .apv-table th { position: static; } }
+@media print { .apv-scroll { overflow: visible; max-height: none; } .apv-tools, .apv-popover { display: none; } .apv .apv-table th { position: static; } }

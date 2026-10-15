@@ -62,7 +62,7 @@
     if (term) {
       for (const node of model.nodes) {
         const e = node.element;
-        const searchable = [node.id, e.short, e.definition, JSON.stringify(e.type), JSON.stringify(e.binding),
+        const searchable = [node.id, e.short, e.definition, JSON.stringify(e.type), JSON.stringify(e.binding), JSON.stringify(e.constraint),
           ...values(e).filter(([k]) => /^(fixed|pattern)/.test(k)).map(([,v]) => JSON.stringify(v))].join(" ").toLowerCase();
         if (searchable.includes(term)) {
           for (let ancestor = node; ancestor; ancestor = ancestor.parent) matches.add(ancestor.id);
@@ -87,6 +87,17 @@
   global.AwmfProfileViewer = api;
   if (typeof document === "undefined") return;
 
+  // Run in the head: hide the native tables before first paint and fetch data
+  // while the browser is still parsing the page. No JavaScript means no hiding.
+  const filename = decodeURIComponent(location.pathname.split("/").pop()).replace(/\.html$/, "");
+  const profilePage = /^StructureDefinition-[A-Za-z0-9.-]+$/.test(filename) &&
+    !/(?:-(?:definitions|mappings|examples|testing)|\.profile\.(?:xml|json|ttl|history))$/.test(filename);
+  const viewerScript = document.currentScript || document.querySelector('script[src*="awmf-profile-viewer.js"]');
+  if (profilePage) document.documentElement.classList.add("apv-loading");
+  const profileRequest = profilePage ? loadProfile() : null;
+  // A failed request may finish before DOMContentLoaded. run() handles the error.
+  profileRequest?.catch(() => {});
+
   function el(tag, className, text) {
     const node = document.createElement(tag);
     if (className) node.className = className;
@@ -101,7 +112,18 @@
     } catch (_) { /* Keep unresolvable canonicals as text. */ }
     return link;
   }
-  const compact = value => typeof value === "object" ? JSON.stringify(value) : String(value);
+  const canonical = url => url.split("|")[0];
+  function canonicalLink(url) {
+    const base = canonical(url);
+    const link = safeLink(base.split("/").pop(), canonicalPaths.get(base) || base);
+    link.dataset.canonical = base;
+    return link;
+  }
+  function valueBlock(value) {
+    const pre = el("pre", "apv-value");
+    pre.append(el("code", "", typeof value === "object" ? JSON.stringify(value, null, 2) : String(value)));
+    return pre;
+  }
   const typeName = type => type.extension?.find(extension =>
     extension.url === "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type")?.valueUrl || type.code;
   function elementIcon(node, resource) {
@@ -160,6 +182,11 @@
       }
     }
     viewer.style.setProperty("--apv-heading-font-family", getComputedStyle(document.getElementById("profile")).fontFamily);
+    const linkSample = safeLink("", "#");
+    linkSample.hidden = true;
+    original.parentElement.append(linkSample);
+    viewer.style.setProperty("--apv-link-color", getComputedStyle(linkSample).color);
+    linkSample.remove();
     const toolbar = el("div", "apv-toolbar");
     const heading = el("div", "apv-heading h4", "FHIR structure");
     heading.setAttribute("role", "heading");
@@ -212,7 +239,7 @@
     const scroller = el("div", "apv-scroll");
     const table = el("table", "apv-table");
     const head = el("thead"), header = el("tr");
-    for (const title of ["Element", "Flags", "Card.", "Type", "Description & constraints"]) {
+    for (const title of ["Element", "Flags", "Card.", "Type", "Description"]) {
       const th = el("th", "", title);
       th.scope = "col";
       header.append(th);
@@ -235,12 +262,180 @@
       const specified = keys.some(key => own(node.diff, key));
       return specified ? "apv-specified" : state.mode === "diff" ? "apv-diff-inherited" : state.mode === "hybrid" ? "apv-inherited" : "";
     }
-    function detail(node, key, label, value) {
-      const row = el("div", `apv-constraint ${fieldClass(node, [key])}`);
-      row.append(el("span", "apv-tag", label), el("span", "", value));
-      return row;
+    // One lazily populated panel keeps long constraints and JSON out of the rows.
+    // Native popovers use the top layer; a fixed-position fallback also works.
+    const detailPanel = el("aside", "apv apv-popover");
+    detailPanel.id = "awmf-element-details";
+    detailPanel.hidden = true;
+    detailPanel.setAttribute("role", "dialog");
+    detailPanel.setAttribute("aria-labelledby", "awmf-element-details-title");
+    detailPanel.style.cssText = viewer.style.cssText;
+    const nativePopover = typeof detailPanel.showPopover === "function";
+    if (nativePopover) detailPanel.setAttribute("popover", "manual");
+    document.body.append(detailPanel);
+    let activeDetail, detailAnchor, detailX, pinned = false, restoringFocus = false, hoverTimer, hideTimer;
+
+    function closeDetails(restoreFocus = false) {
+      clearTimeout(hoverTimer);
+      clearTimeout(hideTimer);
+      if (!activeDetail) return;
+      const anchor = detailAnchor;
+      restoringFocus = true;
+      if (nativePopover && detailPanel.matches(":popover-open")) detailPanel.hidePopover();
+      detailPanel.hidden = true;
+      detailAnchor?.setAttribute("aria-expanded", "false");
+      activeDetail = detailAnchor = null;
+      detailX = undefined;
+      pinned = false;
+      if (restoreFocus && anchor?.isConnected) {
+        anchor.focus({ preventScroll: true });
+      }
+      restoringFocus = false;
     }
+    function positionDetails() {
+      const row = detailAnchor?.closest("tr");
+      if (!row || detailPanel.hidden) return;
+      const rect = row.getBoundingClientRect();
+      const margin = 12, gap = 8;
+      // The pointer is inside this row: placing the panel beneath the complete
+      // row also keeps it below the pointer. Freeze x when opening, not on move.
+      const top = rect.bottom + gap;
+      detailPanel.style.maxHeight = `${Math.max(80, Math.min(720, innerHeight - margin - top))}px`;
+      const width = detailPanel.offsetWidth;
+      const left = Math.max(margin, Math.min(detailX + gap, innerWidth - width - margin));
+      detailPanel.style.left = `${left}px`;
+      detailPanel.style.top = `${top}px`;
+    }
+    function openDetails(node, anchor, pin = false, pointerX) {
+      clearTimeout(hoverTimer);
+      clearTimeout(hideTimer);
+      if (pinned && !pin) return;
+      const changedNode = activeDetail !== node;
+      if (changedNode) detailX = pointerX ?? anchor.getBoundingClientRect().left;
+      detailAnchor?.setAttribute("aria-expanded", "false");
+      activeDetail = node;
+      detailAnchor = anchor;
+      pinned = pin;
+      anchor.setAttribute("aria-expanded", "true");
+      const heading = el("div", "apv-popover-heading");
+      const title = el("strong", "", node.id);
+      title.id = "awmf-element-details-title";
+      const actions = el("div", "apv-popover-actions");
+      const pinButton = el("button", "apv-popover-pin");
+      pinButton.type = "button";
+      pinButton.setAttribute("aria-label", "Pin element details");
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("viewBox", "0 0 24 24");
+      svg.setAttribute("aria-hidden", "true");
+      svg.setAttribute("focusable", "false");
+      const pinPath = document.createElementNS(svg.namespaceURI, "path");
+      pinPath.setAttribute("d", "M9 3h6l-1 7 4 4v3H6v-3l4-4-1-7ZM12 17v5");
+      pinPath.setAttribute("fill", "none");
+      pinPath.setAttribute("stroke", "currentColor");
+      pinPath.setAttribute("stroke-width", "1.7");
+      pinPath.setAttribute("stroke-linejoin", "round");
+      pinPath.setAttribute("stroke-linecap", "round");
+      svg.append(pinPath);
+      pinButton.append(svg);
+      function updatePin() {
+        pinButton.setAttribute("aria-pressed", String(pinned));
+        pinButton.title = pinned ? "Unpin element details" : "Pin element details";
+      }
+      updatePin();
+      pinButton.addEventListener("click", event => {
+        clearTimeout(hoverTimer);
+        clearTimeout(hideTimer);
+        pinned = !pinned;
+        updatePin();
+        if (!pinned) {
+          if (event.detail) pinButton.blur();
+          scheduleClose();
+        }
+      });
+      const close = el("button", "apv-popover-close", "×");
+      close.type = "button";
+      close.setAttribute("aria-label", "Close element details");
+      close.addEventListener("click", () => closeDetails(true));
+      actions.append(pinButton, close);
+      heading.append(title, actions);
+      detailPanel.replaceChildren(heading);
+      function section(label, changed, content) {
+        const section = el("section", `apv-detail-section${state.mode === "hybrid" && !changed ? " apv-inherited" : ""}`);
+        const heading = el("div", "apv-detail-heading", label);
+        heading.setAttribute("role", "heading");
+        heading.setAttribute("aria-level", "5");
+        section.append(heading, content);
+        detailPanel.append(section);
+      }
+      const e = node.element;
+      if (e.definition || e.short) section("Definition", own(node.diff, e.definition ? "definition" : "short"), el("p", "", e.definition || e.short));
+      for (const [key, value] of values(e)) {
+        if (/^(fixed|pattern)[A-Z]/.test(key)) section(key.startsWith("fixed") ? "Fixed value" : "Pattern", own(node.diff, key), valueBlock(value));
+      }
+      if (e.binding?.valueSet) {
+        const binding = el("p");
+        binding.append(canonicalLink(e.binding.valueSet), document.createTextNode(` (${e.binding.strength})`));
+        if (e.binding.description) binding.append(el("span", "", ` — ${e.binding.description}`));
+        section("Binding", own(node.diff, "binding"), binding);
+      }
+      if (e.slicing) section("Slicing", own(node.diff, "slicing"), valueBlock(e.slicing));
+      if (e.constraint?.length) {
+        const constraints = el("div", "apv-invariants");
+        for (const constraint of e.constraint) {
+          const specified = node.diff?.constraint?.some(c => c.key === constraint.key) || constraint.source === model.resource.url;
+          const item = el("section", `apv-invariant${state.mode === "hybrid" && !specified ? " apv-inherited" : ""}`);
+          item.append(el("strong", "", constraint.key), el("p", "", constraint.human || ""));
+          if (constraint.expression) item.append(valueBlock(constraint.expression));
+          constraints.append(item);
+        }
+        section("Constraints", true, constraints);
+      }
+      const definitionLink = safeLink("Full element definition", `${filename}-definitions.html#${encodeURIComponent(node.id)}`);
+      detailPanel.append(definitionLink);
+      detailPanel.hidden = false;
+      if (nativePopover && !detailPanel.matches(":popover-open")) detailPanel.showPopover();
+      positionDetails();
+      if (changedNode) detailPanel.scrollTop = 0;
+    }
+    function scheduleClose() {
+      clearTimeout(hoverTimer);
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(() => {
+        if (!pinned && !detailPanel.matches(":hover") && !detailAnchor?.closest("tr")?.matches(":hover") &&
+            !detailPanel.contains(document.activeElement) && document.activeElement !== detailAnchor) closeDetails();
+      }, 200);
+    }
+    function detailTrigger(trigger, node) {
+      trigger.setAttribute("aria-controls", detailPanel.id);
+      trigger.setAttribute("aria-haspopup", "dialog");
+      trigger.setAttribute("aria-expanded", "false");
+      trigger.addEventListener("focus", () => {
+        if (!restoringFocus && trigger.matches(":focus-visible")) openDetails(node, trigger);
+      });
+      trigger.addEventListener("blur", scheduleClose);
+    }
+    detailPanel.addEventListener("pointerenter", () => clearTimeout(hideTimer));
+    detailPanel.addEventListener("pointerleave", scheduleClose);
+    detailPanel.addEventListener("focusout", scheduleClose);
+    document.addEventListener("pointerdown", event => {
+      if (activeDetail && !pinned && !detailPanel.contains(event.target) && !body.contains(event.target)) closeDetails();
+    });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && activeDetail) { event.preventDefault(); closeDetails(true); }
+    });
+    global.addEventListener("resize", positionDetails);
+    global.addEventListener("scroll", event => {
+      if (!activeDetail || detailPanel.contains(event.target)) return;
+      const rect = detailAnchor.closest("tr").getBoundingClientRect();
+      const viewport = scroller.getBoundingClientRect();
+      const visible = rect.bottom > Math.max(0, viewport.top) && rect.top < Math.min(innerHeight, viewport.bottom) &&
+        rect.right > Math.max(0, viewport.left) && rect.left < Math.min(innerWidth, viewport.right);
+      if (!pinned) closeDetails();
+      else if (visible) positionDetails();
+    }, true);
+
     function render() {
+      closeDetails();
       viewer.dataset.mode = state.mode;
       const panel = panels.get(state.mode);
       if (tabContent.parentElement !== panel) panel.append(tabContent);
@@ -248,7 +443,7 @@
       description.textContent = {
         hybrid: "Effective snapshot with this profile’s changes highlighted. Excluded elements remain visible.",
         snapshot: "Effective structure, including inherited constraints. Excluded elements are hidden.",
-        diff: "Elements touched by this profile and their parent paths. Inherited descriptions and constraints are hidden."
+        diff: "Elements touched by this profile and their parent paths."
       }[state.mode];
       const shown = visibleNodes(model, state);
       const lastChild = new Map();
@@ -297,10 +492,11 @@
         glyph.alt = "";
         glyph.title = icon.title;
         glyph.width = glyph.height = 16;
-        const label = el("a", state.mode === "hybrid" && !node.changedBelow ? "apv-inherited" : "",
+        const label = el("a", `apv-element-label${state.mode === "hybrid" && !node.changed ? " apv-inherited" : ""}`,
           e.sliceName || e.path.split(".").pop());
         label.href = `${filename}-definitions.html#${encodeURIComponent(node.id)}`;
         label.title = node.id;
+        detailTrigger(label, node);
         name.append(toggle, glyph, label);
         if (e.sliceName) name.append(el("small", "apv-slice-label", e.path.split(".").pop()));
         if (node.missing) name.append(el("span", "apv-warning", " ⚠ snapshot"));
@@ -316,32 +512,49 @@
         for (const t of e.type || []) {
           const typeLine = el("div");
           typeLine.append(el("span", "", typeName(t)));
-          for (const url of [...(t.profile || []), ...(t.targetProfile || [])]) {
-            const local = canonicalPaths.get(url.split("|")[0]);
-            typeLine.append(document.createTextNode(" · "), safeLink(url.split("/").pop(), local || url.split("|")[0]));
+          const profiles = [...new Set([...(t.profile || []), ...(t.targetProfile || [])].map(canonical))];
+          if (profiles.length) {
+            typeLine.append(document.createTextNode("("));
+            profiles.forEach((url, index) => {
+              if (index) typeLine.append(document.createTextNode(" | "));
+              typeLine.append(canonicalLink(url));
+            });
+            typeLine.append(document.createTextNode(")"));
           }
           types.append(typeLine);
         }
         if (e.contentReference) types.append(safeLink(e.contentReference, `${filename}-definitions.html${e.contentReference}`));
         const desc = el("td", "apv-details");
-        if (e.short) desc.append(el("div", fieldClass(node, ["short"]), e.short));
-        for (const [key, value] of values(e)) {
-          if (/^(fixed|pattern)[A-Z]/.test(key)) desc.append(detail(node, key, key.startsWith("fixed") ? "Fixed value" : "Pattern", compact(value)));
+        const details = el("button", "apv-detail-trigger");
+        details.type = "button";
+        details.setAttribute("aria-label", `Details for ${node.id}`);
+        if (e.short) {
+          const summary = el("span", fieldClass(node, ["short"]), e.short);
+          summary.id = `awmf-short-${encodeURIComponent(node.id)}`;
+          details.setAttribute("aria-describedby", summary.id);
+          details.append(summary);
         }
-        if (e.binding?.valueSet) {
-          const binding = detail(node, "binding", "Binding", "");
-          binding.lastChild.append(safeLink(e.binding.valueSet.split("/").pop(), canonicalPaths.get(e.binding.valueSet.split("|")[0]) || e.binding.valueSet.split("|")[0]),
-            document.createTextNode(` (${e.binding.strength})`));
-          desc.append(binding);
-        }
-        if (e.slicing) desc.append(detail(node, "slicing", "Slicing", `${e.slicing.rules}${e.slicing.ordered ? ", ordered" : ""}: ${(e.slicing.discriminator || []).map(d => `${d.type} @ ${d.path}`).join(", ")}`));
-        // Flag each invariant separately: a profile can add one while inheriting others.
-        for (const constraint of e.constraint || []) {
-          if (constraint.source && constraint.source !== model.resource.url && !node.diff?.constraint?.some(c => c.key === constraint.key)) continue;
-          const invariant = detail(node, "constraint", constraint.key, constraint.human || constraint.expression || "");
-          invariant.title = constraint.expression || "";
-          desc.append(invariant);
-        }
+        detailTrigger(details, node);
+        details.addEventListener("click", event => {
+          if (activeDetail === node && pinned) closeDetails();
+          else {
+            openDetails(node, details, true, event.detail ? event.clientX : undefined);
+            if (event.detail === 0) detailPanel.querySelector(".apv-popover-close").focus();
+          }
+        });
+        desc.append(details);
+        let hoverX;
+        row.addEventListener("pointerenter", event => {
+          if (event.pointerType !== "mouse") return;
+          hoverX = event.clientX;
+          clearTimeout(hideTimer);
+          clearTimeout(hoverTimer);
+          hoverTimer = setTimeout(() => openDetails(node, details, false, hoverX), 250);
+        });
+        row.addEventListener("pointermove", event => {
+          if (event.pointerType === "mouse") hoverX = event.clientX;
+        });
+        row.addEventListener("pointerleave", scheduleClose);
         row.append(nameCell, flags, card, types, desc);
         fragment.append(row);
       }
@@ -378,42 +591,62 @@
   }
 
   const canonicalPaths = new Map();
-  async function start() {
-    const filename = decodeURIComponent(location.pathname.split("/").pop()).replace(/\.html$/, "");
-    const original = document.querySelector("#tabs");
-    if (!/^StructureDefinition-[A-Za-z0-9.-]+$/.test(filename) || !original || !document.getElementById("profile")) return;
+  async function fetchJSON(url, timeout = 20000) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeout);
+    try {
+      const response = await fetch(url, { signal: controller.signal });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return await response.json();
+    } finally { clearTimeout(timer); }
+  }
+  async function loadProfile() {
     // Current fhir2 template publishes JSON in the IG root, HTML in a language folder.
     // Resolve against this script's assets root so deployment below a URL prefix works.
-    const script = document.querySelector('script[src*="awmf-profile-viewer.js"]');
-    const assetsRoot = new URL("../../", script.src);
+    const assetsRoot = new URL("../../", viewerScript.src);
     const candidates = [new URL(`../${filename}.json`, assetsRoot), new URL(`${filename}.json`, assetsRoot)];
     let resource, source, lastError;
     for (const candidate of candidates) {
       try {
-        const response = await fetch(candidate);
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const data = await response.json();
+        const data = await fetchJSON(candidate);
         if (data.resourceType !== "StructureDefinition") throw new Error("Expected a StructureDefinition");
         resource = data; source = candidate; break;
       } catch (error) { lastError = error; }
     }
     if (!resource) throw lastError;
+    return { resource, source };
+  }
+  async function loadCanonicalPaths(source) {
     // spec.internals supplies the Publisher's canonical -> local page resolution.
     try {
-      const response = await fetch(new URL("spec.internals", source));
-      if (response.ok) {
-        const internals = await response.json();
-        for (const [canonical, path] of values(internals.paths)) canonicalPaths.set(canonical, new URL(path, source).href);
+      const internals = await fetchJSON(new URL("spec.internals", source), 3000);
+      for (const [canonical, path] of values(internals.paths)) canonicalPaths.set(canonical, new URL(path, source).href);
+      for (const link of document.querySelectorAll(".apv a[data-canonical]")) {
+        const local = canonicalPaths.get(link.dataset.canonical);
+        if (local) link.href = local;
       }
     } catch (_) { /* Canonical links remain usable without the optional index. */ }
+  }
+  async function start() {
+    const original = document.querySelector("#tabs");
+    if (!profilePage || !original || !document.getElementById("profile")) return;
+    const { resource, source } = await profileRequest;
     mount(buildModel(resource), original, filename);
+    // Optional canonical resolution must not delay the first structure render.
+    loadCanonicalPaths(source);
   }
   function run() {
     start().catch(error => {
       console.warn("AWMF profile viewer: keeping Publisher tables", error);
       const original = document.querySelector("#tabs");
-      if (original) original.before(el("p", "apv-warning", "Interactive structure view unavailable. The Publisher tables below remain available."));
-    });
+      if (original) {
+        const fallback = original.closest(".apv-original");
+        if (fallback) { fallback.before(original); fallback.remove(); }
+        document.getElementById("awmf-profile-viewer")?.remove();
+        document.getElementById("awmf-element-details")?.remove();
+        original.before(el("p", "apv-warning", "Interactive structure view unavailable. The Publisher tables below remain available."));
+      }
+    }).finally(() => document.documentElement.classList.remove("apv-loading"));
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run);
   else run();
