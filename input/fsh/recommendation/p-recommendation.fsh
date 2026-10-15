@@ -188,7 +188,7 @@ Description: "Clinical Practice Guideline Recommendation"
   * insert rs-language-section
   * section[language]
     * extension contains ext-section-keyword named keyword 0..* // #P2.3.2.8
-    * entry only Reference(EvidenceVariable or Group)  // #P2.3.2.9 // actually, EvidenceVariable is only for R5 while group is for R6    
+    * entry only Reference(Group) // #P2.3.2.9
 
 * section[action] // #P2.3.2.1
   * code 1..1
@@ -218,7 +218,7 @@ Description: "Clinical Practice Guideline Recommendation"
   * insert rs-language-section
   * section[language]
     * extension contains ext-section-keyword named keyword 0..*
-    * entry only Reference(EvidenceVariable or Group) // actually, EvidenceVariable is only for R5 while group is for R6
+    * entry only Reference(Group)
 
 * section[ratings]
   * code 1..1

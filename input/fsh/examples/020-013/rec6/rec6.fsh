@@ -165,28 +165,34 @@ Description: "Evidence for the impact of Multiplex-PCR-Diagnostik on time to dee
   * intended = Reference(OutcomeTimeToDeescalation)
 
 Instance: OutcomeMortality
-InstanceOf: EvidenceVariable
+InstanceOf: ConceptualCohortDefinitionOutcome
 Usage: #example
 Title: "Outcome Mortality"
 Description: "Outcome Mortality"
 * insert narrative([[Outcome Mortality]])
 * status = #active
-* definition.concept.text = "Mortality"
+* membership = #conceptual
+* code = $cs-pico#outcome
+* description = "Mortality"
 
 Instance: OutcomeAntibioticDays
-InstanceOf: EvidenceVariable
+InstanceOf: ConceptualCohortDefinitionOutcome
 Usage: #example
 Title: "Outcome Antibiotic Days"
 Description: "Outcome Antibiotic Days"
 * insert narrative([[Outcome Antibiotic Days]])
 * status = #active
-* definition.concept.text = "Antibiotic Days"
+* membership = #conceptual
+* code = $cs-pico#outcome
+* description = "Antibiotic Days"
 
 Instance: OutcomeTimeToDeescalation
-InstanceOf: EvidenceVariable
+InstanceOf: ConceptualCohortDefinitionOutcome
 Usage: #example
 Title: "Outcome Time to Deescalation"
 Description: "Outcome Time to Deescalation"
 * insert narrative([[Outcome Time to Deescalation]])
 * status = #active
-* definition.concept.text = "Time to Deescalation"
+* membership = #conceptual
+* code = $cs-pico#outcome
+* description = "Time to Deescalation"
