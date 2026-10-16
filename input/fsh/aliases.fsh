@@ -14,12 +14,12 @@ Alias: $ebm-conceptual-cohort-definition = http://hl7.org/fhir/uv/ebm/StructureD
 Alias: $ext-annotationType = http://hl7.org/fhir/StructureDefinition/annotationType
 Alias: $ext-extended-contact-detail = http://hl7.org/fhir/StructureDefinition/artifact-extended-contact-detail
 
-Alias: $cs-composition-attestation-mode = http://hl7.org/fhir/composition-attestation-mode
+Alias: $cs-composition-attestation-mode = http://terminology.hl7.org/CodeSystem/composition-attestation-mode
 Alias: $cs-list-empty-reason = http://terminology.hl7.org/CodeSystem/list-empty-reason
 
 Alias: $cs-ebm-ig = https://fevir.net/resources/CodeSystem/179423
 
-Alias: $cs-certainty-type = http://hl7.org/fhir/certainty-type
+Alias: $cs-certainty-type = http://terminology.hl7.org/CodeSystem/certainty-type
 Alias: $cs-direction-of-recommendation = cs-recommendation-direction
 Alias: $vs-direction-of-recommendation = vs-recommendation-direction
 
@@ -40,6 +40,7 @@ Alias: $atc = http://www.whocc.no/atc
 Alias: $atcde = http://fhir.de/CodeSystem/bfarm/atc
 
 Alias: $cs-related-artifact-type = http://hl7.org/fhir/related-artifact-type
+Alias: $cs-artifact-relationship-type = http://terminology.hl7.org/CodeSystem/artifact-relationship-type
 Alias: $cs-variable-role = http://hl7.org/fhir/variable-role
 
 

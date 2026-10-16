@@ -27,8 +27,8 @@ The rating system is fixed to GRADE:
 Overall certainty rating (high, moderate, low, very low):
 
 ```fsh
-* content[levelOfEvidence]
-  * type = $cs-certainty-type#Overall "Overall certainty"
+* content[overall]
+  * classifier 1..1
   * classifier from vs-rating-certainty-of-evidence (required)
 ```
 
@@ -67,7 +67,7 @@ Usage: #example
 * artifactReference = Reference(MortalityOutcomeEvidence)
 * workflowStatus = #applied
 * content[ratingSystem].classifier = $cs-evidence-rating-system#GRADE
-* content[levelOfEvidence].classifier = #moderate
+* content[overall].classifier = $cs-certainty-rating#moderate
 * content[imprecision].type = $cs-certainty-type#Imprecision
 ```
 

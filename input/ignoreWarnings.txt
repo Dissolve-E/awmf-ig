@@ -1,33 +1,34 @@
 == Suppressed Messages ==
 
-# Add warning and/or information messages here after you've confirmed that they aren't really a problem
-# (And include comments like this justifying why)
-# See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
+# Lines are matched case-insensitively against the message text. A leading and/or
+# trailing % turns the line into a suffix, prefix or contains match. Errors cannot be
+# suppressed; keep a justification with every block.
 
+# Best-practice constraints inherited from the FHIR 6.0.0-snapshot1 core definitions
+# (Resource.language additional bindings without a key, bindings on choice elements).
+# Nothing to change in this IG.
+%eld-31: 'additionalBindings should have a key%
+%eld-33: 'If there's more than one bindable type, it's usually an error for there to be a binding%
 
-# The following constraints are failing due to the internal structure it seems, nothin that we can change ourselves?
-Constraint failed: eld-20: 'The first component of the path should be UpperCamelCase. Additional components (following a '.') should be lowerCamelCase. If this syntax is not adhered to, code generation tools may be broken. Logical models may be less concerned about this implication.' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition)
-Constraint failed: eld-31: 'additionalBindings should have a key' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition) (Best Practice Recommendation)
-Constraint failed: eld-5: 'if the element definition has a contentReference, it cannot have type, defaultValue, fixed, pattern, example, minValue, maxValue, maxLength, or binding' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition) 
+# AWMF does not maintain an OID root; OIDs are not needed for this IG (decision 2026-10-15).
+%should have an OID assigned to cater for possible use with OID based terminology systems%
+%could usefully have an OID assigned%
 
+# pin-canonicals = pin-multiples reports every pinned reference as a hint.
+Pinned the version of %
 
-# does currently (25-05-20) not resolve
-URL value 'http://fhir.awmf.org/guidelines' does not resolve
+# External pages that exist but cannot be resolved by the validator
+# (AWMF register and website, PubMed, DOI).
+No definition could be found for URL value 'https://register.awmf.org/%
+No definition could be found for URL value 'https://www.awmf.org/%
+No definition could be found for URL value 'https://pubmed.ncbi.nlm.nih.gov%
+No definition could be found for URL value 'https://doi.org%
 
-# these actually do resolve, not sure what the validator's problem is
-URL value 'https://www.awmf.org/leitlinien/detail/ll/020-020.html' does not resolve
-URL value 'https://www.awmf.org/leitlinien/detail/ll/020-003.html' does not resolve
-URL value 'https://www.awmf.org/leitlinien/detail/ll/020-015.html' does not resolve
-URL value 'https://www.awmf.org/leitlinien/detail/ll/048-013.html' does not resolve
-URL value 'https://register.awmf.org/de/leitlinien/detail/020-013' does not resolve
+# External code system used in the citation example (MeSH publication type); not available on the terminology server.
+A definition for CodeSystem 'https://www.nlm.nih.gov/mesh' could not be found%
 
-# we are deliberately using open slices for custom sections - this will happen always
-This element does not match any known slice defined in the profile http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline|0.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+# Sections are deliberately sliced open; entries that match no named slice are expected.
+This element does not match any known slice defined in the profile http://fhir.awmf.org/awmf.ig/%
 
-# the following url actually resolves, not sure what the validator's problem is
-Canonical URL 'http://hl7.org/fhir/uv/cpg/ValueSet/cpg-recommendation-direction-vs' does not resolve 
-ValueSet 'http://hl7.org/fhir/uv/cpg/ValueSet/cpg-recommendation-direction-vs' not found
-A definition for CodeSystem 'http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-recommendation-direction-cs' could not be found, so the code cannot be validated
-URL value 'http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-recommendation-direction-cs' does not resolve 
-
-Reference to experimental CodeSystem http://hl7.org/fhir/CodeSystem/fhirpath-types|6.0.0-snapshot1
+# Referenced by the core FHIRPath type definitions, not by this IG.
+Reference to experimental CodeSystem http://hl7.org/fhir/CodeSystem/fhirpath-types%

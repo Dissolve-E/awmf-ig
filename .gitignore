@@ -20,3 +20,5 @@ notebooks/
 dev/
 publication-request.json
 ig-registry.json
+/Requirements-fromNarrative.json
+/input/data/ig.yml

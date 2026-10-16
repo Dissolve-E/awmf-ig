@@ -121,7 +121,7 @@ Title: "Evidence Assessment: Knochenmarkbiopsie - Gesamt\u00fcberleben"
 Description: "Evidenzsicherheit für Knochenmarkbiopsie vs. PET/CT-Staging: Gesamtüberleben"
 * insert narrative([[Evidenzsicherheit für Knochenmarkbiopsie vs. PET/CT-Staging: Gesamtüberleben]])
 * artifactReference = Reference(Evidence-BoneMarrowBiopsy-OS)
-* content[levelOfEvidence]
+* content[overall]
   * classifier = $cs-certainty-rating#moderate "Moderate quality"
 
 
@@ -132,7 +132,7 @@ Title: "Evidence Assessment: Knochenmarkbiopsie - Progressionsfreies \u00dcberle
 Description: "Evidenzsicherheit für Knochenmarkbiopsie vs. PET/CT-Staging: Progressionsfreies Überleben"
 * insert narrative([[Evidenzsicherheit für Knochenmarkbiopsie vs. PET/CT-Staging: Progressionsfreies Überleben]])
 * artifactReference = Reference(Evidence-BoneMarrowBiopsy-PFS)
-* content[levelOfEvidence]
+* content[overall]
   * classifier = $cs-certainty-rating#moderate "Moderate quality"
 
 
@@ -143,7 +143,7 @@ Title: "Evidence Assessment: Knochenmarkbiopsie - Ereignisfreies \u00dcberleben"
 Description: "Evidenzsicherheit für Knochenmarkbiopsie vs. PET/CT-Staging: Ereignisfreies Überleben"
 * insert narrative([[Evidenzsicherheit für Knochenmarkbiopsie vs. PET/CT-Staging: Ereignisfreies Überleben]])
 * artifactReference = Reference(Evidence-BoneMarrowBiopsy-EFS)
-* content[levelOfEvidence]
+* content[overall]
   * classifier = $cs-certainty-rating#moderate "Moderate quality"
 
 
@@ -154,7 +154,7 @@ Title: "Evidence Assessment: Knochenmarkbiopsie - Sensitivit\u00e4t (Stadieneint
 Description: "Evidenzsicherheit für Knochenmarkbiopsie vs. PET/CT-Staging: Sensitivität (Stadieneinteilung)"
 * insert narrative([[Evidenzsicherheit für Knochenmarkbiopsie vs. PET/CT-Staging: Sensitivität (Stadieneinteilung)]])
 * artifactReference = Reference(Evidence-BoneMarrowBiopsy-Sensitivity)
-* content[levelOfEvidence]
+* content[overall]
   * classifier = $cs-certainty-rating#moderate "Moderate quality"
 
 
@@ -165,7 +165,7 @@ Title: "Evidence Assessment: Knochenmarkbiopsie - Spezifit\u00e4t (Stadieneintei
 Description: "Evidenzsicherheit für Knochenmarkbiopsie vs. PET/CT-Staging: Spezifität (Stadieneinteilung)"
 * insert narrative([[Evidenzsicherheit für Knochenmarkbiopsie vs. PET/CT-Staging: Spezifität (Stadieneinteilung)]])
 * artifactReference = Reference(Evidence-BoneMarrowBiopsy-Specificity)
-* content[levelOfEvidence]
+* content[overall]
   * classifier = $cs-certainty-rating#moderate "Moderate quality"
 
 
@@ -176,7 +176,7 @@ Title: "Evidence Assessment: Knochenmarkbiopsie - Positiver Vorhersagewert (Stad
 Description: "Evidenzsicherheit für Knochenmarkbiopsie vs. PET/CT-Staging: Positiver Vorhersagewert (Stadieneinteilung)"
 * insert narrative([[Evidenzsicherheit für Knochenmarkbiopsie vs. PET/CT-Staging: Positiver Vorhersagewert (Stadieneinteilung)]])
 * artifactReference = Reference(Evidence-BoneMarrowBiopsy-PPV)
-* content[levelOfEvidence]
+* content[overall]
   * classifier = $cs-certainty-rating#low "Low quality"
 
 
@@ -187,7 +187,7 @@ Title: "Evidence Assessment: Knochenmarkbiopsie - Negativer Vorhersagewert (Stad
 Description: "Evidenzsicherheit für Knochenmarkbiopsie vs. PET/CT-Staging: Negativer Vorhersagewert (Stadieneinteilung)"
 * insert narrative([[Evidenzsicherheit für Knochenmarkbiopsie vs. PET/CT-Staging: Negativer Vorhersagewert (Stadieneinteilung)]])
 * artifactReference = Reference(Evidence-BoneMarrowBiopsy-NPV)
-* content[levelOfEvidence]
+* content[overall]
   * classifier = $cs-certainty-rating#high "High quality"
 
 
@@ -198,7 +198,7 @@ Title: "Evidence Assessment: Knochenmarkbiopsie - Stadieneinteilung"
 Description: "Evidenzsicherheit für Knochenmarkbiopsie vs. PET/CT-Staging: Stadieneinteilung"
 * insert narrative([[Evidenzsicherheit für Knochenmarkbiopsie vs. PET/CT-Staging: Stadieneinteilung]])
 * artifactReference = Reference(Evidence-BoneMarrowBiopsy-Staging)
-* content[levelOfEvidence]
+* content[overall]
   * classifier = $cs-certainty-rating#moderate "Moderate quality"
 
 

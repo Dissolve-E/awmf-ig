@@ -13,9 +13,7 @@ Description: "A structured assessment of the quality of guidelines using the AGR
 // We do not yet represent the individual ratings on the AGREE II domains or the overall score (if applicable).
 // This may be added in the future; therefore, the commented-out block is left here as a placeholder.
 /*
-* content[levelOfEvidence]
-  * type 1..1
-  * type = $cs-certainty-type#Overall "Overall certainty"
+* content[overall]
   * classifier 0..1
   * classifier from AGREEIIAssessmentVS (required)
 */

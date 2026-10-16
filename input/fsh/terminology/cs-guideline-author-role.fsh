@@ -1,6 +1,6 @@
 CodeSystem: GuidelineAuthorRoleCS // #P2.3.1.4
 Id: cs-guideline-author-role
-Title: "Guideline Author Role"
+Title: "Guideline Author Role CS"
 Description: "CodeSystem defining roles for the author of the guideline."
 * insert rs-codesystem-meta
 // Federführend (Organisation oder Person)

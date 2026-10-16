@@ -7,7 +7,7 @@ Description: "Patienteninformation Leitlinie 020-013"
 * category = cs-guideline-sections#patient-version
 * content
   * attachment
-    * url = "020_D_Ges_fuer_Pneumologie/020-013pi_S3_Epidemiologie-Diagnostik-Therapie-erwachsener-Patienten-nosokomiale-Pneumonie__2024-03.pdf"
+    * url = "https://register.awmf.org/assets/guidelines/020_D_Ges_fuer_Pneumologie/020-013pi_S3_Epidemiologie-Diagnostik-Therapie-erwachsener-Patienten-nosokomiale-Pneumonie__2024-03.pdf"
     * title = "Patienteninformation"
     * language = #de
     * contentType = #application/pdf

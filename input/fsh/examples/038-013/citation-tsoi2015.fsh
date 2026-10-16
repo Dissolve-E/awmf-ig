@@ -2,13 +2,12 @@ Alias: $citation-classification-type = http://hl7.org/fhir/citation-classificati
 Alias: $citation-artifact-classifier = http://hl7.org/fhir/citation-artifact-classifier
 Alias: $elements_descriptions.html = https://www.nlm.nih.gov/bsd/licensee/elements_descriptions.html#owner_value
 Alias: $citation-status-type = http://hl7.org/fhir/citation-status-type
-Alias: $title-type = http://hl7.org/fhir/title-type
+Alias: $title-type = http://terminology.hl7.org/CodeSystem/title-type
 Alias: $cited-artifact-abstract-type = http://hl7.org/fhir/cited-artifact-abstract-type
 Alias: $mesh = https://www.nlm.nih.gov/mesh
-Alias: $published-in-type = http://hl7.org/fhir/published-in-type
 Alias: $elements_descriptions.html_1 = https://www.nlm.nih.gov/bsd/licensee/elements_descriptions.html#issn
 Alias: $cited-medium = http://hl7.org/fhir/cited-medium
-Alias: $artifact-url-classifier = http://hl7.org/fhir/artifact-url-classifier
+Alias: $artifact-url-classifier = http://terminology.hl7.org/CodeSystem/artifact-url-classifier
 Alias: $cited-artifact-classification-type = http://hl7.org/fhir/cited-artifact-classification-type
 Alias: $cited-artifact-classification-type_1 = https://hl7.org/fhir/cited-artifact-classification-type
 Alias: $citation-artifact-classifier_1 = https://hl7.org/fhir/citation-artifact-classifier
@@ -31,7 +30,7 @@ Description: "Citation for the Systematic Review by Tsoi et al. 2015"
 * citedArtifact.identifier[=].value = "2301149"
 * citedArtifact.title.text = "Cognitive Tests to Detect Dementia: A Systematic Review and Meta-analysis."
 * citedArtifact.title.type = $title-type#primary "Primary title"
-* citedArtifact.publicationForm.publishedIn.type = $published-in-type#D020492 "Periodical"
+* citedArtifact.publicationForm.publishedIn.type = $mesh#D020492 "Periodical"
 * citedArtifact.publicationForm.publishedIn.title = "JAMA internal medicine"
 * citedArtifact.publicationForm.publishedIn.publisherLocation = "United States"
 * citedArtifact.publicationForm.volume = "175"
@@ -72,29 +71,34 @@ Description: "Citation for the Systematic Review by Tsoi et al. 2015"
 Instance: contributor0
 InstanceOf: Practitioner
 Usage: #example
+Description: "Author of the systematic review by Tsoi et al. (2015) that is cited as evidence for recommendation 17 of guideline 038-013."
 * name.family = "Tsoi"
 * name.given = "Kelvin K F"
 
 Instance: contributor1
 InstanceOf: Practitioner
 Usage: #example
+Description: "Author of the systematic review by Tsoi et al. (2015) that is cited as evidence for recommendation 17 of guideline 038-013."
 * name.family = "Chan"
 * name.given = "Joyce Y C"
 
 Instance: contributor2
 InstanceOf: Practitioner
 Usage: #example
+Description: "Author of the systematic review by Tsoi et al. (2015) that is cited as evidence for recommendation 17 of guideline 038-013."
 * name.family = "Hirai"
 * name.given = "Hoyee W"
 
 Instance: contributor3
 InstanceOf: Practitioner
 Usage: #example
+Description: "Author of the systematic review by Tsoi et al. (2015) that is cited as evidence for recommendation 17 of guideline 038-013."
 * name.family = "Wong"
 * name.given = "Samuel Y S"
 
 Instance: contributor4
 InstanceOf: Practitioner
 Usage: #example
+Description: "Author of the systematic review by Tsoi et al. (2015) that is cited as evidence for recommendation 17 of guideline 038-013."
 * name.family = "Kwok"
 * name.given = "Timothy C Y"

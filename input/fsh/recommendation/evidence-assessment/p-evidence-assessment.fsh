@@ -16,16 +16,12 @@ Description: "A structured assessment of the certainty of evidence for a specifi
 * content ^slicing.discriminator.type = #value
 * content ^slicing.discriminator.path = "type"
 * content ^slicing.rules = #open
-* content contains 
- levelOfEvidence 0..1
+// The EBM parent defines the slices ratingSystem, overall (type certainty-type#Overall)
+// and riskOfBias (type certainty-type#RiskOfBias); the AWMF profiles constrain those.
 
 * content[ratingSystem]
   * classifier 1..1
   * classifier from $vs-evidence-rating-system (extensible)
-
-* content[levelOfEvidence]
-  * type 1..1
-  * type = $cs-certainty-type#Overall "Overall certainty"
 
 * workflowStatus 1..1
 * workflowStatus = #applied

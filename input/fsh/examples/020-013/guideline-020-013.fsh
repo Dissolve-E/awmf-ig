@@ -15,6 +15,7 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
 
 * title = "Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie"
 * version = "3.0"
+* url = "http://fhir.awmf.org/awmf.ig/Composition/NosokomialePneumonie"
 * status = #final
 
 * author[+] = Reference(JessicaRademacherDGPFor020-013)

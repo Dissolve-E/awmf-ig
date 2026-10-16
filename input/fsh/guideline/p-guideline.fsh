@@ -121,6 +121,7 @@ Title: "Guideline Example"
 Description: "An example of a guideline."
 * insert narrative([[Guideline Example]])
 * version = "2.0"
+* url = "http://fhir.awmf.org/awmf.ig/Composition/GuidelineExample"
 * status = #final
 * date = "2025-03-06"
 * title = "Example Guideline"
@@ -134,7 +135,7 @@ Description: "An example of a guideline."
 Instance: G-TestTestInvRequireOfficialIdentifier-NoOfficialId-SHOULD-FAIL
 InstanceOf: awmf-guideline
 Usage: #example
-Title: "Test: No Official Identifier (Should Fail)"
+Title: "Guideline Test: No Official Identifier (Should Fail)"
 Description: "Tests that inv-require-official-identifier fails when no official identifier is present."
 * insert narrative([[Test: No Official Identifier]])
 * version = "2.0"
@@ -151,7 +152,7 @@ Description: "Tests that inv-require-official-identifier fails when no official 
 Instance: G-TestTestInvRequireOfficialIdentifier-TwoOfficialId-SHOULD-FAIL
 InstanceOf: awmf-guideline
 Usage: #example
-Title: "Test: Two Official Identifiers (Should Fail)"
+Title: "Guideline Test: Two Official Identifiers (Should Fail)"
 Description: "Tests that inv-require-official-identifier fails when two official identifiers are present."
 * insert narrative([[Test: Two Official Identifiers]])
 * version = "2.0"
@@ -172,7 +173,7 @@ Description: "Tests that inv-require-official-identifier fails when two official
 Instance: G-TestTestInvVersionMajorMinor-VersionPatch-SHOULD-FAIL
 InstanceOf: awmf-guideline
 Usage: #example
-Title: "Test: Version Major.Minor.Patch (Should Fail)"
+Title: "Guideline Test: Version Major.Minor.Patch (Should Fail)"
 Description: "Tests that inv-version-major-minor fails when version has three parts."
 * insert narrative([[Test: Version Major.Minor.Patch]])
 * version = "2.0.0"
@@ -189,7 +190,7 @@ Description: "Tests that inv-version-major-minor fails when version has three pa
 Instance: G-TestTestInvVersionMajorMinor-VersionInvalid-SHOULD-FAIL
 InstanceOf: awmf-guideline
 Usage: #example
-Title: "Test: Version with Prefix (Should Fail)"
+Title: "Guideline Test: Version with Prefix (Should Fail)"
 Description: "Tests that inv-version-major-minor fails when version has 'v' prefix."
 * insert narrative([[Test: Version with Prefix]])
 * version = "v2.0"
@@ -206,7 +207,7 @@ Description: "Tests that inv-version-major-minor fails when version has 'v' pref
 Instance: G-TestTestInvVersionMajorMinor-VersionInvalid2-SHOULD-FAIL
 InstanceOf: awmf-guideline
 Usage: #example
-Title: "Test: Version as Text (Should Fail)"
+Title: "Guideline Test: Version as Text (Should Fail)"
 Description: "Tests that inv-version-major-minor fails when version is text."
 * insert narrative([[Test: Version as Text]])
 * version = "zweiteVersion"

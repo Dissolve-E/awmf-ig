@@ -1,7 +1,7 @@
 Instance: NosokomialePneumonieRecord
 InstanceOf: AWMFGuidelineRegistryRecord
 Usage: #example
-Title: "S3-Leitlinie Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie"
+Title: "S3-Leitlinie Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie (Registry Record)"
 Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie"
 * identifier[awmf-register-number][+]
   * value = "020-013"
@@ -51,32 +51,32 @@ Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsene
 * author[=].extension[role].valueCodeableConcept = cs-guideline-author-role#content-author
 
 * relatesTo[+]
-  * type = #similar-to
+  * type = $cs-artifact-relationship-type#similar-to
   * extension[classifier][+].valueCodeableConcept = cs-related-artifact-types#related-guideline
   * extension[label].valueString = "Behandlung von erwachsenen Patienten mit ambulant erworbener Pneumonie"
   // * targetReference = Reference(Guideline_020_020) // other guideline not yet defined in FHIR
   * targetUri = "https://www.awmf.org/leitlinien/detail/ll/020-020.html"
 * relatesTo[+]
-  * type = #similar-to
+  * type = $cs-artifact-relationship-type#similar-to
   * extension[classifier][+].valueCodeableConcept = cs-related-artifact-types#related-guideline
   * extension[label].valueString = "Diagnostik und Therapie von erwachsenen Patienten mit Husten"
   // * targetReference = Reference(Guideline_020_003) // other guideline not yet defined in FHIR
   * targetUri = "https://www.awmf.org/leitlinien/detail/ll/020-003.html"
 * relatesTo[+]
-  * type = #similar-to
+  * type = $cs-artifact-relationship-type#similar-to
   * extension[classifier][+].valueCodeableConcept = cs-related-artifact-types#related-guideline
   * extension[label].valueString = "Prolongiertes Weaning"
   // * targetReference = Reference(Guideline_020_015) // other guideline not yet defined in FHIR
   * targetUri = "https://www.awmf.org/leitlinien/detail/ll/020-015.html"
 * relatesTo[+]
-  * type = #similar-to
+  * type = $cs-artifact-relationship-type#similar-to
   * extension[classifier][+].valueCodeableConcept = cs-related-artifact-types#related-guideline
   * extension[label].valueString = "Management der ambulant erworbenen Pneumonie bei Kindern und Jugendlichen (pCAP)"
   // * targetReference = Reference(Guideline_048_013) // other guideline not yet defined in FHIR
   * targetUri = "https://www.awmf.org/leitlinien/detail/ll/048-013.html"
 
 * relatesTo[+]
-  * type = #documentation
+  * type = $cs-artifact-relationship-type#documentation
   * extension[classifier][+].valueCodeableConcept = cs-related-artifact-types#awmf-detail-page
   * targetUri = "https://register.awmf.org/de/leitlinien/detail/020-013"
 
