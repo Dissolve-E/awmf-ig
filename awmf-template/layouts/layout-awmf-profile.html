@@ -37,9 +37,6 @@
 {% include fragment-intro.html type='{{[type]}}' id='{{[id]}}' lang="{{[lang]}}" %}
 
 {% include StructureDefinition-{{[id]}}-sd-xref{{[langsuffix]}}.xhtml %}
-{% capture sdlink %}
-  <a href="{{ site.data.structuredefinitions['{{[id]}}'].basepath }}">{{ site.data.structuredefinitions['{{[id]}}'].basename }}</a>
-{% endcapture %}
 
   <!-- no uri -->
   <a name="profile"> </a>

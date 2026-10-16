@@ -45,9 +45,19 @@ scrolls to the link to the Publisher page and carries the hash onto that link.
 
 Both views use the same generated snapshot. This does not change FHIR profile
 semantics or fix upstream `contentReferenceProfile`/nested-section expansion.
-The compact page contains one table rather than all native tables, but a very
-large snapshot still produces substantial HTML. The separate Publisher page
-retains the original size and the Publisher still generates its table fragments.
+The compact page contains one table whose existing rows serve all three modes.
+The native layout includes separate key, differential and snapshot tables, then
+repeats them in its "All Tables" tab. Moving those native tables to a separate
+page removes that duplication from the compact page. Every snapshot element is
+still rendered; collapsing branches only hides rows and does not reduce the
+download size. The browser also no longer downloads the resource JSON to build
+the table.
+
+This rendering approach can stay when upstream snapshot generation is fixed.
+When the profiles use less deeply nested definitions and produce smaller
+snapshots, the same template will render fewer rows automatically. Until then,
+a large snapshot still produces substantial HTML. The separate Publisher page
+retains the original tables and the Publisher still generates their fragments.
 
 ## Data and language limits
 
