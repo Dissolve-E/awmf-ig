@@ -40,6 +40,7 @@ Alias: $atc = http://www.whocc.no/atc
 Alias: $atcde = http://fhir.de/CodeSystem/bfarm/atc
 
 Alias: $cs-related-artifact-type = http://hl7.org/fhir/related-artifact-type
+Alias: $cs-artifact-relationship-type = http://terminology.hl7.org/CodeSystem/artifact-relationship-type
 Alias: $cs-variable-role = http://hl7.org/fhir/variable-role
 
 

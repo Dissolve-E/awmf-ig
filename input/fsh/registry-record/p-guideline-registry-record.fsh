@@ -224,13 +224,13 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
 // We reslice it here based on the extension classifier to distinguish between 
 // different types of related guidelines that both use type = #similar-to
 * relatesTo ^slicing.discriminator[1].type = #value
-* relatesTo ^slicing.discriminator[1].path = "extension('http://hl7.org/fhir/StructureDefinition/relatesto-classifier').value.ofType(CodeableConcept)"
+* relatesTo ^slicing.discriminator[1].path = "extension('http://hl7.org/fhir/uv/ebm/StructureDefinition/relatesto-classifier').value.ofType(CodeableConcept)"
 * relatesTo ^slicing.rules = #open
 * relatesTo[similarTo] contains relatedGuideline 0..*
   
 * relatesTo[similarTo/relatedGuideline]
   * type 1..1
-  * type = #similar-to
+  * type = $cs-artifact-relationship-type#similar-to
   * extension[classifier] 1..1
   * extension[classifier].valueCodeableConcept 1..1
   * extension[classifier].valueCodeableConcept = cs-related-artifact-types#related-guideline 
@@ -243,7 +243,7 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
   
 * relatesTo[disseminationWebsite]
   * type 1..1
-  * type = #documentation
+  * type = $cs-artifact-relationship-type#documentation
   * extension[classifier] 1..1
   * extension[classifier].valueCodeableConcept from vs-dissemination-website (required)
   * extension[classifier].valueCodeableConcept.coding 1..1
@@ -251,14 +251,14 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
   
 * relatesTo[replacesGuideline]
   * type 1..1
-  * type = #replaces
+  * type = $cs-artifact-relationship-type#replaces
   * targetReference 1..1
   * targetReference only Reference(Guideline)
   * ^short = "A reference to another (older, outdated or obsolete) guideline this guideline is replacing"
   
 * relatesTo[replacedWithGuideline]
   * type 1..1
-  * type = #replaced-with
+  * type = $cs-artifact-relationship-type#replaced-with
   * targetReference 1..1
   * targetReference only Reference(Guideline)
   * ^short = "A reference to another (newer, updated, merged) guideline this guideline has been replaced by"

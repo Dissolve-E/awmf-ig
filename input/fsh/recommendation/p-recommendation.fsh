@@ -29,13 +29,13 @@ Description: "Clinical Practice Guideline Recommendation"
 // We reslice it here based on the extension classifier to distinguish between 
 // different types of related guidelines that both use type = #similar-to
 * relatesTo ^slicing.discriminator[1].type = #value
-* relatesTo ^slicing.discriminator[1].path = "extension('http://hl7.org/fhir/StructureDefinition/relatesto-classifier').value.ofType(CodeableConcept)"
+* relatesTo ^slicing.discriminator[1].path = "extension('http://hl7.org/fhir/uv/ebm/StructureDefinition/relatesto-classifier').value.ofType(CodeableConcept)"
 * relatesTo ^slicing.rules = #open
 * relatesTo[derivedFrom] contains picoQuestion 0..*
  
 * relatesTo[derivedFrom/picoQuestion]
   * type 1..1
-  * type = #derived-from
+  * type = $cs-artifact-relationship-type#derived-from
   * targetReference 1..1
   * targetReference only Reference(PICOQuestion)
   * extension[classifier] 1..1
@@ -49,19 +49,19 @@ Description: "Clinical Practice Guideline Recommendation"
   and replacesRecommendation 0..* // #P2.3.2.30, #P2.3.2.31
 * relatesTo[specificationOfPreceedingRecommendation]
   * type 1..1
-  * type = #predecessor
+  * type = $cs-artifact-relationship-type#predecessor
   * targetReference 1..1
   * targetReference only Reference(Recommendation)
   * ^short = "A reference to another Recommendation which preceeds this Recommendation in a (hypothetical) clinical workflow."
 * relatesTo[specificationOfSucceedingRecommendation]
   * type 1..1
-  * type = #successor
+  * type = $cs-artifact-relationship-type#successor
   * targetReference 1..1
   * targetReference only Reference(Recommendation)
   * ^short = "A reference to another Recommendation which succeeds this Recommendation in a (hypothetical) clinical workflow."
 * relatesTo[replacesRecommendation]
   * type 1..1
-  * type = #replaces
+  * type = $cs-artifact-relationship-type#replaces
   * targetReference 1..1
   * targetReference only Reference(Recommendation)
   * ^short = "A reference to an (older, outdated or obsolete) Recommendation which has been replaced by this Recommendation."
