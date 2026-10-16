@@ -1,6 +1,6 @@
 ValueSet: AWMFGuidelineClassVS
 Id: vs-awmf-guideline-class
-Title: "AWMF Guideline Class"
+Title: "AWMF Guideline Class VS"
 Description: "ValueSet listing values representing guideline classes according to the AWMF."
 * insert rs-valueset-meta
 * include codes from system cs-awmf-guideline-class

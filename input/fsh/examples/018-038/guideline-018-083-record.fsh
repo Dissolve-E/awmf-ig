@@ -1,7 +1,7 @@
 Instance: DiffuseLargeBCellLymphomaGuidelineRecord
 InstanceOf: AWMFGuidelineRegistryRecord
 Usage: #example
-Title: "S3-Leitlinie Diagnostik, Therapie und Nachsorge für erwachsene Patient*innen mit einem diffusen großzelligen B-Zell-Lymphom und verwandten Entitäten"
+Title: "S3-Leitlinie Diagnostik, Therapie und Nachsorge für erwachsene Patient*innen mit einem diffusen großzelligen B-Zell-Lymphom und verwandten Entitäten (Registry Record)"
 Description: "S3-Leitlinie Diagnostik, Therapie und Nachsorge für erwachsene Patient*innen mit einem diffusen großzelligen B-Zell-Lymphom (DLBCL) und verwandten Entitäten"
 
 * identifier[awmf-register-number][+]

@@ -1,7 +1,7 @@
 Instance: NosokomialePneumonieRecord
 InstanceOf: AWMFGuidelineRegistryRecord
 Usage: #example
-Title: "S3-Leitlinie Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie"
+Title: "S3-Leitlinie Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie (Registry Record)"
 Description: "S3-Leitlinie zur Epidemiologie, Diagnostik und Therapie erwachsener Patienten mit nosokomialer Pneumonie"
 * identifier[awmf-register-number][+]
   * value = "020-013"
