@@ -1,0 +1,48 @@
+{%- assign apv_first_type = apv_element.type | first -%}
+{%- assign apv_native_type = apv_first_type.extension | where: 'url', 'http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type' | first -%}
+{%- assign apv_type_name = apv_native_type.valueUrl | default: apv_first_type.code | default: '' -%}
+{%- assign apv_type_first = apv_type_name | slice: 0, 1 -%}
+{%- assign apv_type_lower = apv_type_first | downcase -%}
+{%- assign apv_icon = 'icon_datatype.gif' -%}
+{%- assign apv_icon_title = 'Data type' -%}
+{%- assign apv_is_extension = false -%}
+{%- if apv_leaf == 'extension' or apv_leaf == 'modifierExtension' -%}{%- assign apv_is_extension = true -%}{%- endif -%}
+{%- if apv_parent == '' and apv_resource.type == 'Extension' -%}{%- assign apv_is_extension = true -%}{%- endif -%}
+{%- if apv_is_extension -%}
+  {%- assign apv_extension_child_id = apv_element.id | append: '.extension' -%}
+  {%- assign apv_extension_child_marker = '|' | append: apv_extension_child_id | append: '|' -%}
+  {%- assign apv_extension_child = nil -%}
+  {%- if apv_element_index contains apv_extension_child_marker -%}
+    {%- assign apv_extension_child_index = apv_element_index | split: apv_extension_child_marker | last | split: ';' | first | plus: 0 -%}
+    {%- assign apv_extension_child = apv_elements[apv_extension_child_index] -%}
+  {%- endif -%}
+  {%- assign apv_icon = 'icon_extension_simple.png' -%}{%- assign apv_icon_title = 'Simple extension' -%}
+  {%- if apv_extension_child and apv_extension_child.max != '0' -%}{%- assign apv_icon = 'icon_extension_complex.png' -%}{%- assign apv_icon_title = 'Complex extension' -%}{%- endif -%}
+  {%- if apv_leaf == 'modifierExtension' or apv_element.isModifier -%}{%- assign apv_icon = apv_icon | replace: 'icon_extension', 'icon_modifier_extension' -%}{%- assign apv_icon_title = apv_icon_title | replace: 'extension', 'modifier extension' -%}{%- endif -%}
+{%- elsif apv_element.sliceName -%}
+  {%- assign apv_icon = 'icon_slice_item.png' -%}{%- assign apv_icon_title = 'Slice' -%}
+{%- elsif apv_element.slicing -%}
+  {%- assign apv_icon = 'icon_slice.png' -%}{%- assign apv_icon_title = 'Slice definition' -%}
+{%- elsif apv_element.contentReference or apv_type_first == '@' -%}
+  {%- assign apv_icon = 'icon_reuse.png' -%}{%- assign apv_icon_title = 'Reference to another element' -%}
+{%- elsif apv_parent == '' and apv_resource.kind == 'resource' -%}
+  {%- assign apv_icon = 'icon_resource.png' -%}{%- assign apv_icon_title = 'Resource' -%}
+{%- else -%}
+  {%- assign apv_all_reference = true -%}
+  {%- unless apv_element.type.size > 0 -%}{%- assign apv_all_reference = false -%}{%- endunless -%}
+  {%- for apv_icon_type in apv_element.type -%}
+    {%- unless apv_icon_type.code == 'Reference' or apv_icon_type.code == 'canonical' or apv_icon_type.targetProfile.size > 0 -%}{%- assign apv_all_reference = false -%}{%- endunless -%}
+  {%- endfor -%}
+  {%- if apv_all_reference -%}
+    {%- assign apv_icon = 'icon_reference.png' -%}{%- assign apv_icon_title = 'Reference to another resource' -%}
+  {%- elsif apv_leaf contains '[x]' or apv_element.type.size > 1 -%}
+    {%- assign apv_icon = 'icon_choice.gif' -%}{%- assign apv_icon_title = 'Choice of types' -%}
+  {%- elsif apv_type_name == 'Resource' or apv_type_name == 'DomainResource' -%}
+    {%- assign apv_icon = 'icon_resource.png' -%}{%- assign apv_icon_title = 'Resource' -%}
+  {%- elsif apv_type_name == '' or apv_type_name == 'Base' or apv_type_name == 'Element' or apv_type_name == 'BackboneElement' -%}
+    {%- assign apv_icon = 'icon_element.gif' -%}{%- assign apv_icon_title = 'Element' -%}
+  {%- elsif apv_type_first == apv_type_lower -%}
+    {%- unless apv_type_name contains ':' -%}{%- assign apv_icon = 'icon_primitive.png' -%}{%- assign apv_icon_title = 'Primitive data type' -%}{%- endunless -%}
+  {%- endif -%}
+{%- endif -%}
+<img class="apv-icon{% unless apv_changed %} apv-icon-inherited{% endunless %}" src="{{ apv_icon }}" alt="" title="{{ apv_icon_title }}" width="16" height="16"/>

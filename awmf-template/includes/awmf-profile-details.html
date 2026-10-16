@@ -1,0 +1,32 @@
+{%- if apv_element.definition or apv_element.short -%}
+  {%- assign apv_definition_key = '|definition|' -%}
+  {%- assign apv_definition_text = apv_element.definition -%}
+  {%- assign apv_definition_primitive = apv_element._definition -%}
+  {%- unless apv_element.definition -%}{%- assign apv_definition_key = '|short|' -%}{%- assign apv_definition_text = apv_element.short -%}{%- assign apv_definition_primitive = apv_element._short -%}{%- endunless -%}
+  <section class="apv-detail-section{% unless apv_diff_keys contains apv_definition_key %} apv-field-inherited{% endunless %}"><div class="apv-detail-heading" role="heading" aria-level="5">Definition</div><p>{%- include awmf-profile-text.html text=apv_definition_text primitive=apv_definition_primitive -%}</p></section>
+{%- endif -%}
+{%- for apv_property in apv_element -%}
+  {%- assign apv_fixed_prefix = apv_property[0] | slice: 0, 5 -%}
+  {%- assign apv_pattern_prefix = apv_property[0] | slice: 0, 7 -%}
+  {%- if apv_fixed_prefix == 'fixed' or apv_pattern_prefix == 'pattern' -%}
+    {%- assign apv_property_marker = '|' | append: apv_property[0] | append: '|' -%}
+    <section class="apv-detail-section{% unless apv_diff_keys contains apv_property_marker %} apv-field-inherited{% endunless %}"><div class="apv-detail-heading" role="heading" aria-level="5">{% if apv_fixed_prefix == 'fixed' %}Fixed value{% else %}Pattern{% endif %}</div><pre class="apv-value"><code>{{ apv_property[1] | jsonify | escape }}</code></pre></section>
+  {%- endif -%}
+{%- endfor -%}
+{%- if apv_element.binding.valueSet -%}
+  <section class="apv-detail-section{% unless apv_diff_keys contains '|binding|' %} apv-field-inherited{% endunless %}"><div class="apv-detail-heading" role="heading" aria-level="5">Binding</div><p>{%- include awmf-profile-canonical.html canonical=apv_element.binding.valueSet -%} ({{ apv_element.binding.strength | escape }}){% if apv_element.binding.description %} — {% include awmf-profile-text.html text=apv_element.binding.description primitive=apv_element.binding._description %}{% endif %}</p></section>
+{%- endif -%}
+{%- if apv_element.slicing -%}
+  <section class="apv-detail-section{% unless apv_diff_keys contains '|slicing|' %} apv-field-inherited{% endunless %}"><div class="apv-detail-heading" role="heading" aria-level="5">Slicing</div><pre class="apv-value"><code>{{ apv_element.slicing | jsonify | escape }}</code></pre></section>
+{%- endif -%}
+{%- if apv_element.constraint.size > 0 -%}
+  <section class="apv-detail-section"><div class="apv-detail-heading" role="heading" aria-level="5">Constraints</div><div class="apv-invariants">
+    {%- assign apv_diff_constraints = apv_diff.constraint | map: 'key' -%}
+    {%- for apv_constraint in apv_element.constraint -%}
+      {%- assign apv_constraint_changed = false -%}
+      {%- if apv_diff_constraints contains apv_constraint.key or apv_constraint.source == apv_resource.url -%}{%- assign apv_constraint_changed = true -%}{%- endif -%}
+      <section class="apv-invariant{% unless apv_constraint_changed %} apv-field-inherited{% endunless %}"><strong>{{ apv_constraint.key | escape }}</strong><p>{%- include awmf-profile-text.html text=apv_constraint.human primitive=apv_constraint._human -%}</p>{% if apv_constraint.expression %}<pre class="apv-value"><code>{{ apv_constraint.expression | escape }}</code></pre>{% endif %}</section>
+    {%- endfor -%}
+  </div></section>
+{%- endif -%}
+<a href="{{ apv_definition_href | escape }}">Full element definition</a>

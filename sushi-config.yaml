@@ -83,6 +83,7 @@ menu:
 # http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/CodeSystem-ig-parameters.html
 #
 parameters:
+  produce-jekyll-data: true
   # Publisher 3.0.0 crashes comparing R6 canonical resources without URLs.
   #version-comparison: n/a
 #   excludettl: true

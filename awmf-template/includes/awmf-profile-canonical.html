@@ -1,0 +1,12 @@
+{%- assign apv_canonical_url = include.canonical | split: '|' | first -%}
+{%- assign apv_canonical_marker = '|' | append: apv_canonical_url | append: '|' -%}
+{%- assign apv_canonical_href = apv_canonical_url -%}
+{%- if apv_canonical_paths contains apv_canonical_marker -%}
+  {%- assign apv_canonical_href = apv_canonical_paths | split: apv_canonical_marker | last | split: ';' | first -%}
+{%- endif -%}
+{%- assign apv_canonical_label = apv_canonical_url | split: '/' | last -%}
+{%- assign apv_link_prefix = apv_canonical_href | slice: 0, 8 -%}
+{%- assign apv_link_short_prefix = apv_canonical_href | slice: 0, 7 -%}
+{%- unless apv_canonical_href contains ':' -%}<a href="{{ apv_canonical_href | escape }}" data-canonical="{{ include.canonical | escape }}">{{ apv_canonical_label | escape }}</a>{%- else -%}
+  {%- if apv_link_prefix == 'https://' or apv_link_short_prefix == 'http://' -%}<a href="{{ apv_canonical_href | escape }}" data-canonical="{{ include.canonical | escape }}">{{ apv_canonical_label | escape }}</a>{%- else -%}<span data-canonical="{{ include.canonical | escape }}">{{ apv_canonical_label | escape }}</span>{%- endif -%}
+{%- endunless -%}
