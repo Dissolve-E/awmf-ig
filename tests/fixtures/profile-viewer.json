@@ -1,0 +1,45 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "fixture",
+  "url": "https://example.org/StructureDefinition/fixture",
+  "name": "UnicodeAttachment",
+  "title": "Leitlinienanhang – Größe & Übersicht",
+  "type": "Attachment",
+  "kind": "complex-type",
+  "snapshot": {
+    "element": [
+      { "id": "Attachment", "path": "Attachment", "min": 0, "max": "*", "short": "Leitlinienanhang – Übersicht" },
+      { "id": "Attachment.id", "path": "Attachment.id", "min": 0, "max": "1", "short": "Inherited identifier", "type": [{ "code": "string" }] },
+      { "id": "Attachment.meta", "path": "Attachment.meta", "min": 0, "max": "1", "short": "Common parent", "base": { "path": "Resource.meta" }, "type": [{ "code": "Meta" }] },
+      { "id": "Attachment.meta.versionId", "path": "Attachment.meta.versionId", "min": 0, "max": "1", "short": "Version under common parent", "type": [{ "code": "id" }] },
+      { "id": "Attachment.status", "path": "Attachment.status", "min": 0, "max": "1", "short": "Inherited status", "_short": { "extension": [{ "url": "http://hl7.org/fhir/StructureDefinition/translation", "extension": [{ "url": "lang", "valueCode": "de" }, { "url": "content", "valueString": "Geerbter Status – geprüft" }] }] }, "type": [{ "code": "code" }] },
+      { "id": "Attachment.description", "path": "Attachment.description", "min": 1, "max": "1", "short": "Größe & Übersicht <script>window.fixtureXss = true</script>", "definition": "Definition mit Umlauten: äöü ß. <img src=x onerror=window.fixtureXss=true>", "type": [{ "code": "http://hl7.org/fhirpath/System.String", "extension": [{ "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type", "valueUrl": "string" }] }] },
+      { "id": "Attachment.part", "path": "Attachment.part", "min": 0, "max": "*", "short": "Nested parts", "type": [{ "code": "BackboneElement" }] },
+      { "id": "Attachment.part.title", "path": "Attachment.part.title", "min": 1, "max": "1", "short": "Titel eines Abschnitts", "definition": "An inherited definition", "type": [{ "code": "string" }], "patternString": "Needle & <pattern>", "binding": { "strength": "required", "valueSet": "https://example.org/ValueSet/local|1.2", "description": "Verbindliche Auswahl" }, "constraint": [{ "key": "att-1", "human": "Must include a title", "expression": "value.exists()", "source": "https://example.org/StructureDefinition/fixture" }] },
+      { "id": "Attachment.retired", "path": "Attachment.retired", "min": 0, "max": "0", "short": "Excluded parent", "type": [{ "code": "BackboneElement" }] },
+      { "id": "Attachment.retired.value", "path": "Attachment.retired.value", "min": 0, "max": "1", "short": "Excluded through its ancestor", "type": [{ "code": "string" }] },
+      { "id": "Attachment.omitted.middle.value", "path": "Attachment.omitted.middle.value", "min": 0, "max": "1", "short": "Parent paths are absent", "type": [{ "code": "string" }] },
+      { "id": "Attachment.component", "path": "Attachment.component", "min": 0, "max": "*", "short": "Components", "type": [{ "code": "BackboneElement" }], "slicing": { "discriminator": [{ "type": "value", "path": "code" }], "rules": "open" } },
+      { "id": "Attachment.component:alpha", "path": "Attachment.component", "sliceName": "alpha", "min": 0, "max": "*", "short": "Alpha slice", "type": [{ "code": "BackboneElement" }] },
+      { "id": "Attachment.component:alpha.code", "path": "Attachment.component.code", "min": 1, "max": "1", "short": "Alpha code", "type": [{ "code": "code" }], "fixedCode": "alpha" },
+      { "id": "Attachment.component:alpha/beta", "path": "Attachment.component", "sliceName": "alpha/beta", "min": 0, "max": "1", "short": "Beta reslice", "type": [{ "code": "BackboneElement" }] },
+      { "id": "Attachment.component:alpha/beta.code", "path": "Attachment.component.code", "min": 1, "max": "1", "short": "Beta code", "type": [{ "code": "code" }], "fixedCode": "beta" },
+      { "id": "Attachment.reference", "path": "Attachment.reference", "min": 0, "max": "1", "short": "Local profiled reference", "type": [{ "code": "Reference", "targetProfile": ["https://example.org/StructureDefinition/local|1.0"] }] },
+      { "id": "Attachment.recursive", "path": "Attachment.recursive", "min": 0, "max": "*", "short": "Recursive part", "contentReference": "#Attachment.part" },
+      { "id": "Attachment.localContent", "path": "Attachment.localContent", "min": 0, "max": "1", "short": "Local profile content reference", "contentReference": "https://example.org/StructureDefinition/local#Attachment.part" },
+      { "id": "Attachment.fhirContent", "path": "Attachment.fhirContent", "min": 0, "max": "1", "short": "FHIR content reference", "contentReference": "http://hl7.org/fhir/StructureDefinition/Composition#Composition.section" },
+      { "id": "Attachment.unsafe", "path": "Attachment.unsafe", "min": 0, "max": "1", "short": "Unsafe canonical stays text", "type": [{ "code": "Reference", "targetProfile": ["javascript:window.fixtureXss=true"] }] }
+    ]
+  },
+  "differential": {
+    "element": [
+      { "id": "Attachment", "path": "Attachment" },
+      { "id": "Attachment.description", "path": "Attachment.description", "min": 1, "short": "Größe & Übersicht <script>window.fixtureXss = true</script>" },
+      { "id": "Attachment.part.title", "path": "Attachment.part.title", "min": 1, "patternString": "Needle & <pattern>", "constraint": [{ "key": "att-1", "human": "Must include a title", "expression": "value.exists()" }] },
+      { "id": "Attachment.retired", "path": "Attachment.retired", "max": "0" },
+      { "id": "Attachment.component:alpha", "path": "Attachment.component", "sliceName": "alpha" },
+      { "id": "Attachment.component:alpha/beta", "path": "Attachment.component", "sliceName": "alpha/beta" },
+      { "id": "Attachment.component:alpha/beta.missing", "path": "Attachment.component.missing", "min": 1, "short": "Differential absent from snapshot", "type": [{ "code": "string" }] }
+    ]
+  }
+}

@@ -40,6 +40,9 @@ The project is a collaboration between:
 
 This implementation guide targets FHIR `6.0.0-snapshot1`.
 
+The [AWMF template documentation](awmf-template/README.md) explains profile
+rendering and its verification with the standard IG Publisher/Jekyll build.
+
 ## Contributing
 
 We welcome contributions to enhance the Implementation Guide. Please follow the steps below:
