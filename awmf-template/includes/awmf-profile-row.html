@@ -1,0 +1,57 @@
+{%- assign apv_row = apv_structure_rows[apv_row_index] | split: '|' -%}
+{%- assign apv_parent = apv_row[0] -%}
+{%- assign apv_depth = apv_row[1] | plus: 0 -%}
+{%- assign apv_excluded = apv_row[2] -%}
+{%- assign apv_hidden = false -%}
+{%- if apv_depth > 1 or apv_row[3] == 'true' -%}{%- assign apv_hidden = true -%}{%- endif -%}
+{%- if apv_parent == '' -%}{%- assign apv_hidden = false -%}{%- endif -%}
+{%- assign apv_marker = '|' | append: apv_element.id | append: '|' -%}
+{%- assign apv_changed = false -%}
+{%- assign apv_changed_below = false -%}
+{%- assign apv_common = false -%}
+{%- assign apv_children = false -%}
+{%- assign apv_missing = true -%}
+{%- if apv_changed_ids contains apv_marker -%}{%- assign apv_changed = true -%}{%- endif -%}
+{%- if apv_changed_below_ids contains apv_marker -%}{%- assign apv_changed_below = true -%}{%- endif -%}
+{%- if apv_common_ids contains apv_marker -%}{%- assign apv_common = true -%}{%- endif -%}
+{%- if apv_parent_ids contains apv_marker -%}{%- assign apv_children = true -%}{%- endif -%}
+{%- if apv_snapshot_ids contains apv_element.id -%}{%- assign apv_missing = false -%}{%- endif -%}
+{%- assign apv_diff = nil -%}
+{%- if apv_differential_index contains apv_marker -%}
+  {%- assign apv_diff_index = apv_differential_index | split: apv_marker | last | split: ';' | first | plus: 0 -%}
+  {%- assign apv_diff = apv_differential[apv_diff_index] -%}
+{%- endif -%}
+{%- assign apv_diff_keys = '|' -%}
+{%- for apv_property in apv_diff -%}{%- assign apv_diff_keys = apv_diff_keys | append: apv_property[0] | append: '|' -%}{%- endfor -%}
+{%- assign apv_leaf = apv_element.path | split: '.' | last -%}
+{%- assign apv_definition_href = apv_filename | append: '-definitions.html#' -%}
+{%- assign apv_encoded_id = apv_element.id | uri_escape -%}
+{%- assign apv_definition_href = apv_definition_href | append: apv_encoded_id -%}
+<tr data-element-id="{{ apv_element.id | escape }}" data-parent-id="{{ apv_parent | escape }}" data-depth="{{ apv_depth }}" data-changed="{{ apv_changed }}" data-changed-below="{{ apv_changed_below }}" data-common="{{ apv_common }}" data-excluded="{{ apv_excluded }}" data-missing="{{ apv_missing }}" data-has-children="{{ apv_children }}" class="{% if apv_hidden %}apv-initial-hidden {% endif %}{% if apv_excluded == 'true' %}apv-excluded {% endif %}{% if apv_missing %}apv-missing{% endif %}">
+  <td class="apv-name"><span class="apv-tree-lines" aria-hidden="true">{%- if apv_depth > 0 -%}<span class="apv-tree-stem" style="inset-inline-start: {{ apv_depth | times: 18 | minus: 11 }}px"></span><span class="apv-tree-branch{% unless apv_children %} apv-tree-leaf{% endunless %}" style="inset-inline-start: {{ apv_depth | times: 18 | minus: 11 }}px"></span>{%- endif -%}</span><div class="apv-name-inner" style="padding-inline-start: {{ apv_depth | times: 18 }}px">
+    {%- if apv_children -%}<button class="apv-toggle apv-js-only" type="button" aria-label="{% if apv_parent == '' %}Collapse{% else %}Expand{% endif %} {{ apv_element.id | escape }}" aria-expanded="{% if apv_parent == '' %}true{% else %}false{% endif %}">{% if apv_parent == '' %}▾{% else %}▸{% endif %}</button>{%- else -%}<span class="apv-toggle" aria-hidden="true"></span>{%- endif -%}
+    {%- include awmf-profile-icon.html -%}
+    <a class="apv-element-label{% unless apv_changed %} apv-field-inherited{% endunless %}" href="{{ apv_definition_href | escape }}" title="{{ apv_element.id | escape }}" aria-controls="awmf-element-details" aria-haspopup="dialog" aria-expanded="false">{{ apv_element.sliceName | default: apv_leaf | escape }}</a>{% if apv_element.sliceName %}<small class="apv-slice-label">{{ apv_leaf | escape }}</small>{% endif %}{% if apv_missing %}<span class="apv-warning"> ⚠ snapshot</span>{% endif %}
+  </div></td>
+  <td class="apv-flags">
+    {%- if apv_element.mustSupport -%}<span class="{% if apv_diff_keys contains '|mustSupport|' %}apv-specified{% else %}apv-field-inherited{% endif %}" title="Must support">S</span>{%- endif -%}
+    {%- if apv_element.isModifier -%}<span class="{% if apv_diff_keys contains '|isModifier|' %}apv-specified{% else %}apv-field-inherited{% endif %}" title="Modifier">?!</span>{%- endif -%}
+    {%- if apv_element.isSummary -%}<span class="{% if apv_diff_keys contains '|isSummary|' %}apv-specified{% else %}apv-field-inherited{% endif %}" title="Summary">Σ</span>{%- endif -%}
+    {%- if apv_element.constraint.size > 0 -%}<span class="{% if apv_diff_keys contains '|constraint|' %}apv-specified{% else %}apv-field-inherited{% endif %}" title="Constraints; see element details">C</span>{%- endif -%}
+  </td>
+  <td class="apv-card {% if apv_diff_keys contains '|min|' or apv_diff_keys contains '|max|' %}apv-specified{% else %}apv-field-inherited{% endif %}" title="Effective cardinality from the snapshot">{{ apv_element.min | default: '–' }}..{{ apv_element.max | default: '–' | escape }}</td>
+  <td class="apv-types {% if apv_diff_keys contains '|type|' or apv_diff_keys contains '|contentReference|' %}apv-specified{% else %}apv-field-inherited{% endif %}">
+    {%- for apv_type in apv_element.type -%}
+      {%- assign apv_native_type = apv_type.extension | where: 'url', 'http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type' | first -%}
+      <div><span>{{ apv_native_type.valueUrl | default: apv_type.code | escape }}</span>
+        {%- assign apv_empty_array = '' | split: ',' -%}
+        {%- assign apv_type_profiles = apv_type.profile | default: apv_empty_array -%}
+        {%- assign apv_target_profiles = apv_type.targetProfile | default: apv_empty_array -%}
+        {%- assign apv_profiles = apv_type_profiles | concat: apv_target_profiles | uniq -%}
+        {%- if apv_profiles.size > 0 -%}({%- for apv_canonical in apv_profiles -%}{% unless forloop.first %} | {% endunless %}{%- include awmf-profile-canonical.html canonical=apv_canonical -%}{%- endfor -%}){%- endif -%}
+      </div>
+    {%- endfor -%}
+    {%- if apv_element.contentReference -%}{%- include awmf-profile-content-reference.html -%}{%- endif -%}
+  </td>
+  <td class="apv-details"><button class="apv-detail-trigger" type="button" aria-label="Details for {{ apv_element.id | escape }}" aria-controls="awmf-element-details" aria-haspopup="dialog" aria-expanded="false"><span class="{% if apv_diff_keys contains '|short|' %}apv-specified{% else %}apv-field-inherited{% endif %}">{%- include awmf-profile-text.html text=apv_element.short primitive=apv_element._short -%}</span></button><template class="apv-detail-content">{%- include awmf-profile-details.html -%}</template></td>
+</tr>

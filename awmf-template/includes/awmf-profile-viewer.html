@@ -1,0 +1,151 @@
+{%- comment -%}
+  Native Publisher produce-jekyll-data supplies the completed StructureDefinition.
+  All rows and details are rendered by Jekyll; browser code only changes visibility.
+  Delimited indexes avoid scanning the entire snapshot for every ancestor. FHIR
+  element IDs cannot contain the | and ; delimiters used by these indexes.
+{%- endcomment -%}
+{%- assign apv_resource_key = 'StructureDefinition-' | append: include.id -%}
+{%- assign apv_resource = site.data[apv_resource_key] -%}
+{%- assign apv_language = include.lang | default: 'en' -%}
+{%- assign apv_filename = apv_resource_key -%}
+{%- if apv_resource.language and apv_resource.language != apv_language -%}
+<p class="apv-warning">The Publisher's exported profile data is in {{ apv_resource.language | escape }}. <a href="{{ apv_filename | escape }}-publisher.html">Open the Publisher view for this page's language.</a></p>
+{%- elsif apv_resource.snapshot.element.size > 0 -%}
+{%- assign apv_snapshot = apv_resource.snapshot.element -%}
+{%- assign apv_differential = apv_resource.differential.element -%}
+{%- capture apv_differential_index -%}{%- for apv_index_element in apv_differential -%}|{{- apv_index_element.id -}}|{{- forloop.index0 -}};{%- endfor -%}{%- endcapture -%}
+{%- assign apv_elements = apv_snapshot -%}
+{%- assign apv_snapshot_ids = apv_snapshot | map: 'id' -%}
+{%- assign apv_missing_count = 0 -%}
+{%- for apv_diff in apv_differential -%}
+  {%- unless apv_snapshot_ids contains apv_diff.id -%}
+    {%- assign apv_missing_item = apv_differential | slice: forloop.index0, 1 -%}
+    {%- assign apv_elements = apv_elements | concat: apv_missing_item -%}
+    {%- assign apv_missing_count = apv_missing_count | plus: 1 -%}
+  {%- endunless -%}
+{%- endfor -%}
+{%- assign apv_ids = apv_elements | map: 'id' -%}
+{%- capture apv_element_index -%}{%- for apv_index_element in apv_elements -%}|{{- apv_index_element.id -}}|{{- forloop.index0 -}};{%- endfor -%}{%- endcapture -%}
+{%- assign apv_changed_ids = '|' -%}
+{%- assign apv_changed_below_ids = '|' -%}
+{%- assign apv_excluded_ids = '|' -%}
+{%- assign apv_common_ids = '|' -%}
+{%- assign apv_parent_ids = '|' -%}
+{%- for apv_diff in apv_differential -%}
+  {%- assign apv_meaningful = false -%}
+  {%- for apv_property in apv_diff -%}
+    {%- unless apv_property[0] == 'id' or apv_property[0] == 'path' -%}
+      {%- assign apv_meaningful = true -%}
+      {%- break -%}
+    {%- endunless -%}
+  {%- endfor -%}
+  {%- if apv_meaningful -%}
+    {%- assign apv_changed_ids = apv_changed_ids | append: apv_diff.id | append: '|' -%}
+    {%- assign apv_ancestor = apv_diff.id -%}
+    {%- assign apv_segments = apv_ancestor | replace: ':', '.' | replace: '/', '.' | split: '.' -%}
+    {%- for apv_segment in apv_segments -%}
+      {%- assign apv_changed_below_ids = apv_changed_below_ids | append: apv_ancestor | append: '|' -%}
+      {%- assign apv_leaf = apv_ancestor | replace: ':', '.' | replace: '/', '.' | split: '.' | last -%}
+      {%- assign apv_length = apv_ancestor.size | minus: apv_leaf.size | minus: 1 -%}
+      {%- if apv_length < 1 -%}{%- break -%}{%- endif -%}
+      {%- assign apv_ancestor = apv_ancestor | slice: 0, apv_length -%}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- for apv_element in apv_elements -%}
+  {%- if apv_element.max == '0' -%}
+    {%- assign apv_excluded_ids = apv_excluded_ids | append: apv_element.id | append: '|' -%}
+  {%- endif -%}
+  {%- assign apv_marker = '|' | append: apv_element.id | append: '|' -%}
+  {%- unless apv_changed_below_ids contains apv_marker or apv_element.sliceName -%}
+    {%- assign apv_base_root = apv_element.base.path | split: '.' | first -%}
+    {%- assign apv_leaf = apv_element.path | split: '.' | last -%}
+    {%- assign apv_base_common = false -%}
+    {%- if apv_element.base.path contains '.' -%}
+      {%- if apv_base_root == 'Resource' or apv_base_root == 'DomainResource' -%}{%- assign apv_base_common = true -%}{%- endif -%}
+    {%- endif -%}
+    {%- if apv_base_common or apv_leaf == 'id' or apv_leaf == 'extension' or apv_leaf == 'modifierExtension' or apv_element.representation contains 'xmlAttr' -%}
+      {%- assign apv_common_ids = apv_common_ids | append: apv_element.id | append: '|' -%}
+    {%- endif -%}
+  {%- endunless -%}
+{%- endfor -%}
+{%- comment -%}Store each row's nearest existing parent, depth and ancestor flags.{%- endcomment -%}
+{%- capture apv_structure -%}
+  {%- for apv_element in apv_elements -%}
+    {%- assign apv_parent = '' -%}
+    {%- assign apv_depth = 0 -%}
+    {%- assign apv_excluded = false -%}
+    {%- assign apv_common_hidden = false -%}
+    {%- assign apv_ancestor = apv_element.id -%}
+    {%- assign apv_segments = apv_ancestor | replace: ':', '.' | replace: '/', '.' | split: '.' -%}
+    {%- for apv_segment in apv_segments -%}
+      {%- assign apv_marker = '|' | append: apv_ancestor | append: '|' -%}
+      {%- if apv_excluded_ids contains apv_marker -%}{%- assign apv_excluded = true -%}{%- endif -%}
+      {%- if apv_common_ids contains apv_marker -%}{%- assign apv_common_hidden = true -%}{%- endif -%}
+      {%- unless forloop.first -%}
+        {%- if apv_ids contains apv_ancestor -%}
+          {%- if apv_parent == '' -%}{%- assign apv_parent = apv_ancestor -%}{%- endif -%}
+          {%- assign apv_depth = apv_depth | plus: 1 -%}
+        {%- endif -%}
+      {%- endunless -%}
+      {%- assign apv_leaf = apv_ancestor | replace: ':', '.' | replace: '/', '.' | split: '.' | last -%}
+      {%- assign apv_length = apv_ancestor.size | minus: apv_leaf.size | minus: 1 -%}
+      {%- if apv_length < 1 -%}{%- break -%}{%- endif -%}
+      {%- assign apv_ancestor = apv_ancestor | slice: 0, apv_length -%}
+    {%- endfor -%}
+    {%- assign apv_parent_ids = apv_parent_ids | append: apv_parent | append: '|' -%}
+    {{- apv_parent -}}|{{- apv_depth -}}|{{- apv_excluded -}}|{{- apv_common_hidden -}};
+  {%- endfor -%}
+{%- endcapture -%}
+{%- assign apv_structure_rows = apv_structure | split: ';' -%}
+{%- capture apv_canonical_paths -%}
+  {%- for apv_resource_entry in site.data.resources -%}
+    {%- assign apv_link_resource = apv_resource_entry[1] -%}
+    {%- if apv_link_resource.url and apv_link_resource.path -%}|{{- apv_link_resource.url -}}|{{- apv_link_resource.path -}};{%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+<section class="apv" id="awmf-profile-viewer" data-fhir="generated" data-mode="hybrid" aria-label="FHIR structure viewer">
+  <div class="apv-toolbar">
+    <div class="apv-heading h4" role="heading" aria-level="4">FHIR structure<small class="apv-subtitle">{{ apv_resource.type | escape }}</small></div>
+    <div class="apv-controls apv-js-only"><label class="apv-common"><input type="checkbox"/> Show common</label></div>
+  </div>
+  <div class="apv-mode-tabs ui-tabs ui-widget ui-widget-content ui-corner-all" id="awmf-structure-tabs">
+    <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all apv-js-only" role="tablist" aria-label="Structure view">
+      <li class="ui-state-default ui-corner-top" role="presentation"><a class="ui-tabs-anchor" id="awmf-structure-tab-diff" data-mode="diff" href="#awmf-structure-diff" role="tab" aria-controls="awmf-structure-panel" aria-selected="false" tabindex="-1">Differential Table</a></li>
+      <li class="ui-state-default ui-corner-top" role="presentation"><a class="ui-tabs-anchor" id="awmf-structure-tab-snapshot" data-mode="snapshot" href="#awmf-structure-snapshot" role="tab" aria-controls="awmf-structure-panel" aria-selected="false" tabindex="-1">Snapshot Table</a></li>
+      <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="presentation"><a class="ui-tabs-anchor" id="awmf-structure-tab-hybrid" data-mode="hybrid" href="#awmf-structure-hybrid" role="tab" aria-controls="awmf-structure-panel" aria-selected="true" tabindex="0">Hybrid Table</a></li>
+    </ul>
+    <div class="apv-tab-content apv-tab-panel ui-widget-content ui-corner-bottom" id="awmf-structure-panel" role="tabpanel" aria-labelledby="awmf-structure-tab-hybrid">
+      <span id="awmf-structure-hybrid" aria-hidden="true"></span><span id="awmf-structure-snapshot" aria-hidden="true"></span><span id="awmf-structure-diff" aria-hidden="true"></span>
+      <div class="apv-tools apv-js-only"><input class="apv-search" type="search" placeholder="Find an element, type or value…" aria-label="Search FHIR structure"/><button class="apv-text-button" type="button" data-action="expand">Expand all</button><button class="apv-text-button" type="button" data-action="collapse">Collapse all</button></div>
+      <p class="apv-description" data-mode="hybrid">Effective snapshot with changes highlighted; inherited details are muted.</p>
+      <p class="apv-description" data-mode="snapshot">Complete effective structure; excluded elements are omitted.</p>
+      <p class="apv-description" data-mode="diff">Profile changes and their ancestors; unspecified fields are hidden.</p>
+      {%- if apv_missing_count > 0 -%}<p class="apv-warning">{{ apv_missing_count }} differential element(s) are absent from this snapshot. They are shown with a warning; check the Publisher output.</p>{%- endif -%}
+      <div class="apv-scroll"><table class="apv-table"><thead><tr><th scope="col">Element</th><th scope="col">Flags</th><th scope="col">Card.</th><th scope="col">Type</th><th scope="col">Description</th></tr></thead><tbody>
+        {%- assign apv_visible_count = 0 -%}
+        {%- for apv_element in apv_elements -%}
+          {%- assign apv_row_index = forloop.index0 -%}
+          {%- assign apv_count_row = apv_structure_rows[apv_row_index] | split: '|' -%}
+          {%- assign apv_count_depth = apv_count_row[1] | plus: 0 -%}
+          {%- if apv_count_row[0] == '' -%}
+            {%- assign apv_visible_count = apv_visible_count | plus: 1 -%}
+          {%- elsif apv_count_depth < 2 and apv_count_row[3] != 'true' -%}
+            {%- assign apv_visible_count = apv_visible_count | plus: 1 -%}
+          {%- endif -%}
+          {%- include awmf-profile-row.html -%}
+        {%- endfor -%}
+        <tr class="apv-empty-row" hidden><td class="apv-empty" colspan="5">No matching elements in this view.</td></tr>
+      </tbody></table></div>
+      <div class="apv-footer"><span class="apv-count apv-js-only" role="status">{{ apv_visible_count }} / {{ apv_elements.size }} elements</span><span class="apv-no-js-only">{{ apv_elements.size }} elements</span></div>
+    </div>
+  </div>
+</section>
+<aside class="apv apv-popover" id="awmf-element-details" data-fhir="generated" role="dialog" aria-labelledby="awmf-element-details-title" hidden>
+  <div class="apv-popover-heading"><strong id="awmf-element-details-title"></strong><div class="apv-popover-actions">
+    <button class="apv-popover-pin" type="button" aria-label="Pin element details" aria-pressed="false" title="Pin element details"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 3h6l-1 7 4 4v3H6v-3l4-4-1-7ZM12 17v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/></svg></button><button class="apv-popover-close" type="button" aria-label="Close element details">×</button>
+  </div></div><div class="apv-popover-content"></div>
+</aside>
+{%- else -%}
+<p class="apv-warning">The generated profile snapshot is unavailable. <a href="{{ apv_filename | escape }}-publisher.html">Open the Publisher tables.</a></p>
+{%- endif -%}

@@ -1,0 +1,22 @@
+{
+  "extraTemplates": [
+    { "name": "publisher", "description": "Publisher tables" }
+  ],
+  "defaults": {
+    "Any": { "jekyll-data": false },
+    "StructureDefinition": {
+      "jekyll-data": true,
+      "template-base": "template/layouts/layout-awmf-profile.html",
+      "template-publisher": "template/layouts/layout-profile.html",
+      "publisher": "{{[type]}}-{{[id]}}-publisher.html"
+    },
+    "StructureDefinition:extension": {
+      "template-base": "template/layouts/layout-awmf-ext.html",
+      "template-publisher": "template/layouts/layout-ext.html"
+    },
+    "StructureDefinition:resourcedefn": {
+      "template-base": "template/layouts/layout-awmf-profile.html",
+      "template-publisher": "template/layouts/layout-resource.html"
+    }
+  }
+}

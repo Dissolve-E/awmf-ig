@@ -1,0 +1,12 @@
+{%- comment -%}FHIR primitive translation extensions, when provided by the Publisher.{%- endcomment -%}
+{%- assign apv_text = include.text -%}
+{%- for apv_translation in include.primitive.extension -%}
+  {%- if apv_translation.url == 'http://hl7.org/fhir/StructureDefinition/translation' -%}
+    {%- assign apv_translation_lang = apv_translation.extension | where: 'url', 'lang' | first -%}
+    {%- if apv_translation_lang.valueCode == apv_language -%}
+      {%- assign apv_translation_content = apv_translation.extension | where: 'url', 'content' | first -%}
+      {%- assign apv_text = apv_translation_content.valueString | default: apv_translation_content.valueMarkdown | default: apv_text -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+{{- apv_text | escape -}}

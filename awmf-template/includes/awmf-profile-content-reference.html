@@ -1,0 +1,32 @@
+{%- assign apv_reference = apv_element.contentReference -%}
+{%- assign apv_reference_first = apv_reference | slice: 0, 1 -%}
+{%- assign apv_reference_href = apv_reference -%}
+{%- assign apv_reference_local = false -%}
+{%- if apv_reference_first == '#' -%}
+  {%- assign apv_reference_local = true -%}
+  {%- assign apv_reference_href = apv_filename | append: '-definitions.html' | append: apv_reference -%}
+{%- else -%}
+  {%- assign apv_reference_parts = apv_reference | split: '#' -%}
+  {%- assign apv_reference_base = apv_reference_parts | first -%}
+  {%- assign apv_reference_marker = '|' | append: apv_reference_base | append: '|' -%}
+  {%- if apv_reference_parts.size > 1 -%}
+    {%- assign apv_reference_fragment = apv_reference_parts | last -%}
+    {%- if apv_canonical_paths contains apv_reference_marker -%}
+      {%- assign apv_reference_page = apv_canonical_paths | split: apv_reference_marker | last | split: ';' | first -%}
+      {%- unless apv_reference_page contains ':' -%}{%- assign apv_reference_local = true -%}{%- endunless -%}
+      {%- assign apv_reference_href = apv_reference_page | remove: '.html' | append: '-definitions.html#' | append: apv_reference_fragment -%}
+    {%- else -%}
+      {%- assign apv_reference_core_prefix = apv_reference_base | slice: 0, 40 -%}
+      {%- if apv_reference_core_prefix == 'http://hl7.org/fhir/StructureDefinition/' -%}
+        {%- assign apv_reference_core = apv_reference_base | split: '/' | last | downcase -%}
+        {%- assign apv_reference_spec = site.data.info.spec | default: site.data.fhir.basespec | default: 'http://hl7.org/fhir' -%}
+        {%- assign apv_reference_spec_last = apv_reference_spec | slice: -1, 1 -%}
+        {%- unless apv_reference_spec_last == '/' -%}{%- assign apv_reference_spec = apv_reference_spec | append: '/' -%}{%- endunless -%}
+        {%- assign apv_reference_href = apv_reference_spec | append: apv_reference_core | append: '-definitions.html#' | append: apv_reference_fragment -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endif -%}
+{%- assign apv_reference_https = apv_reference_href | slice: 0, 8 -%}
+{%- assign apv_reference_http = apv_reference_href | slice: 0, 7 -%}
+{%- if apv_reference_local or apv_reference_https == 'https://' or apv_reference_http == 'http://' -%}<a href="{{ apv_reference_href | escape }}" data-canonical="{{ apv_reference | escape }}">{{ apv_reference | escape }}</a>{%- else -%}<span data-canonical="{{ apv_reference | escape }}">{{ apv_reference | escape }}</span>{%- endif -%}
