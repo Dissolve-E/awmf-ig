@@ -5,7 +5,7 @@ Title: "Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspec
 Description: "Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspecting Dementia on Sensitivity"
 * insert narrative([[Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspecting Dementia on Sensitivity]])
 * artifactReference = Reference(CitationSystematicReviewTsoi2015)
-* content[levelOfEvidence]
+* content[riskOfBias]
   * classifier = cs-rob-2-overall-judgment#low_risk_of_bias "Low risk of bias"
 
 Instance: RoB-CognitiveTestsWhenSuspectingDementia-Specificity
@@ -14,6 +14,6 @@ Usage: #example
 Title: "Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspecting Dementia - Specificity"
 Description: "Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspecting Dementia on Specificity"
 * insert narrative([[Certainty of Evidence Rating Ris of Bias for Cognitive Tests When Suspecting Dementia on Specificity]])
-* content[levelOfEvidence]
+* content[riskOfBias]
   * classifier = cs-rob-2-overall-judgment#low_risk_of_bias "Low risk of bias"
 * artifactReference = Reference(CitationSystematicReviewTsoi2015)

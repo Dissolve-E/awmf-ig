@@ -13,9 +13,7 @@ Description: "A structured assessment of the certainty of evidence for a specifi
 // We do not yet represent the individual ratings on the Oxford 2011 domains or the overall score (if applicable).
 // This may be added in the future; therefore, the commented-out block is left here as a placeholder.
 /*
-* content[levelOfEvidence]
-  * type 1..1
-  * type = $cs-certainty-type#Overall "Overall certainty"
+* content[overall]
   * classifier 1..1
   * classifier from OCEBM2011LevelsOfEvidenceVS (required)
 */

@@ -15,9 +15,7 @@ Description: "A structured assessment of the certainty of evidence using AMSTAR 
 // This may be added in the future; therefore, the commented-out block is left here as a placeholder.
 
 /*
-* content[levelOfEvidence]
-  * type 1..1
-  * type = $cs-certainty-type#Overall "Overall certainty"
+* content[overall]
   * classifier 0..1
   * classifier from vs-amstar2-confidence-ratings (required)
 */
