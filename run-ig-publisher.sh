@@ -65,6 +65,9 @@ trap 'cp "$config_backup" sushi-config.yaml; rm -f "$config_backup"' EXIT
 ./build-dependencies.sh
 publisher="$PWD/input-cache/publisher.jar"
 
+# Regenerate the Jekyll data file for the page includes from the current FSH.
+./update-ig-data.sh
+
 if [ "$CI_BUILD" = true ]; then
   # CI build - no -publish flag generates "continuous build" banner
   echo "Running CI build..."
