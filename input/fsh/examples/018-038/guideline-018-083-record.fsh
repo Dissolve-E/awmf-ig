@@ -56,6 +56,6 @@ Description: "S3-Leitlinie Diagnostik, Therapie und Nachsorge für erwachsene Pa
 * author[=].extension[role].valueCodeableConcept = cs-guideline-author-role#contributing
 
 * relatesTo[+]
-  * type = #documentation
+  * type = $cs-artifact-relationship-type#documentation
   * extension[classifier][+].valueCodeableConcept = cs-related-artifact-types#awmf-detail-page
   * targetUri = "https://register.awmf.org/de/leitlinien/detail/018-038"
