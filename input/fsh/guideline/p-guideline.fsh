@@ -121,6 +121,7 @@ Title: "Guideline Example"
 Description: "An example of a guideline."
 * insert narrative([[Guideline Example]])
 * version = "2.0"
+* url = "http://fhir.awmf.org/awmf.ig/Composition/GuidelineExample"
 * status = #final
 * date = "2025-03-06"
 * title = "Example Guideline"

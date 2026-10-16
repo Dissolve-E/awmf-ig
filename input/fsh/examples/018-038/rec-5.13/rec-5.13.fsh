@@ -19,7 +19,7 @@ Description: "Empfehlung 5.13: Situationen mit Empfehlungen gegen eine Knochenma
 * category[synthesisType] = cs-recommendation-synthesis-type#evidence-based "Evidence-based"
 
 * relatesTo[partOf]
-  * targetCanonical = Canonical(DiffuseLargeBCellLymphomaGuideline|2022)
+  * targetCanonical = Canonical(DiffuseLargeBCellLymphomaGuideline|1.0)
 
 * author[+] = Reference(DGHO)
 // section 5.2 person authors
