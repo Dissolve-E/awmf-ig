@@ -26,7 +26,6 @@ dependencies:
   hl7.fhir.uv.ebm-incubator: dev
   hl7.fhir.r6.core: 6.0.0-snapshot1
   hl7.fhir.uv.extensions.r5: 5.3.0
-  hl7.terminology: 7.4.0
 # The dependencies property corresponds to IG.dependsOn. The key is the
 # package id and the value is the version (or dev/current). For advanced
 # use cases, the value can be an object with keys for id, uri, and version.
@@ -83,6 +82,9 @@ menu:
 # http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/CodeSystem-ig-parameters.html
 #
 parameters:
+  # Several dependency packages provide the same canonicals in different versions
+  # (e.g. hl7.fhir.uv.extensions 5.2.0 and 5.3.0); pin those references to one version.
+  pin-canonicals: pin-multiples
   # Publisher 3.0.0 crashes comparing R6 canonical resources without URLs.
   #version-comparison: n/a
 #   excludettl: true
