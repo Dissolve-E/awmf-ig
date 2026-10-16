@@ -264,6 +264,9 @@ Description: "An example of a recommendation."
 
 Instance: Recommendation-PlanDefinition-example
 InstanceOf: PlanDefinition
+Usage: #example
+Title: "Recommendation PlanDefinition Example"
+Description: "Illustrates how two recommendation actions can be ordered with relatedAction (diagnosis before therapy)."
 * status = #draft
 * action[0]
   * title = "Recommendation 1"

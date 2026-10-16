@@ -71,29 +71,34 @@ Description: "Citation for the Systematic Review by Tsoi et al. 2015"
 Instance: contributor0
 InstanceOf: Practitioner
 Usage: #example
+Description: "Author of the systematic review by Tsoi et al. (2015) that is cited as evidence for recommendation 17 of guideline 038-013."
 * name.family = "Tsoi"
 * name.given = "Kelvin K F"
 
 Instance: contributor1
 InstanceOf: Practitioner
 Usage: #example
+Description: "Author of the systematic review by Tsoi et al. (2015) that is cited as evidence for recommendation 17 of guideline 038-013."
 * name.family = "Chan"
 * name.given = "Joyce Y C"
 
 Instance: contributor2
 InstanceOf: Practitioner
 Usage: #example
+Description: "Author of the systematic review by Tsoi et al. (2015) that is cited as evidence for recommendation 17 of guideline 038-013."
 * name.family = "Hirai"
 * name.given = "Hoyee W"
 
 Instance: contributor3
 InstanceOf: Practitioner
 Usage: #example
+Description: "Author of the systematic review by Tsoi et al. (2015) that is cited as evidence for recommendation 17 of guideline 038-013."
 * name.family = "Wong"
 * name.given = "Samuel Y S"
 
 Instance: contributor4
 InstanceOf: Practitioner
 Usage: #example
+Description: "Author of the systematic review by Tsoi et al. (2015) that is cited as evidence for recommendation 17 of guideline 038-013."
 * name.family = "Kwok"
 * name.given = "Timothy C Y"
