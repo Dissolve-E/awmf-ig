@@ -14,7 +14,7 @@ mit Verdacht auf nosokomiale Pneumonie empfohlen?"
 * title = "Multiplex-PCR-Diagnostik"
 
 * identifier[+]
-  * system = "http://fhir.awmf.org/examples"
+  * system = "https://example.org/identifiers"
   * value = "RecommendationMultiplexPCRDiagnostic"
   * use = #official
 
@@ -108,7 +108,7 @@ Title: "Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Mortality"
 Description: "Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on mortality"
 * insert narrative([[Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on mortality]])
 * artifactReference = Reference(Evidence-MultiplexPCRDiagnostic-Mortality)
-* content[levelOfEvidence]
+* content[overall]
   * classifier = $cs-certainty-rating#very-low "Very low quality"
 
 Instance: EvA-MultiplexPCRDiagnostic-AntibioticDays
@@ -118,7 +118,7 @@ Title: "Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Antibiotic D
 Description: "Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on antibiotic days"
 * insert narrative([[Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on antibiotic days]])
 * artifactReference = Reference(Evidence-MultiplexPCRDiagnostic-AntibioticDays)
-* content[levelOfEvidence]
+* content[overall]
   * classifier = $cs-certainty-rating#very-low "Very low quality"
 
 Instance: EvA-MultiplexPCRDiagnostic-TimeToDeescalation
@@ -128,7 +128,7 @@ Title: "Certainty of Evidence Rating for Multiplex-PCR-Diagnostik - Time to Dees
 Description: "Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on time to deescalation"
 * insert narrative([[Certainty of evidence rating for the impact of Multiplex-PCR-Diagnostik on time to deescalation]])
 * artifactReference = Reference(Evidence-MultiplexPCRDiagnostic-TimeToDeescalation)
-* content[levelOfEvidence]
+* content[overall]
   * classifier = $cs-certainty-rating#very-low "Very low quality"
 
 Instance: Evidence-MultiplexPCRDiagnostic-Mortality

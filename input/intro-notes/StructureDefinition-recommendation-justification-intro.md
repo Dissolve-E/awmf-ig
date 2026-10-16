@@ -66,9 +66,8 @@ InstanceOf: certainty-of-evidence-rating
 * content[ratingSystem]
   * classifier = $cs-evidence-rating-system#GRADE
 
-* content[levelOfEvidence]
-  * type = $cs-certainty-type#Overall
-  * classifier = cs-rating-certainty-of-evidence#moderate
+* content[overall]
+  * classifier = $cs-certainty-rating#moderate
 ```
 
 This pattern supports consistent documentation of certainty across outcomes and recommendations.

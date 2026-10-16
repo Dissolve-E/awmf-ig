@@ -7,7 +7,7 @@ Description: "Langfassung Leitlinie 020-013"
 * category = cs-guideline-sections#long-version "Long Version"
 * content
   * attachment
-    * url = "020-013l_S3_Epidemiologie-Diagnostik-Therapie-erwachsener-Patienten-nosokomiale-Pneumonie__2024-03.pdf"
+    * url = "https://register.awmf.org/assets/guidelines/020-013l_S3_Epidemiologie-Diagnostik-Therapie-erwachsener-Patienten-nosokomiale-Pneumonie__2024-03.pdf"
     * title = "Langfassung"
     * language = #de
     * contentType = #application/pdf

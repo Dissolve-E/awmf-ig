@@ -2,8 +2,6 @@
 {% assign id = {{include.id}} %}
 {% assign resource = site.data.structuredefinitions.[id] %}
 
-# Dissolve-E - Digitization of the AWMF guideline registry for an open, guideline-based, trustworthy evidence ecosystem
-
 ### Background
 
 Dissolve-E (*Digitization of the AWMF guideline registry for an open, guideline-based, trustworthy evidence ecosystem*) aims to digitize the guidelines registry maintained by the Association of the Scientific Medical Societies in Germany (AWMF). This registry plays a crucial role in ensuring quality medical care by providing evidence-based clinical guidelines. However, this registry is currently analog without comprehensive digital version existing yet.
@@ -150,3 +148,9 @@ This project is publicly funded by the Innovation Committee of the Federal Joint
 * Profile definitions in the DISSOLVE-E Implementation Guide can be downloaded as a package via <a href="https://fhir.awmf.org/awmf.ig/package.tgz" alt="DISSOLVE-E Implementation Guide profile package download">https://fhir.awmf.org/awmf.ig/package.tgz</a>.
 
 {% include link-list.md %}
+
+### Dependencies
+
+{% include dependency-table.xhtml %}
+
+{% include ip-statements.xhtml %}

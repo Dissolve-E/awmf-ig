@@ -7,7 +7,7 @@ Description: "Implementierungshilfe Leitlinie 020-013"
 * category = cs-guideline-sections#implementation-guidance
 * content
   * attachment
-    * url = "020_D_Ges_fuer_Pneumologie/020-013a1_S3_Epidemiologie-Diagnostik-Therapie-erwachsener-Patienten-nosokomiale-Pneumonie__2024-03.pdf"
+    * url = "https://register.awmf.org/assets/guidelines/020_D_Ges_fuer_Pneumologie/020-013a1_S3_Epidemiologie-Diagnostik-Therapie-erwachsener-Patienten-nosokomiale-Pneumonie__2024-03.pdf"
     * title = "Anlage: Anleitung zur inhalativen Antibiotika-Therapie"
     * language = #de
     * contentType = #application/pdf

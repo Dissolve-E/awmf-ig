@@ -12,14 +12,14 @@ Description: "Empfehlung 5.13: Situationen mit Empfehlungen gegen eine Knochenma
 * title = "Situationen mit Empfehlungen gegen eine Knochenmarkbiopsie"
 
 * identifier[+]
-  * system = "http://fhir.awmf.org/examples"
+  * system = "https://example.org/identifiers"
   * value = "RecommendationAgainstBoneMarrowBiopsy"
   * use = #official
 
 * category[synthesisType] = cs-recommendation-synthesis-type#evidence-based "Evidence-based"
 
 * relatesTo[partOf]
-  * targetCanonical = Canonical(DiffuseLargeBCellLymphomaGuideline|2022)
+  * targetCanonical = Canonical(DiffuseLargeBCellLymphomaGuideline|1.0)
 
 * author[+] = Reference(DGHO)
 // section 5.2 person authors

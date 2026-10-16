@@ -7,13 +7,14 @@ Description: "Wie wird eine HAP klinisch diagnostiziert und welche Differenziald
 * insert narrative([[HAP Diagnose]])
 
 * version = "3.0"
+* url = "http://fhir.awmf.org/awmf.ig/Composition/RecommendationHAPDiagnosis"
 * status = #final
 * author[+] = Reference(JessicaRademacherDGPFor020-013)
 * date = "2024-12-05"
 * title = "HAP Diagnose"
 
 * identifier[+]
-  * system = "http://fhir.awmf.org/examples"
+  * system = "https://example.org/identifiers"
   * value = "RecommendationHAPDiagnosis"
   * use = #official
 

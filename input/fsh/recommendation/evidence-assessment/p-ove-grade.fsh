@@ -22,9 +22,7 @@ Description: "A structured assessment of the certainty of evidence for a specifi
   * classifier 1..1
   * classifier = $cs-evidence-rating-system#GRADE
 
-* content[levelOfEvidence]
-  * type 1..1
-  * type = $cs-certainty-type#Overall "Overall certainty"
+* content[overall]
   * classifier 1..1
   * classifier from vs-rating-certainty-of-evidence (required)
 * content[inconsistency]
