@@ -14,7 +14,7 @@ mit Verdacht auf nosokomiale Pneumonie empfohlen?"
 * title = "Multiplex-PCR-Diagnostik"
 
 * identifier[+]
-  * system = "http://fhir.awmf.org/examples"
+  * system = "https://example.org/identifiers"
   * value = "RecommendationMultiplexPCRDiagnostic"
   * use = #official
 

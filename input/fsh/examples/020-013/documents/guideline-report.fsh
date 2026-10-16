@@ -7,7 +7,7 @@ Description: "Leitlinienreport Leitlinie 020-013"
 * category = cs-guideline-sections#guideline-report
 * content
   * attachment
-    * url = "020-013m_S3_Epidemiologie-Diagnostik-Therapie-erwachsener-Patienten-nosokomiale-Pneumonie__2024-03.pdf"
+    * url = "https://register.awmf.org/assets/guidelines/020-013m_S3_Epidemiologie-Diagnostik-Therapie-erwachsener-Patienten-nosokomiale-Pneumonie__2024-03.pdf"
     * title = "Leitlinienreport"
     * language = #de
     * contentType = #application/pdf

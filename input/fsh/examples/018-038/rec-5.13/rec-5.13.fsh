@@ -12,7 +12,7 @@ Description: "Empfehlung 5.13: Situationen mit Empfehlungen gegen eine Knochenma
 * title = "Situationen mit Empfehlungen gegen eine Knochenmarkbiopsie"
 
 * identifier[+]
-  * system = "http://fhir.awmf.org/examples"
+  * system = "https://example.org/identifiers"
   * value = "RecommendationAgainstBoneMarrowBiopsy"
   * use = #official
 
