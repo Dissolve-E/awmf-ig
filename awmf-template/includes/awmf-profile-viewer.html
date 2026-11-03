@@ -29,6 +29,7 @@
 {%- assign apv_changed_ids = '|' -%}
 {%- assign apv_changed_below_ids = '|' -%}
 {%- assign apv_excluded_ids = '|' -%}
+{%- assign apv_implied_ids = '|' -%}
 {%- assign apv_common_ids = '|' -%}
 {%- assign apv_parent_ids = '|' -%}
 {%- for apv_diff in apv_differential -%}
@@ -56,6 +57,10 @@
   {%- if apv_element.max == '0' -%}
     {%- assign apv_excluded_ids = apv_excluded_ids | append: apv_element.id | append: '|' -%}
   {%- endif -%}
+  {%- assign apv_implied = apv_element.extension | where: 'url', 'http://hl7.org/fhir/tools/StructureDefinition/implied-type-slice' | first -%}
+  {%- if apv_implied.valueBoolean -%}
+    {%- assign apv_implied_ids = apv_implied_ids | append: apv_element.id | append: '|' -%}
+  {%- endif -%}
   {%- assign apv_marker = '|' | append: apv_element.id | append: '|' -%}
   {%- unless apv_changed_below_ids contains apv_marker or apv_element.sliceName -%}
     {%- assign apv_base_root = apv_element.base.path | split: '.' | first -%}
@@ -69,20 +74,27 @@
     {%- endif -%}
   {%- endunless -%}
 {%- endfor -%}
-{%- comment -%}Store each row's nearest existing parent, depth and ancestor flags.{%- endcomment -%}
+{%- comment -%}
+  Store each row's nearest existing parent, depth and ancestor flags. The
+  Publisher's definitions page has no entry below a prohibited element or for an
+  implied type slice and its children, so those rows are not linked to it.
+{%- endcomment -%}
 {%- capture apv_structure -%}
   {%- for apv_element in apv_elements -%}
     {%- assign apv_parent = '' -%}
     {%- assign apv_depth = 0 -%}
     {%- assign apv_excluded = false -%}
     {%- assign apv_common_hidden = false -%}
+    {%- assign apv_undefined = false -%}
     {%- assign apv_ancestor = apv_element.id -%}
     {%- assign apv_segments = apv_ancestor | replace: ':', '.' | replace: '/', '.' | split: '.' -%}
     {%- for apv_segment in apv_segments -%}
       {%- assign apv_marker = '|' | append: apv_ancestor | append: '|' -%}
       {%- if apv_excluded_ids contains apv_marker -%}{%- assign apv_excluded = true -%}{%- endif -%}
       {%- if apv_common_ids contains apv_marker -%}{%- assign apv_common_hidden = true -%}{%- endif -%}
+      {%- if apv_implied_ids contains apv_marker -%}{%- assign apv_undefined = true -%}{%- endif -%}
       {%- unless forloop.first -%}
+        {%- if apv_excluded_ids contains apv_marker -%}{%- assign apv_undefined = true -%}{%- endif -%}
         {%- if apv_ids contains apv_ancestor -%}
           {%- if apv_parent == '' -%}{%- assign apv_parent = apv_ancestor -%}{%- endif -%}
           {%- assign apv_depth = apv_depth | plus: 1 -%}
@@ -94,7 +106,7 @@
       {%- assign apv_ancestor = apv_ancestor | slice: 0, apv_length -%}
     {%- endfor -%}
     {%- assign apv_parent_ids = apv_parent_ids | append: apv_parent | append: '|' -%}
-    {{- apv_parent -}}|{{- apv_depth -}}|{{- apv_excluded -}}|{{- apv_common_hidden -}};
+    {{- apv_parent -}}|{{- apv_depth -}}|{{- apv_excluded -}}|{{- apv_common_hidden -}}|{{- apv_undefined -}};
   {%- endfor -%}
 {%- endcapture -%}
 {%- assign apv_structure_rows = apv_structure | split: ';' -%}

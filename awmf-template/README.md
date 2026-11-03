@@ -66,6 +66,11 @@ Inherited properties are muted in Hybrid and hidden in Differential. Ancestors
 of changed elements remain visible in Differential. Elements absent from the
 snapshot but present in the differential are included with a warning.
 
+Element names link to the Publisher's definitions page only where it has an
+entry. It omits the children of a prohibited (`max = 0`) element, implied type
+slices (marked with the tools extension `implied-type-slice`) and their
+children, and differential-only elements; these rows show the name unlinked.
+
 The native data export was checked with unmodified IG Publisher 3.0.0 and
 Jekyll 4.4.1, including Unicode text. Publisher 3.0.0 overwrites the same `_data`
 filename for each language in a multilingual build; the last language wins and

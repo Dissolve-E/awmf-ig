@@ -1,56 +1,57 @@
 #!/usr/bin/env bash
-# Install the latest successfully tested AWMF/EBM Publisher, or a pinned release.
+# Install the latest HL7 IG Publisher release, or the release in PUBLISHER_VERSION.
 set -euo pipefail
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cache="$script_dir/input-cache"
 publisher="$cache/publisher.jar"
-repository="${PUBLISHER_REPOSITORY:-glichtner/fhir-ig-publisher}"
-tag="${PUBLISHER_TAG:-}"
+repository_url="https://github.com/HL7/fhir-ig-publisher"
+version="${PUBLISHER_VERSION:-}"
+
+cached_version() {
+  if [[ -f "$publisher" ]]; then
+    java -jar "$publisher" -v 2>/dev/null | tail -n 1
+  fi
+}
 
 if [[ "${PUBLISHER_OFFLINE:-0}" == 1 ]]; then
-  cd "$cache"
-  sha256sum --check publisher.jar.sha256
-  exit 0
+  cached="$(cached_version)"
+  if [[ -n "$cached" && ( -z "$version" || "$cached" == "$version" ) ]]; then
+    echo "Using cached IG Publisher: $cached"
+    exit 0
+  fi
+  echo "IG Publisher ${version:-release} is not in $cache" >&2
+  exit 1
 fi
 
 curl_options=(--fail --silent --show-error --location --retry 3 --connect-timeout 20 --max-time 600)
-if [[ -z "$tag" ]]; then
+if [[ -z "$version" ]]; then
   release_url="$(curl "${curl_options[@]}" --head --output /dev/null --write-out '%{url_effective}' \
-    "https://github.com/$repository/releases/latest")"
-  release_prefix="https://github.com/$repository/releases/tag/"
+    "$repository_url/releases/latest")"
+  release_prefix="$repository_url/releases/tag/"
   if [[ "$release_url" != "$release_prefix"* ]]; then
-    echo "Cannot resolve latest patched Publisher release: $release_url" >&2
+    echo "Cannot resolve the latest Publisher release: $release_url" >&2
     exit 1
   fi
-  tag="${release_url#"$release_prefix"}"
+  version="${release_url#"$release_prefix"}"
 fi
-if [[ "$tag" != patched-* || "$tag" == *[!a-zA-Z0-9._-]* ]]; then
-  echo "Expected a patched Publisher release tag, got: $tag" >&2
+if [[ -z "$version" || "$version" == *[!a-zA-Z0-9._-]* ]]; then
+  echo "Invalid Publisher version: $version" >&2
   exit 1
+fi
+
+if [[ "$(cached_version)" == "$version" ]]; then
+  echo "IG Publisher is up to date: $version"
+  exit 0
 fi
 
 mkdir -p "$cache"
 download_dir="$(mktemp -d "$cache/.publisher.XXXXXX")"
 trap 'rm -rf "$download_dir"' EXIT
-download_url="https://github.com/$repository/releases/download/$tag"
-curl "${curl_options[@]}" "$download_url/publisher.jar.sha256" --output "$download_dir/publisher.jar.sha256"
-read -r expected_checksum checksum_file < "$download_dir/publisher.jar.sha256"
-if [[ ! "$expected_checksum" =~ ^[a-f0-9]{64}$ || "$checksum_file" != publisher.jar ]]; then
-  echo "Invalid Publisher checksum file from $download_url" >&2
-  exit 1
-fi
 
-if [[ -f "$publisher" && "$(sha256sum "$publisher" | cut -d ' ' -f 1)" == "$expected_checksum" ]]; then
-  cp "$download_dir/publisher.jar.sha256" "$cache/publisher.jar.sha256"
-  echo "Patched Publisher is up to date: $tag"
-  exit 0
-fi
-
-echo "Downloading patched Publisher: $tag"
-curl "${curl_options[@]}" "$download_url/publisher.jar" --output "$download_dir/publisher.jar"
-(cd "$download_dir" && sha256sum --check publisher.jar.sha256)
-# Replace the existing JAR only after a complete download and checksum check.
+echo "Downloading IG Publisher: $version"
+curl "${curl_options[@]}" "$repository_url/releases/download/$version/publisher.jar" \
+  --output "$download_dir/publisher.jar"
+# Replace the existing JAR only after a complete download.
 mv "$download_dir/publisher.jar" "$publisher"
-mv "$download_dir/publisher.jar.sha256" "$cache/publisher.jar.sha256"
-echo "Patched Publisher ready: $publisher ($tag)"
+echo "IG Publisher ready: $publisher ($version)"

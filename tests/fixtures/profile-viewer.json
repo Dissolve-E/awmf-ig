@@ -14,6 +14,9 @@
       { "id": "Attachment.meta.versionId", "path": "Attachment.meta.versionId", "min": 0, "max": "1", "short": "Version under common parent", "type": [{ "code": "id" }] },
       { "id": "Attachment.status", "path": "Attachment.status", "min": 0, "max": "1", "short": "Inherited status", "_short": { "extension": [{ "url": "http://hl7.org/fhir/StructureDefinition/translation", "extension": [{ "url": "lang", "valueCode": "de" }, { "url": "content", "valueString": "Geerbter Status – geprüft" }] }] }, "type": [{ "code": "code" }] },
       { "id": "Attachment.description", "path": "Attachment.description", "min": 1, "max": "1", "short": "Größe & Übersicht <script>window.fixtureXss = true</script>", "definition": "Definition mit Umlauten: äöü ß. <img src=x onerror=window.fixtureXss=true>", "type": [{ "code": "http://hl7.org/fhirpath/System.String", "extension": [{ "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type", "valueUrl": "string" }] }] },
+      { "id": "Attachment.value[x]", "path": "Attachment.value[x]", "min": 0, "max": "1", "short": "Choice with type slices", "slicing": { "discriminator": [{ "type": "type", "path": "$this" }], "rules": "open" }, "type": [{ "code": "string" }, { "code": "integer" }] },
+      { "id": "Attachment.value[x]:valueString", "path": "Attachment.value[x]", "sliceName": "valueString", "min": 0, "max": "1", "short": "Declared type slice", "type": [{ "code": "string" }] },
+      { "id": "Attachment.value[x]:valueInteger", "extension": [{ "url": "http://hl7.org/fhir/tools/StructureDefinition/implied-type-slice", "valueBoolean": true }], "path": "Attachment.value[x]", "sliceName": "valueInteger", "min": 0, "max": "1", "short": "Implied type slice", "type": [{ "code": "integer" }] },
       { "id": "Attachment.part", "path": "Attachment.part", "min": 0, "max": "*", "short": "Nested parts", "type": [{ "code": "BackboneElement" }] },
       { "id": "Attachment.part.title", "path": "Attachment.part.title", "min": 1, "max": "1", "short": "Titel eines Abschnitts", "definition": "An inherited definition", "type": [{ "code": "string" }], "patternString": "Needle & <pattern>", "binding": { "strength": "required", "valueSet": "https://example.org/ValueSet/local|1.2", "description": "Verbindliche Auswahl" }, "constraint": [{ "key": "att-1", "human": "Must include a title", "expression": "value.exists()", "source": "https://example.org/StructureDefinition/fixture" }] },
       { "id": "Attachment.retired", "path": "Attachment.retired", "min": 0, "max": "0", "short": "Excluded parent", "type": [{ "code": "BackboneElement" }] },
@@ -35,6 +38,7 @@
     "element": [
       { "id": "Attachment", "path": "Attachment" },
       { "id": "Attachment.description", "path": "Attachment.description", "min": 1, "short": "Größe & Übersicht <script>window.fixtureXss = true</script>" },
+      { "id": "Attachment.value[x]:valueString", "path": "Attachment.value[x]", "sliceName": "valueString", "short": "Declared type slice" },
       { "id": "Attachment.part.title", "path": "Attachment.part.title", "min": 1, "patternString": "Needle & <pattern>", "constraint": [{ "key": "att-1", "human": "Must include a title", "expression": "value.exists()" }] },
       { "id": "Attachment.retired", "path": "Attachment.retired", "max": "0" },
       { "id": "Attachment.component:alpha", "path": "Attachment.component", "sliceName": "alpha" },
