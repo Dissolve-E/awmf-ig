@@ -120,7 +120,6 @@
 [SD:Recommendation Justification SIGN]: StructureDefinition-recommendation-justification-sign.html
 [SD:Recommendation Review Status]: StructureDefinition-ext-recommendation-review-status.html
 [SD:Registration Date]: StructureDefinition-ext-registration-date.html
-[SD:RelatesTo Classifier]: StructureDefinition-ext-relates-to-classifier.html
 [SD:RelatesTo Label]: StructureDefinition-ext-relates-to-label.html
 [SD:Section Coding]: StructureDefinition-ext-section-coding.html
 [SD:Section Intended Audience]: StructureDefinition-ext-section-intended-audience.html
