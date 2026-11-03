@@ -1126,7 +1126,12 @@ main() {
     create_publication_request
     update_sushi_config
     download_dependencies
-    
+
+    # Build AWMF with the SUSHI fix from FHIR/sushi#1653; the dependencies above use
+    # the released SUSHI. The -go-publish rebuild runs in the same process and uses it too.
+    PATH="$("${SCRIPT_DIR}/install-sushi.sh"):$PATH"
+    export PATH
+
     # Choose publication method
     if [ "$USE_GO_PUBLISH" = "true" ]; then
         log_info "Using IG Publisher -go-publish mode (official HL7 approach)"
