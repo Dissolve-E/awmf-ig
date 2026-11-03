@@ -29,4 +29,4 @@
     {%- endfor -%}
   </div></section>
 {%- endif -%}
-<a href="{{ apv_definition_href | escape }}">Full element definition</a>
+{%- unless apv_definition_href == '' -%}<a href="{{ apv_definition_href | escape }}">Full element definition</a>{%- endunless -%}

@@ -201,6 +201,26 @@ test("without JavaScript all rows remain readable in our design with working def
   assert.equal(decodeURIComponent(target.hash.slice(1)), "Attachment.component:alpha/beta.code");
 });
 
+test("only elements with an entry on the definitions page link to it", async t => {
+  const { page, url } = await fixture(t, { javaScriptEnabled: false, stripBooleanHidden: true });
+  await page.goto(url);
+  const links = id => row(page, id).evaluate(element => ({
+    label: element.querySelector(".apv-element-label").getAttribute("href"),
+    details: [...element.querySelector(".apv-detail-content").content.querySelectorAll("a")]
+      .filter(link => link.textContent === "Full element definition").map(link => link.getAttribute("href"))
+  }));
+  // The Publisher lists prohibited elements and declared type slices, but nothing
+  // below a prohibited element, no implied type slice and no differential-only element.
+  for (const id of ["Attachment.retired", "Attachment.value[x]", "Attachment.value[x]:valueString"]) {
+    const { label, details } = await links(id);
+    assert.equal(decodeURIComponent(new URL(label, url).hash.slice(1)), id);
+    assert.deepEqual(details, [label], `${id}: details link to the same definition`);
+  }
+  for (const id of ["Attachment.retired.value", "Attachment.value[x]:valueInteger", "Attachment.component:alpha/beta.missing"]) {
+    assert.deepEqual(await links(id), { label: null, details: [] }, id);
+  }
+});
+
 test("tabs, collapse and search preserve row identity and semantic filtering", async t => {
   const { page, url } = await fixture(t);
   await page.goto(url);
@@ -219,8 +239,8 @@ test("tabs, collapse and search preserve row identity and semantic filtering", a
   assert.equal(await row(page, "Attachment.part.title").locator(".apv-card").isVisible(), true, "Differential retains explicitly changed cardinality");
   assert.equal(await row(page, "Attachment.part.title").locator(".apv-types").isVisible(), false);
   assert.deepEqual(new Set(await visibleIds(page)), new Set([
-    "Attachment", "Attachment.description", "Attachment.part", "Attachment.part.title", "Attachment.retired",
-    "Attachment.component", "Attachment.component:alpha", "Attachment.component:alpha/beta", "Attachment.component:alpha/beta.missing"
+    "Attachment", "Attachment.description", "Attachment.value[x]", "Attachment.value[x]:valueString",
+    "Attachment.part", "Attachment.part.title", "Attachment.retired", "Attachment.component", "Attachment.component:alpha", "Attachment.component:alpha/beta", "Attachment.component:alpha/beta.missing"
   ]));
   assert.equal(await page.locator(".apv-common input").isDisabled(), true);
   await tab(page, "hybrid").click();
