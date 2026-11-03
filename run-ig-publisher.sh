@@ -65,6 +65,11 @@ trap 'cp "$config_backup" sushi-config.yaml; rm -f "$config_backup"' EXIT
 ./build-dependencies.sh
 publisher="$PWD/input-cache/publisher.jar"
 
+# Build AWMF with the SUSHI fix from FHIR/sushi#1653; the dependencies above use
+# the released SUSHI.
+PATH="$(./install-sushi.sh):$PATH"
+export PATH
+
 # Regenerate the Jekyll data file for the page includes from the current FSH.
 ./update-ig-data.sh
 
