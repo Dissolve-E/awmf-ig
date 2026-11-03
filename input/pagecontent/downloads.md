@@ -23,9 +23,10 @@ The full implementation guide can be downloaded here.
 
 ### Dependency Packages
 
-The following packages match the dependencies of this AWMF build. Install both
-in your validator's package cache before loading the AWMF package.
+This IG depends on the continuous builds (`current`) of the EBM and EBM Incubator
+packages on build.fhir.org, which validators download automatically. Those builds
+change over time; these are the exact packages this AWMF build used.
 
 *   [EBM package](dependencies/hl7.fhir.uv.ebm.tgz)
 *   [EBM Incubator package](dependencies/hl7.fhir.uv.ebm-incubator.tgz)
-*   [Package versions, source commits and checksums](dependencies/build-info.json)
+*   [Package versions, build dates and checksums](dependencies/build-info.json)

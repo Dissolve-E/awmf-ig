@@ -377,8 +377,9 @@ update_sushi_config() {
 }
 
 download_dependencies() {
-    log_info "Building EBM Incubator and EBM dependency packages..."
-    "${SCRIPT_DIR}/build-dependencies.sh"
+    log_info "Downloading the IG Publisher and the EBM Incubator and EBM packages..."
+    "${SCRIPT_DIR}/download-publisher.sh"
+    "${SCRIPT_DIR}/download-dependencies.sh"
 }
 
 run_go_publish() {
@@ -1127,8 +1128,8 @@ main() {
     update_sushi_config
     download_dependencies
 
-    # Build AWMF with the SUSHI fix from FHIR/sushi#1653; the dependencies above use
-    # the released SUSHI. The -go-publish rebuild runs in the same process and uses it too.
+    # Build AWMF with the SUSHI fix from FHIR/sushi#1653. The -go-publish rebuild runs
+    # in the same process and uses it too.
     PATH="$("${SCRIPT_DIR}/install-sushi.sh"):$PATH"
     export PATH
 
@@ -1143,7 +1144,8 @@ main() {
         log_info "Using simple publish mode"
         run_simple_publish
     fi
-    
+    "${SCRIPT_DIR}/download-dependencies.sh" --verify
+
     deploy_to_server
     
     # Keep the updated sushi-config if successful
