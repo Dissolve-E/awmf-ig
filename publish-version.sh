@@ -1132,6 +1132,9 @@ main() {
     PATH="$("${SCRIPT_DIR}/install-sushi.sh"):$PATH"
     export PATH
 
+    # Regenerate the Jekyll data file for the page includes from the current FSH.
+    "${SCRIPT_DIR}/update-ig-data.sh"
+
     # Choose publication method
     if [ "$USE_GO_PUBLISH" = "true" ]; then
         log_info "Using IG Publisher -go-publish mode (official HL7 approach)"
