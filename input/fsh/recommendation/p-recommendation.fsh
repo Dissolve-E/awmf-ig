@@ -276,6 +276,7 @@ InstanceOf: PlanDefinition
 Usage: #example
 Title: "Recommendation PlanDefinition Example"
 Description: "Illustrates how two recommendation actions can be ordered with relatedAction (diagnosis before therapy)."
+* url = "http://fhir.awmf.org/awmf.ig/PlanDefinition/Recommendation-PlanDefinition-example"
 * status = #draft
 * action[0]
   * title = "Recommendation 1"

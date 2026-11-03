@@ -3,6 +3,7 @@ InstanceOf: ConceptMap
 Usage: #example
 Title: "Concept map from concepts from standardized vocabularies (that are not standard OMOP concepts) to Concept IDs of OMOP standard Concepts"
 Description: "Concept map from concepts from standardized vocabularies that are not labelled as 'standard' in Athena – OHDSI Vocabularies Repository to Concept IDs from 'standard' concepts"
+* url = "http://fhir.awmf.org/awmf.ig/ConceptMap/FHIRStatusToAWMFStatus"
 * version = "0.0.1"
 * status = #draft
 * purpose = """The DISSOLVE-E project develops a digital registry for clinical practice guidelines in Germany. The project is based on current processes coordinated by the Association of the Scientific Medical Societies in Germany (in German: Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften, short: AWMF).

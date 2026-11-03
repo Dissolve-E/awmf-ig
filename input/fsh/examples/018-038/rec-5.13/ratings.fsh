@@ -208,6 +208,7 @@ Usage: #example
 Title: "Evidence: Knochenmarkbiopsie - Gesamt\u00fcberleben"
 Description: "Evidenz zum Einfluss von Knochenmarkbiopsie vs. PET/CT-Staging auf das Gesamtüberleben"
 * insert narrative([[Evidenz zum Einfluss von Knochenmarkbiopsie vs. PET/CT-Staging auf das Gesamtüberleben]])
+* url = "http://fhir.awmf.org/awmf.ig/Evidence/Evidence-BoneMarrowBiopsy-OS"
 * status = #active
 * variableDefinition[outcome]
   * variableRole = $cs-variable-role#outcome
@@ -221,6 +222,7 @@ Usage: #example
 Title: "Evidence: Knochenmarkbiopsie - Progressionsfreies \u00dcberleben"
 Description: "Evidenz zum Einfluss von Knochenmarkbiopsie vs. PET/CT-Staging auf das progressionsfreie Überleben"
 * insert narrative([[Evidenz zum Einfluss von Knochenmarkbiopsie vs. PET/CT-Staging auf das progressionsfreie Überleben]])
+* url = "http://fhir.awmf.org/awmf.ig/Evidence/Evidence-BoneMarrowBiopsy-PFS"
 * status = #active
 * variableDefinition[outcome]
   * variableRole = $cs-variable-role#outcome
@@ -234,6 +236,7 @@ Usage: #example
 Title: "Evidence: Knochenmarkbiopsie - Ereignisfreies \u00dcberleben"
 Description: "Evidenz zum Einfluss von Knochenmarkbiopsie vs. PET/CT-Staging auf das ereignisfreie Überleben"
 * insert narrative([[Evidenz zum Einfluss von Knochenmarkbiopsie vs. PET/CT-Staging auf das ereignisfreie Überleben]])
+* url = "http://fhir.awmf.org/awmf.ig/Evidence/Evidence-BoneMarrowBiopsy-EFS"
 * status = #active
 * variableDefinition[outcome]
   * variableRole = $cs-variable-role#outcome
@@ -247,6 +250,7 @@ Usage: #example
 Title: "Evidence: Knochenmarkbiopsie - Sensitivit\u00e4t (Stadieneinteilung)"
 Description: "Evidenz zur Sensitivität von PET/CT vs. Knochenmarkbiopsie für die Stadieneinteilung"
 * insert narrative([[Evidenz zur Sensitivität von PET/CT vs. Knochenmarkbiopsie für die Stadieneinteilung]])
+* url = "http://fhir.awmf.org/awmf.ig/Evidence/Evidence-BoneMarrowBiopsy-Sensitivity"
 * status = #active
 * variableDefinition[outcome]
   * variableRole = $cs-variable-role#outcome
@@ -260,6 +264,7 @@ Usage: #example
 Title: "Evidence: Knochenmarkbiopsie - Spezifit\u00e4t (Stadieneinteilung)"
 Description: "Evidenz zur Spezifität von PET/CT vs. Knochenmarkbiopsie für die Stadieneinteilung"
 * insert narrative([[Evidenz zur Spezifität von PET/CT vs. Knochenmarkbiopsie für die Stadieneinteilung]])
+* url = "http://fhir.awmf.org/awmf.ig/Evidence/Evidence-BoneMarrowBiopsy-Specificity"
 * status = #active
 * variableDefinition[outcome]
   * variableRole = $cs-variable-role#outcome
@@ -273,6 +278,7 @@ Usage: #example
 Title: "Evidence: Knochenmarkbiopsie - Positiver Vorhersagewert (Stadieneinteilung)"
 Description: "Evidenz zum positiven Vorhersagewert von PET/CT vs. Knochenmarkbiopsie für die Stadieneinteilung"
 * insert narrative([[Evidenz zum positiven Vorhersagewert von PET/CT vs. Knochenmarkbiopsie für die Stadieneinteilung]])
+* url = "http://fhir.awmf.org/awmf.ig/Evidence/Evidence-BoneMarrowBiopsy-PPV"
 * status = #active
 * variableDefinition[outcome]
   * variableRole = $cs-variable-role#outcome
@@ -286,6 +292,7 @@ Usage: #example
 Title: "Evidence: Knochenmarkbiopsie - Negativer Vorhersagewert (Stadieneinteilung)"
 Description: "Evidenz zum negativen Vorhersagewert von PET/CT vs. Knochenmarkbiopsie für die Stadieneinteilung"
 * insert narrative([[Evidenz zum negativen Vorhersagewert von PET/CT vs. Knochenmarkbiopsie für die Stadieneinteilung]])
+* url = "http://fhir.awmf.org/awmf.ig/Evidence/Evidence-BoneMarrowBiopsy-NPV"
 * status = #active
 * variableDefinition[outcome]
   * variableRole = $cs-variable-role#outcome
@@ -299,6 +306,7 @@ Usage: #example
 Title: "Evidence: Knochenmarkbiopsie - Stadieneinteilung"
 Description: "Evidenz zur Genauigkeit von PET/CT vs. Knochenmarkbiopsie für die Stadieneinteilung"
 * insert narrative([[Evidenz zur Genauigkeit von PET/CT vs. Knochenmarkbiopsie für die Stadieneinteilung]])
+* url = "http://fhir.awmf.org/awmf.ig/Evidence/Evidence-BoneMarrowBiopsy-Staging"
 * status = #active
 * variableDefinition[outcome]
   * variableRole = $cs-variable-role#outcome
