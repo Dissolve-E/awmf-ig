@@ -692,7 +692,7 @@ Description: "Tests that author-registrant-singleton fails when no registrant is
 * insert narrative([[Guideline Example]])
 * version = "2.0"
 * status = #final
-* author[+] = Reference(GuidelineAuthorRoleExample)
+* author[+] = Reference(DGAI)            // <– Organization, so only the registrant constraint fails
 * author[=].extension[ext-guideline-author-role].valueCodeableConcept = cs-guideline-author-role#contributing
 * date = "2025-03-06"
 * title = "Example Guideline"
@@ -729,17 +729,18 @@ Description: "Tests that author-leading-vs-contributing-exclusive fails when aut
 * insert narrative([[Guideline Example]])
 * version = "2.0"
 * status = #final
-* author[+] = Reference(GuidelineAuthorRoleExample)
+* author[+] = Reference(DGAI)            // <– Organization, so only the exclusivity constraint fails
 * author[=].extension[ext-guideline-author-role][+].valueCodeableConcept = cs-guideline-author-role#leading
 * author[=].extension[ext-guideline-author-role][+].valueCodeableConcept = cs-guideline-author-role#contributing
+* author[+] = Reference(DGCH)            // <– Organization
+* author[=].extension[ext-guideline-author-role].valueCodeableConcept
+    = cs-guideline-author-role#registrant // we must also fulfill the registrant constraint
 * date = "2025-03-06"
 * title = "Example Guideline"
 * identifier[+]
   * system = "https://example.org/identifiers"
   * value = "AWMF-Guideline-Example"
   * use = #official
-* author[=].extension[ext-guideline-author-role].valueCodeableConcept
-    = cs-guideline-author-role#registrant // we must also fulfill the registrant constraint
 
 Instance: RR-TestInvLeadingAuthorRefPerson-SHOULD-FAIL
 InstanceOf: guideline-registry-record
@@ -757,6 +758,7 @@ Description: "Fails because the leading author points to a Practitioner instead 
 * author[+] = Reference(GuidelineAuthorRoleExample)                // <– Practitioner
 * author[=].extension[ext-guideline-author-role].valueCodeableConcept
     = cs-guideline-author-role#leading
+* author[+] = Reference(DGCH)            // <– Organization
 * author[=].extension[ext-guideline-author-role].valueCodeableConcept
     = cs-guideline-author-role#registrant // we must also fulfill the registrant constraint
 
@@ -776,6 +778,7 @@ Description: "Fails because the contributing author points to a Practitioner ins
 * author[+] = Reference(GuidelineAuthorRoleExample)                // <– Practitioner
 * author[=].extension[ext-guideline-author-role].valueCodeableConcept
     = cs-guideline-author-role#contributing
+* author[+] = Reference(DGCH)            // <– Organization
 * author[=].extension[ext-guideline-author-role].valueCodeableConcept
     = cs-guideline-author-role#registrant // we must also fulfill the registrant constraint
 

@@ -1,0 +1,337 @@
+{
+  "profiles": [
+    {
+      "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/awmf-guideline",
+      "tests": [
+        {
+          "source": "/fsh-generated/resources/Composition-G-TestTestInvRequireOfficialIdentifier-NoOfficialId-SHOULD-FAIL.json",
+          "description": "Guideline Test: No Official Identifier (Should Fail)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "code": "invariant",
+                "details": {
+                  "text": "$fragments:Constraint failed: inv-require-official-identifier:$"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": "/fsh-generated/resources/Composition-G-TestTestInvRequireOfficialIdentifier-TwoOfficialId-SHOULD-FAIL.json",
+          "description": "Guideline Test: Two Official Identifiers (Should Fail)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "code": "invariant",
+                "details": {
+                  "text": "$fragments:Constraint failed: inv-require-official-identifier:$"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": "/fsh-generated/resources/Composition-G-TestTestInvVersionMajorMinor-VersionPatch-SHOULD-FAIL.json",
+          "description": "Guideline Test: Version Major.Minor.Patch (Should Fail)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "code": "invariant",
+                "details": {
+                  "text": "$fragments:Constraint failed: inv-version-major-minor:$"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": "/fsh-generated/resources/Composition-G-TestTestInvVersionMajorMinor-VersionInvalid-SHOULD-FAIL.json",
+          "description": "Guideline Test: Version with Prefix (Should Fail)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "code": "invariant",
+                "details": {
+                  "text": "$fragments:Constraint failed: inv-version-major-minor:$"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": "/fsh-generated/resources/Composition-G-TestTestInvVersionMajorMinor-VersionInvalid2-SHOULD-FAIL.json",
+          "description": "Guideline Test: Version as Text (Should Fail)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "code": "invariant",
+                "details": {
+                  "text": "$fragments:Constraint failed: inv-version-major-minor:$"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "url": "http://fhir.awmf.org/awmf.ig/StructureDefinition/guideline-registry-record",
+      "tests": [
+        {
+          "source": "/fsh-generated/resources/Composition-RR-TestTestInvRequireOfficialId-NoOfficialId-SHOULD-FAIL.json",
+          "description": "Test: No Official Identifier (Should Fail)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "code": "invariant",
+                "details": {
+                  "text": "$fragments:Constraint failed: inv-require-official-identifier:$"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": "/fsh-generated/resources/Composition-RR-TestTestInvRequireOfficialId-TwoOfficialId-SHOULD-FAIL.json",
+          "description": "Test: Two Official Identifiers (Should Fail)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "code": "invariant",
+                "details": {
+                  "text": "$fragments:Constraint failed: inv-require-official-identifier:$"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": "/fsh-generated/resources/Composition-RR-TestTestInvRequireReleaseTypeIfReg-WrongCode-SHOULD-FAIL.json",
+          "description": "Test: Release Type Wrong Code (Should Fail)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "code": "invariant",
+                "details": {
+                  "text": "$fragments:Constraint failed: inv-require-release-type-if-registered:$"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": "/fsh-generated/resources/Composition-RR-TestTestInvRequireReleaseTypeIfRegistered-NoTag-SHOULD-FAIL.json",
+          "description": "Test: Release Type No Tag (Should Fail)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "code": "invariant",
+                "details": {
+                  "text": "$fragments:Constraint failed: inv-require-release-type-if-registered:$"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": "/fsh-generated/resources/Composition-RR-TestTestInvVersionMajorMinor-VersionPatch-SHOULD-FAIL.json",
+          "description": "Test: Version Major.Minor.Patch (Should Fail)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "code": "invariant",
+                "details": {
+                  "text": "$fragments:Constraint failed: inv-version-major-minor:$"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": "/fsh-generated/resources/Composition-RR-TestTestInvVersionMajorMinor-VersionInvalid-SHOULD-FAIL.json",
+          "description": "Test: Version with Prefix (Should Fail)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "code": "invariant",
+                "details": {
+                  "text": "$fragments:Constraint failed: inv-version-major-minor:$"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": "/fsh-generated/resources/Composition-RR-TestTestInvVersionMajorMinor-VersionInvalid2-SHOULD-FAIL.json",
+          "description": "Test: Version as Text (Should Fail)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "code": "invariant",
+                "details": {
+                  "text": "$fragments:Constraint failed: inv-version-major-minor:$"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": "/fsh-generated/resources/Composition-RR-TestTestInvRegCompNeedsPlannedComplDate-NoDate-SHOULD-FAIL.json",
+          "description": "Test: Registered Without Planned Completion Date (Should Fail)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "code": "invariant",
+                "details": {
+                  "text": "$fragments:Constraint failed: registered-composition-needs-planned-completion-date:$"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": "/fsh-generated/resources/Composition-RR-TestTestInvPrelimCompNeedsConsultPeriod-NoDate-SHOULD-FAIL.json",
+          "description": "Test: Preliminary Without Consultation Period (Should Fail)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "code": "invariant",
+                "details": {
+                  "text": "$fragments:Constraint failed: preliminary-composition-needs-consultation-period:$"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": "/fsh-generated/resources/Composition-RR-TestTestInvAuthorRegistSingleton-NoRegistrant-SHOULD-FAIL.json",
+          "description": "Test: No Registrant Author (Should Fail)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "code": "invariant",
+                "details": {
+                  "text": "$fragments:Constraint failed: author-registrant-singleton:$"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": "/fsh-generated/resources/Composition-RR-TestTestInvAuthorRegistSingleton-TwoRegistrants-SHOULD-FAIL.json",
+          "description": "Test: Two Registrant Authors (Should Fail)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "code": "invariant",
+                "details": {
+                  "text": "$fragments:Constraint failed: author-registrant-singleton:$"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": "/fsh-generated/resources/Composition-RR-TestTestInvAuthorLeadVsContrExclusive-Both-SHOULD-FAIL.json",
+          "description": "Test: Author Both Leading and Contributing (Should Fail)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "code": "invariant",
+                "details": {
+                  "text": "$fragments:Constraint failed: author-leading-vs-contributing-exclusive:$"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": "/fsh-generated/resources/Composition-RR-TestInvLeadingAuthorRefPerson-SHOULD-FAIL.json",
+          "description": "Guideline with leading author referencing Practitioner (fails invariant)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "code": "invariant",
+                "details": {
+                  "text": "$fragments:Constraint failed: author-leading-contributing-organization:$"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": "/fsh-generated/resources/Composition-RR-TestInvContribAuthorRefPerson-SHOULD-FAIL.json",
+          "description": "Guideline with contributing author referencing Practitioner (fails invariant)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "code": "invariant",
+                "details": {
+                  "text": "$fragments:Constraint failed: author-leading-contributing-organization:$"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
