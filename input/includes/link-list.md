@@ -96,7 +96,6 @@
 [SD:Evidence Overall Assessment GRADE]: StructureDefinition-evidence-overall-assessment-grade.html
 [SD:Evidence Overall Assessment Oxford 2011]: StructureDefinition-evidence-overall-assessment-oxford2011.html
 [SD:Evidence Overall Quality Assessment]: StructureDefinition-evidence-overall-quality-assessment.html
-[SD:Evidence Report with Contact Slices]: StructureDefinition-evidence-report-with-contact-slices.html
 [SD:First Publication Date]: StructureDefinition-ext-first-publication-date.html
 [SD:Guideline]: StructureDefinition-awmf-guideline.html
 [SD:Guideline Attachment]: StructureDefinition-guideline-attachment.html
@@ -121,7 +120,6 @@
 [SD:Recommendation Justification SIGN]: StructureDefinition-recommendation-justification-sign.html
 [SD:Recommendation Review Status]: StructureDefinition-ext-recommendation-review-status.html
 [SD:Registration Date]: StructureDefinition-ext-registration-date.html
-[SD:RelatesTo Classifier]: StructureDefinition-ext-relates-to-classifier.html
 [SD:RelatesTo Label]: StructureDefinition-ext-relates-to-label.html
 [SD:Section Coding]: StructureDefinition-ext-section-coding.html
 [SD:Section Intended Audience]: StructureDefinition-ext-section-intended-audience.html
