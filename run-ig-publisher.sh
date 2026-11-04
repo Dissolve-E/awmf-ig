@@ -61,12 +61,12 @@ config_backup="$(mktemp input-cache/sushi-config.XXXXXX)"
 cp sushi-config.yaml "$config_backup"
 trap 'cp "$config_backup" sushi-config.yaml; rm -f "$config_backup"' EXIT
 
-# Fetch and build both upstream dependencies with the same Publisher as AWMF.
-./build-dependencies.sh
+./download-publisher.sh
 publisher="$PWD/input-cache/publisher.jar"
+# Install the build.fhir.org packages of the EBM dependencies and add them to the downloads.
+./download-dependencies.sh
 
-# Build AWMF with the SUSHI fix from FHIR/sushi#1653; the dependencies above use
-# the released SUSHI.
+# Build AWMF with the SUSHI fix from FHIR/sushi#1653.
 PATH="$(./install-sushi.sh):$PATH"
 export PATH
 
@@ -86,3 +86,4 @@ else
 fi
 
 test -s output/package.tgz
+./download-dependencies.sh --verify

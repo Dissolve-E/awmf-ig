@@ -22,8 +22,8 @@ publisher:
   url: https://www.awmf.org
   # email: test@example.org
 dependencies:
-  hl7.fhir.uv.ebm: dev
-  hl7.fhir.uv.ebm-incubator: dev
+  hl7.fhir.uv.ebm: current
+  hl7.fhir.uv.ebm-incubator: current
   hl7.fhir.r6.core: 6.0.0-snapshot1
   hl7.fhir.uv.extensions.r5: 5.4.0
 # The dependencies property corresponds to IG.dependsOn. The key is the
