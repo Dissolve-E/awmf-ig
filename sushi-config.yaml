@@ -86,6 +86,30 @@ parameters:
   # Several dependency packages provide the same canonicals in different versions
   # (e.g. hl7.fhir.uv.extensions 5.2.0 and 5.3.0); pin those references to one version.
   pin-canonicals: pin-multiples
+  # The SHOULD-FAIL examples are invalid on purpose. The Publisher validates them as
+  # test cases against their profile and reports an error only if one of them passes;
+  # they are left out of the regular example validation.
+  profile-test-cases: input/profile-tests/profile-tests.json
+  no-validate:
+    - Composition/G-TestTestInvRequireOfficialIdentifier-NoOfficialId-SHOULD-FAIL
+    - Composition/G-TestTestInvRequireOfficialIdentifier-TwoOfficialId-SHOULD-FAIL
+    - Composition/G-TestTestInvVersionMajorMinor-VersionPatch-SHOULD-FAIL
+    - Composition/G-TestTestInvVersionMajorMinor-VersionInvalid-SHOULD-FAIL
+    - Composition/G-TestTestInvVersionMajorMinor-VersionInvalid2-SHOULD-FAIL
+    - Composition/RR-TestTestInvRequireOfficialId-NoOfficialId-SHOULD-FAIL
+    - Composition/RR-TestTestInvRequireOfficialId-TwoOfficialId-SHOULD-FAIL
+    - Composition/RR-TestTestInvRequireReleaseTypeIfReg-WrongCode-SHOULD-FAIL
+    - Composition/RR-TestTestInvRequireReleaseTypeIfRegistered-NoTag-SHOULD-FAIL
+    - Composition/RR-TestTestInvVersionMajorMinor-VersionPatch-SHOULD-FAIL
+    - Composition/RR-TestTestInvVersionMajorMinor-VersionInvalid-SHOULD-FAIL
+    - Composition/RR-TestTestInvVersionMajorMinor-VersionInvalid2-SHOULD-FAIL
+    - Composition/RR-TestTestInvRegCompNeedsPlannedComplDate-NoDate-SHOULD-FAIL
+    - Composition/RR-TestTestInvPrelimCompNeedsConsultPeriod-NoDate-SHOULD-FAIL
+    - Composition/RR-TestTestInvAuthorRegistSingleton-NoRegistrant-SHOULD-FAIL
+    - Composition/RR-TestTestInvAuthorRegistSingleton-TwoRegistrants-SHOULD-FAIL
+    - Composition/RR-TestTestInvAuthorLeadVsContrExclusive-Both-SHOULD-FAIL
+    - Composition/RR-TestInvLeadingAuthorRefPerson-SHOULD-FAIL
+    - Composition/RR-TestInvContribAuthorRefPerson-SHOULD-FAIL
   # Publisher 3.0.0 crashes comparing R6 canonical resources without URLs.
   #version-comparison: n/a
 #   excludettl: true
