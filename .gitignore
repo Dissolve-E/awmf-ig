@@ -7,7 +7,6 @@ Thumbs.db
 /temp
 /template
 /awmf-template/**/.index.*
-/.publication
 pdf/
 *.jar
 *.bat
@@ -18,7 +17,6 @@ notebooks/
 .vscode/
 /examples/
 dev/
-publication-request.json
 ig-registry.json
 /Requirements-fromNarrative.json
 /input/data/ig.yml

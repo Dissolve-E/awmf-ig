@@ -1,0 +1,17 @@
+     </div> <!-- the col-12 of history.template -->
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <div id="segment-footer" class="segment">
+  <div class="container">
+   <div class="inner-wrapper">
+    <p>
+     <span id="ig-footer">[%id%]</span> |
+     Published by <a style="color: #81BEF7" href="https://www.awmf.org">AWMF e.V.</a> |
+     Based on <a style="color: #81BEF7" href="http://hl7.org/fhir">HL7&reg; FHIR&reg;</a>
+    </p>
+   </div>
+  </div>
+ </div>
