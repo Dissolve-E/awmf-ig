@@ -4,6 +4,8 @@ Usage: #example
 Title: "PICO Intervention of Recommendation 17 from Guideline 038-013"
 Description: "Intervention: Verschiedene kognitive Kurztests"
 
+* url = "http://fhir.awmf.org/awmf.ig/Group/PICOInterventionRec17"
+
 * code = $cs-pico#intervention
 
 * description = "Verschiedene kognitive Kurztests"

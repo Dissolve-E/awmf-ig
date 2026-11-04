@@ -184,8 +184,14 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
 * relatesTo.extension[label] ^short = "A label to display with the reference to the related object, e.g. the title of a related guideline"
 
 // RESLICING: The parent profile already has a 'similarTo' slice (type = #similar-to).
-// We reslice it here based on the extension classifier to distinguish between 
-// different types of related guidelines that both use type = #similar-to
+// We reslice it here based on the extension classifier to distinguish between
+// different types of related guidelines that both use type = #similar-to.
+// The classifier discriminator belongs to the slicing of relatesTo: reslices are
+// matched against the discriminators of relatesTo, and a slicing defined on the
+// similarTo slice itself is dropped from the snapshot. The discriminator applies
+// to every slice, so each slice has to define the classifier: the slices below
+// that do not use it prohibit it (0..0). To reslice one of them by classifier,
+// replace its 0..0 with a binding of the allowed values and fix the value in the reslices.
 * relatesTo ^slicing.discriminator[1].type = #value
 * relatesTo ^slicing.discriminator[1].path = "extension('http://hl7.org/fhir/uv/ebm/StructureDefinition/relatesto-classifier').value.ofType(CodeableConcept)"
 * relatesTo ^slicing.rules = #open
@@ -217,6 +223,7 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
   * type = $cs-artifact-relationship-type#replaces
   * targetReference 1..1
   * targetReference only Reference(Guideline)
+  * extension[classifier] 0..0 // not used here, but every slice has to define the classifier, a relatesTo discriminator (see RESLICING above)
   * ^short = "A reference to another (older, outdated or obsolete) guideline this guideline is replacing"
   
 * relatesTo[replacedWithGuideline]
@@ -224,6 +231,7 @@ Description: "Guideline Registry Record containing metadata and registry-specifi
   * type = $cs-artifact-relationship-type#replaced-with
   * targetReference 1..1
   * targetReference only Reference(Guideline)
+  * extension[classifier] 0..0 // not used here, but every slice has to define the classifier, a relatesTo discriminator (see RESLICING above)
   * ^short = "A reference to another (newer, updated, merged) guideline this guideline has been replaced by"
 
 * note.extension contains $ext-annotationType named type 1..1

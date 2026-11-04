@@ -137,6 +137,7 @@ Usage: #example
 Title: "Evidence-Multiplex PCR Diagnostic-Mortality"
 Description: "Evidence for the impact of Multiplex-PCR-Diagnostik on mortality"
 * insert narrative([[Evidence for the impact of Multiplex-PCR-Diagnostik on mortality]])
+* url = "http://fhir.awmf.org/awmf.ig/Evidence/Evidence-MultiplexPCRDiagnostic-Mortality"
 * status = #active
 * variableDefinition[+]
   * variableRole = $cs-variable-role#outcome
@@ -148,6 +149,7 @@ Usage: #example
 Title: "Evidence-Multiplex PCR Diagnostic-Antibiotic Days"
 Description: "Evidence for the impact of Multiplex-PCR-Diagnostik on antibiotic days"
 * insert narrative([[Evidence for the impact of Multiplex-PCR-Diagnostik on antibiotic days]])
+* url = "http://fhir.awmf.org/awmf.ig/Evidence/Evidence-MultiplexPCRDiagnostic-AntibioticDays"
 * status = #active
 * variableDefinition[+]
   * variableRole = $cs-variable-role#outcome
@@ -159,6 +161,7 @@ Usage: #example
 Title: "Evidence-Multiplex PCR Diagnostic-Time to Deescalation"
 Description: "Evidence for the impact of Multiplex-PCR-Diagnostik on time to deescalation"
 * insert narrative([[Evidence for the impact of Multiplex-PCR-Diagnostik on time to deescalation]])
+* url = "http://fhir.awmf.org/awmf.ig/Evidence/Evidence-MultiplexPCRDiagnostic-TimeToDeescalation"
 * status = #active
 * variableDefinition[+]
   * variableRole = $cs-variable-role#outcome
@@ -170,6 +173,7 @@ Usage: #example
 Title: "Outcome Mortality"
 Description: "Outcome Mortality"
 * insert narrative([[Outcome Mortality]])
+* url = "http://fhir.awmf.org/awmf.ig/Group/OutcomeMortality"
 * status = #active
 * membership = #conceptual
 * code = $cs-pico#outcome
@@ -181,6 +185,7 @@ Usage: #example
 Title: "Outcome Antibiotic Days"
 Description: "Outcome Antibiotic Days"
 * insert narrative([[Outcome Antibiotic Days]])
+* url = "http://fhir.awmf.org/awmf.ig/Group/OutcomeAntibioticDays"
 * status = #active
 * membership = #conceptual
 * code = $cs-pico#outcome
@@ -192,6 +197,7 @@ Usage: #example
 Title: "Outcome Time to Deescalation"
 Description: "Outcome Time to Deescalation"
 * insert narrative([[Outcome Time to Deescalation]])
+* url = "http://fhir.awmf.org/awmf.ig/Group/OutcomeTimeToDeescalation"
 * status = #active
 * membership = #conceptual
 * code = $cs-pico#outcome

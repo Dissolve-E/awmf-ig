@@ -25,9 +25,15 @@ Description: "Clinical Practice Guideline Recommendation"
   * ^short = "Last Literature Review Date"
   * valueDate 1..1
 
-// RESLICING: The parent profile already has a 'similarTo' slice (type = #similar-to).
-// We reslice it here based on the extension classifier to distinguish between 
-// different types of related guidelines that both use type = #similar-to
+// RESLICING: The parent profile already has a 'derivedFrom' slice (type = #derived-from).
+// We reslice it here based on the extension classifier to distinguish PICO
+// questions from other artifacts this recommendation is derived from.
+// The classifier discriminator belongs to the slicing of relatesTo: reslices are
+// matched against the discriminators of relatesTo, and a slicing defined on the
+// derivedFrom slice itself is dropped from the snapshot. The discriminator applies
+// to every slice, so each slice has to define the classifier: the slices below
+// that do not use it prohibit it (0..0). To reslice one of them by classifier,
+// replace its 0..0 with a binding of the allowed values and fix the value in the reslices.
 * relatesTo ^slicing.discriminator[1].type = #value
 * relatesTo ^slicing.discriminator[1].path = "extension('http://hl7.org/fhir/uv/ebm/StructureDefinition/relatesto-classifier').value.ofType(CodeableConcept)"
 * relatesTo ^slicing.rules = #open
@@ -52,18 +58,21 @@ Description: "Clinical Practice Guideline Recommendation"
   * type = $cs-artifact-relationship-type#predecessor
   * targetReference 1..1
   * targetReference only Reference(Recommendation)
+  * extension[classifier] 0..0 // not used here, but every slice has to define the classifier, a relatesTo discriminator (see RESLICING above)
   * ^short = "A reference to another Recommendation which preceeds this Recommendation in a (hypothetical) clinical workflow."
 * relatesTo[specificationOfSucceedingRecommendation]
   * type 1..1
   * type = $cs-artifact-relationship-type#successor
   * targetReference 1..1
   * targetReference only Reference(Recommendation)
+  * extension[classifier] 0..0 // not used here, but every slice has to define the classifier, a relatesTo discriminator (see RESLICING above)
   * ^short = "A reference to another Recommendation which succeeds this Recommendation in a (hypothetical) clinical workflow."
 * relatesTo[replacesRecommendation]
   * type 1..1
   * type = $cs-artifact-relationship-type#replaces
   * targetReference 1..1
   * targetReference only Reference(Recommendation)
+  * extension[classifier] 0..0 // not used here, but every slice has to define the classifier, a relatesTo discriminator (see RESLICING above)
   * ^short = "A reference to an (older, outdated or obsolete) Recommendation which has been replaced by this Recommendation."
 
 
@@ -267,6 +276,7 @@ InstanceOf: PlanDefinition
 Usage: #example
 Title: "Recommendation PlanDefinition Example"
 Description: "Illustrates how two recommendation actions can be ordered with relatedAction (diagnosis before therapy)."
+* url = "http://fhir.awmf.org/awmf.ig/PlanDefinition/Recommendation-PlanDefinition-example"
 * status = #draft
 * action[0]
   * title = "Recommendation 1"

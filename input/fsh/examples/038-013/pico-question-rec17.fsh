@@ -5,6 +5,8 @@ Title: "PICO Question of Recommendation 17 from Guideline 038-013"
 Description: "Schlüsselfrage: Sind Tests in nicht-spezialisierten Settings sinnvoll, um eine Demenz zu erkennen bei Personen, die kognitive Störungen berichten oder bei denen eine
 kognitive Störung beobachtet wird und die einer solchen Untersuchung zustimmen?"
 
+* url = "http://fhir.awmf.org/awmf.ig/Group/PICOQuestionRec17"
+
 * description = "Schlüsselfrage: Sind Tests in nicht-spezialisierten Settings sinnvoll, um eine Demenz zu erkennen bei Personen, die kognitive Störungen berichten oder bei denen eine
 kognitive Störung beobachtet wird und die einer solchen Untersuchung zustimmen?"
 
