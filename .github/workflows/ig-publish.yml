@@ -59,8 +59,7 @@ jobs:
       - name: Build AWMF
         uses: docker://hl7fhir/ig-publisher-base:latest
         with:
-          # --ci-build runs without -publish flag, generating "continuous build" banner
-          args: ./run-ig-publisher.sh ${{ steps.yaml-data.outputs.canonical }} --ci-build
+          args: ./run-ig-publisher.sh
 
       - name: Upload AWMF and dependency packages
         uses: actions/upload-artifact@v4

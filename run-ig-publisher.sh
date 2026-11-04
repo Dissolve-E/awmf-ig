@@ -1,46 +1,12 @@
 #!/bin/bash
+# Build the IG as the continuous integration build (releaseLabel ci-build).
+# Versions are published with publish-version.sh, see RELEASING.md.
+#
+# Usage: ./run-ig-publisher.sh
 
-# This bash script is used to publish an Implementation Guide (IG) using the IG Publisher tool.
-#
-# Usage:
-#   ./run-ig-publisher.sh <targetUrl> [--ci-build]
-#
-# Arguments:
-#   targetUrl     The canonical URL of the IG
-#   --ci-build    Run as CI build (no -publish flag, releaseLabel=ci-build)
-#                 Without this flag, runs as release build with -publish flag
-#
-# The key difference:
-#   - CI build: No -publish flag → shows "continuous build" banner
-#   - Release build: With -publish flag → shows "Downloaded Version X.X.X" banner
-
-set -euo pipefail               # ← abort on any non-zero exit
+set -euo pipefail
 
 cd "$(dirname "${BASH_SOURCE[0]}")"
-
-# Parse arguments
-CI_BUILD=false
-targetUrl=""
-
-for arg in "$@"; do
-  case $arg in
-    --ci-build)
-      CI_BUILD=true
-      shift
-      ;;
-    *)
-      if [ -z "$targetUrl" ]; then
-        targetUrl="$arg"
-      fi
-      ;;
-  esac
-done
-
-if [ -z "$targetUrl" ]; then
-  echo "Error: Target URL is required."
-  echo "Usage: $0 <targetUrl> [--ci-build]"
-  exit 1
-fi
 
 export JAVA_TOOL_OPTIONS="${JAVA_TOOL_OPTIONS:-} -Dfile.encoding=UTF-8"
 
@@ -73,17 +39,8 @@ export PATH
 # Regenerate the Jekyll data file for the page includes from the current FSH.
 ./update-ig-data.sh
 
-if [ "$CI_BUILD" = true ]; then
-  # CI build - no -publish flag generates "continuous build" banner
-  echo "Running CI build..."
-  set_release_label "ci-build"
-  java -Duser.home="$HOME" -Xmx6g -jar "$publisher" -ig .
-else
-  # Release build - with -publish flag generates "Downloaded Version" banner
-  echo "Running release build..."
-  set_release_label "qa-preview"
-  java -Duser.home="$HOME" -Xmx6g -jar "$publisher" -ig . -publish "$targetUrl"
-fi
+set_release_label "ci-build"
+java -Duser.home="$HOME" -Xmx6g -jar "$publisher" -ig .
 
 test -s output/package.tgz
 ./download-dependencies.sh --verify
